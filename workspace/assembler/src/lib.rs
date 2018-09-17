@@ -37,34 +37,52 @@ pub(crate) enum RelocationKind
 	/// No need to keep track of.
 	Relative = 0,
 	
-	// An absolute offset to a RIP-relative location.
+	/// An absolute offset to a RIP-relative location.
 	Absolute = 1,
 	
-	// A relative offset to an absolute location.
-	External = 2,
+	/// A relative offset to an absolute location.
+	///
+	/// Not supported in x64 Long mode.
+	Extern = 2,
 }
+
+impl RelocationKind
+{
+	#[inline(always)]
+	pub(crate) fn to_id(self) -> u8
+	{
+		self as u8
+	}
+}
+
 
 #[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub(crate) struct Relocation
 {
 	target: JumpVariant,
-	offset: u32,
+	offset: u8,
 	size: Size,
-	kind: RelocationKind,
+	protected_mode_relocation_kind: RelocationKind,
 }
 
 impl Relocation
 {
 	#[inline(always)]
-	pub(crate) fn new(target: JumpVariant, offset: u32, size: Size, kind: RelocationKind) -> Self
+	pub(crate) fn new(target: JumpVariant, size: Size, protected_mode_relocation_kind: RelocationKind) -> Self
 	{
 		Self
 		{
 			target,
-			offset,
+			offset: 0,
 			size,
-			kind,
+			protected_mode_relocation_kind,
 		}
+	}
+	
+	#[inline(always)]
+	pub(crate) fn bump(&mut self, increment: u8)
+	{
+		self.offset += increment
 	}
 }
 
@@ -76,16 +94,43 @@ impl Default for Relocations
 	#[inline(always)]
 	fn default() -> Self
 	{
-		Relocations(ArrayVec::default())
+		Relocations(Vec::default())
 	}
 }
 
 impl Relocations
 {
 	#[inline(always)]
-	pub(crate) fn push(&mut self, target: JumpVariant, offset: u32, size: Size, kind: RelocationKind)
+	pub(crate) fn push_long_mode(&mut self, target: JumpVariant, size: Size)
 	{
-		self.0.push(Relocation::new(target, offset, size, kind))
+		self.push_relative(target, size)
+	}
+	
+	#[inline(always)]
+	pub(crate) fn push_protected_mode(&mut self, target: JumpVariant, size: Size, protected_mode_relocation_kind: RelocationKind)
+	{
+		self.push(target, size, protected_mode_relocation_kind)
+	}
+	
+	#[inline(always)]
+	pub(crate) fn push_relative(&mut self, target: JumpVariant, size: Size)
+	{
+		self.push(target, size, RelocationKind::Relative)
+	}
+	
+	#[inline(always)]
+	fn push(&mut self, target: JumpVariant, size: Size, protected_mode_relocation_kind: RelocationKind)
+	{
+		self.0.push(Relocation::new(target, size, protected_mode_relocation_kind))
+	}
+	
+	#[inline(always)]
+	pub(crate) fn bump(&mut self, increment: u8)
+	{
+		for relocation in self.0.iter_mut()
+		{
+			relocation.bump(increment)
+		}
 	}
 }
 
@@ -119,7 +164,7 @@ impl StatementsBuffer
 			
 			let (map_sel_opcode_base_byte, tail) = remaining_signature_opcode_bytes.split_first().expect("invalid mnemonic signature parameters; expected at least a `map_sel` in the first byte of the remaining signature opcodes because the mnemonic signature has the instruction flags `VEX_OP` or `XOP_OP`");
 			
-			self.compile_vex_xop(assembling_for_architecture_variant.mode, signature, reg, rm, *map_sel_opcode_base_byte, rex_w_prefix_is_needed, vvvv, vex_l_prefix_is_needed, prefix);
+			self.push_vex_xop(assembling_for_architecture_variant.mode, signature, reg, rm, *map_sel_opcode_base_byte, rex_w_prefix_is_needed, vvvv, vex_l_prefix_is_needed, prefix);
 			
 			Ok(tail)
 		}
@@ -175,7 +220,7 @@ impl StatementsBuffer
 	}
 	
 	#[inline(always)]
-	fn compile_vex_xop(&mut self, mode: SupportedOperationalMode, signature: &MnemonicDefinitionSignature, reg: &Option<SizedMnemonicArgument>, rm: &Option<SizedMnemonicArgument>, map_sel_opcode_base_byte: u8, rex_w_prefix_is_needed: bool, vvvv: &Option<SizedMnemonicArgument>, vex_l_prefix_is_needed: bool, prefix: u8)
+	fn push_vex_xop(&mut self, mode: SupportedOperationalMode, signature: &MnemonicDefinitionSignature, reg: &Option<SizedMnemonicArgument>, rm: &Option<SizedMnemonicArgument>, map_sel_opcode_base_byte: u8, rex_w_prefix_is_needed: bool, vvvv: &Option<SizedMnemonicArgument>, vex_l_prefix_is_needed: bool, prefix: u8)
 	{
 		// Used as a placeholder for zero.
 		use self::RegisterIdentifier::RAX;
@@ -323,6 +368,16 @@ impl StatementsBuffer
 	}
 	
 	#[inline(always)]
+	pub(crate) fn push_immediate_opcode_byte_after_addressing_displacement(&mut self, immediate_opcode_byte: Option<u8>, relocations: &mut Relocations)
+	{
+		if let Some(immediate_opcode_byte) = immediate_opcode_byte
+		{
+			statements_buffer.push_byte(immediate_opcode_byte);
+			relocations.bump(1)
+		}
+	}
+	
+	#[inline(always)]
 	fn direct_mod_rm_addressing(&mut self, signature: &MnemonicDefinitionSignature, reg: Option<SizedMnemonicArgument>, rm: Register) -> Relocations
 	{
 		let reg_k = signature.reg_k(reg);
@@ -352,8 +407,8 @@ impl StatementsBuffer
 			let mut relocations = Relocations::default();
 			match mode
 			{
-				Long => relocations.push(target, 0, DWORD, Relative),
-				Protected => relocations.push(target, 0, DWORD, Absolute)
+				Long => relocations.push_long_mode(target, DWORD),
+				Protected => relocations.push_protected_mode(target, DWORD, Absolute)
 			}
 			relocations
 		}
@@ -507,7 +562,7 @@ impl StatementsBuffer
 				// Hack: worked around using with relocations and re-using the JumpVariant::Bare.
 				self.push_u32(0);
 				let displacement = displacement.unwrap_or_else(|| RustExpression::zero());
-				relocations.push(JumpVariant::Bare(displacement), 0, DWORD, RelocationKind::Absolute);
+				relocations.push_protected_mode(JumpVariant::Bare(displacement), DWORD, RelocationKind::Absolute);
 			},
 		}
 		relocations
@@ -692,7 +747,7 @@ impl ParsedInstruction
 		
 		let signature = mnemonic_definitions.find_definition_ascii_case_insensitively(assembling_for_architecture_variant, &self.mnemonic_name, &self.arguments[..]).ok_or(InstructionEncodingError("No matching mnemonic definition for instruction"))?;
 		
-		// Apply legacy segment register prefix.
+		// Push legacy segment register prefix.
 		let legacy_prefix_modification =
 		{
 			let (legacy_prefix_modification, legacy_prefix_segment_register) = signature.repeat_and_segment_prefixes_if_any(&self.prefixes[..])?;
@@ -700,7 +755,7 @@ impl ParsedInstruction
 			legacy_prefix_modification
 		};
 		
-		// Apply legacy address size prefix.
+		// Push legacy address size prefix.
 		{
 			let address_size_override_prefix_required = signature.address_size_override_prefix_required(assembling_for_architecture_variant, address_size);
 			const AddressSizeOverridePrefix: u8 = 0x67;
@@ -711,18 +766,127 @@ impl ParsedInstruction
 		let (size_prefix_is_needed, rex_w_prefix_is_needed, vex_l_prefix_is_needed) = signature.determine_size_prefixes(operand_size, assembling_for_architecture_variant)?;
 		let rex_prefix_is_needed = signature.check_if_combination_of_arguments_can_be_encoded_and_whether_a_rex_prefix_is_needed(assembling_for_architecture_variant, &sized_mnemonic_arguments[..], rex_w_prefix_is_needed)?;
 		
-		let (mut rm, reg, vvvv, _ireg, _args) = signature.extract_instruction_arguments(sized_mnemonic_arguments);
+		let (mut rm, reg, vvvv, ireg, mut args) = signature.extract_instruction_arguments(sized_mnemonic_arguments);
 		
-		let (_immediate_opcode_byte, remaining_signature_opcode_bytes) = signature.immediate_opcode_and_remaining_opcodes();
+		let (immediate_opcode_byte, remaining_signature_opcode_bytes) = signature.immediate_opcode_and_remaining_opcodes();
 		
 		let remaining_signature_opcode_bytes = statements_buffer.push_vex_and_xop_prefixes_or_operand_size_modification_and_rex_prefixes(assembling_for_architecture_variant, signature, remaining_signature_opcode_bytes, size_prefix_is_needed, legacy_prefix_modification, rex_prefix_is_needed, rex_w_prefix_is_needed, vex_l_prefix_is_needed, &reg, &rm, &vvvv)?;
 		
 		statements_buffer.push_r_m_last_opcode_byte(signature, remaining_signature_opcode_bytes, &mut rm);
 		
-		let _relocations = statements_buffer.push_addressing(assembling_for_architecture_variant.mode, signature, rm, reg, address_size);
+		let mut relocations = statements_buffer.push_addressing(assembling_for_architecture_variant.mode, signature, rm, reg, address_size);
+		
+		statements_buffer.push_immediate_opcode_byte_after_addressing_displacement(immediate_opcode_byte, &mut relocations);
 		
 		
 		
+		// register in immediate argument
+		if let Some(SizedMnemonicArgument::DirectRegisterReference { register: ireg, .. }) = ireg
+		{
+			use self::Size::*;
+			
+			let byte = ireg.kind.encode() << 4;
+			
+			let mut byte = ecx.expr_lit(ecx.call_site(), ast::LitKind::Byte(byte));
+//			if let RegKind::Dynamic(_, expr) = ireg
+//			{
+//				byte = serialize::expr_mask_shift_or(ecx, byte, expr, 0xF, 4);
+//			}
+			
+			// if immediates are present, the register argument will be merged into the first immediate byte.
+			if !args.is_empty()
+			{
+				if let SizedMnemonicArgument::Immediate { value, size: BYTE } = args.remove(0)
+				{
+					byte = serialize::expr_mask_shift_or(ecx, byte, value, 0xF, 0);
+				}
+				else
+				{
+					panic!("Invalid mnemonic argument definition")
+				}
+			}
+			// TODO: Messed up: signed and unsigned expressions! Stmt::ExprSigned vs Stmt::ExprUnsigned
+			xxxx;
+			statements_buffer.push_unsigned_expression(byte, BYTE);
+			relocations.bump(1);
+		}
+		
+		// immediates
+		for immedate_like_argument in args
+		{
+			match immedate_like_argument
+			{
+				SizedMnemonicArgument::Immediate { value, size } =>
+				{
+					statements_buffer.push_signed_expression(value, size);
+					relocations.bump(size.to_bytes());
+				},
+				
+				SizedMnemonicArgument::JumpTarget { jump_target, size } =>
+				{
+					use self::RelocationKind::*;
+					
+					// TODO
+					statements_buffer.push(Stmt::Const(0, size));
+					relocations.bump(size.to_bytes());
+					
+					if let JumpVariant::Bare(_) = jump_target
+					{
+						use self::SupportedOperationalMode::*;
+						
+						match assembling_for_architecture_variant.mode
+						{
+							Protected => relocations.push_protected_mode(jump_target, size, Extern),
+							Long => return Err(InstructionEncodingError("x64 Long mode does not support RelocationKind::Extern; caused by SizedMnemonicArgument::JumpTarget with JumpVariant::Bare"))
+						}
+					}
+					else
+					{
+						relocations.push_relative(jump_target, size);
+					}
+				},
+				
+				_ => panic!("Invalid argument for immedate_like_argument")
+			};
+		}
+		
+		// Push relocations.
+		for Relocation { target, offset, size, protected_mode_relocation_kind } in relocations
+		{
+			use self::SupportedOperationalMode::*;
+			let data = match assembling_for_architecture_variant.mode
+			{
+				Protected => &[offset, size.to_bytes(), protected_mode_relocation_kind.to_id()],
+				Long => &[offset, size.to_bytes()],
+			};
+			
+			use self::JumpVariant::*;
+			statements_buffer.push
+			(
+				match target
+				{
+					Global(ident) => Stmt::GlobalJumpTarget(ident, serialize::expr_tuple_of_u8s(ecx, ident.span, data)),
+					
+					Forward(ident) => Stmt::ForwardJumpTarget(ident, serialize::expr_tuple_of_u8s(ecx, ident.span, data)),
+					
+					Backward(ident) => Stmt::BackwardJumpTarget(ident, serialize::expr_tuple_of_u8s(ecx, ident.span, data)),
+					
+					Dynamic(expr) =>
+					{
+						let span = expr.span;
+						Stmt::DynamicJumpTarget(expr, serialize::expr_tuple_of_u8s(ecx, span, data))
+					}
+					
+					Bare(expr) =>
+					{
+						let span = expr.span;
+						Stmt::BareJumpTarget(expr, serialize::expr_tuple_of_u8s(ecx, span, data))
+					}
+				}
+			)
+		}
+		
+		// TODO: raw to clean arguments.
 		
 		Ok(())
 	}
@@ -1008,6 +1172,12 @@ impl Size
 				Ok((Some(operand_size), Some(maximum_immediate_size)))
 			}
 		}
+	}
+	
+	#[inline(always)]
+	pub(crate) fn to_bytes(self) -> u8
+	{
+		self as u8
 	}
 	
 	#[inline(always)]
