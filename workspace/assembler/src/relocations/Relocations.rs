@@ -69,7 +69,7 @@ impl Relocations
 	}
 	
 	#[inline(always)]
-	pub(crate) fn push_to_statements_buffer(self, statements_buffer: &mut StatementsBuffer)
+	pub(crate) fn push_to_statements_buffer(self, statements_buffer: &mut StatementsBuffer<impl Write>) -> Result<(), InstructionEncodingError>
 	{
 		for Relocation { target, offset, size, protected_mode_relocation_kind } in self.relocations
 		{
@@ -90,14 +90,16 @@ impl Relocations
 			
 			use self::JumpVariant::*;
 			
-			match target
+			let result = match target
 			{
 				Global(ident) => statements_buffer.push_global_jump_target(ident, offset, size_in_bytes, protected_mode_relocation_id),
 				Forward(ident) => statements_buffer.push_forward_jump_target(ident, offset, size_in_bytes, protected_mode_relocation_id),
 				Backward(ident) => statements_buffer.push_backward_jump_target(ident, offset, size_in_bytes, protected_mode_relocation_id),
 				Dynamic(expression) => statements_buffer.push_dynamic_jump_target(expression, offset, size_in_bytes, protected_mode_relocation_id),
 				Bare(expression) => statements_buffer.push_bare_jump_target(expression, offset, size_in_bytes, protected_mode_relocation_id),
-			}
+			};
+			result.map_err(InstructionEncodingError::error_when_writing_machine_code)?
 		}
+		Ok(())
 	}
 }

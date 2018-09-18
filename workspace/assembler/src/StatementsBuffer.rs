@@ -4,12 +4,39 @@
 
 /// A list of 'statements' - encoded bytes and the like.
 #[derive(Debug,  Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct StatementsBuffer
+pub struct StatementsBuffer<W: Write>
 {
+	accumulated_bytes_so_far: Vec<u8>,
+	writer: W,
 }
 
-impl StatementsBuffer
+impl<W: Write> StatementsBuffer<W>
 {
+	/// Creates a new instance.
+	#[inline(always)]
+	pub fn new(writer: W, function_name: &str) -> io::Result<Self>
+	{
+		let mut this = Self
+		{
+			accumulated_bytes_so_far: Vec::with_capacity(4096),
+			writer,
+		};
+		
+		this.write_preamble(function_name)?;
+		
+		Ok(this)
+	}
+	
+	/// Finishes writing.
+	#[inline(always)]
+	pub fn finish(&mut self) -> io::Result<()>
+	{
+		self.flush_bytes()?;
+		self.write_postamble()?;
+		
+		self.writer.flush()
+	}
+	
 	/// VEX and XOP prefixes embed the operand size prefix or modification prefixes in them.
 	#[inline(always)]
 	pub(crate) fn push_vex_and_xop_prefixes_or_operand_size_modification_and_rex_prefixes<'a>(&mut self, assembling_for_architecture_variant: &AssemblingForArchitectureVariant, signature: &MnemonicDefinitionSignature, remaining_signature_opcode_bytes: &'a [u8], size_prefix_is_needed: bool, legacy_prefix_modification: Option<u8>, rex_prefix_is_needed: bool, rex_w_prefix_is_needed: bool, vex_l_prefix_is_needed: bool, reg: &Option<SizedMnemonicArgument>, rm: &Option<SizedMnemonicArgument>, vvvv: &Option<SizedMnemonicArgument>) -> Result<&'a [u8], InstructionEncodingError>
@@ -85,6 +112,113 @@ impl StatementsBuffer
 		{
 			self.push_bytes(remaining_signature_opcode_bytes);
 		}
+	}
+	
+	// Used when encoding the Mod.R/M byte for ordinary addressing.
+	const MOD_NO_DISPLACEMENT: u8 = 0b00;
+	
+	// Used when encoding the Mod.R/M byte when the displacement is 8.
+	const MOD_DISPLACEMENT_8:  u8 = 0b01;
+	
+	// Used when encoding the Mod.R/M byte when the displacement is 32.
+	const MOD_DISPLACEMENT_32: u8 = 0b10;
+	
+	#[inline(always)]
+	pub(crate) fn push_addressing(&mut self, mode: SupportedOperationalMode, signature: &MnemonicDefinitionSignature, rm: Option<SizedMnemonicArgument>, reg: Option<SizedMnemonicArgument>, address_size: AddressSize) -> Result<Relocations, InstructionEncodingError>
+	{
+		use self::SizedMnemonicArgument::*;
+		
+		let relocations = match rm
+		{
+			Some(DirectRegisterReference { register, .. }) => self.direct_mod_rm_addressing(mode, signature, reg, register),
+			
+			Some(IndirectJumpTarget { jump_variant, .. }) => self.jump_target_relative_addressing(mode, signature, reg, jump_variant),
+			
+			Some(IndirectMemoryReference { displacement_size, base, index, displacement, .. }) => self.indirect_mod_rm_and_scaled_index_byte_addressing(mode, signature, reg, displacement_size, base, index, displacement, address_size).map_err(InstructionEncodingError::error_when_writing_machine_code)?,
+			
+			_ => mode.new_relocations(),
+		};
+		
+		Ok(relocations)
+	}
+	
+	#[inline(always)]
+	pub(crate) fn push_immediate_opcode_byte_after_addressing_displacement(&mut self, immediate_opcode_byte: Option<u8>, relocations: &mut Relocations)
+	{
+		if let Some(immediate_opcode_byte) = immediate_opcode_byte
+		{
+			self.push_byte(immediate_opcode_byte);
+			relocations.bump(Size::BYTE)
+		}
+	}
+	
+	#[inline(always)]
+	pub(crate) fn push_register_in_immediate(&mut self, ireg: Option<SizedMnemonicArgument>, remaining_arguments: &mut ArrayVec<[SizedMnemonicArgument; 8]>, relocations: &mut Relocations) -> Result<(), InstructionEncodingError>
+	{
+		use self::SizedMnemonicArgument::*;
+		
+		if let Some(DirectRegisterReference { register: ireg, .. }) = ireg
+		{
+			use self::Size::*;
+			
+			let byte_literal = RustExpression::literal_byte(ireg.identifier().code() << 4);
+			
+			// If immediates are present, the register argument will be merged into the first immediate byte.
+			let byte_expression = if remaining_arguments.len() > 0
+			{
+				match remaining_arguments.remove(0)
+				{
+					Immediate { value, size: BYTE } => byte_literal.or_with_masked_value(value, 0xF),
+					_ => panic!("Invalid mnemonic argument definition"),
+				}
+			}
+			else
+			{
+				byte_literal
+			};
+			
+			self.push_unsigned_expression(byte_expression, BYTE).map_err(InstructionEncodingError::error_when_writing_machine_code)?;
+			relocations.bump(BYTE);
+		}
+		
+		Ok(())
+	}
+	
+	#[inline(always)]
+	pub(crate) fn push_immediates(&mut self, remaining_arguments: ArrayVec<[SizedMnemonicArgument; 8]>, relocations: &mut Relocations) -> Result<(), InstructionEncodingError>
+	{
+		for immedate_like_argument in remaining_arguments
+		{
+			use self::SizedMnemonicArgument::*;
+			
+			match immedate_like_argument
+			{
+				Immediate { value, size } =>
+				{
+					self.push_signed_expression(value, size).map_err(InstructionEncodingError::error_when_writing_machine_code)?;
+					relocations.bump(size);
+				},
+				
+				JumpTarget { jump_variant, size } =>
+				{
+					self.push_unsigned_constant(0, size);
+					relocations.bump(size);
+					
+					if let JumpVariant::Bare(_) = jump_variant
+					{
+						relocations.push_extern(jump_variant, size)?
+					}
+					else
+					{
+						relocations.push_relative(jump_variant, size)
+					}
+				},
+				
+				_ => panic!("Invalid argument '{:?}' for immedate_like_argument", immedate_like_argument)
+			};
+		}
+		
+		Ok(())
 	}
 	
 	#[inline(always)]
@@ -209,109 +343,6 @@ impl StatementsBuffer
 		self.push_byte(rex_prefix_opcode_byte)
 	}
 	
-	// Used when encoding the Mod.R/M byte for ordinary addressing.
-	const MOD_NO_DISPLACEMENT: u8 = 0b00;
-	
-	// Used when encoding the Mod.R/M byte when the displacement is 8.
-	const MOD_DISPLACEMENT_8:  u8 = 0b01;
-	
-	// Used when encoding the Mod.R/M byte when the displacement is 32.
-	const MOD_DISPLACEMENT_32: u8 = 0b10;
-	
-	#[inline(always)]
-	pub(crate) fn push_addressing(&mut self, mode: SupportedOperationalMode, signature: &MnemonicDefinitionSignature, rm: Option<SizedMnemonicArgument>, reg: Option<SizedMnemonicArgument>, address_size: AddressSize) -> Relocations
-	{
-		use self::SizedMnemonicArgument::*;
-		
-		match rm
-		{
-			Some(DirectRegisterReference { register, .. }) => self.direct_mod_rm_addressing(mode, signature, reg, register),
-			
-			Some(IndirectJumpTarget { jump_variant, .. }) => self.jump_target_relative_addressing(mode, signature, reg, jump_variant),
-			
-			Some(IndirectMemoryReference { displacement_size, base, index, displacement, .. }) => self.indirect_mod_rm_and_scaled_index_byte_addressing(mode, signature, reg, displacement_size, base, index, displacement, address_size),
-			
-			_ => mode.new_relocations(),
-		}
-	}
-	
-	#[inline(always)]
-	pub(crate) fn push_immediate_opcode_byte_after_addressing_displacement(&mut self, immediate_opcode_byte: Option<u8>, relocations: &mut Relocations)
-	{
-		if let Some(immediate_opcode_byte) = immediate_opcode_byte
-		{
-			self.push_byte(immediate_opcode_byte);
-			relocations.bump(Size::BYTE)
-		}
-	}
-	
-	#[inline(always)]
-	pub(crate) fn push_register_in_immediate(&mut self, ireg: Option<SizedMnemonicArgument>, remaining_arguments: &mut ArrayVec<[SizedMnemonicArgument; 8]>, relocations: &mut Relocations)
-	{
-		use self::SizedMnemonicArgument::*;
-		
-		if let Some(DirectRegisterReference { register: ireg, .. }) = ireg
-		{
-			use self::Size::*;
-			
-			let byte_literal = RustExpression::literal_byte(ireg.identifier().code() << 4);
-			
-			// If immediates are present, the register argument will be merged into the first immediate byte.
-			let byte_expression = if remaining_arguments.len() > 0
-			{
-				match remaining_arguments.remove(0)
-				{
-					Immediate { value, size: BYTE } => byte_literal.or_with_masked_value(value, 0xF),
-					_ => panic!("Invalid mnemonic argument definition"),
-				}
-			}
-			else
-			{
-				byte_literal
-			};
-			
-			self.push_unsigned_expression(byte_expression, BYTE);
-			relocations.bump(BYTE);
-		}
-	}
-	
-	#[inline(always)]
-	pub(crate) fn push_immediates(&mut self, remaining_arguments: ArrayVec<[SizedMnemonicArgument; 8]>, relocations: &mut Relocations) -> Result<(), InstructionEncodingError>
-	{
-		for immedate_like_argument in remaining_arguments
-		{
-			use self::SizedMnemonicArgument::*;
-			
-			match immedate_like_argument
-			{
-				Immediate { value, size } =>
-				{
-					self.push_signed_expression(value, size);
-					relocations.bump(size);
-				},
-				
-				JumpTarget { jump_variant, size } =>
-				{
-					self.push_unsigned_constant(0, size);
-					relocations.bump(size);
-					
-					if let JumpVariant::Bare(_) = jump_variant
-					{
-						relocations.push_extern(jump_variant, size)?
-					}
-					else
-					{
-						relocations.push_relative(jump_variant, size)
-					}
-				},
-				
-				_ => panic!("Invalid argument '{:?}' for immedate_like_argument", immedate_like_argument)
-			};
-		}
-		
-		Ok(())
-	}
-	
 	#[inline(always)]
 	fn direct_mod_rm_addressing(&mut self, mode: SupportedOperationalMode, signature: &MnemonicDefinitionSignature, reg: Option<SizedMnemonicArgument>, rm: Register) -> Relocations
 	{
@@ -344,7 +375,7 @@ impl StatementsBuffer
 	}
 	
 	#[inline(always)]
-	fn indirect_mod_rm_and_scaled_index_byte_addressing(&mut self,  mode: SupportedOperationalMode, signature: &MnemonicDefinitionSignature, reg: Option<SizedMnemonicArgument>, displacement_size: Option<Size>, base: Option<Register>, index: Option<ParsedIndirectMemoryReferenceIndex>, displacement: Option<RustExpression>, address_size: AddressSize) -> Relocations
+	fn indirect_mod_rm_and_scaled_index_byte_addressing(&mut self,  mode: SupportedOperationalMode, signature: &MnemonicDefinitionSignature, reg: Option<SizedMnemonicArgument>, displacement_size: Option<Size>, base: Option<Register>, index: Option<ParsedIndirectMemoryReferenceIndex>, displacement: Option<RustExpression>, address_size: AddressSize) -> io::Result<Relocations>
 	{
 		let reg_k = signature.reg_k(reg);
 		
@@ -371,7 +402,7 @@ impl StatementsBuffer
 	}
 	
 	#[inline(always)]
-	fn indirect_mod_rm_and_scaled_index_byte_addressing_mode_is_vector_scaled_index_byte(&mut self, mode: SupportedOperationalMode, reg_k: RegisterIdentifier, displacement_size: Option<Size>, base: Option<Register>, index: Option<ParsedIndirectMemoryReferenceIndex>, displacement: Option<RustExpression>) -> Relocations
+	fn indirect_mod_rm_and_scaled_index_byte_addressing_mode_is_vector_scaled_index_byte(&mut self, mode: SupportedOperationalMode, reg_k: RegisterIdentifier, displacement_size: Option<Size>, base: Option<Register>, index: Option<ParsedIndirectMemoryReferenceIndex>, displacement: Option<RustExpression>) -> io::Result<Relocations>
 	{
 		use self::RegisterIdentifier::*;
 		use self::Size::*;
@@ -406,13 +437,13 @@ impl StatementsBuffer
 		let index_register_identifier = register.identifier();
 		match expression
 		{
-			Some(expression) => self.push_scaled_index_byte_with_scale_calculated_by_expression(scale, expression, index_register_identifier, base),
+			Some(expression) => self.push_scaled_index_byte_with_scale_calculated_by_expression(scale, expression, index_register_identifier, base)?,
 			None => self.push_mod_rm_byte_or_scaled_index_byte(ParsedIndirectMemoryReferenceIndex::encode_scale(scale), index_register_identifier, base),
 		}
 		
 		match displacement
 		{
-			Some(displacement) => self.push_signed_expression(displacement, if mod_ == Self::MOD_DISPLACEMENT_8 {BYTE} else {DWORD}),
+			Some(displacement) => self.push_signed_expression(displacement, if mod_ == Self::MOD_DISPLACEMENT_8 {BYTE} else {DWORD})?,
 			None => if mod_ == Self::MOD_DISPLACEMENT_8
 			{
 				self.push_byte(0);
@@ -423,11 +454,11 @@ impl StatementsBuffer
 			},
 		}
 		
-		mode.new_relocations()
+		Ok(mode.new_relocations())
 	}
 	
 	#[inline(always)]
-	fn indirect_mod_rm_and_scaled_index_byte_addressing_mode_is_16_bit(&mut self, mode: SupportedOperationalMode, reg_k: RegisterIdentifier, displacement_size: Option<Size>, base: Option<Register>, displacement: Option<RustExpression>) -> Relocations
+	fn indirect_mod_rm_and_scaled_index_byte_addressing_mode_is_16_bit(&mut self, mode: SupportedOperationalMode, reg_k: RegisterIdentifier, displacement_size: Option<Size>, base: Option<Register>, displacement: Option<RustExpression>) -> io::Result<Relocations>
 	{
 		use self::Size::*;
 		
@@ -454,7 +485,7 @@ impl StatementsBuffer
 		
 		match displacement
 		{
-			Some(displacement) => self.push_signed_expression(displacement, if mod_ == Self::MOD_DISPLACEMENT_8 {BYTE} else {WORD}),
+			Some(displacement) => self.push_signed_expression(displacement, if mod_ == Self::MOD_DISPLACEMENT_8 {BYTE} else {WORD})?,
 			
 			None => if mod_ == Self::MOD_DISPLACEMENT_8
 			{
@@ -462,11 +493,11 @@ impl StatementsBuffer
 			},
 		}
 		
-		mode.new_relocations()
+		Ok(mode.new_relocations())
 	}
 	
 	#[inline(always)]
-	fn indirect_mod_rm_and_scaled_index_byte_addressing_mode_is_rip_relative(&mut self, reg_k: RegisterIdentifier, displacement: Option<RustExpression>, mode: SupportedOperationalMode) -> Relocations
+	fn indirect_mod_rm_and_scaled_index_byte_addressing_mode_is_rip_relative(&mut self, reg_k: RegisterIdentifier, displacement: Option<RustExpression>, mode: SupportedOperationalMode) -> io::Result<Relocations>
 	{
 		use self::SupportedOperationalMode::*;
 		use self::Size::*;
@@ -478,7 +509,7 @@ impl StatementsBuffer
 		{
 			Long => if let Some(displacement) = displacement
 			{
-				self.push_signed_expression(displacement, DWORD);
+				self.push_signed_expression(displacement, DWORD)?
 			}
 			else
 			{
@@ -494,11 +525,11 @@ impl StatementsBuffer
 				relocations.push_jump_target_addressing(JumpVariant::Bare(displacement), DWORD)
 			},
 		}
-		relocations
+		Ok(relocations)
 	}
 	
 	#[inline(always)]
-	fn indirect_mod_rm_and_scaled_index_byte_addressing_mode_is_ordinary(&mut self, reg_k: RegisterIdentifier, displacement_size: Option<Size>, base: Option<Register>, index: Option<ParsedIndirectMemoryReferenceIndex>, displacement: Option<RustExpression>, mode: SupportedOperationalMode) -> Relocations
+	fn indirect_mod_rm_and_scaled_index_byte_addressing_mode_is_ordinary(&mut self, reg_k: RegisterIdentifier, displacement_size: Option<Size>, base: Option<Register>, index: Option<ParsedIndirectMemoryReferenceIndex>, displacement: Option<RustExpression>, mode: SupportedOperationalMode) -> io::Result<Relocations>
 	{
 		use self::RegisterIdentifier::*;
 		use self::Size::*;
@@ -544,7 +575,7 @@ impl StatementsBuffer
 				let index_register_identifier = register.identifier();
 				match expression
 				{
-					Some(expression) => self.push_scaled_index_byte_with_scale_calculated_by_expression(scale, expression, index_register_identifier, base),
+					Some(expression) => self.push_scaled_index_byte_with_scale_calculated_by_expression(scale, expression, index_register_identifier, base)?,
 					None => self.push_mod_rm_byte_or_scaled_index_byte(ParsedIndirectMemoryReferenceIndex::encode_scale(scale), index_register_identifier, base),
 				}
 			}
@@ -578,7 +609,7 @@ impl StatementsBuffer
 		// Encode displacement.
 		if let Some(displacement) = displacement
 		{
-			self.push_signed_expression(displacement, if mod_ == Self::MOD_DISPLACEMENT_8 {BYTE} else {DWORD});
+			self.push_signed_expression(displacement, if mod_ == Self::MOD_DISPLACEMENT_8 {BYTE} else {DWORD})?;
 		}
 		else if no_base
 		{
@@ -589,7 +620,7 @@ impl StatementsBuffer
 			self.push_byte(0);
 		}
 		
-		mode.new_relocations()
+		Ok(mode.new_relocations())
 	}
 	
 	#[inline(always)]
@@ -600,7 +631,7 @@ impl StatementsBuffer
 	}
 	
 	#[inline(always)]
-	fn push_scaled_index_byte_with_scale_calculated_by_expression(&mut self, _scale: isize, _expression: RustExpression, _reg1: RegisterIdentifier, _reg2: RegisterIdentifier)
+	fn push_scaled_index_byte_with_scale_calculated_by_expression(&mut self, _scale: isize, _expression: RustExpression, _reg1: RegisterIdentifier, _reg2: RegisterIdentifier) -> io::Result<()>
 	{
 //		let byte = (scale * expression) << 6 | reg1.code_and_7() << 3 | reg2.code_and_7();
 //		self.push_mod_rm_byte_or_scaled_index_byte(scale * expression, reg1, reg2);
@@ -627,68 +658,195 @@ impl StatementsBuffer
 	}
 	
 	#[inline(always)]
-	pub(crate) fn push_global_jump_target(&mut self, _ident: RustIdent, _offset: u8, _size_in_bytes: u8, _protected_mode_relocation_id: Option<u8>)
+	pub(crate) fn push_global_jump_target(&mut self, _ident: RustIdent, _offset: u8, _size_in_bytes: u8, _protected_mode_relocation_id: Option<u8>) -> io::Result<()>
 	{
+		self.flush_bytes()?;
 		unimplemented!();
 	}
 	
 	#[inline(always)]
-	pub(crate) fn push_forward_jump_target(&mut self, _ident: RustIdent, _offset: u8, _size_in_bytes: u8, _protected_mode_relocation_id: Option<u8>)
+	pub(crate) fn push_forward_jump_target(&mut self, _ident: RustIdent, _offset: u8, _size_in_bytes: u8, _protected_mode_relocation_id: Option<u8>) -> io::Result<()>
 	{
+		self.flush_bytes()?;
 		unimplemented!();
 	}
 	
 	#[inline(always)]
-	pub(crate) fn push_backward_jump_target(&mut self, _ident: RustIdent, _offset: u8, _size_in_bytes: u8, _protected_mode_relocation_id: Option<u8>)
+	pub(crate) fn push_backward_jump_target(&mut self, _ident: RustIdent, _offset: u8, _size_in_bytes: u8, _protected_mode_relocation_id: Option<u8>) -> io::Result<()>
 	{
+		self.flush_bytes()?;
 		unimplemented!();
 	}
 	
 	#[inline(always)]
-	pub(crate) fn push_dynamic_jump_target(&mut self, _expression: RustExpression, _offset: u8, _size_in_bytes: u8, _protected_mode_relocation_id: Option<u8>)
+	pub(crate) fn push_dynamic_jump_target(&mut self, _expression: RustExpression, _offset: u8, _size_in_bytes: u8, _protected_mode_relocation_id: Option<u8>) -> io::Result<()>
 	{
+		self.flush_bytes()?;
 		unimplemented!();
 	}
 	
 	#[inline(always)]
-	pub(crate) fn push_bare_jump_target(&mut self, _expression: RustExpression, _offset: u8, _size_in_bytes: u8, _protected_mode_relocation_id: Option<u8>)
+	pub(crate) fn push_bare_jump_target(&mut self, _expression: RustExpression, _offset: u8, _size_in_bytes: u8, _protected_mode_relocation_id: Option<u8>) -> io::Result<()>
 	{
-		unimplemented!();
-	}
-	
-	pub(crate) fn push_unsigned_constant(&mut self, _value: u64, _size: Size)
-	{
+		self.flush_bytes()?;
 		unimplemented!();
 	}
 	
 	#[inline(always)]
-	pub(crate) fn push_signed_expression(&mut self, _value: RustExpression, _size: Size)
+	pub(crate) fn push_signed_expression(&mut self, _value: RustExpression, _size: Size) -> io::Result<()>
 	{
-		unimplemented!();
-	}
-	
-	/// Unsigned pushes are only for dynamically calculated values.
-	#[inline(always)]
-	pub(crate) fn push_unsigned_expression(&mut self, _value: RustExpression, _size: Size)
-	{
+		self.flush_bytes()?;
 		unimplemented!();
 	}
 	
 	#[inline(always)]
-	fn push_u32(&mut self, _value: u32)
+	pub(crate) fn push_unsigned_expression(&mut self, _value: RustExpression, _size: Size) -> io::Result<()>
 	{
+		self.flush_bytes()?;
 		unimplemented!();
 	}
 	
 	#[inline(always)]
-	fn push_byte(&mut self, _byte: u8)
+	fn push_unsigned_constant(&mut self, value: u64, size: Size)
 	{
-		unimplemented!();
+		// match the size (up to QWORD), sign extend the value and push that as bytes, little-endian.
+		
+		use self::Size::*;
+		
+		match size
+		{
+			BYTE =>
+			{
+				debug_assert!(value <= ::std::u8::MAX as u64, "value is larger than an u8");
+				self.push_byte(value as u8)
+			}
+			
+			WORD =>
+			{
+				debug_assert!(value <= ::std::u16::MAX as u64, "value is larger than an u16");
+				self.push_u16(value as u16)
+			}
+			
+			DWORD =>
+			{
+				debug_assert!(value <= ::std::u32::MAX as u64, "value is larger than an u32");
+				self.push_u32(value as u32)
+			}
+			
+			QWORD => self.push_u64(value),
+			
+			_ => panic!("size '{:?}' can be bigger than a QWORD (64-bit)", size),
+		}
 	}
 	
 	#[inline(always)]
-	fn push_bytes(&mut self, _bytes: &[u8])
+	fn push_u64(&mut self, value: u64)
 	{
-		unimplemented!();
+		let bytes: [u8; 8] = unsafe { transmute(value.to_le()) };
+		self.push_bytes(&bytes[..])
+	}
+	
+	#[inline(always)]
+	fn push_u32(&mut self, value: u32)
+	{
+		let bytes: [u8; 4] = unsafe { transmute(value.to_le()) };
+		self.push_bytes(&bytes[..])
+	}
+	
+	#[inline(always)]
+	fn push_u16(&mut self, value: u16)
+	{
+		let bytes: [u8; 2] = unsafe { transmute(value.to_le()) };
+		self.push_bytes(&bytes[..])
+	}
+	
+	#[inline(always)]
+	fn push_byte(&mut self, byte: u8)
+	{
+		self.accumulated_bytes_so_far.push(byte)
+	}
+	
+	#[inline(always)]
+	fn push_bytes(&mut self, bytes: &[u8])
+	{
+		for byte in bytes.iter()
+		{
+			self.push_byte(*byte)
+		}
+	}
+	
+	#[inline(always)]
+	fn write_preamble(&mut self, function_name: &str) -> io::Result<()>
+	{
+		writeln!(self.writer, "pub fn {}(start_instructions_pointer: *mut u8, length: usize)", function_name);
+		writeln!(self.writer, "{{");
+		writeln!(self.writer, "\tuse ::std::ptr::copy_nonoverlapping;");
+		writeln!(self.writer);
+		writeln!(self.writer, "let instructions_pointer = start_instructions_pointer;");
+		writeln!(self.writer);
+		writeln!(self.writer, "\tunsafe");
+		writeln!(self.writer, "\t{{");
+		writeln!(self.writer, "\t\tlet end_instructions_pointer = (instructions_pointer as usize) + length")
+	}
+	
+	#[inline(always)]
+	fn write_postamble(&mut self) -> io::Result<()>
+	{
+		writeln!(self.writer);
+		writeln!(self.writer, "\t\t(instructions_pointer as usize) - (instructions_pointer as usize)");
+		writeln!(self.writer, "\t}}");
+		writeln!(self.writer, "}}");
+		writeln!(self.writer)
+	}
+	
+	#[inline(always)]
+	fn flush_bytes(&mut self) -> io::Result<()>
+	{
+		if self.accumulated_bytes_so_far.is_empty()
+		{
+			return Ok(())
+		}
+		
+		let length = self.accumulated_bytes_so_far.len();
+		
+		match length
+		{
+			0 => return Ok(()),
+			
+			1 =>
+			{
+				writeln!(self.writer, "\t\tdebug_assert!((instructions_pointer as usize) + 1 <= end_instructions_pointer, \"not enough space for 1 byte instruction\");");
+				writeln!(self.writer, "\t\t*instructions_pointer = 0x{:02X};", unsafe { *self.accumulated_bytes_so_far.get_unchecked(0) });
+			},
+			
+			length @ _ =>
+			{
+				writeln!(self.writer, "\t\tdebug_assert!((instructions_pointer as usize) + {} <= end_instructions_pointer, \"not enough space for {} byte instruction\");", length, length);
+				
+				write!(self.writer, "\t\tcopy_nonoverlapping((&[");
+				let mut is_after_first = false;
+				for byte in self.accumulated_bytes_so_far.iter()
+				{
+					let byte = *byte;
+					
+					if is_after_first
+					{
+						write!(self.writer, ", ")?
+					}
+					else
+					{
+						is_after_first = true
+					}
+					write!(self.writer, "0x{:02X}", byte)?
+				}
+				writeln!(self.writer, "]).as_ptr(), instructions_pointer, {});", length);
+			},
+		}
+		
+		writeln!(self.writer, "\t\tinstructions_pointer = instructions_pointer.offset({});", length);
+		
+		self.accumulated_bytes_so_far.clear();
+		
+		Ok(())
 	}
 }

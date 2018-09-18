@@ -24,6 +24,8 @@ use self::relocations::*;
 use ::arrayvec::ArrayVec;
 use ::std::cmp::min;
 use ::std::collections::HashMap;
+use ::std::io;
+use ::std::io::Write;
 use ::std::mem::swap;
 use ::std::mem::transmute;
 

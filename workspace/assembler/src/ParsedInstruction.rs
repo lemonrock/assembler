@@ -17,7 +17,7 @@ impl ParsedInstruction
 	
 	/// Encodes an assembler instruction.
 	#[inline(always)]
-	pub fn encode_instruction<'a>(&mut self, assembling_for_architecture_variant: &AssemblingForArchitectureVariant, mnemonic_definitions: &'a MnemonicDefinitions, statements_buffer: &mut StatementsBuffer) -> Result<(), InstructionEncodingError>
+	pub fn encode_instruction<'a>(&mut self, assembling_for_architecture_variant: &AssemblingForArchitectureVariant, mnemonic_definitions: &'a MnemonicDefinitions, statements_buffer: &mut StatementsBuffer<impl Write>) -> Result<(), InstructionEncodingError>
 	{
 		//TODO:compile_instruction : Fold RawArgs into CleanArgs
 		// 		let mut args = args.into_iter().map(|a| clean_memoryref(ecx, a)).collect::<Result<Vec<CleanArg>, _>>()?;
@@ -54,15 +54,15 @@ impl ParsedInstruction
 		
 		statements_buffer.push_r_m_last_opcode_byte(signature, remaining_signature_opcode_bytes, &mut rm);
 		
-		let mut relocations = statements_buffer.push_addressing(assembling_for_architecture_variant.mode, signature, rm, reg, address_size);
+		let mut relocations = statements_buffer.push_addressing(assembling_for_architecture_variant.mode, signature, rm, reg, address_size)?;
 		
 		statements_buffer.push_immediate_opcode_byte_after_addressing_displacement(immediate_opcode_byte, &mut relocations);
 		
-		statements_buffer.push_register_in_immediate(ireg, &mut remaining_arguments, &mut relocations);
+		statements_buffer.push_register_in_immediate(ireg, &mut remaining_arguments, &mut relocations)?;
 		
 		statements_buffer.push_immediates(remaining_arguments, &mut relocations)?;
 		
-		relocations.push_to_statements_buffer(statements_buffer);
+		relocations.push_to_statements_buffer(statements_buffer)?;
 		
 		Ok(())
 	}
