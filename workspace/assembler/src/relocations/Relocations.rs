@@ -41,7 +41,7 @@ impl Relocations
 		match self.mode
 		{
 			Long => return Err(InstructionEncodingError("AMD64 long mode does not support extern relocations")),
-			Protected => self.push(jump_target, size, RelocationKind::Extern),
+			Protected => self.push(target, size, RelocationKind::Extern),
 		}
 		
 		Ok(())
@@ -77,13 +77,13 @@ impl Relocations
 			let size_in_bytes = size.to_bytes();
 			let data = match mode
 			{
-				Protected => &[offset, size_in_bytes, protected_mode_relocation_kind.to_id()],
+				Protected => &([offset, size_in_bytes, protected_mode_relocation_kind.to_id()])[..],
 				Long =>
-					{
-						debug_assert_eq!(protected_mode_relocation_kind, RelocationKind::Relative, "AMD64 does not support anything other than relative relocations");
-						
-						&[offset, size_in_bytes]
-					},
+				{
+					debug_assert_eq!(protected_mode_relocation_kind, RelocationKind::Relative, "AMD64 does not support anything other than relative relocations");
+					
+					&([offset, size_in_bytes])[..]
+				},
 			};
 			
 			use self::JumpVariant::*;

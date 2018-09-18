@@ -74,7 +74,7 @@ impl StatementsBuffer
 				
 				Some(SizedMnemonicArgument::DirectRegisterReference { register: rm_k, .. }) =>
 				{
-					let rescaled_for_r8_to_r15 = rm_k.register_identifier.code_and_7();
+					let rescaled_for_r8_to_r15 = rm_k.identifier().code_and_7();
 					self.push_byte(last_opcode_byte + (rescaled_for_r8_to_r15));
 				}
 				
@@ -101,25 +101,25 @@ impl StatementsBuffer
 			{
 				let reg_k = match *reg
 				{
-					Some(DirectRegisterReference { register, .. }) => register.register_identifier,
+					Some(DirectRegisterReference { register, .. }) => register.identifier(),
 					
 					_ => RAX,
 				};
 				
 				let (base_k, index_k) = match *rm
 				{
-					Some(DirectRegisterReference { register, .. }) => (register.register_identifier, RAX),
+					Some(DirectRegisterReference { register, .. }) => (register.identifier(), RAX),
 					
 					Some(IndirectMemoryReference { base, ref index, .. }) =>
 					(
 						match base
 						{
-							Some(base) => base.register_identifier,
+							Some(base) => base.identifier(),
 							_ => RAX,
 						},
 						match *index
 						{
-							Some(ParsedIndirectMemoryReferenceIndex { ref register, .. }) => register.register_identifier,
+							Some(ParsedIndirectMemoryReferenceIndex { ref register, .. }) => register.identifier(),
 							_ => RAX,
 						}
 					),
@@ -135,7 +135,7 @@ impl StatementsBuffer
 		
 		let vvvv_k = match *vvvv
 		{
-			Some(DirectRegisterReference { register, .. }) => register.register_identifier,
+			Some(DirectRegisterReference { register, .. }) => register.identifier(),
 			_ => RAX,
 		};
 		
@@ -174,24 +174,24 @@ impl StatementsBuffer
 		
 		let reg_k = match *reg
 		{
-			Some(DirectRegisterReference { register, .. }) => register.register_identifier,
+			Some(DirectRegisterReference { register, .. }) => register.identifier(),
 			_ => RAX,
 		};
 		
 		let (base_k, index_k) = match *rm
 		{
-			Some(DirectRegisterReference { register, .. }) => (register.register_identifier, RAX),
+			Some(DirectRegisterReference { register, .. }) => (register.identifier(), RAX),
 			
 			Some(IndirectMemoryReference { base, ref index, .. }) =>
 			(
 				match base
 				{
-					Some(base_register) => base_register.register_identifier,
+					Some(base_register) => base_register.identifier(),
 					None => RAX,
 				},
 				match *index
 				{
-					Some(ParsedIndirectMemoryReferenceIndex { ref register, .. } ) => register.register_identifier,
+					Some(ParsedIndirectMemoryReferenceIndex { ref register, .. } ) => register.identifier(),
 					_ => RAX,
 				}
 			),
@@ -240,7 +240,7 @@ impl StatementsBuffer
 	{
 		if let Some(immediate_opcode_byte) = immediate_opcode_byte
 		{
-			statements_buffer.push_byte(immediate_opcode_byte);
+			self.push_byte(immediate_opcode_byte);
 			relocations.bump(Size::BYTE)
 		}
 	}
@@ -251,7 +251,7 @@ impl StatementsBuffer
 		let reg_k = signature.reg_k(reg);
 		
 		const MOD_DIRECT: u8 = 0b11;
-		self.push_mod_rm_byte_or_scaled_index_byte(MOD_DIRECT, reg_k, rm.register_identifier);
+		self.push_mod_rm_byte_or_scaled_index_byte(MOD_DIRECT, reg_k, rm.identifier());
 		
 		mode.new_relocations()
 	}
@@ -259,9 +259,7 @@ impl StatementsBuffer
 	#[inline(always)]
 	fn jump_target_relative_addressing(&mut self, mode: SupportedOperationalMode, signature: &MnemonicDefinitionSignature, reg: Option<SizedMnemonicArgument>, target: JumpVariant) -> Relocations
 	{
-		use self::RelocationKind::*;
 		use self::Size::*;
-		use self::SupportedOperationalMode::*;
 		
 		let reg_k = signature.reg_k(reg);
 		
@@ -323,7 +321,7 @@ impl StatementsBuffer
 			
 			Some(base) =>
 			(
-				base.register_identifier,
+				base.identifier(),
 				match (&displacement, displacement_size)
 				{
 					(&Some(_), Some(BYTE)) => Self::MOD_DISPLACEMENT_8,
@@ -338,7 +336,7 @@ impl StatementsBuffer
 		self.push_mod_rm_byte_or_scaled_index_byte(mod_, reg_k, RSP);
 		
 		let ParsedIndirectMemoryReferenceIndex { register, scale, expression } = index.unwrap();
-		let index_register_identifier = register.register_identifier;
+		let index_register_identifier = register.identifier();
 		match expression
 		{
 			Some(expression) => self.push_scaled_index_byte_with_scale_calculated_by_expression(scale, expression, index_register_identifier, base),
@@ -368,7 +366,7 @@ impl StatementsBuffer
 		
 		// The index and base combination has been encoded in the base register.
 		// This register is guaranteed to be present.
-		let base_k = base.unwrap().register_identifier;
+		let base_k = base.unwrap().identifier();
 		
 		let mod_ = match (&displacement, displacement_size)
 		{
@@ -470,13 +468,13 @@ impl StatementsBuffer
 				// To encode the lack of a base we encode RBP.
 				let base = match base
 				{
-					Some(base) => base.register_identifier,
+					Some(base) => base.identifier(),
 					None => RBP,
 				};
 				
 				self.push_mod_rm_byte_or_scaled_index_byte(mod_, reg_k, RSP);
 				
-				let index_register_identifier = register.register_identifier;
+				let index_register_identifier = register.identifier();
 				match expression
 				{
 					Some(expression) => self.push_scaled_index_byte_with_scale_calculated_by_expression(scale, expression, index_register_identifier, base),
@@ -488,7 +486,7 @@ impl StatementsBuffer
 			{
 				// Base but no index.
 				// `RBP` at `MOD_NODISP` is used to encode RIP, but this is already handled.
-				Some(base) => self.push_mod_rm_byte_or_scaled_index_byte(mod_, reg_k, base.register_identifier),
+				Some(base) => self.push_mod_rm_byte_or_scaled_index_byte(mod_, reg_k, base.identifier()),
 				
 				// No base, no index and only displacement.
 				None =>
@@ -562,7 +560,49 @@ impl StatementsBuffer
 	}
 	
 	#[inline(always)]
-	fn push_signed_expression(&mut self, _value: RustExpression, _size: Size)
+	pub(crate) fn push_global_jump_target(&mut self, _ident: RustIdent, data: &[u8])
+	{
+		unimplemented!();
+	}
+	
+	#[inline(always)]
+	pub(crate) fn push_forward_jump_target(&mut self, _ident: RustIdent, data: &[u8])
+	{
+		unimplemented!();
+	}
+	
+	#[inline(always)]
+	pub(crate) fn push_backward_jump_target(&mut self, _ident: RustIdent, data: &[u8])
+	{
+		unimplemented!();
+	}
+	
+	#[inline(always)]
+	pub(crate) fn push_dynamic_jump_target(&mut self, _expression: RustExpression, data: &[u8])
+	{
+		unimplemented!();
+	}
+	
+	#[inline(always)]
+	pub(crate) fn push_bare_jump_target(&mut self, _expression: RustExpression, data: &[u8])
+	{
+		unimplemented!();
+	}
+	
+	#[inline(always)]
+	pub(crate) fn push_unsigned_constant(&mut self, _value: u64, _size: Size)
+	{
+		unimplemented!();
+	}
+	
+	#[inline(always)]
+	pub(crate) fn push_signed_expression(&mut self, _value: RustExpression, _size: Size)
+	{
+		unimplemented!();
+	}
+	
+	#[inline(always)]
+	pub(crate) fn push_unsigned_expression(&mut self, _value: RustExpression, _size: Size)
 	{
 		unimplemented!();
 	}

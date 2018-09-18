@@ -93,7 +93,7 @@ impl Register
 	}
 	
 	#[inline(always)]
-	fn has_family(&self, register_family: RegisterFamily) -> bool
+	pub(crate) fn has_family(&self, register_family: RegisterFamily) -> bool
 	{
 		self.family() == register_family
 	}
@@ -161,9 +161,15 @@ impl Register
 	}
 	
 	#[inline(always)]
-	fn size(&self) -> Size
+	pub(crate) fn size(&self) -> Size
 	{
 		self.size
+	}
+	
+	#[inline(always)]
+	pub(crate) fn identifier(&self) -> RegisterIdentifier
+	{
+		self.register_identifier
 	}
 	
 	#[inline(always)]

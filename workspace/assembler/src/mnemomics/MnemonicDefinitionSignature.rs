@@ -791,7 +791,7 @@ impl MnemonicDefinitionSignature
 	{
 		match reg
 		{
-			Some(SizedMnemonicArgument::DirectRegisterReference { register, .. }) => register.register_identifier,
+			Some(SizedMnemonicArgument::DirectRegisterReference { register, .. }) => register.identifier(),
 			_ => self.register_identifier(),
 		}
 	}

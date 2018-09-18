@@ -65,7 +65,7 @@ impl ParsedInstruction
 		{
 			use self::Size::*;
 			
-			let byte = ireg.kind.encode() << 4;
+			let byte = ireg.identifier().code() << 4;
 			
 			let mut byte = ecx.expr_lit(ecx.call_site(), ast::LitKind::Byte(byte));
 //			if let RegKind::Dynamic(_, expr) = ireg
@@ -103,21 +103,18 @@ impl ParsedInstruction
 					relocations.bump(size);
 				},
 				
-				JumpTarget { jump_target, size } =>
+				JumpTarget { jump_variant, size } =>
 				{
-					use self::RelocationKind::*;
-					
-					// TODO
-					statements_buffer.push(Stmt::Const(0, size));
+					statements_buffer.push_unsigned_constant(0, size);
 					relocations.bump(size);
 					
-					if let JumpVariant::Bare(_) = jump_target
+					if let JumpVariant::Bare(_) = jump_variant
 					{
-						relocations.push_extern(jump_target, size)?
+						relocations.push_extern(jump_variant, size)?
 					}
 					else
 					{
-						relocations.push_relative(jump_target, size)
+						relocations.push_relative(jump_variant, size)
 					}
 				},
 				
