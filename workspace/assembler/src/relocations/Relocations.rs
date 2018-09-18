@@ -69,20 +69,22 @@ impl Relocations
 	}
 	
 	#[inline(always)]
-	pub(crate) fn push_to_statements_buffer(self, statements_buffer: &mut StatementsBuffer, mode: SupportedOperationalMode)
+	pub(crate) fn push_to_statements_buffer(self, statements_buffer: &mut StatementsBuffer)
 	{
 		for Relocation { target, offset, size, protected_mode_relocation_kind } in self.relocations
 		{
 			use self::SupportedOperationalMode::*;
+			
 			let size_in_bytes = size.to_bytes();
-			let data = match mode
+			let protected_mode_relocation_id = match self.mode
 			{
-				Protected => &([offset, size_in_bytes, protected_mode_relocation_kind.to_id()])[..],
+				Protected => Some(protected_mode_relocation_kind.to_id()),
+				
 				Long =>
 				{
 					debug_assert_eq!(protected_mode_relocation_kind, RelocationKind::Relative, "AMD64 does not support anything other than relative relocations");
 					
-					&([offset, size_in_bytes])[..]
+					None
 				},
 			};
 			
@@ -90,11 +92,11 @@ impl Relocations
 			
 			match target
 			{
-				Global(ident) => statements_buffer.push_global_jump_target(ident, data),
-				Forward(ident) => statements_buffer.push_forward_jump_target(ident, data),
-				Backward(ident) => statements_buffer.push_backward_jump_target(ident, data),
-				Dynamic(expression) => statements_buffer.push_dynamic_jump_target(expression, data),
-				Bare(expression) => statements_buffer.push_bare_jump_target(expression, data),
+				Global(ident) => statements_buffer.push_global_jump_target(ident, offset, size_in_bytes, protected_mode_relocation_id),
+				Forward(ident) => statements_buffer.push_forward_jump_target(ident, offset, size_in_bytes, protected_mode_relocation_id),
+				Backward(ident) => statements_buffer.push_backward_jump_target(ident, offset, size_in_bytes, protected_mode_relocation_id),
+				Dynamic(expression) => statements_buffer.push_dynamic_jump_target(expression, offset, size_in_bytes, protected_mode_relocation_id),
+				Bare(expression) => statements_buffer.push_bare_jump_target(expression, offset, size_in_bytes, protected_mode_relocation_id),
 			}
 		}
 	}

@@ -58,73 +58,11 @@ impl ParsedInstruction
 		
 		statements_buffer.push_immediate_opcode_byte_after_addressing_displacement(immediate_opcode_byte, &mut relocations);
 		
+		statements_buffer.push_register_in_immediate(ireg, &mut remaining_arguments, &mut relocations);
 		
+		statements_buffer.push_immediates(remaining_arguments, &mut relocations)?;
 		
-		// register in immediate argument
-		if let Some(SizedMnemonicArgument::DirectRegisterReference { register: ireg, .. }) = ireg
-		{
-			use self::Size::*;
-			
-			let byte = ireg.identifier().code() << 4;
-			
-			let mut byte = ecx.expr_lit(ecx.call_site(), ast::LitKind::Byte(byte));
-//			if let RegKind::Dynamic(_, expr) = ireg
-//			{
-//				byte = serialize::expr_mask_shift_or(ecx, byte, expr, 0xF, 4);
-//			}
-			
-			// if immediates are present, the register argument will be merged into the first immediate byte.
-			if !remaining_arguments.is_empty()
-			{
-				if let SizedMnemonicArgument::Immediate { value, size: BYTE } = remaining_arguments.remove(0)
-				{
-					byte = serialize::expr_mask_shift_or(ecx, byte, value, 0xF, 0);
-				}
-				else
-				{
-					panic!("Invalid mnemonic argument definition")
-				}
-			}
-			// unsigned pushes are only for dynamically calculated values.
-			statements_buffer.push_unsigned_expression(byte, BYTE);
-			relocations.bump(BYTE);
-		}
-		
-		// immediates
-		for immedate_like_argument in remaining_arguments
-		{
-			use self::SizedMnemonicArgument::*;
-			
-			match immedate_like_argument
-			{
-				Immediate { value, size } =>
-				{
-					statements_buffer.push_signed_expression(value, size);
-					relocations.bump(size);
-				},
-				
-				JumpTarget { jump_variant, size } =>
-				{
-					statements_buffer.push_unsigned_constant(0, size);
-					relocations.bump(size);
-					
-					if let JumpVariant::Bare(_) = jump_variant
-					{
-						relocations.push_extern(jump_variant, size)?
-					}
-					else
-					{
-						relocations.push_relative(jump_variant, size)
-					}
-				},
-				
-				_ => panic!("Invalid argument '{:?}' for immedate_like_argument", immedate_like_argument)
-			};
-		}
-		
-		relocations.push_to_statements_buffer(statements_buffer, assembling_for_architecture_variant.mode);
-		
-		// TODO: raw to clean arguments.
+		relocations.push_to_statements_buffer(statements_buffer);
 		
 		Ok(())
 	}

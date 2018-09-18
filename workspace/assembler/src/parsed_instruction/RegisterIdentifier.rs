@@ -3,6 +3,7 @@
 
 
 /// A register identifier.
+#[allow(dead_code)]
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 #[repr(u8)]
 pub enum RegisterIdentifier

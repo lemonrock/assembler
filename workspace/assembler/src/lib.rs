@@ -20,7 +20,6 @@ extern crate arrayvec;
 use self::mnemomics::*;
 use self::parsed_instruction::*;
 use self::parsed_instruction::rust::*;
-use self::size::*;
 use self::relocations::*;
 use ::arrayvec::ArrayVec;
 use ::std::cmp::min;
@@ -33,8 +32,6 @@ pub(crate) mod mnemomics;
 
 pub(crate) mod parsed_instruction;
 
-pub(crate) mod size;
-
 pub(crate) mod relocations;
 
 
@@ -42,5 +39,6 @@ include!("AssemblingForArchitectureVariant.rs");
 include!("CpuFeatures.rs");
 include!("ParsedInstruction.rs");
 include!("InstructionEncodingError.rs");
+include!("Size.rs");
 include!("StatementsBuffer.rs");
 include!("SupportedOperationalMode.rs");

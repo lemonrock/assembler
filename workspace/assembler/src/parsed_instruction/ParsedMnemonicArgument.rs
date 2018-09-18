@@ -4,6 +4,7 @@
 
 /// A parsed mnemonic argument.
 #[derive(Debug, Clone, Ord, PartialOrd, Eq, PartialEq, Hash)]
+#[allow(dead_code)]
 pub enum ParsedMnemonicArgument
 {
 	/// An arbitrary immediate.

@@ -4,7 +4,7 @@
 
 /// A parsed mnemonic argument which has had correct sizes calculated.
 #[derive(Debug)]
-pub enum SizedMnemonicArgument
+pub(crate) enum SizedMnemonicArgument
 {
 	/// An arbitrary immediate.
 	Immediate

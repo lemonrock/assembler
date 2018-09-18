@@ -4,6 +4,7 @@
 
 /// Size of the mnemonic parameter (operand).
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
+#[allow(dead_code)]
 pub(crate) enum MnemonicParameterSize
 {
 	/// A fixed, known size.

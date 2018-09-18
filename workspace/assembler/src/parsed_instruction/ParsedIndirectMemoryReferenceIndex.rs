@@ -6,9 +6,9 @@
 #[derive(Debug, PartialOrd, PartialEq, Ord, Eq, Hash, Clone)]
 pub struct ParsedIndirectMemoryReferenceIndex
 {
-	register: Register,
-	scale: isize,
-	expression: Option<RustExpression>,
+	pub(crate) register: Register,
+	pub(crate) scale: isize,
+	pub(crate) expression: Option<RustExpression>,
 }
 
 impl ParsedIndirectMemoryReferenceIndex

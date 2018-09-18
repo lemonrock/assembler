@@ -8,6 +8,7 @@ use super::*;
 pub(crate) mod rust;
 
 
+include!("AddressSize.rs");
 include!("JumpVariant.rs");
 include!("ParsedIndirectMemoryReferenceIndex.rs");
 include!("ParsedMnemonicArgument.rs");

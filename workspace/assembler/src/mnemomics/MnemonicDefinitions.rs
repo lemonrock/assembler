@@ -9,14 +9,14 @@ pub struct MnemonicDefinitions
 	/// An ASCII name, one byte or more long.
 	///
 	/// Mnemonic names should be compared ASCII case insensitively, although it is probably easier to normalize them.
-	pub mnemonic_name_to_definition: HashMap<String, MnemonicDefinition>,
+	pub(crate) mnemonic_name_to_definition: HashMap<String, MnemonicDefinition>,
 }
 
 impl MnemonicDefinitions
 {
 	/// Finds a matching definition for the `mnemonic_name`.
 	#[inline(always)]
-	pub fn find_definition_ascii_case_insensitively<'a>(&'a self, assembling_for_architecture_variant: &AssemblingForArchitectureVariant, mnemonic_name: &String, parsed_mnemonic_arguments: &[ParsedMnemonicArgument]) -> Option<&'a MnemonicDefinitionSignature>
+	pub(crate) fn find_definition_ascii_case_insensitively<'a>(&'a self, assembling_for_architecture_variant: &AssemblingForArchitectureVariant, mnemonic_name: &String, parsed_mnemonic_arguments: &[ParsedMnemonicArgument]) -> Option<&'a MnemonicDefinitionSignature>
 	{
 		match self.find_ascii_case_insensitively(mnemonic_name)
 		{

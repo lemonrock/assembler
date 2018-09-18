@@ -5,7 +5,7 @@
 /// Any potential size.
 #[derive(Debug, PartialOrd, PartialEq, Ord, Eq, Hash, Clone, Copy)]
 #[repr(u8)]
-pub(crate) enum Size
+pub enum Size
 {
 	/// A byte.
 	///

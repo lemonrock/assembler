@@ -3,6 +3,7 @@
 
 
 /// Kind of the mnemonic parameter (operand).
+#[allow(dead_code)]
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub(crate) enum MnemonicParameterKind
 {

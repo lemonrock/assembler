@@ -246,6 +246,73 @@ impl StatementsBuffer
 	}
 	
 	#[inline(always)]
+	pub(crate) fn push_register_in_immediate(&mut self, ireg: Option<SizedMnemonicArgument>, remaining_arguments: &mut ArrayVec<[SizedMnemonicArgument; 8]>, relocations: &mut Relocations)
+	{
+		use self::SizedMnemonicArgument::*;
+		
+		if let Some(DirectRegisterReference { register: ireg, .. }) = ireg
+		{
+			use self::Size::*;
+			
+			let byte_literal = RustExpression::literal_byte(ireg.identifier().code() << 4);
+			
+			// If immediates are present, the register argument will be merged into the first immediate byte.
+			let byte_expression = if remaining_arguments.len() > 0
+			{
+				match remaining_arguments.remove(0)
+				{
+					Immediate { value, size: BYTE } => byte_literal.or_with_masked_value(value, 0xF),
+					_ => panic!("Invalid mnemonic argument definition"),
+				}
+			}
+			else
+			{
+				byte_literal
+			};
+			
+			self.push_unsigned_expression(byte_expression, BYTE);
+			relocations.bump(BYTE);
+		}
+	}
+	
+	#[inline(always)]
+	pub(crate) fn push_immediates(&mut self, remaining_arguments: ArrayVec<[SizedMnemonicArgument; 8]>, relocations: &mut Relocations) -> Result<(), InstructionEncodingError>
+	{
+		for immedate_like_argument in remaining_arguments
+		{
+			use self::SizedMnemonicArgument::*;
+			
+			match immedate_like_argument
+			{
+				Immediate { value, size } =>
+				{
+					self.push_signed_expression(value, size);
+					relocations.bump(size);
+				},
+				
+				JumpTarget { jump_variant, size } =>
+				{
+					self.push_unsigned_constant(0, size);
+					relocations.bump(size);
+					
+					if let JumpVariant::Bare(_) = jump_variant
+					{
+						relocations.push_extern(jump_variant, size)?
+					}
+					else
+					{
+						relocations.push_relative(jump_variant, size)
+					}
+				},
+				
+				_ => panic!("Invalid argument '{:?}' for immedate_like_argument", immedate_like_argument)
+			};
+		}
+		
+		Ok(())
+	}
+	
+	#[inline(always)]
 	fn direct_mod_rm_addressing(&mut self, mode: SupportedOperationalMode, signature: &MnemonicDefinitionSignature, reg: Option<SizedMnemonicArgument>, rm: Register) -> Relocations
 	{
 		let reg_k = signature.reg_k(reg);
@@ -560,36 +627,35 @@ impl StatementsBuffer
 	}
 	
 	#[inline(always)]
-	pub(crate) fn push_global_jump_target(&mut self, _ident: RustIdent, data: &[u8])
+	pub(crate) fn push_global_jump_target(&mut self, _ident: RustIdent, _offset: u8, _size_in_bytes: u8, _protected_mode_relocation_id: Option<u8>)
 	{
 		unimplemented!();
 	}
 	
 	#[inline(always)]
-	pub(crate) fn push_forward_jump_target(&mut self, _ident: RustIdent, data: &[u8])
+	pub(crate) fn push_forward_jump_target(&mut self, _ident: RustIdent, _offset: u8, _size_in_bytes: u8, _protected_mode_relocation_id: Option<u8>)
 	{
 		unimplemented!();
 	}
 	
 	#[inline(always)]
-	pub(crate) fn push_backward_jump_target(&mut self, _ident: RustIdent, data: &[u8])
+	pub(crate) fn push_backward_jump_target(&mut self, _ident: RustIdent, _offset: u8, _size_in_bytes: u8, _protected_mode_relocation_id: Option<u8>)
 	{
 		unimplemented!();
 	}
 	
 	#[inline(always)]
-	pub(crate) fn push_dynamic_jump_target(&mut self, _expression: RustExpression, data: &[u8])
+	pub(crate) fn push_dynamic_jump_target(&mut self, _expression: RustExpression, _offset: u8, _size_in_bytes: u8, _protected_mode_relocation_id: Option<u8>)
 	{
 		unimplemented!();
 	}
 	
 	#[inline(always)]
-	pub(crate) fn push_bare_jump_target(&mut self, _expression: RustExpression, data: &[u8])
+	pub(crate) fn push_bare_jump_target(&mut self, _expression: RustExpression, _offset: u8, _size_in_bytes: u8, _protected_mode_relocation_id: Option<u8>)
 	{
 		unimplemented!();
 	}
 	
-	#[inline(always)]
 	pub(crate) fn push_unsigned_constant(&mut self, _value: u64, _size: Size)
 	{
 		unimplemented!();
@@ -601,6 +667,7 @@ impl StatementsBuffer
 		unimplemented!();
 	}
 	
+	/// Unsigned pushes are only for dynamically calculated values.
 	#[inline(always)]
 	pub(crate) fn push_unsigned_expression(&mut self, _value: RustExpression, _size: Size)
 	{

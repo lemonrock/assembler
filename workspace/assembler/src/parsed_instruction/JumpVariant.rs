@@ -4,6 +4,7 @@
 
 /// Jump variant.
 #[derive(Debug, PartialOrd, PartialEq, Ord, Eq, Hash, Clone)]
+#[allow(dead_code)]
 pub enum JumpVariant
 {
 	/// Coded as `->label`.

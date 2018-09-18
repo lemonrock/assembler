@@ -16,6 +16,7 @@ pub enum RustLiteral
 	Integer(u128, ()),
 	
 	#[doc(hidden)]
+	#[allow(dead_code)]
 	Other,
 }
 
@@ -24,9 +25,11 @@ pub enum RustLiteral
 pub enum RustUnaryOpt
 {
 	/// Maps to `syntax::ast::UnOp::Neg`.
+	#[allow(dead_code)]
 	Negate,
 	
 	#[doc(hidden)]
+	#[allow(dead_code)]
 	Other,
 }
 
@@ -41,6 +44,7 @@ pub struct RustLiteralNode
 ///
 /// See <https://docs.rs/rustc-ap-syntax/224.0.0/syntax/ast/enum.ExprKind.html>.
 #[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
+#[allow(dead_code)]
 pub enum RustExpressionKind
 {
 	/// Based on `syntax::ast::ExprKind::Lit`.
@@ -50,6 +54,7 @@ pub enum RustExpressionKind
 	Unary(RustUnaryOpt, Box<RustExpression>),
 	
 	#[doc(hidden)]
+	#[allow(dead_code)]
 	Other,
 }
 
@@ -71,6 +76,22 @@ impl RustExpression
 		{
 			node: RustExpressionKind::Literal(RustLiteral::Integer(0, ()))
 		}
+	}
+	
+	#[inline(always)]
+	pub(crate) fn literal_byte(byte: u8) -> Self
+	{
+		Self
+		{
+			node: RustExpressionKind::Literal(RustLiteral::Byte(byte))
+		}
+	}
+	
+	/// Returns an expression `self | (value & mask)`.
+	#[inline(always)]
+	pub(crate) fn or_with_masked_value(self, _value: Self, _mask: u8) -> Self
+	{
+		unimplemented!()
 	}
 	
 	#[inline(always)]
