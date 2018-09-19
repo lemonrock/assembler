@@ -5,7 +5,7 @@
 #[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub(crate) struct Relocation
 {
-	target: JumpVariant,
+	target: JumpTarget,
 	offset: u8,
 	size: Size,
 	protected_mode_relocation_kind: RelocationKind,
@@ -14,7 +14,7 @@ pub(crate) struct Relocation
 impl Relocation
 {
 	#[inline(always)]
-	pub(crate) fn new(target: JumpVariant, size: Size, protected_mode_relocation_kind: RelocationKind) -> Self
+	pub(crate) fn new(target: JumpTarget, size: Size, protected_mode_relocation_kind: RelocationKind) -> Self
 	{
 		Self
 		{

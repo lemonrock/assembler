@@ -2,18 +2,29 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// Kind of relocation.
+/// A size suitable for a relocation in long (64-bit) mode.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub(crate) enum RelocationKind
+#[repr(usize)]
+pub enum LongModeRelocationSize
 {
-	/// A RIP-relative relocation.
-	Relative,
+	/// A byte.
+	BYTE = 1,
 	
-	/// An absolute offset to a RIP-relative location.
-	Absolute,
+	/// A word, 2 bytes.
+	WORD = 2,
 	
-	/// A relative offset to an absolute location.
-	///
-	/// Not supported in x64 Long mode.
-	Extern,
+	/// A doubleword, 4 bytes.
+	DWORD = 4,
+	
+	/// A quadword, 8 bytes.
+	QWORD = 8,
+}
+
+impl LongModeRelocationSize
+{
+	#[inline(always)]
+	pub(crate) fn to_bytes(self) -> usize
+	{
+		self as usize
+	}
 }

@@ -2,9 +2,9 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// Kind of relocation.
-#[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub(crate) enum RelocationKind
+/// The kind of relocation for protected (32-bit) mode.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
+pub enum ProtectedModeRelocationKind
 {
 	/// A RIP-relative relocation.
 	Relative,
@@ -13,7 +13,5 @@ pub(crate) enum RelocationKind
 	Absolute,
 	
 	/// A relative offset to an absolute location.
-	///
-	/// Not supported in x64 Long mode.
 	Extern,
 }

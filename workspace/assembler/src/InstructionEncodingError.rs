@@ -9,7 +9,7 @@ pub struct InstructionEncodingError(pub &'static str);
 impl InstructionEncodingError
 {
 	#[inline(always)]
-	pub(crate) fn error_when_writing_machine_code(_error: io::Error) -> Self
+	pub(crate) fn error_when_writing(_error: io::Error) -> Self
 	{
 		InstructionEncodingError("Input/Output error when writing machine code")
 	}

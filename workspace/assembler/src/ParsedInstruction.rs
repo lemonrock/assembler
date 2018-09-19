@@ -19,7 +19,7 @@ impl ParsedInstruction
 	#[inline(always)]
 	pub fn encode_instruction<'a>(&mut self, assembling_for_architecture_variant: &AssemblingForArchitectureVariant, mnemonic_definitions: &'a MnemonicDefinitions, statements_buffer: &mut StatementsBuffer<impl Write>) -> Result<(), InstructionEncodingError>
 	{
-		//TODO:compile_instruction : Fold RawArgs into CleanArgs
+		//TODO: compile_instruction : Fold RawArgs into CleanArgs
 		// 		let mut args = args.into_iter().map(|a| clean_memoryref(ecx, a)).collect::<Result<Vec<CleanArg>, _>>()?;
 		
 		// TODO: Mutates arguments; find a better way.
@@ -31,7 +31,7 @@ impl ParsedInstruction
 		let legacy_prefix_modification =
 		{
 			let (legacy_prefix_modification, legacy_prefix_segment_register) = signature.repeat_and_segment_prefixes_if_any(&self.prefixes[..])?;
-			statements_buffer.push_byte_if_some(legacy_prefix_segment_register);
+			statements_buffer.push_u8_if_some(legacy_prefix_segment_register);
 			legacy_prefix_modification
 		};
 		
@@ -39,7 +39,7 @@ impl ParsedInstruction
 		{
 			let address_size_override_prefix_required = signature.address_size_override_prefix_required(assembling_for_architecture_variant, address_size);
 			const AddressSizeOverridePrefix: u8 = 0x67;
-			statements_buffer.push_byte_if(address_size_override_prefix_required, AddressSizeOverridePrefix);
+			statements_buffer.push_u8_if(address_size_override_prefix_required, AddressSizeOverridePrefix);
 		}
 		
 		let (operand_size, sized_mnemonic_arguments) = signature.size_operands(&self.arguments[..])?;

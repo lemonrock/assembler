@@ -2,18 +2,9 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// Kind of relocation.
-#[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub(crate) enum RelocationKind
+#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
+pub(crate) struct Label
 {
-	/// A RIP-relative relocation.
-	Relative,
-	
-	/// An absolute offset to a RIP-relative location.
-	Absolute,
-	
-	/// A relative offset to an absolute location.
-	///
-	/// Not supported in x64 Long mode.
-	Extern,
+	pub(crate) interned_label_prefix: u32,
+	pub(crate) label_number: u32,
 }

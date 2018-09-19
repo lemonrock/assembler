@@ -2,23 +2,9 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// Jump variant.
-#[derive(Debug, PartialOrd, PartialEq, Ord, Eq, Hash, Clone)]
-#[allow(dead_code)]
-pub enum JumpVariant
-{
-	/// Coded as `->label`.
-	Global(RustIdent),
+use super::*;
 
-	/// Coded as `>label`.
-	Backward(RustIdent),
 
-	/// Coded as `<label`.
-	Forward(RustIdent),
-
-	/// Coded as `=>expr`.
-	Dynamic(RustExpression),
-	
-	/// An address.
-	Bare(RustExpression),
-}
+include!("LongModeRelocation.rs");
+include!("LongModeRelocationLocation.rs");
+include!("LongModeRelocationSize.rs");

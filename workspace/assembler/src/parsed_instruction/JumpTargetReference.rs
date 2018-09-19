@@ -2,18 +2,21 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// Kind of relocation.
-#[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub(crate) enum RelocationKind
+/// Jump target reference.
+#[derive(Debug, PartialOrd, PartialEq, Ord, Eq, Hash, Clone)]
+#[allow(dead_code)]
+pub enum JumpTargetReference
 {
-	/// A RIP-relative relocation.
-	Relative,
+	/// label PREFIX NUMBER where NUMBER is a Rust expression returning an u32.
+	Labelled
+	{
+		prefix: String,
+		number_u32: RustExpression,
+	},
 	
-	/// An absolute offset to a RIP-relative location.
-	Absolute,
-	
-	/// A relative offset to an absolute location.
-	///
-	/// Not supported in x64 Long mode.
-	Extern,
+	/// An address.
+	Bare
+	{
+		target_address_usize: RustExpression,
+	},
 }

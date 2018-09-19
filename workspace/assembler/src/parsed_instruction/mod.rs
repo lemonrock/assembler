@@ -9,7 +9,7 @@ pub(crate) mod rust;
 
 
 include!("AddressSize.rs");
-include!("JumpVariant.rs");
+include!(JumpTargetReference.rs);
 include!("ParsedIndirectMemoryReferenceIndex.rs");
 include!("ParsedMnemonicArgument.rs");
 include!("Register.rs");

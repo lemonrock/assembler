@@ -70,6 +70,12 @@ pub struct RustExpression
 impl RustExpression
 {
 	#[inline(always)]
+	pub(crate) fn to_rust_code(&self) -> String
+	{
+	
+	}
+	
+	#[inline(always)]
 	pub(crate) fn zero() -> Self
 	{
 		Self

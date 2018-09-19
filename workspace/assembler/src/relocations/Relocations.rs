@@ -22,7 +22,7 @@ impl Relocations
 	}
 	
 	#[inline(always)]
-	pub(crate) fn push_jump_target_addressing(&mut self, target: JumpVariant, size: Size)
+	pub(crate) fn push_jump_target_reference_addressing(&mut self, target: JumpTarget, size: Size)
 	{
 		use self::SupportedOperationalMode::*;
 		
@@ -34,7 +34,7 @@ impl Relocations
 	}
 	
 	#[inline(always)]
-	pub(crate) fn push_extern(&mut self, target: JumpVariant, size: Size) -> Result<(), InstructionEncodingError>
+	pub(crate) fn push_extern(&mut self, target: JumpTarget, size: Size) -> Result<(), InstructionEncodingError>
 	{
 		use self::SupportedOperationalMode::*;
 		
@@ -48,13 +48,13 @@ impl Relocations
 	}
 	
 	#[inline(always)]
-	pub(crate) fn push_relative(&mut self, target: JumpVariant, size: Size)
+	pub(crate) fn push_relative(&mut self, target: JumpTarget, size: Size)
 	{
 		self.push(target, size, RelocationKind::Relative)
 	}
 	
 	#[inline(always)]
-	fn push(&mut self, target: JumpVariant, size: Size, protected_mode_relocation_kind: RelocationKind)
+	fn push(&mut self, target: JumpTarget, size: Size, protected_mode_relocation_kind: RelocationKind)
 	{
 		self.relocations.push(Relocation::new(target, size, protected_mode_relocation_kind))
 	}
@@ -73,32 +73,7 @@ impl Relocations
 	{
 		for Relocation { target, offset, size, protected_mode_relocation_kind } in self.relocations
 		{
-			use self::SupportedOperationalMode::*;
-			
-			let size_in_bytes = size.to_bytes();
-			let protected_mode_relocation_id = match self.mode
-			{
-				Protected => Some(protected_mode_relocation_kind.to_id()),
-				
-				Long =>
-				{
-					debug_assert_eq!(protected_mode_relocation_kind, RelocationKind::Relative, "AMD64 does not support anything other than relative relocations");
-					
-					None
-				},
-			};
-			
-			use self::JumpVariant::*;
-			
-			let result = match target
-			{
-				Global(ident) => statements_buffer.push_global_jump_target(ident, offset, size_in_bytes, protected_mode_relocation_id),
-				Forward(ident) => statements_buffer.push_forward_jump_target(ident, offset, size_in_bytes, protected_mode_relocation_id),
-				Backward(ident) => statements_buffer.push_backward_jump_target(ident, offset, size_in_bytes, protected_mode_relocation_id),
-				Dynamic(expression) => statements_buffer.push_dynamic_jump_target(expression, offset, size_in_bytes, protected_mode_relocation_id),
-				Bare(expression) => statements_buffer.push_bare_jump_target(expression, offset, size_in_bytes, protected_mode_relocation_id),
-			};
-			result.map_err(InstructionEncodingError::error_when_writing_machine_code)?
+			statements_buffer.push_relocation(target, offset, size, protected_mode_relocation_kind, self.mode).map_err(InstructionEncodingError::error_when_writing)?
 		}
 		Ok(())
 	}

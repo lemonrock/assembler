@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/workspace/assembler/assembler.iml" filepath="$PROJECT_DIR$/workspace/assembler/assembler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/workspace/assembler-runtime/assembler-runtime.iml" filepath="$PROJECT_DIR$/workspace/assembler-runtime/assembler-runtime.iml" />
     </modules>
   </component>
 </project>

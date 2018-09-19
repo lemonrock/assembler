@@ -19,8 +19,8 @@ pub(crate) enum SizedMnemonicArgument
 	/// A jump offset, eg `->foo`.
 	JumpTarget
 	{
-		/// Jump variant.
-		jump_variant: JumpVariant,
+		/// Jump target reference.
+		jump_target_reference: JumpTargetReference,
 		
 		/// Size.
 		size: Size
@@ -29,8 +29,8 @@ pub(crate) enum SizedMnemonicArgument
 	/// A memory reference to a label, eg `[->foo]`.
 	IndirectJumpTarget
 	{
-		/// Jump variant.
-		jump_variant: JumpVariant,
+		/// Jump target reference.
+		jump_target_reference: JumpTargetReference,
 	},
 	
 	/// A direct register reference.
@@ -68,9 +68,9 @@ impl SizedMnemonicArgument
 		{
 			DirectRegisterReference { register } => SizedMnemonicArgument::DirectRegisterReference { register: register.clone() },
 			
-			JumpTarget { ref jump_variant, .. } => SizedMnemonicArgument::JumpTarget { jump_variant: jump_variant.clone(), size },
+			JumpTarget { ref jump_target_reference, .. } => SizedMnemonicArgument::JumpTarget { jump_target_reference: jump_target_reference.clone(), size },
 			
-			IndirectJumpTarget { ref jump_variant, .. } => SizedMnemonicArgument::IndirectJumpTarget { jump_variant: jump_variant.clone() },
+			IndirectJumpTarget { ref jump_target_reference, .. } => SizedMnemonicArgument::IndirectJumpTarget { jump_target_reference: jump_target_reference.clone() },
 			
 			Immediate { ref value, .. } => SizedMnemonicArgument::Immediate { value: value.clone(), size },
 			

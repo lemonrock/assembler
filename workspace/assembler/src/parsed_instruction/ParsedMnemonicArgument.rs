@@ -21,7 +21,7 @@ pub enum ParsedMnemonicArgument
 	JumpTarget
 	{
 		/// Jump variant.
-		jump_variant: JumpVariant,
+		jump_target_reference: JumpTarget,
 		
 		/// A size hint.
 		size: Option<Size>,
@@ -31,7 +31,7 @@ pub enum ParsedMnemonicArgument
 	IndirectJumpTarget
 	{
 		/// Jump variant.
-		jump_variant: JumpVariant,
+		jump_target_reference: JumpTarget,
 		
 		/// A size hint.
 		size: Option<Size>,
