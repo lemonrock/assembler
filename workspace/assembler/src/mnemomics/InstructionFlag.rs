@@ -6,7 +6,7 @@ bitflags!
 {
 	/// Instruction flags.
     #[derive(Default)]
-	pub(crate) struct InstructionFlag2: u32
+	pub(crate) struct InstructionFlag: u32
 	{
 		/// Instruction requires a `VEX` prefix to be encoded.
 		const vex_op = 0x0000_0001;

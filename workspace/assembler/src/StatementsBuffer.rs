@@ -46,7 +46,7 @@ impl<W: Write> StatementsBuffer<W>
 	#[inline(always)]
 	pub(crate) fn push_vex_and_xop_prefixes_or_operand_size_modification_and_rex_prefixes<'a>(&mut self, assembling_for_architecture_variant: &AssemblingForArchitectureVariant, signature: &MnemonicDefinitionSignature, remaining_signature_opcode_bytes: &'a [u8], size_prefix_is_needed: bool, legacy_prefix_modification: Option<u8>, rex_prefix_is_needed: bool, rex_w_prefix_is_needed: bool, vex_l_prefix_is_needed: bool, reg: &Option<SizedMnemonicArgument>, rm: &Option<SizedMnemonicArgument>, vvvv: &Option<SizedMnemonicArgument>) -> Result<&'a [u8], InstructionEncodingError>
 	{
-		if signature.intersects_flags(InstructionFlags::VexOperationOrXopOperation)
+		if signature.intersects_flags(InstructionFlag::VexOperationOrXopOperation)
 		{
 			let prefix = if size_prefix_is_needed
 			{
@@ -94,7 +94,7 @@ impl<W: Write> StatementsBuffer<W>
 	#[inline(always)]
 	pub(crate) fn push_r_m_last_opcode_byte(&mut self, signature: &MnemonicDefinitionSignature, remaining_signature_opcode_bytes: &[u8], rm: &mut Option<SizedMnemonicArgument>)
 	{
-		if signature.contains_flags(InstructionFlags::SHORT_ARG)
+		if signature.contains_flags(InstructionFlag::short_arg)
 		{
 			let (last_opcode_byte, head) = remaining_signature_opcode_bytes.split_last().expect("invalid mnemonic signature parameters");
 			
@@ -284,7 +284,7 @@ impl<W: Write> StatementsBuffer<W>
 		
 		let byte2 = (prefix & 0x3) | (rex_w_prefix_is_needed as u8) << 7 | (!vvvv_k.code() & 0xF) << 3 | (vex_l_prefix_is_needed as u8) << 2;
 		
-		if signature.contains_flags(InstructionFlags::VEX_OP) && (byte1 & 0x7F) == 0x61 && (byte2 & 0x80) == 0
+		if signature.contains_flags(InstructionFlag::vex_op) && (byte1 & 0x7F) == 0x61 && (byte2 & 0x80) == 0
 		{
 			// 2-byte VEX.L prefix.
 			self.instruction_stream.push_u8(0xC5);
@@ -292,7 +292,7 @@ impl<W: Write> StatementsBuffer<W>
 		}
 		
 		{
-			let vex_opcode_byte = if signature.contains_flags(InstructionFlags::VEX_OP)
+			let vex_opcode_byte = if signature.contains_flags(InstructionFlag::vex_op)
 			{
 				0xC4
 			}

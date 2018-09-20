@@ -24,18 +24,19 @@ impl<'a> Line<'a>
 	#[inline(always)]
 	pub(crate) fn eat_whitespace(&mut self)
 	{
-		let peek = self.iterator.peek();
-		while let Some((_, character)) = peek
+		while let Some(&(_, character)) = self.iterator.peek()
 		{
 			if character.is_whitespace()
 			{
-				self.iterator.next();
+				break
 			}
 			else
 			{
 				return
 			}
 		}
+		
+		self.iterator.next();
 	}
 	
 	#[inline(always)]
@@ -47,37 +48,35 @@ impl<'a> Line<'a>
 	#[inline(always)]
 	pub(crate) fn tag(&mut self) -> Option<&'a str>
 	{
-		let peek = self.iterator.peek();
-		match peek
+		let starts_at = match self.iterator.peek()
 		{
-			None => None,
+			None => return None,
 			
-			Some((byte_position, character)) =>
+			Some(&(byte_position, character)) =>
 			{
-				let starts_at = *byte_position;
-				
 				if character.is_whitespace()
 				{
 					return Some("")
 				}
-				else
-				{
-					self.iterator.next();
-				}
 				
-				while let Some((byte_position, character)) = self.iterator.peek()
-				{
-					if character.is_whitespace()
-					{
-						return Some(&self.line[starts_at .. *byte_position])
-					}
-					else
-					{
-						self.iterator.next();
-					}
-				}
-				Some(&self.line[starts_at .. self.line.len()])
+				byte_position
+			}
+		};
+		
+		self.iterator.next();
+		
+		while let Some(&(byte_position, character)) = self.iterator.peek()
+		{
+			if character.is_whitespace()
+			{
+				return Some(&self.line[starts_at .. byte_position])
+			}
+			else
+			{
+				self.iterator.next();
 			}
 		}
+		
+		Some(&self.line[starts_at .. self.line.len()])
 	}
 }

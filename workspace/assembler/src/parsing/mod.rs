@@ -5,10 +5,6 @@
 use super::*;
 
 
-include!("CpuFeature2.rs");
-include!("InstructionFlag2.rs");
 include!("Line.rs");
-include!("Mnemonic.rs");
-include!("OpcodeBytes.rs");
 include!("RepeatPrefix.rs");
 include!("SegmentPrefix.rs");

@@ -43,15 +43,15 @@ impl RepeatPrefix
 	{
 		use self::RepeatPrefix::*;
 		
-		if signature.contains_flags(InstructionFlags::PREF_F0)
+		if signature.contains_flags(InstructionFlag::pref_F0)
 		{
 			Ok(Some(0xF0))
 		}
-		else if signature.contains_flags(InstructionFlags::PREF_F2)
+		else if signature.contains_flags(InstructionFlag::pref_F2)
 		{
 			Ok(Some(0xF2))
 		}
-		else if signature.contains_flags(InstructionFlags::PREF_F3)
+		else if signature.contains_flags(InstructionFlag::pref_F3)
 		{
 			Ok(Some(0xF3))
 		}
@@ -64,10 +64,10 @@ impl RepeatPrefix
 				{
 					let (prefix_byte, mnemonic_definition_signature_must_support) = match repeat_prefix
 					{
-						rep => (0xF3, InstructionFlags::REP),
-						repe_or_repz => (0xF3, InstructionFlags::REPE),
-						repnz_or_repne => (0xF2, InstructionFlags::REPE),
-						lock => (0xF0, InstructionFlags::LOCK),
+						rep => (0xF3, InstructionFlag::rep),
+						repe_or_repz => (0xF3, InstructionFlag::repe),
+						repnz_or_repne => (0xF2, InstructionFlag::repe),
+						lock => (0xF0, InstructionFlag::lock),
 					};
 					
 					if !signature.contains_flags(mnemonic_definition_signature_must_support)

@@ -6,54 +6,59 @@
 #[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub(crate) struct MnemonicDefinitionSignature
 {
-	parameters: Vec<MnemonicParameter>,
+	parameters: &'static [MnemonicParameter],
 	
-	// One or more opcode bytes.
 	opcode_bytes: &'static [u8],
 	
 	register_identifier: Option<RegisterIdentifier>,
 	
-	instruction_flags: InstructionFlags,
+	instruction_flags: u32,
 	
-	features_required: CpuFeatures,
+	cpu_feature_required: Option<CpuFeature>,
 }
 
 impl MnemonicDefinitionSignature
 {
 	#[inline(always)]
-	pub(crate) const fn new(_parameters: &'static [MnemonicParameter], _opcode_bytes: OpcodeBytes, _register_identifier: Option<RegisterIdentifier>, _instruction_flags: u32, _cpu_feature_required: Option<CpuFeature2>) -> Self
+	pub(crate) const fn new(parameters: &'static [MnemonicParameter], opcode_bytes: &'static [u8], register_identifier: Option<RegisterIdentifier>, instruction_flags: u32, cpu_feature_required: Option<CpuFeature>) -> Self
 	{
-		// TODO
-		unimplemented!();
+		Self
+		{
+			parameters,
+			opcode_bytes,
+			register_identifier,
+			instruction_flags,
+			cpu_feature_required,
+		}
 	}
 	
 	#[inline(always)]
 	pub(crate) fn address_size_override_prefix_required(&self, assembling_for_architecture_variant: &AssemblingForArchitectureVariant, address_size: AddressSize) -> bool
 	{
-		assembling_for_architecture_variant.address_size_override_prefix_required(address_size) || self.contains_flags(InstructionFlags::PREF_67)
+		assembling_for_architecture_variant.address_size_override_prefix_required(address_size) || self.contains_flags(InstructionFlag::pref_67)
 	}
 	
 	#[inline(always)]
-	pub(crate) fn contains_flags(&self, instruction_flags: InstructionFlags) -> bool
+	pub(crate) fn contains_flags(&self, instruction_flags: InstructionFlag) -> bool
 	{
-		self.instruction_flags.contains(instruction_flags)
+		self.instruction_flags().contains(instruction_flags)
 	}
 	
 	#[inline(always)]
-	pub(crate) fn intersects_flags(&self, instruction_flags: InstructionFlags) -> bool
+	pub(crate) fn intersects_flags(&self, instruction_flags: InstructionFlag) -> bool
 	{
-		self.instruction_flags.intersects(instruction_flags)
+		self.instruction_flags().intersects(instruction_flags)
 	}
 	
 	#[inline(always)]
 	pub(crate) fn matches(&self, assembling_for_architecture_variant: &AssemblingForArchitectureVariant, parsed_mnemonic_arguments: &[ParsedMnemonicArgument]) -> bool
 	{
-		if assembling_for_architecture_variant.not_supported_in_operational_mode(self.instruction_flags.contains(InstructionFlags::X86_ONLY))
+		if assembling_for_architecture_variant.not_supported_in_operational_mode(self.instruction_flags().contains(InstructionFlag::x86_only))
 		{
 			return false
 		}
 		
-		if assembling_for_architecture_variant.does_not_support_one_or_more_features(self.features_required)
+		if assembling_for_architecture_variant.feature_unsupported(self.cpu_feature_required)
 		{
 			return false
 		}
@@ -276,7 +281,7 @@ impl MnemonicDefinitionSignature
 					return false
 				},
 				
-				None => if parameter.size != AllPossible && self.instruction_flags.contains(InstructionFlags::EXACT_SIZE)
+				None => if parameter.size != AllPossible && self.contains_flags(InstructionFlag::exact_size)
 				{
 					// Basically, this format is a more specific version of an instruction that also has more general versions.
 					// This should only be picked if the size constraints are met - and not if the size is unspecified.
@@ -289,88 +294,10 @@ impl MnemonicDefinitionSignature
 	}
 	
 	#[inline(always)]
-	pub(crate) fn repeat_and_segment_prefixes_if_any(&self, prefixes: &[String]) -> Result<(Option<u8>, Option<u8>), InstructionEncodingError>
+	pub(crate) fn repeat_and_segment_prefixes_if_any(&self, _prefixes: &[String]) -> Result<(Option<u8>, Option<u8>), InstructionEncodingError>
 	{
-		macro_rules! assign_repeat_prefix
-		{
-			($self: ident, $repeat_prefix: ident, $opcode: expr, $flags: tt, $message: expr) =>
-			{
-				{
-					if !$self.contains_flags(InstructionFlags::$flags)
-					{
-						return Err(InstructionEncodingError($message))
-					}
-				
-					if $repeat_prefix.is_some()
-					{
-						return Err(InstructionEncodingError("Duplicate repeat prefix; only one of 'REP', 'REPE', 'REPNZ', 'REPNE' or 'LOCK' is allowed"))
-					}
-					
-					$repeat_prefix = Some($opcode)
-				}
-			}
-		}
-		
-		macro_rules! assign_segment_prefix
-		{
-			($segment_prefix: ident, $opcode: expr) =>
-			{
-				{
-					if $segment_prefix.is_some()
-					{
-						return Err(InstructionEncodingError("Duplicate segment prefix; only one of 'SS', 'CS', 'DS', 'ES', 'FS' or 'GS' is allowed"))
-					}
-					
-					$segment_prefix = Some($opcode)
-				}
-			}
-		}
-		
-		let mut repeat_prefix = None;
-		let mut segment_prefix = None;
-		
-		for prefix in prefixes.iter()
-		{
-			match prefix.as_str()
-			{
-				"rep" => assign_repeat_prefix!(self, repeat_prefix, 0xF3, REP, "Can not use prefix 'REP' on this instruction"),
-				
-				"repe" | "repz" => assign_repeat_prefix!(self, repeat_prefix, 0xF3, REPE, "Can not use prefix 'REPE' or 'REPZ' on this instruction"),
-				
-				"repnz" | "repne" => assign_repeat_prefix!(self, repeat_prefix, 0xF2, REPE, "Can not use prefix 'REPNZ' or 'REPNE' on this instruction"),
-				
-				"lock" => assign_repeat_prefix!(self, repeat_prefix, 0xF0, LOCK, "Can not use prefix 'LOCK' on this instruction"),
-				
-				"ss" => assign_segment_prefix!(segment_prefix, 0x36),
-				
-				"cs" => assign_segment_prefix!(segment_prefix, 0x2E),
-				
-				"ds" => assign_segment_prefix!(segment_prefix, 0x3E),
-				
-				"es" => assign_segment_prefix!(segment_prefix, 0x26),
-				
-				"fs" => assign_segment_prefix!(segment_prefix, 0x64),
-				
-				"gs" => assign_segment_prefix!(segment_prefix, 0x65),
-				
-				_ => return Err(InstructionEncodingError("Unsupported prefix"))
-			}
-		}
-		
-		if self.contains_flags(InstructionFlags::PREF_F0)
-		{
-			repeat_prefix = Some(0xF0);
-		}
-		else if self.contains_flags(InstructionFlags::PREF_F2)
-		{
-			repeat_prefix = Some(0xF2);
-		}
-		else if self.contains_flags(InstructionFlags::PREF_F3)
-		{
-			repeat_prefix = Some(0xF3);
-		}
-		
-		Ok((repeat_prefix, segment_prefix))
+		// TODO: Replaced!
+		unimplemented!()
 	}
 	
 	#[inline(always)]
@@ -404,9 +331,9 @@ impl MnemonicDefinitionSignature
 			}
 		}
 		
-		let ok = match self.instruction_flags & InstructionFlags::OneOfTheAutomaticFlagsIsSet
+		let ok = match self.instruction_flags() & InstructionFlag::OneOfTheAutomaticFlagsIsSet
 		{
-			InstructionFlags::AUTO_NO32 =>
+			InstructionFlag::auto_no_32 =>
 			{
 				match (validate_operand_size!(operand_size, assembling_for_architecture_variant), assembling_for_architecture_variant.mode)
 				{
@@ -422,7 +349,7 @@ impl MnemonicDefinitionSignature
 				}
 			}
 			
-			InstructionFlags::AUTO_REXW =>
+			InstructionFlag::auto_rex_w =>
 			{
 				match validate_operand_size!(operand_size, assembling_for_architecture_variant)
 				{
@@ -434,7 +361,7 @@ impl MnemonicDefinitionSignature
 				}
 			}
 			
-			InstructionFlags::AUTO_VEXL =>
+			InstructionFlag::auto_vex_l =>
 			{
 				match validate_operand_size!(operand_size, assembling_for_architecture_variant)
 				{
@@ -446,7 +373,7 @@ impl MnemonicDefinitionSignature
 				}
 			},
 			
-			InstructionFlags::AUTO_SIZE =>
+			InstructionFlag::auto_size =>
 			{
 				match validate_operand_size!(operand_size, assembling_for_architecture_variant)
 				{
@@ -708,11 +635,11 @@ impl MnemonicDefinitionSignature
 				
 				2 =>
 				{
-					if self.contains_flags(InstructionFlags::ENC_MR) || memory_argument_index == Some(0)
+					if self.contains_flags(InstructionFlag::enc_mr) || memory_argument_index == Some(0)
 					{
 						(register_or_none.next(), register_or_none.next(), None, None, immediates)
 					}
-					else if self.contains_flags(InstructionFlags::ENC_VM)
+					else if self.contains_flags(InstructionFlag::enc_vm)
 					{
 						let v = register_or_none.next();
 						let m = register_or_none.next();
@@ -728,14 +655,14 @@ impl MnemonicDefinitionSignature
 				
 				3 =>
 				{
-					if self.contains_flags(InstructionFlags::ENC_MR) || memory_argument_index == Some(1)
+					if self.contains_flags(InstructionFlag::enc_mr) || memory_argument_index == Some(1)
 					{
 						let r = register_or_none.next();
 						let m = register_or_none.next();
 						let v = register_or_none.next();
 						(m, r, v, None, immediates)
 					}
-					else if self.contains_flags(InstructionFlags::ENC_VM) || memory_argument_index == Some(0)
+					else if self.contains_flags(InstructionFlag::enc_vm) || memory_argument_index == Some(0)
 					{
 						let m = register_or_none.next();
 						let v = register_or_none.next();
@@ -753,7 +680,7 @@ impl MnemonicDefinitionSignature
 				
 				4 =>
 				{
-					if self.contains_flags(InstructionFlags::ENC_MR) || memory_argument_index == Some(2)
+					if self.contains_flags(InstructionFlag::enc_mr) || memory_argument_index == Some(2)
 					{
 						let r = register_or_none.next();
 						let v = register_or_none.next();
@@ -780,7 +707,7 @@ impl MnemonicDefinitionSignature
 	#[inline(always)]
 	pub(crate) fn immediate_opcode_and_remaining_opcodes(&self) -> (Option<u8>, &[u8])
 	{
-		if self.intersects_flags(InstructionFlags::IMM_OP)
+		if self.intersects_flags(InstructionFlag::imm_op)
 		{
 			let (immediate_opcode_byte, head) = self.opcode_bytes.split_last().expect("invalid mnemonic signature parameters; expected at least an `immediate_opcode_byte` at the end of the signature opcodes because the mnemonic signature has the instruction flag `IMM_OP`");
 			(Some(*immediate_opcode_byte), head)
@@ -816,18 +743,24 @@ impl MnemonicDefinitionSignature
 	#[inline(always)]
 	fn force_size_prefix(&self) -> bool
 	{
-		self.contains_flags(InstructionFlags::WORD_SIZE)
+		self.contains_flags(InstructionFlag::word_size)
 	}
 	
 	#[inline(always)]
 	fn force_rex_w_prefix(&self) -> bool
 	{
-		self.contains_flags(InstructionFlags::WITH_REXW)
+		self.contains_flags(InstructionFlag::with_rex_w)
 	}
 	
 	#[inline(always)]
 	fn force_vex_l_prefix(&self) -> bool
 	{
-		self.contains_flags(InstructionFlags::WITH_VEXL)
+		self.contains_flags(InstructionFlag::with_vex_l)
+	}
+	
+	#[inline(always)]
+	fn instruction_flags(&self) -> InstructionFlag
+	{
+		unsafe { transmute(self.instruction_flags) }
 	}
 }

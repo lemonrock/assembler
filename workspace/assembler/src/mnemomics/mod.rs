@@ -5,7 +5,8 @@
 use super::*;
 
 
-include!("InstructionFlags.rs");
+include!("InstructionFlag.rs");
+include!("Mnemonic.rs");
 include!("MnemonicDefinition.rs");
 include!("MnemonicDefinitions.rs");
 include!("MnemonicDefinitionSignature.rs");

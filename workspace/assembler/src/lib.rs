@@ -38,6 +38,7 @@ use ::either::*;
 use ::phf::Map;
 use ::std::cmp::min;
 use ::std::collections::HashMap;
+use ::std::collections::HashSet;
 use ::std::iter::Peekable;
 use ::std::io;
 use ::std::io::Write;
@@ -56,7 +57,7 @@ pub(crate) mod relocations;
 
 
 include!("AssemblingForArchitectureVariant.rs");
-include!("CpuFeatures.rs");
+include!("CpuFeature.rs");
 include!("ParsedInstruction.rs");
 include!("Parser.rs");
 include!("InstructionEncodingError.rs");

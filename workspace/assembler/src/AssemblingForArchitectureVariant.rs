@@ -5,14 +5,16 @@
 /// Represents the architecture variant we are assembling for.
 ///
 /// Default to Long mode with all x86-64 features enabled.
-#[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub struct AssemblingForArchitectureVariant
 {
 	/// Are we using Long mode or Protected mode?
 	pub mode: SupportedOperationalMode,
 	
 	/// Which combination of features are being used?
-	pub features: CpuFeatures,
+	///
+	/// Use `None` for all features.
+	pub features: Option<HashSet<CpuFeature>>,
 }
 
 impl Default for AssemblingForArchitectureVariant
@@ -23,7 +25,7 @@ impl Default for AssemblingForArchitectureVariant
 		Self
 		{
 			mode: Default::default(),
-			features: CpuFeatures::All,
+			features: None,
 		}
 	}
 }
@@ -37,7 +39,7 @@ impl AssemblingForArchitectureVariant
 	}
 	
 	#[inline(always)]
-	pub(crate) fn address_size_override_prefix_required(self, address_size: AddressSize) -> bool
+	pub(crate) fn address_size_override_prefix_required(&self, address_size: AddressSize) -> bool
 	{
 		self.mode.address_size_override_prefix_required(address_size)
 	}
@@ -55,8 +57,16 @@ impl AssemblingForArchitectureVariant
 	}
 	
 	#[inline(always)]
-	pub(crate) fn does_not_support_one_or_more_features(&self, features_required: CpuFeatures) -> bool
+	pub(crate) fn feature_unsupported(&self, feature_required: Option<CpuFeature>) -> bool
 	{
-		!self.features.contains(features_required)
+		match feature_required
+		{
+			None => false,
+			Some(feature_required) => match self.features
+			{
+				None => false,
+				Some(ref supported_features) => !supported_features.contains(&feature_required),
+			},
+		}
 	}
 }

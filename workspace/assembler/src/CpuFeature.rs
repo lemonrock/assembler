@@ -4,7 +4,7 @@
 
 /// CPU Features.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub enum CpuFeature2
+pub enum CpuFeature
 {
 	/// Floating Point Unit (FPU).
 	FPU,
