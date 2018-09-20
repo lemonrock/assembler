@@ -2,8 +2,9 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
+/// An instruction stream.
 #[derive(Debug)]
-pub(crate) struct InstructionStream<W: Write>
+pub struct InstructionStream<W: Write>
 {
 	writer: W,
 	runtime_assembler_instance_variable_name: String,
@@ -247,7 +248,7 @@ impl<W: Write> InstructionStream<W>
 	}
 	
 	#[inline(always)]
-	fn push_scaled_index_byte_with_scale_calculated_by_expression(&mut self, scale: isize, expression: RustExpression, reg1: RegisterIdentifier, reg2: RegisterIdentifier) -> io::Result<()>
+	pub(crate) fn push_scaled_index_byte_with_scale_calculated_by_expression(&mut self, scale: isize, expression: RustExpression, reg1: RegisterIdentifier, reg2: RegisterIdentifier) -> io::Result<()>
 	{
 		writeln!(self.writer);
 		writeln!(self.writer, "// push_scaled_index_byte_with_scale_calculated_by_expression.");
@@ -280,7 +281,7 @@ impl<W: Write> InstructionStream<W>
 			
 			QWORD => (8, qword),
 			
-			OWORD => (16, qword),
+			OWORD => (16, oword),
 			
 			_ => panic!("size '{:?}' is not supported; it must be one of BYTE, WORD, DWORD, QWORD or OWORD", size),
 		};
@@ -323,11 +324,11 @@ impl<W: Write> InstructionStream<W>
 				writeln!(self.writer, "u{}.to_le());", length * 8)?;
 			}
 			
-			length @ _ =>
+			_ =>
 			{
 				write!(self.writer, "{}.push_bytes(&[", self.runtime_assembler_instance_variable_name)?;
 				
-				let iterator = self.accumulated_bytes_so_far.iter();
+				let mut iterator = self.accumulated_bytes_so_far.iter();
 				let first = *iterator.next().unwrap();
 				write!(self.writer, "0x{:02X}", first)?;
 				for byte in iterator

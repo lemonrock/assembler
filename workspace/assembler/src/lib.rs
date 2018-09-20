@@ -41,6 +41,7 @@ include!("AssemblingForArchitectureVariant.rs");
 include!("CpuFeatures.rs");
 include!("ParsedInstruction.rs");
 include!("InstructionEncodingError.rs");
+include!("InstructionStream.rs");
 include!("Size.rs");
 include!("StatementsBuffer.rs");
 include!("SupportedOperationalMode.rs");

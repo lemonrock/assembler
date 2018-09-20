@@ -72,7 +72,8 @@ impl RustExpression
 	#[inline(always)]
 	pub(crate) fn to_rust_code(&self) -> String
 	{
-	
+		// TODO
+		unimplemented!()
 	}
 	
 	#[inline(always)]
@@ -167,7 +168,3 @@ impl RustExpression
 		}
 	}
 }
-
-// TODO: Revise.
-/// `pub type Ident = Spanned<ast::Ident>`.
-pub type RustIdent = String;

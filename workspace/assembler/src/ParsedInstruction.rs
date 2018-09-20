@@ -6,13 +6,15 @@
 #[derive(Debug,  Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct ParsedInstruction
 {
-	prefixes: Vec<String>,
+	prefixes: ArrayVec<[String; ParsedInstruction::MaximumPrefixes]>,
 	mnemonic_name: String,
 	arguments: ArrayVec<[ParsedMnemonicArgument; ParsedInstruction::MaximumMnemonicArguments]>,
 }
 
 impl ParsedInstruction
 {
+	pub(crate) const MaximumPrefixes: usize = 16;
+	
 	pub(crate) const MaximumMnemonicArguments: usize = 8;
 	
 	/// Encodes an assembler instruction.

@@ -2,32 +2,30 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub(crate) struct Relocation
+pub struct Parser
 {
-	target: JumpTargetReference,
-	offset: u8,
-	size: Size,
-	protected_mode_relocation_kind: RelocationKind,
+
 }
 
-impl Relocation
+impl Parser
 {
 	#[inline(always)]
-	pub(crate) fn new(target: JumpTargetReference, size: Size, protected_mode_relocation_kind: RelocationKind) -> Self
+	pub fn parse_prefixes(&mut self)
 	{
-		Self
+		let mut prefixes: ArrayVec<[String; 16]> = ArrayVec::new();
+		let mut span = parser.span;
+		let mut token = parse_ident_or_rust_keyword(parser)?;
+		
+		while Self::is_prefix(token)
 		{
-			target,
-			offset: 0,
-			size,
-			protected_mode_relocation_kind,
+			prefixes.push(token.to_string());
+			token = parse_ident_or_rust_keyword(parser)?
 		}
 	}
 	
 	#[inline(always)]
-	pub(crate) fn bump(&mut self, size: Size)
+	fn is_prefix(token: &str) -> bool
 	{
-		self.offset += size.to_bytes()
+		phf_set!("lock", "rep", "repe", "repz", "repne", "repnz", "ss", "cs", "ds", "es", "fs", "gs").contains(token)
 	}
 }

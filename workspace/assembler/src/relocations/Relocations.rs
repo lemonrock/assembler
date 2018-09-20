@@ -22,7 +22,7 @@ impl Relocations
 	}
 	
 	#[inline(always)]
-	pub(crate) fn push_jump_target_reference_addressing(&mut self, target: JumpTarget, size: Size)
+	pub(crate) fn push_jump_target_reference_addressing(&mut self, target: JumpTargetReference, size: Size)
 	{
 		use self::SupportedOperationalMode::*;
 		
@@ -34,7 +34,7 @@ impl Relocations
 	}
 	
 	#[inline(always)]
-	pub(crate) fn push_extern(&mut self, target: JumpTarget, size: Size) -> Result<(), InstructionEncodingError>
+	pub(crate) fn push_extern(&mut self, target: JumpTargetReference, size: Size) -> Result<(), InstructionEncodingError>
 	{
 		use self::SupportedOperationalMode::*;
 		
@@ -48,13 +48,13 @@ impl Relocations
 	}
 	
 	#[inline(always)]
-	pub(crate) fn push_relative(&mut self, target: JumpTarget, size: Size)
+	pub(crate) fn push_relative(&mut self, target: JumpTargetReference, size: Size)
 	{
 		self.push(target, size, RelocationKind::Relative)
 	}
 	
 	#[inline(always)]
-	fn push(&mut self, target: JumpTarget, size: Size, protected_mode_relocation_kind: RelocationKind)
+	fn push(&mut self, target: JumpTargetReference, size: Size, protected_mode_relocation_kind: RelocationKind)
 	{
 		self.relocations.push(Relocation::new(target, size, protected_mode_relocation_kind))
 	}

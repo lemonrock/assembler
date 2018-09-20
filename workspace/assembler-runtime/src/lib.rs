@@ -6,6 +6,8 @@
 #![allow(non_upper_case_globals)]
 #![deny(missing_docs)]
 #![deny(unreachable_patterns)]
+#![feature(plugin, core_intrinsics)]
+#![plugin(phf_macros)]
 
 
 //! #assembler-runtime
@@ -15,12 +17,21 @@
 //! This crate provides the necessary runtime support.
 
 
+extern crate libc;
+#[macro_use] extern crate likely;
+extern crate phf;
+
+
 use self::relocations::*;
 use self::relocations::long::*;
 use self::relocations::protected::*;
+use ::libc::*;
 use ::std::collections::HashMap;
+use ::std::io;
 use ::std::mem::size_of;
+use ::std::mem::transmute;
 use ::std::ptr::copy_nonoverlapping;
+use ::std::ptr::null_mut;
 
 
 /// Relocations.
@@ -28,5 +39,6 @@ pub mod relocations;
 
 
 include!("Assembler.rs");
+include!("ExecutableAnonymousMemoryMap.rs");
 include!("Label.rs");
 include!("PushValue.rs");

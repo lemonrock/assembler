@@ -30,6 +30,18 @@ impl<W: Write> StatementsBuffer<W>
 		}
 	}
 	
+	#[inline(always)]
+	pub(crate) fn push_u8_if_some(&mut self, value: Option<u8>)
+	{
+		self.instruction_stream.push_u8_if_some(value)
+	}
+	
+	#[inline(always)]
+	pub(crate) fn push_u8_if(&mut self, condition: bool, value: u8)
+	{
+		self.instruction_stream.push_u8_if(condition, value)
+	}
+	
 	/// VEX and XOP prefixes embed the operand size prefix or modification prefixes in them.
 	#[inline(always)]
 	pub(crate) fn push_vex_and_xop_prefixes_or_operand_size_modification_and_rex_prefixes<'a>(&mut self, assembling_for_architecture_variant: &AssemblingForArchitectureVariant, signature: &MnemonicDefinitionSignature, remaining_signature_opcode_bytes: &'a [u8], size_prefix_is_needed: bool, legacy_prefix_modification: Option<u8>, rex_prefix_is_needed: bool, rex_w_prefix_is_needed: bool, vex_l_prefix_is_needed: bool, reg: &Option<SizedMnemonicArgument>, rm: &Option<SizedMnemonicArgument>, vvvv: &Option<SizedMnemonicArgument>) -> Result<&'a [u8], InstructionEncodingError>
@@ -188,7 +200,7 @@ impl<W: Write> StatementsBuffer<W>
 					self.instruction_stream.push_unsigned_constant(0, size);
 					relocations.bump(size);
 					
-					if let JumpTarget::Bare(_) = jump_target_reference
+					if let JumpTargetReference::Bare { .. } = jump_target_reference
 					{
 						relocations.push_extern(jump_target_reference, size)?
 					}
@@ -210,12 +222,12 @@ impl<W: Write> StatementsBuffer<W>
 	{
 		use self::JumpTargetReference::*;
 		
-		let result = match target
+		match target
 		{
-			Labelled { prefix, number_u32 } => self.instruction_stream.push_dynamic_jump_target_reference(relocation_offset, size, protected_mode_relocation_kind, mode, prefix, number_32),
+			Labelled { prefix, number_u32 } => self.instruction_stream.push_labelled_jump_target_reference(relocation_offset, size, protected_mode_relocation_kind, mode, prefix, number_u32),
 			
 			Bare { target_address_usize } => self.instruction_stream.push_bare_jump_target_reference(relocation_offset, size, protected_mode_relocation_kind, mode, target_address_usize),
-		};
+		}
 	}
 	
 	#[inline(always)]
@@ -352,7 +364,7 @@ impl<W: Write> StatementsBuffer<W>
 	}
 	
 	#[inline(always)]
-	fn jump_target_reference_relative_addressing(&mut self, mode: SupportedOperationalMode, signature: &MnemonicDefinitionSignature, reg: Option<SizedMnemonicArgument>, target: JumpTarget) -> Relocations
+	fn jump_target_reference_relative_addressing(&mut self, mode: SupportedOperationalMode, signature: &MnemonicDefinitionSignature, reg: Option<SizedMnemonicArgument>, target: JumpTargetReference) -> Relocations
 	{
 		use self::Size::*;
 		
@@ -434,13 +446,13 @@ impl<W: Write> StatementsBuffer<W>
 		let index_register_identifier = register.identifier();
 		match expression
 		{
-			Some(expression) => self.push_scaled_index_byte_with_scale_calculated_by_expression(scale, expression, index_register_identifier, base)?,
+			Some(expression) => self.instruction_stream.push_scaled_index_byte_with_scale_calculated_by_expression(scale, expression, index_register_identifier, base)?,
 			None => self.push_mod_rm_byte_or_scaled_index_byte(ParsedIndirectMemoryReferenceIndex::encode_scale(scale), index_register_identifier, base),
 		}
 		
 		match displacement
 		{
-			Some(displacement) => self.push_signed_expression(displacement, if mod_ == Self::MOD_DISPLACEMENT_8 {BYTE} else {DWORD})?,
+			Some(displacement) => self.instruction_stream.push_signed_expression(displacement, if mod_ == Self::MOD_DISPLACEMENT_8 {BYTE} else {DWORD})?,
 			None => if mod_ == Self::MOD_DISPLACEMENT_8
 			{
 				self.instruction_stream.push_u8(0);
@@ -519,7 +531,7 @@ impl<W: Write> StatementsBuffer<W>
 				// Hack: worked around using with relocations and re-using the JumpTarget::Bare.
 				self.instruction_stream.push_u32(0);
 				let displacement = displacement.unwrap_or_else(|| RustExpression::zero());
-				relocations.push_jump_target_reference_addressing(JumpTarget::Bare(displacement), DWORD)
+				relocations.push_jump_target_reference_addressing(JumpTargetReference::Bare { target_address_usize: displacement }, DWORD)
 			},
 		}
 		Ok(relocations)
@@ -571,7 +583,7 @@ impl<W: Write> StatementsBuffer<W>
 				let index_register_identifier = register.identifier();
 				match expression
 				{
-					Some(expression) => self.push_scaled_index_byte_with_scale_calculated_by_expression(scale, expression, index_register_identifier, base)?,
+					Some(expression) => self.instruction_stream.push_scaled_index_byte_with_scale_calculated_by_expression(scale, expression, index_register_identifier, base)?,
 					None => self.push_mod_rm_byte_or_scaled_index_byte(ParsedIndirectMemoryReferenceIndex::encode_scale(scale), index_register_identifier, base),
 				}
 			}
