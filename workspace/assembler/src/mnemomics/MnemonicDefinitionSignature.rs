@@ -13,15 +13,20 @@ pub(crate) struct MnemonicDefinitionSignature
 	
 	register_identifier: Option<RegisterIdentifier>,
 	
-	// Defaults to InstructionFlags::DEFAULT.
 	instruction_flags: InstructionFlags,
 	
-	// Defaults to CpuFeatures::X64_IMPLICIT.
 	features_required: CpuFeatures,
 }
 
 impl MnemonicDefinitionSignature
 {
+	#[inline(always)]
+	pub(crate) const fn new(_parameters: &'static [MnemonicParameter], _opcode_bytes: OpcodeBytes, _register_identifier: Option<RegisterIdentifier>, _instruction_flags: u32, _cpu_feature_required: Option<CpuFeature2>) -> Self
+	{
+		// TODO
+		unimplemented!();
+	}
+	
 	#[inline(always)]
 	pub(crate) fn address_size_override_prefix_required(&self, assembling_for_architecture_variant: &AssemblingForArchitectureVariant, address_size: AddressSize) -> bool
 	{

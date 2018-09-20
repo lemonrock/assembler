@@ -13,6 +13,16 @@ pub(crate) struct MnemonicParameter
 impl MnemonicParameter
 {
 	#[inline(always)]
+	pub(crate) const fn new(kind: MnemonicParameterKind, size: MnemonicParameterSize) -> Self
+	{
+		Self
+		{
+			kind,
+			size,
+		}
+	}
+	
+	#[inline(always)]
 	pub(crate) fn to_size(&self, operand_size: Option<Size>, immediate_size: Option<Size>) -> Size
 	{
 		use self::MnemonicParameterKind::*;

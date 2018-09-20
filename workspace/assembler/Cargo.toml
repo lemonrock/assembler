@@ -20,3 +20,6 @@ version = "0.0.0"
 [dependencies]
 arrayvec = "^0.4"
 bitflags = "^1.0"
+either = "^1.5"
+phf = "^0.7"
+phf_macros = "^0.7"
