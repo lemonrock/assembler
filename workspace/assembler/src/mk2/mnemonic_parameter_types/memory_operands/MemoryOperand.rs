@@ -41,7 +41,8 @@ impl MemoryOperand
 
 // TODO: GeneralPurposeRegister.to_u64()
 // TODO: AnySegmentRegister.to_u64()
-	
+// TODO: Type 'Label'.
+// TODO: FIx overload InstructionStream funcs by putting types of the arg0 - arg3 into the method name.
 	
 	// TODO: const fn new won't work as it uses 'match'
 	#[inline(always)]
