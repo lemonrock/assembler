@@ -21,7 +21,7 @@ pub(crate) enum RepeatPrefix
 impl RepeatPrefix
 {
 	#[inline(always)]
-	pub(crate) fn parse_prefix(potential_prefix_tag: &str) -> Option<RepeatPrefix>
+	pub(crate) fn parse_prefix(potential_prefix_tag_already_in_ascii_lower_case: &str) -> Option<RepeatPrefix>
 	{
 		use self::RepeatPrefix::*;
 		
@@ -35,7 +35,7 @@ impl RepeatPrefix
 			"lock" => lock,
 		};
 		
-		KnownPrefixes.get(potential_prefix_tag).map(|reference| *reference)
+		KnownPrefixes.get(potential_prefix_tag_already_in_ascii_lower_case).map(|reference| *reference)
 	}
 	
 	#[inline(always)]

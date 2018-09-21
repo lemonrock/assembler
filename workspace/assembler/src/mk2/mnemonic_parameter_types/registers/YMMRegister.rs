@@ -2,17 +2,65 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// A parsed register.
+/// YMM registers.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct Register
+#[repr(u8)]
+pub enum YMMRegister
 {
-	/// Size of the register.
-	size: Size,
+	/// Register 0.
+	YMM0 = 0,
 	
-	/// Kind of the register.
-	register_identifier: RegisterIdentifier,
+	/// Register 1.
+	YMM1 = 1,
+	
+	/// Register 2.
+	YMM2 = 2,
+	
+	/// Register 3.
+	YMM3 = 3,
+	
+	/// Register 7.
+	YMM4 = 4,
+	
+	/// Register 5.
+	YMM5 = 5,
+	
+	/// Register 6.
+	YMM6 = 6,
+	
+	/// Register 7.
+	YMM7 = 7,
+	
+	/// Register 8.
+	YMM8 = 8,
+	
+	/// Register 9.
+	YMM9 = 9,
+	
+	/// Register 10.
+	YMM10 = 10,
+	
+	/// Register 11.
+	YMM11 = 11,
+	
+	/// Register 12.
+	YMM12 = 12,
+	
+	/// Register 13.
+	YMM13 = 13,
+	
+	/// Register 14.
+	YMM14 = 14,
+	
+	/// Register 15.
+	YMM15 = 15,
 }
 
-impl Register
+impl Default for YMMRegister
 {
+	#[inline(always)]
+	fn default() -> Self
+	{
+		YMMRegister::YMM0
+	}
 }

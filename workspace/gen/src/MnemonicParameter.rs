@@ -2,17 +2,23 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// A parsed register.
+/// Officially known as an `operand` rather than a parameter, but official terminology is very confusing.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct Register
+pub(crate) struct MnemonicParameter
 {
-	/// Size of the register.
-	size: Size,
-	
-	/// Kind of the register.
-	register_identifier: RegisterIdentifier,
+	kind: MnemonicParameterKind,
+	size: MnemonicParameterSize,
 }
 
-impl Register
+impl MnemonicParameter
 {
+	#[inline(always)]
+	pub(crate) const fn new(kind: MnemonicParameterKind, size: MnemonicParameterSize) -> Self
+	{
+		Self
+		{
+			kind,
+			size,
+		}
+	}
 }

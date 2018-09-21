@@ -2,17 +2,31 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// A parsed register.
+/// Register 4 (`FS`) and Register 5 (`GS`) are not defined on this enumeration.
+///
+/// Whilst technically valid to use, they are better encoded via the specialist singleton registers `FS::O` and `GS::O` as these produce a higher code density.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct Register
+#[repr(u8)]
+pub enum SegmentRegister
 {
-	/// Size of the register.
-	size: Size,
-	
-	/// Kind of the register.
-	register_identifier: RegisterIdentifier,
+	/// Register 0.
+	ES = 1,
+
+	/// Register 1.
+	CS = 1,
+
+	/// Register 2.
+	SS = 2,
+
+	/// Register 3.
+	DS = 3,
 }
 
-impl Register
+impl Default for SegmentRegister
 {
+	#[inline(always)]
+	fn default() -> Self
+	{
+		SegmentRegister::ES
+	}
 }

@@ -2,17 +2,40 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// A parsed register.
+/// Register 0 (`ST0`) is not defined on this enumeration.
+///
+/// Whilst technically valid to use, it is better encoded via the specialist singleton register `STO::O` as this produces a higher code density.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct Register
+#[repr(u8)]
+pub enum X87Register
 {
-	/// Size of the register.
-	size: Size,
+	/// Register 1.
+	ST1 = 1,
 	
-	/// Kind of the register.
-	register_identifier: RegisterIdentifier,
+	/// Register 2.
+	ST2 = 2,
+	
+	/// Register 3.
+	ST3 = 3,
+	
+	/// Register 7.
+	ST4 = 4,
+	
+	/// Register 5.
+	ST5 = 5,
+	
+	/// Register 6.
+	ST6 = 6,
+	
+	/// Register 7.
+	ST7 = 7,
 }
 
-impl Register
+impl Default for X87Register
 {
+	#[inline(always)]
+	fn default() -> Self
+	{
+		X87Register::ST1
+	}
 }

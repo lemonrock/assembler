@@ -2,17 +2,20 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// A parsed register.
-#[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct Register
-{
-	/// Size of the register.
-	size: Size,
-	
-	/// Kind of the register.
-	register_identifier: RegisterIdentifier,
-}
+use super::*;
 
-impl Register
-{
-}
+
+/// Singleton registers, which are usually optimal for encoding.
+pub mod singleton;
+
+
+include!("MMRegister.rs");
+include!("Register8Bit.rs");
+include!("Register16Bit.rs");
+include!("Register32Bit.rs");
+include!("Register64Bit.rs");
+include!("RegisterHigh8BitsOf16Bits.rs");
+include!("SegmentRegister.rs");
+include!("X87Register.rs");
+include!("XMMRegister.rs");
+include!("YMMRegister.rs");

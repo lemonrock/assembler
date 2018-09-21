@@ -2,17 +2,41 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// A parsed register.
+/// MMX registers.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct Register
+#[repr(u8)]
+pub enum MMRegister
 {
-	/// Size of the register.
-	size: Size,
+	/// Register 0.
+	MM0 = 0,
 	
-	/// Kind of the register.
-	register_identifier: RegisterIdentifier,
+	/// Register 1.
+	MM1 = 1,
+	
+	/// Register 2.
+	MM2 = 2,
+	
+	/// Register 3.
+	MM3 = 3,
+	
+	/// Register 7.
+	MM4 = 4,
+	
+	/// Register 5.
+	MM5 = 5,
+	
+	/// Register 6.
+	MM6 = 6,
+	
+	/// Register 7.
+	MM7 = 7,
 }
 
-impl Register
+impl Default for MMRegister
 {
+	#[inline(always)]
+	fn default() -> Self
+	{
+		MMRegister::MM0
+	}
 }

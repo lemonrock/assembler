@@ -1,0 +1,44 @@
+// TODO:
+- generate names for overloaded functions, but
+	- do not generate if only one instance kind.
+- some functions have unused arguments (eg a default register)
+
+
+Relative32Bit
+Relative8Bit
+
+
+Label
+
+Far
+FarPointer16BitTo16Bit
+FarPointer16BitTo32Bit
+FarPointer16BitTo64Bit
+
+MemoryOffset8Bit
+MemoryOffset16Bit
+MemoryOffset32Bit
+MemoryOffset64Bit
+
+
+X87Float32BitMemory
+X87Float64BitMemory
+X87Float80BitMemory
+X87Integer16BitMemory
+X87Integer32BitMemory
+X87Integer64BitMemory
+X87BinaryCodedDecimal80BitMemory
+
+Contiguous108ByteMemory
+Contiguous28ByteMemory
+Contiguous2ByteMemory
+Contiguous512ByteMemory
+
+Any8BitMemory
+Any16BitMemory
+Any32BitMemory
+Any64BitMemory
+Any128BitMemory
+Any256BitMemory
+
+arg0 to arg3

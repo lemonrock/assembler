@@ -31,7 +31,7 @@ extern crate phf;
 use self::mnemomics::*;
 use self::parsed_instruction::*;
 use self::parsed_instruction::rust::*;
-use self::parsing::*;
+//use self::parsing::*;
 use self::relocations::*;
 use ::arrayvec::ArrayVec;
 use ::either::*;
@@ -49,7 +49,8 @@ use ::std::str::CharIndices;
 
 pub(crate) mod mnemomics;
 
-pub(crate) mod parsing;
+pub(crate) mod mk2;
+//pub(crate) mod parsing;
 
 pub(crate) mod parsed_instruction;
 
@@ -58,8 +59,9 @@ pub(crate) mod relocations;
 
 include!("AssemblingForArchitectureVariant.rs");
 include!("CpuFeature.rs");
+include!("InstructionParsingError.rs");
 include!("ParsedInstruction.rs");
-include!("Parser.rs");
+//include!("Parser.rs");
 include!("InstructionEncodingError.rs");
 include!("InstructionStream.rs");
 include!("Size.rs");

@@ -2,17 +2,23 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// A parsed register.
+/// Represents a hint.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct Register
+#[repr(u8)]
+pub enum Hint
 {
-	/// Size of the register.
-	size: Size,
+	/// Hint taken.
+	Taken = 0,
 	
-	/// Kind of the register.
-	register_identifier: RegisterIdentifier,
+	/// Hint not taken.
+	NotTaken = 1,
 }
 
-impl Register
+impl Default for Hint
 {
+	#[inline(always)]
+	fn default() -> Self
+	{
+		X87Register::ST1
+	}
 }

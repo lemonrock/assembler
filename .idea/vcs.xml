@@ -4,5 +4,7 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/.cargo" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/workspace/assembler/.cargo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/workspace/assembler/lib/x64asm" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/workspace/gen/lib/x64asm" vcs="Git" />
   </component>
 </project>

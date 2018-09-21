@@ -2,17 +2,29 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// A parsed register.
+/// High 8-bits of the first four general purpose registers.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct Register
+#[repr(u8)]
+pub enum RegisterHigh8BitsOf16Bits
 {
-	/// Size of the register.
-	size: Size,
+	/// Register 0.
+	AH = 4,
 	
-	/// Kind of the register.
-	register_identifier: RegisterIdentifier,
+	/// Register 1.
+	CH = 5,
+	
+	/// Register 2.
+	DH = 6,
+	
+	/// Register 3.
+	BH = 7,
 }
 
-impl Register
+impl Default for RegisterHigh8BitsOf16Bits
 {
+	#[inline(always)]
+	fn default() -> Self
+	{
+		RegisterHigh8BitsOf16Bits::AH
+	}
 }

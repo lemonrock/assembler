@@ -2,17 +2,26 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// A parsed register.
-#[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct Register
+macro_rules! singleton
 {
-	/// Size of the register.
-	size: Size,
-	
-	/// Kind of the register.
-	register_identifier: RegisterIdentifier,
+    ($name: tt) =>
+    {
+        /// Singleton reference to `$name`.
+        #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
+        pub enum $name
+        {
+        	/// Singleton instance of this parameter.
+        	O,
+        }
+        
+        impl Default for $name
+        {
+        	#[inline(always)]
+        	fn default() -> Self
+        	{
+        		$name::O
+        	}
+        }
+    }
 }
 
-impl Register
-{
-}

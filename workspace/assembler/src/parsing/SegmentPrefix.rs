@@ -28,7 +28,7 @@ pub(crate) enum SegmentPrefix
 impl SegmentPrefix
 {
 	#[inline(always)]
-	pub(crate) fn parse_prefix(potential_prefix_tag: &str) -> Option<SegmentPrefix>
+	pub(crate) fn parse_prefix(potential_prefix_tag_already_in_ascii_lower_case: &str) -> Option<SegmentPrefix>
 	{
 		use self::SegmentPrefix::*;
 		
@@ -42,7 +42,7 @@ impl SegmentPrefix
 			"gs" => gs,
 		};
 		
-		KnownPrefixes.get(potential_prefix_tag).map(|reference| *reference)
+		KnownPrefixes.get(potential_prefix_tag_already_in_ascii_lower_case).map(|reference| *reference)
 	}
 	
 	#[inline(always)]

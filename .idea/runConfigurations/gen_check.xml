@@ -1,10 +1,10 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="assembler test" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+  <configuration default="false" name="gen check" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
     <option name="channel" value="NIGHTLY" />
-    <option name="command" value="test" />
+    <option name="command" value="check" />
     <option name="nocapture" value="true" />
     <option name="backtrace" value="SHORT" />
-    <option name="workingDirectory" value="file://$PROJECT_DIR$/workspace/assembler" />
+    <option name="workingDirectory" value="file://$PROJECT_DIR$/workspace/gen" />
     <envs />
     <method v="2" />
   </configuration>

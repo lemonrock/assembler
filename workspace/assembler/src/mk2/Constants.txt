@@ -1,0 +1,13 @@
+Constants::xmm0() => Self::XMM0
+Constants::r64s() => Self::R64S
+	- this has an array suffix of [n], where n is 0 to 7.
+	- Now are Self::R64S_<n> where <n> is 0 to 7.
+	
+0
+1
+2
+3
+4
+5
+6
+7

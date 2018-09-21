@@ -2,17 +2,10 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// A parsed register.
-#[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct Register
-{
-	/// Size of the register.
-	size: Size,
-	
-	/// Kind of the register.
-	register_identifier: RegisterIdentifier,
-}
+use super::*;
 
-impl Register
-{
-}
+
+include!("MemoryOffset8Bit.rs");
+include!("MemoryOffset16Bit.rs");
+include!("MemoryOffset32Bit.rs");
+include!("MemoryOffset64Bit.rs");

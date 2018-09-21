@@ -2,17 +2,19 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// A parsed register.
-#[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct Register
-{
-	/// Size of the register.
-	size: Size,
-	
-	/// Kind of the register.
-	register_identifier: RegisterIdentifier,
-}
+use super::*;
 
-impl Register
-{
-}
+
+include!("singleton_register.rs");
+
+
+include!("AL.rs");
+include!("AX.rs");
+include!("CL.rs");
+include!("DX.rs");
+include!("EAX.rs");
+include!("FS.rs");
+include!("GS.rs");
+include!("RAX.rs");
+include!("ST0.rs");
+include!("XMM0.rs");
