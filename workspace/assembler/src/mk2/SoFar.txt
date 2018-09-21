@@ -788,7 +788,7 @@ pub trait InstructionStream
 
 	/// Call near, relative, displacement relative to next instruction.
 	/// 32-bit displacement sign extended to 64-bits in 64-bit mode.
-	fn call(&mut self, arg0: Relative32Bit);
+	fn call(&mut self, arg0: RelativeAddress32Bit);
 
 	/// AX = sign-extend of AL.
 	fn cbw(&mut self);
@@ -2647,16 +2647,16 @@ pub trait InstructionStream
 	fn ja_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if above (CF=0 and ZF=0).
-	fn ja(&mut self, arg0: Relative32Bit);
+	fn ja(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if above (CF=0 and ZF=0).
-	fn ja(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn ja(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if above (CF=0 and ZF=0).
-	fn ja(&mut self, arg0: Relative8Bit);
+	fn ja(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if above (CF=0 and ZF=0).
-	fn ja(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn ja(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if above or equal (CF=0).
 	fn jae(&mut self, arg0: Label);
@@ -2671,16 +2671,16 @@ pub trait InstructionStream
 	fn jae_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if above or equal (CF=0).
-	fn jae(&mut self, arg0: Relative32Bit);
+	fn jae(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if above or equal (CF=0).
-	fn jae(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jae(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if above or equal (CF=0).
-	fn jae(&mut self, arg0: Relative8Bit);
+	fn jae(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if above or equal (CF=0).
-	fn jae(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jae(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if below (CF=1).
 	fn jb(&mut self, arg0: Label);
@@ -2695,16 +2695,16 @@ pub trait InstructionStream
 	fn jb_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if below (CF=1).
-	fn jb(&mut self, arg0: Relative32Bit);
+	fn jb(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if below (CF=1).
-	fn jb(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jb(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if below (CF=1).
-	fn jb(&mut self, arg0: Relative8Bit);
+	fn jb(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if below (CF=1).
-	fn jb(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jb(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if below or equal (CF=1 or ZF=1).
 	fn jbe(&mut self, arg0: Label);
@@ -2719,16 +2719,16 @@ pub trait InstructionStream
 	fn jbe_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if below or equal (CF=1 or ZF=1).
-	fn jbe(&mut self, arg0: Relative32Bit);
+	fn jbe(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if below or equal (CF=1 or ZF=1).
-	fn jbe(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jbe(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if below or equal (CF=1 or ZF=1).
-	fn jbe(&mut self, arg0: Relative8Bit);
+	fn jbe(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if below or equal (CF=1 or ZF=1).
-	fn jbe(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jbe(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if carry (CF=1).
 	fn jc(&mut self, arg0: Label);
@@ -2743,16 +2743,16 @@ pub trait InstructionStream
 	fn jc_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if carry (CF=1).
-	fn jc(&mut self, arg0: Relative32Bit);
+	fn jc(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if carry (CF=1).
-	fn jc(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jc(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if carry (CF=1).
-	fn jc(&mut self, arg0: Relative8Bit);
+	fn jc(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if carry (CF=1).
-	fn jc(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jc(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if equal (ZF=1).
 	fn je(&mut self, arg0: Label);
@@ -2767,16 +2767,16 @@ pub trait InstructionStream
 	fn je_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if 0 (ZF=1).
-	fn je(&mut self, arg0: Relative32Bit);
+	fn je(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if 0 (ZF=1).
-	fn je(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn je(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if equal (ZF=1).
-	fn je(&mut self, arg0: Relative8Bit);
+	fn je(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if equal (ZF=1).
-	fn je(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn je(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if ECX register is 0.
 	fn jecxz(&mut self, arg0: Label);
@@ -2785,10 +2785,10 @@ pub trait InstructionStream
 	fn jecxz(&mut self, arg0: Label, arg1: Hint);
 
 	/// Jump short if ECX register is 0.
-	fn jecxz(&mut self, arg0: Relative8Bit);
+	fn jecxz(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if ECX register is 0.
-	fn jecxz(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jecxz(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if greater (ZF=0 and SF=OF).
 	fn jg(&mut self, arg0: Label);
@@ -2803,16 +2803,16 @@ pub trait InstructionStream
 	fn jg_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if greater (ZF=0 and SF=OF).
-	fn jg(&mut self, arg0: Relative32Bit);
+	fn jg(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if greater (ZF=0 and SF=OF).
-	fn jg(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jg(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if greater (ZF=0 and SF=OF).
-	fn jg(&mut self, arg0: Relative8Bit);
+	fn jg(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if greater (ZF=0 and SF=OF).
-	fn jg(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jg(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if greater or equal (SF=OF).
 	fn jge(&mut self, arg0: Label);
@@ -2827,16 +2827,16 @@ pub trait InstructionStream
 	fn jge_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if greater or equal (SF=OF).
-	fn jge(&mut self, arg0: Relative32Bit);
+	fn jge(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if greater or equal (SF=OF).
-	fn jge(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jge(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if greater or equal (SF=OF).
-	fn jge(&mut self, arg0: Relative8Bit);
+	fn jge(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if greater or equal (SF=OF).
-	fn jge(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jge(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if less (SF!= OF).
 	fn jl(&mut self, arg0: Label);
@@ -2851,16 +2851,16 @@ pub trait InstructionStream
 	fn jl_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if less (SF!= OF).
-	fn jl(&mut self, arg0: Relative32Bit);
+	fn jl(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if less (SF!= OF).
-	fn jl(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jl(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if less (SF!= OF).
-	fn jl(&mut self, arg0: Relative8Bit);
+	fn jl(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if less (SF!= OF).
-	fn jl(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jl(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if less or equal (ZF=1 or SF!= OF).
 	fn jle(&mut self, arg0: Label);
@@ -2875,16 +2875,16 @@ pub trait InstructionStream
 	fn jle_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if less or equal (ZF=1 or SF!= OF).
-	fn jle(&mut self, arg0: Relative32Bit);
+	fn jle(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if less or equal (ZF=1 or SF!= OF).
-	fn jle(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jle(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if less or equal (ZF=1 or SF!= OF).
-	fn jle(&mut self, arg0: Relative8Bit);
+	fn jle(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if less or equal (ZF=1 or SF!= OF).
-	fn jle(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jle(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump far, absolute indirect, address given in m16:16.
 	fn jmp(&mut self, arg0: FarPointer16BitTo16Bit);
@@ -2908,10 +2908,10 @@ pub trait InstructionStream
 	fn jmp(&mut self, arg0: Register64Bit);
 
 	/// Jump near, relative, RIP = RIP + 32-bit displacement sign extended to 64-bits.
-	fn jmp(&mut self, arg0: Relative32Bit);
+	fn jmp(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump short, RIP = RIP + 8-bit displacement sign extended to 64-bits.
-	fn jmp(&mut self, arg0: Relative8Bit);
+	fn jmp(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not above (CF=1 or ZF=1).
 	fn jna(&mut self, arg0: Label);
@@ -2926,16 +2926,16 @@ pub trait InstructionStream
 	fn jna_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if not above (CF=1 or ZF=1).
-	fn jna(&mut self, arg0: Relative32Bit);
+	fn jna(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if not above (CF=1 or ZF=1).
-	fn jna(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jna(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if not above (CF=1 or ZF=1).
-	fn jna(&mut self, arg0: Relative8Bit);
+	fn jna(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not above (CF=1 or ZF=1).
-	fn jna(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jna(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if not above or equal (CF=1).
 	fn jnae(&mut self, arg0: Label);
@@ -2950,16 +2950,16 @@ pub trait InstructionStream
 	fn jnae_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if not above or equal (CF=1).
-	fn jnae(&mut self, arg0: Relative32Bit);
+	fn jnae(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if not above or equal (CF=1).
-	fn jnae(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jnae(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if not above or equal (CF=1).
-	fn jnae(&mut self, arg0: Relative8Bit);
+	fn jnae(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not above or equal (CF=1).
-	fn jnae(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jnae(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if not below (CF=0).
 	fn jnb(&mut self, arg0: Label);
@@ -2974,16 +2974,16 @@ pub trait InstructionStream
 	fn jnb_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if not below (CF=0).
-	fn jnb(&mut self, arg0: Relative32Bit);
+	fn jnb(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if not below (CF=0).
-	fn jnb(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jnb(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if not below (CF=0).
-	fn jnb(&mut self, arg0: Relative8Bit);
+	fn jnb(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not below (CF=0).
-	fn jnb(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jnb(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if not below or equal (CF=0 and ZF=0).
 	fn jnbe(&mut self, arg0: Label);
@@ -2998,16 +2998,16 @@ pub trait InstructionStream
 	fn jnbe_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if not below or equal (CF=0 and ZF=0).
-	fn jnbe(&mut self, arg0: Relative32Bit);
+	fn jnbe(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if not below or equal (CF=0 and ZF=0).
-	fn jnbe(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jnbe(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if not below or equal (CF=0 and ZF=0).
-	fn jnbe(&mut self, arg0: Relative8Bit);
+	fn jnbe(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not below or equal (CF=0 and ZF=0).
-	fn jnbe(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jnbe(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if not carry (CF=0).
 	fn jnc(&mut self, arg0: Label);
@@ -3022,16 +3022,16 @@ pub trait InstructionStream
 	fn jnc_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if not carry (CF=0).
-	fn jnc(&mut self, arg0: Relative32Bit);
+	fn jnc(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if not carry (CF=0).
-	fn jnc(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jnc(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if not carry (CF=0).
-	fn jnc(&mut self, arg0: Relative8Bit);
+	fn jnc(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not carry (CF=0).
-	fn jnc(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jnc(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if not equal (ZF=0).
 	fn jne(&mut self, arg0: Label);
@@ -3046,16 +3046,16 @@ pub trait InstructionStream
 	fn jne_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if not equal (ZF=0).
-	fn jne(&mut self, arg0: Relative32Bit);
+	fn jne(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if not equal (ZF=0).
-	fn jne(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jne(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if not equal (ZF=0).
-	fn jne(&mut self, arg0: Relative8Bit);
+	fn jne(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not equal (ZF=0).
-	fn jne(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jne(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if not greater (ZF=1 or SF!= OF).
 	fn jng(&mut self, arg0: Label);
@@ -3070,16 +3070,16 @@ pub trait InstructionStream
 	fn jng_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if not greater (ZF=1 or SF != OF).
-	fn jng(&mut self, arg0: Relative32Bit);
+	fn jng(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if not greater (ZF=1 or SF != OF).
-	fn jng(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jng(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if not greater (ZF=1 or SF!= OF).
-	fn jng(&mut self, arg0: Relative8Bit);
+	fn jng(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not greater (ZF=1 or SF!= OF).
-	fn jng(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jng(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if not greater or equal (SF!= OF).
 	fn jnge(&mut self, arg0: Label);
@@ -3094,16 +3094,16 @@ pub trait InstructionStream
 	fn jnge_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if not greater or equal (SF != OF).
-	fn jnge(&mut self, arg0: Relative32Bit);
+	fn jnge(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if not greater or equal (SF != OF).
-	fn jnge(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jnge(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if not greater or equal (SF!= OF).
-	fn jnge(&mut self, arg0: Relative8Bit);
+	fn jnge(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not greater or equal (SF!= OF).
-	fn jnge(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jnge(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if not less (SF=OF).
 	fn jnl(&mut self, arg0: Label);
@@ -3118,16 +3118,16 @@ pub trait InstructionStream
 	fn jnl_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if not less (SF=OF).
-	fn jnl(&mut self, arg0: Relative32Bit);
+	fn jnl(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if not less (SF=OF).
-	fn jnl(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jnl(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if not less (SF=OF).
-	fn jnl(&mut self, arg0: Relative8Bit);
+	fn jnl(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not less (SF=OF).
-	fn jnl(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jnl(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if not less or equal (ZF=0 and SF=OF).
 	fn jnle(&mut self, arg0: Label);
@@ -3142,16 +3142,16 @@ pub trait InstructionStream
 	fn jnle_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if not less or equal (ZF=0 and SF=OF).
-	fn jnle(&mut self, arg0: Relative32Bit);
+	fn jnle(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if not less or equal (ZF=0 and SF=OF).
-	fn jnle(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jnle(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if not less or equal (ZF=0 and SF=OF).
-	fn jnle(&mut self, arg0: Relative8Bit);
+	fn jnle(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not less or equal (ZF=0 and SF=OF).
-	fn jnle(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jnle(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if not overflow (OF=0).
 	fn jno(&mut self, arg0: Label);
@@ -3166,16 +3166,16 @@ pub trait InstructionStream
 	fn jno_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if not overflow (OF=0).
-	fn jno(&mut self, arg0: Relative32Bit);
+	fn jno(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if not overflow (OF=0).
-	fn jno(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jno(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if not overflow (OF=0).
-	fn jno(&mut self, arg0: Relative8Bit);
+	fn jno(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not overflow (OF=0).
-	fn jno(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jno(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if not parity (PF=0).
 	fn jnp(&mut self, arg0: Label);
@@ -3190,16 +3190,16 @@ pub trait InstructionStream
 	fn jnp_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if not parity (PF=0).
-	fn jnp(&mut self, arg0: Relative32Bit);
+	fn jnp(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if not parity (PF=0).
-	fn jnp(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jnp(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if not parity (PF=0).
-	fn jnp(&mut self, arg0: Relative8Bit);
+	fn jnp(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not parity (PF=0).
-	fn jnp(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jnp(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if not sign (SF=0).
 	fn jns(&mut self, arg0: Label);
@@ -3214,16 +3214,16 @@ pub trait InstructionStream
 	fn jns_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if not sign (SF=0).
-	fn jns(&mut self, arg0: Relative32Bit);
+	fn jns(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if not sign (SF=0).
-	fn jns(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jns(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if not sign (SF=0).
-	fn jns(&mut self, arg0: Relative8Bit);
+	fn jns(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not sign (SF=0).
-	fn jns(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jns(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if not zero (ZF=0).
 	fn jnz(&mut self, arg0: Label);
@@ -3238,16 +3238,16 @@ pub trait InstructionStream
 	fn jnz_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if not zero (ZF=0).
-	fn jnz(&mut self, arg0: Relative32Bit);
+	fn jnz(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if not zero (ZF=0).
-	fn jnz(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jnz(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if not zero (ZF=0).
-	fn jnz(&mut self, arg0: Relative8Bit);
+	fn jnz(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not zero (ZF=0).
-	fn jnz(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jnz(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if overflow (OF=1).
 	fn jo(&mut self, arg0: Label);
@@ -3262,16 +3262,16 @@ pub trait InstructionStream
 	fn jo_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if overflow (OF=1).
-	fn jo(&mut self, arg0: Relative32Bit);
+	fn jo(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if overflow (OF=1).
-	fn jo(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jo(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if overflow (OF=1).
-	fn jo(&mut self, arg0: Relative8Bit);
+	fn jo(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if overflow (OF=1).
-	fn jo(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jo(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if parity (PF=1).
 	fn jp(&mut self, arg0: Label);
@@ -3286,16 +3286,16 @@ pub trait InstructionStream
 	fn jp_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if parity (PF=1).
-	fn jp(&mut self, arg0: Relative32Bit);
+	fn jp(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if parity (PF=1).
-	fn jp(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jp(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if parity (PF=1).
-	fn jp(&mut self, arg0: Relative8Bit);
+	fn jp(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if parity (PF=1).
-	fn jp(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jp(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if parity even (PF=1).
 	fn jpe(&mut self, arg0: Label);
@@ -3310,16 +3310,16 @@ pub trait InstructionStream
 	fn jpe_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if parity even (PF=1).
-	fn jpe(&mut self, arg0: Relative32Bit);
+	fn jpe(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if parity even (PF=1).
-	fn jpe(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jpe(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if parity even (PF=1).
-	fn jpe(&mut self, arg0: Relative8Bit);
+	fn jpe(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if parity even (PF=1).
-	fn jpe(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jpe(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if parity odd (PF=0).
 	fn jpo(&mut self, arg0: Label);
@@ -3334,16 +3334,16 @@ pub trait InstructionStream
 	fn jpo_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if parity odd (PF=0).
-	fn jpo(&mut self, arg0: Relative32Bit);
+	fn jpo(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if parity odd (PF=0).
-	fn jpo(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jpo(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if parity odd (PF=0).
-	fn jpo(&mut self, arg0: Relative8Bit);
+	fn jpo(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if parity odd (PF=0).
-	fn jpo(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jpo(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if RCX register is 0.
 	fn jrcxz(&mut self, arg0: Label);
@@ -3352,10 +3352,10 @@ pub trait InstructionStream
 	fn jrcxz(&mut self, arg0: Label, arg1: Hint);
 
 	/// Jump short if RCX register is 0.
-	fn jrcxz(&mut self, arg0: Relative8Bit);
+	fn jrcxz(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if RCX register is 0.
-	fn jrcxz(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jrcxz(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if sign (SF=1).
 	fn js(&mut self, arg0: Label);
@@ -3370,16 +3370,16 @@ pub trait InstructionStream
 	fn js_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if sign (SF=1).
-	fn js(&mut self, arg0: Relative32Bit);
+	fn js(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if sign (SF=1).
-	fn js(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn js(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if sign (SF=1).
-	fn js(&mut self, arg0: Relative8Bit);
+	fn js(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if sign (SF=1).
-	fn js(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn js(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Jump short if zero (ZF = 1).
 	fn jz(&mut self, arg0: Label);
@@ -3394,16 +3394,16 @@ pub trait InstructionStream
 	fn jz_1(arg0: Label, arg1: Hint);
 
 	/// Jump near if 0 (ZF=1).
-	fn jz(&mut self, arg0: Relative32Bit);
+	fn jz(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if 0 (ZF=1).
-	fn jz(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jz(&mut self, arg0: RelativeAddress32Bit, arg1: Hint);
 
 	/// Jump short if zero (ZF = 1).
-	fn jz(&mut self, arg0: Relative8Bit);
+	fn jz(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if zero (ZF = 1).
-	fn jz(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jz(&mut self, arg0: RelativeAddress8Bit, arg1: Hint);
 
 	/// Load: AH = EFLAGS(SF:ZF:0:AF:0:PF:1:CF).
 	fn lahf(&mut self);
@@ -3523,19 +3523,19 @@ pub trait InstructionStream
 	fn loop(&mut self, arg0: Label);
 
 	/// Decrement count; jump short if count != 0.
-	fn loop(&mut self, arg0: Relative8Bit);
+	fn loop(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Decrement count; jump short if count != 0 and  ZF = 1.
 	fn loope(&mut self, arg0: Label);
 
 	/// Decrement count; jump short if count != 0 and  ZF = 1.
-	fn loope(&mut self, arg0: Relative8Bit);
+	fn loope(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Decrement count; jump short if count != 0 and  ZF = 0.
 	fn loopne(&mut self, arg0: Label);
 
 	/// Decrement count; jump short if count != 0 and  ZF = 0.
-	fn loopne(&mut self, arg0: Relative8Bit);
+	fn loopne(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Load: r16 = segment limit, selector r16/m16.
 	fn lsl(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
@@ -11510,7 +11510,7 @@ pub trait InstructionStream
 
 	/// Specifies the start of an RTM region.
 	/// Provides a 32-bit relative offset to compute the address of the fallback instruction address at which execution resumes following an RTM abort.
-	fn xbegin(&mut self, arg0: Relative32Bit);
+	fn xbegin(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Exchange r16 with AX.
 	fn xchg(&mut self, arg0: AX, arg1: Register16Bit);
@@ -19143,7 +19143,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn call(&mut self, arg0: Relative32Bit)
+	fn call(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -36113,7 +36113,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn ja(&mut self, arg0: Relative32Bit)
+	fn ja(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -36141,7 +36141,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn ja(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn ja(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -36169,7 +36169,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn ja(&mut self, arg0: Relative8Bit)
+	fn ja(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -36197,7 +36197,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn ja(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn ja(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -36341,7 +36341,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jae(&mut self, arg0: Relative32Bit)
+	fn jae(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -36369,7 +36369,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jae(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jae(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -36397,7 +36397,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jae(&mut self, arg0: Relative8Bit)
+	fn jae(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -36425,7 +36425,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jae(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jae(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -36569,7 +36569,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jb(&mut self, arg0: Relative32Bit)
+	fn jb(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -36597,7 +36597,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jb(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jb(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -36625,7 +36625,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jb(&mut self, arg0: Relative8Bit)
+	fn jb(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -36653,7 +36653,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jb(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jb(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -36797,7 +36797,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jbe(&mut self, arg0: Relative32Bit)
+	fn jbe(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -36825,7 +36825,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jbe(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jbe(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -36853,7 +36853,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jbe(&mut self, arg0: Relative8Bit)
+	fn jbe(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -36881,7 +36881,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jbe(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jbe(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -37025,7 +37025,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jc(&mut self, arg0: Relative32Bit)
+	fn jc(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -37053,7 +37053,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jc(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jc(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -37081,7 +37081,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jc(&mut self, arg0: Relative8Bit)
+	fn jc(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -37109,7 +37109,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jc(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jc(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -37253,7 +37253,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn je(&mut self, arg0: Relative32Bit)
+	fn je(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -37281,7 +37281,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn je(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn je(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -37309,7 +37309,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn je(&mut self, arg0: Relative8Bit)
+	fn je(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -37337,7 +37337,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn je(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn je(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -37423,7 +37423,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jecxz(&mut self, arg0: Relative8Bit)
+	fn jecxz(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -37451,7 +37451,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jecxz(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jecxz(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -37595,7 +37595,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jg(&mut self, arg0: Relative32Bit)
+	fn jg(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -37623,7 +37623,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jg(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jg(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -37651,7 +37651,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jg(&mut self, arg0: Relative8Bit)
+	fn jg(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -37679,7 +37679,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jg(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jg(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -37823,7 +37823,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jge(&mut self, arg0: Relative32Bit)
+	fn jge(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -37851,7 +37851,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jge(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jge(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -37879,7 +37879,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jge(&mut self, arg0: Relative8Bit)
+	fn jge(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -37907,7 +37907,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jge(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jge(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -38051,7 +38051,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jl(&mut self, arg0: Relative32Bit)
+	fn jl(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -38079,7 +38079,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jl(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jl(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -38107,7 +38107,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jl(&mut self, arg0: Relative8Bit)
+	fn jl(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -38135,7 +38135,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jl(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jl(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -38279,7 +38279,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jle(&mut self, arg0: Relative32Bit)
+	fn jle(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -38307,7 +38307,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jle(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jle(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -38335,7 +38335,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jle(&mut self, arg0: Relative8Bit)
+	fn jle(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -38363,7 +38363,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jle(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jle(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -38589,7 +38589,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jmp(&mut self, arg0: Relative32Bit)
+	fn jmp(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -38617,7 +38617,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jmp(&mut self, arg0: Relative8Bit)
+	fn jmp(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -38761,7 +38761,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jna(&mut self, arg0: Relative32Bit)
+	fn jna(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -38789,7 +38789,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jna(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jna(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -38817,7 +38817,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jna(&mut self, arg0: Relative8Bit)
+	fn jna(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -38845,7 +38845,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jna(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jna(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -38989,7 +38989,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnae(&mut self, arg0: Relative32Bit)
+	fn jnae(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -39017,7 +39017,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnae(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jnae(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -39045,7 +39045,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnae(&mut self, arg0: Relative8Bit)
+	fn jnae(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -39073,7 +39073,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnae(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jnae(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -39217,7 +39217,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnb(&mut self, arg0: Relative32Bit)
+	fn jnb(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -39245,7 +39245,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnb(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jnb(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -39273,7 +39273,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnb(&mut self, arg0: Relative8Bit)
+	fn jnb(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -39301,7 +39301,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnb(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jnb(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -39445,7 +39445,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnbe(&mut self, arg0: Relative32Bit)
+	fn jnbe(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -39473,7 +39473,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnbe(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jnbe(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -39501,7 +39501,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnbe(&mut self, arg0: Relative8Bit)
+	fn jnbe(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -39529,7 +39529,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnbe(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jnbe(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -39673,7 +39673,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnc(&mut self, arg0: Relative32Bit)
+	fn jnc(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -39701,7 +39701,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnc(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jnc(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -39729,7 +39729,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnc(&mut self, arg0: Relative8Bit)
+	fn jnc(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -39757,7 +39757,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnc(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jnc(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -39901,7 +39901,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jne(&mut self, arg0: Relative32Bit)
+	fn jne(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -39929,7 +39929,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jne(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jne(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -39957,7 +39957,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jne(&mut self, arg0: Relative8Bit)
+	fn jne(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -39985,7 +39985,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jne(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jne(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -40129,7 +40129,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jng(&mut self, arg0: Relative32Bit)
+	fn jng(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -40157,7 +40157,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jng(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jng(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -40185,7 +40185,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jng(&mut self, arg0: Relative8Bit)
+	fn jng(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -40213,7 +40213,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jng(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jng(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -40357,7 +40357,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnge(&mut self, arg0: Relative32Bit)
+	fn jnge(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -40385,7 +40385,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnge(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jnge(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -40413,7 +40413,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnge(&mut self, arg0: Relative8Bit)
+	fn jnge(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -40441,7 +40441,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnge(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jnge(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -40585,7 +40585,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnl(&mut self, arg0: Relative32Bit)
+	fn jnl(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -40613,7 +40613,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnl(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jnl(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -40641,7 +40641,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnl(&mut self, arg0: Relative8Bit)
+	fn jnl(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -40669,7 +40669,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnl(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jnl(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -40813,7 +40813,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnle(&mut self, arg0: Relative32Bit)
+	fn jnle(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -40841,7 +40841,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnle(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jnle(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -40869,7 +40869,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnle(&mut self, arg0: Relative8Bit)
+	fn jnle(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -40897,7 +40897,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnle(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jnle(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -41041,7 +41041,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jno(&mut self, arg0: Relative32Bit)
+	fn jno(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -41069,7 +41069,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jno(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jno(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -41097,7 +41097,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jno(&mut self, arg0: Relative8Bit)
+	fn jno(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -41125,7 +41125,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jno(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jno(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -41269,7 +41269,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnp(&mut self, arg0: Relative32Bit)
+	fn jnp(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -41297,7 +41297,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnp(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jnp(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -41325,7 +41325,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnp(&mut self, arg0: Relative8Bit)
+	fn jnp(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -41353,7 +41353,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnp(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jnp(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -41497,7 +41497,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jns(&mut self, arg0: Relative32Bit)
+	fn jns(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -41525,7 +41525,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jns(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jns(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -41553,7 +41553,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jns(&mut self, arg0: Relative8Bit)
+	fn jns(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -41581,7 +41581,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jns(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jns(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -41725,7 +41725,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnz(&mut self, arg0: Relative32Bit)
+	fn jnz(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -41753,7 +41753,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnz(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jnz(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -41781,7 +41781,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnz(&mut self, arg0: Relative8Bit)
+	fn jnz(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -41809,7 +41809,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnz(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jnz(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -41953,7 +41953,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jo(&mut self, arg0: Relative32Bit)
+	fn jo(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -41981,7 +41981,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jo(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jo(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -42009,7 +42009,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jo(&mut self, arg0: Relative8Bit)
+	fn jo(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -42037,7 +42037,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jo(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jo(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -42181,7 +42181,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jp(&mut self, arg0: Relative32Bit)
+	fn jp(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -42209,7 +42209,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jp(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jp(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -42237,7 +42237,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jp(&mut self, arg0: Relative8Bit)
+	fn jp(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -42265,7 +42265,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jp(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jp(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -42409,7 +42409,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jpe(&mut self, arg0: Relative32Bit)
+	fn jpe(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -42437,7 +42437,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jpe(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jpe(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -42465,7 +42465,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jpe(&mut self, arg0: Relative8Bit)
+	fn jpe(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -42493,7 +42493,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jpe(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jpe(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -42637,7 +42637,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jpo(&mut self, arg0: Relative32Bit)
+	fn jpo(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -42665,7 +42665,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jpo(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jpo(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -42693,7 +42693,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jpo(&mut self, arg0: Relative8Bit)
+	fn jpo(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -42721,7 +42721,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jpo(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jpo(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -42807,7 +42807,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jrcxz(&mut self, arg0: Relative8Bit)
+	fn jrcxz(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -42835,7 +42835,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jrcxz(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jrcxz(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -42979,7 +42979,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn js(&mut self, arg0: Relative32Bit)
+	fn js(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -43007,7 +43007,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn js(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn js(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -43035,7 +43035,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn js(&mut self, arg0: Relative8Bit)
+	fn js(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -43063,7 +43063,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn js(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn js(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -43207,7 +43207,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jz(&mut self, arg0: Relative32Bit)
+	fn jz(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -43235,7 +43235,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jz(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jz(&mut self, arg0: RelativeAddress32Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -43263,7 +43263,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jz(&mut self, arg0: Relative8Bit)
+	fn jz(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -43291,7 +43291,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jz(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jz(&mut self, arg0: RelativeAddress8Bit, arg1: Hint)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -44356,7 +44356,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn loop(&mut self, arg0: Relative8Bit)
+	fn loop(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -44413,7 +44413,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn loope(&mut self, arg0: Relative8Bit)
+	fn loope(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -44470,7 +44470,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn loopne(&mut self, arg0: Relative8Bit)
+	fn loopne(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	
@@ -117531,7 +117531,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn xbegin(&mut self, arg0: Relative32Bit)
+	fn xbegin(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// Non-VEX-Encoded Instruction.
 	

@@ -8,6 +8,7 @@ use super::*;
 include!("singleton.rs");
 
 
+include!("Far.rs");
 include!("One.rs");
 include!("Prefix66.rs");
 include!("PrefixRexW.rs");

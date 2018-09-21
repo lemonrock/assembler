@@ -3,4 +3,13 @@
 
 
 #[derive(Default, Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct Immediate32Bit(pub u32);
+pub struct Immediate32Bit(pub i32);
+
+impl Immediate32Bit
+{
+	#[inline(always)]
+	pub(crate) fn to_u64(self) -> u64
+	{
+		(self.0 as u32) as u64
+	}
+}

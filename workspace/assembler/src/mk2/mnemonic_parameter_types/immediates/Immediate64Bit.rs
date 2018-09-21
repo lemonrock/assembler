@@ -3,4 +3,4 @@
 
 
 #[derive(Default, Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct Immediate64Bit(pub u64);
+pub struct Immediate64Bit(pub i64);

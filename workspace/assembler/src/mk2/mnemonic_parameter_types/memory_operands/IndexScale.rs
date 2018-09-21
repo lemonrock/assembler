@@ -2,5 +2,38 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-#[derive(Default, Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct Immediate16Bit(pub i16);
+/// Index scale.
+#[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
+#[repr(u64)]
+pub enum IndexScale
+{
+	/// Scale by × 1.
+	x1 = 0,
+	
+	/// Scale by × 2.
+	x2 = 1,
+	
+	/// Scale by × 4.
+	x4 = 2,
+	
+	/// Scale by × 8.
+	x8 = 3,
+}
+
+impl Default for IndexScale
+{
+	#[inline(always)]
+	fn default() -> Self
+	{
+		IndexScale::x1,
+	}
+}
+
+impl IndexScale
+{
+	#[inline(always)]
+	pub(crate) fn to_u64(self) -> u64
+	{
+		self as u64
+	}
+}

@@ -2,5 +2,6 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
+/// A 32-bit relative address.
 #[derive(Default, Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct Immediate16Bit(pub i16);
+pub struct RelativeAddress32Bit(pub i32);

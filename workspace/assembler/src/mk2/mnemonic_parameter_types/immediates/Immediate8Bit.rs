@@ -3,4 +3,4 @@
 
 
 #[derive(Default, Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct Immediate8Bit(pub u8);
+pub struct Immediate8Bit(pub i8);

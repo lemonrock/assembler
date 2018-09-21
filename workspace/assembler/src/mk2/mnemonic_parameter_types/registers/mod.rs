@@ -9,6 +9,8 @@ use super::*;
 pub mod singleton;
 
 
+include!("AnySegmentRegister.rs");
+include!("GeneralPurposeRegister.rs");
 include!("MMRegister.rs");
 include!("Register8Bit.rs");
 include!("Register16Bit.rs");

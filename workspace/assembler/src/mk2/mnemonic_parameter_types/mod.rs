@@ -17,8 +17,16 @@ pub mod immediates;
 pub mod memory_offsets;
 
 
+/// Memory Operands.
+pub mod memory_operands;
+
+
 /// Registers.
 pub mod registers;
+
+
+/// Relative Addresses.
+pub mod relative_addresses;
 
 
 /// Singletons.

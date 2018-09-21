@@ -2,5 +2,9 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-#[derive(Default, Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct Immediate16Bit(pub i16);
+use super::*;
+
+
+include!("Any8BitMemory.rs");
+include!("IndexScale.rs");
+include!("MemoryOperand.rs");
