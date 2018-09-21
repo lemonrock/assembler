@@ -3,66 +3,8 @@
 	- do not generate if only one instance kind.
 	- maximum number of args is 4 (arg3).
 
-- some functions have unused arguments (eg a default register)
 
 
 /** A symbolic representation of a Rel32. No Rel8 equivalent is provided. */
 Label
 
-
-/** A memory operand containing a far pointer composed of two numbers. The
-    number to the left of the colon corresponds to the pointer's segment
-    selector. The number to the right corresponds to its offset.
-*/
-class FarPtr1616 : public M<FarPtr1616>  {
-}
-
-// far pointers are memory operands
-
-FarPointer16BitTo16Bit
-FarPointer16BitTo32Bit
-FarPointer16BitTo64Bit
-
-X87Float32BitMemory
-X87Float64BitMemory
-X87Float80BitMemory
-X87Integer16BitMemory
-X87Integer32BitMemory
-X87Integer64BitMemory
-X87BinaryCodedDecimal80BitMemory
-
-Contiguous108ByteMemory
-Contiguous28ByteMemory
-Contiguous2ByteMemory
-Contiguous512ByteMemory
-
-Any8BitMemory
-Any16BitMemory
-Any32BitMemory
-Any64BitMemory
-Any128BitMemory
-Any256BitMemory
-
-
-
-
-// There are many way to crate a memory operand , eg:-
-
-  /** Creates a memory using seg:disp form. */
-  constexpr M(const Sreg& s, const Imm32& d) :
-    Mem(T::m_type(), init(d, r_null(), r_null(), Scale::TIMES_1, s, 0, 0)) {
-  }
-  /** Creates a memroy using (base64) form. */
-  constexpr M(const R32& b) :
-    Mem(T::m_type(), init(Imm32(0), b, r_null(), Scale::TIMES_1, s_null(), 1, 0)) {
-  }
-  /** Creates a memory using (base32) form. */
-  constexpr M(const R64& b) :
-    Mem(T::m_type(), init(Imm32(0), b, r_null(), Scale::TIMES_1, s_null(), 0, 0)) {
-  }
-  /** Creates a memory using RIP form. */
-  constexpr M(Rip rip) :
-    Mem(T::m_type(), init(Imm32(0), r_null(), r_null(), Scale::TIMES_1, s_null(), 0, 1)) {
-  }
-
-  ...

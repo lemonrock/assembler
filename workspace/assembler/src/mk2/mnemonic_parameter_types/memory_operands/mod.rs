@@ -6,5 +6,24 @@ use super::*;
 
 
 include!("Any8BitMemory.rs");
+include!("Any16BitMemory.rs");
+include!("Any32BitMemory.rs");
+include!("Any64BitMemory.rs");
+include!("Any128BitMemory.rs");
+include!("Any256BitMemory.rs");
+include!("Contiguous2ByteMemory.rs");
+include!("Contiguous28ByteMemory.rs");
+include!("Contiguous108ByteMemory.rs");
+include!("Contiguous512ByteMemory.rs");
+include!("FarPointer16BitTo16Bit.rs");
+include!("FarPointer16BitTo32Bit.rs");
+include!("FarPointer16BitTo64Bit.rs");
 include!("IndexScale.rs");
 include!("MemoryOperand.rs");
+include!("X87BinaryCodedDecimal80BitMemory.rs");
+include!("X87Float32BitMemory.rs");
+include!("X87Float64BitMemory.rs");
+include!("X87Float80BitMemory.rs");
+include!("X87Integer16BitMemory.rs");
+include!("X87Integer32BitMemory.rs");
+include!("X87Integer64BitMemory.rs");

@@ -47,27 +47,28 @@ impl MemoryOperand
 	#[inline(always)]
 	pub const fn new(displacement: Immediate32Bit, base: Option<GeneralPurposeRegister>, index: Option<GeneralPurposeRegister>, scale: IndexScale, segment_register: Option<AnySegmentRegister>, addr_or: bool, relative_instruction_pointer: bool) -> Self
 	{
-		let result = (displacement.to_u64() | Self::DisplacementMask)
-		| match base
-		{
-			None => Self::NullRegister << Self::BaseShift,
-			Some(base) => base.to_u64() << Self::BaseShift,
-		}
-		| match index
-		{
-			None => Self::NullRegister << Self::IndexShift,
-			Some(index) => index.to_u64() << Self::IndexShift,
-		}
-		| scale.to_u64() << Self::ScaleShift
-		| match segment_register
-		{
-			None => Self::NullSegmentRegister << Self::SegmentRegisterShift,
-			Some(segment_register) => segment_register.to_u64() << Self::SegmentRegisterShift,
-		}
-		| (addr_or as u64) << Self::AddressOrShift
-		| (relative_instruction_pointer as u64) << Self::RelativeInstructionPointerShift;
-		
-		MemoryOperand(result)
+		MemoryOperand
+		(
+			(displacement.to_u64() | Self::DisplacementMask)
+			| match base
+			{
+				None => Self::NullRegister << Self::BaseShift,
+				Some(base) => base.to_u64() << Self::BaseShift,
+			}
+			| match index
+			{
+				None => Self::NullRegister << Self::IndexShift,
+				Some(index) => index.to_u64() << Self::IndexShift,
+			}
+			| scale.to_u64() << Self::ScaleShift
+			| match segment_register
+			{
+				None => Self::NullSegmentRegister << Self::SegmentRegisterShift,
+				Some(segment_register) => segment_register.to_u64() << Self::SegmentRegisterShift,
+			}
+			| (addr_or as u64) << Self::AddressOrShift
+			| (relative_instruction_pointer as u64) << Self::RelativeInstructionPointerShift
+		)
 	}
 	
 	/// Create a new memory operand using the `displacement` form.
