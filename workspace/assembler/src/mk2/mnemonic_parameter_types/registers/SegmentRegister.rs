@@ -10,7 +10,7 @@
 pub enum SegmentRegister
 {
 	/// Register 0.
-	ES = 1,
+	ES = 0,
 
 	/// Register 1.
 	CS = 1,
@@ -28,5 +28,15 @@ impl Default for SegmentRegister
 	fn default() -> Self
 	{
 		SegmentRegister::ES
+	}
+}
+
+impl AnySegmentRegister for SegmentRegister
+{
+	/// Zero-based index from 0 to 5.
+	#[inline(always)]
+	fn index(self) -> u8
+	{
+		self as u8
 	}
 }

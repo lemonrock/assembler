@@ -18808,7 +18808,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -34536,7 +34536,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -34562,7 +34562,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -34588,7 +34588,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -34614,7 +34614,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -34744,7 +34744,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -34770,7 +34770,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -34796,7 +34796,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -34822,7 +34822,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -34952,7 +34952,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -34978,7 +34978,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -35004,7 +35004,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -35030,7 +35030,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -35160,7 +35160,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -35186,7 +35186,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -35212,7 +35212,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -35238,7 +35238,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -35368,7 +35368,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -35394,7 +35394,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -35420,7 +35420,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -35446,7 +35446,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -35576,7 +35576,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -35602,7 +35602,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -35628,7 +35628,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -35654,7 +35654,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -35784,7 +35784,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -35810,7 +35810,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -35888,7 +35888,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -35914,7 +35914,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -35940,7 +35940,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -35966,7 +35966,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -36096,7 +36096,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -36122,7 +36122,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -36148,7 +36148,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -36174,7 +36174,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -36304,7 +36304,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -36330,7 +36330,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -36356,7 +36356,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -36382,7 +36382,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -36512,7 +36512,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -36538,7 +36538,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -36564,7 +36564,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -36590,7 +36590,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -36798,7 +36798,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -36824,7 +36824,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -36954,7 +36954,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -36980,7 +36980,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -37006,7 +37006,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -37032,7 +37032,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -37162,7 +37162,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -37188,7 +37188,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -37214,7 +37214,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -37240,7 +37240,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -37370,7 +37370,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -37396,7 +37396,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -37422,7 +37422,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -37448,7 +37448,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -37578,7 +37578,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -37604,7 +37604,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -37630,7 +37630,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -37656,7 +37656,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -37786,7 +37786,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -37812,7 +37812,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -37838,7 +37838,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -37864,7 +37864,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -37994,7 +37994,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -38020,7 +38020,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -38046,7 +38046,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -38072,7 +38072,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -38202,7 +38202,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -38228,7 +38228,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -38254,7 +38254,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -38280,7 +38280,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -38410,7 +38410,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -38436,7 +38436,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -38462,7 +38462,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -38488,7 +38488,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -38618,7 +38618,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -38644,7 +38644,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -38670,7 +38670,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -38696,7 +38696,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -38826,7 +38826,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -38852,7 +38852,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -38878,7 +38878,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -38904,7 +38904,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -39034,7 +39034,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -39060,7 +39060,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -39086,7 +39086,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -39112,7 +39112,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -39242,7 +39242,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -39268,7 +39268,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -39294,7 +39294,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -39320,7 +39320,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -39450,7 +39450,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -39476,7 +39476,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -39502,7 +39502,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -39528,7 +39528,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -39658,7 +39658,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -39684,7 +39684,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -39710,7 +39710,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -39736,7 +39736,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -39866,7 +39866,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -39892,7 +39892,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -39918,7 +39918,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -39944,7 +39944,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -40074,7 +40074,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -40100,7 +40100,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -40126,7 +40126,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -40152,7 +40152,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -40282,7 +40282,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -40308,7 +40308,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -40334,7 +40334,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -40360,7 +40360,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -40490,7 +40490,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -40516,7 +40516,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -40542,7 +40542,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -40568,7 +40568,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -40698,7 +40698,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -40724,7 +40724,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -40802,7 +40802,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -40828,7 +40828,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -40854,7 +40854,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -40880,7 +40880,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -41010,7 +41010,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -41036,7 +41036,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -41062,7 +41062,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -41088,7 +41088,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -42154,7 +42154,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -42206,7 +42206,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -42258,7 +42258,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label8(&mut self, arg0);
+		self.displacement_label_8bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]
@@ -110088,7 +110088,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No displacement or immediate.
 	
-		self.disp_label32(&mut self, arg0);
+		self.displacement_label_32bit(&mut self, arg0);
 	}
 	
 	#[inline(always)]

@@ -2,25 +2,10 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// A segment register suitable for a memory operand.
-#[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub enum AnySegmentRegister
+/// Any segment register.
+pub trait AnySegmentRegister
 {
-	#[allow(missing_docs)]
-	_S(SegmentRegister),
-	
-	#[allow(missing_docs)]
-	_FS(FS),
-	
-	#[allow(missing_docs)]
-	_GS(GS),
-}
-
-impl Default for GeneralPurposeRegister
-{
+	/// Zero-based index from 0 to 5.
 	#[inline(always)]
-	fn default() -> Self
-	{
-		Self::_S(SegmentRegister::default())
-	}
+	fn index(self) -> u8;
 }

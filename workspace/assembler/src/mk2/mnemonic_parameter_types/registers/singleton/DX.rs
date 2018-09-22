@@ -3,3 +3,12 @@
 
 
 singleton_register!(DX);
+
+impl GeneralPurposeRegister for DX
+{
+	#[inline(always)]
+	fn index(self) -> u8
+	{
+		2
+	}
+}

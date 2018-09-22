@@ -2,13 +2,9 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-singleton_register!(CL);
-
-impl GeneralPurposeRegister for CL
+/// A type that can be encoded as a MOD.R/M 3-bit byte.
+pub trait ModRM
 {
 	#[inline(always)]
-	fn index(self) -> u8
-	{
-		1
-	}
+	fn value(self) -> u8;
 }

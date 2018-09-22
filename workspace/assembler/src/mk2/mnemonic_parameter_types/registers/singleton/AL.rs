@@ -3,3 +3,12 @@
 
 
 singleton_register!(AL);
+
+impl GeneralPurposeRegister for AL
+{
+	#[inline(always)]
+	fn index(self) -> u8
+	{
+		0
+	}
+}

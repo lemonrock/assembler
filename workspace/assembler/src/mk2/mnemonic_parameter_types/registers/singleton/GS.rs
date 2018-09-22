@@ -3,3 +3,12 @@
 
 
 singleton_register!(GS);
+
+impl AnySegmentRegister for GS
+{
+	#[inline(always)]
+	fn index(self) -> u8
+	{
+		5
+	}
+}

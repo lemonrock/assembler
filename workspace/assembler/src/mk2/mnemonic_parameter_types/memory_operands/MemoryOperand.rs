@@ -18,98 +18,95 @@ impl MemoryOperand
 	
 	const SegmentRegisterMask: u64 = 0x0700000000000000;
 	
-	const AddressOrMask: u64 = 0x1000000000000000;
+	const AddressOverrideMask: u64 = 0x1000000000000000;
 	
 	const RelativeInstructionPointerMask: u64 = 0x2000000000000000;
 	
-	const BaseShift: u64 = x;
+	const DisplacementShift: u64 = 0;
 	
-	const IndexShift: u64 = x;
+	const BaseShift: u64 = 32;
 	
-	const ScaleShift: u64 = x;
+	const IndexShift: u64 = 40;
 	
-	const SegmentRegisterShift: u64 = x;
+	const ScaleShift: u64 = 48;
 	
-	const AddressOrShift: u64 = x;
+	const SegmentRegisterShift: u64 = 56;
 	
-	const RelativeInstructionPointerShift: u64 = x;
+	const AddressOverrideShift: u64 = 61;
 	
-	const NullRegister: u64 = 0x10;
+	const RelativeInstructionPointerShift: u64 = 61;
 	
-	const NullSegmentRegister: u64 = 0x10;
-
-
-// TODO: GeneralPurposeRegister.to_u64()
-// TODO: AnySegmentRegister.to_u64()
-// TODO: Type 'Label'.
-// TODO: FIx overload InstructionStream funcs by putting types of the arg0 - arg3 into the method name.
+	const NullGeneralPurposeRegister: u64 = 0x10;
 	
-	// TODO: const fn new won't work as it uses 'match'
+	const NullSegmentRegister: u64 = 0x07;
+	
 	#[inline(always)]
-	pub const fn new(displacement: Immediate32Bit, base: Option<GeneralPurposeRegister>, index: Option<GeneralPurposeRegister>, scale: IndexScale, segment_register: Option<AnySegmentRegister>, addr_or: bool, relative_instruction_pointer: bool) -> Self
+	pub fn new(displacement: Immediate32Bit, base: Option<impl GeneralPurposeRegister>, index: Option<impl GeneralPurposeRegister>, scale: IndexScale, segment_register: Option<impl AnySegmentRegister>, address_override_for_32_bit: bool, relative_instruction_pointer_offset: bool) -> Self
 	{
+		debug_assert_eq!(address_override_for_32_bit && relative_instruction_pointer_offset, false, "address_override_for_32_bit and relative_instruction_pointer_offset can not both be specified");
+		
 		MemoryOperand
 		(
 			(displacement.to_u64() | Self::DisplacementMask)
 			| match base
 			{
-				None => Self::NullRegister << Self::BaseShift,
-				Some(base) => base.to_u64() << Self::BaseShift,
+				None => Self::NullGeneralPurposeRegister << Self::BaseShift,
+				Some(base) => (base.index() as u64) << Self::BaseShift,
 			}
 			| match index
 			{
-				None => Self::NullRegister << Self::IndexShift,
-				Some(index) => index.to_u64() << Self::IndexShift,
+				None => Self::NullGeneralPurposeRegister << Self::IndexShift,
+				Some(index) => (base.index() as u64) << Self::IndexShift,
 			}
 			| scale.to_u64() << Self::ScaleShift
 			| match segment_register
 			{
 				None => Self::NullSegmentRegister << Self::SegmentRegisterShift,
-				Some(segment_register) => segment_register.to_u64() << Self::SegmentRegisterShift,
+				Some(segment_register) => (segment_register.index() as u64) << Self::SegmentRegisterShift,
 			}
-			| (addr_or as u64) << Self::AddressOrShift
-			| (relative_instruction_pointer as u64) << Self::RelativeInstructionPointerShift
+			| (address_override_for_32_bit as u64) << Self::AddressOverrideShift
+			| (relative_instruction_pointer_offset as u64) << Self::RelativeInstructionPointerShift
 		)
 	}
 	
 	/// Create a new memory operand using the `displacement` form.
 	#[inline(always)]
-	pub const fn displacement(displacement: Immediate32Bit) -> Self
+	pub fn displacement(displacement: Immediate32Bit) -> Self
 	{
 		Self::new(displacement, None, None, IndexScale::x1, None, false, false)
 	}
 	
 	/// Create a new memory operand using the `segment:displacement` form.
 	#[inline(always)]
-	pub const fn segment_displacement(segment_register: AnySegmentRegister, displacement: Immediate32Bit) -> Self
+	pub fn segment_displacement(segment_register: impl AnySegmentRegister, displacement: Immediate32Bit) -> Self
 	{
 		Self::new(displacement, None, None, IndexScale::x1, Some(AnySegmentRegister), false, false)
 	}
 	
 	/// Create a new memory operand using the `RIP` (relative instruction pointer) form.
 	#[inline(always)]
-	pub const fn rip() -> Self
+	pub fn rip() -> Self
 	{
 		Self::new(Immediate32Bit(0), None, None, IndexScale::x1, None, false, true)
 	}
 	
 	/// Create a new memory operand using the `segment:RIP` (relative instruction pointer) form.
 	#[inline(always)]
-	pub const fn segment_rip(segment_register: AnySegmentRegister) -> Self
+	pub fn segment_rip(segment_register: impl AnySegmentRegister) -> Self
 	{
 		Self::new(Immediate32Bit(0), None, None, IndexScale::x1, Some(segment_register), false, true)
 	}
 	
 	/// Create a new memory operand using the `RIP+displacement` (relative instruction pointer) form.
 	#[inline(always)]
-	pub const fn rip_displacement(displacement: Immediate32Bit) -> Self
+	pub fn rip_displacement(displacement: Immediate32Bit) -> Self
 	{
 		Self::new(displacement, None, None, IndexScale::x1, None, false, true)
 	}
 	
 	/// Create a new memory operand using the `segment:RIP+displacement` (relative instruction pointer) form.
 	#[inline(always)]
-	pub const fn segment_rip_displacement(segment_register: AnySegmentRegister, displacement: Immediate32) -> Self
+	pub fn segment_rip_displacement(segment_register: impl AnySegmentRegister, displacement: Immediate32) -> Self
 	{
 		Self::new(displacement, None, None, IndexScale::x1, Some(segment_register), false, true)
 	}
@@ -118,183 +115,183 @@ impl MemoryOperand
 	///
 	/// Note that this has nothing to do with the binary encoding scheme `Base64`.
 	#[inline(always)]
-	pub const fn base_64(base_64: Register64Bit) -> Self
+	pub fn base_64(base_64: Register64Bit) -> Self
 	{
-		Self::new(Immediate32Bit(0), Some(GeneralPurposeRegister::_64(base_64)), None, IndexScale::x1, None, false, false)
+		Self::new(Immediate32Bit(0), Some(base_64), None, IndexScale::x1, None, false, false)
 	}
 	
 	/// Create a new memory operand using the `base32` form.
 	///
 	/// Note that this has nothing to do with the binary encoding scheme `Base32`.
 	#[inline(always)]
-	pub const fn base_32(base_32: Register32Bit) -> Self
+	pub fn base_32(base_32: Register32Bit) -> Self
 	{
-		Self::new(Immediate32Bit(0), Some(GeneralPurposeRegister::_32(base_32)), None, IndexScale::x1, None, true, false)
+		Self::new(Immediate32Bit(0), Some(base_32), None, IndexScale::x1, None, true, false)
 	}
 	
 	/// Create a new memory operand using the `segment:base64` form.
 	///
 	/// Note that this has nothing to do with the binary encoding scheme `Base64`.
 	#[inline(always)]
-	pub const fn segment_base_64(segment_register: AnySegmentRegister, base_64: Register64Bit) -> Self
+	pub fn segment_base_64(segment_register: impl AnySegmentRegister, base_64: Register64Bit) -> Self
 	{
-		Self::new(Immediate32Bit(0), Some(GeneralPurposeRegister::_64(base_64)), None, IndexScale::x1, Some(segment_register), false, false)
+		Self::new(Immediate32Bit(0), Some(base_64), None, IndexScale::x1, Some(segment_register), false, false)
 	}
 	
 	/// Create a new memory operand using the `segment:base32` form.
 	///
 	/// Note that this has nothing to do with the binary encoding scheme `Base32`.
 	#[inline(always)]
-	pub const fn segment_base_32(segment_register: AnySegmentRegister, base_32: Register32Bit) -> Self
+	pub fn segment_base_32(segment_register: impl AnySegmentRegister, base_32: Register32Bit) -> Self
 	{
-		Self::new(Immediate32Bit(0), Some(GeneralPurposeRegister::_32(base_32)), None, IndexScale::x1, Some(segment_register), true, false)
+		Self::new(Immediate32Bit(0), Some(base_32), None, IndexScale::x1, Some(segment_register), true, false)
 	}
 	
 	/// Create a new memory operand using the `displacement(base64)` form.
 	///
 	/// Note that this has nothing to do with the binary encoding scheme `Base64`.
 	#[inline(always)]
-	pub const fn displacement_base_64(base_64: Register64Bit, displacement: Immediate32Bit) -> Self
+	pub fn displacement_base_64(base_64: Register64Bit, displacement: Immediate32Bit) -> Self
 	{
-		Self::new(displacement, Some(GeneralPurposeRegister::_64(base_64)), None, IndexScale::x1, None, false, false)
+		Self::new(displacement, Some(base_64), None, IndexScale::x1, None, false, false)
 	}
 	
 	/// Create a new memory operand using the `displacement(base32)` form.
 	///
 	/// Note that this has nothing to do with the binary encoding scheme `Base32`.
 	#[inline(always)]
-	pub const fn displacement_base_32(base_32: Register32Bit, displacement: Immediate32Bit) -> Self
+	pub fn displacement_base_32(base_32: Register32Bit, displacement: Immediate32Bit) -> Self
 	{
-		Self::new(displacement, Some(GeneralPurposeRegister::_32(base_32)), None, IndexScale::x1, None, true, false)
+		Self::new(displacement, Some(base_32), None, IndexScale::x1, None, true, false)
 	}
 	
 	/// Create a new memory operand using the `segment:displacement(base64)` form.
 	///
 	/// Note that this has nothing to do with the binary encoding scheme `Base64`.
 	#[inline(always)]
-	pub const fn segment_displacement_base_64(segment_register: AnySegmentRegister, base_64: Register64Bit, displacement: Immediate32Bit) -> Self
+	pub fn segment_displacement_base_64(segment_register: impl AnySegmentRegister, base_64: Register64Bit, displacement: Immediate32Bit) -> Self
 	{
-		Self::new(displacement, Some(GeneralPurposeRegister::_64(base_64)), None, IndexScale::x1, Some(segment_register), false, false)
+		Self::new(displacement, Some(base_64), None, IndexScale::x1, Some(segment_register), false, false)
 	}
 	
 	/// Create a new memory operand using the `segment:displacement(base32)` form.
 	///
 	/// Note that this has nothing to do with the binary encoding scheme `Base32`.
 	#[inline(always)]
-	pub const fn segment_displacement_base_32(segment_register: AnySegmentRegister, base_32: Register32Bit, displacement: Immediate32Bit) -> Self
+	pub fn segment_displacement_base_32(segment_register: impl AnySegmentRegister, base_32: Register32Bit, displacement: Immediate32Bit) -> Self
 	{
-		Self::new(displacement, Some(GeneralPurposeRegister::_32(base_32)), None, IndexScale::x1, Some(segment_register), true, false)
+		Self::new(displacement, Some(base_32), None, IndexScale::x1, Some(segment_register), true, false)
 	}
 	
 	/// Create a new memory operand using the `(index64,scale)` form.
 	#[inline(always)]
-	pub const fn index_64_scale(index_64: Register64Bit, scale: IndexScale) -> Self
+	pub fn index_64_scale(index_64: Register64Bit, scale: IndexScale) -> Self
 	{
-		Self::new(Immediate32Bit(0), None, Some(GeneralPurposeRegister::_64(index_64)), scale, None, false, false)
+		Self::new(Immediate32Bit(0), None, Some(index_64), scale, None, false, false)
 	}
 	
 	/// Create a new memory operand using the `(index32,scale)` form.
 	#[inline(always)]
-	pub const fn index_32_scale(index_32: Register32Bit, scale: IndexScale) -> Self
+	pub fn index_32_scale(index_32: Register32Bit, scale: IndexScale) -> Self
 	{
-		Self::new(Immediate32Bit(0), None, Some(GeneralPurposeRegister::_32(index_32)), scale, None, true, false)
+		Self::new(Immediate32Bit(0), None, Some(index_32), scale, None, true, false)
 	}
 	
 	/// Create a new memory operand using the `segment:(index64,scale)` form.
 	#[inline(always)]
-	pub const fn segment_index_64_scale(segment_register: AnySegmentRegister, index_64: Register64Bit, scale: IndexScale) -> Self
+	pub fn segment_index_64_scale(segment_register: impl AnySegmentRegister, index_64: Register64Bit, scale: IndexScale) -> Self
 	{
-		Self::new(Immediate32Bit(0), None, Some(GeneralPurposeRegister::_64(index_64)), scale, Some(segment_register), false, false)
+		Self::new(Immediate32Bit(0), None, Some(index_64), scale, Some(segment_register), false, false)
 	}
 	
 	/// Create a new memory operand using the `segment:(index32,scale)` form.
 	#[inline(always)]
-	pub const fn segment_index_32_scale(segment_register: AnySegmentRegister, index_32: Register32Bit, scale: IndexScale) -> Self
+	pub fn segment_index_32_scale(segment_register: impl AnySegmentRegister, index_32: Register32Bit, scale: IndexScale) -> Self
 	{
-		Self::new(Immediate32Bit(0), None, Some(GeneralPurposeRegister::_32(index_32)), scale, Some(segment_register), true, false)
+		Self::new(Immediate32Bit(0), None, Some(index_32), scale, Some(segment_register), true, false)
 	}
 	
 	/// Create a new memory operand using the `displacement:(index64,scale)` form.
 	#[inline(always)]
-	pub const fn displacement_index_64_scale(index_64: Register64Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
+	pub fn displacement_index_64_scale(index_64: Register64Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
 	{
-		Self::new(displacement, None, Some(GeneralPurposeRegister::_64(index_64)), scale, None, false, false)
+		Self::new(displacement, None, Some(index_64), scale, None, false, false)
 	}
 	
 	/// Create a new memory operand using the `displacement:(index32,scale)` form.
 	#[inline(always)]
-	pub const fn displacement_index_32_scale(index_32: Register32Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
+	pub fn displacement_index_32_scale(index_32: Register32Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
 	{
-		Self::new(displacement, None, Some(GeneralPurposeRegister::_32(index_32)), scale, None, true, false)
+		Self::new(displacement, None, Some(index_32), scale, None, true, false)
 	}
 	
 	/// Create a new memory operand using the `segment:displacement:(index64,scale)` form.
 	#[inline(always)]
-	pub const fn segment_displacement_index_64_scale(segment_register: AnySegmentRegister, index_64: Register64Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
+	pub fn segment_displacement_index_64_scale(segment_register: impl AnySegmentRegister, index_64: Register64Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
 	{
-		Self::new(displacement, None, Some(GeneralPurposeRegister::_64(index_64)), scale, Some(segment_register), false, false)
+		Self::new(displacement, None, Some(index_64), scale, Some(segment_register), false, false)
 	}
 	
 	/// Create a new memory operand using the `segment:displacement:(index32,scale)` form.
 	#[inline(always)]
-	pub const fn segment_displacement_index_32_scale(segment_register: AnySegmentRegister, index_32: Register32Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
+	pub fn segment_displacement_index_32_scale(segment_register: impl AnySegmentRegister, index_32: Register32Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
 	{
-		Self::new(displacement, None, Some(GeneralPurposeRegister::_32(index_32)), scale, Some(segment_register), true, false)
+		Self::new(displacement, None, Some(index_32), scale, Some(segment_register), true, false)
 	}
 	
 	/// Create a new memory operand using the `(base64,index64,scale)` form.
 	#[inline(always)]
-	pub const fn base_64_index_64_scale(base_64: Register64Bit, index_64: Register64Bit, scale: IndexScale) -> Self
+	pub fn base_64_index_64_scale(base_64: Register64Bit, index_64: Register64Bit, scale: IndexScale) -> Self
 	{
-		Self::new(Immediate32Bit(0), Some(GeneralPurposeRegister::_64(base_64)), Some(GeneralPurposeRegister::_64(index_64)), scale, None, false, false)
+		Self::new(Immediate32Bit(0), Some(base_64), Some(index_64), scale, None, false, false)
 	}
 	
 	/// Create a new memory operand using the `(base32,index32,scale)` form.
 	#[inline(always)]
-	pub const fn base_32_index_32_scale(base_32: Register32Bit, index_32: Register32Bit, scale: IndexScale) -> Self
+	pub fn base_32_index_32_scale(base_32: Register32Bit, index_32: Register32Bit, scale: IndexScale) -> Self
 	{
-		Self::new(Immediate32Bit(0), Some(GeneralPurposeRegister::_32(base_32)), Some(GeneralPurposeRegister::_32(index_32)), scale, None, true, false)
+		Self::new(Immediate32Bit(0), Some(base_32), Some(index_32), scale, None, true, false)
 	}
 	
 	/// Create a new memory operand using the `segment:(base64,index64,scale)` form.
 	#[inline(always)]
-	pub const fn segment_base_64_index_64_scale(segment_register: AnySegmentRegister, base_64: Register64Bit, index_64: Register64Bit, scale: IndexScale) -> Self
+	pub fn segment_base_64_index_64_scale(segment_register: impl AnySegmentRegister, base_64: Register64Bit, index_64: Register64Bit, scale: IndexScale) -> Self
 	{
-		Self::new(Immediate32Bit(0), Some(GeneralPurposeRegister::_64(base_64)), Some(GeneralPurposeRegister::_64(index_64)), scale, Some(segment_register), false, false)
+		Self::new(Immediate32Bit(0), Some(base_64), Some(index_64), scale, Some(segment_register), false, false)
 	}
 	
 	/// Create a new memory operand using the `segment:(base32,index32,scale)` form.
 	#[inline(always)]
-	pub const fn segment_base_32_index_32_scale(segment_register: AnySegmentRegister, base_32: Register32Bit, index_32: Register32Bit, scale: IndexScale) -> Self
+	pub fn segment_base_32_index_32_scale(segment_register: impl AnySegmentRegister, base_32: Register32Bit, index_32: Register32Bit, scale: IndexScale) -> Self
 	{
-		Self::new(Immediate32Bit(0), Some(GeneralPurposeRegister::_32(base_32)), Some(GeneralPurposeRegister::_32(index_32)), scale, Some(segment_register), true, false)
+		Self::new(Immediate32Bit(0), Some(base_32), Some(index_32), scale, Some(segment_register), true, false)
 	}
 	
 	/// Create a new memory operand using the `displacement(base64,index64,scale)` form.
 	#[inline(always)]
-	pub const fn displacement_base_64_index_64_scale(base_64: Register64Bit, index_64: Register64Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
+	pub fn displacement_base_64_index_64_scale(base_64: Register64Bit, index_64: Register64Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
 	{
-		Self::new(displacement, Some(GeneralPurposeRegister::_64(base_64)), Some(GeneralPurposeRegister::_64(index_64)), scale, None, false, false)
+		Self::new(displacement, Some(base_64), Some(index_64), scale, None, false, false)
 	}
 	
 	/// Create a new memory operand using the `displacement(base32,index32,scale)` form.
 	#[inline(always)]
-	pub const fn displacement_base_32_index_32_scale(base_32: Register32Bit, index_32: Register32Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
+	pub fn displacement_base_32_index_32_scale(base_32: Register32Bit, index_32: Register32Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
 	{
-		Self::new(displacement, Some(GeneralPurposeRegister::_32(base_32)), Some(GeneralPurposeRegister::_32(index_32)), scale, None, true, false)
+		Self::new(displacement, Some(base_32), Some(index_32), scale, None, true, false)
 	}
 	
 	/// Create a new memory operand using the `segment:displacement(base64,index64,scale)` form.
 	#[inline(always)]
-	pub const fn segment_displacement_base_64_index_64_scale(segment_register: AnySegmentRegister, base_64: Register64Bit, index_64: Register64Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
+	pub fn segment_displacement_base_64_index_64_scale(segment_register: impl AnySegmentRegister, base_64: Register64Bit, index_64: Register64Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
 	{
-		Self::new(displacement, Some(GeneralPurposeRegister::_64(base_64)), Some(GeneralPurposeRegister::_64(index_64)), scale, Some(segment_register), false, false)
+		Self::new(displacement, Some(base_64), Some(index_64), scale, Some(segment_register), false, false)
 	}
 	
 	/// Create a new memory operand using the `segment:displacement(base32,index32,scale)` form.
 	#[inline(always)]
-	pub const fn segment_displacement_base_32_index_32_scale(segment_register: AnySegmentRegister, base_32: Register32Bit, index_32: Register32Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
+	pub fn segment_displacement_base_32_index_32_scale(segment_register: impl AnySegmentRegister, base_32: Register32Bit, index_32: Register32Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
 	{
-		Self::new(displacement, Some(GeneralPurposeRegister::_32(base_32)), Some(GeneralPurposeRegister::_32(index_32)), scale, Some(segment_register), true, false)
+		Self::new(displacement, Some(base_32), Some(index_32), scale, Some(segment_register), true, false)
 	}
 }

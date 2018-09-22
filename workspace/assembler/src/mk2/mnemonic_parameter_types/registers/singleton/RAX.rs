@@ -3,3 +3,12 @@
 
 
 singleton_register!(RAX);
+
+impl GeneralPurposeRegister for RAX
+{
+	#[inline(always)]
+	fn index(self) -> u8
+	{
+		0
+	}
+}

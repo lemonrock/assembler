@@ -3,3 +3,12 @@
 
 
 singleton_register!(EAX);
+
+impl GeneralPurposeRegister for EAX
+{
+	#[inline(always)]
+	fn index(self) -> u8
+	{
+		0
+	}
+}

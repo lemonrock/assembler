@@ -30,6 +30,33 @@ impl OrdinaryInstructionStream
 		self.opcode_1(opcode3.to_opcode());
 	}
 	
+	/// Emits one byte containing a a combined `MOD.r/m` and Scaled Index Byte (SIB).
+	///
+	/// See [this](http://www.c-jump.com/CIS77/CPU/x86/X77_0060_mod_reg_r_m_byte.htm) reference to the bits.
+	#[inline(always)]
+	fn mod_rm_sib(&mut self, rm: X, reg: impl GeneralPurposeRegister)
+	{
+		const ModRegisterAddressingMode: u8 = 0b11;
+		
+		let mod_rm_and_sib = (0b11 << 6) | ((reg.index() << 3) & 0b0011_1000) | (rm.val_() & 0x07);
+		self.emit_u8(mod_rm_and_sib);
+	}
+	
+	/*
+	
+	Any(8->64)BitMemory & Registers		Register 8 -> 64 RegisterHigh8BitsOf16Bit
+	
+	self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+	*/
+	/*
+	
+  /** Emits a mod/rm sib byte pair. */
+  void mod_rm_sib(const Operand& rm, const Operand& r) {
+    auto mod = 0xc0 | ((r.val_ << 3) & 0x38) | (rm.val_ & 0x7);
+    fxn_->emit_byte(mod);
+  }
+	*/
+	
 	#[inline(always)]
 	fn displacement_immediate_1<D: Displacement>(&mut self, displacement: impl AsDisplacement<D=D>)
 	{
@@ -42,6 +69,26 @@ impl OrdinaryInstructionStream
 		// NOTE: This order is correct, with the second displacement emitted before the first.
 		self.displacement_immediate_1(displacement2);
 		self.displacement_immediate_1(displacement1);
+	}
+	
+	/// Records internal state for a label reference.
+	/// Saves the current code position and reserves space for the resolved address by emitting zero bytes.
+	#[inline(always)]
+	fn displacement_label_8bit(&mut self, l: Label)
+	{
+		// TODO: fxn_->label8_rels_.push_back(std::make_pair(fxn_->size(), l.val_));
+		unimplemented!();
+		self.byte_emitter.emit_u8(0);
+	}
+	
+	/// Records internal state for a label reference.
+	/// Saves the current code position and reserves space for the resolved address by emitting zero bytes.
+	#[inline(always)]
+	fn displacement_label_32bit(&mut self, l: Label)
+	{
+		// TODO: fxn_->label32_rels_.push_back(std::make_pair(fxn_->size(), l.val_));
+		unimplemented!();
+		self.byte_emitter.emit_u32(0);
 	}
 }
 
@@ -94,40 +141,5 @@ impl OrdinaryInstructionStream
   }
 
 	*/
-	
-	
-	
-	/*
-	// Recall also XMM constant.
-	self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
-	*/
-	/*
-	
-  /** Emits a mod/rm sib byte pair. */
-  void mod_rm_sib(const Operand& rm, const Operand& r) {
-    auto mod = 0xc0 | ((r.val_ << 3) & 0x38) | (rm.val_ & 0x7);
-    fxn_->emit_byte(mod);
-  }
-	*/
-	}
-	
-	
-	
-	/*
-	
- 
-	*/
-	
-	#[inline(always)]
-	fn disp_label8(&mut self, arg0: x)
-	{
-	
-	}
-	
-	#[inline(always)]
-	fn disp_label32(&mut self, arg0: x)
-	{
-	
-	}
 }
 */

@@ -29,11 +29,20 @@ impl Default for RegisterHigh8BitsOf16Bits
 	}
 }
 
-impl ToOpcode for RegisterHigh8BitsOf16Bit
+impl ToOpcode for RegisterHigh8BitsOf16Bits
 {
 	#[inline(always)]
 	fn to_opcode(self) -> u8
 	{
-		(self as u8) & 0x07
+		self.to_scaled_index_byte() & 0x07
+	}
+}
+
+impl GeneralPurposeRegister for RegisterHigh8BitsOf16Bits
+{
+	#[inline(always)]
+	fn to_scaled_index_byte(self) -> u8
+	{
+		self as u8
 	}
 }

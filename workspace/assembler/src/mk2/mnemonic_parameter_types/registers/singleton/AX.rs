@@ -3,3 +3,12 @@
 
 
 singleton_register!(AX);
+
+impl GeneralPurposeRegister for AX
+{
+	#[inline(always)]
+	fn index(self) -> u8
+	{
+		0
+	}
+}

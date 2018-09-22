@@ -71,6 +71,15 @@ impl ToOpcode for Register32Bit
 	#[inline(always)]
 	fn to_opcode(self) -> u8
 	{
-		(self as u8) & 0x07
+		self.to_scaled_index_byte() & 0x07
+	}
+}
+
+impl GeneralPurposeRegister for Register32Bit
+{
+	#[inline(always)]
+	fn to_scaled_index_byte(self) -> u8
+	{
+		self as u8
 	}
 }
