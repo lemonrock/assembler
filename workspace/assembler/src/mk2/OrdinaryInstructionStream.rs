@@ -30,34 +30,6 @@ impl OrdinaryInstructionStream
 		self.opcode_1(opcode3.to_opcode());
 	}
 	
-	//self.opcode_1(0x14);
-	/*
-	
-	TODO: Self::R64S_2 et al
-	
-	
-
-  /** Emits a register scaled one-byte opcode. */
-  void opcode(uint8_t o1, const Operand& rcode) {
-    const auto delta = rcode.val_ & 0x7;
-    opcode(o1 + delta);
-  }
-
-
-  /** Emits a register scaled two-byte opcode. */
-  
-  // Look for regex   opcode!\(self, .*, .*, arg.*\)
-  	Register32Bit Register64Bit X87Register  need to support this
-  	
-  
-  
-  void opcode(uint8_t o1, uint8_t o2, const Operand& rcode) {
-    const auto delta = rcode.val_ & 0x7;
-    opcode(o1, o2 + delta);
-  }
-	*/
-	
-	
 	#[inline(always)]
 	fn displacement_immediate_1<D: Displacement>(&mut self, displacement: impl AsDisplacement<D=D>)
 	{
