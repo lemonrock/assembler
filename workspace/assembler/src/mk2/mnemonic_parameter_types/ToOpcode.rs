@@ -2,8 +2,17 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// An 'array' of 2 bytes in memory referenced by `MemoryOperand`.
-///
-/// Used only by x87 Floating Point Unit (FPU) instructions.
-#[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct Contiguous2ByteMemory(pub MemoryOperand);
+pub(crate) trait ToOpcode
+{
+	#[inline(always)]
+	fn to_opcode(self) -> u8;
+}
+
+impl ToOpcode for u8
+{
+	#[inline(always)]
+	fn to_opcode(self) -> u8
+	{
+		self
+	}
+}

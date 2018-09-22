@@ -5,3 +5,18 @@
 /// A 32-bit relative address.
 #[derive(Default, Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct RelativeAddress32Bit(pub i32);
+
+impl AsDisplacement for RelativeAddress32Bit
+{
+	type D = u32;
+	
+	#[inline(always)]
+	fn displacement(self) -> Self::D
+	{
+		self.0 as u32
+	}
+}
+
+impl RelativeAddress<u64> for RelativeAddress32Bit
+{
+}

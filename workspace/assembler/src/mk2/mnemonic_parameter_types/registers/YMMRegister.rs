@@ -64,3 +64,14 @@ impl Default for YMMRegister
 		YMMRegister::YMM0
 	}
 }
+
+impl AsDisplacement for YMMRegister
+{
+	type D = u8;
+	
+	#[inline(always)]
+	fn displacement(self) -> Self::D
+	{
+		(self as u8) << 4
+	}
+}

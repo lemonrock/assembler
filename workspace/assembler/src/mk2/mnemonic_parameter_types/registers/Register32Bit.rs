@@ -65,3 +65,12 @@ impl Default for Register32Bit
 		Register32Bit::ECX
 	}
 }
+
+impl ToOpcode for Register32Bit
+{
+	#[inline(always)]
+	fn to_opcode(self) -> u8
+	{
+		(self as u8) & 0x07
+	}
+}

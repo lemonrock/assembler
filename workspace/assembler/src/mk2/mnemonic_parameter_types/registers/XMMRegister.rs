@@ -65,3 +65,14 @@ impl Default for XMMRegister
 		XMMRegister::XMM1
 	}
 }
+
+impl AsDisplacement for XMMRegister
+{
+	type D = u8;
+	
+	#[inline(always)]
+	fn displacement(self) -> Self::D
+	{
+		(self as u8) << 4
+	}
+}

@@ -7,7 +7,7 @@
 pub enum MemoryOffset8Bit
 {
 	/// `segment:offset` form.
-	SegmentOffsetForm8(SegmentRegister, Immediate64),
+	SegmentOffsetForm8(SegmentRegister, Immediate64Bit),
 
 	/// `offset` form.
 	OffsetForm8(Immediate64Bit),
@@ -19,5 +19,43 @@ impl Default for MemoryOffset8Bit
 	fn default() -> Self
 	{
 		MemoryOffset8Bit::OffsetForm8(Immediate64Bit::default())
+	}
+}
+
+impl AsDisplacement for MemoryOffset8Bit
+{
+	type D = u64;
+	
+	#[inline(always)]
+	fn displacement(self) -> Self::D
+	{
+		self.get_offset().displacement()
+	}
+}
+
+impl MemoryOffset for MemoryOffset8Bit
+{
+	#[inline(always)]
+	fn get_segment_register(&self) -> Option<SegmentRegister>
+	{
+		use self::MemoryOffset8Bit::*;
+		
+		match self
+		{
+			SegmentOffsetForm8(segment_register, _) => Some(segment_register),
+			OffsetForm8(_) => None,
+		}
+	}
+	
+	#[inline(always)]
+	fn get_offset(&self) -> Immediate64Bit
+	{
+		use self::MemoryOffset8Bit::*;
+		
+		match self
+		{
+			SegmentOffsetForm8(_, immediate) => immediate,
+			OffsetForm8(immediate) => immediate,
+		}
 	}
 }

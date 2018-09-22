@@ -2,8 +2,14 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// An 'array' of 2 bytes in memory referenced by `MemoryOperand`.
-///
-/// Used only by x87 Floating Point Unit (FPU) instructions.
-#[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct Contiguous2ByteMemory(pub MemoryOperand);
+/// Memory Offset.
+pub trait MemoryOffset: AsDisplacement<D=u64>
+{
+	/// Get the segment register, if any.
+	#[inline(always)]
+	fn get_segment_register(&self) -> Option<SegmentRegister>;
+	
+	/// Get the offset displacement.
+	#[inline(always)]
+	fn get_offset(&self) -> Immediate64Bit;
+}

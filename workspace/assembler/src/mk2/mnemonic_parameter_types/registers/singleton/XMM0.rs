@@ -3,3 +3,14 @@
 
 
 singleton_register!(XMM0);
+
+impl AsDisplacement for XMM0
+{
+	type D = u8;
+	
+	#[inline(always)]
+	fn displacement(self) -> Self::D
+	{
+		0 << 4
+	}
+}

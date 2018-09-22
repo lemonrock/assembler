@@ -8,3 +8,9 @@ use self::registers::singleton::*;
 
 /// Mnemonic parameter types.
 pub mod mnemonic_parameter_types;
+
+
+include!("ByteEmitter.rs");
+include!("Displacement.rs");
+include!("InstructionStream.rs");
+include!("OrdinaryInstructionStream.rs");

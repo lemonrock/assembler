@@ -33,4 +33,6 @@ pub mod relative_addresses;
 pub mod singletons;
 
 
+include!("AsDisplacement.rs");
 include!("Hint.rs");
+include!("ToOpcode.rs");

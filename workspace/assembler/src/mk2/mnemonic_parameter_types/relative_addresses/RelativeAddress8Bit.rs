@@ -5,3 +5,18 @@
 /// An 8-bit relative address.
 #[derive(Default, Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct RelativeAddress8Bit(pub i8);
+
+impl AsDisplacement for RelativeAddress8Bit
+{
+	type D = u8;
+	
+	#[inline(always)]
+	fn displacement(self) -> Self::D
+	{
+		self.0 as u8
+	}
+}
+
+impl RelativeAddress<u8> for RelativeAddress8Bit
+{
+}

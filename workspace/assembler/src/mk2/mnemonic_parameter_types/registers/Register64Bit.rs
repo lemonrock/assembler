@@ -65,3 +65,12 @@ impl Default for Register64Bit
 		Register64Bit::RCX
 	}
 }
+
+impl ToOpcode for Register64Bit
+{
+	#[inline(always)]
+	fn to_opcode(self) -> u8
+	{
+		(self as u8) & 0x07
+	}
+}

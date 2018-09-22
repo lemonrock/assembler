@@ -5,6 +5,7 @@
 use self::*;
 
 
+include!("Immediate.rs");
 include!("Immediate8Bit.rs");
 include!("Immediate16Bit.rs");
 include!("Immediate32Bit.rs");

@@ -5,6 +5,7 @@
 use super::*;
 
 
+include!("MemoryOffset.rs");
 include!("MemoryOffset8Bit.rs");
 include!("MemoryOffset16Bit.rs");
 include!("MemoryOffset32Bit.rs");

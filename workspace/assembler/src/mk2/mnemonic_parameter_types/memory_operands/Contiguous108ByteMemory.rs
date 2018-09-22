@@ -3,5 +3,7 @@
 
 
 /// An 'array' of 108 bytes in memory referenced by `MemoryOperand`.
+///
+/// Used only by x87 Floating Point Unit (FPU) instructions.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct Contiguous28ByteMemory(pub MemoryOperand);

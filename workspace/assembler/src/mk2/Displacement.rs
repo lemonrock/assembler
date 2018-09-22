@@ -2,38 +2,44 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// High 8-bits of the first four general purpose registers.
-#[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-#[repr(u8)]
-pub enum RegisterHigh8BitsOf16Bits
-{
-	/// Register 0.
-	AH = 4,
-	
-	/// Register 1.
-	CH = 5,
-	
-	/// Register 2.
-	DH = 6,
-	
-	/// Register 3.
-	BH = 7,
-}
-
-impl Default for RegisterHigh8BitsOf16Bits
+pub(crate) trait Displacement
 {
 	#[inline(always)]
-	fn default() -> Self
+	fn write(self, byte_emitter: &mut ByteEmitter);
+}
+
+impl Displacement for u8
+{
+	#[inline(always)]
+	fn write(self, byte_emitter: &mut ByteEmitter)
 	{
-		RegisterHigh8BitsOf16Bits::AH
+		byte_emitter.emit_u8(self.to_le())
 	}
 }
 
-impl ToOpcode for RegisterHigh8BitsOf16Bit
+impl Displacement for u16
 {
 	#[inline(always)]
-	fn to_opcode(self) -> u8
+	fn write(self, byte_emitter: &mut ByteEmitter)
 	{
-		(self as u8) & 0x07
+		byte_emitter.emit_u16(self.to_le())
+	}
+}
+
+impl Displacement for u32
+{
+	#[inline(always)]
+	fn write(self, byte_emitter: &mut ByteEmitter)
+	{
+		byte_emitter.emit_u32(self.to_le())
+	}
+}
+
+impl Displacement for u64
+{
+	#[inline(always)]
+	fn write(self, byte_emitter: &mut ByteEmitter)
+	{
+		byte_emitter.emit_u64(self.to_le())
 	}
 }

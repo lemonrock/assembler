@@ -4,3 +4,18 @@
 
 #[derive(Default, Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct Immediate8Bit(pub i8);
+
+impl AsDisplacement for Immediate8Bit
+{
+	type D = u8;
+	
+	#[inline(always)]
+	fn displacement(self) -> Self::D
+	{
+		self.0 as u8
+	}
+}
+
+impl Immediate<u8> for Immediate8Bit
+{
+}

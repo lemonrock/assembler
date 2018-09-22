@@ -62,3 +62,12 @@ impl Default for Register8Bit
 		Register8Bit::DL
 	}
 }
+
+impl ToOpcode for Register8Bit
+{
+	#[inline(always)
+	fn to_opcode(self) -> u8
+	{
+		(self as u8) & 0x07
+	}
+}
