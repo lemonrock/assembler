@@ -12158,9 +12158,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -12170,7 +12170,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -12184,9 +12184,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -12196,7 +12196,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -12210,9 +12210,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -12222,7 +12222,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x11);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -12236,9 +12236,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -12248,7 +12248,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -12262,9 +12262,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -12274,7 +12274,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -12288,9 +12288,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -12300,7 +12300,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x11);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -12314,9 +12314,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -12326,7 +12326,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -12340,9 +12340,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -12352,7 +12352,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -12366,9 +12366,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -12378,7 +12378,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x11);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -12392,9 +12392,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -12404,7 +12404,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x80);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -12418,9 +12418,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -12430,7 +12430,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x10);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -12444,9 +12444,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -12456,7 +12456,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x10);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -12482,7 +12482,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -12508,7 +12508,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -12560,7 +12560,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x11);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -12612,7 +12612,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -12638,7 +12638,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -12690,7 +12690,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x11);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -12742,7 +12742,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -12768,7 +12768,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -12820,7 +12820,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x11);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -12872,7 +12872,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x80);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -12924,7 +12924,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x10);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -12976,7 +12976,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x10);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -13054,7 +13054,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x80);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13106,7 +13106,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x10);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -13158,7 +13158,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x10);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -13276,9 +13276,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -13288,7 +13288,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13302,9 +13302,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -13314,7 +13314,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13328,9 +13328,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -13340,7 +13340,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x01);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -13354,9 +13354,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -13366,7 +13366,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13380,9 +13380,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -13392,7 +13392,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13406,9 +13406,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -13418,7 +13418,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x01);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -13432,9 +13432,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -13444,7 +13444,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13458,9 +13458,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -13470,7 +13470,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13484,9 +13484,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -13496,7 +13496,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x01);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -13510,9 +13510,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -13522,7 +13522,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x80);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13536,9 +13536,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -13548,7 +13548,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x00);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -13562,9 +13562,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -13574,7 +13574,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x00);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -13600,7 +13600,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13626,7 +13626,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13678,7 +13678,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x01);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -13730,7 +13730,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13756,7 +13756,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13808,7 +13808,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x01);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -13860,7 +13860,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13886,7 +13886,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13938,7 +13938,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x01);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -13990,7 +13990,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x80);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -14042,7 +14042,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x00);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -14094,7 +14094,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x00);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -14172,7 +14172,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x80);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -14224,7 +14224,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x00);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -14276,7 +14276,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x00);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -15018,9 +15018,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -15030,7 +15030,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -15044,9 +15044,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -15056,7 +15056,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -15070,9 +15070,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -15082,7 +15082,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x21);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -15096,9 +15096,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -15108,7 +15108,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -15122,9 +15122,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -15134,7 +15134,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -15148,9 +15148,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -15160,7 +15160,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x21);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -15174,9 +15174,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -15186,7 +15186,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -15200,9 +15200,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -15212,7 +15212,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -15226,9 +15226,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -15238,7 +15238,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x21);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -15252,9 +15252,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -15264,7 +15264,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x80);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -15278,9 +15278,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -15290,7 +15290,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x20);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -15304,9 +15304,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -15316,7 +15316,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x20);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -15342,7 +15342,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -15368,7 +15368,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -15420,7 +15420,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x21);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -15472,7 +15472,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -15498,7 +15498,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -15550,7 +15550,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x21);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -15602,7 +15602,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -15628,7 +15628,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -15680,7 +15680,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x21);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -15732,7 +15732,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x80);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -15784,7 +15784,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x20);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -15836,7 +15836,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x20);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -15914,7 +15914,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x80);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -15966,7 +15966,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x20);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -16018,7 +16018,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x20);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -17358,9 +17358,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -17370,7 +17370,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -17384,9 +17384,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -17396,7 +17396,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xA3);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -17410,9 +17410,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -17422,7 +17422,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -17436,9 +17436,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -17448,7 +17448,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xA3);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -17462,9 +17462,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -17474,7 +17474,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -17488,9 +17488,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -17500,7 +17500,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xA3);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -17526,7 +17526,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -17552,7 +17552,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xA3);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -17578,7 +17578,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -17604,7 +17604,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xA3);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -17630,7 +17630,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -17656,7 +17656,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xA3);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -17670,9 +17670,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -17682,7 +17682,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -17696,9 +17696,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -17708,7 +17708,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBB);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -17722,9 +17722,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -17734,7 +17734,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -17748,9 +17748,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -17760,7 +17760,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBB);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -17774,9 +17774,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -17786,7 +17786,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -17800,9 +17800,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -17812,7 +17812,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBB);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -17838,7 +17838,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -17864,7 +17864,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBB);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -17890,7 +17890,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -17916,7 +17916,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBB);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -17942,7 +17942,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -17968,7 +17968,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBB);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -17982,9 +17982,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -17994,7 +17994,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -18008,9 +18008,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -18020,7 +18020,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xB3);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -18034,9 +18034,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -18046,7 +18046,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -18060,9 +18060,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -18072,7 +18072,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xB3);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -18086,9 +18086,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -18098,7 +18098,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -18112,9 +18112,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -18124,7 +18124,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xB3);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -18150,7 +18150,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -18176,7 +18176,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xB3);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -18202,7 +18202,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -18228,7 +18228,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xB3);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -18254,7 +18254,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -18280,7 +18280,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xB3);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -18294,9 +18294,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -18306,7 +18306,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -18320,9 +18320,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -18332,7 +18332,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAB);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -18346,9 +18346,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -18358,7 +18358,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -18372,9 +18372,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -18384,7 +18384,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAB);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -18398,9 +18398,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -18410,7 +18410,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -18424,9 +18424,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -18436,7 +18436,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAB);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -18462,7 +18462,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -18488,7 +18488,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAB);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -18514,7 +18514,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -18540,7 +18540,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAB);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -18566,7 +18566,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xBA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -18592,7 +18592,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAB);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -18710,9 +18710,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -18722,7 +18722,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -18736,9 +18736,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -18748,7 +18748,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -18762,9 +18762,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -18774,7 +18774,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -18814,9 +18814,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -18826,7 +18826,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -18852,7 +18852,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -19022,9 +19022,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -19034,7 +19034,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -23858,9 +23858,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -23870,7 +23870,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -23884,9 +23884,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -23896,7 +23896,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -23910,9 +23910,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -23922,7 +23922,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x39);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -23936,9 +23936,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -23948,7 +23948,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -23962,9 +23962,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -23974,7 +23974,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -23988,9 +23988,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -24000,7 +24000,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x39);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -24014,9 +24014,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -24026,7 +24026,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -24040,9 +24040,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -24052,7 +24052,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -24066,9 +24066,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -24078,7 +24078,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x39);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -24092,9 +24092,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -24104,7 +24104,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x80);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -24118,9 +24118,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -24130,7 +24130,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x38);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -24144,9 +24144,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -24156,7 +24156,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x38);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -24182,7 +24182,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -24208,7 +24208,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -24260,7 +24260,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x39);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -24312,7 +24312,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -24338,7 +24338,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -24390,7 +24390,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x39);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -24442,7 +24442,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -24468,7 +24468,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -24520,7 +24520,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x39);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -24572,7 +24572,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x80);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -24624,7 +24624,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x38);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -24676,7 +24676,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x38);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -24754,7 +24754,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x80);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -24806,7 +24806,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x38);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -24858,7 +24858,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x38);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -25002,9 +25002,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -25028,9 +25028,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -25054,9 +25054,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -25080,9 +25080,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -25314,9 +25314,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -25326,7 +25326,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xB1);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -25340,9 +25340,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -25352,7 +25352,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xB1);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -25366,9 +25366,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -25378,7 +25378,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xB1);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -25392,9 +25392,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -25404,7 +25404,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xB0);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -25418,9 +25418,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -25430,7 +25430,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xB0);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -25456,7 +25456,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xB1);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -25482,7 +25482,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xB1);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -25508,7 +25508,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xB1);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -25534,7 +25534,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xB0);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -25560,7 +25560,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xB0);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -25586,7 +25586,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xB0);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -25612,7 +25612,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xB0);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -25626,9 +25626,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -25638,7 +25638,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xC7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -25652,9 +25652,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -25664,7 +25664,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xC7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -27628,9 +27628,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -27640,7 +27640,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -27654,9 +27654,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -27666,7 +27666,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -27680,9 +27680,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -27692,7 +27692,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -27706,9 +27706,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -27718,7 +27718,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -27744,7 +27744,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -27770,7 +27770,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -27796,7 +27796,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -27822,7 +27822,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -27848,7 +27848,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -27862,9 +27862,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -27874,7 +27874,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -27888,9 +27888,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -27900,7 +27900,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -27914,9 +27914,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -27926,7 +27926,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -27940,9 +27940,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -27952,7 +27952,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF6);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -27978,7 +27978,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -28004,7 +28004,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -28030,7 +28030,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -28056,7 +28056,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF6);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -28082,7 +28082,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF6);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -28512,9 +28512,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -28524,7 +28524,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0x0F, 0x3A, 0x17);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -28550,7 +28550,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0x0F, 0x3A, 0x17);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -28576,7 +28576,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0x0F, 0x3A, 0x17);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -28642,9 +28642,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -28654,7 +28654,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD8);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -28668,9 +28668,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -28680,7 +28680,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDC);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -28798,9 +28798,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -28810,7 +28810,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -28824,9 +28824,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -28836,7 +28836,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -29136,9 +29136,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29148,7 +29148,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD8);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -29162,9 +29162,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29174,7 +29174,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDC);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -29292,9 +29292,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29304,7 +29304,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD8);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -29318,9 +29318,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29330,7 +29330,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDC);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -29448,9 +29448,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29460,7 +29460,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD8);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -29474,9 +29474,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29486,7 +29486,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDC);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -29604,9 +29604,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29616,7 +29616,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD8);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -29630,9 +29630,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29642,7 +29642,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDC);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -29786,9 +29786,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29798,7 +29798,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -29812,9 +29812,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29824,7 +29824,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -29838,9 +29838,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29850,7 +29850,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -29864,9 +29864,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29876,7 +29876,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -29890,9 +29890,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29902,7 +29902,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -29916,9 +29916,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29928,7 +29928,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -29942,9 +29942,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29954,7 +29954,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -29968,9 +29968,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29980,7 +29980,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -29994,9 +29994,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30006,7 +30006,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -30020,9 +30020,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30032,7 +30032,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -30046,9 +30046,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30058,7 +30058,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -30072,9 +30072,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30084,7 +30084,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDB);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -30098,9 +30098,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30110,7 +30110,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -30124,9 +30124,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30136,7 +30136,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -30150,9 +30150,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30162,7 +30162,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -30228,9 +30228,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30240,7 +30240,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -30254,9 +30254,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30266,7 +30266,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDB);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -30280,9 +30280,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30292,7 +30292,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -30306,9 +30306,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30318,7 +30318,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDB);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -30332,9 +30332,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30344,7 +30344,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -30358,9 +30358,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30370,7 +30370,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -30384,9 +30384,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30396,7 +30396,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDB);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -30410,9 +30410,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30422,7 +30422,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDD);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -30436,9 +30436,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30448,7 +30448,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -30462,9 +30462,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30474,7 +30474,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -30488,9 +30488,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30500,7 +30500,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -30514,9 +30514,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30526,7 +30526,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDA);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -30540,9 +30540,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30552,7 +30552,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD9);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -30566,9 +30566,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30578,7 +30578,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDD);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -30592,9 +30592,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30604,7 +30604,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDB);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -30670,9 +30670,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30682,7 +30682,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD9);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -30696,9 +30696,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30708,7 +30708,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD9);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -30878,9 +30878,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30890,7 +30890,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD8);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -30904,9 +30904,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30916,7 +30916,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDC);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -31112,9 +31112,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31124,7 +31124,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDD);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -31138,9 +31138,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31150,7 +31150,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD9);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -31164,9 +31164,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31176,7 +31176,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD9);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -31216,9 +31216,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31228,7 +31228,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDD);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -31372,9 +31372,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31384,7 +31384,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDD);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -31398,9 +31398,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.pref_fwait(0x9B);
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31410,7 +31410,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDD);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -31528,9 +31528,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31540,7 +31540,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD9);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -31554,9 +31554,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31566,7 +31566,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDD);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -31606,9 +31606,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.pref_fwait(0x9B);
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31618,7 +31618,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD9);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -31632,9 +31632,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.pref_fwait(0x9B);
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31644,7 +31644,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD9);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -31658,9 +31658,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31670,7 +31670,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD9);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -31684,9 +31684,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31696,7 +31696,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDD);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -31710,9 +31710,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31722,7 +31722,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDB);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -31788,9 +31788,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.pref_fwait(0x9B);
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31800,7 +31800,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDD);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -31814,9 +31814,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31826,7 +31826,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD8);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -31840,9 +31840,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31852,7 +31852,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDC);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -31970,9 +31970,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31982,7 +31982,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD8);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -31996,9 +31996,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -32008,7 +32008,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDC);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -32436,9 +32436,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -32448,7 +32448,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -32462,9 +32462,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -32474,7 +32474,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -32488,9 +32488,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -32500,7 +32500,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -32514,9 +32514,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -32526,7 +32526,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -32826,9 +32826,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -32838,7 +32838,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -32852,9 +32852,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -32864,7 +32864,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -32878,9 +32878,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -32890,7 +32890,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -32904,9 +32904,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -32916,7 +32916,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF6);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -32942,7 +32942,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -32968,7 +32968,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -32994,7 +32994,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -33020,7 +33020,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF6);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -33046,7 +33046,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF6);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -33060,9 +33060,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -33072,7 +33072,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -33086,9 +33086,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -33098,7 +33098,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -33112,9 +33112,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -33124,7 +33124,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -33138,9 +33138,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -33150,7 +33150,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF6);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -33176,7 +33176,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -33358,7 +33358,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -33540,7 +33540,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -33722,7 +33722,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF6);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -33748,7 +33748,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF6);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -33918,9 +33918,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -33930,7 +33930,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -33944,9 +33944,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -33956,7 +33956,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -33970,9 +33970,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -33982,7 +33982,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -33996,9 +33996,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -34008,7 +34008,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -34034,7 +34034,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -34060,7 +34060,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -34086,7 +34086,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -34112,7 +34112,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -34138,7 +34138,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -34152,9 +34152,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -34178,9 +34178,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -34204,9 +34204,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -36700,9 +36700,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -36726,9 +36726,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -36752,9 +36752,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -36830,9 +36830,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -36842,7 +36842,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -36868,7 +36868,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -41406,9 +41406,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -41418,7 +41418,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -41926,9 +41926,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -41952,9 +41952,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -41978,9 +41978,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -42004,9 +42004,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -43304,9 +43304,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -43316,7 +43316,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -43330,9 +43330,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -43342,7 +43342,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x89);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -43356,9 +43356,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -43368,7 +43368,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x8C);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -43382,9 +43382,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -43394,7 +43394,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -43408,9 +43408,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -43420,7 +43420,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x89);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -43434,9 +43434,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -43446,7 +43446,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -43460,9 +43460,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -43472,7 +43472,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x89);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -43486,9 +43486,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -43498,7 +43498,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x8C);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -43512,9 +43512,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -43524,7 +43524,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC6);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -43538,9 +43538,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -43550,7 +43550,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x88);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -43564,9 +43564,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -43576,7 +43576,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x88);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -43758,7 +43758,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -43810,7 +43810,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x89);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -43862,7 +43862,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x8C);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -43914,7 +43914,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -43966,7 +43966,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x89);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -44018,7 +44018,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -44096,7 +44096,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x89);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -44148,7 +44148,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x8C);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -44200,7 +44200,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC6);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -44252,7 +44252,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x88);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -44304,7 +44304,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x88);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -44408,7 +44408,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC6);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -44460,7 +44460,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x88);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -44512,7 +44512,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x88);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -44656,9 +44656,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -44668,7 +44668,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x29);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -44746,7 +44746,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x29);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -44760,9 +44760,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -44772,7 +44772,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x29);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -44850,7 +44850,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x29);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -44864,9 +44864,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -44876,7 +44876,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0x0F, 0x38, 0xF1);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -44890,9 +44890,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -44902,7 +44902,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0x0F, 0x38, 0xF1);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -44916,9 +44916,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -44928,7 +44928,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0x0F, 0x38, 0xF1);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -45020,9 +45020,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -45032,7 +45032,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x7E);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -45046,9 +45046,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -45058,7 +45058,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x7E);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -45136,7 +45136,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x7E);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -45162,7 +45162,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x7E);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -45306,9 +45306,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -45318,7 +45318,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x7F);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -45396,7 +45396,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x7F);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -45410,9 +45410,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -45422,7 +45422,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x7F);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -45500,7 +45500,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x7F);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -45540,9 +45540,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -45552,7 +45552,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x17);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -45592,9 +45592,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -45604,7 +45604,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x17);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -45670,9 +45670,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -45682,7 +45682,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x13);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -45722,9 +45722,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -45734,7 +45734,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x13);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -45878,9 +45878,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -45890,7 +45890,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xE7);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -45930,9 +45930,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -45942,7 +45942,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xC3);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -45956,9 +45956,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -45968,7 +45968,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xC3);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -45982,9 +45982,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -45994,7 +45994,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x2B);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -46008,9 +46008,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -46020,7 +46020,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x2B);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -46034,9 +46034,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -46046,7 +46046,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xE7);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -46060,9 +46060,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -46072,7 +46072,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x7E);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -46086,9 +46086,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -46098,7 +46098,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x7F);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -46112,9 +46112,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -46124,7 +46124,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x7E);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -46138,9 +46138,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -46150,7 +46150,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xD6);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -46254,7 +46254,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x7F);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -46306,7 +46306,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x7E);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -46332,7 +46332,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x7E);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -46462,7 +46462,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xD6);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -46502,9 +46502,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -46528,9 +46528,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -46554,9 +46554,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -46580,9 +46580,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -46658,9 +46658,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -46670,7 +46670,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x11);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -46748,7 +46748,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x11);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -46892,9 +46892,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -46904,7 +46904,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x11);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -46982,7 +46982,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x11);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -47386,9 +47386,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -47398,7 +47398,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x11);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -47476,7 +47476,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x11);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -47490,9 +47490,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -47502,7 +47502,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x11);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -47580,7 +47580,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x11);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -47958,9 +47958,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -47970,7 +47970,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -47984,9 +47984,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -47996,7 +47996,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -48010,9 +48010,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -48022,7 +48022,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -48036,9 +48036,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -48048,7 +48048,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF6);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -48074,7 +48074,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -48100,7 +48100,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -48126,7 +48126,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -48152,7 +48152,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF6);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -48178,7 +48178,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF6);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -48530,9 +48530,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -48542,7 +48542,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -48556,9 +48556,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -48568,7 +48568,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -48582,9 +48582,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -48594,7 +48594,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -48608,9 +48608,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -48620,7 +48620,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF6);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -48646,7 +48646,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -48672,7 +48672,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -48698,7 +48698,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -48724,7 +48724,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF6);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -48750,7 +48750,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF6);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -48790,9 +48790,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -48802,7 +48802,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x1F);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -48816,9 +48816,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -48828,7 +48828,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x1F);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -48854,7 +48854,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x1F);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -48880,7 +48880,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x1F);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -48894,9 +48894,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -48906,7 +48906,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -48920,9 +48920,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -48932,7 +48932,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -48946,9 +48946,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -48958,7 +48958,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -48972,9 +48972,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -48984,7 +48984,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF6);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -49010,7 +49010,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -49036,7 +49036,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -49062,7 +49062,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -49088,7 +49088,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF6);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -49114,7 +49114,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF6);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -49206,9 +49206,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -49218,7 +49218,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -49232,9 +49232,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -49244,7 +49244,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -49258,9 +49258,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -49270,7 +49270,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x09);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -49284,9 +49284,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -49296,7 +49296,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -49310,9 +49310,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -49322,7 +49322,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -49336,9 +49336,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -49348,7 +49348,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x09);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -49362,9 +49362,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -49374,7 +49374,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -49388,9 +49388,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -49400,7 +49400,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -49414,9 +49414,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -49426,7 +49426,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x09);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -49440,9 +49440,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -49452,7 +49452,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x80);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -49466,9 +49466,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -49478,7 +49478,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x08);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -49492,9 +49492,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -49504,7 +49504,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x08);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -49530,7 +49530,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -49556,7 +49556,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -49608,7 +49608,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x09);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -49660,7 +49660,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -49686,7 +49686,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -49738,7 +49738,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x09);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -49790,7 +49790,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -49816,7 +49816,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -49868,7 +49868,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x09);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -49920,7 +49920,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x80);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -49972,7 +49972,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x08);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -50024,7 +50024,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x08);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -50102,7 +50102,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x80);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -50154,7 +50154,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x08);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -50206,7 +50206,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x08);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -54016,9 +54016,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -54028,7 +54028,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0x0F, 0x3A, 0x14);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -54054,7 +54054,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0x0F, 0x3A, 0x14);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -54080,7 +54080,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0x0F, 0x3A, 0x14);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -54094,9 +54094,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -54106,7 +54106,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0x0F, 0x3A, 0x16);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -54132,7 +54132,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0x0F, 0x3A, 0x16);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -54146,9 +54146,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -54158,7 +54158,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0x0F, 0x3A, 0x16);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -54184,7 +54184,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0x0F, 0x3A, 0x16);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -54198,9 +54198,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -54210,7 +54210,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0x0F, 0x3A, 0x15);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -54288,7 +54288,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0x0F, 0x3A, 0x15);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -54366,7 +54366,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0x0F, 0x3A, 0x15);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -57760,9 +57760,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -57772,7 +57772,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x8F);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -57786,9 +57786,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -57798,7 +57798,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x8F);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -57824,7 +57824,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x8F);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -57876,7 +57876,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x8F);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -58228,9 +58228,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -58240,7 +58240,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x18);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -58254,9 +58254,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -58266,7 +58266,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x18);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -58280,9 +58280,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -58292,7 +58292,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x18);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -58306,9 +58306,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -58318,7 +58318,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x18);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -59072,7 +59072,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x72);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -59150,7 +59150,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x72);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -59228,7 +59228,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x73);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -59254,7 +59254,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x73);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -59332,7 +59332,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x73);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -59410,7 +59410,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x71);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -59488,7 +59488,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x71);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -59566,7 +59566,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x72);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -59644,7 +59644,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x72);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -59722,7 +59722,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x71);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -59800,7 +59800,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x71);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -59878,7 +59878,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x72);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -59956,7 +59956,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x72);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -60034,7 +60034,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x73);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -60060,7 +60060,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x73);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -60138,7 +60138,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x73);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -60216,7 +60216,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x71);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -60294,7 +60294,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x71);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -62024,9 +62024,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -62036,7 +62036,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -62050,9 +62050,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -62062,7 +62062,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -62088,7 +62088,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -62140,7 +62140,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -62466,9 +62466,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -62478,7 +62478,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -62492,9 +62492,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -62504,7 +62504,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -62518,9 +62518,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -62530,7 +62530,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -62544,9 +62544,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -62556,7 +62556,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -62570,9 +62570,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -62582,7 +62582,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -62596,9 +62596,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -62608,7 +62608,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -62622,9 +62622,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -62634,7 +62634,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -62648,9 +62648,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -62660,7 +62660,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -62674,9 +62674,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -62686,7 +62686,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -62700,9 +62700,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -62712,7 +62712,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD2);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -62726,9 +62726,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -62738,7 +62738,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -62752,9 +62752,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -62764,7 +62764,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -62790,7 +62790,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -62816,7 +62816,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -62842,7 +62842,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -62868,7 +62868,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -62894,7 +62894,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -62920,7 +62920,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -62946,7 +62946,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -62972,7 +62972,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -62998,7 +62998,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -63024,7 +63024,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD2);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -63050,7 +63050,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -63076,7 +63076,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -63102,7 +63102,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD2);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -63128,7 +63128,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -63154,7 +63154,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -63272,9 +63272,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -63284,7 +63284,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -63298,9 +63298,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -63310,7 +63310,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -63324,9 +63324,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -63336,7 +63336,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -63350,9 +63350,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -63362,7 +63362,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -63376,9 +63376,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -63388,7 +63388,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -63402,9 +63402,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -63414,7 +63414,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -63428,9 +63428,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -63440,7 +63440,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -63454,9 +63454,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -63466,7 +63466,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -63480,9 +63480,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -63492,7 +63492,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -63506,9 +63506,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -63518,7 +63518,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD2);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -63532,9 +63532,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -63544,7 +63544,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -63558,9 +63558,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -63570,7 +63570,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -63596,7 +63596,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -63622,7 +63622,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -63648,7 +63648,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -63674,7 +63674,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -63700,7 +63700,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -63726,7 +63726,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -63752,7 +63752,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -63778,7 +63778,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -63804,7 +63804,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -63830,7 +63830,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD2);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -63856,7 +63856,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -63882,7 +63882,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -63908,7 +63908,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD2);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -63934,7 +63934,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -63960,7 +63960,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -63986,7 +63986,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -64012,7 +64012,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -64038,7 +64038,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -64064,7 +64064,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -64090,7 +64090,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xC7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -64116,7 +64116,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xC7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -64142,7 +64142,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xC7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -64156,9 +64156,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -64182,9 +64182,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -64208,9 +64208,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -64234,9 +64234,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -64260,9 +64260,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -64416,9 +64416,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -64442,9 +64442,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -64468,9 +64468,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -64494,9 +64494,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -64520,9 +64520,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -64676,9 +64676,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -64702,9 +64702,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -64728,9 +64728,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -64754,9 +64754,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -64780,9 +64780,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -64806,9 +64806,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -64832,9 +64832,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -64858,9 +64858,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -64884,9 +64884,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -64910,9 +64910,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -64936,9 +64936,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -64962,9 +64962,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -64988,9 +64988,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65014,9 +65014,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65040,9 +65040,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65066,9 +65066,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -65092,9 +65092,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65118,9 +65118,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65144,9 +65144,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65170,9 +65170,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65196,9 +65196,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -65222,9 +65222,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65248,9 +65248,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65274,9 +65274,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65300,9 +65300,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65430,9 +65430,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -65442,7 +65442,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -65456,9 +65456,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -65468,7 +65468,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -65482,9 +65482,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -65494,7 +65494,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -65508,9 +65508,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65520,7 +65520,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -65534,9 +65534,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65546,7 +65546,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -65560,9 +65560,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65572,7 +65572,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -65586,9 +65586,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65598,7 +65598,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -65612,9 +65612,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65624,7 +65624,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -65638,9 +65638,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65650,7 +65650,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -65664,9 +65664,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65676,7 +65676,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD2);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -65690,9 +65690,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65702,7 +65702,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -65716,9 +65716,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65728,7 +65728,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -65754,7 +65754,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -65780,7 +65780,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -65806,7 +65806,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -65832,7 +65832,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -65858,7 +65858,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -65884,7 +65884,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -65910,7 +65910,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -65936,7 +65936,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -65962,7 +65962,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -65988,7 +65988,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD2);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -66014,7 +66014,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -66040,7 +66040,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -66066,7 +66066,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD2);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -66092,7 +66092,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -66118,7 +66118,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -66132,9 +66132,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -66144,7 +66144,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -66158,9 +66158,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -66170,7 +66170,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -66184,9 +66184,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -66196,7 +66196,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -66210,9 +66210,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -66222,7 +66222,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -66236,9 +66236,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -66248,7 +66248,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -66262,9 +66262,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -66274,7 +66274,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -66288,9 +66288,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -66300,7 +66300,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -66314,9 +66314,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -66326,7 +66326,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -66340,9 +66340,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -66352,7 +66352,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -66366,9 +66366,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -66378,7 +66378,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD2);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -66392,9 +66392,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -66404,7 +66404,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -66418,9 +66418,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -66430,7 +66430,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -66456,7 +66456,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -66482,7 +66482,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -66508,7 +66508,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -66534,7 +66534,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -66560,7 +66560,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -66586,7 +66586,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -66612,7 +66612,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -66638,7 +66638,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -66664,7 +66664,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -66690,7 +66690,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD2);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -66716,7 +66716,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -66742,7 +66742,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -66768,7 +66768,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD2);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -66794,7 +66794,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -66820,7 +66820,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_1);
+		self.mod_rm_sib(arg0, Self::R64S_1);
 	
 		// No displacement or immediate.
 	
@@ -67276,9 +67276,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -67288,7 +67288,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -67302,9 +67302,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -67314,7 +67314,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -67328,9 +67328,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -67340,7 +67340,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -67354,9 +67354,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -67366,7 +67366,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -67380,9 +67380,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -67392,7 +67392,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -67406,9 +67406,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -67418,7 +67418,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -67432,9 +67432,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -67444,7 +67444,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -67458,9 +67458,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -67470,7 +67470,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -67484,9 +67484,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -67496,7 +67496,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -67510,9 +67510,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -67522,7 +67522,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD2);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -67536,9 +67536,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -67548,7 +67548,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -67562,9 +67562,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -67574,7 +67574,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -67600,7 +67600,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -67626,7 +67626,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -67652,7 +67652,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -67678,7 +67678,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -67704,7 +67704,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -67730,7 +67730,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -67756,7 +67756,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -67782,7 +67782,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -67808,7 +67808,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -67834,7 +67834,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD2);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -67860,7 +67860,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -67886,7 +67886,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -67912,7 +67912,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD2);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -67938,7 +67938,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -67964,7 +67964,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -67978,9 +67978,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -67990,7 +67990,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -68004,9 +68004,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -68016,7 +68016,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -68030,9 +68030,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -68042,7 +68042,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -68056,9 +68056,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -68068,7 +68068,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -68082,9 +68082,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -68094,7 +68094,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -68108,9 +68108,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -68120,7 +68120,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -68134,9 +68134,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -68146,7 +68146,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -68160,9 +68160,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -68172,7 +68172,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -68186,9 +68186,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -68198,7 +68198,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -68212,9 +68212,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -68224,7 +68224,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD2);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -68238,9 +68238,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -68250,7 +68250,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -68264,9 +68264,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -68276,7 +68276,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -68302,7 +68302,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -68328,7 +68328,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -68354,7 +68354,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -68380,7 +68380,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -68406,7 +68406,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -68432,7 +68432,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -68458,7 +68458,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -68484,7 +68484,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -68510,7 +68510,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -68536,7 +68536,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD2);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -68562,7 +68562,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -68588,7 +68588,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -68614,7 +68614,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD2);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -68640,7 +68640,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -68666,7 +68666,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_7);
+		self.mod_rm_sib(arg0, Self::R64S_7);
 	
 		// No displacement or immediate.
 	
@@ -68862,9 +68862,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -68874,7 +68874,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -68888,9 +68888,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -68900,7 +68900,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -68914,9 +68914,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -68926,7 +68926,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x19);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -68940,9 +68940,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -68952,7 +68952,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -68966,9 +68966,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -68978,7 +68978,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -68992,9 +68992,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -69004,7 +69004,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x19);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -69018,9 +69018,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -69030,7 +69030,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -69044,9 +69044,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -69056,7 +69056,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -69070,9 +69070,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -69082,7 +69082,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x19);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -69096,9 +69096,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -69108,7 +69108,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x80);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -69122,9 +69122,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -69134,7 +69134,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x18);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -69148,9 +69148,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -69160,7 +69160,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x18);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -69186,7 +69186,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -69212,7 +69212,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -69264,7 +69264,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x19);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -69316,7 +69316,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -69342,7 +69342,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -69394,7 +69394,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x19);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -69446,7 +69446,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -69472,7 +69472,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -69524,7 +69524,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x19);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -69576,7 +69576,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x80);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -69628,7 +69628,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x18);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -69680,7 +69680,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x18);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -69758,7 +69758,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x80);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -69810,7 +69810,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x18);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -69862,7 +69862,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x18);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -69902,9 +69902,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -69928,9 +69928,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -69954,9 +69954,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -69980,9 +69980,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -70110,9 +70110,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -70122,7 +70122,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x97);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70148,7 +70148,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x97);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70174,7 +70174,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x97);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70188,9 +70188,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -70200,7 +70200,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x93);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70226,7 +70226,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x93);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70252,7 +70252,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x93);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70266,9 +70266,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -70278,7 +70278,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x92);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70304,7 +70304,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x92);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70330,7 +70330,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x92);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70344,9 +70344,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -70356,7 +70356,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x96);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70382,7 +70382,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x96);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70408,7 +70408,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x96);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70422,9 +70422,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -70434,7 +70434,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x92);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70460,7 +70460,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x92);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70486,7 +70486,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x92);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70500,9 +70500,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -70512,7 +70512,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x94);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70538,7 +70538,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x94);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70564,7 +70564,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x94);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70578,9 +70578,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -70590,7 +70590,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9F);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70616,7 +70616,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9F);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70642,7 +70642,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9F);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70656,9 +70656,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -70668,7 +70668,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9D);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70694,7 +70694,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9D);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70720,7 +70720,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9D);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70734,9 +70734,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -70746,7 +70746,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9C);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70772,7 +70772,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9C);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70798,7 +70798,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9C);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70812,9 +70812,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -70824,7 +70824,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9E);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70850,7 +70850,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9E);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70876,7 +70876,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9E);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70890,9 +70890,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -70902,7 +70902,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x96);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70928,7 +70928,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x96);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70954,7 +70954,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x96);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -70968,9 +70968,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -70980,7 +70980,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x92);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71006,7 +71006,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x92);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71032,7 +71032,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x92);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71046,9 +71046,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -71058,7 +71058,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x93);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71084,7 +71084,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x93);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71110,7 +71110,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x93);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71124,9 +71124,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -71136,7 +71136,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x97);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71162,7 +71162,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x97);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71188,7 +71188,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x97);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71202,9 +71202,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -71214,7 +71214,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x93);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71240,7 +71240,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x93);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71266,7 +71266,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x93);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71280,9 +71280,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -71292,7 +71292,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x95);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71318,7 +71318,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x95);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71344,7 +71344,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x95);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71358,9 +71358,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -71370,7 +71370,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9E);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71396,7 +71396,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9E);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71422,7 +71422,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9E);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71436,9 +71436,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -71448,7 +71448,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9C);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71474,7 +71474,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9C);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71500,7 +71500,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9C);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71514,9 +71514,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -71526,7 +71526,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9D);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71552,7 +71552,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9D);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71578,7 +71578,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9D);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71592,9 +71592,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -71604,7 +71604,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9F);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71630,7 +71630,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9F);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71656,7 +71656,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9F);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71670,9 +71670,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -71682,7 +71682,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x91);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71708,7 +71708,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x91);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71734,7 +71734,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x91);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71748,9 +71748,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -71760,7 +71760,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9B);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71786,7 +71786,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9B);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71812,7 +71812,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9B);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71826,9 +71826,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -71838,7 +71838,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x99);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71864,7 +71864,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x99);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71890,7 +71890,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x99);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71904,9 +71904,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -71916,7 +71916,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x95);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71942,7 +71942,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x95);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71968,7 +71968,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x95);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -71982,9 +71982,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -71994,7 +71994,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x90);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -72020,7 +72020,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x90);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -72046,7 +72046,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x90);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -72060,9 +72060,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72072,7 +72072,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9A);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -72098,7 +72098,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9A);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -72124,7 +72124,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9A);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -72138,9 +72138,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72150,7 +72150,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9A);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -72176,7 +72176,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9A);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -72202,7 +72202,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9A);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -72216,9 +72216,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72228,7 +72228,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9B);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -72254,7 +72254,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9B);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -72280,7 +72280,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9B);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -72294,9 +72294,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72306,7 +72306,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x98);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -72332,7 +72332,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x98);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -72358,7 +72358,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x98);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -72372,9 +72372,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72384,7 +72384,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x94);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -72410,7 +72410,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x94);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -72436,7 +72436,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x94);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		// No displacement or immediate.
 	
@@ -72476,9 +72476,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -72488,7 +72488,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -72502,9 +72502,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -72514,7 +72514,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -72528,9 +72528,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -72540,7 +72540,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -72554,9 +72554,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72566,7 +72566,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -72580,9 +72580,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72592,7 +72592,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -72606,9 +72606,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72618,7 +72618,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -72632,9 +72632,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72644,7 +72644,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -72658,9 +72658,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72670,7 +72670,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -72684,9 +72684,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72696,7 +72696,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -72710,9 +72710,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72722,7 +72722,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD2);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -72736,9 +72736,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72748,7 +72748,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -72762,9 +72762,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72774,7 +72774,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -72800,7 +72800,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -72826,7 +72826,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -72852,7 +72852,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -72878,7 +72878,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -72904,7 +72904,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -72930,7 +72930,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -72956,7 +72956,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -72982,7 +72982,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -73008,7 +73008,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -73034,7 +73034,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD2);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -73060,7 +73060,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -73086,7 +73086,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -73112,7 +73112,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD2);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -73138,7 +73138,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -73164,7 +73164,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -73178,9 +73178,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -73190,7 +73190,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xA5);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -73204,9 +73204,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -73216,7 +73216,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xA4);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -73230,9 +73230,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -73242,7 +73242,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xA5);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -73256,9 +73256,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -73268,7 +73268,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xA4);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -73282,9 +73282,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -73294,7 +73294,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xA5);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -73308,9 +73308,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -73320,7 +73320,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xA4);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -73346,7 +73346,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xA5);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -73372,7 +73372,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xA4);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -73398,7 +73398,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xA5);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -73424,7 +73424,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xA4);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -73450,7 +73450,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xA5);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -73476,7 +73476,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xA4);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -73594,9 +73594,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -73606,7 +73606,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -73620,9 +73620,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -73632,7 +73632,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -73646,9 +73646,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -73658,7 +73658,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -73672,9 +73672,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -73684,7 +73684,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -73698,9 +73698,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -73710,7 +73710,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -73724,9 +73724,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -73736,7 +73736,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -73750,9 +73750,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -73762,7 +73762,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -73776,9 +73776,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -73788,7 +73788,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -73802,9 +73802,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -73814,7 +73814,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -73828,9 +73828,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -73840,7 +73840,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD2);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -73854,9 +73854,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -73866,7 +73866,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -73880,9 +73880,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -73892,7 +73892,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -73918,7 +73918,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -73944,7 +73944,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -73970,7 +73970,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -73996,7 +73996,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -74022,7 +74022,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -74048,7 +74048,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -74074,7 +74074,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -74100,7 +74100,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -74126,7 +74126,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -74152,7 +74152,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD2);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -74178,7 +74178,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -74204,7 +74204,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -74230,7 +74230,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD2);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -74256,7 +74256,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -74282,7 +74282,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD0);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -74296,9 +74296,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -74308,7 +74308,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAD);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -74322,9 +74322,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -74334,7 +74334,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAC);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -74348,9 +74348,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -74360,7 +74360,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAD);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -74374,9 +74374,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -74386,7 +74386,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAC);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -74400,9 +74400,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -74412,7 +74412,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAD);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -74426,9 +74426,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -74438,7 +74438,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAC);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -74464,7 +74464,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAD);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -74490,7 +74490,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAC);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -74516,7 +74516,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAD);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -74542,7 +74542,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAC);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -74568,7 +74568,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAD);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -74594,7 +74594,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAC);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -75102,9 +75102,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -75114,7 +75114,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -75128,9 +75128,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -75154,9 +75154,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -75180,9 +75180,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -75206,9 +75206,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -75414,9 +75414,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -75426,7 +75426,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -75440,9 +75440,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -75452,7 +75452,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -75466,9 +75466,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -75478,7 +75478,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x29);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -75492,9 +75492,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -75504,7 +75504,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -75518,9 +75518,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -75530,7 +75530,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -75544,9 +75544,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -75556,7 +75556,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x29);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -75570,9 +75570,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -75582,7 +75582,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -75596,9 +75596,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -75608,7 +75608,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -75622,9 +75622,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -75634,7 +75634,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x29);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -75648,9 +75648,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -75660,7 +75660,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x80);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -75674,9 +75674,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -75686,7 +75686,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x28);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -75700,9 +75700,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -75712,7 +75712,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x28);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -75738,7 +75738,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -75764,7 +75764,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -75816,7 +75816,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x29);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -75868,7 +75868,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -75894,7 +75894,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -75946,7 +75946,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x29);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -75998,7 +75998,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -76024,7 +76024,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -76076,7 +76076,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x29);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -76128,7 +76128,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x80);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -76180,7 +76180,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x28);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -76232,7 +76232,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x28);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -76310,7 +76310,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x80);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -76362,7 +76362,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x28);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -76414,7 +76414,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x28);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -76922,9 +76922,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -76934,7 +76934,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -76948,9 +76948,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -76960,7 +76960,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x85);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -76974,9 +76974,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -76986,7 +76986,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -77000,9 +77000,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -77012,7 +77012,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x85);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -77026,9 +77026,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -77038,7 +77038,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -77052,9 +77052,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -77064,7 +77064,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x85);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -77078,9 +77078,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -77090,7 +77090,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF6);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -77104,9 +77104,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -77116,7 +77116,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x84);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -77130,9 +77130,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -77142,7 +77142,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x84);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -77168,7 +77168,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -77194,7 +77194,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x85);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -77220,7 +77220,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -77246,7 +77246,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x85);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -77272,7 +77272,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -77298,7 +77298,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x85);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -77324,7 +77324,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF6);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -77350,7 +77350,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x84);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -77376,7 +77376,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x84);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -77428,7 +77428,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF6);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_0);
+		self.mod_rm_sib(arg0, Self::R64S_0);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -77454,7 +77454,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x84);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -77480,7 +77480,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x84);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -81004,17 +81004,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x03, 0x1, 0x1, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x1D);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -81030,17 +81030,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x1D);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -81066,7 +81066,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x1D);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -81092,7 +81092,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x1D);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -82512,9 +82512,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -82524,7 +82524,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x00);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -82550,7 +82550,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x00);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -82564,9 +82564,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -82576,7 +82576,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x00);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -82602,7 +82602,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x00);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -82616,17 +82616,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x03, 0x1, 0x1, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x19);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -82652,7 +82652,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x19);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -82668,17 +82668,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x03, 0x1, 0x1, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x39);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -82704,7 +82704,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x39);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -82720,17 +82720,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x17);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -82756,7 +82756,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x17);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -88596,17 +88596,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, Self::XMM0, arg0, Self::R64S_2);
 	
 		self.opcode_1(0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -88648,17 +88648,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg0, arg2);
 	
 		self.opcode_1(0x2F);
 	
-		self.mod_rm_sib(&mut self, arg0, arg2);
+		self.mod_rm_sib(arg0, arg2);
 	
 		// No displacement or immediate.
 	
@@ -88674,17 +88674,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg0, arg2);
 	
 		self.opcode_1(0x2F);
 	
-		self.mod_rm_sib(&mut self, arg0, arg2);
+		self.mod_rm_sib(arg0, arg2);
 	
 		// No displacement or immediate.
 	
@@ -88752,17 +88752,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg0, arg2);
 	
 		self.opcode_1(0x2E);
 	
-		self.mod_rm_sib(&mut self, arg0, arg2);
+		self.mod_rm_sib(arg0, arg2);
 	
 		// No displacement or immediate.
 	
@@ -88778,17 +88778,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg0, arg2);
 	
 		self.opcode_1(0x2E);
 	
-		self.mod_rm_sib(&mut self, arg0, arg2);
+		self.mod_rm_sib(arg0, arg2);
 	
 		// No displacement or immediate.
 	
@@ -89480,17 +89480,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x29);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -89506,17 +89506,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x29);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -89594,7 +89594,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x29);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -89672,7 +89672,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x29);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -89688,17 +89688,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x29);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -89714,17 +89714,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x1, 0x0, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x29);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -89802,7 +89802,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x29);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -89880,7 +89880,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x29);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -89896,17 +89896,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x7E);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -89932,7 +89932,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7E);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -90104,17 +90104,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x7F);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -90130,17 +90130,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x7F);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -90218,7 +90218,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7F);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -90296,7 +90296,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7F);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -90312,17 +90312,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x2, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x7F);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -90338,17 +90338,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x1, 0x2, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x7F);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -90426,7 +90426,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7F);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -90504,7 +90504,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7F);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -90546,17 +90546,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x17);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -90598,17 +90598,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x17);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -90676,17 +90676,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x13);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -90728,17 +90728,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x13);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -90988,17 +90988,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0xE7);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -91014,17 +91014,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0xE7);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -91092,17 +91092,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x2B);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -91118,17 +91118,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x2B);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -91144,17 +91144,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x2B);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -91170,17 +91170,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x1, 0x0, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x2B);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -91196,17 +91196,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x1, 0x1, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x7E);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -91222,17 +91222,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0xD6);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -91258,7 +91258,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7E);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -91388,7 +91388,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD6);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -91404,17 +91404,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x3, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x11);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -91492,7 +91492,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x11);
 	
-		self.mod_rm_sib(&mut self, arg0, arg2);
+		self.mod_rm_sib(arg0, arg2);
 	
 		// No displacement or immediate.
 	
@@ -91716,17 +91716,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x2, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x11);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -91804,7 +91804,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x11);
 	
-		self.mod_rm_sib(&mut self, arg0, arg2);
+		self.mod_rm_sib(arg0, arg2);
 	
 		// No displacement or immediate.
 	
@@ -91820,17 +91820,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x11);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -91846,17 +91846,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x11);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -91934,7 +91934,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x11);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -92012,7 +92012,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x11);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -92028,17 +92028,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x11);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -92054,17 +92054,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x1, 0x0, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x11);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -92142,7 +92142,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x11);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -92220,7 +92220,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x11);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -97488,17 +97488,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x14);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -97524,7 +97524,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x14);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -97550,7 +97550,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x14);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -97566,17 +97566,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x16);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -97602,7 +97602,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x16);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -97618,17 +97618,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x03, 0x0, 0x1, 0x1, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x16);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -97654,7 +97654,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x16);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -97670,17 +97670,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, Self::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x15);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -97732,7 +97732,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x15);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -97784,7 +97784,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x15);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		self.displacement_immediate_1(arg2);
 	
@@ -99100,17 +99100,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg0, arg2);
 	
 		self.opcode_1(0x8E);
 	
-		self.mod_rm_sib(&mut self, arg0, arg2);
+		self.mod_rm_sib(arg0, arg2);
 	
 		// No displacement or immediate.
 	
@@ -99126,17 +99126,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg0, arg2);
 	
 		self.opcode_1(0x8E);
 	
-		self.mod_rm_sib(&mut self, arg0, arg2);
+		self.mod_rm_sib(arg0, arg2);
 	
 		// No displacement or immediate.
 	
@@ -99204,17 +99204,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg0, arg2);
 	
 		self.opcode_1(0x8E);
 	
-		self.mod_rm_sib(&mut self, arg0, arg2);
+		self.mod_rm_sib(arg0, arg2);
 	
 		// No displacement or immediate.
 	
@@ -99230,17 +99230,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x02, 0x1, 0x1, 0x1, arg1, arg0, arg2);
 	
 		self.opcode_1(0x8E);
 	
-		self.mod_rm_sib(&mut self, arg0, arg2);
+		self.mod_rm_sib(arg0, arg2);
 	
 		// No displacement or immediate.
 	
@@ -108252,17 +108252,17 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, Self::XMM0, arg0, Self::R64S_3);
 	
 		self.opcode_1(0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -109614,7 +109614,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -109640,7 +109640,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_2);
+		self.mod_rm_sib(arg0, Self::R64S_2);
 	
 		// No displacement or immediate.
 	
@@ -109666,7 +109666,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -109692,7 +109692,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_3);
+		self.mod_rm_sib(arg0, Self::R64S_3);
 	
 		// No displacement or immediate.
 	
@@ -109756,9 +109756,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -109768,7 +109768,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -109782,9 +109782,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -109794,7 +109794,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -109808,9 +109808,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -109820,7 +109820,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -109834,9 +109834,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -109846,7 +109846,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -109860,9 +109860,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -109872,7 +109872,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -109898,7 +109898,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -109924,7 +109924,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -109950,7 +109950,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xC1);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -109976,7 +109976,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -110002,7 +110002,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -110028,7 +110028,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -110054,7 +110054,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xC0);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -110172,9 +110172,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -110184,7 +110184,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x87);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -110198,9 +110198,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -110210,7 +110210,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x87);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -110224,9 +110224,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -110236,7 +110236,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x87);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -110250,9 +110250,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -110262,7 +110262,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x86);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -110276,9 +110276,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -110288,7 +110288,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x86);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -110366,7 +110366,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x87);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -110470,7 +110470,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x87);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -110548,7 +110548,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x87);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -110652,7 +110652,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x86);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -110704,7 +110704,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x86);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -110808,7 +110808,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x86);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -110860,7 +110860,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x86);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -110952,9 +110952,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -111108,9 +111108,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -111120,7 +111120,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -111134,9 +111134,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -111146,7 +111146,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -111160,9 +111160,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -111172,7 +111172,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x31);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -111186,9 +111186,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -111198,7 +111198,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -111212,9 +111212,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -111224,7 +111224,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -111238,9 +111238,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -111250,7 +111250,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x31);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -111264,9 +111264,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -111276,7 +111276,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -111290,9 +111290,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -111302,7 +111302,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -111316,9 +111316,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -111328,7 +111328,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x31);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -111342,9 +111342,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -111354,7 +111354,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x80);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -111368,9 +111368,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -111380,7 +111380,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x30);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -111394,9 +111394,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -111406,7 +111406,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x30);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -111432,7 +111432,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -111458,7 +111458,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -111510,7 +111510,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x31);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -111562,7 +111562,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -111588,7 +111588,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -111640,7 +111640,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x31);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -111692,7 +111692,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -111718,7 +111718,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -111770,7 +111770,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x31);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -111822,7 +111822,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x80);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -111874,7 +111874,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x30);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -111926,7 +111926,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x30);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -112004,7 +112004,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x80);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -112056,7 +112056,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x30);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -112108,7 +112108,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x30);
 	
-		self.mod_rm_sib(&mut self, arg0, arg1);
+		self.mod_rm_sib(arg0, arg1);
 	
 		// No displacement or immediate.
 	
@@ -112276,9 +112276,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -112288,7 +112288,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -112302,9 +112302,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -112314,7 +112314,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -112328,9 +112328,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -112340,7 +112340,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -112354,9 +112354,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -112366,7 +112366,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -112380,9 +112380,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -112392,7 +112392,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -112406,9 +112406,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -112418,7 +112418,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_5);
+		self.mod_rm_sib(arg0, Self::R64S_5);
 	
 		// No displacement or immediate.
 	
@@ -112432,9 +112432,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -112444,7 +112444,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -112458,9 +112458,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -112470,7 +112470,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -112484,9 +112484,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -112496,7 +112496,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -112510,9 +112510,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -112522,7 +112522,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -112536,9 +112536,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -112548,7 +112548,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -112562,9 +112562,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -112574,7 +112574,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_4);
+		self.mod_rm_sib(arg0, Self::R64S_4);
 	
 		// No displacement or immediate.
 	
@@ -112588,9 +112588,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -112600,7 +112600,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -112614,9 +112614,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -112626,7 +112626,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -112640,9 +112640,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -112652,7 +112652,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -112666,9 +112666,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		self.pref_group3();
 	
@@ -112678,7 +112678,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -112692,9 +112692,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -112704,7 +112704,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	
@@ -112718,9 +112718,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(&mut self, arg0);
+		self.pref_group2(arg0);
 	
-		self.pref_group4(&mut self, arg0);
+		self.pref_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -112730,7 +112730,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(&mut self, arg0, Self::R64S_6);
+		self.mod_rm_sib(arg0, Self::R64S_6);
 	
 		// No displacement or immediate.
 	

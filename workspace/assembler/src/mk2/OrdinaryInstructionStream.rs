@@ -33,6 +33,7 @@ impl OrdinaryInstructionStream
 	//self.opcode_1(0x14);
 	/*
 	
+	TODO: Self::R64S_2 et al
 	
 	
 
