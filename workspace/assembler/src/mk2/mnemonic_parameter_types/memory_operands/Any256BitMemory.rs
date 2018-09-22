@@ -5,3 +5,13 @@
 /// Any 256-bit (thirty-two bytes) of memory referenced by `MemoryOperand`.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct Any256BitMemory(pub MemoryOperand);
+
+impl MemoryOrRegister for Any256BitMemory
+{
+	/// Value.
+	#[inline(always)]
+	fn value(self) -> u8
+	{
+		self.0.value()
+	}
+}

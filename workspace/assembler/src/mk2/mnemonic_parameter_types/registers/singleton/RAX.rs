@@ -4,11 +4,15 @@
 
 singleton_register!(RAX);
 
-impl GeneralPurposeRegister for RAX
+impl Register for RAX
 {
 	#[inline(always)]
 	fn index(self) -> u8
 	{
 		0
 	}
+}
+
+impl GeneralPurposeRegister for RAX
+{
 }

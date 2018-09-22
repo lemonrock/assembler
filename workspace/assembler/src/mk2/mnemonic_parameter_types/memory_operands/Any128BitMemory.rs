@@ -5,3 +5,13 @@
 /// Any 128-bit (sixteen bytes) of memory referenced by `MemoryOperand`.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct Any128BitMemory(pub MemoryOperand);
+
+impl MemoryOrRegister for Any128BitMemory
+{
+	/// Value.
+	#[inline(always)]
+	fn value(self) -> u8
+	{
+		self.0.value()
+	}
+}

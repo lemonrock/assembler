@@ -35,5 +35,5 @@ pub mod singletons;
 
 include!("AsDisplacement.rs");
 include!("Hint.rs");
-include!("ModRM.rs");
+include!("MemoryOrRegister.rs");
 include!("ToOpcode.rs");

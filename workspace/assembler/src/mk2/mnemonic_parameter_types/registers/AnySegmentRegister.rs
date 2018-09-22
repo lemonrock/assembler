@@ -3,9 +3,6 @@
 
 
 /// Any segment register.
-pub trait AnySegmentRegister
+pub trait AnySegmentRegister: Register
 {
-	/// Zero-based index from 0 to 5.
-	#[inline(always)]
-	fn index(self) -> u8;
 }

@@ -5,3 +5,13 @@
 /// An 80-bit float (long double) in memory referenced by `MemoryOperand`.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct X87Float80BitMemory(pub MemoryOperand);
+
+impl MemoryOrRegister for X87Float80BitMemory
+{
+	/// Value.
+	#[inline(always)]
+	fn value(self) -> u8
+	{
+		self.0.value()
+	}
+}

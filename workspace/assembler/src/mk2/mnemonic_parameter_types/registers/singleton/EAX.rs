@@ -4,11 +4,15 @@
 
 singleton_register!(EAX);
 
-impl GeneralPurposeRegister for EAX
+impl Register for EAX
 {
 	#[inline(always)]
 	fn index(self) -> u8
 	{
 		0
 	}
+}
+
+impl GeneralPurposeRegister for EAX
+{
 }

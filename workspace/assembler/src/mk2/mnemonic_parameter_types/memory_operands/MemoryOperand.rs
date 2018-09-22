@@ -6,6 +6,18 @@
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct MemoryOperand(u64);
 
+impl MemoryOrRegister for MemoryOperand
+{
+	/// Value.
+	#[inline(always)]
+	fn value(self) -> u8
+	{
+		// TODO: Seems quite wrong... 3-bits of displacement doesn't make sense.
+		panic!("Seems quite wrong... 3-bits of displacement doesn't make sense.");
+		self.0 as u8
+	}
+}
+
 impl MemoryOperand
 {
 	const DisplacementMask: u64 = 0x00000000FFFFFFFF;

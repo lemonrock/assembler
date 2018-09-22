@@ -4,11 +4,15 @@
 
 singleton_register!(FS);
 
-impl AnySegmentRegister for FS
+impl Register for FS
 {
 	#[inline(always)]
 	fn index(self) -> u8
 	{
 		4
 	}
+}
+
+impl AnySegmentRegister for FS
+{
 }

@@ -76,3 +76,12 @@ impl AsDisplacement for XMMRegister
 		(self as u8) << 4
 	}
 }
+
+impl Register for XMMRegister
+{
+	#[inline(always)]
+	fn index(self) -> u8
+	{
+		self as u8
+	}
+}

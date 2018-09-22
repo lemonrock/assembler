@@ -40,3 +40,12 @@ impl Default for MMRegister
 		MMRegister::MM0
 	}
 }
+
+impl Register for MMRegister
+{
+	#[inline(always)]
+	fn index(self) -> u8
+	{
+		0
+	}
+}

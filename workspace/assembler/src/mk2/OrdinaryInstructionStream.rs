@@ -34,13 +34,13 @@ impl OrdinaryInstructionStream
 	
 	// X can be a GeneralPurposeRegister, X87Integer*BitMemory, any Any*BitMemoryOperand?
 	//
-	// reg can be GP, SegmentRegister, FS, GS, XMMRegister, XMM0
+	// reg can be GP, SegmentRegister, FS, GS, XMMRegister, XMM0, YMM and probably MMRegister
 	
 	/// Emits one byte containing a a combined `MOD.r/m` and Scaled Index Byte (SIB).
 	///
 	/// See [this](http://www.c-jump.com/CIS77/CPU/x86/X77_0060_mod_reg_r_m_byte.htm) reference to the bits.
 	#[inline(always)]
-	fn mod_rm_sib(&mut self, rm: X, reg: impl GeneralPurposeRegister)
+	fn mod_rm_sib(&mut self, rm: impl MemoryOrRegister, reg: impl Register)
 	{
 		const ModRegisterAddressingMode: u8 = 0b11;
 		

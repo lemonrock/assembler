@@ -75,3 +75,12 @@ impl AsDisplacement for YMMRegister
 		(self as u8) << 4
 	}
 }
+
+impl Register for YMMRegister
+{
+	#[inline(always)]
+	fn index(self) -> u8
+	{
+		self as u8
+	}
+}

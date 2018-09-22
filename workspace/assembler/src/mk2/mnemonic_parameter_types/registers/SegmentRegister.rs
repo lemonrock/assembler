@@ -39,12 +39,15 @@ impl Default for SegmentRegister
 	}
 }
 
-impl AnySegmentRegister for SegmentRegister
+impl Register for SegmentRegister
 {
-	/// Zero-based index from 0 to 5.
 	#[inline(always)]
 	fn index(self) -> u8
 	{
 		self as u8
 	}
+}
+
+impl AnySegmentRegister for SegmentRegister
+{
 }

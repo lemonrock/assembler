@@ -4,7 +4,7 @@
 
 singleton_register!(DX);
 
-impl GeneralPurposeRegister for DX
+impl Register for DX
 {
 	#[inline(always)]
 	fn index(self) -> u8

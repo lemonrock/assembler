@@ -4,11 +4,15 @@
 
 singleton_register!(AL);
 
-impl GeneralPurposeRegister for AL
+impl Register for AL
 {
 	#[inline(always)]
 	fn index(self) -> u8
 	{
 		0
 	}
+}
+
+impl GeneralPurposeRegister for AL
+{
 }

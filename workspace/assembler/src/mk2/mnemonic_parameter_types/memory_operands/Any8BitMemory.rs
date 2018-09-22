@@ -5,3 +5,13 @@
 /// Any 8-bit (one byte) of memory referenced by `MemoryOperand`.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct Any8BitMemory(pub MemoryOperand);
+
+impl MemoryOrRegister for Any8BitMemory
+{
+	/// Value.
+	#[inline(always)]
+	fn value(self) -> u8
+	{
+		self.0.value()
+	}
+}

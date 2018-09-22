@@ -5,3 +5,13 @@
 /// A 32-bit float (single) in memory referenced by `MemoryOperand`.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct X87Float32BitMemory(pub MemoryOperand);
+
+impl MemoryOrRegister for X87Float32BitMemory
+{
+	/// Value.
+	#[inline(always)]
+	fn value(self) -> u8
+	{
+		self.0.value()
+	}
+}

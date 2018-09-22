@@ -4,11 +4,15 @@
 
 singleton_register!(CL);
 
-impl GeneralPurposeRegister for CL
+impl Register for CL
 {
 	#[inline(always)]
 	fn index(self) -> u8
 	{
 		1
 	}
+}
+
+impl GeneralPurposeRegister for CL
+{
 }

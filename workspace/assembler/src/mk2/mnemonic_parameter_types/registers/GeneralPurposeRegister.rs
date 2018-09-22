@@ -3,9 +3,6 @@
 
 
 /// A general purpose register which can be encoded in a Scaled Index Byte (SIB).
-pub trait GeneralPurposeRegister
+pub trait GeneralPurposeRegister: Register
 {
-	/// Zero-based index from 0 to 15.
-	#[inline(always)]
-	fn index(self) -> u8;
 }

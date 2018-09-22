@@ -2,9 +2,19 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// A type that can be encoded as a `MOD.R/M` 3-bit byte.
-pub trait ModRM
+/// A register.
+pub trait Register: MemoryOrRegister
+{
+	/// Index.
+	#[inline(always)]
+	fn index(self) -> u8;
+}
+
+impl<R: Register> MemoryOrRegister for R
 {
 	#[inline(always)]
-	fn value(self) -> u8;
+	fn value(self) -> u8
+	{
+		self.index()
+	}
 }

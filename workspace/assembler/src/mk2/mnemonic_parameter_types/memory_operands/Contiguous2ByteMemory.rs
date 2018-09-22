@@ -7,3 +7,13 @@
 /// Used only by x87 Floating Point Unit (FPU) instructions.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct Contiguous2ByteMemory(pub MemoryOperand);
+
+impl MemoryOrRegister for Contiguous2ByteMemory
+{
+	/// Value.
+	#[inline(always)]
+	fn value(self) -> u8
+	{
+		self.0.value()
+	}
+}

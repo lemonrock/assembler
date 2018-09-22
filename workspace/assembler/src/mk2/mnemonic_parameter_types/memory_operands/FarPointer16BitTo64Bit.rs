@@ -5,3 +5,13 @@
 /// A far pointer (16 to 64) in memory referenced by `MemoryOperand`.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct FarPointer16BitTo64Bit(pub MemoryOperand);
+
+impl MemoryOrRegister for FarPointer16BitTo64Bit
+{
+	/// Value.
+	#[inline(always)]
+	fn value(self) -> u8
+	{
+		self.0.value()
+	}
+}

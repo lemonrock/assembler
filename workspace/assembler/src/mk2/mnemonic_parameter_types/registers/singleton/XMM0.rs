@@ -14,3 +14,12 @@ impl AsDisplacement for XMM0
 		0 << 4
 	}
 }
+
+impl Register for XMM0
+{
+	#[inline(always)]
+	fn index(self) -> u8
+	{
+		0
+	}
+}

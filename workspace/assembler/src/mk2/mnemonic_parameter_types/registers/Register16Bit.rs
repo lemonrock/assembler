@@ -68,15 +68,19 @@ impl ToOpcode for Register16Bit
 	#[inline(always)]
 	fn to_opcode(self) -> u8
 	{
-		self.to_scaled_index_byte() & 0x07
+		self.index() & 0x07
+	}
+}
+
+impl Register for Register16Bit
+{
+	#[inline(always)]
+	fn index(self) -> u8
+	{
+		self as u8
 	}
 }
 
 impl GeneralPurposeRegister for Register16Bit
 {
-	#[inline(always)]
-	fn to_scaled_index_byte(self) -> u8
-	{
-		self as u8
-	}
 }
