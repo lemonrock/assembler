@@ -30,23 +30,9 @@ impl OrdinaryInstructionStream
 		self.opcode_1(opcode3.to_opcode());
 	}
 	
-	// TODO: X
 	
-	// X can be a GeneralPurposeRegister, X87Integer*BitMemory, any Any*BitMemoryOperand?
-	//
-	// reg can be GP, SegmentRegister, FS, GS, XMMRegister, XMM0, YMM and probably MMRegister
 	
-	/// Emits one byte containing a a combined `MOD.r/m` and Scaled Index Byte (SIB).
-	///
-	/// See [this](http://www.c-jump.com/CIS77/CPU/x86/X77_0060_mod_reg_r_m_byte.htm) reference to the bits.
-	#[inline(always)]
-	fn mod_rm_sib(&mut self, rm: impl MemoryOrRegister, reg: impl Register)
-	{
-		const ModRegisterAddressingMode: u8 = 0b11;
-		
-		let mod_rm_and_sib = (0b11 << 6) | ((reg.index() << 3) & 0b0011_1000) | (rm.val_() & 0x07);
-		self.emit_u8(mod_rm_and_sib);
-	}
+	// Variant 1 assembler.h
 	
 	/*
 	
@@ -65,6 +51,98 @@ impl OrdinaryInstructionStream
     fxn_->emit_byte(mod);
   }
 	*/
+	
+	// Variant 2 assembler.c
+	/*
+	
+template <typename T>
+void Assembler::mod_rm_sib(const M<T>& rm, const Operand& r) {
+  // Every path we take needs these bits for the mod/rm byte
+  const auto rrr = (r.val_ << 3) & 0x38;
+
+  // First special case check for RIP+disp32
+  if (rm.rip_offset()) {
+    const auto mod_byte = 0x00 | rrr | 0x5;
+    fxn_->emit_byte(mod_byte);
+    disp_imm(rm.get_disp());
+    return;
+  }
+
+  // Second special case check for no base register
+  if (!rm.contains_base()) {
+    const auto mod_byte = 0x00 | rrr | 0x4;
+    const auto sib_byte = rm.contains_index() ?
+                          (((int)rm.get_scale() << 6) & 0xc0) | ((rm.get_index().val_ << 3) & 0x38) | 0x5 :
+                          0x00 | 0x20 | 0x5;
+
+    fxn_->emit_byte(mod_byte);
+    fxn_->emit_byte(sib_byte);
+    disp_imm(rm.get_disp());
+
+    return;
+  }
+
+  // Every path we take now requires the non-null base value.
+  const auto bbb = rm.get_base().val_ & 0x7;
+
+  // This logic determines what the value of the mod bits will be.
+  // It also controls how many immediate bytes we emit later.
+  const auto disp = (int32_t)rm.get_disp().val_;
+  size_t mod = 0x40;
+  if (disp < -128 || disp >= 128) {
+    mod = 0x80;
+  } else if (disp == 0 && bbb != 0x5) {
+    mod = 0x00;
+  }
+
+  // Is index non-null?
+  if (rm.contains_index()) {
+    const auto mod_byte = mod | rrr | 0x4;
+    const auto sib_byte = (((int)rm.get_scale() << 6) & 0xc0) |
+                          ((rm.get_index().val_ << 3) & 0x38) | bbb;
+
+    fxn_->emit_byte(mod_byte);
+    fxn_->emit_byte(sib_byte);
+  }
+  // Is base sitting in the eip/rip+disp32 row?
+  else if (bbb == 0x4) {
+    const auto mod_byte = mod | rrr | 0x4;
+    const auto sib_byte = (((int)rm.get_scale() << 6) & 0xc0) | 0x20 | bbb;
+
+    fxn_->emit_byte(mod_byte);
+    fxn_->emit_byte(sib_byte);
+  }
+  // No sib byte
+  else {
+    const auto mod_byte = mod | rrr | bbb;
+    fxn_->emit_byte(mod_byte);
+  }
+
+  // This logic parallels the logic for the mod bit
+  if (mod == 0x40) {
+    disp_imm(Imm8(disp));
+  } else if (mod == 0x80) {
+    disp_imm(Imm32(disp));
+  }
+}
+
+	*/
+	
+	// X can be a GeneralPurposeRegister, X87Integer*BitMemory, any Any*BitMemoryOperand?
+	//
+	// reg can be GP, SegmentRegister, FS, GS, XMMRegister, XMM0, YMM and probably MMRegister
+	
+	/// Emits one byte containing a a combined `MOD.r/m` and Scaled Index Byte (SIB).
+	///
+	/// See [this](http://www.c-jump.com/CIS77/CPU/x86/X77_0060_mod_reg_r_m_byte.htm) reference to the bits.
+	#[inline(always)]
+	fn mod_rm_sib(&mut self, rm: impl MemoryOrRegister, reg: impl Register)
+	{
+		const ModRegisterAddressingMode: u8 = 0b11;
+		
+		let mod_rm_and_sib = (0b11 << 6) | ((reg.index() << 3) & 0b0011_1000) | (rm.val_() & 0x07);
+		self.emit_u8(mod_rm_and_sib);
+	}
 	
 	#[inline(always)]
 	fn displacement_immediate_1<D: Displacement>(&mut self, displacement: impl AsDisplacement<D=D>)
