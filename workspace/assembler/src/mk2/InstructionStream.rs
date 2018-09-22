@@ -59,7 +59,7 @@ pub trait InstructionStream
 	fn adc_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
 	/// Add with carry r/m16 to r16.
-	fn adc_1(&mut self, arg0: Register16Bit, arg1: Register16Bit);
+	fn adc_Register16Bit_Register16Bit_1(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
 	/// Add with Carry Flag (CF) imm32 to r/m32.
 	fn adc_Register32Bit_Immediate32Bit(&mut self, arg0: Register32Bit, arg1: Immediate32Bit);
@@ -74,7 +74,7 @@ pub trait InstructionStream
 	fn adc_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
 	/// Add with Carry Flag (CF) r/m32 to r32.
-	fn adc_1(&mut self, arg0: Register32Bit, arg1: Register32Bit);
+	fn adc_Register32Bit_Register32Bit_1(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
 	/// Add with Carry Flag (CF) imm32 sign extended to 64-bits to r/m64.
 	fn adc_Register64Bit_Immediate32Bit(&mut self, arg0: Register64Bit, arg1: Immediate32Bit);
@@ -89,7 +89,7 @@ pub trait InstructionStream
 	fn adc_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
 	/// Add with Carry Flag (CF) r/m64 to r64.
-	fn adc_1(&mut self, arg0: Register64Bit, arg1: Register64Bit);
+	fn adc_Register64Bit_Register64Bit_1(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
 	/// Add with carry imm8 to r/m8.
 	fn adc_Register8Bit_Immediate8Bit(&mut self, arg0: Register8Bit, arg1: Immediate8Bit);
@@ -101,13 +101,13 @@ pub trait InstructionStream
 	fn adc_Register8Bit_Register8Bit(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// Add with carry r/m8 to byte register.
-	fn adc_1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
+	fn adc_Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// Add with carry byte register to r/m8.
 	fn adc_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Add with carry r/m8 to byte register.
-	fn adc_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn adc_Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Add with carry imm32 sign extended to 64-bits to RAX.
 	fn adc_RAX_Immediate32Bit(&mut self, arg0: RAX, arg1: Immediate32Bit);
@@ -122,13 +122,13 @@ pub trait InstructionStream
 	fn adc_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
 
 	/// Add with carry r/m8 to byte register.
-	fn adc_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn adc_RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
 
 	/// Add with carry byte register to r/m8.
 	fn adc_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Add with carry r/m8 to byte register.
-	fn adc_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn adc_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Add imm8 to AL.
 	fn add_AL_Immediate8Bit(&mut self, arg0: AL, arg1: Immediate8Bit);
@@ -188,7 +188,7 @@ pub trait InstructionStream
 	fn add_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
 	/// Add r/m16 to r16.
-	fn add_1(&mut self, arg0: Register16Bit, arg1: Register16Bit);
+	fn add_Register16Bit_Register16Bit_1(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
 	/// Add imm32 to r/m32.
 	fn add_Register32Bit_Immediate32Bit(&mut self, arg0: Register32Bit, arg1: Immediate32Bit);
@@ -203,7 +203,7 @@ pub trait InstructionStream
 	fn add_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
 	/// Add r/m32 to r32.
-	fn add_1(&mut self, arg0: Register32Bit, arg1: Register32Bit);
+	fn add_Register32Bit_Register32Bit_1(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
 	/// Add imm32 sign-extended to 64-bits to r/m64.
 	fn add_Register64Bit_Immediate32Bit(&mut self, arg0: Register64Bit, arg1: Immediate32Bit);
@@ -218,7 +218,7 @@ pub trait InstructionStream
 	fn add_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
 	/// Add r/m64 to r64.
-	fn add_1(&mut self, arg0: Register64Bit, arg1: Register64Bit);
+	fn add_Register64Bit_Register64Bit_1(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
 	/// Add imm8 to r/m8.
 	fn add_Register8Bit_Immediate8Bit(&mut self, arg0: Register8Bit, arg1: Immediate8Bit);
@@ -230,13 +230,13 @@ pub trait InstructionStream
 	fn add_Register8Bit_Register8Bit(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// Add r/m8 to r8.
-	fn add_1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
+	fn add_Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// Add r8 to r/m8.
 	fn add_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Add r/m8 to r8.
-	fn add_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn add_Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Add imm32 sign-extended to 64-bits to RAX.
 	fn add_RAX_Immediate32Bit(&mut self, arg0: RAX, arg1: Immediate32Bit);
@@ -251,13 +251,13 @@ pub trait InstructionStream
 	fn add_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
 
 	/// Add r/m8 to r8.
-	fn add_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn add_RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
 
 	/// Add r8 to r/m8.
 	fn add_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Add r/m8 to r8.
-	fn add_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn add_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Add packed double-precision floating-point values from xmm2/m128 to xmm1.
 	fn addpd_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -332,133 +332,133 @@ pub trait InstructionStream
 	fn aeskeygenassist_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Immediate8Bit);
 
 	/// AL AND imm8.
-	fn and_(&mut self, arg0: AL, arg1: Immediate8Bit);
+	fn and_AL_Immediate8Bit(&mut self, arg0: AL, arg1: Immediate8Bit);
 
 	/// AX AND imm16.
-	fn and_(&mut self, arg0: AX, arg1: Immediate16Bit);
+	fn and_AX_Immediate16Bit(&mut self, arg0: AX, arg1: Immediate16Bit);
 
 	/// EAX AND imm32.
-	fn and_(&mut self, arg0: EAX, arg1: Immediate32Bit);
+	fn and_EAX_Immediate32Bit(&mut self, arg0: EAX, arg1: Immediate32Bit);
 
 	/// r/m16 AND imm16.
-	fn and_(&mut self, arg0: Any16BitMemory, arg1: Immediate16Bit);
+	fn and_Any16BitMemory_Immediate16Bit(&mut self, arg0: Any16BitMemory, arg1: Immediate16Bit);
 
 	/// r/m16 AND imm8 (sign-extended).
-	fn and_(&mut self, arg0: Any16BitMemory, arg1: Immediate8Bit);
+	fn and_Any16BitMemory_Immediate8Bit(&mut self, arg0: Any16BitMemory, arg1: Immediate8Bit);
 
 	/// r/m16 AND r16.
-	fn and_(&mut self, arg0: Any16BitMemory, arg1: Register16Bit);
+	fn and_Any16BitMemory_Register16Bit(&mut self, arg0: Any16BitMemory, arg1: Register16Bit);
 
 	/// r/m32 AND imm32.
-	fn and_(&mut self, arg0: Any32BitMemory, arg1: Immediate32Bit);
+	fn and_Any32BitMemory_Immediate32Bit(&mut self, arg0: Any32BitMemory, arg1: Immediate32Bit);
 
 	/// r/m32 AND imm8 (sign-extended).
-	fn and_(&mut self, arg0: Any32BitMemory, arg1: Immediate8Bit);
+	fn and_Any32BitMemory_Immediate8Bit(&mut self, arg0: Any32BitMemory, arg1: Immediate8Bit);
 
 	/// r/m32 AND r32.
-	fn and_(&mut self, arg0: Any32BitMemory, arg1: Register32Bit);
+	fn and_Any32BitMemory_Register32Bit(&mut self, arg0: Any32BitMemory, arg1: Register32Bit);
 
 	/// r/m64 AND imm32 sign extended to 64-bits.
-	fn and_(&mut self, arg0: Any64BitMemory, arg1: Immediate32Bit);
+	fn and_Any64BitMemory_Immediate32Bit(&mut self, arg0: Any64BitMemory, arg1: Immediate32Bit);
 
 	/// r/m64 AND imm8 (sign-extended).
-	fn and_(&mut self, arg0: Any64BitMemory, arg1: Immediate8Bit);
+	fn and_Any64BitMemory_Immediate8Bit(&mut self, arg0: Any64BitMemory, arg1: Immediate8Bit);
 
 	/// r/m64 AND r32.
-	fn and_(&mut self, arg0: Any64BitMemory, arg1: Register64Bit);
+	fn and_Any64BitMemory_Register64Bit(&mut self, arg0: Any64BitMemory, arg1: Register64Bit);
 
 	/// r/m8 AND imm8.
-	fn and_(&mut self, arg0: Any8BitMemory, arg1: Immediate8Bit);
+	fn and_Any8BitMemory_Immediate8Bit(&mut self, arg0: Any8BitMemory, arg1: Immediate8Bit);
 
 	/// r/m8 AND r8.
-	fn and_(&mut self, arg0: Any8BitMemory, arg1: Register8Bit);
+	fn and_Any8BitMemory_Register8Bit(&mut self, arg0: Any8BitMemory, arg1: Register8Bit);
 
 	/// r/m8 AND r8.
-	fn and_(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit);
+	fn and_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// r/m16 AND imm16.
-	fn and_(&mut self, arg0: Register16Bit, arg1: Immediate16Bit);
+	fn and_Register16Bit_Immediate16Bit(&mut self, arg0: Register16Bit, arg1: Immediate16Bit);
 
 	/// r/m16 AND imm8 (sign-extended).
-	fn and_(&mut self, arg0: Register16Bit, arg1: Immediate8Bit);
+	fn and_Register16Bit_Immediate8Bit(&mut self, arg0: Register16Bit, arg1: Immediate8Bit);
 
 	/// r16 AND r/m16.
-	fn and_(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
+	fn and_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
 	/// r/m16 AND r16.
-	fn and_(&mut self, arg0: Register16Bit, arg1: Register16Bit);
+	fn and_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
 	/// r16 AND r/m16.
-	fn and__1(&mut self, arg0: Register16Bit, arg1: Register16Bit);
+	fn and__Register16Bit_Register16Bit_1(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
 	/// r/m32 AND imm32.
-	fn and_(&mut self, arg0: Register32Bit, arg1: Immediate32Bit);
+	fn and_Register32Bit_Immediate32Bit(&mut self, arg0: Register32Bit, arg1: Immediate32Bit);
 
 	/// r/m32 AND imm8 (sign-extended).
-	fn and_(&mut self, arg0: Register32Bit, arg1: Immediate8Bit);
+	fn and_Register32Bit_Immediate8Bit(&mut self, arg0: Register32Bit, arg1: Immediate8Bit);
 
 	/// r32 AND r/m32.
-	fn and_(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
+	fn and_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
 	/// r/m32 AND r32.
-	fn and_(&mut self, arg0: Register32Bit, arg1: Register32Bit);
+	fn and_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
 	/// r32 AND r/m32.
-	fn and__1(&mut self, arg0: Register32Bit, arg1: Register32Bit);
+	fn and__Register32Bit_Register32Bit_1(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
 	/// r/m64 AND imm32 sign extended to 64-bits.
-	fn and_(&mut self, arg0: Register64Bit, arg1: Immediate32Bit);
+	fn and_Register64Bit_Immediate32Bit(&mut self, arg0: Register64Bit, arg1: Immediate32Bit);
 
 	/// r/m64 AND imm8 (sign-extended).
-	fn and_(&mut self, arg0: Register64Bit, arg1: Immediate8Bit);
+	fn and_Register64Bit_Immediate8Bit(&mut self, arg0: Register64Bit, arg1: Immediate8Bit);
 
 	/// r64 AND r/m64.
-	fn and_(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
+	fn and_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
 	/// r/m64 AND r32.
-	fn and_(&mut self, arg0: Register64Bit, arg1: Register64Bit);
+	fn and_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
 	/// r64 AND r/m64.
-	fn and__1(&mut self, arg0: Register64Bit, arg1: Register64Bit);
+	fn and__Register64Bit_Register64Bit_1(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
 	/// r/m8 AND imm8.
-	fn and_(&mut self, arg0: Register8Bit, arg1: Immediate8Bit);
+	fn and_Register8Bit_Immediate8Bit(&mut self, arg0: Register8Bit, arg1: Immediate8Bit);
 
 	/// r8 AND r/m8.
-	fn and_(&mut self, arg0: Register8Bit, arg1: Any8BitMemory);
+	fn and_Register8Bit_Any8BitMemory(&mut self, arg0: Register8Bit, arg1: Any8BitMemory);
 
 	/// r/m8 AND r8.
-	fn and_(&mut self, arg0: Register8Bit, arg1: Register8Bit);
+	fn and_Register8Bit_Register8Bit(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// r8 AND r/m8.
-	fn and__1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
+	fn and__Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// r/m8 AND r8.
-	fn and_(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn and_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// r8 AND r/m8.
-	fn and__1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn and__Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// RAX AND imm32 sign-extended to 64-bits.
-	fn and_(&mut self, arg0: RAX, arg1: Immediate32Bit);
+	fn and_RAX_Immediate32Bit(&mut self, arg0: RAX, arg1: Immediate32Bit);
 
 	/// r/m8 AND imm8.
-	fn and_(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit);
+	fn and_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit);
 
 	/// r8 AND r/m8.
-	fn and_(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Any8BitMemory);
+	fn and_RegisterHigh8BitsOf16Bit_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Any8BitMemory);
 
 	/// r/m8 AND r8.
-	fn and_(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn and_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
 
 	/// r8 AND r/m8.
-	fn and__1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn and__RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
 
 	/// r/m8 AND r8.
-	fn and_(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn and_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// r8 AND r/m8.
-	fn and__1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn and__RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Bitwise AND of inverted r32b with r/m32, store result in r32a.
 	fn andn_Register32Bit_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Register32Bit, arg2: Any32BitMemory);
@@ -814,148 +814,148 @@ pub trait InstructionStream
 	/// Complement CF flag.
 	fn cmc(&mut self);
 
-	/// Move if above (CF=0 and ZF=0).
+	/// Move if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn cmova_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
-	/// Move if above (CF=0 and ZF=0).
+	/// Move if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn cmova_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
-	/// Move if above (CF=0 and ZF=0).
+	/// Move if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn cmova_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
-	/// Move if above (CF=0 and ZF=0).
+	/// Move if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn cmova_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
-	/// Move if above (CF=0 and ZF=0).
+	/// Move if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn cmova_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
-	/// Move if above (CF=0 and ZF=0).
+	/// Move if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn cmova_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
-	/// Move if above or equal (CF=0).
+	/// Move if above or equal (Carry Flag (CF) is 0).
 	fn cmovae_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
-	/// Move if above or equal (CF=0).
+	/// Move if above or equal (Carry Flag (CF) is 0).
 	fn cmovae_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
-	/// Move if above or equal (CF=0).
+	/// Move if above or equal (Carry Flag (CF) is 0).
 	fn cmovae_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
-	/// Move if above or equal (CF=0).
+	/// Move if above or equal (Carry Flag (CF) is 0).
 	fn cmovae_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
-	/// Move if above or equal (CF=0).
+	/// Move if above or equal (Carry Flag (CF) is 0).
 	fn cmovae_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
-	/// Move if above or equal (CF=0).
+	/// Move if above or equal (Carry Flag (CF) is 0).
 	fn cmovae_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
-	/// Move if below (CF=1).
+	/// Move if below (Carry Flag (CF) is 1).
 	fn cmovb_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
-	/// Move if below (CF=1).
+	/// Move if below (Carry Flag (CF) is 1).
 	fn cmovb_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
-	/// Move if below (CF=1).
+	/// Move if below (Carry Flag (CF) is 1).
 	fn cmovb_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
-	/// Move if below (CF=1).
+	/// Move if below (Carry Flag (CF) is 1).
 	fn cmovb_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
-	/// Move if below (CF=1).
+	/// Move if below (Carry Flag (CF) is 1).
 	fn cmovb_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
-	/// Move if below (CF=1).
+	/// Move if below (Carry Flag (CF) is 1).
 	fn cmovb_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
-	/// Move if below or equal (CF=1 or ZF=1).
+	/// Move if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn cmovbe_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
-	/// Move if below or equal (CF=1 or ZF=1).
+	/// Move if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn cmovbe_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
-	/// Move if below or equal (CF=1 or ZF=1).
+	/// Move if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn cmovbe_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
-	/// Move if below or equal (CF=1 or ZF=1).
+	/// Move if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn cmovbe_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
-	/// Move if below or equal (CF=1 or ZF=1).
+	/// Move if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn cmovbe_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
-	/// Move if below or equal (CF=1 or ZF=1).
+	/// Move if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn cmovbe_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
-	/// Move if carry (CF=1).
+	/// Move if carry (Carry Flag (CF) is 1).
 	fn cmovc_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
-	/// Move if carry (CF=1).
+	/// Move if carry (Carry Flag (CF) is 1).
 	fn cmovc_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
-	/// Move if carry (CF=1).
+	/// Move if carry (Carry Flag (CF) is 1).
 	fn cmovc_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
-	/// Move if carry (CF=1).
+	/// Move if carry (Carry Flag (CF) is 1).
 	fn cmovc_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
-	/// Move if carry (CF=1).
+	/// Move if carry (Carry Flag (CF) is 1).
 	fn cmovc_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
-	/// Move if carry (CF=1).
+	/// Move if carry (Carry Flag (CF) is 1).
 	fn cmovc_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
-	/// Move if equal (ZF=1).
+	/// Move if equal (Zero Flag (ZF) is 1).
 	fn cmove_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
-	/// Move if equal (ZF=1).
+	/// Move if equal (Zero Flag (ZF) is 1).
 	fn cmove_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
-	/// Move if equal (ZF=1).
+	/// Move if equal (Zero Flag (ZF) is 1).
 	fn cmove_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
-	/// Move if equal (ZF=1).
+	/// Move if equal (Zero Flag (ZF) is 1).
 	fn cmove_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
-	/// Move if equal (ZF=1).
+	/// Move if equal (Zero Flag (ZF) is 1).
 	fn cmove_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
-	/// Move if equal (ZF=1).
+	/// Move if equal (Zero Flag (ZF) is 1).
 	fn cmove_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
-	/// Move if greater (ZF=0 and SF=OF).
+	/// Move if greater (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn cmovg_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
-	/// Move if greater (ZF=0 and SF=OF).
+	/// Move if greater (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn cmovg_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
-	/// Move if greater (ZF=0 and SF=OF).
+	/// Move if greater (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn cmovg_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
-	/// Move if greater (ZF=0 and SF=OF).
+	/// Move if greater (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn cmovg_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
-	/// Move if greater (ZF=0 and SF=OF).
+	/// Move if greater (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn cmovg_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
-	/// Move if greater (ZF=0 and SF=OF).
+	/// Move if greater (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn cmovg_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
-	/// Move if greater or equal (SF=OF).
+	/// Move if greater or equal (`SF == OF`).
 	fn cmovge_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
-	/// Move if greater or equal (SF=OF).
+	/// Move if greater or equal (`SF == OF`).
 	fn cmovge_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
-	/// Move if greater or equal (SF=OF).
+	/// Move if greater or equal (`SF == OF`).
 	fn cmovge_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
-	/// Move if greater or equal (SF=OF).
+	/// Move if greater or equal (`SF == OF`).
 	fn cmovge_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
-	/// Move if greater or equal (SF=OF).
+	/// Move if greater or equal (`SF == OF`).
 	fn cmovge_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
-	/// Move if greater or equal (SF=OF).
+	/// Move if greater or equal (`SF == OF`).
 	fn cmovge_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
 	/// Move if less (SF != OF).
@@ -964,214 +964,214 @@ pub trait InstructionStream
 	/// Move if less (SF != OF).
 	fn cmovl_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
-	/// Move if less (SF!= OF).
+	/// Move if less (`SF != OF`).
 	fn cmovl_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
-	/// Move if less (SF!= OF).
+	/// Move if less (`SF != OF`).
 	fn cmovl_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
-	/// Move if less (SF!= OF).
+	/// Move if less (`SF != OF`).
 	fn cmovl_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
-	/// Move if less (SF!= OF).
+	/// Move if less (`SF != OF`).
 	fn cmovl_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
-	/// Move if less or equal (ZF=1 or SF!= OF).
+	/// Move if less or equal (Zero Flag (ZF) is 1 or `SF != OF`).
 	fn cmovle_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
-	/// Move if less or equal (ZF=1 or SF!= OF).
+	/// Move if less or equal (Zero Flag (ZF) is 1 or `SF != OF`).
 	fn cmovle_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
-	/// Move if less or equal (ZF=1 or SF!= OF).
+	/// Move if less or equal (Zero Flag (ZF) is 1 or `SF != OF`).
 	fn cmovle_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
-	/// Move if less or equal (ZF=1 or SF!= OF).
+	/// Move if less or equal (Zero Flag (ZF) is 1 or `SF != OF`).
 	fn cmovle_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
-	/// Move if less or equal (ZF=1 or SF!= OF).
+	/// Move if less or equal (Zero Flag (ZF) is 1 or `SF != OF`).
 	fn cmovle_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
-	/// Move if less or equal (ZF=1 or SF!= OF).
+	/// Move if less or equal (Zero Flag (ZF) is 1 or `SF != OF`).
 	fn cmovle_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
-	/// Move if not above (CF=1 or ZF=1).
+	/// Move if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn cmovna_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
-	/// Move if not above (CF=1 or ZF=1).
+	/// Move if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn cmovna_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
-	/// Move if not above (CF=1 or ZF=1).
+	/// Move if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn cmovna_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
-	/// Move if not above (CF=1 or ZF=1).
+	/// Move if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn cmovna_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
-	/// Move if not above (CF=1 or ZF=1).
+	/// Move if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn cmovna_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
-	/// Move if not above (CF=1 or ZF=1).
+	/// Move if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn cmovna_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
-	/// Move if not above or equal (CF=1).
+	/// Move if not above or equal (Carry Flag (CF) is 1).
 	fn cmovnae_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
-	/// Move if not above or equal (CF=1).
+	/// Move if not above or equal (Carry Flag (CF) is 1).
 	fn cmovnae_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
-	/// Move if not above or equal (CF=1).
+	/// Move if not above or equal (Carry Flag (CF) is 1).
 	fn cmovnae_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
-	/// Move if not above or equal (CF=1).
+	/// Move if not above or equal (Carry Flag (CF) is 1).
 	fn cmovnae_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
-	/// Move if not above or equal (CF=1).
+	/// Move if not above or equal (Carry Flag (CF) is 1).
 	fn cmovnae_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
-	/// Move if not above or equal (CF=1).
+	/// Move if not above or equal (Carry Flag (CF) is 1).
 	fn cmovnae_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
-	/// Move if not below (CF=0).
+	/// Move if not below (Carry Flag (CF) is 0).
 	fn cmovnb_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
-	/// Move if not below (CF=0).
+	/// Move if not below (Carry Flag (CF) is 0).
 	fn cmovnb_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
-	/// Move if not below (CF=0).
+	/// Move if not below (Carry Flag (CF) is 0).
 	fn cmovnb_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
-	/// Move if not below (CF=0).
+	/// Move if not below (Carry Flag (CF) is 0).
 	fn cmovnb_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
-	/// Move if not below (CF=0).
+	/// Move if not below (Carry Flag (CF) is 0).
 	fn cmovnb_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
-	/// Move if not below (CF=0).
+	/// Move if not below (Carry Flag (CF) is 0).
 	fn cmovnb_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
-	/// Move if not below or equal (CF=0 and ZF=0).
+	/// Move if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn cmovnbe_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
-	/// Move if not below or equal (CF=0 and ZF=0).
+	/// Move if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn cmovnbe_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
-	/// Move if not below or equal (CF=0 and ZF=0).
+	/// Move if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn cmovnbe_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
-	/// Move if not below or equal (CF=0 and ZF=0).
+	/// Move if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn cmovnbe_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
-	/// Move if not below or equal (CF=0 and ZF=0).
+	/// Move if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn cmovnbe_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
-	/// Move if not below or equal (CF=0 and ZF=0).
+	/// Move if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn cmovnbe_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
-	/// Move if not carry (CF=0).
+	/// Move if not carry (Carry Flag (CF) is 0).
 	fn cmovnc_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
-	/// Move if not carry (CF=0).
+	/// Move if not carry (Carry Flag (CF) is 0).
 	fn cmovnc_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
-	/// Move if not carry (CF=0).
+	/// Move if not carry (Carry Flag (CF) is 0).
 	fn cmovnc_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
-	/// Move if not carry (CF=0).
+	/// Move if not carry (Carry Flag (CF) is 0).
 	fn cmovnc_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
-	/// Move if not carry (CF=0).
+	/// Move if not carry (Carry Flag (CF) is 0).
 	fn cmovnc_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
-	/// Move if not carry (CF=0).
+	/// Move if not carry (Carry Flag (CF) is 0).
 	fn cmovnc_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
-	/// Move if not equal (ZF=0).
+	/// Move if not equal (Zero Flag (ZF) is 0).
 	fn cmovne_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
-	/// Move if not equal (ZF=0).
+	/// Move if not equal (Zero Flag (ZF) is 0).
 	fn cmovne_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
-	/// Move if not equal (ZF=0).
+	/// Move if not equal (Zero Flag (ZF) is 0).
 	fn cmovne_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
-	/// Move if not equal (ZF=0).
+	/// Move if not equal (Zero Flag (ZF) is 0).
 	fn cmovne_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
-	/// Move if not equal (ZF=0).
+	/// Move if not equal (Zero Flag (ZF) is 0).
 	fn cmovne_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
-	/// Move if not equal (ZF=0).
+	/// Move if not equal (Zero Flag (ZF) is 0).
 	fn cmovne_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
-	/// Move if not greater (ZF=1 or SF!= OF).
+	/// Move if not greater (Zero Flag (ZF) is 1 or `SF != OF`).
 	fn cmovng_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
-	/// Move if not greater (ZF=1 or SF!= OF).
+	/// Move if not greater (Zero Flag (ZF) is 1 or `SF != OF`).
 	fn cmovng_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
-	/// Move if not greater (ZF=1 or SF!= OF).
+	/// Move if not greater (Zero Flag (ZF) is 1 or `SF != OF`).
 	fn cmovng_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
-	/// Move if not greater (ZF=1 or SF!= OF).
+	/// Move if not greater (Zero Flag (ZF) is 1 or `SF != OF`).
 	fn cmovng_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
-	/// Move if not greater (ZF=1 or SF!= OF).
+	/// Move if not greater (Zero Flag (ZF) is 1 or `SF != OF`).
 	fn cmovng_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
-	/// Move if not greater (ZF=1 or SF!= OF).
+	/// Move if not greater (Zero Flag (ZF) is 1 or `SF != OF`).
 	fn cmovng_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
-	/// Move if not greater or equal (SF!= OF).
+	/// Move if not greater or equal (`SF != OF`).
 	fn cmovnge_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
-	/// Move if not greater or equal (SF!= OF).
+	/// Move if not greater or equal (`SF != OF`).
 	fn cmovnge_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
-	/// Move if not greater or equal (SF!= OF).
+	/// Move if not greater or equal (`SF != OF`).
 	fn cmovnge_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
-	/// Move if not greater or equal (SF!= OF).
+	/// Move if not greater or equal (`SF != OF`).
 	fn cmovnge_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
-	/// Move if not greater or equal (SF!= OF).
+	/// Move if not greater or equal (`SF != OF`).
 	fn cmovnge_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
-	/// Move if not greater or equal (SF!= OF).
+	/// Move if not greater or equal (`SF != OF`).
 	fn cmovnge_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
-	/// Move if not less (SF=OF).
+	/// Move if not less (`SF == OF`).
 	fn cmovnl_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
-	/// Move if not less (SF=OF).
+	/// Move if not less (`SF == OF`).
 	fn cmovnl_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
-	/// Move if not less (SF=OF).
+	/// Move if not less (`SF == OF`).
 	fn cmovnl_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
-	/// Move if not less (SF=OF).
+	/// Move if not less (`SF == OF`).
 	fn cmovnl_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
-	/// Move if not less (SF=OF).
+	/// Move if not less (`SF == OF`).
 	fn cmovnl_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
-	/// Move if not less (SF=OF).
+	/// Move if not less (`SF == OF`).
 	fn cmovnl_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
-	/// Move if not less or equal (ZF=0 and SF=OF).
+	/// Move if not less or equal (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn cmovnle_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
-	/// Move if not less or equal (ZF=0 and SF=OF).
+	/// Move if not less or equal (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn cmovnle_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
-	/// Move if not less or equal (ZF=0 and SF=OF).
+	/// Move if not less or equal (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn cmovnle_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
-	/// Move if not less or equal (ZF=0 and SF=OF).
+	/// Move if not less or equal (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn cmovnle_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
-	/// Move if not less or equal (ZF=0 and SF=OF).
+	/// Move if not less or equal (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn cmovnle_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
-	/// Move if not less or equal (ZF=0 and SF=OF).
+	/// Move if not less or equal (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn cmovnle_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
 	/// Move if not overflow (OF=0).
@@ -1192,130 +1192,130 @@ pub trait InstructionStream
 	/// Move if not overflow (OF=0).
 	fn cmovno_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
-	/// Move if not parity (PF=0).
+	/// Move if not parity (Parity Flag (PF) is 0).
 	fn cmovnp_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
-	/// Move if not parity (PF=0).
+	/// Move if not parity (Parity Flag (PF) is 0).
 	fn cmovnp_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
-	/// Move if not parity (PF=0).
+	/// Move if not parity (Parity Flag (PF) is 0).
 	fn cmovnp_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
-	/// Move if not parity (PF=0).
+	/// Move if not parity (Parity Flag (PF) is 0).
 	fn cmovnp_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
-	/// Move if not parity (PF=0).
+	/// Move if not parity (Parity Flag (PF) is 0).
 	fn cmovnp_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
-	/// Move if not parity (PF=0).
+	/// Move if not parity (Parity Flag (PF) is 0).
 	fn cmovnp_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
-	/// Move if not sign (SF=0).
+	/// Move if not sign (Sign Flag (SF) is 0).
 	fn cmovns_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
-	/// Move if not sign (SF=0).
+	/// Move if not sign (Sign Flag (SF) is 0).
 	fn cmovns_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
-	/// Move if not sign (SF=0).
+	/// Move if not sign (Sign Flag (SF) is 0).
 	fn cmovns_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
-	/// Move if not sign (SF=0).
+	/// Move if not sign (Sign Flag (SF) is 0).
 	fn cmovns_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
-	/// Move if not sign (SF=0).
+	/// Move if not sign (Sign Flag (SF) is 0).
 	fn cmovns_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
-	/// Move if not sign (SF=0).
+	/// Move if not sign (Sign Flag (SF) is 0).
 	fn cmovns_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
-	/// Move if not zero (ZF=0).
+	/// Move if not zero (Zero Flag (ZF) is 0).
 	fn cmovnz_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
-	/// Move if not zero (ZF=0).
+	/// Move if not zero (Zero Flag (ZF) is 0).
 	fn cmovnz_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
-	/// Move if not zero (ZF=0).
+	/// Move if not zero (Zero Flag (ZF) is 0).
 	fn cmovnz_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
-	/// Move if not zero (ZF=0).
+	/// Move if not zero (Zero Flag (ZF) is 0).
 	fn cmovnz_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
-	/// Move if not zero (ZF=0).
+	/// Move if not zero (Zero Flag (ZF) is 0).
 	fn cmovnz_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
-	/// Move if not zero (ZF=0).
+	/// Move if not zero (Zero Flag (ZF) is 0).
 	fn cmovnz_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
-	/// Move if overflow (OF=1).
+	/// Move if overflow (Overflow Flag (OF) is 1).
 	fn cmovo_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
-	/// Move if overflow (OF=1).
+	/// Move if overflow (Overflow Flag (OF) is 1).
 	fn cmovo_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
-	/// Move if overflow (OF=1).
+	/// Move if overflow (Overflow Flag (OF) is 1).
 	fn cmovo_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
-	/// Move if overflow (OF=1).
+	/// Move if overflow (Overflow Flag (OF) is 1).
 	fn cmovo_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
-	/// Move if overflow (OF=1).
+	/// Move if overflow (Overflow Flag (OF) is 1).
 	fn cmovo_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
-	/// Move if overflow (OF=1).
+	/// Move if overflow (Overflow Flag (OF) is 1).
 	fn cmovo_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
-	/// Move if parity (PF=1).
+	/// Move if parity (Parity Flag (PF) is 1).
 	fn cmovp_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
-	/// Move if parity (PF=1).
+	/// Move if parity (Parity Flag (PF) is 1).
 	fn cmovp_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
-	/// Move if parity (PF=1).
+	/// Move if parity (Parity Flag (PF) is 1).
 	fn cmovp_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
-	/// Move if parity (PF=1).
+	/// Move if parity (Parity Flag (PF) is 1).
 	fn cmovp_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
-	/// Move if parity (PF=1).
+	/// Move if parity (Parity Flag (PF) is 1).
 	fn cmovp_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
-	/// Move if parity (PF=1).
+	/// Move if parity (Parity Flag (PF) is 1).
 	fn cmovp_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
-	/// Move if parity even (PF=1).
+	/// Move if parity even (Parity Flag (PF) is 1).
 	fn cmovpe_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
-	/// Move if parity even (PF=1).
+	/// Move if parity even (Parity Flag (PF) is 1).
 	fn cmovpe_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
-	/// Move if parity even (PF=1).
+	/// Move if parity even (Parity Flag (PF) is 1).
 	fn cmovpe_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
-	/// Move if parity even (PF=1).
+	/// Move if parity even (Parity Flag (PF) is 1).
 	fn cmovpe_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
-	/// Move if parity even (PF=1).
+	/// Move if parity even (Parity Flag (PF) is 1).
 	fn cmovpe_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
-	/// Move if parity even (PF=1).
+	/// Move if parity even (Parity Flag (PF) is 1).
 	fn cmovpe_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
-	/// Move if parity odd (PF=0).
+	/// Move if parity odd (Parity Flag (PF) is 0).
 	fn cmovpo_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
-	/// Move if parity odd (PF=0).
+	/// Move if parity odd (Parity Flag (PF) is 0).
 	fn cmovpo_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
-	/// Move if parity odd (PF=0).
+	/// Move if parity odd (Parity Flag (PF) is 0).
 	fn cmovpo_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
-	/// Move if parity odd (PF=0).
+	/// Move if parity odd (Parity Flag (PF) is 0).
 	fn cmovpo_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
-	/// Move if parity odd (PF=0).
+	/// Move if parity odd (Parity Flag (PF) is 0).
 	fn cmovpo_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
-	/// Move if parity odd (PF=0).
+	/// Move if parity odd (Parity Flag (PF) is 0).
 	fn cmovpo_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
 	/// Move if sign (SF=1).
@@ -1336,22 +1336,22 @@ pub trait InstructionStream
 	/// Move if sign (SF=1).
 	fn cmovs_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
-	/// Move if zero (ZF=1).
+	/// Move if zero (Zero Flag (ZF) is 1).
 	fn cmovz_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
-	/// Move if zero (ZF=1).
+	/// Move if zero (Zero Flag (ZF) is 1).
 	fn cmovz_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
-	/// Move if zero (ZF=1).
+	/// Move if zero (Zero Flag (ZF) is 1).
 	fn cmovz_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
-	/// Move if zero (ZF=1).
+	/// Move if zero (Zero Flag (ZF) is 1).
 	fn cmovz_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
-	/// Move if zero (ZF=1).
+	/// Move if zero (Zero Flag (ZF) is 1).
 	fn cmovz_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
-	/// Move if zero (ZF=1).
+	/// Move if zero (Zero Flag (ZF) is 1).
 	fn cmovz_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
 	/// Compare imm8 with AL.
@@ -1412,7 +1412,7 @@ pub trait InstructionStream
 	fn cmp_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
 	/// Compare r/m16 with r16.
-	fn cmp_1(&mut self, arg0: Register16Bit, arg1: Register16Bit);
+	fn cmp_Register16Bit_Register16Bit_1(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
 	/// Compare imm32 with r/m32.
 	fn cmp_Register32Bit_Immediate32Bit(&mut self, arg0: Register32Bit, arg1: Immediate32Bit);
@@ -1427,7 +1427,7 @@ pub trait InstructionStream
 	fn cmp_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
 	/// Compare r/m32 with r32.
-	fn cmp_1(&mut self, arg0: Register32Bit, arg1: Register32Bit);
+	fn cmp_Register32Bit_Register32Bit_1(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
 	/// Compare imm32 sign-extended to 64-bits with r/m64.
 	fn cmp_Register64Bit_Immediate32Bit(&mut self, arg0: Register64Bit, arg1: Immediate32Bit);
@@ -1442,7 +1442,7 @@ pub trait InstructionStream
 	fn cmp_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
 	/// Compare r/m64 with r64.
-	fn cmp_1(&mut self, arg0: Register64Bit, arg1: Register64Bit);
+	fn cmp_Register64Bit_Register64Bit_1(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
 	/// Compare imm8 with r/m8.
 	fn cmp_Register8Bit_Immediate8Bit(&mut self, arg0: Register8Bit, arg1: Immediate8Bit);
@@ -1454,13 +1454,13 @@ pub trait InstructionStream
 	fn cmp_Register8Bit_Register8Bit(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// Compare r/m8 with r8.
-	fn cmp_1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
+	fn cmp_Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// Compare r8 with r/m8.
 	fn cmp_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Compare r/m8 with r8.
-	fn cmp_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn cmp_Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Compare imm32 sign-extended to 64-bits with RAX.
 	fn cmp_RAX_Immediate32Bit(&mut self, arg0: RAX, arg1: Immediate32Bit);
@@ -1475,13 +1475,13 @@ pub trait InstructionStream
 	fn cmp_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
 
 	/// Compare r/m8 with r8.
-	fn cmp_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn cmp_RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
 
 	/// Compare r8 with r/m8.
 	fn cmp_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Compare r/m8 with r8.
-	fn cmp_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn cmp_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Compare packed double-precision floating- point values in xmm2/m128 and xmm1 using imm8 as comparison predicate.
 	fn cmppd_XMMRegister_Any128BitMemory_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: Any128BitMemory, arg2: Immediate8Bit);
@@ -1597,9 +1597,9 @@ pub trait InstructionStream
 	/// Else, clear ZF and load r/m8 into AL.
 	fn cmpxchg_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
 
-	/// Compare RDX:RAX with m128.
+	/// Compare `RDX:RAX` with m128.
 	/// If equal, set ZF and load RCX:RBX into m128.
-	/// Else, clear ZF and load m128 into RDX:RAX.
+	/// Else, clear ZF and load m128 into `RDX:RAX`.
 	fn cmpxchg16b_Any128BitMemory(&mut self, arg0: Any128BitMemory);
 
 	/// Compare `EDX:EAX` with m64.
@@ -1622,7 +1622,7 @@ pub trait InstructionStream
 	/// Returns processor identification and feature information to the EAX, EBX, ECX, and EDX registers, as determined by input entered in EAX (in some cases, ECX as well).
 	fn cpuid(&mut self);
 
-	/// RDX:RAX = sign-extend of RAX.
+	/// `RDX:RAX` = sign-extend of RAX.
 	fn cqo(&mut self);
 
 	/// Accumulate CRC32 on r/m16.
@@ -1865,7 +1865,7 @@ pub trait InstructionStream
 	/// Unsigned divide `EDX:EAX` by r/m32, with result stored in EAX = Quotient, EDX = Remainder.
 	fn div_Any32BitMemory(&mut self, arg0: Any32BitMemory);
 
-	/// Unsigned divide RDX:RAX by r/m64, with result stored in RAX = Quotient, RDX = Remainder.
+	/// Unsigned divide `RDX:RAX` by r/m64, with result stored in RAX = Quotient, RDX = Remainder.
 	fn div_Any64BitMemory(&mut self, arg0: Any64BitMemory);
 
 	/// Unsigned divide AX by r/m8, with result stored in AL = Quotient, AH = Remainder.
@@ -1877,7 +1877,7 @@ pub trait InstructionStream
 	/// Unsigned divide `EDX:EAX` by r/m32, with result stored in EAX = Quotient, EDX = Remainder.
 	fn div_Register32Bit(&mut self, arg0: Register32Bit);
 
-	/// Unsigned divide RDX:RAX by r/m64, with result stored in RAX = Quotient, RDX = Remainder.
+	/// Unsigned divide `RDX:RAX` by r/m64, with result stored in RAX = Quotient, RDX = Remainder.
 	fn div_Register64Bit(&mut self, arg0: Register64Bit);
 
 	/// Unsigned divide AX by r/m8, with result stored in AL = Quotient, AH = Remainder.
@@ -1982,28 +1982,28 @@ pub trait InstructionStream
 	/// Clear floating-point exception flags after checking for pending unmasked floating-point exceptions.
 	fn fclex(&mut self);
 
-	/// Move if below (CF=1).
+	/// Move if below (Carry Flag (CF) is 1).
 	fn fcmovb_ST0_X87Register(&mut self, arg0: ST0, arg1: X87Register);
 
-	/// Move if below or equal (CF=1 or ZF=1).
+	/// Move if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn fcmovbe_ST0_X87Register(&mut self, arg0: ST0, arg1: X87Register);
 
-	/// Move if equal (ZF=1).
+	/// Move if equal (Zero Flag (ZF) is 1).
 	fn fcmove_ST0_X87Register(&mut self, arg0: ST0, arg1: X87Register);
 
-	/// Move if not below (CF=0).
+	/// Move if not below (Carry Flag (CF) is 0).
 	fn fcmovnb_ST0_X87Register(&mut self, arg0: ST0, arg1: X87Register);
 
-	/// Move if not below or equal (CF=0 and ZF=0).
+	/// Move if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn fcmovnbe_ST0_X87Register(&mut self, arg0: ST0, arg1: X87Register);
 
-	/// Move if not equal (ZF=0).
+	/// Move if not equal (Zero Flag (ZF) is 0).
 	fn fcmovne_ST0_X87Register(&mut self, arg0: ST0, arg1: X87Register);
 
-	/// Move if not unordered (PF=0).
+	/// Move if not unordered (Parity Flag (PF) is 0).
 	fn fcmovnu_ST0_X87Register(&mut self, arg0: ST0, arg1: X87Register);
 
-	/// Move if unordered (PF=1).
+	/// Move if unordered (Parity Flag (PF) is 1).
 	fn fcmovu_ST0_X87Register(&mut self, arg0: ST0, arg1: X87Register);
 
 	/// Compare ST(0) with ST(1).
@@ -2445,7 +2445,7 @@ pub trait InstructionStream
 	/// Signed divide `EDX:EAX` by r/m32, with result stored in EAX = Quotient, EDX = Remainder.
 	fn idiv_Any32BitMemory(&mut self, arg0: Any32BitMemory);
 
-	/// Signed divide RDX:RAX by r/m64, with result stored in RAX = Quotient, RDX = Remainder.
+	/// Signed divide `RDX:RAX` by r/m64, with result stored in RAX = Quotient, RDX = Remainder.
 	fn idiv_Any64BitMemory(&mut self, arg0: Any64BitMemory);
 
 	/// Signed divide AX by r/m8, with result stored in: AL = Quotient, AH = Remainder.
@@ -2457,7 +2457,7 @@ pub trait InstructionStream
 	/// Signed divide `EDX:EAX` by r/m32, with result stored in EAX = Quotient, EDX = Remainder.
 	fn idiv_Register32Bit(&mut self, arg0: Register32Bit);
 
-	/// Signed divide RDX:RAX by r/m64, with result stored in RAX = Quotient, RDX = Remainder.
+	/// Signed divide `RDX:RAX` by r/m64, with result stored in RAX = Quotient, RDX = Remainder.
 	fn idiv_Register64Bit(&mut self, arg0: Register64Bit);
 
 	/// Signed divide AX by r/m8, with result stored in: AL = Quotient, AH = Remainder.
@@ -2472,7 +2472,7 @@ pub trait InstructionStream
 	/// `EDX:EAX` = EAX * r/m32.
 	fn imul_Any32BitMemory(&mut self, arg0: Any32BitMemory);
 
-	/// RDX:RAX = RAX * r/m64.
+	/// `RDX:RAX` = RAX * r/m64.
 	fn imul_Any64BitMemory(&mut self, arg0: Any64BitMemory);
 
 	/// AX= AL * r/m byte.
@@ -2520,7 +2520,7 @@ pub trait InstructionStream
 	/// doubleword register = r/m32 * sign- extended immediate byte.
 	fn imul_Register32Bit_Register32Bit_Immediate8Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit, arg2: Immediate8Bit);
 
-	/// RDX:RAX = RAX * r/m64.
+	/// `RDX:RAX` = RAX * r/m64.
 	fn imul_Register64Bit(&mut self, arg0: Register64Bit);
 
 	/// Quadword register = Quadword register *  r/m64.
@@ -2541,10 +2541,10 @@ pub trait InstructionStream
 	/// Quadword register = r/m64 * sign-extended  immediate byte.
 	fn imul_Register64Bit_Register64Bit_Immediate8Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit, arg2: Immediate8Bit);
 
-	/// AX= AL * r/m byte.
+	/// AX = AL * r/m byte.
 	fn imul_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// AX= AL * r/m byte.
+	/// AX = AL * r/m byte.
 	fn imul_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
 	/// Input byte from I/O port in DX into AL.
@@ -2617,10 +2617,10 @@ pub trait InstructionStream
 	fn insw(&mut self);
 
 	/// Interrupt vector number specified by immediate byte.
-	fn int_(&mut self, arg0: Immediate8Bit);
+	fn int_Immediate8Bit(&mut self, arg0: Immediate8Bit);
 
 	/// Interrupt 3-trap to debugger.
-	fn int_(&mut self, arg0: Three);
+	fn int_Three(&mut self, arg0: Three);
 
 	/// Invalidates entries in the TLBs and paging-structure caches based on invalidation type in r64 and descriptor in m128.
 	fn invpcid_Register64Bit_Any128BitMemory(&mut self, arg0: Register64Bit, arg1: Any128BitMemory);
@@ -2634,148 +2634,148 @@ pub trait InstructionStream
 	/// Interrupt return (64-bit operand size).
 	fn iretq(&mut self);
 
-	/// Jump short if above (CF=0 and ZF=0).
+	/// Jump short if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn ja_Label(&mut self, arg0: Label);
 
-	/// Jump near if above (CF=0 and ZF=0).
-	fn ja_1(&mut self, arg0: Label);
+	/// Jump near if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
+	fn ja_Label_1(&mut self, arg0: Label);
 
-	/// Jump short if above (CF=0 and ZF=0).
+	/// Jump short if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn ja_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if above (CF=0 and ZF=0).
-	fn ja_1(&mut self, arg0: Label, arg1: Hint);
+	/// Jump near if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
+	fn ja_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if above (CF=0 and ZF=0).
+	/// Jump near if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn ja_Relative32Bit(&mut self, arg0: Relative32Bit);
 
-	/// Jump near if above (CF=0 and ZF=0).
+	/// Jump near if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn ja_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
 
-	/// Jump short if above (CF=0 and ZF=0).
+	/// Jump short if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn ja_Relative8Bit(&mut self, arg0: Relative8Bit);
 
-	/// Jump short if above (CF=0 and ZF=0).
+	/// Jump short if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn ja_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
-	/// Jump short if above or equal (CF=0).
+	/// Jump short if above or equal (Carry Flag (CF) is 0).
 	fn jae_Label(&mut self, arg0: Label);
 
-	/// Jump near if above or equal (CF=0).
-	fn jae_1(&mut self, arg0: Label);
+	/// Jump near if above or equal (Carry Flag (CF) is 0).
+	fn jae_Label_1(&mut self, arg0: Label);
 
-	/// Jump short if above or equal (CF=0).
+	/// Jump short if above or equal (Carry Flag (CF) is 0).
 	fn jae_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if above or equal (CF=0).
-	fn jae_1(&mut self, arg0: Label, arg1: Hint);
+	/// Jump near if above or equal (Carry Flag (CF) is 0).
+	fn jae_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if above or equal (CF=0).
+	/// Jump near if above or equal (Carry Flag (CF) is 0).
 	fn jae_Relative32Bit(&mut self, arg0: Relative32Bit);
 
-	/// Jump near if above or equal (CF=0).
+	/// Jump near if above or equal (Carry Flag (CF) is 0).
 	fn jae_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
 
-	/// Jump short if above or equal (CF=0).
+	/// Jump short if above or equal (Carry Flag (CF) is 0).
 	fn jae_Relative8Bit(&mut self, arg0: Relative8Bit);
 
-	/// Jump short if above or equal (CF=0).
+	/// Jump short if above or equal (Carry Flag (CF) is 0).
 	fn jae_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
-	/// Jump short if below (CF=1).
+	/// Jump short if below (Carry Flag (CF) is 1).
 	fn jb_Label(&mut self, arg0: Label);
 
-	/// Jump near if below (CF=1).
-	fn jb_1(&mut self, arg0: Label);
+	/// Jump near if below (Carry Flag (CF) is 1).
+	fn jb_Label_1(&mut self, arg0: Label);
 
-	/// Jump short if below (CF=1).
+	/// Jump short if below (Carry Flag (CF) is 1).
 	fn jb_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if below (CF=1).
-	fn jb_1(&mut self, arg0: Label, arg1: Hint);
+	/// Jump near if below (Carry Flag (CF) is 1).
+	fn jb_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if below (CF=1).
+	/// Jump near if below (Carry Flag (CF) is 1).
 	fn jb_Relative32Bit(&mut self, arg0: Relative32Bit);
 
-	/// Jump near if below (CF=1).
+	/// Jump near if below (Carry Flag (CF) is 1).
 	fn jb_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
 
-	/// Jump short if below (CF=1).
+	/// Jump short if below (Carry Flag (CF) is 1).
 	fn jb_Relative8Bit(&mut self, arg0: Relative8Bit);
 
-	/// Jump short if below (CF=1).
+	/// Jump short if below (Carry Flag (CF) is 1).
 	fn jb_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
-	/// Jump short if below or equal (CF=1 or ZF=1).
+	/// Jump short if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn jbe_Label(&mut self, arg0: Label);
 
-	/// Jump near if below or equal (CF=1 or ZF=1).
-	fn jbe_1(&mut self, arg0: Label);
+	/// Jump near if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
+	fn jbe_Label_1(&mut self, arg0: Label);
 
-	/// Jump short if below or equal (CF=1 or ZF=1).
+	/// Jump short if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn jbe_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if below or equal (CF=1 or ZF=1).
-	fn jbe_1(&mut self, arg0: Label, arg1: Hint);
+	/// Jump near if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
+	fn jbe_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if below or equal (CF=1 or ZF=1).
+	/// Jump near if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn jbe_Relative32Bit(&mut self, arg0: Relative32Bit);
 
-	/// Jump near if below or equal (CF=1 or ZF=1).
+	/// Jump near if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn jbe_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
 
-	/// Jump short if below or equal (CF=1 or ZF=1).
+	/// Jump short if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn jbe_Relative8Bit(&mut self, arg0: Relative8Bit);
 
-	/// Jump short if below or equal (CF=1 or ZF=1).
+	/// Jump short if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn jbe_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
-	/// Jump short if carry (CF=1).
+	/// Jump short if carry (Carry Flag (CF) is 1).
 	fn jc_Label(&mut self, arg0: Label);
 
-	/// Jump near if carry (CF=1).
-	fn jc_1(&mut self, arg0: Label);
+	/// Jump near if carry (Carry Flag (CF) is 1).
+	fn jc_Label_1(&mut self, arg0: Label);
 
-	/// Jump short if carry (CF=1).
+	/// Jump short if carry (Carry Flag (CF) is 1).
 	fn jc_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if carry (CF=1).
-	fn jc_1(&mut self, arg0: Label, arg1: Hint);
+	/// Jump near if carry (Carry Flag (CF) is 1).
+	fn jc_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if carry (CF=1).
+	/// Jump near if carry (Carry Flag (CF) is 1).
 	fn jc_Relative32Bit(&mut self, arg0: Relative32Bit);
 
-	/// Jump near if carry (CF=1).
+	/// Jump near if carry (Carry Flag (CF) is 1).
 	fn jc_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
 
-	/// Jump short if carry (CF=1).
+	/// Jump short if carry (Carry Flag (CF) is 1).
 	fn jc_Relative8Bit(&mut self, arg0: Relative8Bit);
 
-	/// Jump short if carry (CF=1).
+	/// Jump short if carry (Carry Flag (CF) is 1).
 	fn jc_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
-	/// Jump short if equal (ZF=1).
+	/// Jump short if equal (Zero Flag (ZF) is 1).
 	fn je_Label(&mut self, arg0: Label);
 
-	/// Jump near if 0 (ZF=1).
-	fn je_1(&mut self, arg0: Label);
+	/// Jump near if 0 (Zero Flag (ZF) is 1).
+	fn je_Label_1(&mut self, arg0: Label);
 
-	/// Jump short if equal (ZF=1).
+	/// Jump short if equal (Zero Flag (ZF) is 1).
 	fn je_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if 0 (ZF=1).
-	fn je_1(&mut self, arg0: Label, arg1: Hint);
+	/// Jump near if 0 (Zero Flag (ZF) is 1).
+	fn je_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if 0 (ZF=1).
+	/// Jump near if 0 (Zero Flag (ZF) is 1).
 	fn je_Relative32Bit(&mut self, arg0: Relative32Bit);
 
-	/// Jump near if 0 (ZF=1).
+	/// Jump near if 0 (Zero Flag (ZF) is 1).
 	fn je_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
 
-	/// Jump short if equal (ZF=1).
+	/// Jump short if equal (Zero Flag (ZF) is 1).
 	fn je_Relative8Bit(&mut self, arg0: Relative8Bit);
 
-	/// Jump short if equal (ZF=1).
+	/// Jump short if equal (Zero Flag (ZF) is 1).
 	fn je_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
 	/// Jump short if ECX register is 0.
@@ -2790,100 +2790,100 @@ pub trait InstructionStream
 	/// Jump short if ECX register is 0.
 	fn jecxz_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
-	/// Jump short if greater (ZF=0 and SF=OF).
+	/// Jump short if greater (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn jg_Label(&mut self, arg0: Label);
 
-	/// Jump near if greater (ZF=0 and SF=OF).
-	fn jg_1(&mut self, arg0: Label);
+	/// Jump near if greater (Zero Flag (ZF) is 0 and `SF == OF`).
+	fn jg_Label_1(&mut self, arg0: Label);
 
-	/// Jump short if greater (ZF=0 and SF=OF).
+	/// Jump short if greater (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn jg_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if greater (ZF=0 and SF=OF).
-	fn jg_1(&mut self, arg0: Label, arg1: Hint);
+	/// Jump near if greater (Zero Flag (ZF) is 0 and `SF == OF`).
+	fn jg_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if greater (ZF=0 and SF=OF).
+	/// Jump near if greater (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn jg_Relative32Bit(&mut self, arg0: Relative32Bit);
 
-	/// Jump near if greater (ZF=0 and SF=OF).
+	/// Jump near if greater (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn jg_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
 
-	/// Jump short if greater (ZF=0 and SF=OF).
+	/// Jump short if greater (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn jg_Relative8Bit(&mut self, arg0: Relative8Bit);
 
-	/// Jump short if greater (ZF=0 and SF=OF).
+	/// Jump short if greater (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn jg_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
-	/// Jump short if greater or equal (SF=OF).
+	/// Jump short if greater or equal (`SF == OF`).
 	fn jge_Label(&mut self, arg0: Label);
 
-	/// Jump near if greater or equal (SF=OF).
-	fn jge_1(&mut self, arg0: Label);
+	/// Jump near if greater or equal (`SF == OF`).
+	fn jge_Label_1(&mut self, arg0: Label);
 
-	/// Jump short if greater or equal (SF=OF).
+	/// Jump short if greater or equal (`SF == OF`).
 	fn jge_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if greater or equal (SF=OF).
-	fn jge_1(&mut self, arg0: Label, arg1: Hint);
+	/// Jump near if greater or equal (`SF == OF`).
+	fn jge_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if greater or equal (SF=OF).
+	/// Jump near if greater or equal (`SF == OF`).
 	fn jge_Relative32Bit(&mut self, arg0: Relative32Bit);
 
-	/// Jump near if greater or equal (SF=OF).
+	/// Jump near if greater or equal (`SF == OF`).
 	fn jge_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
 
-	/// Jump short if greater or equal (SF=OF).
+	/// Jump short if greater or equal (`SF == OF`).
 	fn jge_Relative8Bit(&mut self, arg0: Relative8Bit);
 
-	/// Jump short if greater or equal (SF=OF).
+	/// Jump short if greater or equal (`SF == OF`).
 	fn jge_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
-	/// Jump short if less (SF!= OF).
+	/// Jump short if less (`SF != OF`).
 	fn jl_Label(&mut self, arg0: Label);
 
-	/// Jump near if less (SF!= OF).
-	fn jl_1(&mut self, arg0: Label);
+	/// Jump near if less (`SF != OF`).
+	fn jl_Label_1(&mut self, arg0: Label);
 
-	/// Jump short if less (SF!= OF).
+	/// Jump short if less (`SF != OF`).
 	fn jl_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if less (SF!= OF).
-	fn jl_1(&mut self, arg0: Label, arg1: Hint);
+	/// Jump near if less (`SF != OF`).
+	fn jl_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if less (SF!= OF).
+	/// Jump near if less (`SF != OF`).
 	fn jl_Relative32Bit(&mut self, arg0: Relative32Bit);
 
-	/// Jump near if less (SF!= OF).
+	/// Jump near if less (`SF != OF`).
 	fn jl_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
 
-	/// Jump short if less (SF!= OF).
+	/// Jump short if less (`SF != OF`).
 	fn jl_Relative8Bit(&mut self, arg0: Relative8Bit);
 
-	/// Jump short if less (SF!= OF).
+	/// Jump short if less (`SF != OF`).
 	fn jl_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
-	/// Jump short if less or equal (ZF=1 or SF!= OF).
+	/// Jump short if less or equal (Zero Flag (ZF) is 1 or `SF != OF`).
 	fn jle_Label(&mut self, arg0: Label);
 
-	/// Jump near if less or equal (ZF=1 or SF!= OF).
-	fn jle_1(&mut self, arg0: Label);
+	/// Jump near if less or equal (Zero Flag (ZF) is 1 or `SF != OF`).
+	fn jle_Label_1(&mut self, arg0: Label);
 
-	/// Jump short if less or equal (ZF=1 or SF!= OF).
+	/// Jump short if less or equal (Zero Flag (ZF) is 1 or `SF != OF`).
 	fn jle_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if less or equal (ZF=1 or SF!= OF).
-	fn jle_1(&mut self, arg0: Label, arg1: Hint);
+	/// Jump near if less or equal (Zero Flag (ZF) is 1 or `SF != OF`).
+	fn jle_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if less or equal (ZF=1 or SF!= OF).
+	/// Jump near if less or equal (Zero Flag (ZF) is 1 or `SF != OF`).
 	fn jle_Relative32Bit(&mut self, arg0: Relative32Bit);
 
-	/// Jump near if less or equal (ZF=1 or SF!= OF).
+	/// Jump near if less or equal (Zero Flag (ZF) is 1 or `SF != OF`).
 	fn jle_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
 
-	/// Jump short if less or equal (ZF=1 or SF!= OF).
+	/// Jump short if less or equal (Zero Flag (ZF) is 1 or `SF != OF`).
 	fn jle_Relative8Bit(&mut self, arg0: Relative8Bit);
 
-	/// Jump short if less or equal (ZF=1 or SF!= OF).
+	/// Jump short if less or equal (Zero Flag (ZF) is 1 or `SF != OF`).
 	fn jle_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
 	/// Jump far, absolute indirect, address given in m16:16.
@@ -2899,7 +2899,7 @@ pub trait InstructionStream
 	fn jmp_Label(&mut self, arg0: Label);
 
 	/// Jump near, relative, RIP = RIP + 32-bit displacement sign extended to 64-bits.
-	fn jmp_1(&mut self, arg0: Label);
+	fn jmp_Label_1(&mut self, arg0: Label);
 
 	/// Jump near, absolute indirect, RIP = 64-Bit offset from register or memory.
 	fn jmp_Any64BitMemory(&mut self, arg0: Any64BitMemory);
@@ -2913,185 +2913,185 @@ pub trait InstructionStream
 	/// Jump short, RIP = RIP + 8-bit displacement sign extended to 64-bits.
 	fn jmp_Relative8Bit(&mut self, arg0: Relative8Bit);
 
-	/// Jump short if not above (CF=1 or ZF=1).
+	/// Jump short if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn jna_Label(&mut self, arg0: Label);
 
-	/// Jump near if not above (CF=1 or ZF=1).
-	fn jna_1(&mut self, arg0: Label);
+	/// Jump near if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
+	fn jna_Label_1(&mut self, arg0: Label);
 
-	/// Jump short if not above (CF=1 or ZF=1).
+	/// Jump short if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn jna_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if not above (CF=1 or ZF=1).
-	fn jna_1(&mut self, arg0: Label, arg1: Hint);
+	/// Jump near if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
+	fn jna_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if not above (CF=1 or ZF=1).
+	/// Jump near if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn jna_Relative32Bit(&mut self, arg0: Relative32Bit);
 
-	/// Jump near if not above (CF=1 or ZF=1).
+	/// Jump near if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn jna_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
 
-	/// Jump short if not above (CF=1 or ZF=1).
+	/// Jump short if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn jna_Relative8Bit(&mut self, arg0: Relative8Bit);
 
-	/// Jump short if not above (CF=1 or ZF=1).
+	/// Jump short if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn jna_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
-	/// Jump short if not above or equal (CF=1).
+	/// Jump short if not above or equal (Carry Flag (CF) is 1).
 	fn jnae_Label(&mut self, arg0: Label);
 
-	/// Jump near if not above or equal (CF=1).
-	fn jnae_1(&mut self, arg0: Label);
+	/// Jump near if not above or equal (Carry Flag (CF) is 1).
+	fn jnae_Label_1(&mut self, arg0: Label);
 
-	/// Jump short if not above or equal (CF=1).
+	/// Jump short if not above or equal (Carry Flag (CF) is 1).
 	fn jnae_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if not above or equal (CF=1).
-	fn jnae_1(&mut self, arg0: Label, arg1: Hint);
+	/// Jump near if not above or equal (Carry Flag (CF) is 1).
+	fn jnae_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if not above or equal (CF=1).
+	/// Jump near if not above or equal (Carry Flag (CF) is 1).
 	fn jnae_Relative32Bit(&mut self, arg0: Relative32Bit);
 
-	/// Jump near if not above or equal (CF=1).
+	/// Jump near if not above or equal (Carry Flag (CF) is 1).
 	fn jnae_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
 
-	/// Jump short if not above or equal (CF=1).
+	/// Jump short if not above or equal (Carry Flag (CF) is 1).
 	fn jnae_Relative8Bit(&mut self, arg0: Relative8Bit);
 
-	/// Jump short if not above or equal (CF=1).
+	/// Jump short if not above or equal (Carry Flag (CF) is 1).
 	fn jnae_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
-	/// Jump short if not below (CF=0).
+	/// Jump short if not below (Carry Flag (CF) is 0).
 	fn jnb_Label(&mut self, arg0: Label);
 
-	/// Jump near if not below (CF=0).
-	fn jnb_1(&mut self, arg0: Label);
+	/// Jump near if not below (Carry Flag (CF) is 0).
+	fn jnb_Label_1(&mut self, arg0: Label);
 
-	/// Jump short if not below (CF=0).
+	/// Jump short if not below (Carry Flag (CF) is 0).
 	fn jnb_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if not below (CF=0).
-	fn jnb_1(&mut self, arg0: Label, arg1: Hint);
+	/// Jump near if not below (Carry Flag (CF) is 0).
+	fn jnb_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if not below (CF=0).
+	/// Jump near if not below (Carry Flag (CF) is 0).
 	fn jnb_Relative32Bit(&mut self, arg0: Relative32Bit);
 
-	/// Jump near if not below (CF=0).
+	/// Jump near if not below (Carry Flag (CF) is 0).
 	fn jnb_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
 
-	/// Jump short if not below (CF=0).
+	/// Jump short if not below (Carry Flag (CF) is 0).
 	fn jnb_Relative8Bit(&mut self, arg0: Relative8Bit);
 
-	/// Jump short if not below (CF=0).
+	/// Jump short if not below (Carry Flag (CF) is 0).
 	fn jnb_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
-	/// Jump short if not below or equal (CF=0 and ZF=0).
+	/// Jump short if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn jnbe_Label(&mut self, arg0: Label);
 
-	/// Jump near if not below or equal (CF=0 and ZF=0).
-	fn jnbe_1(&mut self, arg0: Label);
+	/// Jump near if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
+	fn jnbe_Label_1(&mut self, arg0: Label);
 
-	/// Jump short if not below or equal (CF=0 and ZF=0).
+	/// Jump short if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn jnbe_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if not below or equal (CF=0 and ZF=0).
-	fn jnbe_1(&mut self, arg0: Label, arg1: Hint);
+	/// Jump near if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
+	fn jnbe_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if not below or equal (CF=0 and ZF=0).
+	/// Jump near if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn jnbe_Relative32Bit(&mut self, arg0: Relative32Bit);
 
-	/// Jump near if not below or equal (CF=0 and ZF=0).
+	/// Jump near if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn jnbe_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
 
-	/// Jump short if not below or equal (CF=0 and ZF=0).
+	/// Jump short if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn jnbe_Relative8Bit(&mut self, arg0: Relative8Bit);
 
-	/// Jump short if not below or equal (CF=0 and ZF=0).
+	/// Jump short if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn jnbe_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
-	/// Jump short if not carry (CF=0).
+	/// Jump short if not carry (Carry Flag (CF) is 0).
 	fn jnc_Label(&mut self, arg0: Label);
 
-	/// Jump near if not carry (CF=0).
-	fn jnc_1(&mut self, arg0: Label);
+	/// Jump near if not carry (Carry Flag (CF) is 0).
+	fn jnc_Label_1(&mut self, arg0: Label);
 
-	/// Jump short if not carry (CF=0).
+	/// Jump short if not carry (Carry Flag (CF) is 0).
 	fn jnc_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if not carry (CF=0).
-	fn jnc_1(&mut self, arg0: Label, arg1: Hint);
+	/// Jump near if not carry (Carry Flag (CF) is 0).
+	fn jnc_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if not carry (CF=0).
+	/// Jump near if not carry (Carry Flag (CF) is 0).
 	fn jnc_Relative32Bit(&mut self, arg0: Relative32Bit);
 
-	/// Jump near if not carry (CF=0).
+	/// Jump near if not carry (Carry Flag (CF) is 0).
 	fn jnc_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
 
-	/// Jump short if not carry (CF=0).
+	/// Jump short if not carry (Carry Flag (CF) is 0).
 	fn jnc_Relative8Bit(&mut self, arg0: Relative8Bit);
 
-	/// Jump short if not carry (CF=0).
+	/// Jump short if not carry (Carry Flag (CF) is 0).
 	fn jnc_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
-	/// Jump short if not equal (ZF=0).
+	/// Jump short if not equal (Zero Flag (ZF) is 0).
 	fn jne_Label(&mut self, arg0: Label);
 
-	/// Jump near if not equal (ZF=0).
-	fn jne_1(&mut self, arg0: Label);
+	/// Jump near if not equal (Zero Flag (ZF) is 0).
+	fn jne_Label_1(&mut self, arg0: Label);
 
-	/// Jump short if not equal (ZF=0).
+	/// Jump short if not equal (Zero Flag (ZF) is 0).
 	fn jne_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if not equal (ZF=0).
-	fn jne_1(&mut self, arg0: Label, arg1: Hint);
+	/// Jump near if not equal (Zero Flag (ZF) is 0).
+	fn jne_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if not equal (ZF=0).
+	/// Jump near if not equal (Zero Flag (ZF) is 0).
 	fn jne_Relative32Bit(&mut self, arg0: Relative32Bit);
 
-	/// Jump near if not equal (ZF=0).
+	/// Jump near if not equal (Zero Flag (ZF) is 0).
 	fn jne_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
 
-	/// Jump short if not equal (ZF=0).
+	/// Jump short if not equal (Zero Flag (ZF) is 0).
 	fn jne_Relative8Bit(&mut self, arg0: Relative8Bit);
 
-	/// Jump short if not equal (ZF=0).
+	/// Jump short if not equal (Zero Flag (ZF) is 0).
 	fn jne_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
-	/// Jump short if not greater (ZF=1 or SF!= OF).
+	/// Jump short if not greater (Zero Flag (ZF) is 1 or `SF != OF`).
 	fn jng_Label(&mut self, arg0: Label);
 
-	/// Jump near if not greater (ZF=1 or SF != OF).
-	fn jng_1(&mut self, arg0: Label);
+	/// Jump near if not greater (Zero Flag (ZF) is 1 or SF != OF).
+	fn jng_Label_1(&mut self, arg0: Label);
 
-	/// Jump short if not greater (ZF=1 or SF!= OF).
+	/// Jump short if not greater (Zero Flag (ZF) is 1 or `SF != OF`).
 	fn jng_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if not greater (ZF=1 or SF != OF).
-	fn jng_1(&mut self, arg0: Label, arg1: Hint);
+	/// Jump near if not greater (Zero Flag (ZF) is 1 or SF != OF).
+	fn jng_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if not greater (ZF=1 or SF != OF).
+	/// Jump near if not greater (Zero Flag (ZF) is 1 or SF != OF).
 	fn jng_Relative32Bit(&mut self, arg0: Relative32Bit);
 
-	/// Jump near if not greater (ZF=1 or SF != OF).
+	/// Jump near if not greater (Zero Flag (ZF) is 1 or SF != OF).
 	fn jng_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
 
-	/// Jump short if not greater (ZF=1 or SF!= OF).
+	/// Jump short if not greater (Zero Flag (ZF) is 1 or `SF != OF`).
 	fn jng_Relative8Bit(&mut self, arg0: Relative8Bit);
 
-	/// Jump short if not greater (ZF=1 or SF!= OF).
+	/// Jump short if not greater (Zero Flag (ZF) is 1 or `SF != OF`).
 	fn jng_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
-	/// Jump short if not greater or equal (SF!= OF).
+	/// Jump short if not greater or equal (`SF != OF`).
 	fn jnge_Label(&mut self, arg0: Label);
 
 	/// Jump near if not greater or equal (SF != OF).
-	fn jnge_1(&mut self, arg0: Label);
+	fn jnge_Label_1(&mut self, arg0: Label);
 
-	/// Jump short if not greater or equal (SF!= OF).
+	/// Jump short if not greater or equal (`SF != OF`).
 	fn jnge_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
 	/// Jump near if not greater or equal (SF != OF).
-	fn jnge_1(&mut self, arg0: Label, arg1: Hint);
+	fn jnge_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
 	/// Jump near if not greater or equal (SF != OF).
 	fn jnge_Relative32Bit(&mut self, arg0: Relative32Bit);
@@ -3099,71 +3099,71 @@ pub trait InstructionStream
 	/// Jump near if not greater or equal (SF != OF).
 	fn jnge_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
 
-	/// Jump short if not greater or equal (SF!= OF).
+	/// Jump short if not greater or equal (`SF != OF`).
 	fn jnge_Relative8Bit(&mut self, arg0: Relative8Bit);
 
-	/// Jump short if not greater or equal (SF!= OF).
+	/// Jump short if not greater or equal (`SF != OF`).
 	fn jnge_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
-	/// Jump short if not less (SF=OF).
+	/// Jump short if not less (`SF == OF`).
 	fn jnl_Label(&mut self, arg0: Label);
 
-	/// Jump near if not less (SF=OF).
-	fn jnl_1(&mut self, arg0: Label);
+	/// Jump near if not less (`SF == OF`).
+	fn jnl_Label_1(&mut self, arg0: Label);
 
-	/// Jump short if not less (SF=OF).
+	/// Jump short if not less (`SF == OF`).
 	fn jnl_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if not less (SF=OF).
-	fn jnl_1(&mut self, arg0: Label, arg1: Hint);
+	/// Jump near if not less (`SF == OF`).
+	fn jnl_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if not less (SF=OF).
+	/// Jump near if not less (`SF == OF`).
 	fn jnl_Relative32Bit(&mut self, arg0: Relative32Bit);
 
-	/// Jump near if not less (SF=OF).
+	/// Jump near if not less (`SF == OF`).
 	fn jnl_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
 
-	/// Jump short if not less (SF=OF).
+	/// Jump short if not less (`SF == OF`).
 	fn jnl_Relative8Bit(&mut self, arg0: Relative8Bit);
 
-	/// Jump short if not less (SF=OF).
+	/// Jump short if not less (`SF == OF`).
 	fn jnl_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
-	/// Jump short if not less or equal (ZF=0 and SF=OF).
+	/// Jump short if not less or equal (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn jnle_Label(&mut self, arg0: Label);
 
-	/// Jump near if not less or equal (ZF=0 and SF=OF).
-	fn jnle_1(&mut self, arg0: Label);
+	/// Jump near if not less or equal (Zero Flag (ZF) is 0 and `SF == OF`).
+	fn jnle_Label_1(&mut self, arg0: Label);
 
-	/// Jump short if not less or equal (ZF=0 and SF=OF).
+	/// Jump short if not less or equal (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn jnle_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if not less or equal (ZF=0 and SF=OF).
-	fn jnle_1(&mut self, arg0: Label, arg1: Hint);
+	/// Jump near if not less or equal (Zero Flag (ZF) is 0 and `SF == OF`).
+	fn jnle_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if not less or equal (ZF=0 and SF=OF).
+	/// Jump near if not less or equal (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn jnle_Relative32Bit(&mut self, arg0: Relative32Bit);
 
-	/// Jump near if not less or equal (ZF=0 and SF=OF).
+	/// Jump near if not less or equal (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn jnle_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
 
-	/// Jump short if not less or equal (ZF=0 and SF=OF).
+	/// Jump short if not less or equal (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn jnle_Relative8Bit(&mut self, arg0: Relative8Bit);
 
-	/// Jump short if not less or equal (ZF=0 and SF=OF).
+	/// Jump short if not less or equal (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn jnle_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
 	/// Jump short if not overflow (OF=0).
 	fn jno_Label(&mut self, arg0: Label);
 
 	/// Jump near if not overflow (OF=0).
-	fn jno_1(&mut self, arg0: Label);
+	fn jno_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if not overflow (OF=0).
 	fn jno_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
 	/// Jump near if not overflow (OF=0).
-	fn jno_1(&mut self, arg0: Label, arg1: Hint);
+	fn jno_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
 	/// Jump near if not overflow (OF=0).
 	fn jno_Relative32Bit(&mut self, arg0: Relative32Bit);
@@ -3177,172 +3177,172 @@ pub trait InstructionStream
 	/// Jump short if not overflow (OF=0).
 	fn jno_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
-	/// Jump short if not parity (PF=0).
+	/// Jump short if not parity (Parity Flag (PF) is 0).
 	fn jnp_Label(&mut self, arg0: Label);
 
-	/// Jump near if not parity (PF=0).
-	fn jnp_1(&mut self, arg0: Label);
+	/// Jump near if not parity (Parity Flag (PF) is 0).
+	fn jnp_Label_1(&mut self, arg0: Label);
 
-	/// Jump short if not parity (PF=0).
+	/// Jump short if not parity (Parity Flag (PF) is 0).
 	fn jnp_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if not parity (PF=0).
-	fn jnp_1(&mut self, arg0: Label, arg1: Hint);
+	/// Jump near if not parity (Parity Flag (PF) is 0).
+	fn jnp_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if not parity (PF=0).
+	/// Jump near if not parity (Parity Flag (PF) is 0).
 	fn jnp_Relative32Bit(&mut self, arg0: Relative32Bit);
 
-	/// Jump near if not parity (PF=0).
+	/// Jump near if not parity (Parity Flag (PF) is 0).
 	fn jnp_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
 
-	/// Jump short if not parity (PF=0).
+	/// Jump short if not parity (Parity Flag (PF) is 0).
 	fn jnp_Relative8Bit(&mut self, arg0: Relative8Bit);
 
-	/// Jump short if not parity (PF=0).
+	/// Jump short if not parity (Parity Flag (PF) is 0).
 	fn jnp_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
-	/// Jump short if not sign (SF=0).
+	/// Jump short if not sign (Sign Flag (SF) is 0).
 	fn jns_Label(&mut self, arg0: Label);
 
-	/// Jump near if not sign (SF=0).
-	fn jns_1(&mut self, arg0: Label);
+	/// Jump near if not sign (Sign Flag (SF) is 0).
+	fn jns_Label_1(&mut self, arg0: Label);
 
-	/// Jump short if not sign (SF=0).
+	/// Jump short if not sign (Sign Flag (SF) is 0).
 	fn jns_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if not sign (SF=0).
-	fn jns_1(&mut self, arg0: Label, arg1: Hint);
+	/// Jump near if not sign (Sign Flag (SF) is 0).
+	fn jns_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if not sign (SF=0).
+	/// Jump near if not sign (Sign Flag (SF) is 0).
 	fn jns_Relative32Bit(&mut self, arg0: Relative32Bit);
 
-	/// Jump near if not sign (SF=0).
+	/// Jump near if not sign (Sign Flag (SF) is 0).
 	fn jns_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
 
-	/// Jump short if not sign (SF=0).
+	/// Jump short if not sign (Sign Flag (SF) is 0).
 	fn jns_Relative8Bit(&mut self, arg0: Relative8Bit);
 
-	/// Jump short if not sign (SF=0).
+	/// Jump short if not sign (Sign Flag (SF) is 0).
 	fn jns_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
-	/// Jump short if not zero (ZF=0).
+	/// Jump short if not zero (Zero Flag (ZF) is 0).
 	fn jnz_Label(&mut self, arg0: Label);
 
-	/// Jump near if not zero (ZF=0).
-	fn jnz_1(&mut self, arg0: Label);
+	/// Jump near if not zero (Zero Flag (ZF) is 0).
+	fn jnz_Label_1(&mut self, arg0: Label);
 
-	/// Jump short if not zero (ZF=0).
+	/// Jump short if not zero (Zero Flag (ZF) is 0).
 	fn jnz_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if not zero (ZF=0).
-	fn jnz_1(&mut self, arg0: Label, arg1: Hint);
+	/// Jump near if not zero (Zero Flag (ZF) is 0).
+	fn jnz_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if not zero (ZF=0).
+	/// Jump near if not zero (Zero Flag (ZF) is 0).
 	fn jnz_Relative32Bit(&mut self, arg0: Relative32Bit);
 
-	/// Jump near if not zero (ZF=0).
+	/// Jump near if not zero (Zero Flag (ZF) is 0).
 	fn jnz_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
 
-	/// Jump short if not zero (ZF=0).
+	/// Jump short if not zero (Zero Flag (ZF) is 0).
 	fn jnz_Relative8Bit(&mut self, arg0: Relative8Bit);
 
-	/// Jump short if not zero (ZF=0).
+	/// Jump short if not zero (Zero Flag (ZF) is 0).
 	fn jnz_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
-	/// Jump short if overflow (OF=1).
+	/// Jump short if overflow (Overflow Flag (OF) is 1).
 	fn jo_Label(&mut self, arg0: Label);
 
-	/// Jump near if overflow (OF=1).
-	fn jo_1(&mut self, arg0: Label);
+	/// Jump near if overflow (Overflow Flag (OF) is 1).
+	fn jo_Label_1(&mut self, arg0: Label);
 
-	/// Jump short if overflow (OF=1).
+	/// Jump short if overflow (Overflow Flag (OF) is 1).
 	fn jo_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if overflow (OF=1).
-	fn jo_1(&mut self, arg0: Label, arg1: Hint);
+	/// Jump near if overflow (Overflow Flag (OF) is 1).
+	fn jo_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if overflow (OF=1).
+	/// Jump near if overflow (Overflow Flag (OF) is 1).
 	fn jo_Relative32Bit(&mut self, arg0: Relative32Bit);
 
-	/// Jump near if overflow (OF=1).
+	/// Jump near if overflow (Overflow Flag (OF) is 1).
 	fn jo_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
 
-	/// Jump short if overflow (OF=1).
+	/// Jump short if overflow (Overflow Flag (OF) is 1).
 	fn jo_Relative8Bit(&mut self, arg0: Relative8Bit);
 
-	/// Jump short if overflow (OF=1).
+	/// Jump short if overflow (Overflow Flag (OF) is 1).
 	fn jo_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
-	/// Jump short if parity (PF=1).
+	/// Jump short if parity (Parity Flag (PF) is 1).
 	fn jp_Label(&mut self, arg0: Label);
 
-	/// Jump near if parity (PF=1).
-	fn jp_1(&mut self, arg0: Label);
+	/// Jump near if parity (Parity Flag (PF) is 1).
+	fn jp_Label_1(&mut self, arg0: Label);
 
-	/// Jump short if parity (PF=1).
+	/// Jump short if parity (Parity Flag (PF) is 1).
 	fn jp_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if parity (PF=1).
-	fn jp_1(&mut self, arg0: Label, arg1: Hint);
+	/// Jump near if parity (Parity Flag (PF) is 1).
+	fn jp_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if parity (PF=1).
+	/// Jump near if parity (Parity Flag (PF) is 1).
 	fn jp_Relative32Bit(&mut self, arg0: Relative32Bit);
 
-	/// Jump near if parity (PF=1).
+	/// Jump near if parity (Parity Flag (PF) is 1).
 	fn jp_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
 
-	/// Jump short if parity (PF=1).
+	/// Jump short if parity (Parity Flag (PF) is 1).
 	fn jp_Relative8Bit(&mut self, arg0: Relative8Bit);
 
-	/// Jump short if parity (PF=1).
+	/// Jump short if parity (Parity Flag (PF) is 1).
 	fn jp_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
-	/// Jump short if parity even (PF=1).
+	/// Jump short if parity even (Parity Flag (PF) is 1).
 	fn jpe_Label(&mut self, arg0: Label);
 
-	/// Jump near if parity even (PF=1).
-	fn jpe_1(&mut self, arg0: Label);
+	/// Jump near if parity even (Parity Flag (PF) is 1).
+	fn jpe_Label_1(&mut self, arg0: Label);
 
-	/// Jump short if parity even (PF=1).
+	/// Jump short if parity even (Parity Flag (PF) is 1).
 	fn jpe_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if parity even (PF=1).
-	fn jpe_1(&mut self, arg0: Label, arg1: Hint);
+	/// Jump near if parity even (Parity Flag (PF) is 1).
+	fn jpe_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if parity even (PF=1).
+	/// Jump near if parity even (Parity Flag (PF) is 1).
 	fn jpe_Relative32Bit(&mut self, arg0: Relative32Bit);
 
-	/// Jump near if parity even (PF=1).
+	/// Jump near if parity even (Parity Flag (PF) is 1).
 	fn jpe_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
 
-	/// Jump short if parity even (PF=1).
+	/// Jump short if parity even (Parity Flag (PF) is 1).
 	fn jpe_Relative8Bit(&mut self, arg0: Relative8Bit);
 
-	/// Jump short if parity even (PF=1).
+	/// Jump short if parity even (Parity Flag (PF) is 1).
 	fn jpe_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
-	/// Jump short if parity odd (PF=0).
+	/// Jump short if parity odd (Parity Flag (PF) is 0).
 	fn jpo_Label(&mut self, arg0: Label);
 
-	/// Jump near if parity odd (PF=0).
-	fn jpo_1(&mut self, arg0: Label);
+	/// Jump near if parity odd (Parity Flag (PF) is 0).
+	fn jpo_Label_1(&mut self, arg0: Label);
 
-	/// Jump short if parity odd (PF=0).
+	/// Jump short if parity odd (Parity Flag (PF) is 0).
 	fn jpo_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if parity odd (PF=0).
-	fn jpo_1(&mut self, arg0: Label, arg1: Hint);
+	/// Jump near if parity odd (Parity Flag (PF) is 0).
+	fn jpo_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if parity odd (PF=0).
+	/// Jump near if parity odd (Parity Flag (PF) is 0).
 	fn jpo_Relative32Bit(&mut self, arg0: Relative32Bit);
 
-	/// Jump near if parity odd (PF=0).
+	/// Jump near if parity odd (Parity Flag (PF) is 0).
 	fn jpo_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
 
-	/// Jump short if parity odd (PF=0).
+	/// Jump short if parity odd (Parity Flag (PF) is 0).
 	fn jpo_Relative8Bit(&mut self, arg0: Relative8Bit);
 
-	/// Jump short if parity odd (PF=0).
+	/// Jump short if parity odd (Parity Flag (PF) is 0).
 	fn jpo_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
 
 	/// Jump short if RCX register is 0.
@@ -3361,13 +3361,13 @@ pub trait InstructionStream
 	fn js_Label(&mut self, arg0: Label);
 
 	/// Jump near if sign (SF=1).
-	fn js_1(&mut self, arg0: Label);
+	fn js_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if sign (SF=1).
 	fn js_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
 	/// Jump near if sign (SF=1).
-	fn js_1(&mut self, arg0: Label, arg1: Hint);
+	fn js_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
 	/// Jump near if sign (SF=1).
 	fn js_Relative32Bit(&mut self, arg0: Relative32Bit);
@@ -3384,19 +3384,19 @@ pub trait InstructionStream
 	/// Jump short if zero (ZF = 1).
 	fn jz_Label(&mut self, arg0: Label);
 
-	/// Jump near if 0 (ZF=1).
-	fn jz_1(&mut self, arg0: Label);
+	/// Jump near if 0 (Zero Flag (ZF) is 1).
+	fn jz_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if zero (ZF = 1).
 	fn jz_Label_Hint(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if 0 (ZF=1).
-	fn jz_1(&mut self, arg0: Label, arg1: Hint);
+	/// Jump near if 0 (Zero Flag (ZF) is 1).
+	fn jz_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
 
-	/// Jump near if 0 (ZF=1).
+	/// Jump near if 0 (Zero Flag (ZF) is 1).
 	fn jz_Relative32Bit(&mut self, arg0: Relative32Bit);
 
-	/// Jump near if 0 (ZF=1).
+	/// Jump near if 0 (Zero Flag (ZF) is 1).
 	fn jz_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
 
 	/// Jump short if zero (ZF = 1).
@@ -3710,7 +3710,7 @@ pub trait InstructionStream
 	fn mov_Register16Bit_Immediate16Bit(&mut self, arg0: Register16Bit, arg1: Immediate16Bit);
 
 	/// Move imm16 to r/m16.
-	fn mov_1(&mut self, arg0: Register16Bit, arg1: Immediate16Bit);
+	fn mov_Register16Bit_Immediate16Bit_1(&mut self, arg0: Register16Bit, arg1: Immediate16Bit);
 
 	/// Move r/m16 to r16.
 	fn mov_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
@@ -3719,7 +3719,7 @@ pub trait InstructionStream
 	fn mov_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
 	/// Move r/m16 to r16.
-	fn mov_1(&mut self, arg0: Register16Bit, arg1: Register16Bit);
+	fn mov_Register16Bit_Register16Bit_1(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
 	/// Move segment register to r/m16.
 	fn mov_Register16Bit_Sreg(&mut self, arg0: Register16Bit, arg1: Sreg);
@@ -3728,7 +3728,7 @@ pub trait InstructionStream
 	fn mov_Register32Bit_Immediate32Bit(&mut self, arg0: Register32Bit, arg1: Immediate32Bit);
 
 	/// Move imm32 to r/m32.
-	fn mov_1(&mut self, arg0: Register32Bit, arg1: Immediate32Bit);
+	fn mov_Register32Bit_Immediate32Bit_1(&mut self, arg0: Register32Bit, arg1: Immediate32Bit);
 
 	/// Move r/m32 to r32.
 	fn mov_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
@@ -3737,7 +3737,7 @@ pub trait InstructionStream
 	fn mov_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
 	/// Move r/m32 to r32.
-	fn mov_1(&mut self, arg0: Register32Bit, arg1: Register32Bit);
+	fn mov_Register32Bit_Register32Bit_1(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
 	/// Move imm32 sign extended to 64-bits to r/m64.
 	fn mov_Register64Bit_Immediate32Bit(&mut self, arg0: Register64Bit, arg1: Immediate32Bit);
@@ -3752,7 +3752,7 @@ pub trait InstructionStream
 	fn mov_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
 	/// Move r/m64 to r64.
-	fn mov_1(&mut self, arg0: Register64Bit, arg1: Register64Bit);
+	fn mov_Register64Bit_Register64Bit_1(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
 	/// Move zero extended 16-bit segment register to r/m64.
 	fn mov_Register64Bit_Sreg(&mut self, arg0: Register64Bit, arg1: Sreg);
@@ -3761,7 +3761,7 @@ pub trait InstructionStream
 	fn mov_Register8Bit_Immediate8Bit(&mut self, arg0: Register8Bit, arg1: Immediate8Bit);
 
 	/// Move imm8 to r/m8.
-	fn mov_1(&mut self, arg0: Register8Bit, arg1: Immediate8Bit);
+	fn mov_Register8Bit_Immediate8Bit_1(&mut self, arg0: Register8Bit, arg1: Immediate8Bit);
 
 	/// Move r/m8 to r8.
 	fn mov_Register8Bit_Any8BitMemory(&mut self, arg0: Register8Bit, arg1: Any8BitMemory);
@@ -3770,13 +3770,13 @@ pub trait InstructionStream
 	fn mov_Register8Bit_Register8Bit(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// Move r/m8 to r8.
-	fn mov_1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
+	fn mov_Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// Move r8 to r/m8.
 	fn mov_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Move r/m8 to r8.
-	fn mov_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn mov_Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Move quadword at (offset) to RAX.
 	fn mov_RAX_MemoryOffset64Bit(&mut self, arg0: RAX, arg1: MemoryOffset64Bit);
@@ -3785,7 +3785,7 @@ pub trait InstructionStream
 	fn mov_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit);
 
 	/// Move imm8 to r/m8.
-	fn mov_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit);
+	fn mov_RegisterHigh8BitsOf16Bit_Immediate8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit);
 
 	/// Move r/m8 to r8.
 	fn mov_RegisterHigh8BitsOf16Bit_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Any8BitMemory);
@@ -3794,13 +3794,13 @@ pub trait InstructionStream
 	fn mov_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
 
 	/// Move r/m8 to r8.
-	fn mov_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn mov_RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
 
 	/// Move r8 to r/m8.
 	fn mov_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Move r/m8 to r8.
-	fn mov_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn mov_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Move r/m16 to segment register.
 	fn mov_Sreg_Any16BitMemory(&mut self, arg0: Sreg, arg1: Any16BitMemory);
@@ -3824,7 +3824,7 @@ pub trait InstructionStream
 	fn movapd_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move packed double-precision floating-point values from xmm1 to xmm2/m128.
-	fn movapd_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
+	fn movapd_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move packed single-precision floating-point values from xmm1 to xmm2/m128.
 	fn movaps_Any128BitMemory_XMMRegister(&mut self, arg0: Any128BitMemory, arg1: XMMRegister);
@@ -3836,7 +3836,7 @@ pub trait InstructionStream
 	fn movaps_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move packed single-precision floating-point values from xmm1 to xmm2/m128.
-	fn movaps_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
+	fn movaps_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Reverse byte order in r16 and move to m16.
 	fn movbe_Any16BitMemory_Register16Bit(&mut self, arg0: Any16BitMemory, arg1: Register16Bit);
@@ -3899,7 +3899,7 @@ pub trait InstructionStream
 	fn movdqa_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move aligned double quadword from xmm1 to xmm2/m128.
-	fn movdqa_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
+	fn movdqa_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move unaligned double quadword from xmm1 to xmm2/m128.
 	fn movdqu_Any128BitMemory_XMMRegister(&mut self, arg0: Any128BitMemory, arg1: XMMRegister);
@@ -3911,7 +3911,7 @@ pub trait InstructionStream
 	fn movdqu_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move unaligned double quadword from xmm1 to xmm2/m128.
-	fn movdqu_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
+	fn movdqu_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move two packed single-precision floating-point values from high quadword of xmm2 to low quadword of xmm1.
 	fn movhlps_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
@@ -3984,25 +3984,25 @@ pub trait InstructionStream
 	fn movq_Any64BitMemory_MmRegister(&mut self, arg0: Any64BitMemory, arg1: MmRegister);
 
 	/// Move quadword from mm to mm/m64.
-	fn movq_1(&mut self, arg0: Any64BitMemory, arg1: MmRegister);
+	fn movq_Any64BitMemory_MmRegister_1(&mut self, arg0: Any64BitMemory, arg1: MmRegister);
 
 	/// Move quadword from xmm register to r/m64.
 	fn movq_Any64BitMemory_XMMRegister(&mut self, arg0: Any64BitMemory, arg1: XMMRegister);
 
 	/// Move quadword from xmm1 to xmm2/mem64.
-	fn movq_1(&mut self, arg0: Any64BitMemory, arg1: XMMRegister);
+	fn movq_Any64BitMemory_XMMRegister_1(&mut self, arg0: Any64BitMemory, arg1: XMMRegister);
 
 	/// Move quadword from r/m64 to mm.
 	fn movq_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
 
 	/// Move quadword from mm/m64 to mm.
-	fn movq_1(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn movq_MmRegister_Any64BitMemory_1(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
 
 	/// Move quadword from mm/m64 to mm.
 	fn movq_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
 
 	/// Move quadword from mm to mm/m64.
-	fn movq_1(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn movq_MmRegister_MmRegister_1(&mut self, arg0: MmRegister, arg1: MmRegister);
 
 	/// Move quadword from r/m64 to mm.
 	fn movq_MmRegister_Register64Bit(&mut self, arg0: MmRegister, arg1: Register64Bit);
@@ -4017,7 +4017,7 @@ pub trait InstructionStream
 	fn movq_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: Any64BitMemory);
 
 	/// Move quadword from xmm2/mem64 to xmm1.
-	fn movq_1(&mut self, arg0: XMMRegister, arg1: Any64BitMemory);
+	fn movq_XMMRegister_Any64BitMemory_1(&mut self, arg0: XMMRegister, arg1: Any64BitMemory);
 
 	/// Move quadword from r/m64 to xmm.
 	fn movq_XMMRegister_Register64Bit(&mut self, arg0: XMMRegister, arg1: Register64Bit);
@@ -4026,7 +4026,7 @@ pub trait InstructionStream
 	fn movq_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move quadword from xmm1 to xmm2/mem64.
-	fn movq_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
+	fn movq_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move quadword from mmx to low quadword of xmm.
 	fn movq2dq_XMMRegister_MmRegister(&mut self, arg0: XMMRegister, arg1: MmRegister);
@@ -4064,7 +4064,7 @@ pub trait InstructionStream
 	fn movsd_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move scalar double-precision floating-point value from xmm1 register to xmm2/m64.
-	fn movsd_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
+	fn movsd_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move two single-precision floating-point values from the higher 32-bit operand of each qword in xmm2/m128 to xmm1 and duplicate each 32-bit operand to the lower 32-bits of each qword.
 	fn movshdup_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -4091,7 +4091,7 @@ pub trait InstructionStream
 	fn movss_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move scalar single-precision floating-point value from xmm1 register to xmm2/m32.
-	fn movss_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
+	fn movss_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// For legacy mode, move word from address DS:(E)SI to ES:(E)DI.
 	/// For 64-bit mode move word at address (R|E)SI to (R|E)DI.
@@ -4149,7 +4149,7 @@ pub trait InstructionStream
 	fn movupd_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move packed double-precision floating-point values from xmm1 to xmm2/m128.
-	fn movupd_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
+	fn movupd_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move packed single-precision floating-point values from xmm1 to xmm2/m128.
 	fn movups_Any128BitMemory_XMMRegister(&mut self, arg0: Any128BitMemory, arg1: XMMRegister);
@@ -4161,7 +4161,7 @@ pub trait InstructionStream
 	fn movups_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move packed single-precision floating-point values from xmm1 to xmm2/m128.
-	fn movups_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
+	fn movups_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move byte to word with zero-extension.
 	fn movzx_Register16Bit_Any8BitMemory(&mut self, arg0: Register16Bit, arg1: Any8BitMemory);
@@ -4213,7 +4213,7 @@ pub trait InstructionStream
 	/// Unsigned multiply (`EDX:EAX` = EAX * r/m32).
 	fn mul_Any32BitMemory(&mut self, arg0: Any32BitMemory);
 
-	/// Unsigned multiply (RDX:RAX = RAX * r/m64.
+	/// Unsigned multiply (`RDX:RAX` = RAX * r/m64.
 	fn mul_Any64BitMemory(&mut self, arg0: Any64BitMemory);
 
 	/// Unsigned multiply (AX = AL * r/m8).
@@ -4225,7 +4225,7 @@ pub trait InstructionStream
 	/// Unsigned multiply (`EDX:EAX` = EAX * r/m32).
 	fn mul_Register32Bit(&mut self, arg0: Register32Bit);
 
-	/// Unsigned multiply (RDX:RAX = RAX * r/m64.
+	/// Unsigned multiply (`RDX:RAX` = RAX * r/m64.
 	fn mul_Register64Bit(&mut self, arg0: Register64Bit);
 
 	/// Unsigned multiply (AX = AL * r/m8).
@@ -4316,160 +4316,160 @@ pub trait InstructionStream
 	fn nop_Register32Bit(&mut self, arg0: Register32Bit);
 
 	/// Reverse each bit of r/m16.
-	fn not_(&mut self, arg0: Any16BitMemory);
+	fn not_Any16BitMemory(&mut self, arg0: Any16BitMemory);
 
 	/// Reverse each bit of r/m32.
-	fn not_(&mut self, arg0: Any32BitMemory);
+	fn not_Any32BitMemory(&mut self, arg0: Any32BitMemory);
 
 	/// Reverse each bit of r/m64.
-	fn not_(&mut self, arg0: Any64BitMemory);
+	fn not_Any64BitMemory(&mut self, arg0: Any64BitMemory);
 
 	/// Reverse each bit of r/m8.
-	fn not_(&mut self, arg0: Any8BitMemory);
+	fn not_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
 	/// Reverse each bit of r/m16.
-	fn not_(&mut self, arg0: Register16Bit);
+	fn not_Register16Bit(&mut self, arg0: Register16Bit);
 
 	/// Reverse each bit of r/m32.
-	fn not_(&mut self, arg0: Register32Bit);
+	fn not_Register32Bit(&mut self, arg0: Register32Bit);
 
 	/// Reverse each bit of r/m64.
-	fn not_(&mut self, arg0: Register64Bit);
+	fn not_Register64Bit(&mut self, arg0: Register64Bit);
 
 	/// Reverse each bit of r/m8.
-	fn not_(&mut self, arg0: Register8Bit);
+	fn not_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Reverse each bit of r/m8.
-	fn not_(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn not_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
 	/// AL OR imm8.
-	fn or_(&mut self, arg0: AL, arg1: Immediate8Bit);
+	fn or_AL_Immediate8Bit(&mut self, arg0: AL, arg1: Immediate8Bit);
 
 	/// AX OR imm16.
-	fn or_(&mut self, arg0: AX, arg1: Immediate16Bit);
+	fn or_AX_Immediate16Bit(&mut self, arg0: AX, arg1: Immediate16Bit);
 
 	/// EAX OR imm32.
-	fn or_(&mut self, arg0: EAX, arg1: Immediate32Bit);
+	fn or_EAX_Immediate32Bit(&mut self, arg0: EAX, arg1: Immediate32Bit);
 
 	/// r/m16 OR imm16.
-	fn or_(&mut self, arg0: Any16BitMemory, arg1: Immediate16Bit);
+	fn or_Any16BitMemory_Immediate16Bit(&mut self, arg0: Any16BitMemory, arg1: Immediate16Bit);
 
 	/// r/m16 OR imm8 (sign-extended).
-	fn or_(&mut self, arg0: Any16BitMemory, arg1: Immediate8Bit);
+	fn or_Any16BitMemory_Immediate8Bit(&mut self, arg0: Any16BitMemory, arg1: Immediate8Bit);
 
 	/// r/m16 OR r16.
-	fn or_(&mut self, arg0: Any16BitMemory, arg1: Register16Bit);
+	fn or_Any16BitMemory_Register16Bit(&mut self, arg0: Any16BitMemory, arg1: Register16Bit);
 
 	/// r/m32 OR imm32.
-	fn or_(&mut self, arg0: Any32BitMemory, arg1: Immediate32Bit);
+	fn or_Any32BitMemory_Immediate32Bit(&mut self, arg0: Any32BitMemory, arg1: Immediate32Bit);
 
 	/// r/m32 OR imm8 (sign-extended).
-	fn or_(&mut self, arg0: Any32BitMemory, arg1: Immediate8Bit);
+	fn or_Any32BitMemory_Immediate8Bit(&mut self, arg0: Any32BitMemory, arg1: Immediate8Bit);
 
 	/// r/m32 OR r32.
-	fn or_(&mut self, arg0: Any32BitMemory, arg1: Register32Bit);
+	fn or_Any32BitMemory_Register32Bit(&mut self, arg0: Any32BitMemory, arg1: Register32Bit);
 
 	/// r/m64 OR imm32 (sign-extended).
-	fn or_(&mut self, arg0: Any64BitMemory, arg1: Immediate32Bit);
+	fn or_Any64BitMemory_Immediate32Bit(&mut self, arg0: Any64BitMemory, arg1: Immediate32Bit);
 
 	/// r/m64 OR imm8 (sign-extended).
-	fn or_(&mut self, arg0: Any64BitMemory, arg1: Immediate8Bit);
+	fn or_Any64BitMemory_Immediate8Bit(&mut self, arg0: Any64BitMemory, arg1: Immediate8Bit);
 
 	/// r/m64 OR r64.
-	fn or_(&mut self, arg0: Any64BitMemory, arg1: Register64Bit);
+	fn or_Any64BitMemory_Register64Bit(&mut self, arg0: Any64BitMemory, arg1: Register64Bit);
 
 	/// r/m8 OR imm8.
-	fn or_(&mut self, arg0: Any8BitMemory, arg1: Immediate8Bit);
+	fn or_Any8BitMemory_Immediate8Bit(&mut self, arg0: Any8BitMemory, arg1: Immediate8Bit);
 
 	/// r/m8 OR r8.
-	fn or_(&mut self, arg0: Any8BitMemory, arg1: Register8Bit);
+	fn or_Any8BitMemory_Register8Bit(&mut self, arg0: Any8BitMemory, arg1: Register8Bit);
 
 	/// r/m8 OR r8.
-	fn or_(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit);
+	fn or_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// r/m16 OR imm16.
-	fn or_(&mut self, arg0: Register16Bit, arg1: Immediate16Bit);
+	fn or_Register16Bit_Immediate16Bit(&mut self, arg0: Register16Bit, arg1: Immediate16Bit);
 
 	/// r/m16 OR imm8 (sign-extended).
-	fn or_(&mut self, arg0: Register16Bit, arg1: Immediate8Bit);
+	fn or_Register16Bit_Immediate8Bit(&mut self, arg0: Register16Bit, arg1: Immediate8Bit);
 
 	/// r16 OR r/m16.
-	fn or_(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
+	fn or_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
 	/// r/m16 OR r16.
-	fn or_(&mut self, arg0: Register16Bit, arg1: Register16Bit);
+	fn or_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
 	/// r16 OR r/m16.
-	fn or__1(&mut self, arg0: Register16Bit, arg1: Register16Bit);
+	fn or__Register16Bit_Register16Bit_1(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
 	/// r/m32 OR imm32.
-	fn or_(&mut self, arg0: Register32Bit, arg1: Immediate32Bit);
+	fn or_Register32Bit_Immediate32Bit(&mut self, arg0: Register32Bit, arg1: Immediate32Bit);
 
 	/// r/m32 OR imm8 (sign-extended).
-	fn or_(&mut self, arg0: Register32Bit, arg1: Immediate8Bit);
+	fn or_Register32Bit_Immediate8Bit(&mut self, arg0: Register32Bit, arg1: Immediate8Bit);
 
 	/// r32 OR r/m32.
-	fn or_(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
+	fn or_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
 	/// r/m32 OR r32.
-	fn or_(&mut self, arg0: Register32Bit, arg1: Register32Bit);
+	fn or_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
 	/// r32 OR r/m32.
-	fn or__1(&mut self, arg0: Register32Bit, arg1: Register32Bit);
+	fn or__Register32Bit_Register32Bit_1(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
 	/// r/m64 OR imm32 (sign-extended).
-	fn or_(&mut self, arg0: Register64Bit, arg1: Immediate32Bit);
+	fn or_Register64Bit_Immediate32Bit(&mut self, arg0: Register64Bit, arg1: Immediate32Bit);
 
 	/// r/m64 OR imm8 (sign-extended).
-	fn or_(&mut self, arg0: Register64Bit, arg1: Immediate8Bit);
+	fn or_Register64Bit_Immediate8Bit(&mut self, arg0: Register64Bit, arg1: Immediate8Bit);
 
 	/// r64 OR r/m64.
-	fn or_(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
+	fn or_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
 	/// r/m64 OR r64.
-	fn or_(&mut self, arg0: Register64Bit, arg1: Register64Bit);
+	fn or_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
 	/// r64 OR r/m64.
-	fn or__1(&mut self, arg0: Register64Bit, arg1: Register64Bit);
+	fn or__Register64Bit_Register64Bit_1(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
 	/// r/m8 OR imm8.
-	fn or_(&mut self, arg0: Register8Bit, arg1: Immediate8Bit);
+	fn or_Register8Bit_Immediate8Bit(&mut self, arg0: Register8Bit, arg1: Immediate8Bit);
 
 	/// r8 OR r/m8.
-	fn or_(&mut self, arg0: Register8Bit, arg1: Any8BitMemory);
+	fn or_Register8Bit_Any8BitMemory(&mut self, arg0: Register8Bit, arg1: Any8BitMemory);
 
 	/// r/m8 OR r8.
-	fn or_(&mut self, arg0: Register8Bit, arg1: Register8Bit);
+	fn or_Register8Bit_Register8Bit(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// r8 OR r/m8.
-	fn or__1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
+	fn or__Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// r/m8 OR r8.
-	fn or_(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn or_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// r8 OR r/m8.
-	fn or__1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn or__Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// RAX OR imm32 (sign-extended).
-	fn or_(&mut self, arg0: RAX, arg1: Immediate32Bit);
+	fn or_RAX_Immediate32Bit(&mut self, arg0: RAX, arg1: Immediate32Bit);
 
 	/// r/m8 OR imm8.
-	fn or_(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit);
+	fn or_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit);
 
 	/// r8 OR r/m8.
-	fn or_(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Any8BitMemory);
+	fn or_RegisterHigh8BitsOf16Bit_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Any8BitMemory);
 
 	/// r/m8 OR r8.
-	fn or_(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn or_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
 
 	/// r8 OR r/m8.
-	fn or__1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn or__RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
 
 	/// r/m8 OR r8.
-	fn or_(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn or_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// r8 OR r/m8.
-	fn or__1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn or__RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Bitwise OR of xmm2/m128 and xmm1.
 	fn orpd_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -4946,7 +4946,7 @@ pub trait InstructionStream
 
 	/// Extract the word specified by imm8 from xmm and copy it to lowest 16 bits of reg or m16.
 	/// Zero-extend the result in the destination, r32 or r64.
-	fn pextrw_1(&mut self, arg0: Register32Bit, arg1: XMMRegister, arg2: Immediate8Bit);
+	fn pextrw_Register32Bit_XMMRegister_Immediate8Bit_1(&mut self, arg0: Register32Bit, arg1: XMMRegister, arg3: Immediate8Bit);
 
 	/// Extract the word specified by imm8 from mm and move it to reg, bits 15-0.
 	/// The upper bits of r32 or r64 is zeroed.
@@ -4958,7 +4958,7 @@ pub trait InstructionStream
 
 	/// Extract the word specified by imm8 from xmm and copy it to lowest 16 bits of reg or m16.
 	/// Zero-extend the result in the destination, r32 or r64.
-	fn pextrw_1(&mut self, arg0: Register64Bit, arg1: XMMRegister, arg2: Immediate8Bit);
+	fn pextrw_Register64Bit_XMMRegister_Immediate8Bit_1(&mut self, arg0: Register64Bit, arg1: XMMRegister, arg3: Immediate8Bit);
 
 	/// Add 32-bit integers horizontally, pack to MM1.
 	fn phaddd_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
@@ -5365,7 +5365,7 @@ pub trait InstructionStream
 	fn pop_Register16Bit(&mut self, arg0: Register16Bit);
 
 	/// Pop top of stack into r16; increment stack pointer.
-	fn pop_1(&mut self, arg0: Register16Bit);
+	fn pop_Register16Bit_1(&mut self, arg0: Register16Bit);
 
 	/// Pop top of stack into m64; increment stack pointer.
 	/// Cannot encode 32-bit operand size.
@@ -5373,7 +5373,7 @@ pub trait InstructionStream
 
 	/// Pop top of stack into r64; increment stack pointer.
 	/// Cannot encode 32-bit operand size.
-	fn pop_1(&mut self, arg0: Register64Bit);
+	fn pop_Register64Bit_1(&mut self, arg0: Register64Bit);
 
 	/// POPCNT on r/m16.
 	fn popcnt_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
@@ -5861,13 +5861,13 @@ pub trait InstructionStream
 	fn push_Register16Bit(&mut self, arg0: Register16Bit);
 
 	/// Push r16.
-	fn push_1(&mut self, arg0: Register16Bit);
+	fn push_Register16Bit_1(&mut self, arg0: Register16Bit);
 
 	/// Push r/m64.
 	fn push_Register64Bit(&mut self, arg0: Register64Bit);
 
 	/// Push r64.
-	fn push_1(&mut self, arg0: Register64Bit);
+	fn push_Register64Bit_1(&mut self, arg0: Register64Bit);
 
 	/// Push lower 16 bits of EFLAGS.
 	fn pushf(&mut self);
@@ -6111,140 +6111,140 @@ pub trait InstructionStream
 	/// Read a 64-bit random number and store in the destination register.
 	fn rdrand_Register64Bit(&mut self, arg0: Register64Bit);
 
-	/// Input (E)CX words from port DX into ES:[(E)DI.].
-	fn rep_ins(&mut self, arg0: Any16BitMemory, arg1: DX);
+	/// Input `(E)CX` words from port `DX` into ES:[(E)DI.].
+	fn rep_ins_Any16BitMemory_DX(&mut self, arg0: Any16BitMemory, arg1: DX);
 
-	/// Input (E)CX doublewords from port DX into ES:[(E)DI].
-	fn rep_ins(&mut self, arg0: Any32BitMemory, arg1: DX);
+	/// Input `(E)CX` doublewords from port `DX` into ES:[(E)DI].
+	fn rep_ins_Any32BitMemory_DX(&mut self, arg0: Any32BitMemory, arg1: DX);
 
-	/// Input RCX default size from port DX into [RDI].
-	fn rep_ins(&mut self, arg0: Any64BitMemory, arg1: DX);
+	/// Input RCX default size from port `DX` into [RDI].
+	fn rep_ins_Any64BitMemory_DX(&mut self, arg0: Any64BitMemory, arg1: DX);
 
-	/// Input (E)CX bytes from port DX into ES:[(E)DI].
-	fn rep_ins(&mut self, arg0: Any8BitMemory, arg1: DX);
+	/// Input `(E)CX` bytes from port `DX` into ES:[(E)DI].
+	fn rep_ins_Any8BitMemory_DX(&mut self, arg0: Any8BitMemory, arg1: DX);
 
-	/// Input RCX bytes from port DX into [RDI].
-	fn rep_ins_1(&mut self, arg0: Any8BitMemory, arg1: DX);
+	/// Input RCX bytes from port `DX` into [RDI].
+	fn rep_ins_Any8BitMemory_DX_1(&mut self, arg0: Any8BitMemory, arg1: DX);
 
-	/// Load (E)CX bytes from DS:[(E)SI] to AL.
-	fn rep_lods(&mut self, arg0: AL);
+	/// Load `(E)CX` bytes from DS:[(E)SI] to AL.
+	fn rep_lods_AL(&mut self, arg0: AL);
 
 	/// Load RCX bytes from [RSI] to AL.
-	fn rep_lods_1(&mut self, arg0: AL);
+	fn rep_lods_AL_1(&mut self, arg0: AL);
 
-	/// Load (E)CX words from DS:[(E)SI] to AX.
-	fn rep_lods(&mut self, arg0: AX);
+	/// Load `(E)CX` words from DS:[(E)SI] to AX.
+	fn rep_lods_AX(&mut self, arg0: AX);
 
-	/// Load (E)CX doublewords from DS:[(E)SI] to EAX.
-	fn rep_lods(&mut self, arg0: EAX);
+	/// Load `(E)CX` doublewords from DS:[(E)SI] to EAX.
+	fn rep_lods_EAX(&mut self, arg0: EAX);
 
 	/// Load RCX quadwords from [RSI] to RAX.
-	fn rep_lods(&mut self, arg0: RAX);
+	fn rep_lods_RAX(&mut self, arg0: RAX);
 
-	/// Move (E)CX words from DS:[(E)SI] to ES:[(E)DI].
-	fn rep_movs(&mut self, arg0: Any16BitMemory, arg1: Any16BitMemory);
+	/// Move `(E)CX` words from DS:[(E)SI] to ES:[(E)DI].
+	fn rep_movs_Any16BitMemory_Any16BitMemory(&mut self, arg0: Any16BitMemory, arg1: Any16BitMemory);
 
-	/// Move (E)CX doublewords from DS:[(E)SI] to ES:[(E)DI].
-	fn rep_movs(&mut self, arg0: Any32BitMemory, arg1: Any32BitMemory);
+	/// Move `(E)CX` doublewords from DS:[(E)SI] to ES:[(E)DI].
+	fn rep_movs_Any32BitMemory_Any32BitMemory(&mut self, arg0: Any32BitMemory, arg1: Any32BitMemory);
 
 	/// Move RCX quadwords from [RSI] to [RDI].
-	fn rep_movs(&mut self, arg0: Any64BitMemory, arg1: Any64BitMemory);
+	fn rep_movs_Any64BitMemory_Any64BitMemory(&mut self, arg0: Any64BitMemory, arg1: Any64BitMemory);
 
-	/// Move (E)CX bytes from DS:[(E)SI] to ES:[(E)DI].
+	/// Move `(E)CX` bytes from DS:[(E)SI] to ES:[(E)DI].
 	fn rep_movs(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory);
 
 	/// Move RCX bytes from [RSI] to [RDI].
-	fn rep_movs_1(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory);
+	fn rep_movs_Any8BitMemory_Any8BitMemory_1(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory);
 
-	/// Output (E)CX words from DS:[(E)SI] to port DX.
-	fn rep_outs(&mut self, arg0: DX, arg1: Any16BitMemory);
+	/// Output `(E)CX` words from `DS:[(E)SI]` to port `DX`.
+	fn rep_outs_Any16BitMemory(&mut self, arg0: DX, arg1: Any16BitMemory);
 
-	/// Output (E)CX doublewords from DS:[(E)SI] to port DX.
-	fn rep_outs(&mut self, arg0: DX, arg1: Any32BitMemory);
+	/// Output `(E)CX` doublewords from DS:[(E)SI] to port `DX`.
+	fn rep_outs_Any32BitMemory(&mut self, arg0: DX, arg1: Any32BitMemory);
 
-	/// Output RCX default size from [RSI] to port DX.
-	fn rep_outs(&mut self, arg0: DX, arg1: Any64BitMemory);
+	/// Output RCX default size from [RSI] to port `DX`.
+	fn rep_outs_Any64BitMemory(&mut self, arg0: DX, arg1: Any64BitMemory);
 
-	/// Output (E)CX bytes from DS:[(E)SI] to port DX.
-	fn rep_outs(&mut self, arg0: DX, arg1: Any8BitMemory);
+	/// Output `(E)CX` bytes from DS:[(E)SI] to port `DX`.
+	fn rep_outs_Any8BitMemory(&mut self, arg0: DX, arg1: Any8BitMemory);
 
-	/// Output RCX bytes from [RSI] to port DX.
-	fn rep_outs_1(&mut self, arg0: DX, arg1: Any8BitMemory);
+	/// Output RCX bytes from [RSI] to port `DX`.
+	fn rep_outs_DX_Any8BitMemory_1(&mut self, arg0: DX, arg1: Any8BitMemory);
 
-	/// Fill (E)CX words at ES:[(E)DI] with AX.
-	fn rep_stos(&mut self, arg0: Any16BitMemory);
+	/// Fill `(E)CX` words at ES:[(E)DI] with AX.
+	fn rep_stos_Any16BitMemory(&mut self, arg0: Any16BitMemory);
 
-	/// Fill (E)CX doublewords at ES:[(E)DI] with EAX.
-	fn rep_stos(&mut self, arg0: Any32BitMemory);
+	/// Fill `(E)CX` doublewords at ES:[(E)DI] with EAX.
+	fn rep_stos_Any32BitMemory(&mut self, arg0: Any32BitMemory);
 
 	/// Fill RCX quadwords at [RDI] with RAX.
-	fn rep_stos(&mut self, arg0: Any64BitMemory);
+	fn rep_stos_Any64BitMemory(&mut self, arg0: Any64BitMemory);
 
-	/// Fill (E)CX bytes at ES:[(E)DI] with AL.
-	fn rep_stos(&mut self, arg0: Any8BitMemory);
+	/// Fill `(E)CX` bytes at ES:[(E)DI] with AL.
+	fn rep_stos_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
 	/// Fill RCX bytes at [RDI] with AL.
-	fn rep_stos_1(&mut self, arg0: Any8BitMemory);
+	fn rep_stos_Any8BitMemory_1(&mut self, arg0: Any8BitMemory);
 
 	/// Find nonmatching words in ES:[(E)DI] and DS:[(E)SI].
-	fn repe_cmps(&mut self, arg0: Any16BitMemory, arg1: Any16BitMemory);
+	fn repe_cmps_Any16BitMemory_Any16BitMemory(&mut self, arg0: Any16BitMemory, arg1: Any16BitMemory);
 
 	/// Find nonmatching doublewords in ES:[(E)DI] and DS:[(E)SI].
-	fn repe_cmps(&mut self, arg0: Any32BitMemory, arg1: Any32BitMemory);
+	fn repe_cmps_Any32BitMemory_Any32BitMemory(&mut self, arg0: Any32BitMemory, arg1: Any32BitMemory);
 
 	/// Find non-matching quadwords in [RDI] and [RSI].
-	fn repe_cmps(&mut self, arg0: Any64BitMemory, arg1: Any64BitMemory);
+	fn repe_cmps_Any64BitMemory_Any64BitMemory(&mut self, arg0: Any64BitMemory, arg1: Any64BitMemory);
 
 	/// Find nonmatching bytes in ES:[(E)DI] and DS:[(E)SI].
-	fn repe_cmps(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory);
+	fn repe_cmps_Any8BitMemory_Any8BitMemory(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory);
 
 	/// Find non-matching bytes in [RDI] and [RSI].
-	fn repe_cmps_1(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory);
+	fn repe_cmps_Any8BitMemory_Any8BitMemory_1(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory);
 
 	/// Find non-AX word starting at ES:[(E)DI].
-	fn repe_scas(&mut self, arg0: Any16BitMemory);
+	fn repe_scas_Any16BitMemory(&mut self, arg0: Any16BitMemory);
 
 	/// Find non-EAX doubleword starting at ES:[(E)DI].
-	fn repe_scas(&mut self, arg0: Any32BitMemory);
+	fn repe_scas_Any32BitMemory(&mut self, arg0: Any32BitMemory);
 
 	/// Find non-RAX quadword starting at [RDI].
-	fn repe_scas(&mut self, arg0: Any64BitMemory);
+	fn repe_scas_Any64BitMemory(&mut self, arg0: Any64BitMemory);
 
 	/// Find non-AL byte starting at ES:[(E)DI].
-	fn repe_scas(&mut self, arg0: Any8BitMemory);
+	fn repe_scas_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
 	/// Find non-AL byte starting at [RDI].
-	fn repe_scas_1(&mut self, arg0: Any8BitMemory);
+	fn repe_scas_Any8BitMemory_1(&mut self, arg0: Any8BitMemory);
 
 	/// Find matching words in ES:[(E)DI] and DS:[(E)SI].
-	fn repne_cmps(&mut self, arg0: Any16BitMemory, arg1: Any16BitMemory);
+	fn repne_cmps_Any16BitMemory_Any16BitMemory(&mut self, arg0: Any16BitMemory, arg1: Any16BitMemory);
 
 	/// Find matching doublewords in ES:[(E)DI] and DS:[(E)SI].
-	fn repne_cmps(&mut self, arg0: Any32BitMemory, arg1: Any32BitMemory);
+	fn repne_cmps_Any32BitMemory_Any32BitMemory(&mut self, arg0: Any32BitMemory, arg1: Any32BitMemory);
 
 	/// Find matching doublewords in [RDI] and [RSI].
-	fn repne_cmps(&mut self, arg0: Any64BitMemory, arg1: Any64BitMemory);
+	fn repne_cmps_Any64BitMemory_Any64BitMemory(&mut self, arg0: Any64BitMemory, arg1: Any64BitMemory);
 
 	/// Find matching bytes in ES:[(E)DI] and DS:[(E)SI].
-	fn repne_cmps(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory);
+	fn repne_scas(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory);
 
 	/// Find matching bytes in [RDI] and [RSI].
-	fn repne_cmps_1(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory);
+	fn repne_cmps_Any8BitMemory_Any8BitMemory_1(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory);
 
 	/// Find AX, starting at ES:[(E)DI].
-	fn repne_scas(&mut self, arg0: Any16BitMemory);
+	fn repne_scas_Any16BitMemory(&mut self, arg0: Any16BitMemory);
 
 	/// Find EAX, starting at ES:[(E)DI].
-	fn repne_scas(&mut self, arg0: Any32BitMemory);
+	fn repne_scas_Any32BitMemory(&mut self, arg0: Any32BitMemory);
 
 	/// Find RAX, starting at [RDI].
-	fn repne_scas(&mut self, arg0: Any64BitMemory);
+	fn repne_scas_Any64BitMemory(&mut self, arg0: Any64BitMemory);
 
 	/// Find AL, starting at ES:[(E)DI].
-	fn repne_scas(&mut self, arg0: Any8BitMemory);
+	fn repne_scas_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
 	/// Find AL, starting at [RDI].
-	fn repne_scas_1(&mut self, arg0: Any8BitMemory);
+	fn repne_scas_Any8BitMemory_1(&mut self, arg0: Any8BitMemory);
 
 	/// Near return to calling procedure.
 	fn ret(&mut self);
@@ -6723,7 +6723,7 @@ pub trait InstructionStream
 	fn sbb_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
 	/// Subtract with borrow r/m16 from r16.
-	fn sbb_1(&mut self, arg0: Register16Bit, arg1: Register16Bit);
+	fn sbb_Register16Bit_Register16Bit_1(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
 	/// Subtract with borrow imm32 from r/m32.
 	fn sbb_Register32Bit_Immediate32Bit(&mut self, arg0: Register32Bit, arg1: Immediate32Bit);
@@ -6738,7 +6738,7 @@ pub trait InstructionStream
 	fn sbb_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
 	/// Subtract with borrow r/m32 from r32.
-	fn sbb_1(&mut self, arg0: Register32Bit, arg1: Register32Bit);
+	fn sbb_Register32Bit_Register32Bit_1(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
 	/// Subtract with borrow sign-extended imm32 to 64-bits from r/m64.
 	fn sbb_Register64Bit_Immediate32Bit(&mut self, arg0: Register64Bit, arg1: Immediate32Bit);
@@ -6753,7 +6753,7 @@ pub trait InstructionStream
 	fn sbb_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
 	/// Subtract with borrow r/m64 from r64.
-	fn sbb_1(&mut self, arg0: Register64Bit, arg1: Register64Bit);
+	fn sbb_Register64Bit_Register64Bit_1(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
 	/// Subtract with borrow imm8 from r/m8.
 	fn sbb_Register8Bit_Immediate8Bit(&mut self, arg0: Register8Bit, arg1: Immediate8Bit);
@@ -6765,13 +6765,13 @@ pub trait InstructionStream
 	fn sbb_Register8Bit_Register8Bit(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// Subtract with borrow r/m8 from r8.
-	fn sbb_1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
+	fn sbb_Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// Subtract with borrow r8 from r/m8.
 	fn sbb_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Subtract with borrow r/m8 from r8.
-	fn sbb_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn sbb_Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Subtract with borrow sign-extended imm.32 to 64-bits from RAX.
 	fn sbb_RAX_Immediate32Bit(&mut self, arg0: RAX, arg1: Immediate32Bit);
@@ -6786,13 +6786,13 @@ pub trait InstructionStream
 	fn sbb_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
 
 	/// Subtract with borrow r/m8 from r8.
-	fn sbb_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn sbb_RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
 
 	/// Subtract with borrow r8 from r/m8.
 	fn sbb_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Subtract with borrow r/m8 from r8.
-	fn sbb_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn sbb_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Compare AX with word at ES:(E)DI or RDI, then set status flags.
 	fn scas_Any16BitMemory(&mut self, arg0: Any16BitMemory);
@@ -6818,184 +6818,184 @@ pub trait InstructionStream
 	/// Compare AX with word at ES:(E)DI or RDI then set status flags.
 	fn scasw(&mut self);
 
-	/// Set byte if above (CF=0 and ZF=0).
+	/// Set byte if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn seta_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
-	/// Set byte if above (CF=0 and ZF=0).
+	/// Set byte if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn seta_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// Set byte if above (CF=0 and ZF=0).
+	/// Set byte if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn seta_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
-	/// Set byte if above or equal (CF=0).
+	/// Set byte if above or equal (Carry Flag (CF) is 0).
 	fn setae_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
-	/// Set byte if above or equal (CF=0).
+	/// Set byte if above or equal (Carry Flag (CF) is 0).
 	fn setae_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// Set byte if above or equal (CF=0).
+	/// Set byte if above or equal (Carry Flag (CF) is 0).
 	fn setae_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
-	/// Set byte if below (CF=1).
+	/// Set byte if below (Carry Flag (CF) is 1).
 	fn setb_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
-	/// Set byte if below (CF=1).
+	/// Set byte if below (Carry Flag (CF) is 1).
 	fn setb_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// Set byte if below (CF=1).
+	/// Set byte if below (Carry Flag (CF) is 1).
 	fn setb_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
-	/// Set byte if below or equal (CF=1 or ZF=1).
+	/// Set byte if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn setbe_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
-	/// Set byte if below or equal (CF=1 or ZF=1).
+	/// Set byte if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn setbe_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// Set byte if below or equal (CF=1 or ZF=1).
+	/// Set byte if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn setbe_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
-	/// Set byte if carry (CF=1).
+	/// Set byte if carry (Carry Flag (CF) is 1).
 	fn setc_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
-	/// Set byte if carry (CF=1).
+	/// Set byte if carry (Carry Flag (CF) is 1).
 	fn setc_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// Set byte if carry (CF=1).
+	/// Set byte if carry (Carry Flag (CF) is 1).
 	fn setc_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
-	/// Set byte if equal (ZF=1).
+	/// Set byte if equal (Zero Flag (ZF) is 1).
 	fn sete_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
-	/// Set byte if equal (ZF=1).
+	/// Set byte if equal (Zero Flag (ZF) is 1).
 	fn sete_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// Set byte if equal (ZF=1).
+	/// Set byte if equal (Zero Flag (ZF) is 1).
 	fn sete_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
-	/// Set byte if greater (ZF=0 and SF=OF).
+	/// Set byte if greater (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn setg_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
-	/// Set byte if greater (ZF=0 and SF=OF).
+	/// Set byte if greater (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn setg_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// Set byte if greater (ZF=0 and SF=OF).
+	/// Set byte if greater (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn setg_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
-	/// Set byte if greater or equal (SF=OF).
+	/// Set byte if greater or equal (`SF == OF`).
 	fn setge_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
-	/// Set byte if greater or equal (SF=OF).
+	/// Set byte if greater or equal (`SF == OF`).
 	fn setge_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// Set byte if greater or equal (SF=OF).
+	/// Set byte if greater or equal (`SF == OF`).
 	fn setge_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
-	/// Set byte if less (SF!= OF).
+	/// Set byte if less (`SF != OF`).
 	fn setl_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
-	/// Set byte if less (SF!= OF).
+	/// Set byte if less (`SF != OF`).
 	fn setl_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// Set byte if less (SF!= OF).
+	/// Set byte if less (`SF != OF`).
 	fn setl_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
-	/// Set byte if less or equal (ZF=1 or SF!= OF).
+	/// Set byte if less or equal (Zero Flag (ZF) is 1 or `SF != OF`).
 	fn setle_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
-	/// Set byte if less or equal (ZF=1 or SF!= OF).
+	/// Set byte if less or equal (Zero Flag (ZF) is 1 or `SF != OF`).
 	fn setle_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// Set byte if less or equal (ZF=1 or SF!= OF).
+	/// Set byte if less or equal (Zero Flag (ZF) is 1 or `SF != OF`).
 	fn setle_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
-	/// Set byte if not above (CF=1 or ZF=1).
+	/// Set byte if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn setna_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
-	/// Set byte if not above (CF=1 or ZF=1).
+	/// Set byte if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn setna_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// Set byte if not above (CF=1 or ZF=1).
+	/// Set byte if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn setna_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
-	/// Set byte if not above or equal (CF=1).
+	/// Set byte if not above or equal (Carry Flag (CF) is 1).
 	fn setnae_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
-	/// Set byte if not above or equal (CF=1).
+	/// Set byte if not above or equal (Carry Flag (CF) is 1).
 	fn setnae_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// Set byte if not above or equal (CF=1).
+	/// Set byte if not above or equal (Carry Flag (CF) is 1).
 	fn setnae_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
-	/// Set byte if not below (CF=0).
+	/// Set byte if not below (Carry Flag (CF) is 0).
 	fn setnb_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
-	/// Set byte if not below (CF=0).
+	/// Set byte if not below (Carry Flag (CF) is 0).
 	fn setnb_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// Set byte if not below (CF=0).
+	/// Set byte if not below (Carry Flag (CF) is 0).
 	fn setnb_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
-	/// Set byte if not below or equal (CF=0 and ZF=0).
+	/// Set byte if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn setnbe_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
-	/// Set byte if not below or equal (CF=0 and ZF=0).
+	/// Set byte if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn setnbe_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// Set byte if not below or equal (CF=0 and ZF=0).
+	/// Set byte if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn setnbe_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
-	/// Set byte if not carry (CF=0).
+	/// Set byte if not carry (Carry Flag (CF) is 0).
 	fn setnc_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
-	/// Set byte if not carry (CF=0).
+	/// Set byte if not carry (Carry Flag (CF) is 0).
 	fn setnc_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// Set byte if not carry (CF=0).
+	/// Set byte if not carry (Carry Flag (CF) is 0).
 	fn setnc_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
-	/// Set byte if not equal (ZF=0).
+	/// Set byte if not equal (Zero Flag (ZF) is 0).
 	fn setne_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
-	/// Set byte if not equal (ZF=0).
+	/// Set byte if not equal (Zero Flag (ZF) is 0).
 	fn setne_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// Set byte if not equal (ZF=0).
+	/// Set byte if not equal (Zero Flag (ZF) is 0).
 	fn setne_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
-	/// Set byte if not greater (ZF=1 or SF!= OF).
+	/// Set byte if not greater (Zero Flag (ZF) is 1 or `SF != OF`).
 	fn setng_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
-	/// Set byte if not greater (ZF=1 or SF!= OF).
+	/// Set byte if not greater (Zero Flag (ZF) is 1 or `SF != OF`).
 	fn setng_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// Set byte if not greater (ZF=1 or SF!= OF).
+	/// Set byte if not greater (Zero Flag (ZF) is 1 or `SF != OF`).
 	fn setng_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
-	/// Set byte if not greater or equal (SF!= OF).
+	/// Set byte if not greater or equal (`SF != OF`).
 	fn setnge_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
-	/// Set byte if not greater or equal (SF!= OF).
+	/// Set byte if not greater or equal (`SF != OF`).
 	fn setnge_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// Set byte if not greater or equal (SF!= OF).
+	/// Set byte if not greater or equal (`SF != OF`).
 	fn setnge_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
-	/// Set byte if not less (SF=OF).
+	/// Set byte if not less (`SF == OF`).
 	fn setnl_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
-	/// Set byte if not less (SF=OF).
+	/// Set byte if not less (`SF == OF`).
 	fn setnl_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// Set byte if not less (SF=OF).
+	/// Set byte if not less (`SF == OF`).
 	fn setnl_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
-	/// Set byte if not less or equal (ZF=0 and SF=OF).
+	/// Set byte if not less or equal (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn setnle_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
-	/// Set byte if not less or equal (ZF=0 and SF=OF).
+	/// Set byte if not less or equal (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn setnle_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// Set byte if not less or equal (ZF=0 and SF=OF).
+	/// Set byte if not less or equal (Zero Flag (ZF) is 0 and `SF == OF`).
 	fn setnle_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
 	/// Set byte if not overflow (OF=0).
@@ -7007,67 +7007,67 @@ pub trait InstructionStream
 	/// Set byte if not overflow (OF=0).
 	fn setno_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
-	/// Set byte if not parity (PF=0).
+	/// Set byte if not parity (Parity Flag (PF) is 0).
 	fn setnp_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
-	/// Set byte if not parity (PF=0).
+	/// Set byte if not parity (Parity Flag (PF) is 0).
 	fn setnp_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// Set byte if not parity (PF=0).
+	/// Set byte if not parity (Parity Flag (PF) is 0).
 	fn setnp_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
-	/// Set byte if not sign (SF=0).
+	/// Set byte if not sign (Sign Flag (SF) is 0).
 	fn setns_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
-	/// Set byte if not sign (SF=0).
+	/// Set byte if not sign (Sign Flag (SF) is 0).
 	fn setns_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// Set byte if not sign (SF=0).
+	/// Set byte if not sign (Sign Flag (SF) is 0).
 	fn setns_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
-	/// Set byte if not zero (ZF=0).
+	/// Set byte if not zero (Zero Flag (ZF) is 0).
 	fn setnz_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
-	/// Set byte if not zero (ZF=0).
+	/// Set byte if not zero (Zero Flag (ZF) is 0).
 	fn setnz_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// Set byte if not zero (ZF=0).
+	/// Set byte if not zero (Zero Flag (ZF) is 0).
 	fn setnz_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
-	/// Set byte if overflow (OF=1).
+	/// Set byte if overflow (Overflow Flag (OF) is 1).
 	fn seto_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
-	/// Set byte if overflow (OF=1).
+	/// Set byte if overflow (Overflow Flag (OF) is 1).
 	fn seto_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// Set byte if overflow (OF=1).
+	/// Set byte if overflow (Overflow Flag (OF) is 1).
 	fn seto_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
-	/// Set byte if parity (PF=1).
+	/// Set byte if parity (Parity Flag (PF) is 1).
 	fn setp_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
-	/// Set byte if parity (PF=1).
+	/// Set byte if parity (Parity Flag (PF) is 1).
 	fn setp_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// Set byte if parity (PF=1).
+	/// Set byte if parity (Parity Flag (PF) is 1).
 	fn setp_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
-	/// Set byte if parity even (PF=1).
+	/// Set byte if parity even (Parity Flag (PF) is 1).
 	fn setpe_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
-	/// Set byte if parity even (PF=1).
+	/// Set byte if parity even (Parity Flag (PF) is 1).
 	fn setpe_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// Set byte if parity even (PF=1).
+	/// Set byte if parity even (Parity Flag (PF) is 1).
 	fn setpe_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
-	/// Set byte if parity odd (PF=0).
+	/// Set byte if parity odd (Parity Flag (PF) is 0).
 	fn setpo_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
-	/// Set byte if parity odd (PF=0).
+	/// Set byte if parity odd (Parity Flag (PF) is 0).
 	fn setpo_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// Set byte if parity odd (PF=0).
+	/// Set byte if parity odd (Parity Flag (PF) is 0).
 	fn setpo_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
 	/// Set byte if sign (SF=1).
@@ -7079,13 +7079,13 @@ pub trait InstructionStream
 	/// Set byte if sign (SF=1).
 	fn sets_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
-	/// Set byte if zero (ZF=1).
+	/// Set byte if zero (Zero Flag (ZF) is 1).
 	fn setz_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
-	/// Set byte if zero (ZF=1).
+	/// Set byte if zero (Zero Flag (ZF) is 1).
 	fn setz_Register8Bit(&mut self, arg0: Register8Bit);
 
-	/// Set byte if zero (ZF=1).
+	/// Set byte if zero (Zero Flag (ZF) is 1).
 	fn setz_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
 
 	/// Serializes store operations.
@@ -7479,7 +7479,7 @@ pub trait InstructionStream
 	fn sub_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
 	/// Subtract r/m16 from r16.
-	fn sub_1(&mut self, arg0: Register16Bit, arg1: Register16Bit);
+	fn sub_Register16Bit_Register16Bit_1(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
 	/// Subtract imm32 from r/m32.
 	fn sub_Register32Bit_Immediate32Bit(&mut self, arg0: Register32Bit, arg1: Immediate32Bit);
@@ -7494,7 +7494,7 @@ pub trait InstructionStream
 	fn sub_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
 	/// Subtract r/m32 from r32.
-	fn sub_1(&mut self, arg0: Register32Bit, arg1: Register32Bit);
+	fn sub_Register32Bit_Register32Bit_1(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
 	/// Subtract imm32 sign-extended to 64-bits from r/m64.
 	fn sub_Register64Bit_Immediate32Bit(&mut self, arg0: Register64Bit, arg1: Immediate32Bit);
@@ -7509,7 +7509,7 @@ pub trait InstructionStream
 	fn sub_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
 	/// Subtract r/m64 from r64.
-	fn sub_1(&mut self, arg0: Register64Bit, arg1: Register64Bit);
+	fn sub_Register64Bit_Register64Bit_1(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
 	/// Subtract imm8 from r/m8.
 	fn sub_Register8Bit_Immediate8Bit(&mut self, arg0: Register8Bit, arg1: Immediate8Bit);
@@ -7521,13 +7521,13 @@ pub trait InstructionStream
 	fn sub_Register8Bit_Register8Bit(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// Subtract r/m8 from r8.
-	fn sub_1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
+	fn sub_Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// Subtract r8 from r/m8.
 	fn sub_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Subtract r/m8 from r8.
-	fn sub_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn sub_Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Subtract imm32 sign-extended to 64-bits from RAX.
 	fn sub_RAX_Immediate32Bit(&mut self, arg0: RAX, arg1: Immediate32Bit);
@@ -7542,13 +7542,13 @@ pub trait InstructionStream
 	fn sub_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
 
 	/// Subtract r/m8 from r8.
-	fn sub_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn sub_RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
 
 	/// Subtract r8 from r/m8.
 	fn sub_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Subtract r/m8 from r8.
-	fn sub_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn sub_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Subtract packed double-precision floating- point values in xmm2/m128 from xmm1.
 	fn subpd_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -8253,16 +8253,16 @@ pub trait InstructionStream
 	/// Multiply packed single-precision floating-point values from ymm2 with packed SP floating point values from ymm3/mem, selectively add pairs of elements and store to ymm1.
 	fn vdpps_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: Immediate8Bit);
 
-	/// Set ZF=1 if segment specified with r/m16 can be read.
+	/// Set Zero Flag (ZF) is 1 if segment specified with r/m16 can be read.
 	fn verr_Any16BitMemory(&mut self, arg0: Any16BitMemory);
 
-	/// Set ZF=1 if segment specified with r/m16 can be read.
+	/// Set Zero Flag (ZF) is 1 if segment specified with r/m16 can be read.
 	fn verr_Register16Bit(&mut self, arg0: Register16Bit);
 
-	/// Set ZF=1 if segment specified with r/m16 can be written.
+	/// Set Zero Flag (ZF) is 1 if segment specified with r/m16 can be written.
 	fn verw_Any16BitMemory(&mut self, arg0: Any16BitMemory);
 
-	/// Set ZF=1 if segment specified with r/m16 can be written.
+	/// Set Zero Flag (ZF) is 1 if segment specified with r/m16 can be written.
 	fn verw_Register16Bit(&mut self, arg0: Register16Bit);
 
 	/// Extract 128 bits of packed floating-point values from ymm2 and store results in xmm1/mem.
@@ -8891,7 +8891,7 @@ pub trait InstructionStream
 
 	/// Using qword indices specified in vm64y, gather single-precision FP values from memory conditioned on mask specified by ymm2.
 	/// Conditionally gathered elements are merged into ymm1.
-	fn vgatherqps_1(&mut self, arg0: XMMRegister, arg1: Any64BitMemory, arg2: XMMRegister);
+	fn vgatherqps_XMMRegister_Any64BitMemory_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: Any64BitMemory, arg3: XMMRegister);
 
 	/// Horizontal add packed double-precision floating-point values from xmm2 and xmm3/mem.
 	fn vhaddpd_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -9081,7 +9081,7 @@ pub trait InstructionStream
 	fn vmovapd_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move aligned packed double-precision floating-point values from xmm1 to xmm2/mem.
-	fn vmovapd_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
+	fn vmovapd_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move aligned packed double-precision floating-point values from ymm2/mem to ymm1.
 	fn vmovapd_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
@@ -9090,7 +9090,7 @@ pub trait InstructionStream
 	fn vmovapd_YMM_YMM(&mut self, arg0: YMM, arg1: YMM);
 
 	/// Move aligned packed double-precision floating-point values from ymm1 to ymm2/mem.
-	fn vmovapd_1(&mut self, arg0: YMM, arg1: YMM);
+	fn vmovapd_YMM_YMM_1(&mut self, arg0: YMM, arg1: YMM);
 
 	/// Move aligned packed single-precision floating-point values from xmm1 to xmm2/mem.
 	fn vmovaps_Any128BitMemory_XMMRegister(&mut self, arg0: Any128BitMemory, arg1: XMMRegister);
@@ -9105,7 +9105,7 @@ pub trait InstructionStream
 	fn vmovaps_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move aligned packed single-precision floating-point values from xmm1 to xmm2/mem.
-	fn vmovaps_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
+	fn vmovaps_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move aligned packed single-precision floating-point values from ymm2/mem to ymm1.
 	fn vmovaps_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
@@ -9114,7 +9114,7 @@ pub trait InstructionStream
 	fn vmovaps_YMM_YMM(&mut self, arg0: YMM, arg1: YMM);
 
 	/// Move aligned packed single-precision floating-point values from ymm1 to ymm2/mem.
-	fn vmovaps_1(&mut self, arg0: YMM, arg1: YMM);
+	fn vmovaps_YMM_YMM_1(&mut self, arg0: YMM, arg1: YMM);
 
 	/// Move doubleword from xmm1 register to r/m32.
 	fn vmovd_Any32BitMemory_XMMRegister(&mut self, arg0: Any32BitMemory, arg1: XMMRegister);
@@ -9153,7 +9153,7 @@ pub trait InstructionStream
 	fn vmovdqa_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move aligned packed integer values from xmm1 to xmm2/mem.
-	fn vmovdqa_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
+	fn vmovdqa_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move aligned packed integer values from ymm2/mem to ymm1.
 	fn vmovdqa_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
@@ -9162,7 +9162,7 @@ pub trait InstructionStream
 	fn vmovdqa_YMM_YMM(&mut self, arg0: YMM, arg1: YMM);
 
 	/// Move aligned packed integer values from ymm1 to ymm2/mem.
-	fn vmovdqa_1(&mut self, arg0: YMM, arg1: YMM);
+	fn vmovdqa_YMM_YMM_1(&mut self, arg0: YMM, arg1: YMM);
 
 	/// Move unaligned packed integer values from xmm1 to xmm2/mem.
 	fn vmovdqu_Any128BitMemory_XMMRegister(&mut self, arg0: Any128BitMemory, arg1: XMMRegister);
@@ -9177,7 +9177,7 @@ pub trait InstructionStream
 	fn vmovdqu_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move unaligned packed integer values from xmm1 to xmm2/mem.
-	fn vmovdqu_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
+	fn vmovdqu_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move unaligned packed integer values from ymm2/mem to ymm1.
 	fn vmovdqu_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
@@ -9186,7 +9186,7 @@ pub trait InstructionStream
 	fn vmovdqu_YMM_YMM(&mut self, arg0: YMM, arg1: YMM);
 
 	/// Move unaligned packed integer values from ymm1 to ymm2/mem.
-	fn vmovdqu_1(&mut self, arg0: YMM, arg1: YMM);
+	fn vmovdqu_YMM_YMM_1(&mut self, arg0: YMM, arg1: YMM);
 
 	/// Merge two packed single-precision floating-point values from high quadword of xmm3 and low quadword of xmm2.
 	fn vmovhlps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
@@ -9278,7 +9278,7 @@ pub trait InstructionStream
 	fn vmovq_Any64BitMemory_XMMRegister(&mut self, arg0: Any64BitMemory, arg1: XMMRegister);
 
 	/// Move quadword from xmm2 register to xmm1/m64.
-	fn vmovq_1(&mut self, arg0: Any64BitMemory, arg1: XMMRegister);
+	fn vmovq_Any64BitMemory_XMMRegister_1(&mut self, arg0: Any64BitMemory, arg1: XMMRegister);
 
 	/// Move quadword from xmm1 register to r/m64.
 	fn vmovq_Register64Bit_XMMRegister(&mut self, arg0: Register64Bit, arg1: XMMRegister);
@@ -9287,7 +9287,7 @@ pub trait InstructionStream
 	fn vmovq_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: Any64BitMemory);
 
 	/// Load quadword from m64 to xmm1.
-	fn vmovq_1(&mut self, arg0: XMMRegister, arg1: Any64BitMemory);
+	fn vmovq_XMMRegister_Any64BitMemory_1(&mut self, arg0: XMMRegister, arg1: Any64BitMemory);
 
 	/// Move quadword from r/m64 to xmm1.
 	fn vmovq_XMMRegister_Register64Bit(&mut self, arg0: XMMRegister, arg1: Register64Bit);
@@ -9296,7 +9296,7 @@ pub trait InstructionStream
 	fn vmovq_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move quadword from xmm2 register to xmm1/m64.
-	fn vmovq_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
+	fn vmovq_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move scalar double-precision floating-point value from xmm1 register to m64.
 	fn vmovsd_Any64BitMemory_XMMRegister(&mut self, arg0: Any64BitMemory, arg1: XMMRegister);
@@ -9308,7 +9308,7 @@ pub trait InstructionStream
 	fn vmovsd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Merge scalar double-precision floating-point value from xmm2 and xmm3 registers to xmm1.
-	fn vmovsd_1(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
+	fn vmovsd_XMMRegister_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg3: XMMRegister);
 
 	/// Move odd index single-precision floating-point values from xmm2/mem and duplicate each element into xmm1.
 	fn vmovshdup_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -9344,7 +9344,7 @@ pub trait InstructionStream
 	fn vmovss_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Move scalar single-precision floating-point value from xmm2 and xmm3 to xmm1 register.
-	fn vmovss_1(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
+	fn vmovss_XMMRegister_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg3: XMMRegister);
 
 	/// Move unaligned packed double-precision floating-point from xmm1 to xmm2/mem.
 	fn vmovupd_Any128BitMemory_XMMRegister(&mut self, arg0: Any128BitMemory, arg1: XMMRegister);
@@ -9359,7 +9359,7 @@ pub trait InstructionStream
 	fn vmovupd_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move unaligned packed double-precision floating-point from xmm1 to xmm2/mem.
-	fn vmovupd_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
+	fn vmovupd_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move unaligned packed double-precision floating-point from ymm2/mem to ymm1.
 	fn vmovupd_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
@@ -9368,7 +9368,7 @@ pub trait InstructionStream
 	fn vmovupd_YMM_YMM(&mut self, arg0: YMM, arg1: YMM);
 
 	/// Move unaligned packed double-precision floating-point from ymm1 to ymm2/mem.
-	fn vmovupd_1(&mut self, arg0: YMM, arg1: YMM);
+	fn vmovupd_YMM_YMM_1(&mut self, arg0: YMM, arg1: YMM);
 
 	/// Move unaligned packed single-precision floating-point from xmm1 to xmm2/mem.
 	fn vmovups_Any128BitMemory_XMMRegister(&mut self, arg0: Any128BitMemory, arg1: XMMRegister);
@@ -9383,7 +9383,7 @@ pub trait InstructionStream
 	fn vmovups_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move unaligned packed single-precision floating-point from xmm1 to xmm2/mem.
-	fn vmovups_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
+	fn vmovups_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move unaligned packed single-precision floating-point from ymm2/mem to ymm1.
 	fn vmovups_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
@@ -9392,7 +9392,7 @@ pub trait InstructionStream
 	fn vmovups_YMM_YMM(&mut self, arg0: YMM, arg1: YMM);
 
 	/// Move unaligned packed single-precision floating-point from ymm1 to ymm2/mem.
-	fn vmovups_1(&mut self, arg0: YMM, arg1: YMM);
+	fn vmovups_YMM_YMM_1(&mut self, arg0: YMM, arg1: YMM);
 
 	/// Sums absolute 8-bit integer difference of adjacent groups of 4 byte integers in xmm2 and xmm3/m128 and writes the results in xmm1.
 	/// Starting offsets within xmm2 and xmm3/m128 are determined by imm8.
@@ -10041,7 +10041,7 @@ pub trait InstructionStream
 
 	/// Extract a word integer value from xmm2 at the source word offset specified by imm8 into reg or m16.
 	/// The upper bits of r64/r32 is filled with zeros.
-	fn vpextrw_1(&mut self, arg0: Register32Bit, arg1: XMMRegister, arg2: Immediate8Bit);
+	fn vpextrw_Register32Bit_XMMRegister_Immediate8Bit_1(&mut self, arg0: Register32Bit, arg1: XMMRegister, arg3: Immediate8Bit);
 
 	/// Extract the word specified by imm8 from xmm1 and move it to reg, bits 15:0.
 	/// Zero-extend the result.
@@ -10050,7 +10050,7 @@ pub trait InstructionStream
 
 	/// Extract a word integer value from xmm2 at the source word offset specified by imm8 into reg or m16.
 	/// The upper bits of r64/r32 is filled with zeros.
-	fn vpextrw_1(&mut self, arg0: Register64Bit, arg1: XMMRegister, arg2: Immediate8Bit);
+	fn vpextrw_Register64Bit_XMMRegister_Immediate8Bit_1(&mut self, arg0: Register64Bit, arg1: XMMRegister, arg3: Immediate8Bit);
 
 	/// Using dword indices specified in vm32x, gather dword values from memory conditioned on mask specified by xmm2.
 	/// Conditionally gathered elements are merged into xmm1.
@@ -10074,7 +10074,7 @@ pub trait InstructionStream
 
 	/// Using qword indices specified in vm64y, gather dword values from memory conditioned on mask specified by xmm2.
 	/// Conditionally gathered elements are merged into xmm1.
-	fn vpgatherqd_1(&mut self, arg0: XMMRegister, arg1: Any64BitMemory, arg2: XMMRegister);
+	fn vpgatherqd_XMMRegister_Any64BitMemory_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: Any64BitMemory, arg3: XMMRegister);
 
 	/// Using qword indices specified in vm64x, gather qword values from memory conditioned on mask specified by xmm2.
 	/// Conditionally gathered elements are merged into xmm1.
@@ -11543,7 +11543,7 @@ pub trait InstructionStream
 	fn xchg_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
 	/// Exchange word from r/m16 with r16.
-	fn xchg_1(&mut self, arg0: Register16Bit, arg1: Register16Bit);
+	fn xchg_Register16Bit_Register16Bit_1(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
 	/// Exchange EAX with r32.
 	fn xchg_Register32Bit_EAX(&mut self, arg0: Register32Bit, arg1: EAX);
@@ -11555,7 +11555,7 @@ pub trait InstructionStream
 	fn xchg_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
 	/// Exchange doubleword from r/m32 with r32.
-	fn xchg_1(&mut self, arg0: Register32Bit, arg1: Register32Bit);
+	fn xchg_Register32Bit_Register32Bit_1(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
 	/// Exchange quadword from r/m64 with r64.
 	fn xchg_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
@@ -11564,7 +11564,7 @@ pub trait InstructionStream
 	fn xchg_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
 	/// Exchange quadword from r/m64 with r64.
-	fn xchg_1(&mut self, arg0: Register64Bit, arg1: Register64Bit);
+	fn xchg_Register64Bit_Register64Bit_1(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
 	/// Exchange RAX with r64.
 	fn xchg_Register64Bit_RAX(&mut self, arg0: Register64Bit, arg1: RAX);
@@ -11576,13 +11576,13 @@ pub trait InstructionStream
 	fn xchg_Register8Bit_Register8Bit(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// Exchange byte from r/m8 with r8 (byte register).
-	fn xchg_1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
+	fn xchg_Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// Exchange r8 (byte register) with byte from r/m8.
 	fn xchg_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Exchange byte from r/m8 with r8 (byte register).
-	fn xchg_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn xchg_Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Exchange r64 with `RAX`.
 	fn xchg_RAX_Register64Bit(&mut self, arg0: RAX, arg1: Register64Bit);
@@ -11594,13 +11594,13 @@ pub trait InstructionStream
 	fn xchg_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
 
 	/// Exchange byte from r/m8 with r8 (byte register).
-	fn xchg_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn xchg_RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
 
 	/// Exchange r8 (byte register) with byte from r/m8.
 	fn xchg_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Exchange byte from r/m8 with r8 (byte register).
-	fn xchg_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn xchg_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Specifies the end of an RTM code region.
 	fn xend(&mut self);
@@ -11618,133 +11618,133 @@ pub trait InstructionStream
 	fn xlatb_1(&mut self);
 
 	/// AL XOR imm8.
-	fn xor_(&mut self, arg0: AL, arg1: Immediate8Bit);
+	fn xor_AL_Immediate8Bit(&mut self, arg0: AL, arg1: Immediate8Bit);
 
 	/// AX XOR imm16.
-	fn xor_(&mut self, arg0: AX, arg1: Immediate16Bit);
+	fn xor_AX_Immediate16Bit(&mut self, arg0: AX, arg1: Immediate16Bit);
 
 	/// EAX XOR imm32.
-	fn xor_(&mut self, arg0: EAX, arg1: Immediate32Bit);
+	fn xor_EAX_Immediate32Bit(&mut self, arg0: EAX, arg1: Immediate32Bit);
 
 	/// r/m16 XOR imm16.
-	fn xor_(&mut self, arg0: Any16BitMemory, arg1: Immediate16Bit);
+	fn xor_Any16BitMemory_Immediate16Bit(&mut self, arg0: Any16BitMemory, arg1: Immediate16Bit);
 
 	/// r/m16 XOR imm8 (sign-extended).
-	fn xor_(&mut self, arg0: Any16BitMemory, arg1: Immediate8Bit);
+	fn xor_Any16BitMemory_Immediate8Bit(&mut self, arg0: Any16BitMemory, arg1: Immediate8Bit);
 
 	/// r/m16 XOR r16.
-	fn xor_(&mut self, arg0: Any16BitMemory, arg1: Register16Bit);
+	fn xor_Any16BitMemory_Register16Bit(&mut self, arg0: Any16BitMemory, arg1: Register16Bit);
 
 	/// r/m32 XOR imm32.
-	fn xor_(&mut self, arg0: Any32BitMemory, arg1: Immediate32Bit);
+	fn xor_Any32BitMemory_Immediate32Bit(&mut self, arg0: Any32BitMemory, arg1: Immediate32Bit);
 
 	/// r/m32 XOR imm8 (sign-extended).
-	fn xor_(&mut self, arg0: Any32BitMemory, arg1: Immediate8Bit);
+	fn xor_Any32BitMemory_Immediate8Bit(&mut self, arg0: Any32BitMemory, arg1: Immediate8Bit);
 
 	/// r/m32 XOR r32.
-	fn xor_(&mut self, arg0: Any32BitMemory, arg1: Register32Bit);
+	fn xor_Any32BitMemory_Register32Bit(&mut self, arg0: Any32BitMemory, arg1: Register32Bit);
 
 	/// r/m64 XOR imm32 (sign-extended).
-	fn xor_(&mut self, arg0: Any64BitMemory, arg1: Immediate32Bit);
+	fn xor_Any64BitMemory_Immediate32Bit(&mut self, arg0: Any64BitMemory, arg1: Immediate32Bit);
 
 	/// r/m64 XOR imm8 (sign-extended).
-	fn xor_(&mut self, arg0: Any64BitMemory, arg1: Immediate8Bit);
+	fn xor_Any64BitMemory_Immediate8Bit(&mut self, arg0: Any64BitMemory, arg1: Immediate8Bit);
 
 	/// r/m64 XOR r64.
-	fn xor_(&mut self, arg0: Any64BitMemory, arg1: Register64Bit);
+	fn xor_Any64BitMemory_Register64Bit(&mut self, arg0: Any64BitMemory, arg1: Register64Bit);
 
 	/// r/m8 XOR imm8.
-	fn xor_(&mut self, arg0: Any8BitMemory, arg1: Immediate8Bit);
+	fn xor_Any8BitMemory_Immediate8Bit(&mut self, arg0: Any8BitMemory, arg1: Immediate8Bit);
 
 	/// r/m8 XOR r8.
-	fn xor_(&mut self, arg0: Any8BitMemory, arg1: Register8Bit);
+	fn xor_Any8BitMemory_Register8Bit(&mut self, arg0: Any8BitMemory, arg1: Register8Bit);
 
 	/// r/m8 XOR r8.
-	fn xor_(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit);
+	fn xor_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// r/m16 XOR imm16.
-	fn xor_(&mut self, arg0: Register16Bit, arg1: Immediate16Bit);
+	fn xor_Register16Bit_Immediate16Bit(&mut self, arg0: Register16Bit, arg1: Immediate16Bit);
 
 	/// r/m16 XOR imm8 (sign-extended).
-	fn xor_(&mut self, arg0: Register16Bit, arg1: Immediate8Bit);
+	fn xor_Register16Bit_Immediate8Bit(&mut self, arg0: Register16Bit, arg1: Immediate8Bit);
 
 	/// r16 XOR r/m16.
-	fn xor_(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
+	fn xor_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
 
 	/// r/m16 XOR r16.
-	fn xor_(&mut self, arg0: Register16Bit, arg1: Register16Bit);
+	fn xor_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
 	/// r16 XOR r/m16.
-	fn xor__1(&mut self, arg0: Register16Bit, arg1: Register16Bit);
+	fn xor__Register16Bit_Register16Bit_1(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
 	/// r/m32 XOR imm32.
-	fn xor_(&mut self, arg0: Register32Bit, arg1: Immediate32Bit);
+	fn xor_Register32Bit_Immediate32Bit(&mut self, arg0: Register32Bit, arg1: Immediate32Bit);
 
 	/// r/m32 XOR imm8 (sign-extended).
-	fn xor_(&mut self, arg0: Register32Bit, arg1: Immediate8Bit);
+	fn xor_Register32Bit_Immediate8Bit(&mut self, arg0: Register32Bit, arg1: Immediate8Bit);
 
 	/// r32 XOR r/m32.
-	fn xor_(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
+	fn xor_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
 
 	/// r/m32 XOR r32.
-	fn xor_(&mut self, arg0: Register32Bit, arg1: Register32Bit);
+	fn xor_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
 	/// r32 XOR r/m32.
-	fn xor__1(&mut self, arg0: Register32Bit, arg1: Register32Bit);
+	fn xor__Register32Bit_Register32Bit_1(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
 	/// r/m64 XOR imm32 (sign-extended).
-	fn xor_(&mut self, arg0: Register64Bit, arg1: Immediate32Bit);
+	fn xor_Register64Bit_Immediate32Bit(&mut self, arg0: Register64Bit, arg1: Immediate32Bit);
 
 	/// r/m64 XOR imm8 (sign-extended).
-	fn xor_(&mut self, arg0: Register64Bit, arg1: Immediate8Bit);
+	fn xor_Register64Bit_Immediate8Bit(&mut self, arg0: Register64Bit, arg1: Immediate8Bit);
 
 	/// r64 XOR r/m64.
-	fn xor_(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
+	fn xor_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
 	/// r/m64 XOR r64.
-	fn xor_(&mut self, arg0: Register64Bit, arg1: Register64Bit);
+	fn xor_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
 	/// r64 XOR r/m64.
-	fn xor__1(&mut self, arg0: Register64Bit, arg1: Register64Bit);
+	fn xor__Register64Bit_Register64Bit_1(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
 	/// r/m8 XOR imm8.
-	fn xor_(&mut self, arg0: Register8Bit, arg1: Immediate8Bit);
+	fn xor_Register8Bit_Immediate8Bit(&mut self, arg0: Register8Bit, arg1: Immediate8Bit);
 
 	/// r8 XOR r/m8.
-	fn xor_(&mut self, arg0: Register8Bit, arg1: Any8BitMemory);
+	fn xor_Register8Bit_Any8BitMemory(&mut self, arg0: Register8Bit, arg1: Any8BitMemory);
 
 	/// r/m8 XOR r8.
-	fn xor_(&mut self, arg0: Register8Bit, arg1: Register8Bit);
+	fn xor_Register8Bit_Register8Bit(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// r8 XOR r/m8.
-	fn xor__1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
+	fn xor__Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// r/m8 XOR r8.
-	fn xor_(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn xor_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// r8 XOR r/m8.
-	fn xor__1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn xor__Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// RAX XOR imm32 (sign-extended).
-	fn xor_(&mut self, arg0: RAX, arg1: Immediate32Bit);
+	fn xor_RAX_Immediate32Bit(&mut self, arg0: RAX, arg1: Immediate32Bit);
 
 	/// r/m8 XOR imm8.
-	fn xor_(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit);
+	fn xor_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit);
 
 	/// r8 XOR r/m8.
-	fn xor_(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Any8BitMemory);
+	fn xor_RegisterHigh8BitsOf16Bit_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Any8BitMemory);
 
 	/// r/m8 XOR r8.
-	fn xor_(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn xor_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
 
 	/// r8 XOR r/m8.
-	fn xor__1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn xor__RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
 
 	/// r/m8 XOR r8.
-	fn xor_(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn xor_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// r8 XOR r/m8.
-	fn xor__1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn xor__RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
 
 	/// Bitwise exclusive-OR of xmm2/m128 and xmm1.
 	fn xorpd_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);

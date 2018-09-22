@@ -2,15 +2,4 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-use super::*;
-
-
-include!("singleton.rs");
-
-
-include!("Far.rs");
-include!("One.rs");
-include!("Prefix66.rs");
-include!("PrefixRexW.rs");
-include!("Three.rs");
-include!("Zero.rs");
+singleton!(Three);
