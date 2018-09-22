@@ -30,6 +30,7 @@ impl OrdinaryInstructionStream
 		self.opcode_1(opcode3.to_opcode());
 	}
 	
+	// TODO: X
 	/// Emits one byte containing a a combined `MOD.r/m` and Scaled Index Byte (SIB).
 	///
 	/// See [this](http://www.c-jump.com/CIS77/CPU/x86/X77_0060_mod_reg_r_m_byte.htm) reference to the bits.

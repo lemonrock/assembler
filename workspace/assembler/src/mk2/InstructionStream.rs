@@ -12096,7 +12096,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x14);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -12122,7 +12122,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x15);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -12148,7 +12148,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x15);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13032,7 +13032,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x15);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13214,7 +13214,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x04);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13240,7 +13240,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x05);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13266,7 +13266,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x05);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -14150,7 +14150,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x05);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -14956,7 +14956,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x24);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -14982,7 +14982,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x25);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -15008,7 +15008,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x25);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -15892,7 +15892,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x25);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -17322,7 +17322,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0x0F, 0xC8, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -17348,7 +17348,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0x0F, 0xC8, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -18804,7 +18804,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xE8);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -18882,7 +18882,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xE8);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -18908,7 +18908,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x98);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -18934,7 +18934,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x99);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -18960,7 +18960,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x98);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -18986,7 +18986,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF8);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -19012,7 +19012,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFC);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -19064,7 +19064,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFA);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -19090,7 +19090,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF5);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -23796,7 +23796,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x3C);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -23822,7 +23822,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x3D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -23848,7 +23848,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x3D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -24732,7 +24732,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x3D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -25018,7 +25018,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA7);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -25044,7 +25044,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA7);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -25070,7 +25070,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA7);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -25096,7 +25096,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA6);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -25122,7 +25122,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA6);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -25148,7 +25148,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA7);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -25226,7 +25226,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA7);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -25304,7 +25304,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA7);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -25798,7 +25798,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xA2);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -25824,7 +25824,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x99);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -27592,7 +27592,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x99);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -27618,7 +27618,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x98);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -28424,7 +28424,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x77);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -28450,7 +28450,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC8);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_2(arg0, arg1);
 	
@@ -28476,7 +28476,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC8);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_2(arg0, arg1);
 	
@@ -28502,7 +28502,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC8);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_2(arg0, arg1);
 	
@@ -28606,7 +28606,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xF0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -28632,7 +28632,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xE1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -28710,7 +28710,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDC, 0xC0, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -28736,7 +28736,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xD8, 0xC0, arg1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -28762,7 +28762,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xDE, 0xC1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -28788,7 +28788,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDE, 0xC0, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -28866,7 +28866,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xE0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -28892,7 +28892,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xDB, 0xE2);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -28918,7 +28918,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDA, 0xC0, arg1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -28944,7 +28944,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDA, 0xD0, arg1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -28970,7 +28970,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDA, 0xC8, arg1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -28996,7 +28996,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDB, 0xC0, arg1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -29022,7 +29022,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDB, 0xD0, arg1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -29048,7 +29048,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDB, 0xC8, arg1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -29074,7 +29074,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDB, 0xD8, arg1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -29100,7 +29100,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDA, 0xD8, arg1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -29126,7 +29126,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD8, 0xD1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -29204,7 +29204,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xD8, 0xD0, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -29230,7 +29230,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDB, 0xF0, arg1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -29256,7 +29256,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDF, 0xF0, arg1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -29282,7 +29282,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD8, 0xD9);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -29360,7 +29360,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xD8, 0xD8, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -29386,7 +29386,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xDE, 0xD9);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -29412,7 +29412,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xFF);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -29438,7 +29438,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xF6);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -29516,7 +29516,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDC, 0xF0, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -29542,7 +29542,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xD8, 0xF0, arg1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -29568,7 +29568,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xDE, 0xF1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -29594,7 +29594,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDE, 0xF0, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -29672,7 +29672,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDC, 0xF8, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -29698,7 +29698,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xD8, 0xF8, arg1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -29724,7 +29724,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xDE, 0xF9);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -29750,7 +29750,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDE, 0xF8, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -29776,7 +29776,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDD, 0xC0, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -30192,7 +30192,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xF7);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -30218,7 +30218,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xDB, 0xE3);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -30634,7 +30634,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xD9, 0xC0, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -30660,7 +30660,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xE8);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -30738,7 +30738,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xEA);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -30764,7 +30764,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xE9);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -30790,7 +30790,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xEC);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -30816,7 +30816,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xED);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -30842,7 +30842,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xEB);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -30868,7 +30868,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xEE);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -30946,7 +30946,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDC, 0xC8, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -30972,7 +30972,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xD8, 0xC8, arg1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -30998,7 +30998,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xDE, 0xC9);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -31024,7 +31024,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDE, 0xC8, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -31050,7 +31050,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xDB, 0xE2);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -31076,7 +31076,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xDB, 0xE3);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -31102,7 +31102,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xD0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -31206,7 +31206,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xDF, 0xE0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -31258,7 +31258,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xF3);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -31284,7 +31284,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xF8);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -31310,7 +31310,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xF5);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -31336,7 +31336,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xF2);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -31362,7 +31362,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xFC);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -31440,7 +31440,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xFD);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -31466,7 +31466,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xFE);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -31492,7 +31492,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xFB);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -31518,7 +31518,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xFA);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -31596,7 +31596,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDD, 0xD0, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -31752,7 +31752,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDD, 0xD8, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -31778,7 +31778,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xDF, 0xE0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -31882,7 +31882,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDC, 0xE0, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -31908,7 +31908,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xD8, 0xE0, arg1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -31934,7 +31934,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xDE, 0xE1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -31960,7 +31960,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDE, 0xE0, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -32038,7 +32038,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDC, 0xE8, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -32064,7 +32064,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xD8, 0xE8, arg1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -32090,7 +32090,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xDE, 0xE9);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -32116,7 +32116,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDE, 0xE8, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -32142,7 +32142,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xE4);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -32168,7 +32168,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xDD, 0xE1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -32194,7 +32194,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDD, 0xE0, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -32220,7 +32220,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDB, 0xE8, arg1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -32246,7 +32246,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDF, 0xE8, arg1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -32272,7 +32272,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xDD, 0xE9);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -32298,7 +32298,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xDD, 0xE8, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -32324,7 +32324,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xDA, 0xE9);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -32348,7 +32348,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `REX` prefix.
 	
-		// No Opcode Bytes	// No MOD R/M byte or Scaled Index Byte..
+		// No Opcode Bytes	// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -32374,7 +32374,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xE5);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -32400,7 +32400,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xC9);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -32426,7 +32426,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0xD9, 0xC8, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -32556,7 +32556,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xF4);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -32582,7 +32582,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xF1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -32608,7 +32608,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xD9, 0xF9);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -33778,7 +33778,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xEC);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -33804,7 +33804,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xE4);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -33830,7 +33830,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xED);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -33856,7 +33856,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xE5);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -33882,7 +33882,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xED);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -33908,7 +33908,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xE5);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -34168,7 +34168,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x6D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -34194,7 +34194,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x6D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -34220,7 +34220,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x6C);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -34246,7 +34246,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x6C);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -34272,7 +34272,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x6D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -34350,7 +34350,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x6D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -34376,7 +34376,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xCD);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -34402,7 +34402,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xCC);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -34454,7 +34454,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xCF);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -34480,7 +34480,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xCF);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -34506,7 +34506,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xCF);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -34532,7 +34532,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x77);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -34558,7 +34558,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x87);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -34584,7 +34584,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x77);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -34610,7 +34610,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x87);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -34636,7 +34636,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x87);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -34662,7 +34662,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x87);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -34688,7 +34688,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x77);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -34714,7 +34714,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x77);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -34740,7 +34740,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x73);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -34766,7 +34766,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x83);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -34792,7 +34792,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x73);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -34818,7 +34818,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x83);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -34844,7 +34844,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x83);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -34870,7 +34870,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x83);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -34896,7 +34896,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x73);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -34922,7 +34922,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x73);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -34948,7 +34948,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x72);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -34974,7 +34974,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x82);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -35000,7 +35000,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x72);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -35026,7 +35026,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x82);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -35052,7 +35052,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x82);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -35078,7 +35078,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x82);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -35104,7 +35104,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x72);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -35130,7 +35130,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x72);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -35156,7 +35156,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x76);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -35182,7 +35182,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x86);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -35208,7 +35208,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x76);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -35234,7 +35234,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x86);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -35260,7 +35260,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x86);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -35286,7 +35286,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x86);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -35312,7 +35312,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x76);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -35338,7 +35338,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x76);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -35364,7 +35364,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x72);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -35390,7 +35390,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x82);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -35416,7 +35416,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x72);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -35442,7 +35442,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x82);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -35468,7 +35468,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x82);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -35494,7 +35494,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x82);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -35520,7 +35520,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x72);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -35546,7 +35546,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x72);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -35572,7 +35572,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x74);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -35598,7 +35598,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x84);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -35624,7 +35624,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x74);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -35650,7 +35650,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x84);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -35676,7 +35676,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x84);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -35702,7 +35702,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x84);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -35728,7 +35728,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x74);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -35754,7 +35754,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x74);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -35780,7 +35780,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xE3);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -35806,7 +35806,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xE3);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -35832,7 +35832,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xE3);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -35858,7 +35858,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xE3);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -35884,7 +35884,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7F);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -35910,7 +35910,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8F);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -35936,7 +35936,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7F);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -35962,7 +35962,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8F);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -35988,7 +35988,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8F);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -36014,7 +36014,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8F);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -36040,7 +36040,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7F);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -36066,7 +36066,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7F);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -36092,7 +36092,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -36118,7 +36118,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -36144,7 +36144,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -36170,7 +36170,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -36196,7 +36196,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -36222,7 +36222,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -36248,7 +36248,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -36274,7 +36274,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -36300,7 +36300,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7C);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -36326,7 +36326,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8C);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -36352,7 +36352,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7C);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -36378,7 +36378,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8C);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -36404,7 +36404,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8C);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -36430,7 +36430,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8C);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -36456,7 +36456,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7C);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -36482,7 +36482,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7C);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -36508,7 +36508,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7E);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -36534,7 +36534,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8E);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -36560,7 +36560,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7E);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -36586,7 +36586,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8E);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -36612,7 +36612,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8E);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -36638,7 +36638,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8E);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -36664,7 +36664,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7E);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -36690,7 +36690,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7E);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -36716,7 +36716,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -36742,7 +36742,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -36768,7 +36768,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -36794,7 +36794,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xEB);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -36820,7 +36820,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xE9);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -36898,7 +36898,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xE9);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -36924,7 +36924,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xEB);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -36950,7 +36950,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x76);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -36976,7 +36976,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x86);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -37002,7 +37002,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x76);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -37028,7 +37028,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x86);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -37054,7 +37054,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x86);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -37080,7 +37080,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x86);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -37106,7 +37106,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x76);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -37132,7 +37132,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x76);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -37158,7 +37158,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x72);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -37184,7 +37184,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x82);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -37210,7 +37210,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x72);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -37236,7 +37236,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x82);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -37262,7 +37262,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x82);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -37288,7 +37288,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x82);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -37314,7 +37314,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x72);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -37340,7 +37340,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x72);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -37366,7 +37366,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x73);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -37392,7 +37392,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x83);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -37418,7 +37418,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x73);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -37444,7 +37444,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x83);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -37470,7 +37470,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x83);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -37496,7 +37496,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x83);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -37522,7 +37522,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x73);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -37548,7 +37548,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x73);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -37574,7 +37574,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x77);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -37600,7 +37600,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x87);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -37626,7 +37626,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x77);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -37652,7 +37652,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x87);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -37678,7 +37678,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x87);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -37704,7 +37704,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x87);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -37730,7 +37730,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x77);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -37756,7 +37756,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x77);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -37782,7 +37782,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x73);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -37808,7 +37808,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x83);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -37834,7 +37834,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x73);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -37860,7 +37860,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x83);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -37886,7 +37886,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x83);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -37912,7 +37912,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x83);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -37938,7 +37938,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x73);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -37964,7 +37964,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x73);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -37990,7 +37990,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x75);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -38016,7 +38016,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x85);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -38042,7 +38042,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x75);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -38068,7 +38068,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x85);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -38094,7 +38094,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x85);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -38120,7 +38120,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x85);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -38146,7 +38146,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x75);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -38172,7 +38172,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x75);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -38198,7 +38198,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7E);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -38224,7 +38224,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8E);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -38250,7 +38250,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7E);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -38276,7 +38276,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8E);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -38302,7 +38302,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8E);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -38328,7 +38328,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8E);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -38354,7 +38354,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7E);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -38380,7 +38380,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7E);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -38406,7 +38406,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7C);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -38432,7 +38432,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8C);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -38458,7 +38458,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7C);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -38484,7 +38484,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8C);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -38510,7 +38510,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8C);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -38536,7 +38536,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8C);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -38562,7 +38562,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7C);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -38588,7 +38588,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7C);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -38614,7 +38614,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -38640,7 +38640,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -38666,7 +38666,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -38692,7 +38692,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -38718,7 +38718,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -38744,7 +38744,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -38770,7 +38770,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -38796,7 +38796,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -38822,7 +38822,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7F);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -38848,7 +38848,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8F);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -38874,7 +38874,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7F);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -38900,7 +38900,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8F);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -38926,7 +38926,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8F);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -38952,7 +38952,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8F);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -38978,7 +38978,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7F);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -39004,7 +39004,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7F);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -39030,7 +39030,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x71);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -39056,7 +39056,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x81);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -39082,7 +39082,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x71);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -39108,7 +39108,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x81);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -39134,7 +39134,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x81);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -39160,7 +39160,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x81);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -39186,7 +39186,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x71);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -39212,7 +39212,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x71);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -39238,7 +39238,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7B);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -39264,7 +39264,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8B);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -39290,7 +39290,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7B);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -39316,7 +39316,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8B);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -39342,7 +39342,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8B);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -39368,7 +39368,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8B);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -39394,7 +39394,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7B);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -39420,7 +39420,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7B);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -39446,7 +39446,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x79);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -39472,7 +39472,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x89);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -39498,7 +39498,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x79);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -39524,7 +39524,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x89);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -39550,7 +39550,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x89);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -39576,7 +39576,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x89);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -39602,7 +39602,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x79);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -39628,7 +39628,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x79);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -39654,7 +39654,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x75);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -39680,7 +39680,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x85);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -39706,7 +39706,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x75);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -39732,7 +39732,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x85);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -39758,7 +39758,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x85);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -39784,7 +39784,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x85);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -39810,7 +39810,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x75);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -39836,7 +39836,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x75);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -39862,7 +39862,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x70);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -39888,7 +39888,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x80);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -39914,7 +39914,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x70);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -39940,7 +39940,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x80);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -39966,7 +39966,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x80);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -39992,7 +39992,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x80);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -40018,7 +40018,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x70);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -40044,7 +40044,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x70);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -40070,7 +40070,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7A);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -40096,7 +40096,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8A);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -40122,7 +40122,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7A);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -40148,7 +40148,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8A);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -40174,7 +40174,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8A);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -40200,7 +40200,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8A);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -40226,7 +40226,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7A);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -40252,7 +40252,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7A);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -40278,7 +40278,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7A);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -40304,7 +40304,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8A);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -40330,7 +40330,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7A);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -40356,7 +40356,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8A);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -40382,7 +40382,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8A);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -40408,7 +40408,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8A);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -40434,7 +40434,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7A);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -40460,7 +40460,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7A);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -40486,7 +40486,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7B);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -40512,7 +40512,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8B);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -40538,7 +40538,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7B);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -40564,7 +40564,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8B);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -40590,7 +40590,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8B);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -40616,7 +40616,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x8B);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -40642,7 +40642,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7B);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -40668,7 +40668,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x7B);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -40694,7 +40694,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xE3);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -40720,7 +40720,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xE3);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -40746,7 +40746,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xE3);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -40772,7 +40772,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xE3);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -40798,7 +40798,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x78);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -40824,7 +40824,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x88);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -40850,7 +40850,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x78);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -40876,7 +40876,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x88);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -40902,7 +40902,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x88);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -40928,7 +40928,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x88);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -40954,7 +40954,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x78);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -40980,7 +40980,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x78);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -41006,7 +41006,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x74);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -41032,7 +41032,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x84);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -41058,7 +41058,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x74);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -41084,7 +41084,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x84);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -41110,7 +41110,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x84);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -41136,7 +41136,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x84);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -41162,7 +41162,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x74);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -41188,7 +41188,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x74);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -41214,7 +41214,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x9F);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -41682,7 +41682,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC9);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -41708,7 +41708,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC9);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -41734,7 +41734,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0x0F, 0xAE, 0xE8);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -41916,7 +41916,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -41942,7 +41942,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAD);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -41968,7 +41968,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAD);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -41994,7 +41994,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAD);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -42020,7 +42020,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAC);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -42046,7 +42046,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAC);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -42072,7 +42072,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAD);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -42098,7 +42098,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAD);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -42124,7 +42124,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAD);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -42150,7 +42150,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xE2);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -42176,7 +42176,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xE2);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -42202,7 +42202,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xE0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -42228,7 +42228,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xE0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -42254,7 +42254,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xE0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -42280,7 +42280,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xE0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -42956,7 +42956,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0x0F, 0xAE, 0xF0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -43190,7 +43190,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0x0F, 0x01, 0xC8);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -43216,7 +43216,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -43242,7 +43242,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -43268,7 +43268,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -43294,7 +43294,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -43606,7 +43606,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA3);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -43632,7 +43632,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA3);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -43658,7 +43658,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA3);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -43684,7 +43684,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA2);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -43710,7 +43710,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA2);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -43736,7 +43736,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xB8, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -43892,7 +43892,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xB8, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -44048,7 +44048,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xB8, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -44178,7 +44178,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xB0, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -44360,7 +44360,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -44386,7 +44386,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xB0, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -46518,7 +46518,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA5);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -46544,7 +46544,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA5);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -46570,7 +46570,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA5);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -46596,7 +46596,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA4);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -46622,7 +46622,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA4);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -46648,7 +46648,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA5);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -46882,7 +46882,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA5);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -47012,7 +47012,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA5);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -48520,7 +48520,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0x0F, 0x01, 0xC9);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -48780,7 +48780,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x90);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -49144,7 +49144,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x0C);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -49170,7 +49170,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x0D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -49196,7 +49196,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x0D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -50080,7 +50080,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x0D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -50366,7 +50366,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xEE);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -50392,7 +50392,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xEF);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -50418,7 +50418,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xEF);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -50444,7 +50444,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xE6);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -50470,7 +50470,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xE7);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -50496,7 +50496,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xE7);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -50522,7 +50522,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x6F);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -50548,7 +50548,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x6F);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -50574,7 +50574,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x6E);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -50600,7 +50600,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x6E);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -50626,7 +50626,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x6F);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -50652,7 +50652,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x6F);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -52498,7 +52498,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x90);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -57672,7 +57672,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xA1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -57698,7 +57698,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xA1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -57724,7 +57724,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xA9);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -57750,7 +57750,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xA9);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -57854,7 +57854,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x58, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -57906,7 +57906,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x58, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -58088,7 +58088,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x9D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -58114,7 +58114,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x9D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -61988,7 +61988,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xA0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -62014,7 +62014,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xA8);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -62118,7 +62118,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x50, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -62170,7 +62170,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x50, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -62196,7 +62196,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x9C);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -62222,7 +62222,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x9C);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -62248,7 +62248,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x68);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -62274,7 +62274,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x68);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -62300,7 +62300,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x6A);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -62326,7 +62326,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x68);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -62352,7 +62352,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x6A);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -64172,7 +64172,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x6D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64198,7 +64198,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x6D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64224,7 +64224,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x6D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64250,7 +64250,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x6C);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64276,7 +64276,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x6C);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64302,7 +64302,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAC);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64328,7 +64328,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAC);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64354,7 +64354,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAD);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64380,7 +64380,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAD);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64406,7 +64406,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAD);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64432,7 +64432,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA5);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64458,7 +64458,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA5);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64484,7 +64484,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA5);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64510,7 +64510,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA4);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64536,7 +64536,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA4);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64562,7 +64562,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x6F);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64588,7 +64588,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x6F);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64614,7 +64614,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x6F);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64640,7 +64640,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x6E);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64666,7 +64666,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x6E);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64692,7 +64692,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAB);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64718,7 +64718,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAB);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64744,7 +64744,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAB);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64770,7 +64770,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAA);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64796,7 +64796,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAA);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64822,7 +64822,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA7);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64848,7 +64848,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA7);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64874,7 +64874,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA7);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64900,7 +64900,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA6);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64926,7 +64926,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA6);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64952,7 +64952,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAF);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -64978,7 +64978,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAF);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -65004,7 +65004,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAF);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -65030,7 +65030,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAE);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -65056,7 +65056,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAE);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -65082,7 +65082,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA7);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -65108,7 +65108,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA7);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -65134,7 +65134,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA7);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -65160,7 +65160,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA6);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -65186,7 +65186,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA6);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -65212,7 +65212,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAF);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -65238,7 +65238,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAF);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -65264,7 +65264,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAF);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -65290,7 +65290,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAE);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -65316,7 +65316,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAE);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -65342,7 +65342,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC3);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -65368,7 +65368,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xCB);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -65394,7 +65394,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC2);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -65420,7 +65420,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xCA);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -67266,7 +67266,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x9E);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -68800,7 +68800,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x1C);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -68826,7 +68826,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x1D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -68852,7 +68852,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x1D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -69736,7 +69736,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x1D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -69918,7 +69918,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAF);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -69944,7 +69944,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAF);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -69970,7 +69970,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAF);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -69996,7 +69996,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAE);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -70022,7 +70022,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAE);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -70048,7 +70048,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAF);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -70074,7 +70074,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAF);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -70100,7 +70100,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAF);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -72466,7 +72466,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0x0F, 0xAE, 0xF8);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -75040,7 +75040,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF9);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -75066,7 +75066,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFD);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -75092,7 +75092,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFB);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -75144,7 +75144,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAB);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -75170,7 +75170,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAB);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -75196,7 +75196,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAB);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -75222,7 +75222,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAA);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -75248,7 +75248,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAA);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -75274,7 +75274,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAB);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -75300,7 +75300,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAB);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -75326,7 +75326,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xAB);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -75352,7 +75352,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x2C);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -75378,7 +75378,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x2D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -75404,7 +75404,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x2D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -76288,7 +76288,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x2D);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -76678,7 +76678,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0x0F, 0x01, 0xF8);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -76704,7 +76704,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x05);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -76730,7 +76730,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x34);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -76756,7 +76756,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x35);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -76782,7 +76782,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x35);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -76808,7 +76808,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x07);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -76834,7 +76834,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x07);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -76860,7 +76860,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA8);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -76886,7 +76886,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA9);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -76912,7 +76912,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA9);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -77406,7 +77406,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xA9);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -77770,7 +77770,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x0B);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -109540,7 +109540,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x77);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -109566,7 +109566,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x77);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -109592,7 +109592,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `REX` prefix.
 	
-		// No Opcode Bytes	// No MOD R/M byte or Scaled Index Byte..
+		// No Opcode Bytes	// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -109722,7 +109722,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xC6, 0xF8);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -109746,7 +109746,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `REX` prefix.
 	
-		// No Opcode Bytes	// No MOD R/M byte or Scaled Index Byte..
+		// No Opcode Bytes	// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -110084,7 +110084,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xC7, 0xF8);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -110110,7 +110110,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0xC7, 0xF8);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg0);
 	
@@ -110136,7 +110136,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x90, arg1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -110162,7 +110162,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x90, arg1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -110318,7 +110318,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x90, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -110422,7 +110422,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x90, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -110604,7 +110604,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x90, arg0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -110760,7 +110760,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x90, arg1);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -110916,7 +110916,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0x0F, 0x01, 0xD5);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -110942,7 +110942,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0x0F, 0x01, 0xD0);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -110968,7 +110968,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD7);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -110994,7 +110994,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD7);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -111020,7 +111020,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD7);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -111046,7 +111046,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x34);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -111072,7 +111072,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x35);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -111098,7 +111098,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x35);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -111982,7 +111982,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x35);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -112266,7 +112266,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `REX` prefix.
 	
-		// No Opcode Bytes	// No MOD R/M byte or Scaled Index Byte..
+		// No Opcode Bytes	// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
@@ -112760,7 +112760,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_3(0x0F, 0x01, 0xD6);
 	
-		// No MOD R/M byte or Scaled Index Byte..
+		// No `MOD.R/M` byte or Scaled Index Byte (SIB).
 	
 		// No displacement or immediate.
 	
