@@ -31,6 +31,11 @@ impl OrdinaryInstructionStream
 	}
 	
 	// TODO: X
+	
+	// X can be a GeneralPurposeRegister, X87Integer*BitMemory, any Any*BitMemoryOperand?
+	//
+	// reg can be GP, SegmentRegister, FS, GS, XMMRegister, XMM0
+	
 	/// Emits one byte containing a a combined `MOD.r/m` and Scaled Index Byte (SIB).
 	///
 	/// See [this](http://www.c-jump.com/CIS77/CPU/x86/X77_0060_mod_reg_r_m_byte.htm) reference to the bits.
@@ -44,6 +49,9 @@ impl OrdinaryInstructionStream
 	}
 	
 	/*
+	
+		General Purpose register needs to include XMMRegister and XMM0
+	
 	
 	Any(8->64)BitMemory & Registers		Register 8 -> 64 RegisterHigh8BitsOf16Bit
 	

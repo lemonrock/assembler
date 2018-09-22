@@ -3662,7 +3662,7 @@
 	fn mov(&mut self, arg0: M16, arg1: R16);
 
 	/// Move segment register to r/m16.
-	fn mov(&mut self, arg0: M16, arg1: Sreg);
+	fn mov(&mut self, arg0: M16, arg1: SegmentRegister);
 
 	/// Move imm32 to r/m32.
 	fn mov(&mut self, arg0: M32, arg1: Imm32);
@@ -3677,7 +3677,7 @@
 	fn mov(&mut self, arg0: M64, arg1: R64);
 
 	/// Move zero extended 16-bit segment register to r/m64.
-	fn mov(&mut self, arg0: M64, arg1: Sreg);
+	fn mov(&mut self, arg0: M64, arg1: SegmentRegister);
 
 	/// Move imm8 to r/m8.
 	fn mov(&mut self, arg0: M8, arg1: Imm8);
@@ -3719,7 +3719,7 @@
 	void mov_1(const R16& arg0, arg1: R16);
 
 	/// Move segment register to r/m16.
-	fn mov(&mut self, arg0: R16, arg1: Sreg);
+	fn mov(&mut self, arg0: R16, arg1: SegmentRegister);
 
 	/// Move imm32 to r32.
 	fn mov(&mut self, arg0: R32, arg1: Imm32);
@@ -3752,7 +3752,7 @@
 	void mov_1(const R64& arg0, arg1: R64);
 
 	/// Move zero extended 16-bit segment register to r/m64.
-	fn mov(&mut self, arg0: R64, arg1: Sreg);
+	fn mov(&mut self, arg0: R64, arg1: SegmentRegister);
 
 	/// Move imm8 to r8.
 	fn mov(&mut self, arg0: R8, arg1: Imm8);
@@ -3800,16 +3800,16 @@
 	void mov_1(const Rh& arg0, arg1: Rh);
 
 	/// Move r/m16 to segment register.
-	fn mov(&mut self, arg0: Sreg, arg1: M16);
+	fn mov(&mut self, arg0: SegmentRegister, arg1: M16);
 
 	/// Move lower 16 bits of r/m64 to segment register.
-	fn mov(&mut self, arg0: Sreg, arg1: M64);
+	fn mov(&mut self, arg0: SegmentRegister, arg1: M64);
 
 	/// Move r/m16 to segment register.
-	fn mov(&mut self, arg0: Sreg, arg1: R16);
+	fn mov(&mut self, arg0: SegmentRegister, arg1: R16);
 
 	/// Move lower 16 bits of r/m64 to segment register.
-	fn mov(&mut self, arg0: Sreg, arg1: R64);
+	fn mov(&mut self, arg0: SegmentRegister, arg1: R64);
 
 	/// Move packed double-precision floating-point values from xmm1 to xmm2/m128.
 	fn movapd(&mut self, arg0: M128, arg1: Xmm);

@@ -10,15 +10,23 @@
 pub enum SegmentRegister
 {
 	/// Register 0.
+	///
+	/// One of four `Data Segment` registers, typically used for the destination of string instructions.
 	ES = 0,
 
 	/// Register 1.
+	///
+	/// Known as `Code Segment`, used to fetch instructions from.
 	CS = 1,
 
 	/// Register 2.
+	///
+	/// Known as `Stack Segment`, used for stack memory.
 	SS = 2,
 
 	/// Register 3.
+	///
+	/// One of four `Data Segment` registers, this one is typically used for local data.
 	DS = 3,
 }
 
