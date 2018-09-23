@@ -25,10 +25,6 @@ pub mod registers;
 pub mod relative_addresses;
 
 
-/// Singletons.
-pub mod singletons;
-
-
 include!("AsDisplacement.rs");
 include!("BranchHint.rs");
 include!("Label.rs");

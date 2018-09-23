@@ -26,7 +26,6 @@ use self::mnemonic_parameter_types::memory_operands::*;
 use self::mnemonic_parameter_types::registers::*;
 use self::mnemonic_parameter_types::registers::singleton::*;
 use self::mnemonic_parameter_types::relative_addresses::*;
-use self::mnemonic_parameter_types::singletons::*;
 use ::std::mem::transmute;
 
 
