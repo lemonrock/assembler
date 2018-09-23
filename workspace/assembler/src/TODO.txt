@@ -7,4 +7,4 @@
 // TODO: Add if statements to redirect some instructions to more efficient forms?
 // TODO: Double-check if this vex form is not needed:-
 // TODO: Consider using enum variants for Memory Operand, or, at least, parts of memory operand like the RIP-mode and base-less addressing.
-
+// TODO: Construct ordinary instruction stream.

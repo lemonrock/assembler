@@ -3,7 +3,7 @@
 
 
 /// Memory Offset.
-pub trait MemoryOffset: AsDisplacement<D=u64>
+pub(crate) trait MemoryOffset: AsDisplacement<D=u64>
 {
 	/// Get the segment register, if any.
 	#[inline(always)]

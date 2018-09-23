@@ -3,6 +3,6 @@
 
 
 /// An immediate value.
-pub trait Immediate<D: Displacement>: AsDisplacement<D=D>
+pub(crate) trait Immediate<D: Displacement>: AsDisplacement<D=D>
 {
 }

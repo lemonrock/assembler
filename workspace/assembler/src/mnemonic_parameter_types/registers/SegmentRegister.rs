@@ -55,7 +55,3 @@ impl Register for SegmentRegister
 		self as u8
 	}
 }
-
-impl AnySegmentRegister for SegmentRegister
-{
-}

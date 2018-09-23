@@ -12,7 +12,3 @@ impl Register for FS
 		4
 	}
 }
-
-impl AnySegmentRegister for FS
-{
-}

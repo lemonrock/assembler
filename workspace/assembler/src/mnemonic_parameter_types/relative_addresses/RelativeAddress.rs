@@ -3,6 +3,6 @@
 
 
 /// A relative address.
-pub trait RelativeAddress<D: Displacement>: AsDisplacement<D=D>
+pub(crate) trait RelativeAddress<D: Displacement>: AsDisplacement<D=D>
 {
 }

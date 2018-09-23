@@ -2,6 +2,7 @@
 // Copyright © 2018 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
+/// An ordinary instruction stream.
 pub struct OrdinaryInstructionStream
 {
 	byte_emitter: ByteEmitter,
@@ -137,7 +138,7 @@ impl OrdinaryInstructionStream
 	/// Records internal state for a label reference.
 	/// Saves the current code position and reserves space for the resolved address by emitting zero bytes.
 	#[inline(always)]
-	fn displacement_label_8bit(&mut self, l: Label)
+	fn displacement_label_8bit(&mut self, _l: Label)
 	{
 		// TODO: fxn_->label8_rels_.push_back(std::make_pair(fxn_->size(), l.val_));
 		unimplemented!();
@@ -147,7 +148,7 @@ impl OrdinaryInstructionStream
 	/// Records internal state for a label reference.
 	/// Saves the current code position and reserves space for the resolved address by emitting zero bytes.
 	#[inline(always)]
-	fn displacement_label_32bit(&mut self, l: Label)
+	fn displacement_label_32bit(&mut self, _l: Label)
 	{
 		// TODO: fxn_->label32_rels_.push_back(std::make_pair(fxn_->size(), l.val_));
 		unimplemented!();

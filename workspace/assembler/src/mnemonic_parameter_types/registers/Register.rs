@@ -3,20 +3,22 @@
 
 
 /// A register.
-pub trait Register: MemoryOrRegister
+pub trait Register: Copy + Sized
 {
+	#[doc(hidden)]
 	const IsRegister8Bit: bool = false;
 	
-	/// Index.
 	#[inline(always)]
 	fn index(self) -> u8;
 	
+	#[doc(hidden)]
 	#[inline(always)]
 	fn requires_rex_byte(self) -> bool
 	{
 		Self::IsRegister8Bit && self.index() > 3
 	}
 	
+	#[doc(hidden)]
 	#[inline(always)]
 	fn requires_rex_bit(self) -> bool
 	{

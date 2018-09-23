@@ -319,7 +319,7 @@ impl MemoryOperand
 	#[inline(always)]
 	fn get_displacement(self) -> Immediate32Bit
 	{
-		unsafe { transmute((self.0 & Self::DisplacementMask) >> Self::DisplacementShift) }
+		Immediate32Bit(((self.0 & Self::DisplacementMask) >> Self::DisplacementShift) as u32 as i32)
 	}
 	
 	#[inline(always)]
@@ -332,7 +332,7 @@ impl MemoryOperand
 	}
 	
 	#[inline(always)]
-	pub fn new(displacement: Immediate32Bit, base_register: Option<impl GeneralPurposeRegister>, index_register: Option<impl GeneralPurposeRegister>, scale: IndexScale, segment_register: Option<impl AnySegmentRegister>, address_override_for_32_bit: bool, relative_instruction_pointer_offset: bool) -> Self
+	fn new(displacement: Immediate32Bit, base_register: Option<impl GeneralPurposeRegister>, index_register: Option<impl GeneralPurposeRegister>, scale: IndexScale, segment_register: Option<SegmentRegister>, address_override_for_32_bit: bool, relative_instruction_pointer_offset: bool) -> Self
 	{
 		debug_assert_eq!(address_override_for_32_bit && relative_instruction_pointer_offset, false, "address_override_for_32_bit and relative_instruction_pointer_offset can not both be specified");
 		
@@ -369,7 +369,7 @@ impl MemoryOperand
 	
 	/// Create a new memory operand using the `segment:displacement` form.
 	#[inline(always)]
-	pub fn segment_displacement(segment_register: impl AnySegmentRegister, displacement: Immediate32Bit) -> Self
+	pub fn segment_displacement(segment_register: SegmentRegister, displacement: Immediate32Bit) -> Self
 	{
 		Self::new(displacement, Self::NoBaseOrIndexRegister, Self::NoBaseOrIndexRegister, IndexScale::x1, Some(segment_register), false, false)
 	}
@@ -383,7 +383,7 @@ impl MemoryOperand
 	
 	/// Create a new memory operand using the `segment:RIP` (relative instruction pointer) form.
 	#[inline(always)]
-	pub fn segment_relative_instruction_pointer_relative(segment_register: impl AnySegmentRegister) -> Self
+	pub fn segment_relative_instruction_pointer_relative(segment_register: SegmentRegister) -> Self
 	{
 		Self::new(Immediate32Bit(0), Self::NoBaseOrIndexRegister, Self::NoBaseOrIndexRegister, IndexScale::x1, Some(segment_register), false, true)
 	}
@@ -397,7 +397,7 @@ impl MemoryOperand
 	
 	/// Create a new memory operand using the `segment:RIP+displacement` (relative instruction pointer) form.
 	#[inline(always)]
-	pub fn segment_relative_instruction_pointer_relative_displacement(segment_register: impl AnySegmentRegister, displacement: Immediate32Bit) -> Self
+	pub fn segment_relative_instruction_pointer_relative_displacement(segment_register: SegmentRegister, displacement: Immediate32Bit) -> Self
 	{
 		Self::new(displacement, Self::NoBaseOrIndexRegister, Self::NoBaseOrIndexRegister, IndexScale::x1, Some(segment_register), false, true)
 	}
@@ -424,7 +424,7 @@ impl MemoryOperand
 	///
 	/// Note that this has nothing to do with the binary encoding scheme `Base64`.
 	#[inline(always)]
-	pub fn segment_base_64(segment_register: impl AnySegmentRegister, base_64: Register64Bit) -> Self
+	pub fn segment_base_64(segment_register: SegmentRegister, base_64: Register64Bit) -> Self
 	{
 		Self::new(Immediate32Bit(0), Some(base_64), Self::NoBaseOrIndexRegister, IndexScale::x1, Some(segment_register), false, false)
 	}
@@ -433,7 +433,7 @@ impl MemoryOperand
 	///
 	/// Note that this has nothing to do with the binary encoding scheme `Base32`.
 	#[inline(always)]
-	pub fn segment_base_32(segment_register: impl AnySegmentRegister, base_32: Register32Bit) -> Self
+	pub fn segment_base_32(segment_register: SegmentRegister, base_32: Register32Bit) -> Self
 	{
 		Self::new(Immediate32Bit(0), Some(base_32), Self::NoBaseOrIndexRegister, IndexScale::x1, Some(segment_register), true, false)
 	}
@@ -460,7 +460,7 @@ impl MemoryOperand
 	///
 	/// Note that this has nothing to do with the binary encoding scheme `Base64`.
 	#[inline(always)]
-	pub fn segment_displacement_base_64(segment_register: impl AnySegmentRegister, base_64: Register64Bit, displacement: Immediate32Bit) -> Self
+	pub fn segment_displacement_base_64(segment_register: SegmentRegister, base_64: Register64Bit, displacement: Immediate32Bit) -> Self
 	{
 		Self::new(displacement, Some(base_64), Self::NoBaseOrIndexRegister, IndexScale::x1, Some(segment_register), false, false)
 	}
@@ -469,7 +469,7 @@ impl MemoryOperand
 	///
 	/// Note that this has nothing to do with the binary encoding scheme `Base32`.
 	#[inline(always)]
-	pub fn segment_displacement_base_32(segment_register: impl AnySegmentRegister, base_32: Register32Bit, displacement: Immediate32Bit) -> Self
+	pub fn segment_displacement_base_32(segment_register: SegmentRegister, base_32: Register32Bit, displacement: Immediate32Bit) -> Self
 	{
 		Self::new(displacement, Some(base_32), Self::NoBaseOrIndexRegister, IndexScale::x1, Some(segment_register), true, false)
 	}
@@ -490,14 +490,14 @@ impl MemoryOperand
 	
 	/// Create a new memory operand using the `segment:(index64,scale)` form.
 	#[inline(always)]
-	pub fn segment_index_64_scale(segment_register: impl AnySegmentRegister, index_64: Register64Bit, scale: IndexScale) -> Self
+	pub fn segment_index_64_scale(segment_register: SegmentRegister, index_64: Register64Bit, scale: IndexScale) -> Self
 	{
 		Self::new(Immediate32Bit(0), Self::NoBaseOrIndexRegister, Some(index_64), scale, Some(segment_register), false, false)
 	}
 	
 	/// Create a new memory operand using the `segment:(index32,scale)` form.
 	#[inline(always)]
-	pub fn segment_index_32_scale(segment_register: impl AnySegmentRegister, index_32: Register32Bit, scale: IndexScale) -> Self
+	pub fn segment_index_32_scale(segment_register: SegmentRegister, index_32: Register32Bit, scale: IndexScale) -> Self
 	{
 		Self::new(Immediate32Bit(0), Self::NoBaseOrIndexRegister, Some(index_32), scale, Some(segment_register), true, false)
 	}
@@ -518,14 +518,14 @@ impl MemoryOperand
 	
 	/// Create a new memory operand using the `segment:displacement:(index64,scale)` form.
 	#[inline(always)]
-	pub fn segment_displacement_index_64_scale(segment_register: impl AnySegmentRegister, index_64: Register64Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
+	pub fn segment_displacement_index_64_scale(segment_register: SegmentRegister, index_64: Register64Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
 	{
 		Self::new(displacement, Self::NoBaseOrIndexRegister, Some(index_64), scale, Some(segment_register), false, false)
 	}
 	
 	/// Create a new memory operand using the `segment:displacement:(index32,scale)` form.
 	#[inline(always)]
-	pub fn segment_displacement_index_32_scale(segment_register: impl AnySegmentRegister, index_32: Register32Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
+	pub fn segment_displacement_index_32_scale(segment_register: SegmentRegister, index_32: Register32Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
 	{
 		Self::new(displacement, Self::NoBaseOrIndexRegister, Some(index_32), scale, Some(segment_register), true, false)
 	}
@@ -546,14 +546,14 @@ impl MemoryOperand
 	
 	/// Create a new memory operand using the `segment:(base64,index64,scale)` form.
 	#[inline(always)]
-	pub fn segment_base_64_index_64_scale(segment_register: impl AnySegmentRegister, base_64: Register64Bit, index_64: Register64Bit, scale: IndexScale) -> Self
+	pub fn segment_base_64_index_64_scale(segment_register: SegmentRegister, base_64: Register64Bit, index_64: Register64Bit, scale: IndexScale) -> Self
 	{
 		Self::new(Immediate32Bit(0), Some(base_64), Some(index_64), scale, Some(segment_register), false, false)
 	}
 	
 	/// Create a new memory operand using the `segment:(base32,index32,scale)` form.
 	#[inline(always)]
-	pub fn segment_base_32_index_32_scale(segment_register: impl AnySegmentRegister, base_32: Register32Bit, index_32: Register32Bit, scale: IndexScale) -> Self
+	pub fn segment_base_32_index_32_scale(segment_register: SegmentRegister, base_32: Register32Bit, index_32: Register32Bit, scale: IndexScale) -> Self
 	{
 		Self::new(Immediate32Bit(0), Some(base_32), Some(index_32), scale, Some(segment_register), true, false)
 	}
@@ -574,14 +574,14 @@ impl MemoryOperand
 	
 	/// Create a new memory operand using the `segment:displacement(base64,index64,scale)` form.
 	#[inline(always)]
-	pub fn segment_displacement_base_64_index_64_scale(segment_register: impl AnySegmentRegister, base_64: Register64Bit, index_64: Register64Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
+	pub fn segment_displacement_base_64_index_64_scale(segment_register: SegmentRegister, base_64: Register64Bit, index_64: Register64Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
 	{
 		Self::new(displacement, Some(base_64), Some(index_64), scale, Some(segment_register), false, false)
 	}
 	
 	/// Create a new memory operand using the `segment:displacement(base32,index32,scale)` form.
 	#[inline(always)]
-	pub fn segment_displacement_base_32_index_32_scale(segment_register: impl AnySegmentRegister, base_32: Register32Bit, index_32: Register32Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
+	pub fn segment_displacement_base_32_index_32_scale(segment_register: SegmentRegister, base_32: Register32Bit, index_32: Register32Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
 	{
 		Self::new(displacement, Some(base_32), Some(index_32), scale, Some(segment_register), true, false)
 	}

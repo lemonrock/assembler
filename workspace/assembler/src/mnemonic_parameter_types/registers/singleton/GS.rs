@@ -13,6 +13,3 @@ impl Register for GS
 	}
 }
 
-impl AnySegmentRegister for GS
-{
-}

@@ -3,7 +3,7 @@
 
 
 /// Converts operand to a displacement.
-pub trait AsDisplacement
+pub(crate) trait AsDisplacement
 {
 	/// Type of displacement.
 	type D: Displacement;
