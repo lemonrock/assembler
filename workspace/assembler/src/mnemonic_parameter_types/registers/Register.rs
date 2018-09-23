@@ -8,6 +8,7 @@ pub trait Register: Copy + Sized
 	#[doc(hidden)]
 	const IsRegister8Bit: bool = false;
 	
+	/// Zero-based index of this register.
 	#[inline(always)]
 	fn index(self) -> u8;
 	
