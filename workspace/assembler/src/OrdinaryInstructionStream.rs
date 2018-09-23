@@ -74,6 +74,12 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
+	fn rex_1(&mut self, byte: u8)
+	{
+		self.byte_emitter.emit_u8_if_not_zero(byte)
+	}
+	
+	#[inline(always)]
 	fn opcode_1(&mut self, opcode: u8)
 	{
 		self.byte_emitter.emit_u8(opcode)

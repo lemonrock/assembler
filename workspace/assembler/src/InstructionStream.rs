@@ -13028,7 +13028,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0x15);
 	
@@ -14146,7 +14146,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0x05);
 	
@@ -15888,7 +15888,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0x25);
 	
@@ -18956,7 +18956,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0x98);
 	
@@ -24728,7 +24728,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0x3D);
 	
@@ -25066,7 +25066,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xA7);
 	
@@ -25222,7 +25222,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xA7);
 	
@@ -25820,7 +25820,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0x99);
 	
@@ -34502,7 +34502,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xCF);
 	
@@ -36764,7 +36764,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xFF);
 	
@@ -41990,7 +41990,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xAD);
 	
@@ -42094,7 +42094,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xAD);
 	
@@ -43238,7 +43238,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xA0);
 	
@@ -43654,7 +43654,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xA3);
 	
@@ -43706,7 +43706,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xA2);
 	
@@ -44356,7 +44356,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xA1);
 	
@@ -46566,7 +46566,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xA5);
 	
@@ -46878,7 +46878,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xA5);
 	
@@ -50076,7 +50076,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0x0D);
 	
@@ -64220,7 +64220,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group1(0xF3);
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0x6D);
 	
@@ -64272,7 +64272,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group1(0xF3);
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0x6C);
 	
@@ -64324,7 +64324,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group1(0xF3);
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xAC);
 	
@@ -64402,7 +64402,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group1(0xF3);
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xAD);
 	
@@ -64480,7 +64480,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group1(0xF3);
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xA5);
 	
@@ -64532,7 +64532,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group1(0xF3);
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xA4);
 	
@@ -64610,7 +64610,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group1(0xF3);
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0x6F);
 	
@@ -64662,7 +64662,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group1(0xF3);
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0x6E);
 	
@@ -64740,7 +64740,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group1(0xF3);
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xAB);
 	
@@ -64792,7 +64792,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group1(0xF3);
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xAA);
 	
@@ -64870,7 +64870,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group1(0xF3);
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xA7);
 	
@@ -64922,7 +64922,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group1(0xF3);
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xA6);
 	
@@ -65000,7 +65000,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group1(0xF3);
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xAF);
 	
@@ -65052,7 +65052,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group1(0xF3);
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xAE);
 	
@@ -65130,7 +65130,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group1(0xF2);
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xA7);
 	
@@ -65182,7 +65182,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group1(0xF2);
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xA6);
 	
@@ -65260,7 +65260,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group1(0xF2);
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xAF);
 	
@@ -65312,7 +65312,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group1(0xF2);
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xAE);
 	
@@ -69732,7 +69732,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0x1D);
 	
@@ -69966,7 +69966,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xAF);
 	
@@ -70070,7 +70070,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xAF);
 	
@@ -75192,7 +75192,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xAB);
 	
@@ -75296,7 +75296,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xAB);
 	
@@ -76284,7 +76284,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0x2D);
 	
@@ -76778,7 +76778,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_2(0x0F, 0x35);
 	
@@ -76830,7 +76830,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_2(0x0F, 0x07);
 	
@@ -77402,7 +77402,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xA9);
 	
@@ -111016,7 +111016,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0xD7);
 	
@@ -111978,7 +111978,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		rex!(self, Self::REX_W);
+		self.rex_1(Self::REX_W);
 	
 		self.opcode_1(0x35);
 	
