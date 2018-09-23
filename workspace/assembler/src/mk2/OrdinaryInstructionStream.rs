@@ -24,66 +24,92 @@ impl OrdinaryInstructionStream
 	/// `REX` prefix.
 	pub(crate) const REX: u8 = 0x40;
 	
+	
+	/*
+	
+ TODO: Now remove redundant arguments like arg0: XMM0, RAX, etc.!
+	 - Will require us to remove things like RAX::O which are present in the code.
+ 
+	TODO: FINISH VEX
+	
+	*/
+	
+	// See Figure 2-9, Intel Manual Volume 2A Section 2-15 (May 2018).
 	#[inline(always)]
-	fn vex(&mut self)
+	fn vex(&mut self, mmmmm: u8, L: u8, pp: u8, w: u8, vvvv: impl Register, rm: Memory, r: impl Register)
 	{
-		/*
-		  /** Emits a 2-byte vex prefix. See Figure 2-9: Intel Manual Vol 2A 2-14. */
-  void vex2(uint8_t r_bit, const Operand& vvvv, uint8_t l, uint8_t pp) {
-    fxn_->emit_byte(0xc5);
-    fxn_->emit_byte(r_bit | ((~vvvv.val_ << 3) & 0x78) | (l << 2) | pp);
-  }
-
-  /** Emits a 3-byte vex prefix. See Figure 2-9: Intel Manual Vol 2A 2-14. */
-  void vex3(uint8_t r_bit, uint8_t x_bit, uint8_t b_bit, uint8_t mmmmm,
-            uint8_t w, const Operand& vvvv, uint8_t l, uint8_t pp) {
-    fxn_->emit_byte(0xc4);
-    fxn_->emit_byte(r_bit | x_bit | b_bit | mmmmm);
-    fxn_->emit_byte((w << 7) | ((~vvvv.val_ << 3) & 0x78) | (l << 2) | pp);
-  }
-
-  // Emits a vex prefix. See Figure 2-9: Intel Manual Vol 2A 2-14. */
-		template <typename T>
-	void vex(uint8_t mmmmm, uint8_t l, uint8_t pp, uint8_t w,
-		const Operand& vvvv, const M<T>& rm,
-		const Operand& r) {
-		uint8_t r_bit = (~r.val_ << 4) & 0x80;
-		uint8_t x_bit = rm.contains_index() ?
-		(~rm.get_index().val_ << 3) & 0x40 : 0x40;
-		uint8_t b_bit = rm.contains_base() ?
-		(~rm.get_base().val_ << 2) & 0x20 : 0x20;
+		let r_bit = (!r.index() << 4) & 0x80;
+		let x_bit = if rm.has_index_register()
+		{
+			(!rm.get_index().index() << 3) & 0x40
+		}
+		else
+		{
+			0x40
+		};
 		
-		if (x_bit == 0x40 && b_bit == 0x20 && mmmmm == 0x01 && w == 0) {
-			vex2(r_bit, vvvv, l, pp);
-		} else {
-			vex3(r_bit, x_bit, b_bit, mmmmm, w, vvvv, l, pp);
+		let b_bit = if rm.has_base_register()
+		{
+			(!rm.get_base().index() << 2) & 0x20
+		}
+		else
+		{
+			0x20
+		};
+		
+		if x_bit == 0x40 && b_bit == 0x20 && mmmmm == 0x01 && w == 0
+		{
+			self.emit_2_byte_vex_prefix(r_bit, vvvv, L, pp)
+		}
+		else
+		{
+			self.emit_3_byte_vex_prefix(r_bit, x_bit, b_bit, mmmmm, w, vvvv, L, pp)
 		}
 	}
+	
+	#[inline(always)]
+	fn vex(&mut self, mmmmm: u8, L: u8, pp: u8, w: u8, vvvv: impl Register, rm: Operand, r: impl Register)
+	{
+		let r_bit = (!r.index() << 4) & 0x80;
+		let b_bit = (!rm.index() << 2) & 0x20;
 		
-		/** Emits a vex prefix. See Figure 2-9: Intel Manual Vol 2A 2-14. */
-		void vex(uint8_t mmmmm, uint8_t l, uint8_t pp, uint8_t w,
-		const Operand& vvvv, const Operand& rm,
-		const Operand& r) {
-		uint8_t r_bit = (~r.val_ << 4) & 0x80;
-		uint8_t b_bit = (~rm.val_ << 2) & 0x20;
-		
-		if (b_bit == 0x20 && mmmmm == 0x01 && w == 0) {
-			vex2(r_bit, vvvv, l, pp);
-		} else {
-			vex3(r_bit, 0x40, b_bit, mmmmm, w, vvvv, l, pp);
+		if b_bit == 0x20 && mmmmm == 0x01 && w == 0
+		{
+			self.emit_2_byte_vex_prefix(r_bit, vvvv, L, pp)
+		}
+		else
+		{
+			self.emit_3_byte_vex_prefix(r_bit, 0x40, b_bit, mmmmm, w, vvvv, L, pp)
 		}
 	}
-		
-		/** Emits a vex prefix. See Figure 2-9: Intel Manual Vol 2A 2-14. */
-		void vex(uint8_t mmmmm, uint8_t l, uint8_t pp, uint8_t w,
-		const Operand& vvvv) {
-		if (mmmmm == 0x01 && w == 0) {
-			vex2(0x80, vvvv, l, pp);
-		} else {
-			vex3(0x80, 0x40, 0x20, mmmmm, w, vvvv, l, pp);
-		}
+	
+// This form seems to be missing...
+//	#[inline(always)]
+//	fn vex(&mut self, mmmmm: u8, L: u8, pp: u8, w: u8, vvvv: impl Register)
+//	{
+//		if mmmmm == 0x01 && w == 0
+//		{
+//			self.emit_2_byte_vex_prefix(0x80, vvvv, L, pp)
+//		}
+//		else
+//		{
+//			self.emit_3_byte_vex_prefix(0x80, 0x40, 0x20, mmmmm, w, vvvv, L, pp)
+//		}
+//	}
+	
+	#[inline(always)]
+	fn emit_2_byte_vex_prefix(&mut self, r_bit: u8, vvvv: impl Register, l: u8, pp: u8)
+	{
+		self.byte_emitter.emit_u8(0xC5);
+		self.byte_emitter.emit_u8((r_bit | ((!vvvv.index()) << 3) & 0x78) | (l << 2) | pp);
 	}
-		*/
+	
+	#[inline(always)]
+	fn emit_3_byte_vex_prefix(&mut self, r_bit: u8, x_bit: u8, b_bit: u8, mmmmm: u8, w: u8, vvvv: impl Register, l: u8, pp: u8)
+	{
+		self.byte_emitter.emit_u8(0xC5);
+		self.byte_emitter.emit_u8(r_bit | x_bit | b_bit | mmmmm);
+		self.byte_emitter.emit_u8((w << 7) | ((!vvvv.index() << 3) & 0x78) | (l << 2) | pp);
 	}
 	
 	#[inline(always)]
@@ -127,15 +153,6 @@ impl OrdinaryInstructionStream
 	{
 		rm.emit_rex_2(&mut self.byte_emitter, byte)
 	}
-	
-    /*
-    
-    TODO: self.vex(0x02, 0x0, 0x0, 0x0, arg1, arg2, arg0);
-    
- TODO: Now remove redundant arguments like arg0: XMM0, RAX, etc.!
- 
-	*/
-	
 	
 	#[inline(always)]
 	fn opcode_1(&mut self, opcode: u8)
