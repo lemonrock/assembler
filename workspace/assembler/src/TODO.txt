@@ -8,3 +8,38 @@
 // TODO: Double-check if this vex form is not needed:-
 // TODO: Consider using enum variants for Memory Operand, or, at least, parts of memory operand like the RIP-mode and base-less addressing.
 // TODO: Construct ordinary instruction stream.
+// TODO: Fix various string functions with unused arguments:-
+
+
+cmps_Any16BitMemory_Any16BitMemory(&mut self, arg0: Any16BitMemory, arg1: Any16BitMemory)
+cmps_Any32BitMemory_Any32BitMemory(&mut self, arg0: Any32BitMemory, arg1: Any32BitMemory)
+cmps_Any64BitMemory_Any64BitMemory(&mut self, arg0: Any64BitMemory, arg1: Any64BitMemory)
+cmps_Any8BitMemory_Any8BitMemory(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory)
+
+movs_Any16BitMemory_Any16BitMemory(&mut self, arg0: Any16BitMemory, arg1: Any16BitMemory)
+movs_Any32BitMemory_Any32BitMemory(&mut self, arg0: Any32BitMemory, arg1: Any32BitMemory)
+movs_Any64BitMemory_Any64BitMemory(&mut self, arg0: Any64BitMemory, arg1: Any64BitMemory)
+movs_Any8BitMemory_Any8BitMemory(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory)
+
+rep_movs_Any16BitMemory_Any16BitMemory(&mut self, arg0: Any16BitMemory, arg1: Any16BitMemory)
+rep_movs_Any32BitMemory_Any32BitMemory(&mut self, arg0: Any32BitMemory, arg1: Any32BitMemory)
+rep_movs_Any64BitMemory_Any64BitMemory(&mut self, arg0: Any64BitMemory, arg1: Any64BitMemory)
+rep_movs_Any8BitMemory_Any8BitMemory(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory)
+
+rep_movs_Any8BitMemory_Any8BitMemory_1(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory)
+
+repe_cmps_Any16BitMemory_Any16BitMemory(&mut self, arg0: Any16BitMemory, arg1: Any16BitMemory
+repe_cmps_Any32BitMemory_Any32BitMemory(&mut self, arg0: Any32BitMemory, arg1: Any32BitMemory)
+repe_cmps_Any64BitMemory_Any64BitMemory(&mut self, arg0: Any64BitMemory, arg1: Any64BitMemory)
+repe_cmps_Any8BitMemory_Any8BitMemory(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory)
+
+repe_cmps_Any8BitMemory_Any8BitMemory_1(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory)
+
+repne_cmps_Any16BitMemory_Any16BitMemory(&mut self, arg0: Any16BitMemory, arg1: Any16BitMemory)
+repne_cmps_Any32BitMemory_Any32BitMemory(&mut self, arg0: Any32BitMemory, arg1: Any32BitMemory)
+repne_cmps_Any64BitMemory_Any64BitMemory(&mut self, arg0: Any64BitMemory, arg1: Any64BitMemory)
+
+repne_scas_Any8BitMemory_Any8BitMemory(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory)
+
+repne_cmps_Any8BitMemory_Any8BitMemory_1(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory)
+                                                                         ^^^^ help: consider using `_arg1` instead
