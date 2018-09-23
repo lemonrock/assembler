@@ -42,7 +42,7 @@ impl MemoryOffset for MemoryOffset8Bit
 	{
 		use self::MemoryOffset8Bit::*;
 		
-		match self
+		match *self
 		{
 			SegmentOffsetForm8(segment_register, _) => Some(segment_register),
 			OffsetForm8(_) => None,
@@ -54,7 +54,7 @@ impl MemoryOffset for MemoryOffset8Bit
 	{
 		use self::MemoryOffset8Bit::*;
 		
-		match self
+		match *self
 		{
 			SegmentOffsetForm8(_, immediate) => immediate,
 			OffsetForm8(immediate) => immediate,

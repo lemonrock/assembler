@@ -20,7 +20,7 @@ impl Default for MemoryOffset16Bit
 	#[inline(always)]
 	fn default() -> Self
 	{
-		MemoryOffset8Bit::OffsetForm16(Immediate64Bit::default())
+		MemoryOffset16Bit::OffsetForm16(Immediate64Bit::default())
 	}
 }
 
@@ -42,7 +42,7 @@ impl MemoryOffset for MemoryOffset16Bit
 	{
 		use self::MemoryOffset16Bit::*;
 		
-		match self
+		match *self
 		{
 			SegmentOffsetForm16(segment_register, _) => Some(segment_register),
 			OffsetForm16(_) => None,
@@ -54,7 +54,7 @@ impl MemoryOffset for MemoryOffset16Bit
 	{
 		use self::MemoryOffset16Bit::*;
 		
-		match self
+		match *self
 		{
 			SegmentOffsetForm16(_, immediate) => immediate,
 			OffsetForm16(immediate) => immediate,

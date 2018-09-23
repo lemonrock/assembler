@@ -5,13 +5,13 @@
 pub(crate) trait Displacement
 {
 	#[inline(always)]
-	fn write(self, byte_emitter: &mut ByteEmitter);
+	fn emit(self, byte_emitter: &mut ByteEmitter);
 }
 
 impl Displacement for u8
 {
 	#[inline(always)]
-	fn write(self, byte_emitter: &mut ByteEmitter)
+	fn emit(self, byte_emitter: &mut ByteEmitter)
 	{
 		byte_emitter.emit_u8(self.to_le())
 	}
@@ -20,7 +20,7 @@ impl Displacement for u8
 impl Displacement for u16
 {
 	#[inline(always)]
-	fn write(self, byte_emitter: &mut ByteEmitter)
+	fn emit(self, byte_emitter: &mut ByteEmitter)
 	{
 		byte_emitter.emit_u16(self)
 	}
@@ -29,7 +29,7 @@ impl Displacement for u16
 impl Displacement for u32
 {
 	#[inline(always)]
-	fn write(self, byte_emitter: &mut ByteEmitter)
+	fn emit(self, byte_emitter: &mut ByteEmitter)
 	{
 		byte_emitter.emit_u32(self)
 	}
@@ -38,7 +38,7 @@ impl Displacement for u32
 impl Displacement for u64
 {
 	#[inline(always)]
-	fn write(self, byte_emitter: &mut ByteEmitter)
+	fn emit(self, byte_emitter: &mut ByteEmitter)
 	{
 		byte_emitter.emit_u64(self)
 	}

@@ -2,44 +2,4 @@
 // Copyright © 2018 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// An 'array' of 28 bytes in memory referenced by `MemoryOperand`.
-///
-/// Used only by x87 Floating Point Unit (FPU) instructions.
-#[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct Contiguous28ByteMemory(pub MemoryOperand);
-
-impl MemoryOrRegister for Contiguous28ByteMemory
-{
-	#[inline(always)]
-	fn emit_mod_rm_sib(self, byte_emitter: &mut ByteEmitter, reg: impl Register)
-	{
-		self.0.emit_mod_rm_sib(byte_emitter, reg)
-	}
-	
-	#[inline(always)]
-	fn emit_rex_3(self, byte_emitter: &mut ByteEmitter, r: impl Register, byte: u8)
-	{
-		self.0.emit_rex_3(byte_emitter, r, byte)
-	}
-	
-	#[inline(always)]
-	fn emit_rex_2(self, byte_emitter: &mut ByteEmitter, byte: u8)
-	{
-		self.0.emit_rex_2(byte_emitter, byte)
-	}
-	
-	#[inline(always)]
-	fn emit_vex_prefix(self, byte_emitter: &mut ByteEmitter, mmmmm: u8, L: u8, pp: u8, w: u8, vvvv: impl Register, r: impl Register)
-	{
-		self.0.emit_vex_prefix(byte_emitter, mmmmm, L, pp, w, vvvv, r)
-	}
-}
-
-impl MemoryOrBranchHint for Contiguous28ByteMemory
-{
-	#[inline(always)]
-	fn emit_prefix_group2(self, byte_emitter: &mut ByteEmitter)
-	{
-		self.0.emit_prefix_group2(byte_emitter)
-	}
-}
+impl_memory!(Contiguous28ByteMemory);

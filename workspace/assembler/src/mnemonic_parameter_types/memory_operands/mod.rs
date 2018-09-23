@@ -4,6 +4,8 @@
 
 use super::*;
 
+include!("impl_memory.rs");
+
 
 include!("Any8BitMemory.rs");
 include!("Any16BitMemory.rs");
@@ -19,6 +21,7 @@ include!("FarPointer16BitTo16Bit.rs");
 include!("FarPointer16BitTo32Bit.rs");
 include!("FarPointer16BitTo64Bit.rs");
 include!("IndexScale.rs");
+include!("Memory.rs");
 include!("MemoryOperand.rs");
 include!("X87BinaryCodedDecimal80BitMemory.rs");
 include!("X87Float32BitMemory.rs");

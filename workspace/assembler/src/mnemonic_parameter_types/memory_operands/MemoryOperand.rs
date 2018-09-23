@@ -6,10 +6,6 @@
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct MemoryOperand(u64);
 
-impl MemoryOperand
-{
-}
-
 impl MemoryOrBranchHint for MemoryOperand
 {
 	#[inline(always)]
@@ -17,7 +13,7 @@ impl MemoryOrBranchHint for MemoryOperand
 	{
 		if self.has_segment_register()
 		{
-			let segment_register_byte = match self.segment_register_index()
+			let segment_register_byte = match self.get_segment_register_index()
 			{
 				0 => 0x26,
 				1 => 0x2E,
@@ -53,7 +49,7 @@ impl MemoryOrRegister for MemoryOperand
 			let mod_byte = 0x00 | rrr | 0x05;
 			byte_emitter.emit_u8(mod_byte);
 			
-			self.get_displacement().displacement().write(byte_emitter);
+			self.get_displacement().displacement().emit(byte_emitter);
 			return
 		}
 		
@@ -65,7 +61,7 @@ impl MemoryOrRegister for MemoryOperand
 			
 			let scaled_index_byte = if self.has_index_register()
 			{
-				((self.get_scale() << ScaleShift) & ScaleBitsMask)
+				((self.get_index_scale() << ScaleShift) & ScaleBitsMask)
 				| ((self.get_index_register_index() << MidBitsShift) & MidBitsMask)
 				| 0x05
 			}
@@ -75,7 +71,7 @@ impl MemoryOrRegister for MemoryOperand
 			};
 			byte_emitter.emit_u8(scaled_index_byte);
 			
-			self.get_displacement().displacement().write(byte_emitter);
+			self.get_displacement().displacement().emit(byte_emitter);
 			return
 		}
 		
@@ -102,7 +98,7 @@ impl MemoryOrRegister for MemoryOperand
 			let mod_byte = mod_ | rrr | 0x04;
 			byte_emitter.emit_u8(mod_byte);
 			
-			let scaled_index_byte = ((self.get_scale() << ScaleShift) & ScaleBitsMask) | ((self.get_index_register_index() << MidBitsShift) & MidBitsMask) | bbb;
+			let scaled_index_byte = ((self.get_index_scale() << ScaleShift) & ScaleBitsMask) | ((self.get_index_register_index() << MidBitsShift) & MidBitsMask) | bbb;
 			byte_emitter.emit_u8(scaled_index_byte);
 		}
 		// Is the base register sitting in the `EIP+disp32` or `RIP+disp32` (where `disp32` is a 32-bit displacement) 'row' of Intel's encoding table?
@@ -111,7 +107,7 @@ impl MemoryOrRegister for MemoryOperand
 			let mod_byte = mod_ | rrr | 0x04;
 			byte_emitter.emit_u8(mod_byte);
 			
-			let scaled_index_byte = ((self.get_scale() << ScaleShift) & ScaleBitsMask) | 0x20 | 0x04;
+			let scaled_index_byte = ((self.get_index_scale() << ScaleShift) & ScaleBitsMask) | 0x20 | 0x04;
 			byte_emitter.emit_u8(scaled_index_byte);
 		}
 		else
@@ -123,11 +119,11 @@ impl MemoryOrRegister for MemoryOperand
 		// Write displacement if it is not zero.
 		if mod_ == Mod40
 		{
-			Immediate8Bit(displacement as i8).write(byte_emitter)
+			Immediate8Bit(displacement as i8).displacement().emit(byte_emitter)
 		}
 		else if mod_ == Mod80
 		{
-			Immediate32Bit(displacement as i8).write(byte_emitter)
+			Immediate32Bit(displacement).displacement().emit(byte_emitter)
 		}
 	}
 	
@@ -175,7 +171,7 @@ impl MemoryOrRegister for MemoryOperand
 		}
 		else
 		{
-			0x00;
+			0x00
 		};
 		
 		byte_emitter.emit_u8_if_not_zero(byte);
@@ -189,7 +185,7 @@ impl MemoryOrRegister for MemoryOperand
 		let r_bit = (!r.index() << 4) & 0x80;
 		let x_bit = if rm.has_index_register()
 		{
-			(!rm.get_index().index() << 3) & 0x40
+			(!rm.get_index_register_index() << 3) & 0x40
 		}
 		else
 		{
@@ -198,7 +194,7 @@ impl MemoryOrRegister for MemoryOperand
 		
 		let b_bit = if rm.has_base_register()
 		{
-			(!rm.get_base().index() << 2) & 0x20
+			(!rm.get_base_register_index() << 2) & 0x20
 		}
 		else
 		{
@@ -220,9 +216,9 @@ impl MemoryOperand
 {
 	const DisplacementMask: u64 = 0x00000000FFFFFFFF;
 	
-	const BaseMask: u64 = 0x0000001F00000000;
+	const BaseRegisterMask: u64 = 0x0000001F00000000;
 	
-	const IndexMask: u64 = 0x00001F0000000000;
+	const IndexRegisterMask: u64 = 0x00001F0000000000;
 	
 	const IndexScaleMask: u64 = 0x0003000000000000;
 	
@@ -234,9 +230,9 @@ impl MemoryOperand
 	
 	const DisplacementShift: u64 = 0;
 	
-	const BaseShift: u64 = 32;
+	const BaseRegisterShift: u64 = 32;
 	
-	const IndexShift: u64 = 40;
+	const IndexRegisterShift: u64 = 40;
 	
 	const IndexScaleShift: u64 = 48;
 	
@@ -253,31 +249,31 @@ impl MemoryOperand
 	#[inline(always)]
 	fn has_segment_register(self) -> bool
 	{
-		(self.0 && Self::SegmentRegisterMask) != (Self::NullSegmentRegister << Self::SegmentRegisterShift)
+		(self.0 & Self::SegmentRegisterMask) != (Self::NullSegmentRegister << Self::SegmentRegisterShift)
 	}
 	
 	#[inline(always)]
 	fn has_base_register(self) -> bool
 	{
-		(self.0 && Self::BaseRegisterMask) != (Self::NullGeneralPurposeRegister << Self::BaseRegisterShift)
+		(self.0 & Self::BaseRegisterMask) != (Self::NullGeneralPurposeRegister << Self::BaseRegisterShift)
 	}
 	
 	#[inline(always)]
 	fn has_index_register(self) -> bool
 	{
-		(self.0 && Self::IndexRegisterMask) != (Self::NullGeneralPurposeRegister << Self::IndexRegisterShift)
+		(self.0 & Self::IndexRegisterMask) != (Self::NullGeneralPurposeRegister << Self::IndexRegisterShift)
 	}
 	
 	#[inline(always)]
 	fn has_address_override_for_32_bit(self) -> bool
 	{
-		(self.0 && Self::AddressOverrideFor32BitMask) != 0
+		(self.0 & Self::AddressOverrideFor32BitMask) != 0
 	}
 	
 	#[inline(always)]
 	fn has_relative_instruction_pointer_offset(self) -> bool
 	{
-		(self.0 && Self::RelativeInstructionPointerOffsetMask) != 0
+		(self.0 & Self::RelativeInstructionPointerOffsetMask) != 0
 	}
 	
 	#[inline(always)]
@@ -311,9 +307,9 @@ impl MemoryOperand
 	}
 	
 	#[inline(always)]
-	fn get_index_scale(self) -> IndexScale
+	fn get_index_scale(self) -> u8
 	{
-		unsafe { transmute((self.0 & Self::IndexScaleMask) >> Self::IndexScaleShift) }
+		(unsafe { transmute::<u64, IndexScale>((self.0 & Self::IndexScaleMask) >> Self::IndexScaleShift) }).into()
 	}
 	
 	#[inline(always)]

@@ -20,6 +20,15 @@ pub enum IndexScale
 	x8 = 3,
 }
 
+impl Into<u8> for IndexScale
+{
+	#[inline(always)]
+	fn into(self) -> u8
+	{
+		(self as u64) as u8
+	}
+}
+
 impl Default for IndexScale
 {
 	#[inline(always)]

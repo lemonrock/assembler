@@ -44,7 +44,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn prefix_group2(&mut self, memory_operand_or_branch_hint: MemoryOrBranchHint)
+	fn prefix_group2(&mut self, memory_operand_or_branch_hint: impl MemoryOrBranchHint)
 	{
 		memory_operand_or_branch_hint.emit_prefix_group2(&mut self.byte_emitter)
 	}
@@ -56,9 +56,9 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn prefix_group4(&mut self, memory_operand: MemoryOperand)
+	fn prefix_group4(&mut self, memory: impl Memory)
 	{
-		memory_operand.emit_prefix_group4()
+		memory.memory_operand().emit_prefix_group4()
 	}
 	
 	#[inline(always)]
@@ -109,7 +109,7 @@ impl OrdinaryInstructionStream
 	#[inline(always)]
 	fn displacement_immediate_1<D: Displacement>(&mut self, displacement: impl AsDisplacement<D=D>)
 	{
-		displacement.displacement().write(&mut self.byte_emitter)
+		displacement.displacement().emit(&mut self.byte_emitter)
 	}
 	
 	#[inline(always)]

@@ -10,7 +10,7 @@
 pub enum Register8Bit
 {
 	/// Register 0.
-	AL = 1,
+	AL = 0,
 	
 	/// Register 1.
 	CL = 1,

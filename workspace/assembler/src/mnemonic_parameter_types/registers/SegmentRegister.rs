@@ -30,12 +30,12 @@ pub enum SegmentRegister
 	/// Register 4.
 	///
 	/// One of four `Data Segment` registers.
-	FS = 3,
+	FS = 4,
 
 	/// Register 5.
 	///
 	/// One of four `Data Segment` registers.
-	GS = 3,
+	GS = 5,
 }
 
 impl Default for SegmentRegister
