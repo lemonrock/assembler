@@ -1,8 +1,0 @@
-// TODO:
-- generate names for overloaded functions, but
-	- do not generate if only one instance kind.
-	- maximum number of args is 4 (arg3).
-
-
-
-

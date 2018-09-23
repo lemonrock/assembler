@@ -1,0 +1,21 @@
+// TODO: Remove unused arguments from some InstructionStream functions
+// TODO: Merge instruction stream trait into struct (?how?)
+// TODO: Eliminate singleton forms
+	// Requires changing the body of some InstructionStream forms.
+// TODO: Add if statements to redirect some instructions to more efficient forms?
+// TODO: Double-check if this vex form is not needed:-
+// TODO: Consider using enum variants for Memory Operand, or, at least, parts of memory operand like the RIP-mode and base-less addressing.
+
+	// This form seems to be unused.
+	#[inline(always)]
+	fn vex(&mut self, mmmmm: u8, L: u8, pp: u8, w: u8, vvvv: impl Register)
+	{
+		if mmmmm == 0x01 && w == 0
+		{
+			self.byte_emitter.emit_2_byte_vex_prefix(0x80, vvvv, L, pp)
+		}
+		else
+		{
+			self.byte_emitter.emit_3_byte_vex_prefix(0x80, 0x40, 0x20, mmmmm, w, vvvv, L, pp)
+		}
+	}

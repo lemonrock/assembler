@@ -4,22 +4,15 @@
 
 [package]
 name = "assembler"
-description = "assembler"
-keywords = ["assembler"]
-license = "MPL-2.0"
-authors = ["Raphael Cohn <raphael.cohn@stormmq.com>", "Alexander Stocko <as@coder.gg>", "CensoredUsername <cens.username@gmail.com>"]
+description = "An efficient run-time assembler for X86-64 code that is intended to be immediately executed"
+keywords = ["assembler", "X86", "AMD64"]
+categories = ["encoding", "hardware-support"]
+license = "AGPL-3.0"
+authors = ["Raphael Cohn <raphael.cohn@stormmq.com>"]
 homepage = "https://github.com/lemonrock/assembler"
 repository = "https://github.com/lemonrock/assembler.git"
 exclude = ["*"]
 include = ["README.md", "LICENSE", "COPYRIGHT", "src/**/*.rs", "Cargo.toml", "rustfmt.toml", "clippy.toml"]
-# Relative to Cargo.toml
 readme = "README.md"
 publish = false
 version = "0.0.0"
-
-[dependencies]
-arrayvec = "^0.4"
-bitflags = "^1.0"
-either = "^1.5"
-phf = "^0.7"
-phf_macros = "^0.7"

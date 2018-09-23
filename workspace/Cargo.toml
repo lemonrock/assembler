@@ -5,6 +5,4 @@
 [workspace]
 members = [
     "assembler",
-    "assembler-runtime",
-	"gen"
 ]
