@@ -62,13 +62,13 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn rex_3(&mut self, rm: MemoryOrRegister, r: impl Register, byte: u8)
+	fn rex_3(&mut self, rm: impl MemoryOrRegister, r: impl Register, byte: u8)
 	{
 		rm.emit_rex_3(&mut self.byte_emitter, r, byte)
 	}
 	
 	#[inline(always)]
-	fn rex_2(&mut self, rm: MemoryOrRegister, byte: u8)
+	fn rex_2(&mut self, rm: impl MemoryOrRegister, byte: u8)
 	{
 		rm.emit_rex_2(&mut self.byte_emitter, byte)
 	}

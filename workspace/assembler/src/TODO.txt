@@ -1,3 +1,5 @@
+// TODO: Labels !!!
+// TODO: AnonMemoryMap and function cal
 // TODO: Remove unused arguments from some InstructionStream functions
 // TODO: Merge instruction stream trait into struct (?how?)
 // TODO: Eliminate singleton forms

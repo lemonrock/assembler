@@ -48,7 +48,7 @@ pub trait InstructionStream
 	fn adc_Any8BitMemory_Register8Bit(&mut self, arg0: Any8BitMemory, arg1: Register8Bit);
 
 	/// Add with carry byte register to `r/m8`.
-	fn adc_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit);
+	fn adc_Any8BitMemory_RegisterHigh8BitsOf16Bits(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Add with carry `imm16` to `r/m16`.
 	fn adc_Register16Bit_Immediate16Bit(&mut self, arg0: Register16Bit, arg1: Immediate16Bit);
@@ -108,31 +108,31 @@ pub trait InstructionStream
 	fn adc_Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// Add with carry byte register to `r/m8`.
-	fn adc_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn adc_Register8Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Add with carry `r/m8` to byte register.
-	fn adc_Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn adc_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Add with carry `imm32` sign extended to 64-bits to `RAX`.
 	fn adc_RAX_Immediate32Bit(&mut self, arg0: RAX, arg1: Immediate32Bit);
 
 	/// Add with carry `imm8` to `r/m8`.
-	fn adc_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit);
+	fn adc_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit);
 
 	/// Add with carry `r/m8` to byte register.
-	fn adc_RegisterHigh8BitsOf16Bit_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Any8BitMemory);
+	fn adc_RegisterHigh8BitsOf16Bits_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Any8BitMemory);
 
 	/// Add with carry byte register to `r/m8`.
-	fn adc_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn adc_RegisterHigh8BitsOf16Bits_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit);
 
 	/// Add with carry `r/m8` to byte register.
-	fn adc_RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn adc_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit);
 
 	/// Add with carry byte register to `r/m8`.
-	fn adc_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn adc_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Add with carry `r/m8` to byte register.
-	fn adc_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn adc_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Add `imm8` to `AL`.
 	fn add_AL_Immediate8Bit(&mut self, arg0: AL, arg1: Immediate8Bit);
@@ -177,7 +177,7 @@ pub trait InstructionStream
 	fn add_Any8BitMemory_Register8Bit(&mut self, arg0: Any8BitMemory, arg1: Register8Bit);
 
 	/// Add `r8` to `r/m8`.
-	fn add_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit);
+	fn add_Any8BitMemory_RegisterHigh8BitsOf16Bits(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Add `imm16` to `r/m16`.
 	fn add_Register16Bit_Immediate16Bit(&mut self, arg0: Register16Bit, arg1: Immediate16Bit);
@@ -237,31 +237,31 @@ pub trait InstructionStream
 	fn add_Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// Add `r8` to `r/m8`.
-	fn add_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn add_Register8Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Add `r/m8` to `r8`.
-	fn add_Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn add_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Add `imm32` sign-extended to 64-bits to `RAX`.
 	fn add_RAX_Immediate32Bit(&mut self, arg0: RAX, arg1: Immediate32Bit);
 
 	/// Add `imm8` to `r/m8`.
-	fn add_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit);
+	fn add_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit);
 
 	/// Add `r/m8` to `r8`.
-	fn add_RegisterHigh8BitsOf16Bit_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Any8BitMemory);
+	fn add_RegisterHigh8BitsOf16Bits_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Any8BitMemory);
 
 	/// Add `r8` to `r/m8`.
-	fn add_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn add_RegisterHigh8BitsOf16Bits_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit);
 
 	/// Add `r/m8` to `r8`.
-	fn add_RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn add_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit);
 
 	/// Add `r8` to `r/m8`.
-	fn add_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn add_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Add `r/m8` to `r8`.
-	fn add_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn add_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Add packed double-precision floating-point values from `xmm2/m128` to `xmm1`.
 	fn addpd_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -378,7 +378,7 @@ pub trait InstructionStream
 	fn and_Any8BitMemory_Register8Bit(&mut self, arg0: Any8BitMemory, arg1: Register8Bit);
 
 	/// `r/m8 && r8`.
-	fn and_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit);
+	fn and_Any8BitMemory_RegisterHigh8BitsOf16Bits(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// `r/m16 && imm16`.
 	fn and_Register16Bit_Immediate16Bit(&mut self, arg0: Register16Bit, arg1: Immediate16Bit);
@@ -438,31 +438,31 @@ pub trait InstructionStream
 	fn and_Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// `r/m8 && r8`.
-	fn and_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn and_Register8Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// `r8 && r/m8`.
-	fn and_Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn and_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// `RAX AND imm32` sign-extended to 64-bits.
 	fn and_RAX_Immediate32Bit(&mut self, arg0: RAX, arg1: Immediate32Bit);
 
 	/// `r/m8 && imm8`.
-	fn and_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit);
+	fn and_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit);
 
 	/// `r8 && r/m8`.
-	fn and_RegisterHigh8BitsOf16Bit_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Any8BitMemory);
+	fn and_RegisterHigh8BitsOf16Bits_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Any8BitMemory);
 
 	/// `r/m8 && r8`.
-	fn and_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn and_RegisterHigh8BitsOf16Bits_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit);
 
 	/// `r8 && r/m8`.
-	fn and_RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn and_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit);
 
 	/// `r/m8 && r8`.
-	fn and_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn and_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// `r8 && r/m8`.
-	fn and_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn and_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Bitwise AND of inverted `r32b` with `r/m32` with result stored in in `r32a`.
 	fn andn_Register32Bit_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Register32Bit, arg2: Any32BitMemory);
@@ -533,16 +533,16 @@ pub trait InstructionStream
 	fn blendps_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Immediate8Bit);
 
 	/// Select packed DP FP values from `xmm1` and `xmm2` from mask specified in `XMM0` and store the values in `xmm1`.
-	fn blendvpd_XMMRegister_Any128BitMemory_XMMRegister0(&mut self, arg0: XMMRegister, arg1: Any128BitMemory, arg2: XMMRegister0);
+	fn blendvpd_XMMRegister_Any128BitMemory_XMMRegister0(&mut self, arg0: XMMRegister, arg1: Any128BitMemory, arg2: XMM0);
 
 	/// Select packed DP FP values from `xmm1` and `xmm2` from mask specified in `XMM0` and store the values in `xmm1`.
-	fn blendvpd_XMMRegister_XMMRegister_XMMRegister0(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister0);
+	fn blendvpd_XMMRegister_XMMRegister_XMMRegister0(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMM0);
 
 	/// Select packed single-precision floating-point values from `xmm1` and `xmm2/m128` from mask specified in `XMM0` and store the values into `xmm1`.
-	fn blendvps_XMMRegister_Any128BitMemory_XMMRegister0(&mut self, arg0: XMMRegister, arg1: Any128BitMemory, arg2: XMMRegister0);
+	fn blendvps_XMMRegister_Any128BitMemory_XMMRegister0(&mut self, arg0: XMMRegister, arg1: Any128BitMemory, arg2: XMM0);
 
 	/// Select packed single-precision floating-point values from `xmm1` and `xmm2/m128` from mask specified in `XMM0` and store the values into `xmm1`.
-	fn blendvps_XMMRegister_XMMRegister_XMMRegister0(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister0);
+	fn blendvps_XMMRegister_XMMRegister_XMMRegister0(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMM0);
 
 	/// Extract lowest set bit from `r/m32` and set that bit in `r32`.
 	fn blsi_Register32Bit_Any32BitMemory(&mut self, arg0: Register32Bit, arg1: Any32BitMemory);
@@ -802,7 +802,7 @@ pub trait InstructionStream
 
 	/// Call near, relative, displacement relative to next instruction.
 	/// 32-bit displacement sign extended to 64-bits in 64-bit mode.
-	fn call_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn call_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// `AX` = sign-extend of `AL`.
 	fn cbw(&mut self);
@@ -1411,7 +1411,7 @@ pub trait InstructionStream
 	fn cmp_Any8BitMemory_Register8Bit(&mut self, arg0: Any8BitMemory, arg1: Register8Bit);
 
 	/// Compare `r8` with `r/m8`.
-	fn cmp_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit);
+	fn cmp_Any8BitMemory_RegisterHigh8BitsOf16Bits(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Compare `imm16` with `r/m16`.
 	fn cmp_Register16Bit_Immediate16Bit(&mut self, arg0: Register16Bit, arg1: Immediate16Bit);
@@ -1471,31 +1471,31 @@ pub trait InstructionStream
 	fn cmp_Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// Compare `r8` with `r/m8`.
-	fn cmp_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn cmp_Register8Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Compare `r/m8` with `r8`.
-	fn cmp_Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn cmp_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Compare `imm32` sign-extended to 64-bits with `RAX`.
 	fn cmp_RAX_Immediate32Bit(&mut self, arg0: RAX, arg1: Immediate32Bit);
 
 	/// Compare `imm8` with `r/m8`.
-	fn cmp_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit);
+	fn cmp_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit);
 
 	/// Compare `r/m8` with `r8`.
-	fn cmp_RegisterHigh8BitsOf16Bit_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Any8BitMemory);
+	fn cmp_RegisterHigh8BitsOf16Bits_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Any8BitMemory);
 
 	/// Compare `r8` with `r/m8`.
-	fn cmp_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn cmp_RegisterHigh8BitsOf16Bits_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit);
 
 	/// Compare `r/m8` with `r8`.
-	fn cmp_RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn cmp_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit);
 
 	/// Compare `r8` with `r/m8`.
-	fn cmp_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn cmp_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Compare `r/m8` with `r8`.
-	fn cmp_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn cmp_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Compare packed double-precision floating-point values in `xmm2/m128` and `xmm1` using `imm8` as comparison predicate.
 	fn cmppd_XMMRegister_Any128BitMemory_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: Any128BitMemory, arg2: Immediate8Bit);
@@ -1591,7 +1591,7 @@ pub trait InstructionStream
 	/// Compare `AL` with `r/m8`.
 	/// If equal the Zero Flag (ZF) is set and `r8` is loaded into `r/m8`.
 	/// Otherwise clears the Zero Flag (ZF) and loads `r/m8` into `AL`.
-	fn cmpxchg_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit);
+	fn cmpxchg_Any8BitMemory_RegisterHigh8BitsOf16Bits(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Compare `AX` with `r/m16`.
 	/// If equal the Zero Flag (ZF) is set and `r16` is loaded into `r/m16`.
@@ -1616,17 +1616,17 @@ pub trait InstructionStream
 	/// Compare `AL` with `r/m8`.
 	/// If equal the Zero Flag (ZF) is set and `r8` is loaded into `r/m8`.
 	/// Otherwise clears the Zero Flag (ZF) and loads `r/m8` into `AL`.
-	fn cmpxchg_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn cmpxchg_Register8Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Compare `AL` with `r/m8`.
 	/// If equal the Zero Flag (ZF) is set and `r8` is loaded into `r/m8`.
 	/// Otherwise clears the Zero Flag (ZF) and loads `r/m8` into `AL`.
-	fn cmpxchg_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn cmpxchg_RegisterHigh8BitsOf16Bits_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit);
 
 	/// Compare `AL` with `r/m8`.
 	/// If equal the Zero Flag (ZF) is set and `r8` is loaded into `r/m8`.
 	/// Otherwise clears the Zero Flag (ZF) and loads `r/m8` into `AL`.
-	fn cmpxchg_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn cmpxchg_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Compare `RDX:RAX` with `m128`.
 	/// If equal, set ZF and load `RCX:RBX` into `m128`.
@@ -1675,7 +1675,7 @@ pub trait InstructionStream
 	fn crc32_Register32Bit_Register8Bit(&mut self, arg0: Register32Bit, arg1: Register8Bit);
 
 	/// Accumulate Cyclic Redundancy Check 32 (CRC32) on `r/m8`.
-	fn crc32_Register32Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register32Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn crc32_Register32Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register32Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Accumulate Cyclic Redundancy Check 32 (CRC32) on `r/m64`.
 	fn crc32_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
@@ -1687,7 +1687,7 @@ pub trait InstructionStream
 	fn crc32_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
 	/// Accumulate Cyclic Redundancy Check 32 (CRC32) on `r/m8`.
-	fn crc32_Register64Bit_Register8Bit(&mut self, arg0: Register64Blit, arg1: Register8Bit);
+	fn crc32_Register64Bit_Register8Bit(&mut self, arg0: Register64Bit, arg1: Register8Bit);
 
 	/// Convert two packed signed doubleword integers from `xmm2/m128` to two packed double-precision floating-point values in `xmm1`.
 	fn cvtdq2pd_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: Any64BitMemory);
@@ -1708,10 +1708,10 @@ pub trait InstructionStream
 	fn cvtpd2dq_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Convert two packed double-precision floating-point values from `xmm/m32` to two packed signed doubleword integers in `mm`.
-	fn cvtpd2pi_MmRegister_Any128BitMemory(&mut self, arg0: MmRegister, arg1: Any128BitMemory);
+	fn cvtpd2pi_MMRegister_Any128BitMemory(&mut self, arg0: MMRegister, arg1: Any128BitMemory);
 
 	/// Convert two packed double-precision floating-point values from `xmm/m32` to two packed signed doubleword integers in `mm`.
-	fn cvtpd2pi_MmRegister_XMMRegister(&mut self, arg0: MmRegister, arg1: XMMRegister);
+	fn cvtpd2pi_MMRegister_XMMRegister(&mut self, arg0: MMRegister, arg1: XMMRegister);
 
 	/// Convert two packed double-precision floating-point values in `xmm2/m128` to two packed single-precision floating-point values in `xmm1`.
 	fn cvtpd2ps_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -1723,13 +1723,13 @@ pub trait InstructionStream
 	fn cvtpi2pd_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: Any64BitMemory);
 
 	/// Convert two packed signed doubleword integers from `mm/mem64` to two packed double-precision floating-point values in `xmm`.
-	fn cvtpi2pd_XMMRegister_MmRegister(&mut self, arg0: XMMRegister, arg1: MmRegister);
+	fn cvtpi2pd_XMMRegister_MMRegister(&mut self, arg0: XMMRegister, arg1: MMRegister);
 
 	/// Convert two signed doubleword integers from `mm/m64` to two single-precision floating-point values in `xmm`.
 	fn cvtpi2ps_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: Any64BitMemory);
 
 	/// Convert two signed doubleword integers from `mm/m64` to two single-precision floating-point values in `xmm`.
-	fn cvtpi2ps_XMMRegister_MmRegister(&mut self, arg0: XMMRegister, arg1: MmRegister);
+	fn cvtpi2ps_XMMRegister_MMRegister(&mut self, arg0: XMMRegister, arg1: MMRegister);
 
 	/// Convert four packed single-precision floating-point values from `xmm2/m128` to four packed signed doubleword integers in `xmm1`.
 	fn cvtps2dq_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -1744,10 +1744,10 @@ pub trait InstructionStream
 	fn cvtps2pd_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Convert two packed single-precision floating-point values from `xmm/m64` to two packed signed doubleword integers in `mm`.
-	fn cvtps2pi_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn cvtps2pi_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Convert two packed single-precision floating-point values from `xmm/m64` to two packed signed doubleword integers in `mm`.
-	fn cvtps2pi_MmRegister_XMMRegister(&mut self, arg0: MmRegister, arg1: XMMRegister);
+	fn cvtps2pi_MMRegister_XMMRegister(&mut self, arg0: MMRegister, arg1: XMMRegister);
 
 	/// Convert one double-precision floating-point value from `xmm/m64` to one signed doubleword integer `r32`.
 	fn cvtsd2si_Register32Bit_Any64BitMemory(&mut self, arg0: Register32Bit, arg1: Any64BitMemory);
@@ -1816,10 +1816,10 @@ pub trait InstructionStream
 	fn cvttpd2dq_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Convert two packer double-precision floating-point values from `xmm/m32` to two packed signed doubleword integers in `mm` using truncation.
-	fn cvttpd2pi_MmRegister_Any128BitMemory(&mut self, arg0: MmRegister, arg1: Any128BitMemory);
+	fn cvttpd2pi_MMRegister_Any128BitMemory(&mut self, arg0: MMRegister, arg1: Any128BitMemory);
 
 	/// Convert two packer double-precision floating-point values from `xmm/m32` to two packed signed doubleword integers in `mm` using truncation.
-	fn cvttpd2pi_MmRegister_XMMRegister(&mut self, arg0: MmRegister, arg1: XMMRegister);
+	fn cvttpd2pi_MMRegister_XMMRegister(&mut self, arg0: MMRegister, arg1: XMMRegister);
 
 	/// Convert four single-precision floating-point values from `xmm2/m128` to four signed doubleword integers in `xmm1` using truncation.
 	fn cvttps2dq_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -1828,10 +1828,10 @@ pub trait InstructionStream
 	fn cvttps2dq_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Convert two single-precision floating-point values from `xmm/m64` to two signed doubleword signed integers in `mm` using truncation.
-	fn cvttps2pi_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn cvttps2pi_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Convert two single-precision floating-point values from `xmm/m64` to two signed doubleword signed integers in `mm` using truncation.
-	fn cvttps2pi_MmRegister_XMMRegister(&mut self, arg0: MmRegister, arg1: XMMRegister);
+	fn cvttps2pi_MMRegister_XMMRegister(&mut self, arg0: MMRegister, arg1: XMMRegister);
 
 	/// Convert one double-precision floating-point value from `xmm/m64` to one signed doubleword integer in `r32` using truncation.
 	fn cvttsd2si_Register32Bit_Any64BitMemory(&mut self, arg0: Register32Bit, arg1: Any64BitMemory);
@@ -1888,7 +1888,7 @@ pub trait InstructionStream
 	fn dec_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Decrement `r/m8` by 1.
-	fn dec_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn dec_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Unsigned divide `DX:AX` by `r/m16`, with result stored in `AX` (Quotient) and `DX` (Remainder).
 	fn div_Any16BitMemory(&mut self, arg0: Any16BitMemory);
@@ -1915,7 +1915,7 @@ pub trait InstructionStream
 	fn div_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Unsigned divide `AX` by `r/m8`, with result stored in `AL` (Quotient) and `AH` (Remainder).
-	fn div_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn div_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Divide packed double-precision floating-point values in `xmm1` by packed double-precision floating-point values `xmm2/m128`.
 	fn divpd_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -2495,7 +2495,7 @@ pub trait InstructionStream
 	fn idiv_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Signed divide `AX` by `r/m8`, with result stored in `AL` (Quotient) and `AH` (Remainder).
-	fn idiv_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn idiv_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// `DX:AX` = `AX` * `r/m16`.
 	fn imul_Any16BitMemory(&mut self, arg0: Any16BitMemory);
@@ -2576,7 +2576,7 @@ pub trait InstructionStream
 	fn imul_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// `AX` = `AL` * `r/m8`.
-	fn imul_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn imul_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Input byte from I/O port in `DX` into `AL`.
 	fn in_AL_DX(&mut self, arg0: AL, arg1: DX);
@@ -2621,7 +2621,7 @@ pub trait InstructionStream
 	fn inc_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Increment `r/m8` by 1.
-	fn inc_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn inc_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Input word from I/O port specified in `DX` into memory location specified in `ES:(E)DI` or `RDI`.
 	fn ins_Any16BitMemory_DX(&mut self, arg0: Any16BitMemory, arg1: DX);
@@ -2678,16 +2678,16 @@ pub trait InstructionStream
 	fn ja_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
-	fn ja_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn ja_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
-	fn ja_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn ja_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
-	fn ja_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn ja_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
-	fn ja_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn ja_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if above or equal (Carry Flag (CF) is 0).
 	fn jae_Label(&mut self, arg0: Label);
@@ -2702,16 +2702,16 @@ pub trait InstructionStream
 	fn jae_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if above or equal (Carry Flag (CF) is 0).
-	fn jae_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn jae_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if above or equal (Carry Flag (CF) is 0).
-	fn jae_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn jae_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if above or equal (Carry Flag (CF) is 0).
-	fn jae_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jae_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if above or equal (Carry Flag (CF) is 0).
-	fn jae_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jae_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if below (Carry Flag (CF) is 1).
 	fn jb_Label(&mut self, arg0: Label);
@@ -2726,16 +2726,16 @@ pub trait InstructionStream
 	fn jb_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if below (Carry Flag (CF) is 1).
-	fn jb_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn jb_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if below (Carry Flag (CF) is 1).
-	fn jb_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn jb_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if below (Carry Flag (CF) is 1).
-	fn jb_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jb_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if below (Carry Flag (CF) is 1).
-	fn jb_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jb_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn jbe_Label(&mut self, arg0: Label);
@@ -2750,16 +2750,16 @@ pub trait InstructionStream
 	fn jbe_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
-	fn jbe_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn jbe_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
-	fn jbe_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn jbe_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
-	fn jbe_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jbe_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
-	fn jbe_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jbe_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if carry (Carry Flag (CF) is 1).
 	fn jc_Label(&mut self, arg0: Label);
@@ -2774,16 +2774,16 @@ pub trait InstructionStream
 	fn jc_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if carry (Carry Flag (CF) is 1).
-	fn jc_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn jc_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if carry (Carry Flag (CF) is 1).
-	fn jc_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn jc_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if carry (Carry Flag (CF) is 1).
-	fn jc_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jc_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if carry (Carry Flag (CF) is 1).
-	fn jc_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jc_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if equal (Zero Flag (ZF) is 1).
 	fn je_Label(&mut self, arg0: Label);
@@ -2798,16 +2798,16 @@ pub trait InstructionStream
 	fn je_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if 0 (Zero Flag (ZF) is 1).
-	fn je_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn je_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if 0 (Zero Flag (ZF) is 1).
-	fn je_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn je_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if equal (Zero Flag (ZF) is 1).
-	fn je_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn je_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if equal (Zero Flag (ZF) is 1).
-	fn je_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn je_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if `ECX` register is 0.
 	fn jecxz_Label(&mut self, arg0: Label);
@@ -2816,10 +2816,10 @@ pub trait InstructionStream
 	fn jecxz_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump short if `ECX` register is 0.
-	fn jecxz_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jecxz_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if `ECX` register is 0.
-	fn jecxz_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jecxz_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if greater (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
 	fn jg_Label(&mut self, arg0: Label);
@@ -2834,16 +2834,16 @@ pub trait InstructionStream
 	fn jg_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if greater (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
-	fn jg_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn jg_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if greater (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
-	fn jg_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn jg_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if greater (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
-	fn jg_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jg_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if greater (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
-	fn jg_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jg_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if greater or equal (Sign Flag (SF) == Overflow Flag (OF)).
 	fn jge_Label(&mut self, arg0: Label);
@@ -2858,16 +2858,16 @@ pub trait InstructionStream
 	fn jge_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if greater or equal (Sign Flag (SF) == Overflow Flag (OF)).
-	fn jge_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn jge_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if greater or equal (Sign Flag (SF) == Overflow Flag (OF)).
-	fn jge_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn jge_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if greater or equal (Sign Flag (SF) == Overflow Flag (OF)).
-	fn jge_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jge_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if greater or equal (Sign Flag (SF) == Overflow Flag (OF)).
-	fn jge_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jge_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if less (Sign Flag (SF) != Overflow Flag (OF)).
 	fn jl_Label(&mut self, arg0: Label);
@@ -2882,16 +2882,16 @@ pub trait InstructionStream
 	fn jl_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if less (Sign Flag (SF) != Overflow Flag (OF)).
-	fn jl_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn jl_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if less (Sign Flag (SF) != Overflow Flag (OF)).
-	fn jl_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn jl_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if less (Sign Flag (SF) != Overflow Flag (OF)).
-	fn jl_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jl_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if less (Sign Flag (SF) != Overflow Flag (OF)).
-	fn jl_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jl_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if less or equal (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
 	fn jle_Label(&mut self, arg0: Label);
@@ -2906,16 +2906,16 @@ pub trait InstructionStream
 	fn jle_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if less or equal (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
-	fn jle_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn jle_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if less or equal (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
-	fn jle_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn jle_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if less or equal (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
-	fn jle_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jle_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if less or equal (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
-	fn jle_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jle_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump far, absolute indirect, address given in `m16:16`.
 	fn jmp_FarPointer16BitTo16Bit(&mut self, arg0: FarPointer16BitTo16Bit);
@@ -2939,10 +2939,10 @@ pub trait InstructionStream
 	fn jmp_Register64Bit(&mut self, arg0: Register64Bit);
 
 	/// Jump near, relative, `RIP` = `RIP` + 32-bit displacement sign extended to 64-bits.
-	fn jmp_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn jmp_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump short, `RIP` = `RIP` + 8-bit displacement sign extended to 64-bits.
-	fn jmp_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jmp_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn jna_Label(&mut self, arg0: Label);
@@ -2957,16 +2957,16 @@ pub trait InstructionStream
 	fn jna_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
-	fn jna_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn jna_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
-	fn jna_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn jna_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
-	fn jna_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jna_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
-	fn jna_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jna_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if not above or equal (Carry Flag (CF) is 1).
 	fn jnae_Label(&mut self, arg0: Label);
@@ -2981,16 +2981,16 @@ pub trait InstructionStream
 	fn jnae_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not above or equal (Carry Flag (CF) is 1).
-	fn jnae_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn jnae_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if not above or equal (Carry Flag (CF) is 1).
-	fn jnae_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn jnae_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if not above or equal (Carry Flag (CF) is 1).
-	fn jnae_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jnae_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not above or equal (Carry Flag (CF) is 1).
-	fn jnae_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jnae_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if not below (Carry Flag (CF) is 0).
 	fn jnb_Label(&mut self, arg0: Label);
@@ -3005,16 +3005,16 @@ pub trait InstructionStream
 	fn jnb_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not below (Carry Flag (CF) is 0).
-	fn jnb_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn jnb_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if not below (Carry Flag (CF) is 0).
-	fn jnb_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn jnb_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if not below (Carry Flag (CF) is 0).
-	fn jnb_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jnb_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not below (Carry Flag (CF) is 0).
-	fn jnb_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jnb_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn jnbe_Label(&mut self, arg0: Label);
@@ -3029,16 +3029,16 @@ pub trait InstructionStream
 	fn jnbe_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
-	fn jnbe_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn jnbe_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
-	fn jnbe_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn jnbe_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
-	fn jnbe_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jnbe_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
-	fn jnbe_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jnbe_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if not carry (Carry Flag (CF) is 0).
 	fn jnc_Label(&mut self, arg0: Label);
@@ -3053,16 +3053,16 @@ pub trait InstructionStream
 	fn jnc_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not carry (Carry Flag (CF) is 0).
-	fn jnc_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn jnc_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if not carry (Carry Flag (CF) is 0).
-	fn jnc_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn jnc_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if not carry (Carry Flag (CF) is 0).
-	fn jnc_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jnc_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not carry (Carry Flag (CF) is 0).
-	fn jnc_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jnc_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if not equal (Zero Flag (ZF) is 0).
 	fn jne_Label(&mut self, arg0: Label);
@@ -3077,16 +3077,16 @@ pub trait InstructionStream
 	fn jne_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not equal (Zero Flag (ZF) is 0).
-	fn jne_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn jne_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if not equal (Zero Flag (ZF) is 0).
-	fn jne_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn jne_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if not equal (Zero Flag (ZF) is 0).
-	fn jne_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jne_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not equal (Zero Flag (ZF) is 0).
-	fn jne_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jne_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if not greater (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
 	fn jng_Label(&mut self, arg0: Label);
@@ -3101,16 +3101,16 @@ pub trait InstructionStream
 	fn jng_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not greater (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
-	fn jng_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn jng_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if not greater (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
-	fn jng_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn jng_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if not greater (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
-	fn jng_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jng_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not greater (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
-	fn jng_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jng_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if not greater or equal (Sign Flag (SF) != Overflow Flag (OF)).
 	fn jnge_Label(&mut self, arg0: Label);
@@ -3125,16 +3125,16 @@ pub trait InstructionStream
 	fn jnge_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not greater or equal (Sign Flag (SF) != Overflow Flag (OF)).
-	fn jnge_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn jnge_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if not greater or equal (Sign Flag (SF) != Overflow Flag (OF)).
-	fn jnge_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn jnge_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if not greater or equal (Sign Flag (SF) != Overflow Flag (OF)).
-	fn jnge_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jnge_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not greater or equal (Sign Flag (SF) != Overflow Flag (OF)).
-	fn jnge_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jnge_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if not less (Sign Flag (SF) == Overflow Flag (OF)).
 	fn jnl_Label(&mut self, arg0: Label);
@@ -3149,16 +3149,16 @@ pub trait InstructionStream
 	fn jnl_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not less (Sign Flag (SF) == Overflow Flag (OF)).
-	fn jnl_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn jnl_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if not less (Sign Flag (SF) == Overflow Flag (OF)).
-	fn jnl_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn jnl_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if not less (Sign Flag (SF) == Overflow Flag (OF)).
-	fn jnl_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jnl_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not less (Sign Flag (SF) == Overflow Flag (OF)).
-	fn jnl_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jnl_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if not less or equal (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
 	fn jnle_Label(&mut self, arg0: Label);
@@ -3173,16 +3173,16 @@ pub trait InstructionStream
 	fn jnle_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not less or equal (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
-	fn jnle_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn jnle_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if not less or equal (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
-	fn jnle_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn jnle_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if not less or equal (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
-	fn jnle_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jnle_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not less or equal (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
-	fn jnle_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jnle_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if not overflow (Overflow Flag (OF) is 0).
 	fn jno_Label(&mut self, arg0: Label);
@@ -3197,16 +3197,16 @@ pub trait InstructionStream
 	fn jno_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not overflow (Overflow Flag (OF) is 0).
-	fn jno_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn jno_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if not overflow (Overflow Flag (OF) is 0).
-	fn jno_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn jno_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if not overflow (Overflow Flag (OF) is 0).
-	fn jno_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jno_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not overflow (Overflow Flag (OF) is 0).
-	fn jno_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jno_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if not parity (Parity Flag (PF) is 0).
 	fn jnp_Label(&mut self, arg0: Label);
@@ -3221,16 +3221,16 @@ pub trait InstructionStream
 	fn jnp_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not parity (Parity Flag (PF) is 0).
-	fn jnp_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn jnp_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if not parity (Parity Flag (PF) is 0).
-	fn jnp_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn jnp_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if not parity (Parity Flag (PF) is 0).
-	fn jnp_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jnp_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not parity (Parity Flag (PF) is 0).
-	fn jnp_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jnp_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if not sign (Sign Flag (SF) is 0).
 	fn jns_Label(&mut self, arg0: Label);
@@ -3245,16 +3245,16 @@ pub trait InstructionStream
 	fn jns_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not sign (Sign Flag (SF) is 0).
-	fn jns_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn jns_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if not sign (Sign Flag (SF) is 0).
-	fn jns_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn jns_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if not sign (Sign Flag (SF) is 0).
-	fn jns_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jns_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not sign (Sign Flag (SF) is 0).
-	fn jns_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jns_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if not zero (Zero Flag (ZF) is 0).
 	fn jnz_Label(&mut self, arg0: Label);
@@ -3269,16 +3269,16 @@ pub trait InstructionStream
 	fn jnz_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not zero (Zero Flag (ZF) is 0).
-	fn jnz_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn jnz_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if not zero (Zero Flag (ZF) is 0).
-	fn jnz_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn jnz_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if not zero (Zero Flag (ZF) is 0).
-	fn jnz_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jnz_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if not zero (Zero Flag (ZF) is 0).
-	fn jnz_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jnz_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if overflow (Overflow Flag (OF) is 1).
 	fn jo_Label(&mut self, arg0: Label);
@@ -3293,16 +3293,16 @@ pub trait InstructionStream
 	fn jo_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if overflow (Overflow Flag (OF) is 1).
-	fn jo_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn jo_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if overflow (Overflow Flag (OF) is 1).
-	fn jo_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn jo_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if overflow (Overflow Flag (OF) is 1).
-	fn jo_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jo_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if overflow (Overflow Flag (OF) is 1).
-	fn jo_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jo_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if parity (Parity Flag (PF) is 1).
 	fn jp_Label(&mut self, arg0: Label);
@@ -3317,16 +3317,16 @@ pub trait InstructionStream
 	fn jp_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if parity (Parity Flag (PF) is 1).
-	fn jp_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn jp_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if parity (Parity Flag (PF) is 1).
-	fn jp_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn jp_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if parity (Parity Flag (PF) is 1).
-	fn jp_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jp_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if parity (Parity Flag (PF) is 1).
-	fn jp_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jp_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if parity even (Parity Flag (PF) is 1).
 	fn jpe_Label(&mut self, arg0: Label);
@@ -3341,16 +3341,16 @@ pub trait InstructionStream
 	fn jpe_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if parity even (Parity Flag (PF) is 1).
-	fn jpe_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn jpe_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if parity even (Parity Flag (PF) is 1).
-	fn jpe_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn jpe_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if parity even (Parity Flag (PF) is 1).
-	fn jpe_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jpe_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if parity even (Parity Flag (PF) is 1).
-	fn jpe_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jpe_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if parity odd (Parity Flag (PF) is 0).
 	fn jpo_Label(&mut self, arg0: Label);
@@ -3365,16 +3365,16 @@ pub trait InstructionStream
 	fn jpo_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if parity odd (Parity Flag (PF) is 0).
-	fn jpo_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn jpo_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if parity odd (Parity Flag (PF) is 0).
-	fn jpo_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn jpo_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if parity odd (Parity Flag (PF) is 0).
-	fn jpo_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jpo_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if parity odd (Parity Flag (PF) is 0).
-	fn jpo_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jpo_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if `RCX` register is 0.
 	fn jrcxz_Label(&mut self, arg0: Label);
@@ -3383,10 +3383,10 @@ pub trait InstructionStream
 	fn jrcxz_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump short if `RCX` register is 0.
-	fn jrcxz_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jrcxz_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if `RCX` register is 0.
-	fn jrcxz_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jrcxz_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if sign (Sign Flag (SF) is 1).
 	fn js_Label(&mut self, arg0: Label);
@@ -3401,16 +3401,16 @@ pub trait InstructionStream
 	fn js_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if sign (Sign Flag (SF) is 1).
-	fn js_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn js_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if sign (Sign Flag (SF) is 1).
-	fn js_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn js_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if sign (Sign Flag (SF) is 1).
-	fn js_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn js_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if sign (Sign Flag (SF) is 1).
-	fn js_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn js_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Jump short if zero (Zero Flag (ZF) is 1).
 	fn jz_Label(&mut self, arg0: Label);
@@ -3425,16 +3425,16 @@ pub trait InstructionStream
 	fn jz_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if 0 (Zero Flag (ZF) is 1).
-	fn jz_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn jz_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Jump near if 0 (Zero Flag (ZF) is 1).
-	fn jz_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
+	fn jz_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint);
 
 	/// Jump short if zero (Zero Flag (ZF) is 1).
-	fn jz_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn jz_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Jump short if zero (Zero Flag (ZF) is 1).
-	fn jz_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
+	fn jz_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint);
 
 	/// Load: `AH = EFLAGS(SF:ZF:0:AF:0:PF:1:CF)`.
 	fn lahf(&mut self);
@@ -3560,19 +3560,19 @@ pub trait InstructionStream
 	fn loop_Label(&mut self, arg0: Label);
 
 	/// Decrement count; jump short if count != 0.
-	fn loop_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn loop_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Decrement count; jump short if count != 0 and Zero Flag (ZF) is 1.
 	fn loope_Label(&mut self, arg0: Label);
 
 	/// Decrement count; jump short if count != 0 and Zero Flag (ZF) is 1.
-	fn loope_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn loope_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Decrement count; jump short if count != 0 and Zero Flag (ZF) is 0.
 	fn loopne_Label(&mut self, arg0: Label);
 
 	/// Decrement count; jump short if count != 0 and Zero Flag (ZF) is 0.
-	fn loopne_Relative8Bit(&mut self, arg0: Relative8Bit);
+	fn loopne_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit);
 
 	/// Load: `r16` = segment limit, selector `r16/m16`.
 	fn lsl_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
@@ -3625,7 +3625,7 @@ pub trait InstructionStream
 
 	/// Selectively write bytes from `mm1` to memory location using the byte mask in mm2.
 	/// The default memory location is specified by `DS:DI`, `EDI` or `RDI`.
-	fn maskmovq_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn maskmovq_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Return the maximum double-precision floating-point values between `xmm2/m128` and `xmm1`.
 	fn maxpd_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -3726,7 +3726,7 @@ pub trait InstructionStream
 	fn mov_Any8BitMemory_Register8Bit(&mut self, arg0: Any8BitMemory, arg1: Register8Bit);
 
 	/// Move `r8` to `r/m8`.
-	fn mov_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit);
+	fn mov_Any8BitMemory_RegisterHigh8BitsOf16Bits(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Move `AX` to `seg:offset`.
 	fn mov_MemoryOffset16Bit_AX(&mut self, arg0: MemoryOffset16Bit, arg1: AX);
@@ -3810,34 +3810,34 @@ pub trait InstructionStream
 	fn mov_Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// Move `r8` to `r/m8`.
-	fn mov_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn mov_Register8Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Move `r/m8` to `r8`.
-	fn mov_Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn mov_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Move quadword at `offset` to `RAX`.
 	fn mov_RAX_MemoryOffset64Bit(&mut self, arg0: RAX, arg1: MemoryOffset64Bit);
 
 	/// Move `imm8` to `r8`.
-	fn mov_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit);
+	fn mov_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit);
 
 	/// Move `imm8` to `r/m8`.
-	fn mov_RegisterHigh8BitsOf16Bit_Immediate8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit);
+	fn mov_RegisterHigh8BitsOf16Bits_Immediate8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit);
 
 	/// Move `r/m8` to `r8`.
-	fn mov_RegisterHigh8BitsOf16Bit_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Any8BitMemory);
+	fn mov_RegisterHigh8BitsOf16Bits_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Any8BitMemory);
 
 	/// Move `r8` to `r/m8`.
-	fn mov_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn mov_RegisterHigh8BitsOf16Bits_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit);
 
 	/// Move `r/m8` to `r8`.
-	fn mov_RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn mov_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit);
 
 	/// Move `r8` to `r/m8`.
-	fn mov_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn mov_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Move `r/m8` to `r8`.
-	fn mov_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn mov_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Move `r/m16` to segment register.
 	fn mov_SegmentRegister_Any16BitMemory(&mut self, arg0: SegmentRegister, arg1: Any16BitMemory);
@@ -3894,19 +3894,19 @@ pub trait InstructionStream
 	fn movbe_Register64Bit_Any64BitMemory(&mut self, arg0: Register64Bit, arg1: Any64BitMemory);
 
 	/// Move doubleword from `mm` to `r/m32`.
-	fn movd_Any32BitMemory_MmRegister(&mut self, arg0: Any32BitMemory, arg1: MmRegister);
+	fn movd_Any32BitMemory_MMRegister(&mut self, arg0: Any32BitMemory, arg1: MMRegister);
 
 	/// Move doubleword from `xmm` register to `r/m32`.
 	fn movd_Any32BitMemory_XMMRegister(&mut self, arg0: Any32BitMemory, arg1: XMMRegister);
 
 	/// Move doubleword from `r/m32` to `mm`.
-	fn movd_MmRegister_Any32BitMemory(&mut self, arg0: MmRegister, arg1: Any32BitMemory);
+	fn movd_MMRegister_Any32BitMemory(&mut self, arg0: MMRegister, arg1: Any32BitMemory);
 
 	/// Move doubleword from `r/m32` to `mm`.
-	fn movd_MmRegister_Register32Bit(&mut self, arg0: MmRegister, arg1: Register32Bit);
+	fn movd_MMRegister_Register32Bit(&mut self, arg0: MMRegister, arg1: Register32Bit);
 
 	/// Move doubleword from `mm` to `r/m32`.
-	fn movd_Register32Bit_MmRegister(&mut self, arg0: Register32Bit, arg1: MmRegister);
+	fn movd_Register32Bit_MMRegister(&mut self, arg0: Register32Bit, arg1: MMRegister);
 
 	/// Move doubleword from `xmm` register to `r/m32`.
 	fn movd_Register32Bit_XMMRegister(&mut self, arg0: Register32Bit, arg1: XMMRegister);
@@ -3924,7 +3924,7 @@ pub trait InstructionStream
 	fn movddup_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move low quadword from `xmm` to `mm`.
-	fn movdq2q_MmRegister_XMMRegister(&mut self, arg0: MmRegister, arg1: XMMRegister);
+	fn movdq2q_MMRegister_XMMRegister(&mut self, arg0: MMRegister, arg1: XMMRegister);
 
 	/// Move aligned double quadword from `xmm1` to `xmm2/m128`.
 	fn movdqa_Any128BitMemory_XMMRegister(&mut self, arg0: Any128BitMemory, arg1: XMMRegister);
@@ -4015,13 +4015,13 @@ pub trait InstructionStream
 	fn movntps_Any128BitMemory_XMMRegister(&mut self, arg0: Any128BitMemory, arg1: XMMRegister);
 
 	/// Move quadword from `mm` to `m64` using non-temporal hint.
-	fn movntq_Any64BitMemory_MmRegister(&mut self, arg0: Any64BitMemory, arg1: MmRegister);
+	fn movntq_Any64BitMemory_MMRegister(&mut self, arg0: Any64BitMemory, arg1: MMRegister);
 
 	/// Move quadword from `mm` to `r/m64`.
-	fn movq_Any64BitMemory_MmRegister(&mut self, arg0: Any64BitMemory, arg1: MmRegister);
+	fn movq_Any64BitMemory_MMRegister(&mut self, arg0: Any64BitMemory, arg1: MMRegister);
 
 	/// Move quadword from `mm` to `mm/m64`.
-	fn movq_Any64BitMemory_MmRegister_1(&mut self, arg0: Any64BitMemory, arg1: MmRegister);
+	fn movq_Any64BitMemory_MMRegister_1(&mut self, arg0: Any64BitMemory, arg1: MMRegister);
 
 	/// Move quadword from `xmm` register to `r/m64`.
 	fn movq_Any64BitMemory_XMMRegister(&mut self, arg0: Any64BitMemory, arg1: XMMRegister);
@@ -4030,22 +4030,22 @@ pub trait InstructionStream
 	fn movq_Any64BitMemory_XMMRegister_1(&mut self, arg0: Any64BitMemory, arg1: XMMRegister);
 
 	/// Move quadword from `r/m64` to `mm`.
-	fn movq_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn movq_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Move quadword from `mm/m64` to `mm`.
-	fn movq_MmRegister_Any64BitMemory_1(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn movq_MMRegister_Any64BitMemory_1(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Move quadword from `mm/m64` to `mm`.
-	fn movq_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn movq_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Move quadword from `mm` to `mm/m64`.
-	fn movq_MmRegister_MmRegister_1(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn movq_MMRegister_MMRegister_1(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Move quadword from `r/m64` to `mm`.
-	fn movq_MmRegister_Register64Bit(&mut self, arg0: MmRegister, arg1: Register64Bit);
+	fn movq_MMRegister_Register64Bit(&mut self, arg0: MMRegister, arg1: Register64Bit);
 
 	/// Move quadword from `mm` to `r/m64`.
-	fn movq_Register64Bit_MmRegister(&mut self, arg0: Register64Bit, arg1: MmRegister);
+	fn movq_Register64Bit_MMRegister(&mut self, arg0: Register64Bit, arg1: MMRegister);
 
 	/// Move quadword from `xmm` register to `r/m64`.
 	fn movq_Register64Bit_XMMRegister(&mut self, arg0: Register64Bit, arg1: XMMRegister);
@@ -4066,7 +4066,7 @@ pub trait InstructionStream
 	fn movq_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move quadword from mmx to low quadword of `xmm`.
-	fn movq2dq_XMMRegister_MmRegister(&mut self, arg0: XMMRegister, arg1: MmRegister);
+	fn movq2dq_XMMRegister_MMRegister(&mut self, arg0: XMMRegister, arg1: MMRegister);
 
 	/// For legacy mode, move word from address `DS:(E)SI` to `ES:(E)DI`.
 	///
@@ -4147,7 +4147,7 @@ pub trait InstructionStream
 	fn movsx_Register16Bit_Register8Bit(&mut self, arg0: Register16Bit, arg1: Register8Bit);
 
 	/// Move `r/m8` to `r16` with sign-extension.
-	fn movsx_Register16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn movsx_Register16Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register16Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Move `r/m16` to `r32`, with sign-extension.
 	fn movsx_Register32Bit_Any16BitMemory(&mut self, arg0: Register32Bit, arg1: Any16BitMemory);
@@ -4162,7 +4162,7 @@ pub trait InstructionStream
 	fn movsx_Register32Bit_Register8Bit(&mut self, arg0: Register32Bit, arg1: Register8Bit);
 
 	/// Move `r/m8` to `r32` with sign-extension.
-	fn movsx_Register32Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register32Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn movsx_Register32Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register32Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Move `r/m16` to `r64` with sign-extension.
 	fn movsx_Register64Bit_Any16BitMemory(&mut self, arg0: Register64Bit, arg1: Any16BitMemory);
@@ -4213,7 +4213,7 @@ pub trait InstructionStream
 	fn movzx_Register16Bit_Register8Bit(&mut self, arg0: Register16Bit, arg1: Register8Bit);
 
 	/// Move `r/m8` to `r16` with zero-extension.
-	fn movzx_Register16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn movzx_Register16Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register16Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Move `r/m16` to `r32` with zero-extension.
 	fn movzx_Register32Bit_Any16BitMemory(&mut self, arg0: Register32Bit, arg1: Any16BitMemory);
@@ -4228,7 +4228,7 @@ pub trait InstructionStream
 	fn movzx_Register32Bit_Register8Bit(&mut self, arg0: Register32Bit, arg1: Register8Bit);
 
 	/// Move `r/m8` to `r32` with zero-extension.
-	fn movzx_Register32Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register32Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn movzx_Register32Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register32Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Move `r/m16` to `r64` with zero-extension.
 	fn movzx_Register64Bit_Any16BitMemory(&mut self, arg0: Register64Bit, arg1: Any16BitMemory);
@@ -4275,7 +4275,7 @@ pub trait InstructionStream
 	fn mul_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Unsigned multiply (`AX` = `AL` * `r/m8`).
-	fn mul_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn mul_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Multiply packed double-precision floating-point values in `xmm2/m128` by `xmm1`.
 	fn mulpd_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -4341,7 +4341,7 @@ pub trait InstructionStream
 	fn neg_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Two's complement negate `r/m8`.
-	fn neg_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn neg_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// One byte no-operation instruction.
 	fn nop(&mut self);
@@ -4383,7 +4383,7 @@ pub trait InstructionStream
 	fn not_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Reverse each bit of `r/m8`.
-	fn not_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn not_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// `AL` OR `imm8`.
 	fn or_AL_Immediate8Bit(&mut self, arg0: AL, arg1: Immediate8Bit);
@@ -4428,7 +4428,7 @@ pub trait InstructionStream
 	fn or_Any8BitMemory_Register8Bit(&mut self, arg0: Any8BitMemory, arg1: Register8Bit);
 
 	/// `r/m8` OR `r8`.
-	fn or_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit);
+	fn or_Any8BitMemory_RegisterHigh8BitsOf16Bits(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// `r/m16` OR `imm16`.
 	fn or_Register16Bit_Immediate16Bit(&mut self, arg0: Register16Bit, arg1: Immediate16Bit);
@@ -4488,31 +4488,31 @@ pub trait InstructionStream
 	fn or_Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// `r/m8` OR `r8`.
-	fn or_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn or_Register8Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// `r8` OR `r/m8`.
-	fn or_Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn or_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// `RAX` OR `imm32` (sign-extended).
 	fn or_RAX_Immediate32Bit(&mut self, arg0: RAX, arg1: Immediate32Bit);
 
 	/// `r/m8` OR `imm8`.
-	fn or_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit);
+	fn or_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit);
 
 	/// `r8` OR `r/m8`.
-	fn or_RegisterHigh8BitsOf16Bit_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Any8BitMemory);
+	fn or_RegisterHigh8BitsOf16Bits_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Any8BitMemory);
 
 	/// `r/m8` OR `r8`.
-	fn or_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn or_RegisterHigh8BitsOf16Bits_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit);
 
 	/// `r8` OR `r/m8`.
-	fn or_RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn or_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit);
 
 	/// `r/m8` OR `r8`.
-	fn or_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn or_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// `r8` OR `r/m8`.
-	fn or_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn or_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Bitwise OR of `xmm2/m128` and `xmm1`.
 	fn orpd_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -4563,10 +4563,10 @@ pub trait InstructionStream
 	fn outsw(&mut self);
 
 	/// Compute the absolute value of bytes in `mm2/m64` and store *unsigned* result in `mm1`.
-	fn pabsb_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn pabsb_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Compute the absolute value of bytes in `mm2/m64` and store *unsigned* result in `mm1`.
-	fn pabsb_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn pabsb_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Compute the absolute value of bytes in `xmm2/m128` and store *unsigned* result in `xmm1`.
 	fn pabsb_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -4575,10 +4575,10 @@ pub trait InstructionStream
 	fn pabsb_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Compute the absolute value of 32-bit integers in `mm2/m64` and store *unsigned* result in `mm1`.
-	fn pabsd_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn pabsd_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Compute the absolute value of 32-bit integers in `mm2/m64` and store *unsigned* result in `mm1`.
-	fn pabsd_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn pabsd_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Compute the absolute value of 32-bit integers in `xmm2/m128` and store *unsigned* result in `xmm1`.
 	fn pabsd_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -4587,10 +4587,10 @@ pub trait InstructionStream
 	fn pabsd_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Compute the absolute value of 16-bit integers in `mm2/m64` and store *unsigned* result in `mm1`.
-	fn pabsw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn pabsw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Compute the absolute value of 16-bit integers in `mm2/m64` and store *unsigned* result in `mm1`.
-	fn pabsw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn pabsw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Compute the absolute value of 16-bit integers in `xmm2/m128` and store *unsigned* result in `xmm1`.
 	fn pabsw_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -4599,10 +4599,10 @@ pub trait InstructionStream
 	fn pabsw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Converts 2 packed signed doubleword integers from `mm1` and from `mm2/m64` into 4 packed signed word integers in `mm1` using signed saturation.
-	fn packssdw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn packssdw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Converts 2 packed signed doubleword integers from `mm1` and from `mm2/m64` into 4 packed signed word integers in `mm1` using signed saturation.
-	fn packssdw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn packssdw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Converts 4 packed signed doubleword integers from `xmm1` and from `xmm2/m128` into 8 packed signed word integers in `xmm1` using signed saturation.
 	fn packssdw_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -4611,10 +4611,10 @@ pub trait InstructionStream
 	fn packssdw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Converts 4 packed signed word integers from `mm1` and from `mm2/m64` into 8 packed signed byte integers in `mm1` using signed saturation.
-	fn packsswb_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn packsswb_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Converts 4 packed signed word integers from `mm1` and from `mm2/m64` into 8 packed signed byte integers in `mm1` using signed saturation.
-	fn packsswb_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn packsswb_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Converts 8 packed signed word integers from `xmm1` and from `xmm2/m128` into 16 packed signed byte integers in `xmm1` using signed saturation.
 	fn packsswb_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -4629,10 +4629,10 @@ pub trait InstructionStream
 	fn packusdw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Converts 4 signed word integers from `mm` and 4 signed word integers from `mm/m64` into 8 unsigned byte integers in `mm` using unsigned saturation.
-	fn packuswb_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn packuswb_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Converts 4 signed word integers from `mm` and 4 signed word integers from `mm/m64` into 8 unsigned byte integers in `mm` using unsigned saturation.
-	fn packuswb_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn packuswb_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Converts 8 signed word integers from `xmm1` and 8 signed word integers from `xmm2/m128` into 16 unsigned byte integers in `xmm1` using unsigned saturation.
 	fn packuswb_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -4641,10 +4641,10 @@ pub trait InstructionStream
 	fn packuswb_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Add packed byte integers from `mm/m64` and `mm`.
-	fn paddb_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn paddb_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Add packed byte integers from `mm/m64` and `mm`.
-	fn paddb_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn paddb_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Add packed byte integers from `xmm2/m128` and `xmm1`.
 	fn paddb_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -4653,10 +4653,10 @@ pub trait InstructionStream
 	fn paddb_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Add packed doubleword integers from `mm/m64` and `mm`.
-	fn paddd_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn paddd_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Add packed doubleword integers from `mm/m64` and `mm`.
-	fn paddd_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn paddd_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Add packed doubleword integers from `xmm2/m128` and `xmm1`.
 	fn paddd_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -4665,10 +4665,10 @@ pub trait InstructionStream
 	fn paddd_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Add quadword integer `mm2/m64` to `mm1`.
-	fn paddq_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn paddq_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Add quadword integer `mm2/m64` to `mm1`.
-	fn paddq_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn paddq_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Add packed quadword integers `xmm2/m128` to `xmm1`.
 	fn paddq_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -4677,10 +4677,10 @@ pub trait InstructionStream
 	fn paddq_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Add packed signed byte integers from `mm/m64` and `mm` and saturate the results.
-	fn paddsb_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn paddsb_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Add packed signed byte integers from `mm/m64` and `mm` and saturate the results.
-	fn paddsb_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn paddsb_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Add packed signed byte integers from `xmm2/m128` and `xmm1` saturate the results.
 	fn paddsb_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -4689,10 +4689,10 @@ pub trait InstructionStream
 	fn paddsb_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Add packed signed word integers from `mm/m64` and `mm` and saturate the results.
-	fn paddsw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn paddsw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Add packed signed word integers from `mm/m64` and `mm` and saturate the results.
-	fn paddsw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn paddsw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Add packed signed word integers from `xmm2/m128` and `xmm1` and saturate the results.
 	fn paddsw_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -4701,10 +4701,10 @@ pub trait InstructionStream
 	fn paddsw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Add packed unsigned byte integers from `mm/m64` and `mm` and saturate the results.
-	fn paddusb_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn paddusb_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Add packed unsigned byte integers from `mm/m64` and `mm` and saturate the results.
-	fn paddusb_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn paddusb_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Add packed unsigned byte integers from `xmm2/m128` and `xmm1` saturate the results.
 	fn paddusb_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -4713,10 +4713,10 @@ pub trait InstructionStream
 	fn paddusb_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Add packed unsigned word integers from `mm/m64` and `mm` and saturate the results.
-	fn paddusw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn paddusw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Add packed unsigned word integers from `mm/m64` and `mm` and saturate the results.
-	fn paddusw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn paddusw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Add packed unsigned word integers from `xmm2/m128` to `xmm1` and saturate the results.
 	fn paddusw_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -4725,10 +4725,10 @@ pub trait InstructionStream
 	fn paddusw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Add packed word integers from `mm/m64` and `mm`.
-	fn paddw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn paddw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Add packed word integers from `mm/m64` and `mm`.
-	fn paddw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn paddw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Add packed word integers from `xmm2/m128` and `xmm1`.
 	fn paddw_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -4737,10 +4737,10 @@ pub trait InstructionStream
 	fn paddw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Concatenate destination and source operands, extract byte-aligned result shifted to the right by constant value in `imm8` into `mm1`.
-	fn palignr_MmRegister_Any64BitMemory_Immediate8Bit(&mut self, arg0: MmRegister, arg1: Any64BitMemory, arg2: Immediate8Bit);
+	fn palignr_MMRegister_Any64BitMemory_Immediate8Bit(&mut self, arg0: MMRegister, arg1: Any64BitMemory, arg2: Immediate8Bit);
 
 	/// Concatenate destination and source operands, extract byte-aligned result shifted to the right by constant value in `imm8` into `mm1`.
-	fn palignr_MmRegister_MmRegister_Immediate8Bit(&mut self, arg0: MmRegister, arg1: MmRegister, arg2: Immediate8Bit);
+	fn palignr_MMRegister_MMRegister_Immediate8Bit(&mut self, arg0: MMRegister, arg1: MMRegister, arg2: Immediate8Bit);
 
 	/// Concatenate destination and source operands, extract byte-aligned result shifted to the right by constant value in `imm8` into `xmm1`.
 	fn palignr_XMMRegister_Any128BitMemory_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: Any128BitMemory, arg2: Immediate8Bit);
@@ -4749,10 +4749,10 @@ pub trait InstructionStream
 	fn palignr_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Immediate8Bit);
 
 	/// Bitwise AND `mm/m64` and `mm`.
-	fn pand_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn pand_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Bitwise AND `mm/m64` and `mm`.
-	fn pand_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn pand_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Bitwise AND of `xmm2/m128` and `xmm1`.
 	fn pand_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -4761,10 +4761,10 @@ pub trait InstructionStream
 	fn pand_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Bitwise AND NOT of `mm/m64` and `mm`.
-	fn pandn_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn pandn_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Bitwise AND NOT of `mm/m64` and `mm`.
-	fn pandn_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn pandn_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Bitwise AND NOT of `xmm2/m128` and `xmm1`.
 	fn pandn_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -4776,10 +4776,10 @@ pub trait InstructionStream
 	fn pause(&mut self);
 
 	/// Average packed unsigned byte integers from `mm2/m64` and `mm1` with rounding.
-	fn pavgb_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn pavgb_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Average packed unsigned byte integers from `mm2/m64` and `mm1` with rounding.
-	fn pavgb_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn pavgb_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Average packed unsigned byte integers from `xmm2/m128` and `xmm1` with rounding.
 	fn pavgb_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -4788,10 +4788,10 @@ pub trait InstructionStream
 	fn pavgb_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Average packed unsigned word integers from `mm2/m64` and `mm1` with rounding.
-	fn pavgw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn pavgw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Average packed unsigned word integers from `mm2/m64` and `mm1` with rounding.
-	fn pavgw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn pavgw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Average packed unsigned word integers from `xmm2/m128` and `xmm1` with rounding.
 	fn pavgw_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -4800,10 +4800,10 @@ pub trait InstructionStream
 	fn pavgw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Select byte values from `xmm1` and `xmm2/m128` from mask specified in the high bit of each byte in `XMM0` and store the values into `xmm1`.
-	fn pblendvb_XMMRegister_Any128BitMemory_XMMRegister0(&mut self, arg0: XMMRegister, arg1: Any128BitMemory, arg2: XMMRegister0);
+	fn pblendvb_XMMRegister_Any128BitMemory_XMMRegister0(&mut self, arg0: XMMRegister, arg1: Any128BitMemory, arg2: XMM0);
 
 	/// Select byte values from `xmm1` and `xmm2/m128` from mask specified in the high bit of each byte in `XMM0` and store the values into `xmm1`.
-	fn pblendvb_XMMRegister_XMMRegister_XMMRegister0(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister0);
+	fn pblendvb_XMMRegister_XMMRegister_XMMRegister0(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMM0);
 
 	/// Select words from `xmm1` and `xmm2/m128` from mask specified in `imm8` and store the values into `xmm1`.
 	fn pblendw_XMMRegister_Any128BitMemory_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: Any128BitMemory, arg2: Immediate8Bit);
@@ -4822,10 +4822,10 @@ pub trait InstructionStream
 	fn pclmulqdq_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Immediate8Bit);
 
 	/// Compare packed bytes in `mm/m64` and `mm` for equality.
-	fn pcmpeqb_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn pcmpeqb_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Compare packed bytes in `mm/m64` and `mm` for equality.
-	fn pcmpeqb_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn pcmpeqb_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Compare packed bytes in `xmm2/m128` and `xmm1` for equality.
 	fn pcmpeqb_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -4834,10 +4834,10 @@ pub trait InstructionStream
 	fn pcmpeqb_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Compare packed doublewords in `mm/m64` and `mm` for equality.
-	fn pcmpeqd_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn pcmpeqd_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Compare packed doublewords in `mm/m64` and `mm` for equality.
-	fn pcmpeqd_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn pcmpeqd_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Compare packed doublewords in `xmm2/m128` and `xmm1` for equality.
 	fn pcmpeqd_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -4852,10 +4852,10 @@ pub trait InstructionStream
 	fn pcmpeqq_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Compare packed words in `mm/m64` and `mm` for equality.
-	fn pcmpeqw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn pcmpeqw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Compare packed words in `mm/m64` and `mm` for equality.
-	fn pcmpeqw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn pcmpeqw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Compare packed words in `xmm2/m128` and `xmm1` for equality.
 	fn pcmpeqw_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -4876,10 +4876,10 @@ pub trait InstructionStream
 	fn pcmpestrm_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Immediate8Bit);
 
 	/// Compare packed signed byte integers in `mm` and `mm/m64` for greater than.
-	fn pcmpgtb_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn pcmpgtb_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Compare packed signed byte integers in `mm` and `mm/m64` for greater than.
-	fn pcmpgtb_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn pcmpgtb_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Compare packed signed byte integers in `xmm1` and `xmm2/m128` for greater than.
 	fn pcmpgtb_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -4888,10 +4888,10 @@ pub trait InstructionStream
 	fn pcmpgtb_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Compare packed signed doubleword integers in `mm` and `mm/m64` for greater than.
-	fn pcmpgtd_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn pcmpgtd_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Compare packed signed doubleword integers in `mm` and `mm/m64` for greater than.
-	fn pcmpgtd_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn pcmpgtd_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Compare packed signed doubleword integers in `xmm1` and `xmm2/m128` for greater than.
 	fn pcmpgtd_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -4906,10 +4906,10 @@ pub trait InstructionStream
 	fn pcmpgtq_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Compare packed signed word integers in `mm` and `mm/m64` for greater than.
-	fn pcmpgtw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn pcmpgtw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Compare packed signed word integers in `mm` and `mm/m64` for greater than.
-	fn pcmpgtw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn pcmpgtw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Compare packed signed word integers in `xmm1` and `xmm2/m128` for greater than.
 	fn pcmpgtw_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -4986,7 +4986,7 @@ pub trait InstructionStream
 
 	/// Extract the word specified by `imm8` from `mm` and move it to `reg`, bits 15-0.
 	/// The upper bits of `r32` or `r64` is zeroed.
-	fn pextrw_Register32Bit_MmRegister_Immediate8Bit(&mut self, arg0: Register32Bit, arg1: MmRegister, arg2: Immediate8Bit);
+	fn pextrw_Register32Bit_MMRegister_Immediate8Bit(&mut self, arg0: Register32Bit, arg1: MMRegister, arg2: Immediate8Bit);
 
 	/// Extract the word specified by `imm8` from `xmm` and move it to `reg`, bits 15-0.
 	/// The upper bits of `r32` or `r64` is zeroed.
@@ -4998,7 +4998,7 @@ pub trait InstructionStream
 
 	/// Extract the word specified by `imm8` from `mm` and move it to `reg`, bits 15-0.
 	/// The upper bits of `r32` or `r64` is zeroed.
-	fn pextrw_Register64Bit_MmRegister_Immediate8Bit(&mut self, arg0: Register64Bit, arg1: MmRegister, arg2: Immediate8Bit);
+	fn pextrw_Register64Bit_MMRegister_Immediate8Bit(&mut self, arg0: Register64Bit, arg1: MMRegister, arg2: Immediate8Bit);
 
 	/// Extract the word specified by `imm8` from `xmm` and move it to `reg`, bits 15-0.
 	/// The upper bits of `r32` or `r64` is zeroed.
@@ -5009,10 +5009,10 @@ pub trait InstructionStream
 	fn pextrw_Register64Bit_XMMRegister_Immediate8Bit_1(&mut self, arg0: Register64Bit, arg1: XMMRegister, arg3: Immediate8Bit);
 
 	/// Add 32-bit integers horizontally, pack to `mm1`.
-	fn phaddd_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn phaddd_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Add 32-bit integers horizontally, pack to `mm1`.
-	fn phaddd_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn phaddd_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Add 32-bit integers horizontally, pack to `xmm1`.
 	fn phaddd_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5021,10 +5021,10 @@ pub trait InstructionStream
 	fn phaddd_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Add 16-bit signed integers horizontally, pack saturated integers to `mm1`.
-	fn phaddsw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn phaddsw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Add 16-bit signed integers horizontally, pack saturated integers to `mm1`.
-	fn phaddsw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn phaddsw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Add 16-bit signed integers horizontally, pack saturated integers to `xmm1`.
 	fn phaddsw_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5033,10 +5033,10 @@ pub trait InstructionStream
 	fn phaddsw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Add 16-bit integers horizontally, pack to `mm1`.
-	fn phaddw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn phaddw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Add 16-bit integers horizontally, pack to `mm1`.
-	fn phaddw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn phaddw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Add 16-bit integers horizontally, pack to `xmm1`.
 	fn phaddw_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5051,10 +5051,10 @@ pub trait InstructionStream
 	fn phminposuw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Subtract 32-bit signed integers horizontally, pack to `mm1`.
-	fn phsubd_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn phsubd_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Subtract 32-bit signed integers horizontally, pack to `mm1`.
-	fn phsubd_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn phsubd_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Subtract 32-bit signed integers horizontally, pack to `xmm1`.
 	fn phsubd_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5063,10 +5063,10 @@ pub trait InstructionStream
 	fn phsubd_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Subtract 16-bit signed integer horizontally, pack saturated integers to `mm1`.
-	fn phsubsw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn phsubsw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Subtract 16-bit signed integer horizontally, pack saturated integers to `mm1`.
-	fn phsubsw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn phsubsw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Subtract 16-bit signed integer horizontally, pack saturated integers to `xmm1`.
 	fn phsubsw_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5075,10 +5075,10 @@ pub trait InstructionStream
 	fn phsubsw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Subtract 16-bit signed integers horizontally, pack to `mm1`.
-	fn phsubw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn phsubw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Subtract 16-bit signed integers horizontally, pack to `mm1`.
-	fn phsubw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn phsubw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Subtract 16-bit signed integers horizontally, pack to `XMM1`.
 	fn phsubw_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5099,10 +5099,10 @@ pub trait InstructionStream
 	fn pinsrd_XMMRegister_Register32Bit_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: Register32Bit, arg2: Immediate8Bit);
 
 	/// Insert the low word from `r32` or from `m16` into `mm` at the word position specified by `imm8`.
-	fn pinsrw_MmRegister_Any16BitMemory_Immediate8Bit(&mut self, arg0: MmRegister, arg1: Any16BitMemory, arg2: Immediate8Bit);
+	fn pinsrw_MMRegister_Any16BitMemory_Immediate8Bit(&mut self, arg0: MMRegister, arg1: Any16BitMemory, arg2: Immediate8Bit);
 
 	/// Insert the low word from `r32` or from `m16` into `mm` at the word position specified by `imm8`.
-	fn pinsrw_MmRegister_Register32Bit_Immediate8Bit(&mut self, arg0: MmRegister, arg1: Register32Bit, arg2: Immediate8Bit);
+	fn pinsrw_MMRegister_Register32Bit_Immediate8Bit(&mut self, arg0: MMRegister, arg1: Register32Bit, arg2: Immediate8Bit);
 
 	/// Move the low word of `r32` or from `m16` into `xmm` at the word position specified by `imm8`.
 	fn pinsrw_XMMRegister_Any16BitMemory_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: Any16BitMemory, arg2: Immediate8Bit);
@@ -5111,10 +5111,10 @@ pub trait InstructionStream
 	fn pinsrw_XMMRegister_Register32Bit_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: Register32Bit, arg2: Immediate8Bit);
 
 	/// Multiply signed and unsigned bytes, add horizontal pair of signed words, pack saturated signed-words to `mm1`.
-	fn pmaddubsw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn pmaddubsw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Multiply signed and unsigned bytes, add horizontal pair of signed words, pack saturated signed-words to `mm1`.
-	fn pmaddubsw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn pmaddubsw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Multiply signed and unsigned bytes, add horizontal pair of signed words, pack saturated signed-words to `xmm1`.
 	fn pmaddubsw_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5123,10 +5123,10 @@ pub trait InstructionStream
 	fn pmaddubsw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Multiply the packed words in `mm` by the packed words in mm/m64, add adjacent doubleword results, and store in `mm`.
-	fn pmaddwd_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn pmaddwd_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Multiply the packed words in `mm` by the packed words in mm/m64, add adjacent doubleword results, and store in `mm`.
-	fn pmaddwd_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn pmaddwd_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Multiply the packed word integers in `xmm1` by the packed word integers in `xmm2/m128`, add adjacent doubleword results, and store in `xmm1`.
 	fn pmaddwd_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5147,10 +5147,10 @@ pub trait InstructionStream
 	fn pmaxsd_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Compare signed word integers in `mm2/m64` and `mm1` and return maximum values.
-	fn pmaxsw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn pmaxsw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Compare signed word integers in `mm2/m64` and `mm1` and return maximum values.
-	fn pmaxsw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn pmaxsw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Compare signed word integers in `xmm2/m128` and `xmm1` and return maximum values.
 	fn pmaxsw_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5159,10 +5159,10 @@ pub trait InstructionStream
 	fn pmaxsw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Compare unsigned byte integers in `mm2/m64` and `mm1` and returns maximum values.
-	fn pmaxub_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn pmaxub_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Compare unsigned byte integers in `mm2/m64` and `mm1` and returns maximum values.
-	fn pmaxub_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn pmaxub_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Compare unsigned byte integers in `xmm2/m128` and `xmm1` and returns maximum values.
 	fn pmaxub_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5195,10 +5195,10 @@ pub trait InstructionStream
 	fn pminsd_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Compare signed word integers in `mm2/m64` and `mm1` and return minimum values.
-	fn pminsw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn pminsw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Compare signed word integers in `mm2/m64` and `mm1` and return minimum values.
-	fn pminsw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn pminsw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Compare signed word integers in `xmm2/m128` and `xmm1` and return minimum values.
 	fn pminsw_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5207,10 +5207,10 @@ pub trait InstructionStream
 	fn pminsw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Compare unsigned byte integers in `mm2/m64` and `mm1` and returns minimum values.
-	fn pminub_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn pminub_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Compare unsigned byte integers in `mm2/m64` and `mm1` and returns minimum values.
-	fn pminub_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn pminub_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Compare unsigned byte integers in `xmm2/m128` and `xmm1` and returns minimum values.
 	fn pminub_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5233,7 +5233,7 @@ pub trait InstructionStream
 	/// Move a byte mask of `mm` to register.
 	///
 	/// The upper bits of `r32` or `r64` are zeroed.
-	fn pmovmskb_Register32Bit_MmRegister(&mut self, arg0: Register32Bit, arg1: MmRegister);
+	fn pmovmskb_Register32Bit_MMRegister(&mut self, arg0: Register32Bit, arg1: MMRegister);
 
 	/// Move a byte mask of `xmm` to register.
 	///
@@ -5243,7 +5243,7 @@ pub trait InstructionStream
 	/// Move a byte mask of `mm` to register.
 	///
 	/// The upper bits of `r32` or `r64` are zeroed.
-	fn pmovmskb_Register64Bit_MmRegister(&mut self, arg0: Register64Bit, arg1: MmRegister);
+	fn pmovmskb_Register64Bit_MMRegister(&mut self, arg0: Register64Bit, arg1: MMRegister);
 
 	/// Move a byte mask of `xmm` to register.
 	///
@@ -5329,10 +5329,10 @@ pub trait InstructionStream
 	fn pmuldq_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Multiply 16-bit signed words, scale and round signed doublewords, pack high 16 bits to `mm1`.
-	fn pmulhrsw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn pmulhrsw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Multiply 16-bit signed words, scale and round signed doublewords, pack high 16 bits to `mm1`.
-	fn pmulhrsw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn pmulhrsw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Multiply 16-bit signed words, scale and round signed doublewords, pack high 16 bits to `xmm1`.
 	fn pmulhrsw_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5341,10 +5341,10 @@ pub trait InstructionStream
 	fn pmulhrsw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Multiply the packed unsigned word integers in `mm1` register and mm2/m64, and store the high 16 bits of the results in `mm1`.
-	fn pmulhuw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn pmulhuw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Multiply the packed unsigned word integers in `mm1` register and mm2/m64, and store the high 16 bits of the results in `mm1`.
-	fn pmulhuw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn pmulhuw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Multiply the packed unsigned word integers in `xmm1` and `xmm2/m128`, and store the high 16 bits of the results in `xmm1`.
 	fn pmulhuw_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5353,10 +5353,10 @@ pub trait InstructionStream
 	fn pmulhuw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Multiply the packed signed word integers in `mm1` register and mm2/m64, and store the high 16 bits of the results in `mm1`.
-	fn pmulhw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn pmulhw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Multiply the packed signed word integers in `mm1` register and mm2/m64, and store the high 16 bits of the results in `mm1`.
-	fn pmulhw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn pmulhw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Multiply the packed signed word integers in `xmm1` and `xmm2/m128`, and store the high 16 bits of the results in `xmm1`.
 	fn pmulhw_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5371,10 +5371,10 @@ pub trait InstructionStream
 	fn pmulld_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Multiply the packed signed word integers in `mm1` register and mm2/m64, and store the low 16 bits of the results in `mm1`.
-	fn pmullw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn pmullw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Multiply the packed signed word integers in `mm1` register and mm2/m64, and store the low 16 bits of the results in `mm1`.
-	fn pmullw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn pmullw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Multiply the packed signed word integers in `xmm1` and `xmm2/m128`, and store the low 16 bits of the results in `xmm1`.
 	fn pmullw_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5383,10 +5383,10 @@ pub trait InstructionStream
 	fn pmullw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Multiply unsigned doubleword integer in `mm1` by unsigned doubleword integer in mm2/m64, and store the quadword result in `mm1`.
-	fn pmuludq_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn pmuludq_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Multiply unsigned doubleword integer in `mm1` by unsigned doubleword integer in mm2/m64, and store the quadword result in `mm1`.
-	fn pmuludq_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn pmuludq_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Multiply packed unsigned doubleword integers in `xmm1` by packed unsigned doubleword integers in `xmm2/m128`, and store the quadword results in `xmm1`.
 	fn pmuludq_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5455,10 +5455,10 @@ pub trait InstructionStream
 	fn popfq(&mut self);
 
 	/// Bitwise OR of `mm/m64` and `mm`.
-	fn por_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn por_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Bitwise OR of `mm/m64` and `mm`.
-	fn por_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn por_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Bitwise OR of `xmm2/m128` and `xmm1`.
 	fn por_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5479,10 +5479,10 @@ pub trait InstructionStream
 	fn prefetcht2_Any8BitMemory(&mut self, arg0: Any8BitMemory);
 
 	/// Computes the absolute differences of the packed unsigned byte integers from `mm2/m64` and `mm1`; differences are then summed to produce an unsigned word integer result.
-	fn psadbw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn psadbw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Computes the absolute differences of the packed unsigned byte integers from `mm2/m64` and `mm1`; differences are then summed to produce an unsigned word integer result.
-	fn psadbw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn psadbw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Computes the absolute differences of the packed unsigned byte integers from `xmm2/m128` and `xmm1`; the 8 low differences and 8 high differences are then summed separately to produce two unsigned word integer results.
 	fn psadbw_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5491,10 +5491,10 @@ pub trait InstructionStream
 	fn psadbw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Shuffle bytes in `mm1` according to contents of `mm2/m64`.
-	fn pshufb_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn pshufb_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Shuffle bytes in `mm1` according to contents of `mm2/m64`.
-	fn pshufb_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn pshufb_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Shuffle bytes in `xmm1` according to contents of `xmm2/m128`.
 	fn pshufb_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5521,16 +5521,16 @@ pub trait InstructionStream
 	fn pshuflw_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Immediate8Bit);
 
 	/// Shuffle the words in `mm2/m64` based on the encoding in `imm8` and store the result in `mm1`.
-	fn pshufw_MmRegister_Any64BitMemory_Immediate8Bit(&mut self, arg0: MmRegister, arg1: Any64BitMemory, arg2: Immediate8Bit);
+	fn pshufw_MMRegister_Any64BitMemory_Immediate8Bit(&mut self, arg0: MMRegister, arg1: Any64BitMemory, arg2: Immediate8Bit);
 
 	/// Shuffle the words in `mm2/m64` based on the encoding in `imm8` and store the result in `mm1`.
-	fn pshufw_MmRegister_MmRegister_Immediate8Bit(&mut self, arg0: MmRegister, arg1: MmRegister, arg2: Immediate8Bit);
+	fn pshufw_MMRegister_MMRegister_Immediate8Bit(&mut self, arg0: MMRegister, arg1: MMRegister, arg2: Immediate8Bit);
 
 	/// Negate/zero/preserve packed byte integers in `mm1` depending on the corresponding sign in `mm2/m64`.
-	fn psignb_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn psignb_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Negate/zero/preserve packed byte integers in `mm1` depending on the corresponding sign in `mm2/m64`.
-	fn psignb_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn psignb_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Negate/zero/preserve packed byte integers in `xmm1` depending on the corresponding sign in `xmm2/m128`.
 	fn psignb_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5539,10 +5539,10 @@ pub trait InstructionStream
 	fn psignb_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Negate/zero/preserve packed doubleword integers in `mm1` depending on the corresponding sign in `mm2/m128`.
-	fn psignd_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn psignd_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Negate/zero/preserve packed doubleword integers in `mm1` depending on the corresponding sign in `mm2/m128`.
-	fn psignd_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn psignd_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Negate/zero/preserve packed doubleword integers in `xmm1` depending on the corresponding sign in `xmm2/m128`.
 	fn psignd_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5551,10 +5551,10 @@ pub trait InstructionStream
 	fn psignd_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Negate/zero/preserve packed word integers in `mm1` depending on the corresponding sign in `mm2/m128`.
-	fn psignw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn psignw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Negate/zero/preserve packed word integers in `mm1` depending on the corresponding sign in `mm2/m128`.
-	fn psignw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn psignw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Negate/zero/preserve packed word integers in `xmm1` depending on the corresponding sign in `xmm2/m128`.
 	fn psignw_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5563,13 +5563,13 @@ pub trait InstructionStream
 	fn psignw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Shift doublewords in `mm` left by `imm8` while shifting in zero-signed.
-	fn pslld_MmRegister_Immediate8Bit(&mut self, arg0: MmRegister, arg1: Immediate8Bit);
+	fn pslld_MMRegister_Immediate8Bit(&mut self, arg0: MMRegister, arg1: Immediate8Bit);
 
 	/// Shift doublewords in `mm` left by `mm/m64` while shifting in zero-signed.
-	fn pslld_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn pslld_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Shift doublewords in `mm` left by `mm/m64` while shifting in zero-signed.
-	fn pslld_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn pslld_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Shift doublewords in `xmm1` left by `imm8` while shifting in zero-signed.
 	fn pslld_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: Immediate8Bit);
@@ -5584,13 +5584,13 @@ pub trait InstructionStream
 	fn pslldq_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: Immediate8Bit);
 
 	/// Shift quadword in `mm` left by `imm8` while shifting in zero-signed.
-	fn psllq_MmRegister_Immediate8Bit(&mut self, arg0: MmRegister, arg1: Immediate8Bit);
+	fn psllq_MMRegister_Immediate8Bit(&mut self, arg0: MMRegister, arg1: Immediate8Bit);
 
 	/// Shift quadword in `mm` left by `mm/m64` while shifting in zero-signed.
-	fn psllq_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn psllq_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Shift quadword in `mm` left by `mm/m64` while shifting in zero-signed.
-	fn psllq_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn psllq_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Shift quadwords in `xmm1` left by `imm8` while shifting in zero-signed.
 	fn psllq_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: Immediate8Bit);
@@ -5602,13 +5602,13 @@ pub trait InstructionStream
 	fn psllq_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Shift words in `mm` left by `imm8` while shifting in zero-signed.
-	fn psllw_MmRegister_Immediate8Bit(&mut self, arg0: MmRegister, arg1: Immediate8Bit);
+	fn psllw_MMRegister_Immediate8Bit(&mut self, arg0: MMRegister, arg1: Immediate8Bit);
 
 	/// Shift words in `mm` left `mm/m64` while shifting in zero-signed.
-	fn psllw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn psllw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Shift words in `mm` left `mm/m64` while shifting in zero-signed.
-	fn psllw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn psllw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Shift words in `xmm1` left by `imm8` while shifting in zero-signed.
 	fn psllw_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: Immediate8Bit);
@@ -5620,13 +5620,13 @@ pub trait InstructionStream
 	fn psllw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Shift doublewords in `mm` right by `imm8` while shifting in sign bits.
-	fn psrad_MmRegister_Immediate8Bit(&mut self, arg0: MmRegister, arg1: Immediate8Bit);
+	fn psrad_MMRegister_Immediate8Bit(&mut self, arg0: MMRegister, arg1: Immediate8Bit);
 
 	/// Shift doublewords in `mm` right by `mm/m64` while shifting in sign bits.
-	fn psrad_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn psrad_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Shift doublewords in `mm` right by `mm/m64` while shifting in sign bits.
-	fn psrad_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn psrad_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Shift doublewords in `xmm1` right by `imm8` while shifting in sign bits.
 	fn psrad_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: Immediate8Bit);
@@ -5638,13 +5638,13 @@ pub trait InstructionStream
 	fn psrad_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Shift words in `mm` right by `imm8` while shifting in sign bits.
-	fn psraw_MmRegister_Immediate8Bit(&mut self, arg0: MmRegister, arg1: Immediate8Bit);
+	fn psraw_MMRegister_Immediate8Bit(&mut self, arg0: MMRegister, arg1: Immediate8Bit);
 
 	/// Shift words in `mm` right by `mm/m64` while shifting in sign bits.
-	fn psraw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn psraw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Shift words in `mm` right by `mm/m64` while shifting in sign bits.
-	fn psraw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn psraw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Shift words in `xmm1` right by `imm8` while shifting in sign bits.
 	fn psraw_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: Immediate8Bit);
@@ -5656,13 +5656,13 @@ pub trait InstructionStream
 	fn psraw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Shift doublewords in `mm` right by `imm8` while shifting in zero-signed.
-	fn psrld_MmRegister_Immediate8Bit(&mut self, arg0: MmRegister, arg1: Immediate8Bit);
+	fn psrld_MMRegister_Immediate8Bit(&mut self, arg0: MMRegister, arg1: Immediate8Bit);
 
 	/// Shift doublewords in `mm` right by amount specified in `mm/m64` while shifting in zero-signed.
-	fn psrld_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn psrld_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Shift doublewords in `mm` right by amount specified in `mm/m64` while shifting in zero-signed.
-	fn psrld_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn psrld_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Shift doublewords in `xmm1` right by `imm8` while shifting in zero-signed.
 	fn psrld_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: Immediate8Bit);
@@ -5677,13 +5677,13 @@ pub trait InstructionStream
 	fn psrldq_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: Immediate8Bit);
 
 	/// Shift `mm` right by `imm8` while shifting in zero-signed.
-	fn psrlq_MmRegister_Immediate8Bit(&mut self, arg0: MmRegister, arg1: Immediate8Bit);
+	fn psrlq_MMRegister_Immediate8Bit(&mut self, arg0: MMRegister, arg1: Immediate8Bit);
 
 	/// Shift `mm` right by amount specified in `mm/m64` while shifting in zero-signed.
-	fn psrlq_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn psrlq_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Shift `mm` right by amount specified in `mm/m64` while shifting in zero-signed.
-	fn psrlq_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn psrlq_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Shift quadwords in `xmm1` right by `imm8` while shifting in zero-signed.
 	fn psrlq_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: Immediate8Bit);
@@ -5695,13 +5695,13 @@ pub trait InstructionStream
 	fn psrlq_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Shift words in `mm` right by `imm8` while shifting in zero-signed.
-	fn psrlw_MmRegister_Immediate8Bit(&mut self, arg0: MmRegister, arg1: Immediate8Bit);
+	fn psrlw_MMRegister_Immediate8Bit(&mut self, arg0: MMRegister, arg1: Immediate8Bit);
 
 	/// Shift words in `mm` right by amount specified in `mm/m64` while shifting in zero-signed.
-	fn psrlw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn psrlw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Shift words in `mm` right by amount specified in `mm/m64` while shifting in zero-signed.
-	fn psrlw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn psrlw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Shift words in `xmm1` right by `imm8` while shifting in zero-signed.
 	fn psrlw_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: Immediate8Bit);
@@ -5713,10 +5713,10 @@ pub trait InstructionStream
 	fn psrlw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Subtract packed byte integers in `mm/m64` from packed byte integers in `mm`.
-	fn psubb_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn psubb_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Subtract packed byte integers in `mm/m64` from packed byte integers in `mm`.
-	fn psubb_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn psubb_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Subtract packed byte integers in `xmm2/m128` from packed byte integers in `xmm1`.
 	fn psubb_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5725,10 +5725,10 @@ pub trait InstructionStream
 	fn psubb_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Subtract packed doubleword integers in `mm/m64` from packed doubleword integers in `mm`.
-	fn psubd_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn psubd_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Subtract packed doubleword integers in `mm/m64` from packed doubleword integers in `mm`.
-	fn psubd_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn psubd_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Subtract packed doubleword integers in `xmm2/mem`128 from packed doubleword integers in `xmm1`.
 	fn psubd_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5737,10 +5737,10 @@ pub trait InstructionStream
 	fn psubd_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Subtract quadword integer in `mm1` from `mm2/m64`.
-	fn psubq_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn psubq_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Subtract quadword integer in `mm1` from `mm2/m64`.
-	fn psubq_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn psubq_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Subtract packed quadword integers in `xmm1` from `xmm2/m128`.
 	fn psubq_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5749,10 +5749,10 @@ pub trait InstructionStream
 	fn psubq_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Subtract signed packed bytes in `mm/m64` from signed packed bytes in `mm` and saturate results.
-	fn psubsb_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn psubsb_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Subtract signed packed bytes in `mm/m64` from signed packed bytes in `mm` and saturate results.
-	fn psubsb_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn psubsb_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Subtract packed signed byte integers in `xmm2/m128` from packed signed byte integers in `xmm1` and saturate results.
 	fn psubsb_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5761,10 +5761,10 @@ pub trait InstructionStream
 	fn psubsb_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Subtract signed packed words in `mm/m64` from signed packed words in `mm` and saturate results.
-	fn psubsw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn psubsw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Subtract signed packed words in `mm/m64` from signed packed words in `mm` and saturate results.
-	fn psubsw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn psubsw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Subtract packed signed word integers in `xmm2/m128` from packed signed word integers in `xmm1` and saturate results.
 	fn psubsw_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5773,10 +5773,10 @@ pub trait InstructionStream
 	fn psubsw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Subtract unsigned packed bytes in `mm/m64` from unsigned packed bytes in `mm` and saturate result.
-	fn psubusb_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn psubusb_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Subtract unsigned packed bytes in `mm/m64` from unsigned packed bytes in `mm` and saturate result.
-	fn psubusb_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn psubusb_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Subtract packed unsigned byte integers in `xmm2/m128` from packed unsigned byte integers in `xmm1` and saturate result.
 	fn psubusb_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5785,10 +5785,10 @@ pub trait InstructionStream
 	fn psubusb_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Subtract unsigned packed words in `mm/m64` from unsigned packed words in `mm` and saturate result.
-	fn psubusw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn psubusw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Subtract unsigned packed words in `mm/m64` from unsigned packed words in `mm` and saturate result.
-	fn psubusw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn psubusw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Subtract packed unsigned word integers in `xmm2/m128` from packed unsigned word integers in `xmm1` and saturate result.
 	fn psubusw_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5797,10 +5797,10 @@ pub trait InstructionStream
 	fn psubusw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Subtract packed word integers in `mm/m64` from packed word integers in `mm`.
-	fn psubw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn psubw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Subtract packed word integers in `mm/m64` from packed word integers in `mm`.
-	fn psubw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn psubw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Subtract packed word integers in `xmm2/m128` from packed word integers in `xmm1`.
 	fn psubw_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5819,10 +5819,10 @@ pub trait InstructionStream
 	fn ptest_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Unpack and interleave high-order bytes from `mm` and `mm/m64` into `mm`.
-	fn punpckhbw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn punpckhbw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Unpack and interleave high-order bytes from `mm` and `mm/m64` into `mm`.
-	fn punpckhbw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn punpckhbw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Unpack and interleave high-order bytes from `xmm1` and `xmm2/m128` into `xmm1`.
 	fn punpckhbw_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5831,10 +5831,10 @@ pub trait InstructionStream
 	fn punpckhbw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Unpack and interleave high-order doublewords from `mm` and `mm/m64` into `mm`.
-	fn punpckhdq_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn punpckhdq_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Unpack and interleave high-order doublewords from `mm` and `mm/m64` into `mm`.
-	fn punpckhdq_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn punpckhdq_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Unpack and interleave high-order doublewords from `xmm1` and `xmm2/m128` into `xmm1`.
 	fn punpckhdq_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5849,10 +5849,10 @@ pub trait InstructionStream
 	fn punpckhqdq_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Unpack and interleave high-order words from `mm` and `mm/m64` into `mm`.
-	fn punpckhwd_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn punpckhwd_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Unpack and interleave high-order words from `mm` and `mm/m64` into `mm`.
-	fn punpckhwd_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn punpckhwd_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Unpack and interleave high-order words from `xmm1` and `xmm2/m128` into `xmm1`.
 	fn punpckhwd_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5861,10 +5861,10 @@ pub trait InstructionStream
 	fn punpckhwd_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Interleave low-order bytes from `mm` and mm/m32 into `mm`.
-	fn punpcklbw_MmRegister_Any32BitMemory(&mut self, arg0: MmRegister, arg1: Any32BitMemory);
+	fn punpcklbw_MMRegister_Any32BitMemory(&mut self, arg0: MMRegister, arg1: Any32BitMemory);
 
 	/// Interleave low-order bytes from `mm` and mm/m32 into `mm`.
-	fn punpcklbw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn punpcklbw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Interleave low-order bytes from `xmm1` and `xmm2/m128` into `xmm1`.
 	fn punpcklbw_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5873,10 +5873,10 @@ pub trait InstructionStream
 	fn punpcklbw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Interleave low-order doublewords from `mm` and mm/m32 into `mm`.
-	fn punpckldq_MmRegister_Any32BitMemory(&mut self, arg0: MmRegister, arg1: Any32BitMemory);
+	fn punpckldq_MMRegister_Any32BitMemory(&mut self, arg0: MMRegister, arg1: Any32BitMemory);
 
 	/// Interleave low-order doublewords from `mm` and mm/m32 into `mm`.
-	fn punpckldq_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn punpckldq_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Interleave low-order doublewords from `xmm1` and `xmm2/m128` into `xmm1`.
 	fn punpckldq_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5891,10 +5891,10 @@ pub trait InstructionStream
 	fn punpcklqdq_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Interleave low-order words from `mm` and mm/m32 into `mm`.
-	fn punpcklwd_MmRegister_Any32BitMemory(&mut self, arg0: MmRegister, arg1: Any32BitMemory);
+	fn punpcklwd_MMRegister_Any32BitMemory(&mut self, arg0: MMRegister, arg1: Any32BitMemory);
 
 	/// Interleave low-order words from `mm` and mm/m32 into `mm`.
-	fn punpcklwd_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn punpcklwd_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Interleave low-order words from `xmm1` and `xmm2/m128` into `xmm1`.
 	fn punpcklwd_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -5948,10 +5948,10 @@ pub trait InstructionStream
 	fn pushw_Immediate8Bit(&mut self, arg0: Immediate8Bit);
 
 	/// Bitwise XOR of `mm/m64` and `mm`.
-	fn pxor_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory);
+	fn pxor_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory);
 
 	/// Bitwise XOR of `mm/m64` and `mm`.
-	fn pxor_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister);
+	fn pxor_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
 	/// Bitwise XOR of `xmm2/m128` and `xmm1`.
 	fn pxor_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -6043,13 +6043,13 @@ pub trait InstructionStream
 	fn rcl_Register8Bit_One(&mut self, arg0: Register8Bit, arg1: One);
 
 	/// Rotate 9 bits (Carry Flag (CF), `r/m8`) left `CL` times.
-	fn rcl_RegisterHigh8BitsOf16Bit_CL(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: CL);
+	fn rcl_RegisterHigh8BitsOf16Bits_CL(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: CL);
 
 	/// Rotate 9 bits (Carry Flag (CF), `r/m8`) left `imm8` times.
-	fn rcl_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit);
+	fn rcl_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit);
 
 	/// Rotate 9 bits (Carry Flag (CF), `r/m8`) left once.
-	fn rcl_RegisterHigh8BitsOf16Bit_One(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: One);
+	fn rcl_RegisterHigh8BitsOf16Bits_One(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: One);
 
 	/// Computes the approximate reciprocals of the packed single-precision floating-point values in `xmm2/m128` and stores the results in `xmm1`.
 	fn rcpps_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -6152,13 +6152,13 @@ pub trait InstructionStream
 	fn rcr_Register8Bit_One(&mut self, arg0: Register8Bit, arg1: One);
 
 	/// Rotate 9 bits (Carry Flag (CF), `r/m8`) right `CL` times.
-	fn rcr_RegisterHigh8BitsOf16Bit_CL(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: CL);
+	fn rcr_RegisterHigh8BitsOf16Bits_CL(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: CL);
 
 	/// Rotate 9 bits (Carry Flag (CF), `r/m8`) right `imm8` times.
-	fn rcr_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit);
+	fn rcr_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit);
 
 	/// Rotate 9 bits (Carry Flag (CF), `r/m8`) right once.
-	fn rcr_RegisterHigh8BitsOf16Bit_One(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: One);
+	fn rcr_RegisterHigh8BitsOf16Bits_One(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: One);
 
 	/// Load the 32-bit destination register with the `FS` base address.
 	fn rdfsbase_Register32Bit(&mut self, arg0: Register32Bit);
@@ -6412,13 +6412,13 @@ pub trait InstructionStream
 	fn rol_Register8Bit_One(&mut self, arg0: Register8Bit, arg1: One);
 
 	/// Rotate 8 bits `r/m8` left `CL` times.
-	fn rol_RegisterHigh8BitsOf16Bit_CL(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: CL);
+	fn rol_RegisterHigh8BitsOf16Bits_CL(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: CL);
 
 	/// Rotate 8 bits `r/m8` left `imm8` times.
-	fn rol_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit);
+	fn rol_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit);
 
 	/// Rotate 8 bits `r/m8` left once.
-	fn rol_RegisterHigh8BitsOf16Bit_One(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: One);
+	fn rol_RegisterHigh8BitsOf16Bits_One(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: One);
 
 	/// Rotate 16 bits `r/m16` right `CL` times.
 	fn ror_Any16BitMemory_CL(&mut self, arg0: Any16BitMemory, arg1: CL);
@@ -6505,13 +6505,13 @@ pub trait InstructionStream
 	fn ror_Register8Bit_One(&mut self, arg0: Register8Bit, arg1: One);
 
 	/// Rotate 8 bits `r/m8` right `CL` times.
-	fn ror_RegisterHigh8BitsOf16Bit_CL(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: CL);
+	fn ror_RegisterHigh8BitsOf16Bits_CL(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: CL);
 
 	/// Rotate 8 bits `r/m16` right `imm8` times.
-	fn ror_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit);
+	fn ror_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit);
 
 	/// Rotate 8 bits `r/m8` right once.
-	fn ror_RegisterHigh8BitsOf16Bit_One(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: One);
+	fn ror_RegisterHigh8BitsOf16Bits_One(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: One);
 
 	/// Rotate 32-bit `r/m32` right `imm8` times without affecting arithmetic flags.
 	fn rorx_Register32Bit_Any32BitMemory_Immediate8Bit(&mut self, arg0: Register32Bit, arg1: Any32BitMemory, arg2: Immediate8Bit);
@@ -6653,13 +6653,13 @@ pub trait InstructionStream
 	fn sal_Register8Bit_One(&mut self, arg0: Register8Bit, arg1: One);
 
 	/// Multiply `r/m8` by 2, `CL` times.
-	fn sal_RegisterHigh8BitsOf16Bit_CL(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: CL);
+	fn sal_RegisterHigh8BitsOf16Bits_CL(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: CL);
 
 	/// Multiply `r/m8` by 2, `imm8` times.
-	fn sal_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit);
+	fn sal_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit);
 
 	/// Multiply `r/m8` by 2, once.
-	fn sal_RegisterHigh8BitsOf16Bit_One(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: One);
+	fn sal_RegisterHigh8BitsOf16Bits_One(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: One);
 
 	/// Signed divide `r/m16` by 2, `CL` times.
 	fn sar_Any16BitMemory_CL(&mut self, arg0: Any16BitMemory, arg1: CL);
@@ -6734,13 +6734,13 @@ pub trait InstructionStream
 	fn sar_Register8Bit_One(&mut self, arg0: Register8Bit, arg1: One);
 
 	/// Signed divide `r/m8` by 2, `CL` times.
-	fn sar_RegisterHigh8BitsOf16Bit_CL(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: CL);
+	fn sar_RegisterHigh8BitsOf16Bits_CL(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: CL);
 
 	/// Signed divide `r/m8` by 2, `imm8` time.
-	fn sar_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit);
+	fn sar_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit);
 
 	/// Signed divide `r/m8` by 2, once.
-	fn sar_RegisterHigh8BitsOf16Bit_One(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: One);
+	fn sar_RegisterHigh8BitsOf16Bits_One(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: One);
 
 	/// Shift `r/m32` arithmetically right with count specified in `r32b`.
 	fn sarx_Register32Bit_Any32BitMemory_Register32Bit(&mut self, arg0: Register32Bit, arg1: Any32BitMemory, arg2: Register32Bit);
@@ -6797,7 +6797,7 @@ pub trait InstructionStream
 	fn sbb_Any8BitMemory_Register8Bit(&mut self, arg0: Any8BitMemory, arg1: Register8Bit);
 
 	/// Subtract with borrow `r8` from `r/m8`.
-	fn sbb_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit);
+	fn sbb_Any8BitMemory_RegisterHigh8BitsOf16Bits(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Subtract with borrow `imm16` from `r/m16`.
 	fn sbb_Register16Bit_Immediate16Bit(&mut self, arg0: Register16Bit, arg1: Immediate16Bit);
@@ -6857,31 +6857,31 @@ pub trait InstructionStream
 	fn sbb_Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// Subtract with borrow `r8` from `r/m8`.
-	fn sbb_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn sbb_Register8Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Subtract with borrow `r/m8` from `r8`.
-	fn sbb_Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn sbb_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Subtract with borrow sign-extended imm.32 to 64-bits from `RAX`.
 	fn sbb_RAX_Immediate32Bit(&mut self, arg0: RAX, arg1: Immediate32Bit);
 
 	/// Subtract with borrow `imm8` from `r/m8`.
-	fn sbb_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit);
+	fn sbb_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit);
 
 	/// Subtract with borrow `r/m8` from `r8`.
-	fn sbb_RegisterHigh8BitsOf16Bit_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Any8BitMemory);
+	fn sbb_RegisterHigh8BitsOf16Bits_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Any8BitMemory);
 
 	/// Subtract with borrow `r8` from `r/m8`.
-	fn sbb_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn sbb_RegisterHigh8BitsOf16Bits_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit);
 
 	/// Subtract with borrow `r/m8` from `r8`.
-	fn sbb_RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn sbb_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit);
 
 	/// Subtract with borrow `r8` from `r/m8`.
-	fn sbb_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn sbb_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Subtract with borrow `r/m8` from `r8`.
-	fn sbb_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn sbb_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Compare `AX` with word at `ES:(E)DI` or `RDI` then set status flags.
 	fn scas_Any16BitMemory(&mut self, arg0: Any16BitMemory);
@@ -6914,7 +6914,7 @@ pub trait InstructionStream
 	fn seta_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
-	fn seta_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn seta_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if above or equal (Carry Flag (CF) is 0).
 	fn setae_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -6923,7 +6923,7 @@ pub trait InstructionStream
 	fn setae_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if above or equal (Carry Flag (CF) is 0).
-	fn setae_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn setae_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if below (Carry Flag (CF) is 1).
 	fn setb_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -6932,7 +6932,7 @@ pub trait InstructionStream
 	fn setb_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if below (Carry Flag (CF) is 1).
-	fn setb_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn setb_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn setbe_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -6941,7 +6941,7 @@ pub trait InstructionStream
 	fn setbe_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
-	fn setbe_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn setbe_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if carry (Carry Flag (CF) is 1).
 	fn setc_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -6950,7 +6950,7 @@ pub trait InstructionStream
 	fn setc_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if carry (Carry Flag (CF) is 1).
-	fn setc_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn setc_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if equal (Zero Flag (ZF) is 1).
 	fn sete_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -6959,7 +6959,7 @@ pub trait InstructionStream
 	fn sete_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if equal (Zero Flag (ZF) is 1).
-	fn sete_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn sete_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if greater (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
 	fn setg_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -6968,7 +6968,7 @@ pub trait InstructionStream
 	fn setg_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if greater (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
-	fn setg_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn setg_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if greater or equal (Sign Flag (SF) == Overflow Flag (OF)).
 	fn setge_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -6977,7 +6977,7 @@ pub trait InstructionStream
 	fn setge_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if greater or equal (Sign Flag (SF) == Overflow Flag (OF)).
-	fn setge_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn setge_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if less (Sign Flag (SF) != Overflow Flag (OF)).
 	fn setl_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -6986,7 +6986,7 @@ pub trait InstructionStream
 	fn setl_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if less (Sign Flag (SF) != Overflow Flag (OF)).
-	fn setl_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn setl_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if less or equal (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
 	fn setle_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -6995,7 +6995,7 @@ pub trait InstructionStream
 	fn setle_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if less or equal (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
-	fn setle_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn setle_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn setna_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -7004,7 +7004,7 @@ pub trait InstructionStream
 	fn setna_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
-	fn setna_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn setna_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if not above or equal (Carry Flag (CF) is 1).
 	fn setnae_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -7013,7 +7013,7 @@ pub trait InstructionStream
 	fn setnae_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if not above or equal (Carry Flag (CF) is 1).
-	fn setnae_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn setnae_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if not below (Carry Flag (CF) is 0).
 	fn setnb_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -7022,7 +7022,7 @@ pub trait InstructionStream
 	fn setnb_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if not below (Carry Flag (CF) is 0).
-	fn setnb_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn setnb_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn setnbe_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -7031,7 +7031,7 @@ pub trait InstructionStream
 	fn setnbe_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
-	fn setnbe_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn setnbe_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if not carry (Carry Flag (CF) is 0).
 	fn setnc_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -7040,7 +7040,7 @@ pub trait InstructionStream
 	fn setnc_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if not carry (Carry Flag (CF) is 0).
-	fn setnc_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn setnc_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if not equal (Zero Flag (ZF) is 0).
 	fn setne_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -7049,7 +7049,7 @@ pub trait InstructionStream
 	fn setne_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if not equal (Zero Flag (ZF) is 0).
-	fn setne_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn setne_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if not greater (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
 	fn setng_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -7058,7 +7058,7 @@ pub trait InstructionStream
 	fn setng_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if not greater (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
-	fn setng_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn setng_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if not greater or equal (Sign Flag (SF) != Overflow Flag (OF)).
 	fn setnge_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -7067,7 +7067,7 @@ pub trait InstructionStream
 	fn setnge_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if not greater or equal (Sign Flag (SF) != Overflow Flag (OF)).
-	fn setnge_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn setnge_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if not less (Sign Flag (SF) == Overflow Flag (OF)).
 	fn setnl_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -7076,7 +7076,7 @@ pub trait InstructionStream
 	fn setnl_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if not less (Sign Flag (SF) == Overflow Flag (OF)).
-	fn setnl_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn setnl_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if not less or equal (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
 	fn setnle_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -7085,7 +7085,7 @@ pub trait InstructionStream
 	fn setnle_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if not less or equal (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
-	fn setnle_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn setnle_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if not overflow (Overflow Flag (OF) is 0).
 	fn setno_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -7094,7 +7094,7 @@ pub trait InstructionStream
 	fn setno_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if not overflow (Overflow Flag (OF) is 0).
-	fn setno_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn setno_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if not parity (Parity Flag (PF) is 0).
 	fn setnp_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -7103,7 +7103,7 @@ pub trait InstructionStream
 	fn setnp_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if not parity (Parity Flag (PF) is 0).
-	fn setnp_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn setnp_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if not sign (Sign Flag (SF) is 0).
 	fn setns_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -7112,7 +7112,7 @@ pub trait InstructionStream
 	fn setns_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if not sign (Sign Flag (SF) is 0).
-	fn setns_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn setns_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if not zero (Zero Flag (ZF) is 0).
 	fn setnz_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -7121,7 +7121,7 @@ pub trait InstructionStream
 	fn setnz_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if not zero (Zero Flag (ZF) is 0).
-	fn setnz_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn setnz_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if overflow (Overflow Flag (OF) is 1).
 	fn seto_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -7130,7 +7130,7 @@ pub trait InstructionStream
 	fn seto_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if overflow (Overflow Flag (OF) is 1).
-	fn seto_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn seto_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if parity (Parity Flag (PF) is 1).
 	fn setp_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -7139,7 +7139,7 @@ pub trait InstructionStream
 	fn setp_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if parity (Parity Flag (PF) is 1).
-	fn setp_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn setp_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if parity even (Parity Flag (PF) is 1).
 	fn setpe_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -7148,7 +7148,7 @@ pub trait InstructionStream
 	fn setpe_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if parity even (Parity Flag (PF) is 1).
-	fn setpe_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn setpe_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if parity odd (Parity Flag (PF) is 0).
 	fn setpo_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -7157,7 +7157,7 @@ pub trait InstructionStream
 	fn setpo_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if parity odd (Parity Flag (PF) is 0).
-	fn setpo_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn setpo_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if sign (Sign Flag (SF) is 1).
 	fn sets_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -7166,7 +7166,7 @@ pub trait InstructionStream
 	fn sets_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if sign (Sign Flag (SF) is 1).
-	fn sets_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn sets_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Set byte if zero (Zero Flag (ZF) is 1).
 	fn setz_Any8BitMemory(&mut self, arg0: Any8BitMemory);
@@ -7175,7 +7175,7 @@ pub trait InstructionStream
 	fn setz_Register8Bit(&mut self, arg0: Register8Bit);
 
 	/// Set byte if zero (Zero Flag (ZF) is 1).
-	fn setz_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit);
+	fn setz_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits);
 
 	/// Serializes store operations.
 	fn sfence(&mut self);
@@ -7253,13 +7253,13 @@ pub trait InstructionStream
 	fn shl_Register8Bit_One(&mut self, arg0: Register8Bit, arg1: One);
 
 	/// Multiply `r/m8` by 2, `CL` times.
-	fn shl_RegisterHigh8BitsOf16Bit_CL(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: CL);
+	fn shl_RegisterHigh8BitsOf16Bits_CL(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: CL);
 
 	/// Multiply `r/m8` by 2, `imm8` times.
-	fn shl_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit);
+	fn shl_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit);
 
 	/// Multiply `r/m8` by 2, once.
-	fn shl_RegisterHigh8BitsOf16Bit_One(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: One);
+	fn shl_RegisterHigh8BitsOf16Bits_One(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: One);
 
 	/// Shift `r/m16` to left `CL` places while shifting bits from `r16` in from the right.
 	fn shld_Any16BitMemory_Register16Bit_CL(&mut self, arg0: Any16BitMemory, arg1: Register16Bit, arg2: CL);
@@ -7382,13 +7382,13 @@ pub trait InstructionStream
 	fn shr_Register8Bit_One(&mut self, arg0: Register8Bit, arg1: One);
 
 	/// Unsigned divide `r/m8` by 2, `CL` times.
-	fn shr_RegisterHigh8BitsOf16Bit_CL(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: CL);
+	fn shr_RegisterHigh8BitsOf16Bits_CL(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: CL);
 
 	/// Unsigned divide `r/m8` by 2, `imm8` times.
-	fn shr_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit);
+	fn shr_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit);
 
 	/// Unsigned divide `r/m8` by 2, once.
-	fn shr_RegisterHigh8BitsOf16Bit_One(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: One);
+	fn shr_RegisterHigh8BitsOf16Bits_One(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: One);
 
 	/// Shift `r/m16` to right `CL` places while shifting bits from `r16` in from the left.
 	fn shrd_Any16BitMemory_Register16Bit_CL(&mut self, arg0: Any16BitMemory, arg1: Register16Bit, arg2: CL);
@@ -7567,7 +7567,7 @@ pub trait InstructionStream
 	fn sub_Any8BitMemory_Register8Bit(&mut self, arg0: Any8BitMemory, arg1: Register8Bit);
 
 	/// Subtract `r8` from `r/m8`.
-	fn sub_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit);
+	fn sub_Any8BitMemory_RegisterHigh8BitsOf16Bits(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Subtract `imm16` from `r/m16`.
 	fn sub_Register16Bit_Immediate16Bit(&mut self, arg0: Register16Bit, arg1: Immediate16Bit);
@@ -7627,31 +7627,31 @@ pub trait InstructionStream
 	fn sub_Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// Subtract `r8` from `r/m8`.
-	fn sub_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn sub_Register8Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Subtract `r/m8` from `r8`.
-	fn sub_Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn sub_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Subtract `imm32` sign-extended to 64-bits from `RAX`.
 	fn sub_RAX_Immediate32Bit(&mut self, arg0: RAX, arg1: Immediate32Bit);
 
 	/// Subtract `imm8` from `r/m8`.
-	fn sub_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit);
+	fn sub_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit);
 
 	/// Subtract `r/m8` from `r8`.
-	fn sub_RegisterHigh8BitsOf16Bit_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Any8BitMemory);
+	fn sub_RegisterHigh8BitsOf16Bits_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Any8BitMemory);
 
 	/// Subtract `r8` from `r/m8`.
-	fn sub_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn sub_RegisterHigh8BitsOf16Bits_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit);
 
 	/// Subtract `r/m8` from `r8`.
-	fn sub_RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn sub_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit);
 
 	/// Subtract `r8` from `r/m8`.
-	fn sub_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn sub_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Subtract `r/m8` from `r8`.
-	fn sub_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn sub_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Subtract packed double-precision floating-point values in `xmm2/m128` from `xmm1`.
 	fn subpd_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -7756,7 +7756,7 @@ pub trait InstructionStream
 	/// AND `r8` with `r/m8`.
 	///
 	/// The Sign Flag (SF), Zero Flag (ZF) and Parity Flag (PF) are each potentially set.
-	fn test_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit);
+	fn test_Any8BitMemory_RegisterHigh8BitsOf16Bits(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// AND `imm16` with `r/m16`.
 	///
@@ -7801,7 +7801,7 @@ pub trait InstructionStream
 	/// AND `r8` with `r/m8`.
 	///
 	/// The Sign Flag (SF), Zero Flag (ZF) and Parity Flag (PF) are each potentially set.
-	fn test_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn test_Register8Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// AND `imm32` sign-extended to 64-bits with `RAX`.
 	///
@@ -7811,17 +7811,17 @@ pub trait InstructionStream
 	/// AND `imm8` with `r/m8`.
 	///
 	/// The Sign Flag (SF), Zero Flag (ZF) and Parity Flag (PF) are each potentially set.
-	fn test_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit);
+	fn test_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit);
 
 	/// AND `r8` with `r/m8`.
 	///
 	/// The Sign Flag (SF), Zero Flag (ZF) and Parity Flag (PF) are each potentially set.
-	fn test_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn test_RegisterHigh8BitsOf16Bits_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit);
 
 	/// AND `r8` with `r/m8`.
 	///
 	/// The Sign Flag (SF), Zero Flag (ZF) and Parity Flag (PF) are each potentially set.
-	fn test_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn test_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Count the number of trailing zero bits in `r/m16` and return result in `r16`.
 	fn tzcnt_Register16Bit_Any16BitMemory(&mut self, arg0: Register16Bit, arg1: Any16BitMemory);
@@ -11711,7 +11711,7 @@ pub trait InstructionStream
 	fn xadd_Any8BitMemory_Register8Bit(&mut self, arg0: Any8BitMemory, arg1: Register8Bit);
 
 	/// Exchange `r8` and `r/m8`; load sum into `r/m8`.
-	fn xadd_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit);
+	fn xadd_Any8BitMemory_RegisterHigh8BitsOf16Bits(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Exchange `r16` and `r/m16`; load sum into `r/m16`.
 	fn xadd_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
@@ -11726,13 +11726,13 @@ pub trait InstructionStream
 	fn xadd_Register8Bit_Register8Bit(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// Exchange `r8` and `r/m8`; load sum into `r/m8`.
-	fn xadd_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn xadd_Register8Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Exchange `r8` and `r/m8`; load sum into `r/m8`.
-	fn xadd_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn xadd_RegisterHigh8BitsOf16Bits_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit);
 
 	/// Exchange `r8` and `r/m8`; load sum into `r/m8`.
-	fn xadd_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn xadd_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Specifies the start of an Restricted Transactional Memory (RTM) code region.
 	///
@@ -11742,7 +11742,7 @@ pub trait InstructionStream
 	/// Specifies the start of an Restricted Transactional Memory (RTM) code region.
 	///
 	/// Provides a 32-bit relative offset to compute the address of the fallback instruction address at which execution resumes following an Restricted Transactional Memory (RTM) abort.
-	fn xbegin_Relative32Bit(&mut self, arg0: Relative32Bit);
+	fn xbegin_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
 	/// Exchange `r16` with `AX`.
 	fn xchg_AX_Register16Bit(&mut self, arg0: AX, arg1: Register16Bit);
@@ -11763,7 +11763,7 @@ pub trait InstructionStream
 	fn xchg_Any8BitMemory_Register8Bit(&mut self, arg0: Any8BitMemory, arg1: Register8Bit);
 
 	/// Exchange `r8` (byte register) with byte from `r/m8`.
-	fn xchg_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit);
+	fn xchg_Any8BitMemory_RegisterHigh8BitsOf16Bits(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Exchange `AX` with `r16`.
 	fn xchg_Register16Bit_AX(&mut self, arg0: Register16Bit, arg1: AX);
@@ -11811,28 +11811,28 @@ pub trait InstructionStream
 	fn xchg_Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// Exchange `r8` (byte register) with byte from `r/m8`.
-	fn xchg_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn xchg_Register8Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Exchange byte from `r/m8` with `r8` (alternate form).
-	fn xchg_Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn xchg_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Exchange `r64` with `RAX`.
 	fn xchg_RAX_Register64Bit(&mut self, arg0: RAX, arg1: Register64Bit);
 
 	/// Exchange byte from `r/m8` with `r8`.
-	fn xchg_RegisterHigh8BitsOf16Bit_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Any8BitMemory);
+	fn xchg_RegisterHigh8BitsOf16Bits_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Any8BitMemory);
 
 	/// Exchange `r8` (byte register) with byte from `r/m8`.
-	fn xchg_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn xchg_RegisterHigh8BitsOf16Bits_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit);
 
 	/// Exchange byte from `r/m8` with `r8` (alternate form).
-	fn xchg_RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn xchg_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit);
 
 	/// Exchange `r8` (byte register) with byte from `r/m8`.
-	fn xchg_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn xchg_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Exchange byte from `r/m8` with `r8` (alternate form).
-	fn xchg_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn xchg_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Specifies the end of an Restricted Transactional Memory (RTM) code region.
 	fn xend(&mut self);
@@ -11892,7 +11892,7 @@ pub trait InstructionStream
 	fn xor_Any8BitMemory_Register8Bit(&mut self, arg0: Any8BitMemory, arg1: Register8Bit);
 
 	/// `r/m8` XOR `r8`.
-	fn xor_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit);
+	fn xor_Any8BitMemory_RegisterHigh8BitsOf16Bits(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// `r/m16` XOR `imm16`.
 	fn xor_Register16Bit_Immediate16Bit(&mut self, arg0: Register16Bit, arg1: Immediate16Bit);
@@ -11952,31 +11952,31 @@ pub trait InstructionStream
 	fn xor_Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// `r/m8` XOR `r8`.
-	fn xor_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn xor_Register8Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// `r8` XOR `r/m8`.
-	fn xor_Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn xor_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// `RAX` XOR `imm32` (sign-extended).
 	fn xor_RAX_Immediate32Bit(&mut self, arg0: RAX, arg1: Immediate32Bit);
 
 	/// `r/m8` XOR `imm8`.
-	fn xor_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit);
+	fn xor_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit);
 
 	/// `r8` XOR `r/m8`.
-	fn xor_RegisterHigh8BitsOf16Bit_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Any8BitMemory);
+	fn xor_RegisterHigh8BitsOf16Bits_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Any8BitMemory);
 
 	/// `r/m8` XOR `r8`.
-	fn xor_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn xor_RegisterHigh8BitsOf16Bits_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit);
 
 	/// `r8` XOR `r/m8`.
-	fn xor_RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit);
+	fn xor_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit);
 
 	/// `r/m8` XOR `r8`.
-	fn xor_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn xor_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// `r8` XOR `r/m8`.
-	fn xor_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit);
+	fn xor_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Bitwise exclusive-OR of `xmm2/m128` and `xmm1`.
 	fn xorpd_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -12442,7 +12442,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn adc_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit)
+	fn adc_Any8BitMemory_RegisterHigh8BitsOf16Bits(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -12962,7 +12962,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn adc_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn adc_Register8Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -12988,7 +12988,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn adc_Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn adc_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -13040,7 +13040,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn adc_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit)
+	fn adc_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -13066,7 +13066,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn adc_RegisterHigh8BitsOf16Bit_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Any8BitMemory)
+	fn adc_RegisterHigh8BitsOf16Bits_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Any8BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -13092,7 +13092,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn adc_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit)
+	fn adc_RegisterHigh8BitsOf16Bits_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -13118,7 +13118,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn adc_RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit)
+	fn adc_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -13144,7 +13144,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn adc_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn adc_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -13170,7 +13170,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn adc_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn adc_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -13560,7 +13560,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn add_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit)
+	fn add_Any8BitMemory_RegisterHigh8BitsOf16Bits(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -14080,7 +14080,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn add_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn add_Register8Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -14106,7 +14106,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn add_Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn add_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -14158,7 +14158,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn add_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit)
+	fn add_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -14184,7 +14184,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn add_RegisterHigh8BitsOf16Bit_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Any8BitMemory)
+	fn add_RegisterHigh8BitsOf16Bits_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Any8BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -14210,7 +14210,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn add_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit)
+	fn add_RegisterHigh8BitsOf16Bits_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -14236,7 +14236,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn add_RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit)
+	fn add_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -14262,7 +14262,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn add_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn add_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -14288,7 +14288,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn add_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn add_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -15302,7 +15302,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn and_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit)
+	fn and_Any8BitMemory_RegisterHigh8BitsOf16Bits(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -15822,7 +15822,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn and_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn and_Register8Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -15848,7 +15848,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn and_Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn and_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -15900,7 +15900,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn and_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit)
+	fn and_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -15926,7 +15926,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn and_RegisterHigh8BitsOf16Bit_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Any8BitMemory)
+	fn and_RegisterHigh8BitsOf16Bits_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Any8BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -15952,7 +15952,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn and_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit)
+	fn and_RegisterHigh8BitsOf16Bits_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -15978,7 +15978,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn and_RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit)
+	fn and_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -16004,7 +16004,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn and_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn and_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -16030,7 +16030,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn and_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn and_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -16576,7 +16576,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn blendvpd_XMMRegister_Any128BitMemory_XMMRegister0(&mut self, arg0: XMMRegister, arg1: Any128BitMemory, arg2: XMMRegister0)
+	fn blendvpd_XMMRegister_Any128BitMemory_XMMRegister0(&mut self, arg0: XMMRegister, arg1: Any128BitMemory, arg2: XMM0)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -16602,7 +16602,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn blendvpd_XMMRegister_XMMRegister_XMMRegister0(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister0)
+	fn blendvpd_XMMRegister_XMMRegister_XMMRegister0(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMM0)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -16628,7 +16628,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn blendvps_XMMRegister_Any128BitMemory_XMMRegister0(&mut self, arg0: XMMRegister, arg1: Any128BitMemory, arg2: XMMRegister0)
+	fn blendvps_XMMRegister_Any128BitMemory_XMMRegister0(&mut self, arg0: XMMRegister, arg1: Any128BitMemory, arg2: XMM0)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -16654,7 +16654,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn blendvps_XMMRegister_XMMRegister_XMMRegister0(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister0)
+	fn blendvps_XMMRegister_XMMRegister_XMMRegister0(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMM0)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -18864,7 +18864,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn call_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn call_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -24142,7 +24142,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn cmp_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit)
+	fn cmp_Any8BitMemory_RegisterHigh8BitsOf16Bits(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -24662,7 +24662,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn cmp_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn cmp_Register8Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -24688,7 +24688,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn cmp_Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn cmp_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -24740,7 +24740,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn cmp_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit)
+	fn cmp_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -24766,7 +24766,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn cmp_RegisterHigh8BitsOf16Bit_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Any8BitMemory)
+	fn cmp_RegisterHigh8BitsOf16Bits_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Any8BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -24792,7 +24792,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn cmp_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit)
+	fn cmp_RegisterHigh8BitsOf16Bits_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -24818,7 +24818,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn cmp_RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit)
+	fn cmp_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -24844,7 +24844,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn cmp_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn cmp_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -24870,7 +24870,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn cmp_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn cmp_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -25416,7 +25416,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn cmpxchg_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit)
+	fn cmpxchg_Any8BitMemory_RegisterHigh8BitsOf16Bits(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -25546,7 +25546,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn cmpxchg_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn cmpxchg_Register8Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -25572,7 +25572,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn cmpxchg_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit)
+	fn cmpxchg_RegisterHigh8BitsOf16Bits_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -25598,7 +25598,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn cmpxchg_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn cmpxchg_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -25988,7 +25988,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn crc32_Register32Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register32Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn crc32_Register32Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register32Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -26274,7 +26274,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn cvtpd2pi_MmRegister_Any128BitMemory(&mut self, arg0: MmRegister, arg1: Any128BitMemory)
+	fn cvtpd2pi_MMRegister_Any128BitMemory(&mut self, arg0: MMRegister, arg1: Any128BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -26300,7 +26300,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn cvtpd2pi_MmRegister_XMMRegister(&mut self, arg0: MmRegister, arg1: XMMRegister)
+	fn cvtpd2pi_MMRegister_XMMRegister(&mut self, arg0: MMRegister, arg1: XMMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -26404,7 +26404,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn cvtpi2pd_XMMRegister_MmRegister(&mut self, arg0: XMMRegister, arg1: MmRegister)
+	fn cvtpi2pd_XMMRegister_MMRegister(&mut self, arg0: XMMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -26456,7 +26456,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn cvtpi2ps_XMMRegister_MmRegister(&mut self, arg0: XMMRegister, arg1: MmRegister)
+	fn cvtpi2ps_XMMRegister_MMRegister(&mut self, arg0: XMMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -26586,7 +26586,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn cvtps2pi_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn cvtps2pi_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -26612,7 +26612,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn cvtps2pi_MmRegister_XMMRegister(&mut self, arg0: MmRegister, arg1: XMMRegister)
+	fn cvtps2pi_MMRegister_XMMRegister(&mut self, arg0: MMRegister, arg1: XMMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -27210,7 +27210,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn cvttpd2pi_MmRegister_Any128BitMemory(&mut self, arg0: MmRegister, arg1: Any128BitMemory)
+	fn cvttpd2pi_MMRegister_Any128BitMemory(&mut self, arg0: MMRegister, arg1: Any128BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -27236,7 +27236,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn cvttpd2pi_MmRegister_XMMRegister(&mut self, arg0: MmRegister, arg1: XMMRegister)
+	fn cvttpd2pi_MMRegister_XMMRegister(&mut self, arg0: MMRegister, arg1: XMMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -27314,7 +27314,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn cvttps2pi_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn cvttps2pi_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -27340,7 +27340,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn cvttps2pi_MmRegister_XMMRegister(&mut self, arg0: MmRegister, arg1: XMMRegister)
+	fn cvttps2pi_MMRegister_XMMRegister(&mut self, arg0: MMRegister, arg1: XMMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -27834,7 +27834,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn dec_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn dec_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -28068,7 +28068,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn div_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn div_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -33032,7 +33032,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn idiv_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn idiv_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -33734,7 +33734,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn imul_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn imul_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -34124,7 +34124,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn inc_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn inc_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -34618,7 +34618,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn ja_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn ja_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -34644,7 +34644,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn ja_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn ja_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -34670,7 +34670,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn ja_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn ja_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -34696,7 +34696,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn ja_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn ja_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -34826,7 +34826,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jae_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn jae_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -34852,7 +34852,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jae_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn jae_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -34878,7 +34878,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jae_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jae_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -34904,7 +34904,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jae_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jae_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -35034,7 +35034,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jb_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn jb_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -35060,7 +35060,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jb_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn jb_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -35086,7 +35086,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jb_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jb_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -35112,7 +35112,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jb_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jb_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -35242,7 +35242,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jbe_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn jbe_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -35268,7 +35268,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jbe_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn jbe_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -35294,7 +35294,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jbe_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jbe_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -35320,7 +35320,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jbe_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jbe_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -35450,7 +35450,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jc_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn jc_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -35476,7 +35476,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jc_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn jc_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -35502,7 +35502,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jc_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jc_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -35528,7 +35528,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jc_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jc_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -35658,7 +35658,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn je_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn je_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -35684,7 +35684,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn je_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn je_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -35710,7 +35710,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn je_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn je_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -35736,7 +35736,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn je_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn je_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -35814,7 +35814,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jecxz_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jecxz_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -35840,7 +35840,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jecxz_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jecxz_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -35970,7 +35970,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jg_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn jg_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -35996,7 +35996,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jg_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn jg_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -36022,7 +36022,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jg_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jg_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -36048,7 +36048,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jg_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jg_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -36178,7 +36178,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jge_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn jge_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -36204,7 +36204,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jge_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn jge_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -36230,7 +36230,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jge_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jge_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -36256,7 +36256,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jge_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jge_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -36386,7 +36386,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jl_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn jl_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -36412,7 +36412,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jl_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn jl_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -36438,7 +36438,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jl_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jl_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -36464,7 +36464,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jl_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jl_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -36594,7 +36594,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jle_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn jle_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -36620,7 +36620,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jle_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn jle_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -36646,7 +36646,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jle_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jle_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -36672,7 +36672,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jle_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jle_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -36880,7 +36880,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jmp_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn jmp_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -36906,7 +36906,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jmp_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jmp_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -37036,7 +37036,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jna_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn jna_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -37062,7 +37062,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jna_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn jna_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -37088,7 +37088,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jna_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jna_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -37114,7 +37114,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jna_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jna_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -37244,7 +37244,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnae_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn jnae_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -37270,7 +37270,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnae_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn jnae_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -37296,7 +37296,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnae_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jnae_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -37322,7 +37322,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnae_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jnae_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -37452,7 +37452,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnb_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn jnb_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -37478,7 +37478,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnb_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn jnb_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -37504,7 +37504,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnb_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jnb_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -37530,7 +37530,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnb_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jnb_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -37660,7 +37660,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnbe_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn jnbe_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -37686,7 +37686,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnbe_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn jnbe_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -37712,7 +37712,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnbe_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jnbe_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -37738,7 +37738,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnbe_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jnbe_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -37868,7 +37868,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnc_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn jnc_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -37894,7 +37894,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnc_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn jnc_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -37920,7 +37920,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnc_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jnc_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -37946,7 +37946,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnc_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jnc_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -38076,7 +38076,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jne_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn jne_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -38102,7 +38102,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jne_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn jne_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -38128,7 +38128,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jne_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jne_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -38154,7 +38154,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jne_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jne_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -38284,7 +38284,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jng_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn jng_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -38310,7 +38310,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jng_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn jng_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -38336,7 +38336,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jng_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jng_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -38362,7 +38362,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jng_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jng_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -38492,7 +38492,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnge_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn jnge_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -38518,7 +38518,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnge_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn jnge_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -38544,7 +38544,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnge_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jnge_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -38570,7 +38570,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnge_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jnge_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -38700,7 +38700,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnl_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn jnl_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -38726,7 +38726,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnl_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn jnl_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -38752,7 +38752,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnl_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jnl_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -38778,7 +38778,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnl_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jnl_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -38908,7 +38908,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnle_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn jnle_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -38934,7 +38934,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnle_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn jnle_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -38960,7 +38960,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnle_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jnle_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -38986,7 +38986,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnle_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jnle_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -39116,7 +39116,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jno_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn jno_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -39142,7 +39142,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jno_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn jno_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -39168,7 +39168,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jno_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jno_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -39194,7 +39194,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jno_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jno_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -39324,7 +39324,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnp_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn jnp_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -39350,7 +39350,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnp_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn jnp_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -39376,7 +39376,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnp_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jnp_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -39402,7 +39402,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnp_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jnp_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -39532,7 +39532,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jns_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn jns_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -39558,7 +39558,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jns_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn jns_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -39584,7 +39584,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jns_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jns_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -39610,7 +39610,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jns_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jns_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -39740,7 +39740,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnz_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn jnz_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -39766,7 +39766,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnz_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn jnz_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -39792,7 +39792,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnz_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jnz_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -39818,7 +39818,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnz_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jnz_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -39948,7 +39948,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jo_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn jo_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -39974,7 +39974,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jo_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn jo_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -40000,7 +40000,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jo_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jo_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -40026,7 +40026,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jo_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jo_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -40156,7 +40156,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jp_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn jp_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -40182,7 +40182,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jp_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn jp_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -40208,7 +40208,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jp_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jp_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -40234,7 +40234,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jp_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jp_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -40364,7 +40364,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jpe_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn jpe_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -40390,7 +40390,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jpe_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn jpe_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -40416,7 +40416,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jpe_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jpe_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -40442,7 +40442,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jpe_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jpe_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -40572,7 +40572,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jpo_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn jpo_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -40598,7 +40598,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jpo_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn jpo_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -40624,7 +40624,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jpo_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jpo_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -40650,7 +40650,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jpo_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jpo_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -40728,7 +40728,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jrcxz_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jrcxz_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -40754,7 +40754,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jrcxz_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jrcxz_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -40884,7 +40884,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn js_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn js_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -40910,7 +40910,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn js_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn js_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -40936,7 +40936,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn js_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn js_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -40962,7 +40962,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn js_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn js_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -41092,7 +41092,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jz_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn jz_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -41118,7 +41118,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jz_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
+	fn jz_RelativeAddress32Bit_BranchHint(&mut self, arg0: RelativeAddress32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -41144,7 +41144,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jz_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn jz_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -41170,7 +41170,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jz_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
+	fn jz_RelativeAddress8Bit_BranchHint(&mut self, arg0: RelativeAddress8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -42158,7 +42158,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn loop_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn loop_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -42210,7 +42210,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn loope_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn loope_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -42262,7 +42262,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn loopne_Relative8Bit(&mut self, arg0: Relative8Bit)
+	fn loopne_RelativeAddress8Bit(&mut self, arg0: RelativeAddress8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -42704,7 +42704,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn maskmovq_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn maskmovq_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -43562,7 +43562,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn mov_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit)
+	fn mov_Any8BitMemory_RegisterHigh8BitsOf16Bits(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -44290,7 +44290,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn mov_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn mov_Register8Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -44316,7 +44316,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn mov_Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn mov_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -44368,7 +44368,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn mov_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit)
+	fn mov_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -44394,7 +44394,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn mov_RegisterHigh8BitsOf16Bit_Immediate8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit)
+	fn mov_RegisterHigh8BitsOf16Bits_Immediate8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -44420,7 +44420,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn mov_RegisterHigh8BitsOf16Bit_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Any8BitMemory)
+	fn mov_RegisterHigh8BitsOf16Bits_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Any8BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -44446,7 +44446,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn mov_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit)
+	fn mov_RegisterHigh8BitsOf16Bits_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -44472,7 +44472,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn mov_RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit)
+	fn mov_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -44498,7 +44498,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn mov_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn mov_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -44524,7 +44524,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn mov_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn mov_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -45018,7 +45018,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn movd_Any32BitMemory_MmRegister(&mut self, arg0: Any32BitMemory, arg1: MmRegister)
+	fn movd_Any32BitMemory_MMRegister(&mut self, arg0: Any32BitMemory, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -45070,7 +45070,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn movd_MmRegister_Any32BitMemory(&mut self, arg0: MmRegister, arg1: Any32BitMemory)
+	fn movd_MMRegister_Any32BitMemory(&mut self, arg0: MMRegister, arg1: Any32BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -45096,7 +45096,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn movd_MmRegister_Register32Bit(&mut self, arg0: MmRegister, arg1: Register32Bit)
+	fn movd_MMRegister_Register32Bit(&mut self, arg0: MMRegister, arg1: Register32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -45122,7 +45122,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn movd_Register32Bit_MmRegister(&mut self, arg0: Register32Bit, arg1: MmRegister)
+	fn movd_Register32Bit_MMRegister(&mut self, arg0: Register32Bit, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -45278,7 +45278,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn movdq2q_MmRegister_XMMRegister(&mut self, arg0: MmRegister, arg1: XMMRegister)
+	fn movdq2q_MMRegister_XMMRegister(&mut self, arg0: MMRegister, arg1: XMMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -46032,7 +46032,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn movntq_Any64BitMemory_MmRegister(&mut self, arg0: Any64BitMemory, arg1: MmRegister)
+	fn movntq_Any64BitMemory_MMRegister(&mut self, arg0: Any64BitMemory, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -46058,7 +46058,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn movq_Any64BitMemory_MmRegister(&mut self, arg0: Any64BitMemory, arg1: MmRegister)
+	fn movq_Any64BitMemory_MMRegister(&mut self, arg0: Any64BitMemory, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -46084,7 +46084,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn movq_Any64BitMemory_MmRegister_1(&mut self, arg0: Any64BitMemory, arg1: MmRegister)
+	fn movq_Any64BitMemory_MMRegister_1(&mut self, arg0: Any64BitMemory, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -46162,7 +46162,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn movq_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn movq_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -46188,7 +46188,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn movq_MmRegister_Any64BitMemory_1(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn movq_MMRegister_Any64BitMemory_1(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -46214,7 +46214,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn movq_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn movq_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -46240,7 +46240,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn movq_MmRegister_MmRegister_1(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn movq_MMRegister_MMRegister_1(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -46266,7 +46266,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn movq_MmRegister_Register64Bit(&mut self, arg0: MmRegister, arg1: Register64Bit)
+	fn movq_MMRegister_Register64Bit(&mut self, arg0: MMRegister, arg1: Register64Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -46292,7 +46292,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn movq_Register64Bit_MmRegister(&mut self, arg0: Register64Bit, arg1: MmRegister)
+	fn movq_Register64Bit_MMRegister(&mut self, arg0: Register64Bit, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -46474,7 +46474,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn movq2dq_XMMRegister_MmRegister(&mut self, arg0: XMMRegister, arg1: MmRegister)
+	fn movq2dq_XMMRegister_MMRegister(&mut self, arg0: XMMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -47072,7 +47072,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn movsx_Register16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register16Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn movsx_Register16Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register16Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -47202,7 +47202,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn movsx_Register32Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register32Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn movsx_Register32Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register32Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -47644,7 +47644,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn movzx_Register16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register16Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn movzx_Register16Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register16Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -47774,7 +47774,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn movzx_Register32Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register32Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn movzx_Register32Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register32Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -48164,7 +48164,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn mul_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn mul_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -48736,7 +48736,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn neg_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn neg_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -49100,7 +49100,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn not_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn not_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -49490,7 +49490,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn or_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit)
+	fn or_Any8BitMemory_RegisterHigh8BitsOf16Bits(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -50010,7 +50010,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn or_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn or_Register8Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -50036,7 +50036,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn or_Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn or_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -50088,7 +50088,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn or_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit)
+	fn or_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -50114,7 +50114,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn or_RegisterHigh8BitsOf16Bit_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Any8BitMemory)
+	fn or_RegisterHigh8BitsOf16Bits_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Any8BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -50140,7 +50140,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn or_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit)
+	fn or_RegisterHigh8BitsOf16Bits_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -50166,7 +50166,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn or_RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit)
+	fn or_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -50192,7 +50192,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn or_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn or_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -50218,7 +50218,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn or_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn or_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -50660,7 +50660,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pabsb_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn pabsb_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -50686,7 +50686,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pabsb_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn pabsb_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -50764,7 +50764,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pabsd_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn pabsd_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -50790,7 +50790,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pabsd_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn pabsd_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -50868,7 +50868,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pabsw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn pabsw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -50894,7 +50894,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pabsw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn pabsw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -50972,7 +50972,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn packssdw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn packssdw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -50998,7 +50998,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn packssdw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn packssdw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -51076,7 +51076,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn packsswb_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn packsswb_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -51102,7 +51102,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn packsswb_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn packsswb_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -51232,7 +51232,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn packuswb_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn packuswb_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -51258,7 +51258,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn packuswb_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn packuswb_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -51336,7 +51336,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn paddb_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn paddb_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -51362,7 +51362,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn paddb_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn paddb_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -51440,7 +51440,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn paddd_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn paddd_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -51466,7 +51466,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn paddd_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn paddd_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -51544,7 +51544,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn paddq_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn paddq_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -51570,7 +51570,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn paddq_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn paddq_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -51648,7 +51648,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn paddsb_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn paddsb_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -51674,7 +51674,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn paddsb_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn paddsb_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -51752,7 +51752,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn paddsw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn paddsw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -51778,7 +51778,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn paddsw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn paddsw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -51856,7 +51856,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn paddusb_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn paddusb_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -51882,7 +51882,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn paddusb_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn paddusb_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -51960,7 +51960,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn paddusw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn paddusw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -51986,7 +51986,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn paddusw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn paddusw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -52064,7 +52064,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn paddw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn paddw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -52090,7 +52090,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn paddw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn paddw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -52168,7 +52168,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn palignr_MmRegister_Any64BitMemory_Immediate8Bit(&mut self, arg0: MmRegister, arg1: Any64BitMemory, arg2: Immediate8Bit)
+	fn palignr_MMRegister_Any64BitMemory_Immediate8Bit(&mut self, arg0: MMRegister, arg1: Any64BitMemory, arg2: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -52194,7 +52194,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn palignr_MmRegister_MmRegister_Immediate8Bit(&mut self, arg0: MmRegister, arg1: MmRegister, arg2: Immediate8Bit)
+	fn palignr_MMRegister_MMRegister_Immediate8Bit(&mut self, arg0: MMRegister, arg1: MMRegister, arg2: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -52272,7 +52272,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pand_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn pand_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -52298,7 +52298,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pand_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn pand_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -52376,7 +52376,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pandn_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn pandn_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -52402,7 +52402,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pandn_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn pandn_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -52506,7 +52506,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pavgb_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn pavgb_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -52532,7 +52532,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pavgb_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn pavgb_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -52610,7 +52610,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pavgw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn pavgw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -52636,7 +52636,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pavgw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn pavgw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -52714,7 +52714,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pblendvb_XMMRegister_Any128BitMemory_XMMRegister0(&mut self, arg0: XMMRegister, arg1: Any128BitMemory, arg2: XMMRegister0)
+	fn pblendvb_XMMRegister_Any128BitMemory_XMMRegister0(&mut self, arg0: XMMRegister, arg1: Any128BitMemory, arg2: XMM0)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -52740,7 +52740,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pblendvb_XMMRegister_XMMRegister_XMMRegister0(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister0)
+	fn pblendvb_XMMRegister_XMMRegister_XMMRegister0(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMM0)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -52870,7 +52870,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pcmpeqb_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn pcmpeqb_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -52896,7 +52896,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pcmpeqb_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn pcmpeqb_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -52974,7 +52974,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pcmpeqd_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn pcmpeqd_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -53000,7 +53000,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pcmpeqd_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn pcmpeqd_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -53130,7 +53130,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pcmpeqw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn pcmpeqw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -53156,7 +53156,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pcmpeqw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn pcmpeqw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -53338,7 +53338,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pcmpgtb_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn pcmpgtb_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -53364,7 +53364,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pcmpgtb_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn pcmpgtb_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -53442,7 +53442,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pcmpgtd_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn pcmpgtd_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -53468,7 +53468,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pcmpgtd_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn pcmpgtd_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -53598,7 +53598,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pcmpgtw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn pcmpgtw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -53624,7 +53624,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pcmpgtw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn pcmpgtw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -54222,7 +54222,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pextrw_Register32Bit_MmRegister_Immediate8Bit(&mut self, arg0: Register32Bit, arg1: MmRegister, arg2: Immediate8Bit)
+	fn pextrw_Register32Bit_MMRegister_Immediate8Bit(&mut self, arg0: Register32Bit, arg1: MMRegister, arg2: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -54300,7 +54300,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pextrw_Register64Bit_MmRegister_Immediate8Bit(&mut self, arg0: Register64Bit, arg1: MmRegister, arg2: Immediate8Bit)
+	fn pextrw_Register64Bit_MMRegister_Immediate8Bit(&mut self, arg0: Register64Bit, arg1: MMRegister, arg2: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -54378,7 +54378,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn phaddd_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn phaddd_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -54404,7 +54404,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn phaddd_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn phaddd_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -54482,7 +54482,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn phaddsw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn phaddsw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -54508,7 +54508,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn phaddsw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn phaddsw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -54586,7 +54586,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn phaddw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn phaddw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -54612,7 +54612,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn phaddw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn phaddw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -54742,7 +54742,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn phsubd_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn phsubd_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -54768,7 +54768,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn phsubd_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn phsubd_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -54846,7 +54846,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn phsubsw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn phsubsw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -54872,7 +54872,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn phsubsw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn phsubsw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -54950,7 +54950,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn phsubw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn phsubw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -54976,7 +54976,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn phsubw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn phsubw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -55158,7 +55158,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pinsrw_MmRegister_Any16BitMemory_Immediate8Bit(&mut self, arg0: MmRegister, arg1: Any16BitMemory, arg2: Immediate8Bit)
+	fn pinsrw_MMRegister_Any16BitMemory_Immediate8Bit(&mut self, arg0: MMRegister, arg1: Any16BitMemory, arg2: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -55184,7 +55184,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pinsrw_MmRegister_Register32Bit_Immediate8Bit(&mut self, arg0: MmRegister, arg1: Register32Bit, arg2: Immediate8Bit)
+	fn pinsrw_MMRegister_Register32Bit_Immediate8Bit(&mut self, arg0: MMRegister, arg1: Register32Bit, arg2: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -55262,7 +55262,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pmaddubsw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn pmaddubsw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -55288,7 +55288,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pmaddubsw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn pmaddubsw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -55366,7 +55366,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pmaddwd_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn pmaddwd_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -55392,7 +55392,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pmaddwd_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn pmaddwd_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -55574,7 +55574,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pmaxsw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn pmaxsw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -55600,7 +55600,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pmaxsw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn pmaxsw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -55678,7 +55678,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pmaxub_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn pmaxub_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -55704,7 +55704,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pmaxub_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn pmaxub_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -55990,7 +55990,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pminsw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn pminsw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -56016,7 +56016,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pminsw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn pminsw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -56094,7 +56094,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pminub_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn pminub_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -56120,7 +56120,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pminub_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn pminub_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -56302,7 +56302,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pmovmskb_Register32Bit_MmRegister(&mut self, arg0: Register32Bit, arg1: MmRegister)
+	fn pmovmskb_Register32Bit_MMRegister(&mut self, arg0: Register32Bit, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -56354,7 +56354,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pmovmskb_Register64Bit_MmRegister(&mut self, arg0: Register64Bit, arg1: MmRegister)
+	fn pmovmskb_Register64Bit_MMRegister(&mut self, arg0: Register64Bit, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -57082,7 +57082,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pmulhrsw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn pmulhrsw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -57108,7 +57108,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pmulhrsw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn pmulhrsw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -57186,7 +57186,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pmulhuw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn pmulhuw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -57212,7 +57212,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pmulhuw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn pmulhuw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -57290,7 +57290,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pmulhw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn pmulhw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -57316,7 +57316,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pmulhw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn pmulhw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -57446,7 +57446,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pmullw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn pmullw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -57472,7 +57472,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pmullw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn pmullw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -57550,7 +57550,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pmuludq_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn pmuludq_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -57576,7 +57576,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pmuludq_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn pmuludq_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -58122,7 +58122,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn por_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn por_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -58148,7 +58148,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn por_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn por_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -58330,7 +58330,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psadbw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn psadbw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -58356,7 +58356,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psadbw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn psadbw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -58434,7 +58434,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pshufb_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn pshufb_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -58460,7 +58460,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pshufb_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn pshufb_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -58694,7 +58694,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pshufw_MmRegister_Any64BitMemory_Immediate8Bit(&mut self, arg0: MmRegister, arg1: Any64BitMemory, arg2: Immediate8Bit)
+	fn pshufw_MMRegister_Any64BitMemory_Immediate8Bit(&mut self, arg0: MMRegister, arg1: Any64BitMemory, arg2: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -58720,7 +58720,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pshufw_MmRegister_MmRegister_Immediate8Bit(&mut self, arg0: MmRegister, arg1: MmRegister, arg2: Immediate8Bit)
+	fn pshufw_MMRegister_MMRegister_Immediate8Bit(&mut self, arg0: MMRegister, arg1: MMRegister, arg2: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -58746,7 +58746,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psignb_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn psignb_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -58772,7 +58772,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psignb_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn psignb_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -58850,7 +58850,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psignd_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn psignd_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -58876,7 +58876,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psignd_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn psignd_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -58954,7 +58954,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psignw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn psignw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -58980,7 +58980,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psignw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn psignw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -59058,7 +59058,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pslld_MmRegister_Immediate8Bit(&mut self, arg0: MmRegister, arg1: Immediate8Bit)
+	fn pslld_MMRegister_Immediate8Bit(&mut self, arg0: MMRegister, arg1: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -59084,7 +59084,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pslld_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn pslld_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -59110,7 +59110,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pslld_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn pslld_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -59240,7 +59240,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psllq_MmRegister_Immediate8Bit(&mut self, arg0: MmRegister, arg1: Immediate8Bit)
+	fn psllq_MMRegister_Immediate8Bit(&mut self, arg0: MMRegister, arg1: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -59266,7 +59266,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psllq_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn psllq_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -59292,7 +59292,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psllq_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn psllq_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -59396,7 +59396,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psllw_MmRegister_Immediate8Bit(&mut self, arg0: MmRegister, arg1: Immediate8Bit)
+	fn psllw_MMRegister_Immediate8Bit(&mut self, arg0: MMRegister, arg1: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -59422,7 +59422,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psllw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn psllw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -59448,7 +59448,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psllw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn psllw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -59552,7 +59552,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psrad_MmRegister_Immediate8Bit(&mut self, arg0: MmRegister, arg1: Immediate8Bit)
+	fn psrad_MMRegister_Immediate8Bit(&mut self, arg0: MMRegister, arg1: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -59578,7 +59578,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psrad_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn psrad_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -59604,7 +59604,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psrad_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn psrad_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -59708,7 +59708,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psraw_MmRegister_Immediate8Bit(&mut self, arg0: MmRegister, arg1: Immediate8Bit)
+	fn psraw_MMRegister_Immediate8Bit(&mut self, arg0: MMRegister, arg1: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -59734,7 +59734,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psraw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn psraw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -59760,7 +59760,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psraw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn psraw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -59864,7 +59864,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psrld_MmRegister_Immediate8Bit(&mut self, arg0: MmRegister, arg1: Immediate8Bit)
+	fn psrld_MMRegister_Immediate8Bit(&mut self, arg0: MMRegister, arg1: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -59890,7 +59890,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psrld_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn psrld_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -59916,7 +59916,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psrld_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn psrld_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -60046,7 +60046,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psrlq_MmRegister_Immediate8Bit(&mut self, arg0: MmRegister, arg1: Immediate8Bit)
+	fn psrlq_MMRegister_Immediate8Bit(&mut self, arg0: MMRegister, arg1: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -60072,7 +60072,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psrlq_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn psrlq_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -60098,7 +60098,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psrlq_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn psrlq_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -60202,7 +60202,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psrlw_MmRegister_Immediate8Bit(&mut self, arg0: MmRegister, arg1: Immediate8Bit)
+	fn psrlw_MMRegister_Immediate8Bit(&mut self, arg0: MMRegister, arg1: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -60228,7 +60228,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psrlw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn psrlw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -60254,7 +60254,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psrlw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn psrlw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -60358,7 +60358,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psubb_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn psubb_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -60384,7 +60384,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psubb_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn psubb_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -60462,7 +60462,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psubd_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn psubd_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -60488,7 +60488,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psubd_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn psubd_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -60566,7 +60566,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psubq_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn psubq_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -60592,7 +60592,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psubq_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn psubq_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -60670,7 +60670,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psubsb_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn psubsb_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -60696,7 +60696,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psubsb_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn psubsb_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -60774,7 +60774,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psubsw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn psubsw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -60800,7 +60800,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psubsw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn psubsw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -60878,7 +60878,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psubusb_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn psubusb_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -60904,7 +60904,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psubusb_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn psubusb_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -60982,7 +60982,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psubusw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn psubusw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -61008,7 +61008,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psubusw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn psubusw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -61086,7 +61086,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psubw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn psubw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -61112,7 +61112,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn psubw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn psubw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -61242,7 +61242,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn punpckhbw_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn punpckhbw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -61268,7 +61268,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn punpckhbw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn punpckhbw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -61346,7 +61346,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn punpckhdq_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn punpckhdq_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -61372,7 +61372,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn punpckhdq_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn punpckhdq_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -61502,7 +61502,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn punpckhwd_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn punpckhwd_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -61528,7 +61528,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn punpckhwd_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn punpckhwd_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -61606,7 +61606,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn punpcklbw_MmRegister_Any32BitMemory(&mut self, arg0: MmRegister, arg1: Any32BitMemory)
+	fn punpcklbw_MMRegister_Any32BitMemory(&mut self, arg0: MMRegister, arg1: Any32BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -61632,7 +61632,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn punpcklbw_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn punpcklbw_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -61710,7 +61710,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn punpckldq_MmRegister_Any32BitMemory(&mut self, arg0: MmRegister, arg1: Any32BitMemory)
+	fn punpckldq_MMRegister_Any32BitMemory(&mut self, arg0: MMRegister, arg1: Any32BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -61736,7 +61736,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn punpckldq_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn punpckldq_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -61866,7 +61866,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn punpcklwd_MmRegister_Any32BitMemory(&mut self, arg0: MmRegister, arg1: Any32BitMemory)
+	fn punpcklwd_MMRegister_Any32BitMemory(&mut self, arg0: MMRegister, arg1: Any32BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -61892,7 +61892,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn punpcklwd_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn punpcklwd_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -62360,7 +62360,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pxor_MmRegister_Any64BitMemory(&mut self, arg0: MmRegister, arg1: Any64BitMemory)
+	fn pxor_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -62386,7 +62386,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn pxor_MmRegister_MmRegister(&mut self, arg0: MmRegister, arg1: MmRegister)
+	fn pxor_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -63088,7 +63088,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn rcl_RegisterHigh8BitsOf16Bit_CL(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: CL)
+	fn rcl_RegisterHigh8BitsOf16Bits_CL(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: CL)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -63114,7 +63114,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn rcl_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit)
+	fn rcl_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -63140,7 +63140,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn rcl_RegisterHigh8BitsOf16Bit_One(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: One)
+	fn rcl_RegisterHigh8BitsOf16Bits_One(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: One)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -63894,7 +63894,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn rcr_RegisterHigh8BitsOf16Bit_CL(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: CL)
+	fn rcr_RegisterHigh8BitsOf16Bits_CL(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: CL)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -63920,7 +63920,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn rcr_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit)
+	fn rcr_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -63946,7 +63946,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn rcr_RegisterHigh8BitsOf16Bit_One(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: One)
+	fn rcr_RegisterHigh8BitsOf16Bits_One(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: One)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -66052,7 +66052,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn rol_RegisterHigh8BitsOf16Bit_CL(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: CL)
+	fn rol_RegisterHigh8BitsOf16Bits_CL(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: CL)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -66078,7 +66078,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn rol_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit)
+	fn rol_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -66104,7 +66104,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn rol_RegisterHigh8BitsOf16Bit_One(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: One)
+	fn rol_RegisterHigh8BitsOf16Bits_One(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: One)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -66754,7 +66754,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn ror_RegisterHigh8BitsOf16Bit_CL(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: CL)
+	fn ror_RegisterHigh8BitsOf16Bits_CL(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: CL)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -66780,7 +66780,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn ror_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit)
+	fn ror_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -66806,7 +66806,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn ror_RegisterHigh8BitsOf16Bit_One(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: One)
+	fn ror_RegisterHigh8BitsOf16Bits_One(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: One)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -67898,7 +67898,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn sal_RegisterHigh8BitsOf16Bit_CL(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: CL)
+	fn sal_RegisterHigh8BitsOf16Bits_CL(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: CL)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -67924,7 +67924,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn sal_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit)
+	fn sal_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -67950,7 +67950,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn sal_RegisterHigh8BitsOf16Bit_One(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: One)
+	fn sal_RegisterHigh8BitsOf16Bits_One(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: One)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -68600,7 +68600,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn sar_RegisterHigh8BitsOf16Bit_CL(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: CL)
+	fn sar_RegisterHigh8BitsOf16Bits_CL(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: CL)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -68626,7 +68626,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn sar_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit)
+	fn sar_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -68652,7 +68652,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn sar_RegisterHigh8BitsOf16Bit_One(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: One)
+	fn sar_RegisterHigh8BitsOf16Bits_One(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: One)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -69146,7 +69146,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn sbb_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit)
+	fn sbb_Any8BitMemory_RegisterHigh8BitsOf16Bits(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -69666,7 +69666,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn sbb_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn sbb_Register8Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -69692,7 +69692,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn sbb_Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn sbb_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -69744,7 +69744,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn sbb_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit)
+	fn sbb_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -69770,7 +69770,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn sbb_RegisterHigh8BitsOf16Bit_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Any8BitMemory)
+	fn sbb_RegisterHigh8BitsOf16Bits_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Any8BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -69796,7 +69796,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn sbb_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit)
+	fn sbb_RegisterHigh8BitsOf16Bits_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -69822,7 +69822,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn sbb_RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit)
+	fn sbb_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -69848,7 +69848,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn sbb_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn sbb_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -69874,7 +69874,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn sbb_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn sbb_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -70160,7 +70160,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn seta_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn seta_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -70238,7 +70238,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn setae_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn setae_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -70316,7 +70316,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn setb_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn setb_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -70394,7 +70394,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn setbe_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn setbe_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -70472,7 +70472,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn setc_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn setc_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -70550,7 +70550,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn sete_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn sete_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -70628,7 +70628,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn setg_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn setg_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -70706,7 +70706,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn setge_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn setge_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -70784,7 +70784,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn setl_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn setl_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -70862,7 +70862,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn setle_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn setle_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -70940,7 +70940,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn setna_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn setna_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -71018,7 +71018,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn setnae_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn setnae_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -71096,7 +71096,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn setnb_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn setnb_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -71174,7 +71174,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn setnbe_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn setnbe_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -71252,7 +71252,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn setnc_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn setnc_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -71330,7 +71330,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn setne_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn setne_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -71408,7 +71408,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn setng_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn setng_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -71486,7 +71486,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn setnge_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn setnge_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -71564,7 +71564,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn setnl_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn setnl_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -71642,7 +71642,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn setnle_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn setnle_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -71720,7 +71720,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn setno_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn setno_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -71798,7 +71798,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn setnp_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn setnp_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -71876,7 +71876,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn setns_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn setns_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -71954,7 +71954,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn setnz_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn setnz_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -72032,7 +72032,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn seto_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn seto_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -72110,7 +72110,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn setp_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn setp_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -72188,7 +72188,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn setpe_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn setpe_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -72266,7 +72266,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn setpo_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn setpo_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -72344,7 +72344,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn sets_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn sets_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -72422,7 +72422,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn setz_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit)
+	fn setz_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -73098,7 +73098,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn shl_RegisterHigh8BitsOf16Bit_CL(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: CL)
+	fn shl_RegisterHigh8BitsOf16Bits_CL(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: CL)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -73124,7 +73124,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn shl_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit)
+	fn shl_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -73150,7 +73150,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn shl_RegisterHigh8BitsOf16Bit_One(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: One)
+	fn shl_RegisterHigh8BitsOf16Bits_One(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: One)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -74216,7 +74216,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn shr_RegisterHigh8BitsOf16Bit_CL(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: CL)
+	fn shr_RegisterHigh8BitsOf16Bits_CL(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: CL)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -74242,7 +74242,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn shr_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit)
+	fn shr_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -74268,7 +74268,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn shr_RegisterHigh8BitsOf16Bit_One(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: One)
+	fn shr_RegisterHigh8BitsOf16Bits_One(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: One)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -75698,7 +75698,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn sub_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit)
+	fn sub_Any8BitMemory_RegisterHigh8BitsOf16Bits(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -76218,7 +76218,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn sub_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn sub_Register8Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -76244,7 +76244,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn sub_Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn sub_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -76296,7 +76296,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn sub_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit)
+	fn sub_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -76322,7 +76322,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn sub_RegisterHigh8BitsOf16Bit_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Any8BitMemory)
+	fn sub_RegisterHigh8BitsOf16Bits_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Any8BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -76348,7 +76348,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn sub_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit)
+	fn sub_RegisterHigh8BitsOf16Bits_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -76374,7 +76374,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn sub_RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit)
+	fn sub_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -76400,7 +76400,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn sub_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn sub_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -76426,7 +76426,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn sub_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn sub_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -77128,7 +77128,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn test_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit)
+	fn test_Any8BitMemory_RegisterHigh8BitsOf16Bits(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -77362,7 +77362,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn test_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn test_Register8Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -77414,7 +77414,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn test_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit)
+	fn test_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -77440,7 +77440,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn test_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit)
+	fn test_RegisterHigh8BitsOf16Bits_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -77466,7 +77466,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn test_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn test_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -109858,7 +109858,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn xadd_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit)
+	fn xadd_Any8BitMemory_RegisterHigh8BitsOf16Bits(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -109988,7 +109988,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn xadd_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn xadd_Register8Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -110014,7 +110014,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn xadd_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit)
+	fn xadd_RegisterHigh8BitsOf16Bits_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -110040,7 +110040,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn xadd_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn xadd_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -110092,7 +110092,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn xbegin_Relative32Bit(&mut self, arg0: Relative32Bit)
+	fn xbegin_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -110274,7 +110274,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn xchg_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit)
+	fn xchg_Any8BitMemory_RegisterHigh8BitsOf16Bits(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -110690,7 +110690,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn xchg_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn xchg_Register8Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -110716,7 +110716,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn xchg_Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn xchg_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -110768,7 +110768,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn xchg_RegisterHigh8BitsOf16Bit_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Any8BitMemory)
+	fn xchg_RegisterHigh8BitsOf16Bits_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Any8BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -110794,7 +110794,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn xchg_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit)
+	fn xchg_RegisterHigh8BitsOf16Bits_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -110820,7 +110820,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn xchg_RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit)
+	fn xchg_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -110846,7 +110846,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn xchg_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn xchg_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -110872,7 +110872,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn xchg_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn xchg_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -111392,7 +111392,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn xor_Any8BitMemory_RegisterHigh8BitsOf16Bit(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bit)
+	fn xor_Any8BitMemory_RegisterHigh8BitsOf16Bits(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -111912,7 +111912,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn xor_Register8Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn xor_Register8Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -111938,7 +111938,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn xor_Register8Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn xor_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -111990,7 +111990,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn xor_RegisterHigh8BitsOf16Bit_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Immediate8Bit)
+	fn xor_RegisterHigh8BitsOf16Bits_Immediate8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -112016,7 +112016,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn xor_RegisterHigh8BitsOf16Bit_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Any8BitMemory)
+	fn xor_RegisterHigh8BitsOf16Bits_Any8BitMemory(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Any8BitMemory)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -112042,7 +112042,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn xor_RegisterHigh8BitsOf16Bit_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit)
+	fn xor_RegisterHigh8BitsOf16Bits_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -112068,7 +112068,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn xor_RegisterHigh8BitsOf16Bit_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: Register8Bit)
+	fn xor_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -112094,7 +112094,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn xor_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn xor_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -112120,7 +112120,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn xor_RegisterHigh8BitsOf16Bit_RegisterHigh8BitsOf16Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bit, arg1: RegisterHigh8BitsOf16Bit)
+	fn xor_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		// This is not a VEX encoded instruction.
 	

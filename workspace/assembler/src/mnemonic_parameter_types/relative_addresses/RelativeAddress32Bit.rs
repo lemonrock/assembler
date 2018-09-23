@@ -17,6 +17,6 @@ impl AsDisplacement for RelativeAddress32Bit
 	}
 }
 
-impl RelativeAddress<u64> for RelativeAddress32Bit
+impl RelativeAddress<u32> for RelativeAddress32Bit
 {
 }

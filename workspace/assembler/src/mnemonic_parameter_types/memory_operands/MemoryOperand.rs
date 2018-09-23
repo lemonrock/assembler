@@ -371,7 +371,7 @@ impl MemoryOperand
 	#[inline(always)]
 	pub fn segment_displacement(segment_register: impl AnySegmentRegister, displacement: Immediate32Bit) -> Self
 	{
-		Self::new(displacement, None, None, IndexScale::x1, Some(AnySegmentRegister), false, false)
+		Self::new(displacement, None, None, IndexScale::x1, Some(segment_register), false, false)
 	}
 	
 	/// Create a new memory operand using the `RIP` (relative instruction pointer) form.
@@ -397,7 +397,7 @@ impl MemoryOperand
 	
 	/// Create a new memory operand using the `segment:RIP+displacement` (relative instruction pointer) form.
 	#[inline(always)]
-	pub fn segment_relative_instruction_pointer_relative_displacement(segment_register: impl AnySegmentRegister, displacement: Immediate32) -> Self
+	pub fn segment_relative_instruction_pointer_relative_displacement(segment_register: impl AnySegmentRegister, displacement: Immediate32Bit) -> Self
 	{
 		Self::new(displacement, None, None, IndexScale::x1, Some(segment_register), false, true)
 	}

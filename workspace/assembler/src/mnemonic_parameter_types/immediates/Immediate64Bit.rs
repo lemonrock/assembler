@@ -5,7 +5,7 @@
 #[derive(Default, Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct Immediate64Bit(pub i64);
 
-impl AsDisplacement for Immediate16Bit
+impl AsDisplacement for Immediate64Bit
 {
 	type D = u64;
 	
@@ -16,6 +16,6 @@ impl AsDisplacement for Immediate16Bit
 	}
 }
 
-impl Immediate<u16> for Immediate16Bit
+impl Immediate<u64> for Immediate64Bit
 {
 }

@@ -3,10 +3,6 @@
 
 
 use super::*;
-use self::immediates::*;
-use self::registers::*;
-use self::registers::singleton::*;
-use self::singletons::*;
 
 
 /// Immediates.
@@ -35,6 +31,7 @@ pub mod singletons;
 
 include!("AsDisplacement.rs");
 include!("BranchHint.rs");
+include!("Label.rs");
 include!("MemoryOrBranchHint.rs");
 include!("MemoryOrRegister.rs");
 include!("ToOpcode.rs");

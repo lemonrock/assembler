@@ -27,6 +27,12 @@ impl MemoryOrRegister for Contiguous2ByteMemory
 	{
 		self.0.emit_rex_2(byte_emitter, byte)
 	}
+	
+	#[inline(always)]
+	fn emit_vex_prefix(self, byte_emitter: &mut ByteEmitter, mmmmm: u8, L: u8, pp: u8, w: u8, vvvv: impl Register, r: impl Register)
+	{
+		self.0.emit_vex_prefix(byte_emitter, mmmmm, L, pp, w, vvvv, r)
+	}
 }
 
 impl MemoryOrBranchHint for Contiguous2ByteMemory

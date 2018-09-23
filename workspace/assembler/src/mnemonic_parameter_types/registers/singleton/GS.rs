@@ -4,7 +4,7 @@
 
 singleton_register!(GS);
 
-impl Register for FS
+impl Register for GS
 {
 	#[inline(always)]
 	fn index(self) -> u8

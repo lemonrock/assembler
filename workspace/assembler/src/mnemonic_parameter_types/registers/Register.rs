@@ -57,13 +57,13 @@ impl<R: Register> MemoryOrRegister for R
 			0x00
 		};
 		
-		self.emit_rex_3(byte_emitter, rm, byte);
+		self.emit_rex_3(byte_emitter, byte);
 	}
 	
 	#[inline(always)]
 	fn emit_rex_2(self, byte_emitter: &mut ByteEmitter, mut byte: u8)
 	{
-		let self = rm;
+		let rm = self;
 		
 		byte |= if rm.requires_rex_byte()
 		{
