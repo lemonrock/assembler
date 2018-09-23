@@ -26,9 +26,23 @@ impl OrdinaryInstructionStream
 	
 	// See Figure 2-9, Intel Manual Volume 2A Section 2-15 (May 2018).
 	#[inline(always)]
-	fn vex(&mut self, mmmmm: u8, L: u8, pp: u8, w: u8, vvvv: impl Register, rm: impl MemoryOrRegister, r: impl Register)
+	fn vex_7(&mut self, mmmmm: u8, L: u8, pp: u8, w: u8, vvvv: impl Register, rm: impl MemoryOrRegister, r: impl Register)
 	{
 		rm.emit_vex_prefix(&mut self.byte_emitter, mmmmm, L, pp, w, vvvv, r)
+	}
+	
+	// See Figure 2-9, Intel Manual Volume 2A Section 2-15 (May 2018).
+	#[inline(always)]
+	fn vex_5(&mut self, mmmmm: u8, L: u8, pp: u8, w: u8, vvvv: impl Register)
+	{
+		if mmmmm == 0x01 && w == 0
+		{
+			self.byte_emitter.emit_2_byte_vex_prefix(0x80, vvvv, L, pp)
+		}
+		else
+		{
+			self.byte_emitter.emit_3_byte_vex_prefix(0x80, 0x40, 0x20, mmmmm, w, vvvv, L, pp)
+		}
 	}
 	
 	#[inline(always)]
@@ -119,9 +133,6 @@ impl OrdinaryInstructionStream
 		self.displacement_immediate_1(displacement2);
 		self.displacement_immediate_1(displacement1);
 	}
-	
-	/** A symbolic representation of a Rel32. No Rel8 equivalent is provided. */
-	//Label
 	
 	/// Records internal state for a label reference.
 	/// Saves the current code position and reserves space for the resolved address by emitting zero bytes.

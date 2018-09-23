@@ -3,7 +3,7 @@
 
 
 /// A memory indirect address or a register.
-pub trait MemoryOrRegister
+pub trait MemoryOrRegister: Sized
 {
 	/// Emits Mod.R/B, Scaled Index Byte and related data.
 	#[inline(always)]

@@ -2,5 +2,6 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
+/// A symbolic representation of a Rel32. No Rel8 equivalent is provided.
 #[derive(Debug, Clone)]
 pub struct Label;

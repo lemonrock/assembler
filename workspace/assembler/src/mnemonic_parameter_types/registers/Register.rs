@@ -57,7 +57,7 @@ impl<R: Register> MemoryOrRegister for R
 			0x00
 		};
 		
-		self.emit_rex_3(byte_emitter, byte);
+		self.emit_rex_2(byte_emitter, byte);
 	}
 	
 	#[inline(always)]
