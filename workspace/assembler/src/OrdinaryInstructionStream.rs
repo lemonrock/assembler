@@ -72,7 +72,7 @@ impl OrdinaryInstructionStream
 	#[inline(always)]
 	fn prefix_group4(&mut self, memory: impl Memory)
 	{
-		memory.memory_operand().emit_prefix_group4()
+		memory.memory_operand().emit_prefix_group4(&mut self.byte_emitter)
 	}
 	
 	#[inline(always)]
@@ -117,7 +117,7 @@ impl OrdinaryInstructionStream
 	#[inline(always)]
 	fn mod_rm_sib(&mut self, rm: impl MemoryOrRegister, reg: impl Register)
 	{
-		rm.emit(&mut self.byte_emitter, reg)
+		rm.emit_mod_rm_sib(&mut self.byte_emitter, reg)
 	}
 	
 	#[inline(always)]

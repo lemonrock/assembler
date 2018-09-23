@@ -110132,7 +110132,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		self.rex_3(arg1, 0x00);
+		self.rex_2(arg1, 0x00);
 	
 		self.opcode_2(0x90, arg1);
 	
@@ -110158,7 +110158,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 1.
 	
-		self.rex_3(arg1, 0x00);
+		self.rex_2(arg1, 0x00);
 	
 		self.opcode_2(0x90, arg1);
 	
