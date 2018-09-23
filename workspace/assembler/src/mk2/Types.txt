@@ -5,6 +5,4 @@
 
 
 
-/** A symbolic representation of a Rel32. No Rel8 equivalent is provided. */
-Label
 

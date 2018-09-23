@@ -2,39 +2,9 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-use super::*;
-use self::immediates::*;
-use self::registers::*;
-use self::registers::singleton::*;
-use self::singletons::*;
-
-
-/// Immediates.
-pub mod immediates;
-
-
-/// Memory Offsets.
-pub mod memory_offsets;
-
-
-/// Memory Operands.
-pub mod memory_operands;
-
-
-/// Registers.
-pub mod registers;
-
-
-/// Relative Addresses.
-pub mod relative_addresses;
-
-
-/// Singletons.
-pub mod singletons;
-
-
-include!("AsDisplacement.rs");
-include!("BranchHint.rs");
-include!("MemoryOperandOrBranchHint.rs");
-include!("MemoryOrRegister.rs");
-include!("ToOpcode.rs");
+/// Memory operand or branch hint.
+pub trait MemoryOperandOrBranchHint
+{
+	#[inline(always)]
+	fn emit_prefix_group2(self, byte_emitter: &mut ByteEmitter);
+}

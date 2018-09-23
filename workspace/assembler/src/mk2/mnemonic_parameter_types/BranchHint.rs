@@ -5,20 +5,20 @@
 /// Represents a hint.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 #[repr(u8)]
-pub enum Hint
+pub enum BranchHint
 {
 	/// Hint taken.
-	Taken = 0,
+	Taken = 0x3E,
 	
 	/// Hint not taken.
-	NotTaken = 1,
+	NotTaken = 0x2E,
 }
 
-impl Default for Hint
+impl MemoryOperandOrBranchHint for BranchHint
 {
 	#[inline(always)]
-	fn default() -> Self
+	fn emit_prefix_group2(self, byte_emitter: &mut ByteEmitter)
 	{
-		X87Register::ST1
+		byte_emitter.emit_u8(self as u8)
 	}
 }

@@ -2672,22 +2672,22 @@ pub trait InstructionStream
 	fn ja_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
-	fn ja_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn ja_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
-	fn ja_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn ja_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn ja_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
-	fn ja_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn ja_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn ja_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
-	fn ja_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn ja_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if above or equal (Carry Flag (CF) is 0).
 	fn jae_Label(&mut self, arg0: Label);
@@ -2696,22 +2696,22 @@ pub trait InstructionStream
 	fn jae_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if above or equal (Carry Flag (CF) is 0).
-	fn jae_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jae_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if above or equal (Carry Flag (CF) is 0).
-	fn jae_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn jae_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if above or equal (Carry Flag (CF) is 0).
 	fn jae_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if above or equal (Carry Flag (CF) is 0).
-	fn jae_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jae_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if above or equal (Carry Flag (CF) is 0).
 	fn jae_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if above or equal (Carry Flag (CF) is 0).
-	fn jae_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jae_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if below (Carry Flag (CF) is 1).
 	fn jb_Label(&mut self, arg0: Label);
@@ -2720,22 +2720,22 @@ pub trait InstructionStream
 	fn jb_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if below (Carry Flag (CF) is 1).
-	fn jb_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jb_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if below (Carry Flag (CF) is 1).
-	fn jb_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn jb_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if below (Carry Flag (CF) is 1).
 	fn jb_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if below (Carry Flag (CF) is 1).
-	fn jb_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jb_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if below (Carry Flag (CF) is 1).
 	fn jb_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if below (Carry Flag (CF) is 1).
-	fn jb_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jb_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn jbe_Label(&mut self, arg0: Label);
@@ -2744,22 +2744,22 @@ pub trait InstructionStream
 	fn jbe_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
-	fn jbe_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jbe_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
-	fn jbe_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn jbe_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn jbe_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
-	fn jbe_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jbe_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn jbe_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
-	fn jbe_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jbe_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if carry (Carry Flag (CF) is 1).
 	fn jc_Label(&mut self, arg0: Label);
@@ -2768,22 +2768,22 @@ pub trait InstructionStream
 	fn jc_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if carry (Carry Flag (CF) is 1).
-	fn jc_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jc_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if carry (Carry Flag (CF) is 1).
-	fn jc_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn jc_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if carry (Carry Flag (CF) is 1).
 	fn jc_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if carry (Carry Flag (CF) is 1).
-	fn jc_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jc_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if carry (Carry Flag (CF) is 1).
 	fn jc_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if carry (Carry Flag (CF) is 1).
-	fn jc_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jc_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if equal (Zero Flag (ZF) is 1).
 	fn je_Label(&mut self, arg0: Label);
@@ -2792,34 +2792,34 @@ pub trait InstructionStream
 	fn je_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if equal (Zero Flag (ZF) is 1).
-	fn je_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn je_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if 0 (Zero Flag (ZF) is 1).
-	fn je_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn je_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if 0 (Zero Flag (ZF) is 1).
 	fn je_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if 0 (Zero Flag (ZF) is 1).
-	fn je_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn je_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if equal (Zero Flag (ZF) is 1).
 	fn je_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if equal (Zero Flag (ZF) is 1).
-	fn je_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn je_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if `ECX` register is 0.
 	fn jecxz_Label(&mut self, arg0: Label);
 
 	/// Jump short if `ECX` register is 0.
-	fn jecxz_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jecxz_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump short if `ECX` register is 0.
 	fn jecxz_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if `ECX` register is 0.
-	fn jecxz_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jecxz_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if greater (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
 	fn jg_Label(&mut self, arg0: Label);
@@ -2828,22 +2828,22 @@ pub trait InstructionStream
 	fn jg_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if greater (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
-	fn jg_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jg_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if greater (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
-	fn jg_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn jg_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if greater (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
 	fn jg_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if greater (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
-	fn jg_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jg_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if greater (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
 	fn jg_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if greater (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
-	fn jg_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jg_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if greater or equal (Sign Flag (SF) == Overflow Flag (OF)).
 	fn jge_Label(&mut self, arg0: Label);
@@ -2852,22 +2852,22 @@ pub trait InstructionStream
 	fn jge_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if greater or equal (Sign Flag (SF) == Overflow Flag (OF)).
-	fn jge_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jge_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if greater or equal (Sign Flag (SF) == Overflow Flag (OF)).
-	fn jge_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn jge_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if greater or equal (Sign Flag (SF) == Overflow Flag (OF)).
 	fn jge_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if greater or equal (Sign Flag (SF) == Overflow Flag (OF)).
-	fn jge_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jge_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if greater or equal (Sign Flag (SF) == Overflow Flag (OF)).
 	fn jge_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if greater or equal (Sign Flag (SF) == Overflow Flag (OF)).
-	fn jge_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jge_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if less (Sign Flag (SF) != Overflow Flag (OF)).
 	fn jl_Label(&mut self, arg0: Label);
@@ -2876,22 +2876,22 @@ pub trait InstructionStream
 	fn jl_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if less (Sign Flag (SF) != Overflow Flag (OF)).
-	fn jl_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jl_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if less (Sign Flag (SF) != Overflow Flag (OF)).
-	fn jl_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn jl_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if less (Sign Flag (SF) != Overflow Flag (OF)).
 	fn jl_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if less (Sign Flag (SF) != Overflow Flag (OF)).
-	fn jl_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jl_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if less (Sign Flag (SF) != Overflow Flag (OF)).
 	fn jl_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if less (Sign Flag (SF) != Overflow Flag (OF)).
-	fn jl_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jl_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if less or equal (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
 	fn jle_Label(&mut self, arg0: Label);
@@ -2900,22 +2900,22 @@ pub trait InstructionStream
 	fn jle_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if less or equal (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
-	fn jle_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jle_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if less or equal (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
-	fn jle_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn jle_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if less or equal (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
 	fn jle_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if less or equal (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
-	fn jle_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jle_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if less or equal (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
 	fn jle_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if less or equal (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
-	fn jle_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jle_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump far, absolute indirect, address given in `m16:16`.
 	fn jmp_FarPointer16BitTo16Bit(&mut self, arg0: FarPointer16BitTo16Bit);
@@ -2951,22 +2951,22 @@ pub trait InstructionStream
 	fn jna_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
-	fn jna_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jna_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
-	fn jna_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn jna_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn jna_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
-	fn jna_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jna_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	fn jna_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
-	fn jna_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jna_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if not above or equal (Carry Flag (CF) is 1).
 	fn jnae_Label(&mut self, arg0: Label);
@@ -2975,22 +2975,22 @@ pub trait InstructionStream
 	fn jnae_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if not above or equal (Carry Flag (CF) is 1).
-	fn jnae_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jnae_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not above or equal (Carry Flag (CF) is 1).
-	fn jnae_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn jnae_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not above or equal (Carry Flag (CF) is 1).
 	fn jnae_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if not above or equal (Carry Flag (CF) is 1).
-	fn jnae_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jnae_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if not above or equal (Carry Flag (CF) is 1).
 	fn jnae_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if not above or equal (Carry Flag (CF) is 1).
-	fn jnae_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jnae_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if not below (Carry Flag (CF) is 0).
 	fn jnb_Label(&mut self, arg0: Label);
@@ -2999,22 +2999,22 @@ pub trait InstructionStream
 	fn jnb_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if not below (Carry Flag (CF) is 0).
-	fn jnb_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jnb_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not below (Carry Flag (CF) is 0).
-	fn jnb_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn jnb_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not below (Carry Flag (CF) is 0).
 	fn jnb_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if not below (Carry Flag (CF) is 0).
-	fn jnb_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jnb_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if not below (Carry Flag (CF) is 0).
 	fn jnb_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if not below (Carry Flag (CF) is 0).
-	fn jnb_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jnb_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn jnbe_Label(&mut self, arg0: Label);
@@ -3023,22 +3023,22 @@ pub trait InstructionStream
 	fn jnbe_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
-	fn jnbe_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jnbe_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
-	fn jnbe_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn jnbe_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn jnbe_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
-	fn jnbe_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jnbe_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	fn jnbe_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
-	fn jnbe_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jnbe_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if not carry (Carry Flag (CF) is 0).
 	fn jnc_Label(&mut self, arg0: Label);
@@ -3047,22 +3047,22 @@ pub trait InstructionStream
 	fn jnc_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if not carry (Carry Flag (CF) is 0).
-	fn jnc_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jnc_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not carry (Carry Flag (CF) is 0).
-	fn jnc_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn jnc_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not carry (Carry Flag (CF) is 0).
 	fn jnc_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if not carry (Carry Flag (CF) is 0).
-	fn jnc_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jnc_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if not carry (Carry Flag (CF) is 0).
 	fn jnc_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if not carry (Carry Flag (CF) is 0).
-	fn jnc_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jnc_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if not equal (Zero Flag (ZF) is 0).
 	fn jne_Label(&mut self, arg0: Label);
@@ -3071,22 +3071,22 @@ pub trait InstructionStream
 	fn jne_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if not equal (Zero Flag (ZF) is 0).
-	fn jne_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jne_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not equal (Zero Flag (ZF) is 0).
-	fn jne_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn jne_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not equal (Zero Flag (ZF) is 0).
 	fn jne_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if not equal (Zero Flag (ZF) is 0).
-	fn jne_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jne_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if not equal (Zero Flag (ZF) is 0).
 	fn jne_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if not equal (Zero Flag (ZF) is 0).
-	fn jne_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jne_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if not greater (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
 	fn jng_Label(&mut self, arg0: Label);
@@ -3095,22 +3095,22 @@ pub trait InstructionStream
 	fn jng_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if not greater (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
-	fn jng_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jng_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not greater (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
-	fn jng_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn jng_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not greater (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
 	fn jng_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if not greater (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
-	fn jng_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jng_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if not greater (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
 	fn jng_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if not greater (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
-	fn jng_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jng_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if not greater or equal (Sign Flag (SF) != Overflow Flag (OF)).
 	fn jnge_Label(&mut self, arg0: Label);
@@ -3119,22 +3119,22 @@ pub trait InstructionStream
 	fn jnge_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if not greater or equal (Sign Flag (SF) != Overflow Flag (OF)).
-	fn jnge_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jnge_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not greater or equal (Sign Flag (SF) != Overflow Flag (OF)).
-	fn jnge_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn jnge_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not greater or equal (Sign Flag (SF) != Overflow Flag (OF)).
 	fn jnge_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if not greater or equal (Sign Flag (SF) != Overflow Flag (OF)).
-	fn jnge_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jnge_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if not greater or equal (Sign Flag (SF) != Overflow Flag (OF)).
 	fn jnge_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if not greater or equal (Sign Flag (SF) != Overflow Flag (OF)).
-	fn jnge_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jnge_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if not less (Sign Flag (SF) == Overflow Flag (OF)).
 	fn jnl_Label(&mut self, arg0: Label);
@@ -3143,22 +3143,22 @@ pub trait InstructionStream
 	fn jnl_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if not less (Sign Flag (SF) == Overflow Flag (OF)).
-	fn jnl_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jnl_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not less (Sign Flag (SF) == Overflow Flag (OF)).
-	fn jnl_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn jnl_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not less (Sign Flag (SF) == Overflow Flag (OF)).
 	fn jnl_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if not less (Sign Flag (SF) == Overflow Flag (OF)).
-	fn jnl_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jnl_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if not less (Sign Flag (SF) == Overflow Flag (OF)).
 	fn jnl_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if not less (Sign Flag (SF) == Overflow Flag (OF)).
-	fn jnl_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jnl_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if not less or equal (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
 	fn jnle_Label(&mut self, arg0: Label);
@@ -3167,22 +3167,22 @@ pub trait InstructionStream
 	fn jnle_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if not less or equal (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
-	fn jnle_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jnle_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not less or equal (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
-	fn jnle_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn jnle_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not less or equal (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
 	fn jnle_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if not less or equal (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
-	fn jnle_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jnle_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if not less or equal (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
 	fn jnle_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if not less or equal (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
-	fn jnle_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jnle_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if not overflow (Overflow Flag (OF) is 0).
 	fn jno_Label(&mut self, arg0: Label);
@@ -3191,22 +3191,22 @@ pub trait InstructionStream
 	fn jno_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if not overflow (Overflow Flag (OF) is 0).
-	fn jno_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jno_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not overflow (Overflow Flag (OF) is 0).
-	fn jno_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn jno_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not overflow (Overflow Flag (OF) is 0).
 	fn jno_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if not overflow (Overflow Flag (OF) is 0).
-	fn jno_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jno_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if not overflow (Overflow Flag (OF) is 0).
 	fn jno_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if not overflow (Overflow Flag (OF) is 0).
-	fn jno_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jno_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if not parity (Parity Flag (PF) is 0).
 	fn jnp_Label(&mut self, arg0: Label);
@@ -3215,22 +3215,22 @@ pub trait InstructionStream
 	fn jnp_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if not parity (Parity Flag (PF) is 0).
-	fn jnp_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jnp_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not parity (Parity Flag (PF) is 0).
-	fn jnp_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn jnp_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not parity (Parity Flag (PF) is 0).
 	fn jnp_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if not parity (Parity Flag (PF) is 0).
-	fn jnp_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jnp_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if not parity (Parity Flag (PF) is 0).
 	fn jnp_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if not parity (Parity Flag (PF) is 0).
-	fn jnp_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jnp_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if not sign (Sign Flag (SF) is 0).
 	fn jns_Label(&mut self, arg0: Label);
@@ -3239,22 +3239,22 @@ pub trait InstructionStream
 	fn jns_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if not sign (Sign Flag (SF) is 0).
-	fn jns_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jns_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not sign (Sign Flag (SF) is 0).
-	fn jns_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn jns_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not sign (Sign Flag (SF) is 0).
 	fn jns_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if not sign (Sign Flag (SF) is 0).
-	fn jns_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jns_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if not sign (Sign Flag (SF) is 0).
 	fn jns_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if not sign (Sign Flag (SF) is 0).
-	fn jns_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jns_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if not zero (Zero Flag (ZF) is 0).
 	fn jnz_Label(&mut self, arg0: Label);
@@ -3263,22 +3263,22 @@ pub trait InstructionStream
 	fn jnz_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if not zero (Zero Flag (ZF) is 0).
-	fn jnz_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jnz_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not zero (Zero Flag (ZF) is 0).
-	fn jnz_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn jnz_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if not zero (Zero Flag (ZF) is 0).
 	fn jnz_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if not zero (Zero Flag (ZF) is 0).
-	fn jnz_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jnz_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if not zero (Zero Flag (ZF) is 0).
 	fn jnz_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if not zero (Zero Flag (ZF) is 0).
-	fn jnz_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jnz_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if overflow (Overflow Flag (OF) is 1).
 	fn jo_Label(&mut self, arg0: Label);
@@ -3287,22 +3287,22 @@ pub trait InstructionStream
 	fn jo_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if overflow (Overflow Flag (OF) is 1).
-	fn jo_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jo_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if overflow (Overflow Flag (OF) is 1).
-	fn jo_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn jo_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if overflow (Overflow Flag (OF) is 1).
 	fn jo_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if overflow (Overflow Flag (OF) is 1).
-	fn jo_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jo_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if overflow (Overflow Flag (OF) is 1).
 	fn jo_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if overflow (Overflow Flag (OF) is 1).
-	fn jo_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jo_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if parity (Parity Flag (PF) is 1).
 	fn jp_Label(&mut self, arg0: Label);
@@ -3311,22 +3311,22 @@ pub trait InstructionStream
 	fn jp_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if parity (Parity Flag (PF) is 1).
-	fn jp_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jp_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if parity (Parity Flag (PF) is 1).
-	fn jp_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn jp_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if parity (Parity Flag (PF) is 1).
 	fn jp_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if parity (Parity Flag (PF) is 1).
-	fn jp_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jp_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if parity (Parity Flag (PF) is 1).
 	fn jp_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if parity (Parity Flag (PF) is 1).
-	fn jp_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jp_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if parity even (Parity Flag (PF) is 1).
 	fn jpe_Label(&mut self, arg0: Label);
@@ -3335,22 +3335,22 @@ pub trait InstructionStream
 	fn jpe_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if parity even (Parity Flag (PF) is 1).
-	fn jpe_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jpe_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if parity even (Parity Flag (PF) is 1).
-	fn jpe_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn jpe_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if parity even (Parity Flag (PF) is 1).
 	fn jpe_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if parity even (Parity Flag (PF) is 1).
-	fn jpe_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jpe_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if parity even (Parity Flag (PF) is 1).
 	fn jpe_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if parity even (Parity Flag (PF) is 1).
-	fn jpe_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jpe_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if parity odd (Parity Flag (PF) is 0).
 	fn jpo_Label(&mut self, arg0: Label);
@@ -3359,34 +3359,34 @@ pub trait InstructionStream
 	fn jpo_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if parity odd (Parity Flag (PF) is 0).
-	fn jpo_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jpo_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if parity odd (Parity Flag (PF) is 0).
-	fn jpo_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn jpo_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if parity odd (Parity Flag (PF) is 0).
 	fn jpo_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if parity odd (Parity Flag (PF) is 0).
-	fn jpo_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jpo_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if parity odd (Parity Flag (PF) is 0).
 	fn jpo_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if parity odd (Parity Flag (PF) is 0).
-	fn jpo_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jpo_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if `RCX` register is 0.
 	fn jrcxz_Label(&mut self, arg0: Label);
 
 	/// Jump short if `RCX` register is 0.
-	fn jrcxz_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jrcxz_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump short if `RCX` register is 0.
 	fn jrcxz_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if `RCX` register is 0.
-	fn jrcxz_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jrcxz_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if sign (Sign Flag (SF) is 1).
 	fn js_Label(&mut self, arg0: Label);
@@ -3395,22 +3395,22 @@ pub trait InstructionStream
 	fn js_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if sign (Sign Flag (SF) is 1).
-	fn js_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn js_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if sign (Sign Flag (SF) is 1).
-	fn js_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn js_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if sign (Sign Flag (SF) is 1).
 	fn js_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if sign (Sign Flag (SF) is 1).
-	fn js_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn js_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if sign (Sign Flag (SF) is 1).
 	fn js_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if sign (Sign Flag (SF) is 1).
-	fn js_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn js_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Jump short if zero (Zero Flag (ZF) is 1).
 	fn jz_Label(&mut self, arg0: Label);
@@ -3419,22 +3419,22 @@ pub trait InstructionStream
 	fn jz_Label_1(&mut self, arg0: Label);
 
 	/// Jump short if zero (Zero Flag (ZF) is 1).
-	fn jz_Label_Hint(&mut self, arg0: Label, arg1: Hint);
+	fn jz_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if 0 (Zero Flag (ZF) is 1).
-	fn jz_Label_Hint_1(&mut self, arg0: Label, arg1: Hint);
+	fn jz_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint);
 
 	/// Jump near if 0 (Zero Flag (ZF) is 1).
 	fn jz_Relative32Bit(&mut self, arg0: Relative32Bit);
 
 	/// Jump near if 0 (Zero Flag (ZF) is 1).
-	fn jz_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint);
+	fn jz_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint);
 
 	/// Jump short if zero (Zero Flag (ZF) is 1).
 	fn jz_Relative8Bit(&mut self, arg0: Relative8Bit);
 
 	/// Jump short if zero (Zero Flag (ZF) is 1).
-	fn jz_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint);
+	fn jz_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint);
 
 	/// Load: `AH = EFLAGS(SF:ZF:0:AF:0:PF:1:CF)`.
 	fn lahf(&mut self);
@@ -12114,7 +12114,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -12162,11 +12162,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -12188,11 +12188,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -12214,11 +12214,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -12240,9 +12240,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -12266,9 +12266,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -12292,9 +12292,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -12318,9 +12318,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -12344,9 +12344,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -12370,9 +12370,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -12396,9 +12396,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -12422,9 +12422,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -12448,9 +12448,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -12478,7 +12478,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -12504,7 +12504,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -12526,11 +12526,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -12556,7 +12556,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -12582,7 +12582,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -12656,9 +12656,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -12786,9 +12786,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -12890,9 +12890,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -13072,9 +13072,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -13232,7 +13232,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -13280,11 +13280,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -13306,11 +13306,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -13332,11 +13332,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -13358,9 +13358,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -13384,9 +13384,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -13410,9 +13410,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -13436,9 +13436,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -13462,9 +13462,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -13488,9 +13488,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -13514,9 +13514,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -13540,9 +13540,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -13566,9 +13566,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -13596,7 +13596,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -13622,7 +13622,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -13644,11 +13644,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -13674,7 +13674,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -13700,7 +13700,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -13774,9 +13774,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -13904,9 +13904,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -14008,9 +14008,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -14190,9 +14190,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -14320,11 +14320,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -14350,7 +14350,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -14372,9 +14372,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -14424,13 +14424,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -14456,7 +14456,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -14476,13 +14476,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -14508,7 +14508,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -14528,11 +14528,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -14558,7 +14558,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -14580,13 +14580,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -14612,7 +14612,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -14632,11 +14632,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -14662,7 +14662,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -14684,11 +14684,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -14714,7 +14714,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -14736,11 +14736,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -14766,7 +14766,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -14788,11 +14788,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -14818,7 +14818,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -14840,11 +14840,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -14870,7 +14870,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -14892,11 +14892,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -14922,7 +14922,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -14974,7 +14974,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -15022,11 +15022,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -15048,11 +15048,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -15074,11 +15074,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -15100,9 +15100,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -15126,9 +15126,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -15152,9 +15152,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -15178,9 +15178,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -15204,9 +15204,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -15230,9 +15230,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -15256,9 +15256,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -15282,9 +15282,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -15308,9 +15308,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -15338,7 +15338,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -15364,7 +15364,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -15386,11 +15386,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -15416,7 +15416,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -15442,7 +15442,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -15516,9 +15516,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -15646,9 +15646,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -15750,9 +15750,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -15932,9 +15932,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -16062,11 +16062,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -16114,11 +16114,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x0, 0x1, arg1, arg2, arg0);
 	
@@ -16166,11 +16166,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -16196,7 +16196,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -16218,9 +16218,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -16270,11 +16270,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -16300,7 +16300,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -16322,9 +16322,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -16374,11 +16374,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x0, 0x0, arg2, arg1, arg0);
 	
@@ -16426,11 +16426,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x0, 0x1, arg2, arg1, arg0);
 	
@@ -16478,11 +16478,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -16508,7 +16508,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -16530,11 +16530,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -16560,7 +16560,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -16582,11 +16582,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -16612,7 +16612,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -16634,11 +16634,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -16664,7 +16664,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -16686,11 +16686,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x0, 0x0, arg0, arg1, Register64Bit::RBX);
 	
@@ -16738,11 +16738,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x0, 0x1, arg0, arg1, Register64Bit::RBX);
 	
@@ -16790,11 +16790,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x0, 0x0, arg0, arg1, Register64Bit::RDX);
 	
@@ -16842,11 +16842,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x0, 0x1, arg0, arg1, Register64Bit::RDX);
 	
@@ -16894,11 +16894,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x0, 0x0, arg0, arg1, Register64Bit::RCX);
 	
@@ -16946,11 +16946,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x0, 0x1, arg0, arg1, Register64Bit::RCX);
 	
@@ -16998,11 +16998,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -17028,7 +17028,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -17050,9 +17050,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -17102,9 +17102,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -17154,11 +17154,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -17184,7 +17184,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -17206,9 +17206,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -17258,9 +17258,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -17362,11 +17362,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -17388,11 +17388,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -17414,9 +17414,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -17440,9 +17440,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -17466,9 +17466,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -17492,9 +17492,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -17522,7 +17522,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -17548,7 +17548,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -17674,11 +17674,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -17700,11 +17700,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -17726,9 +17726,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -17752,9 +17752,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -17778,9 +17778,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -17804,9 +17804,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -17834,7 +17834,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -17860,7 +17860,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -17986,11 +17986,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -18012,11 +18012,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -18038,9 +18038,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -18064,9 +18064,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -18090,9 +18090,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -18116,9 +18116,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -18146,7 +18146,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -18172,7 +18172,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -18298,11 +18298,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -18324,11 +18324,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -18350,9 +18350,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -18376,9 +18376,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -18402,9 +18402,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -18428,9 +18428,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -18458,7 +18458,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -18484,7 +18484,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -18610,11 +18610,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x0, 0x0, arg2, arg1, arg0);
 	
@@ -18662,11 +18662,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x0, 0x1, arg2, arg1, arg0);
 	
@@ -18714,9 +18714,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -18740,9 +18740,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -18766,9 +18766,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -18818,9 +18818,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -18900,7 +18900,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -19026,9 +19026,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -19104,11 +19104,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -19134,7 +19134,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -19156,9 +19156,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -19208,9 +19208,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -19260,11 +19260,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -19290,7 +19290,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -19312,9 +19312,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -19364,9 +19364,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -19416,11 +19416,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -19446,7 +19446,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -19468,9 +19468,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -19520,9 +19520,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -19572,11 +19572,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -19602,7 +19602,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -19624,9 +19624,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -19676,9 +19676,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -19728,11 +19728,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -19758,7 +19758,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -19780,9 +19780,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -19832,9 +19832,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -19884,11 +19884,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -19914,7 +19914,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -19936,9 +19936,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -19988,9 +19988,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -20040,11 +20040,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -20070,7 +20070,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -20092,9 +20092,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -20144,9 +20144,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -20196,11 +20196,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -20226,7 +20226,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -20248,9 +20248,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -20300,9 +20300,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -20352,11 +20352,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -20382,7 +20382,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -20404,9 +20404,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -20456,9 +20456,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -20508,11 +20508,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -20538,7 +20538,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -20560,9 +20560,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -20612,9 +20612,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -20664,11 +20664,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -20694,7 +20694,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -20716,9 +20716,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -20768,9 +20768,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -20820,11 +20820,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -20850,7 +20850,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -20872,9 +20872,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -20924,9 +20924,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -20976,11 +20976,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -21006,7 +21006,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -21028,9 +21028,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -21080,9 +21080,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -21132,11 +21132,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -21162,7 +21162,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -21184,9 +21184,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -21236,9 +21236,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -21288,11 +21288,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -21318,7 +21318,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -21340,9 +21340,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -21392,9 +21392,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -21444,11 +21444,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -21474,7 +21474,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -21496,9 +21496,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -21548,9 +21548,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -21600,11 +21600,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -21630,7 +21630,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -21652,9 +21652,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -21704,9 +21704,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -21756,11 +21756,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -21786,7 +21786,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -21808,9 +21808,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -21860,9 +21860,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -21912,11 +21912,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -21942,7 +21942,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -21964,9 +21964,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -22016,9 +22016,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -22068,11 +22068,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -22098,7 +22098,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -22120,9 +22120,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -22172,9 +22172,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -22224,11 +22224,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -22254,7 +22254,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -22276,9 +22276,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -22328,9 +22328,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -22380,11 +22380,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -22410,7 +22410,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -22432,9 +22432,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -22484,9 +22484,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -22536,11 +22536,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -22566,7 +22566,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -22588,9 +22588,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -22640,9 +22640,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -22692,11 +22692,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -22722,7 +22722,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -22744,9 +22744,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -22796,9 +22796,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -22848,11 +22848,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -22878,7 +22878,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -22900,9 +22900,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -22952,9 +22952,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -23004,11 +23004,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -23034,7 +23034,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -23056,9 +23056,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -23108,9 +23108,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -23160,11 +23160,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -23190,7 +23190,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -23212,9 +23212,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -23264,9 +23264,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -23316,11 +23316,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -23346,7 +23346,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -23368,9 +23368,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -23420,9 +23420,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -23472,11 +23472,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -23502,7 +23502,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -23524,9 +23524,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -23576,9 +23576,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -23628,11 +23628,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -23658,7 +23658,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -23680,9 +23680,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -23732,9 +23732,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -23814,7 +23814,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -23862,11 +23862,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -23888,11 +23888,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -23914,11 +23914,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -23940,9 +23940,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -23966,9 +23966,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -23992,9 +23992,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -24018,9 +24018,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -24044,9 +24044,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -24070,9 +24070,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -24096,9 +24096,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -24122,9 +24122,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -24148,9 +24148,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -24178,7 +24178,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -24204,7 +24204,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -24226,11 +24226,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -24256,7 +24256,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -24282,7 +24282,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -24356,9 +24356,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -24486,9 +24486,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -24590,9 +24590,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -24772,9 +24772,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -24902,11 +24902,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -24932,7 +24932,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -24954,9 +24954,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -25006,11 +25006,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -25032,9 +25032,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -25058,9 +25058,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -25084,9 +25084,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -25162,13 +25162,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -25194,7 +25194,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -25240,13 +25240,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -25272,7 +25272,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -25296,7 +25296,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -25318,11 +25318,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -25344,9 +25344,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -25370,9 +25370,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -25396,9 +25396,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -25422,9 +25422,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -25452,7 +25452,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -25630,9 +25630,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -25656,9 +25656,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -25682,11 +25682,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -25712,7 +25712,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -25734,9 +25734,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -25838,13 +25838,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -25864,13 +25864,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -25890,13 +25890,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -25920,9 +25920,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -25948,7 +25948,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -25974,7 +25974,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -26000,7 +26000,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -26020,13 +26020,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, rex_w());
 	
@@ -26046,13 +26046,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, rex_w());
 	
@@ -26078,7 +26078,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, rex_w());
 	
@@ -26104,7 +26104,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, rex_w());
 	
@@ -26124,13 +26124,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -26156,7 +26156,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -26176,9 +26176,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -26228,13 +26228,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -26260,7 +26260,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -26280,11 +26280,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -26310,7 +26310,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -26332,11 +26332,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -26362,7 +26362,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -26384,11 +26384,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -26414,7 +26414,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -26436,9 +26436,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -26488,11 +26488,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -26518,7 +26518,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -26540,9 +26540,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -26592,9 +26592,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -26644,13 +26644,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -26676,7 +26676,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -26696,13 +26696,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, rex_w());
 	
@@ -26728,7 +26728,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, rex_w());
 	
@@ -26748,13 +26748,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -26780,7 +26780,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -26800,13 +26800,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -26826,13 +26826,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, rex_w());
 	
@@ -26858,7 +26858,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -26884,7 +26884,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, rex_w());
 	
@@ -26904,13 +26904,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -26930,13 +26930,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, rex_w());
 	
@@ -26962,7 +26962,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -26988,7 +26988,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, rex_w());
 	
@@ -27008,13 +27008,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -27040,7 +27040,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -27060,13 +27060,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -27092,7 +27092,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -27112,13 +27112,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, rex_w());
 	
@@ -27144,7 +27144,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, rex_w());
 	
@@ -27164,11 +27164,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -27194,7 +27194,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -27216,11 +27216,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -27246,7 +27246,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -27268,13 +27268,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -27300,7 +27300,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -27320,9 +27320,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -27372,13 +27372,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -27404,7 +27404,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -27424,13 +27424,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, rex_w());
 	
@@ -27456,7 +27456,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, rex_w());
 	
@@ -27476,13 +27476,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -27508,7 +27508,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -27528,13 +27528,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, rex_w());
 	
@@ -27560,7 +27560,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, rex_w());
 	
@@ -27584,7 +27584,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -27632,11 +27632,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -27658,9 +27658,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -27684,9 +27684,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -27710,9 +27710,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -27740,7 +27740,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -27866,11 +27866,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -27892,9 +27892,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -27918,9 +27918,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -27944,9 +27944,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -27974,7 +27974,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -28100,11 +28100,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -28130,7 +28130,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -28152,9 +28152,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -28204,13 +28204,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -28236,7 +28236,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -28256,13 +28256,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -28288,7 +28288,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -28308,11 +28308,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -28338,7 +28338,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -28360,11 +28360,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -28390,7 +28390,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -28516,11 +28516,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -28546,7 +28546,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -28572,7 +28572,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -28646,9 +28646,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -28672,9 +28672,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -28802,9 +28802,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -28828,9 +28828,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -28878,7 +28878,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	{
 		// This is not a VEX encoded instruction.
 	
-		self.pref_fwait(0x9B);
+		self.prefix_fwait(0x9B);
 	
 		// No prefix group 2.
 	
@@ -29140,9 +29140,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29166,9 +29166,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29296,9 +29296,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29322,9 +29322,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29452,9 +29452,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29478,9 +29478,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29608,9 +29608,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29634,9 +29634,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29790,9 +29790,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29816,9 +29816,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29842,9 +29842,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29868,9 +29868,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29894,9 +29894,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29920,9 +29920,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29946,9 +29946,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29972,9 +29972,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -29998,9 +29998,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30024,9 +30024,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30050,9 +30050,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30076,9 +30076,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30102,9 +30102,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30128,9 +30128,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30154,9 +30154,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30204,7 +30204,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	{
 		// This is not a VEX encoded instruction.
 	
-		self.pref_fwait(0x9B);
+		self.prefix_fwait(0x9B);
 	
 		// No prefix group 2.
 	
@@ -30232,9 +30232,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30258,9 +30258,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30284,9 +30284,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30310,9 +30310,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30336,9 +30336,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30362,9 +30362,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30388,9 +30388,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30414,9 +30414,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30440,9 +30440,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30466,9 +30466,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30492,9 +30492,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30518,9 +30518,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30544,9 +30544,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30570,9 +30570,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30596,9 +30596,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30674,9 +30674,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30700,9 +30700,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30882,9 +30882,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -30908,9 +30908,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31116,9 +31116,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31142,9 +31142,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31168,9 +31168,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31220,9 +31220,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31376,9 +31376,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31400,11 +31400,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	{
 		// This is not a VEX encoded instruction.
 	
-		self.pref_fwait(0x9B);
+		self.prefix_fwait(0x9B);
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31532,9 +31532,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31558,9 +31558,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31608,11 +31608,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	{
 		// This is not a VEX encoded instruction.
 	
-		self.pref_fwait(0x9B);
+		self.prefix_fwait(0x9B);
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31634,11 +31634,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	{
 		// This is not a VEX encoded instruction.
 	
-		self.pref_fwait(0x9B);
+		self.prefix_fwait(0x9B);
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31662,9 +31662,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31688,9 +31688,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31714,9 +31714,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31764,7 +31764,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	{
 		// This is not a VEX encoded instruction.
 	
-		self.pref_fwait(0x9B);
+		self.prefix_fwait(0x9B);
 	
 		// No prefix group 2.
 	
@@ -31790,11 +31790,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	{
 		// This is not a VEX encoded instruction.
 	
-		self.pref_fwait(0x9B);
+		self.prefix_fwait(0x9B);
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31818,9 +31818,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31844,9 +31844,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -31974,9 +31974,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -32000,9 +32000,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -32336,7 +32336,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	{
 		// This is not a VEX encoded instruction.
 	
-		self.pref_fwait(0x9B);
+		self.prefix_fwait(0x9B);
 	
 		// No prefix group 2.
 	
@@ -32440,9 +32440,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -32466,9 +32466,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -32492,9 +32492,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -32518,9 +32518,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -32622,11 +32622,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -32652,7 +32652,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -32674,13 +32674,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -32706,7 +32706,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -32726,11 +32726,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -32756,7 +32756,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -32778,13 +32778,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -32810,7 +32810,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -32830,11 +32830,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -32856,9 +32856,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -32882,9 +32882,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -32908,9 +32908,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -32938,7 +32938,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -33064,11 +33064,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -33090,9 +33090,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -33116,9 +33116,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -33142,9 +33142,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -33172,7 +33172,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -33194,11 +33194,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -33220,11 +33220,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -33246,11 +33246,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -33276,7 +33276,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -33302,7 +33302,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -33328,7 +33328,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -33376,9 +33376,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -33402,9 +33402,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -33428,9 +33428,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -33558,9 +33558,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -33584,9 +33584,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -33610,9 +33610,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -33822,7 +33822,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -33848,7 +33848,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -33922,11 +33922,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -33948,9 +33948,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -33974,9 +33974,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -34000,9 +34000,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -34030,7 +34030,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -34156,11 +34156,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -34182,9 +34182,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -34208,9 +34208,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -34286,11 +34286,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -34316,7 +34316,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -34342,7 +34342,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -34416,11 +34416,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -34446,7 +34446,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -34566,13 +34566,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn ja_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn ja_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -34592,13 +34592,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn ja_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn ja_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -34644,13 +34644,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn ja_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn ja_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -34696,13 +34696,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn ja_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn ja_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -34774,13 +34774,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jae_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jae_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -34800,13 +34800,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jae_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn jae_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -34852,13 +34852,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jae_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jae_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -34904,13 +34904,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jae_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jae_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -34982,13 +34982,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jb_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jb_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -35008,13 +35008,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jb_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn jb_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -35060,13 +35060,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jb_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jb_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -35112,13 +35112,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jb_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jb_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -35190,13 +35190,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jbe_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jbe_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -35216,13 +35216,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jbe_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn jbe_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -35268,13 +35268,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jbe_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jbe_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -35320,13 +35320,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jbe_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jbe_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -35398,13 +35398,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jc_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jc_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -35424,13 +35424,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jc_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn jc_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -35476,13 +35476,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jc_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jc_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -35528,13 +35528,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jc_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jc_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -35606,13 +35606,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn je_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn je_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -35632,13 +35632,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn je_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn je_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -35684,13 +35684,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn je_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn je_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -35736,13 +35736,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn je_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn je_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -35788,13 +35788,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jecxz_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jecxz_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -35840,13 +35840,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jecxz_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jecxz_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -35918,13 +35918,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jg_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jg_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -35944,13 +35944,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jg_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn jg_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -35996,13 +35996,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jg_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jg_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -36048,13 +36048,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jg_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jg_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -36126,13 +36126,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jge_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jge_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -36152,13 +36152,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jge_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn jge_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -36204,13 +36204,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jge_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jge_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -36256,13 +36256,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jge_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jge_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -36334,13 +36334,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jl_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jl_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -36360,13 +36360,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jl_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn jl_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -36412,13 +36412,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jl_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jl_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -36464,13 +36464,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jl_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jl_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -36542,13 +36542,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jle_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jle_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -36568,13 +36568,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jle_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn jle_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -36620,13 +36620,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jle_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jle_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -36672,13 +36672,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jle_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jle_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -36704,9 +36704,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -36730,9 +36730,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -36756,9 +36756,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -36834,9 +36834,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -36984,13 +36984,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jna_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jna_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -37010,13 +37010,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jna_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn jna_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -37062,13 +37062,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jna_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jna_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -37114,13 +37114,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jna_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jna_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -37192,13 +37192,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnae_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jnae_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -37218,13 +37218,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnae_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn jnae_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -37270,13 +37270,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnae_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jnae_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -37322,13 +37322,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnae_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jnae_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -37400,13 +37400,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnb_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jnb_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -37426,13 +37426,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnb_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn jnb_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -37478,13 +37478,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnb_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jnb_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -37530,13 +37530,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnb_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jnb_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -37608,13 +37608,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnbe_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jnbe_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -37634,13 +37634,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnbe_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn jnbe_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -37686,13 +37686,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnbe_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jnbe_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -37738,13 +37738,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnbe_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jnbe_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -37816,13 +37816,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnc_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jnc_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -37842,13 +37842,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnc_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn jnc_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -37894,13 +37894,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnc_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jnc_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -37946,13 +37946,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnc_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jnc_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -38024,13 +38024,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jne_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jne_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -38050,13 +38050,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jne_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn jne_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -38102,13 +38102,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jne_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jne_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -38154,13 +38154,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jne_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jne_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -38232,13 +38232,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jng_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jng_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -38258,13 +38258,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jng_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn jng_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -38310,13 +38310,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jng_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jng_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -38362,13 +38362,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jng_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jng_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -38440,13 +38440,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnge_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jnge_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -38466,13 +38466,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnge_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn jnge_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -38518,13 +38518,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnge_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jnge_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -38570,13 +38570,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnge_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jnge_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -38648,13 +38648,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnl_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jnl_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -38674,13 +38674,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnl_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn jnl_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -38726,13 +38726,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnl_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jnl_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -38778,13 +38778,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnl_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jnl_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -38856,13 +38856,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnle_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jnle_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -38882,13 +38882,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnle_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn jnle_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -38934,13 +38934,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnle_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jnle_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -38986,13 +38986,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnle_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jnle_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -39064,13 +39064,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jno_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jno_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -39090,13 +39090,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jno_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn jno_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -39142,13 +39142,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jno_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jno_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -39194,13 +39194,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jno_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jno_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -39272,13 +39272,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnp_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jnp_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -39298,13 +39298,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnp_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn jnp_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -39350,13 +39350,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnp_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jnp_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -39402,13 +39402,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnp_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jnp_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -39480,13 +39480,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jns_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jns_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -39506,13 +39506,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jns_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn jns_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -39558,13 +39558,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jns_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jns_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -39610,13 +39610,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jns_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jns_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -39688,13 +39688,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnz_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jnz_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -39714,13 +39714,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnz_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn jnz_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -39766,13 +39766,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnz_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jnz_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -39818,13 +39818,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jnz_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jnz_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -39896,13 +39896,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jo_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jo_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -39922,13 +39922,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jo_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn jo_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -39974,13 +39974,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jo_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jo_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -40026,13 +40026,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jo_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jo_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -40104,13 +40104,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jp_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jp_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -40130,13 +40130,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jp_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn jp_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -40182,13 +40182,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jp_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jp_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -40234,13 +40234,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jp_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jp_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -40312,13 +40312,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jpe_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jpe_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -40338,13 +40338,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jpe_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn jpe_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -40390,13 +40390,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jpe_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jpe_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -40442,13 +40442,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jpe_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jpe_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -40520,13 +40520,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jpo_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jpo_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -40546,13 +40546,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jpo_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn jpo_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -40598,13 +40598,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jpo_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jpo_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -40650,13 +40650,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jpo_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jpo_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -40702,13 +40702,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jrcxz_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jrcxz_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -40754,13 +40754,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jrcxz_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jrcxz_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -40832,13 +40832,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn js_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn js_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -40858,13 +40858,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn js_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn js_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -40910,13 +40910,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn js_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn js_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -40962,13 +40962,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn js_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn js_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -41040,13 +41040,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jz_Label_Hint(&mut self, arg0: Label, arg1: Hint)
+	fn jz_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -41066,13 +41066,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jz_Label_Hint_1(&mut self, arg0: Label, arg1: Hint)
+	fn jz_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -41118,13 +41118,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jz_Relative32Bit_Hint(&mut self, arg0: Relative32Bit, arg1: Hint)
+	fn jz_Relative32Bit_BranchHint(&mut self, arg0: Relative32Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -41170,13 +41170,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn jz_Relative8Bit_Hint(&mut self, arg0: Relative8Bit, arg1: Hint)
+	fn jz_Relative8Bit_BranchHint(&mut self, arg0: Relative8Bit, arg1: BranchHint)
 	{
 		// This is not a VEX encoded instruction.
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// No prefix group 4.
 	
@@ -41228,11 +41228,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -41258,7 +41258,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -41280,11 +41280,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -41332,11 +41332,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -41384,13 +41384,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -41410,9 +41410,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -41436,11 +41436,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -41462,11 +41462,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -41488,11 +41488,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -41514,9 +41514,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -41540,9 +41540,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -41566,9 +41566,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -41592,9 +41592,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -41618,9 +41618,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -41644,9 +41644,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -41700,7 +41700,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -41748,11 +41748,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -41774,9 +41774,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -41800,9 +41800,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -41826,11 +41826,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -41852,9 +41852,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -41878,9 +41878,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -41930,11 +41930,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -41956,9 +41956,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -41982,9 +41982,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -42008,9 +42008,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -42116,7 +42116,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -42294,11 +42294,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -42324,7 +42324,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -42346,11 +42346,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -42398,11 +42398,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -42450,11 +42450,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -42476,9 +42476,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -42502,9 +42502,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -42528,13 +42528,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -42558,9 +42558,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -42580,13 +42580,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -42612,7 +42612,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -42632,13 +42632,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, rex_w());
 	
@@ -42664,7 +42664,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, rex_w());
 	
@@ -42688,7 +42688,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -42736,11 +42736,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -42766,7 +42766,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -42788,9 +42788,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -42840,13 +42840,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -42872,7 +42872,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -42892,13 +42892,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -42924,7 +42924,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -42970,11 +42970,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -43000,7 +43000,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -43022,9 +43022,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -43074,13 +43074,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -43106,7 +43106,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -43126,13 +43126,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -43158,7 +43158,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -43260,7 +43260,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -43308,11 +43308,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -43334,11 +43334,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -43360,11 +43360,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -43386,9 +43386,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -43412,9 +43412,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -43438,9 +43438,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -43464,9 +43464,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -43490,9 +43490,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -43516,9 +43516,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -43542,9 +43542,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -43568,9 +43568,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -43598,7 +43598,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -43728,7 +43728,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -43754,7 +43754,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -43776,11 +43776,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -43806,7 +43806,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -43832,7 +43832,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -43858,7 +43858,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -43932,9 +43932,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -44062,9 +44062,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -44218,9 +44218,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -44426,9 +44426,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -44556,11 +44556,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -44582,9 +44582,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -44660,11 +44660,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -44686,11 +44686,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -44716,7 +44716,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -44742,7 +44742,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -44764,9 +44764,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -44790,9 +44790,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -44868,11 +44868,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -44894,9 +44894,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -44920,9 +44920,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -44946,11 +44946,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -44972,9 +44972,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -44998,9 +44998,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -45024,9 +45024,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -45050,11 +45050,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -45076,9 +45076,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -45158,7 +45158,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -45180,11 +45180,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -45210,7 +45210,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -45232,13 +45232,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -45264,7 +45264,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -45290,7 +45290,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -45310,11 +45310,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -45336,11 +45336,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -45366,7 +45366,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -45392,7 +45392,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -45414,13 +45414,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg0, arg1, 0x00);
 	
@@ -45440,13 +45440,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -45472,7 +45472,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -45498,7 +45498,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg0, arg1, 0x00);
 	
@@ -45544,11 +45544,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -45570,11 +45570,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -45596,9 +45596,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -45622,9 +45622,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -45674,11 +45674,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -45700,11 +45700,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -45726,9 +45726,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -45752,9 +45752,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -45782,7 +45782,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -45808,7 +45808,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -45882,11 +45882,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -45908,11 +45908,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -45934,9 +45934,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -45960,9 +45960,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -45986,11 +45986,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -46012,9 +46012,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -46038,9 +46038,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -46064,9 +46064,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -46090,9 +46090,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -46116,11 +46116,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -46142,11 +46142,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -46168,9 +46168,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -46194,9 +46194,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -46328,7 +46328,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -46350,11 +46350,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -46376,13 +46376,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -46406,7 +46406,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -46434,7 +46434,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -46458,7 +46458,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -46486,7 +46486,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -46506,11 +46506,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -46532,9 +46532,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -46558,9 +46558,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -46584,9 +46584,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -46662,13 +46662,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg0, arg1, 0x00);
 	
@@ -46688,13 +46688,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -46720,7 +46720,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -46746,7 +46746,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg0, arg1, 0x00);
 	
@@ -46766,13 +46766,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -46798,7 +46798,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -46818,13 +46818,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -46850,7 +46850,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -46896,13 +46896,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg0, arg1, 0x00);
 	
@@ -46922,13 +46922,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -46954,7 +46954,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -46980,7 +46980,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg0, arg1, 0x00);
 	
@@ -47004,7 +47004,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -47026,11 +47026,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -47056,7 +47056,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -47082,7 +47082,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -47104,9 +47104,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -47130,9 +47130,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -47234,9 +47234,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -47260,9 +47260,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -47338,9 +47338,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -47390,11 +47390,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -47416,11 +47416,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -47446,7 +47446,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -47472,7 +47472,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -47494,9 +47494,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -47520,9 +47520,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -47598,11 +47598,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -47628,7 +47628,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -47654,7 +47654,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -47676,9 +47676,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -47702,9 +47702,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -47806,9 +47806,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -47832,9 +47832,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -47910,11 +47910,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -47940,7 +47940,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -47962,11 +47962,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -47988,9 +47988,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -48014,9 +48014,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -48040,9 +48040,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -48070,7 +48070,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -48196,11 +48196,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -48226,7 +48226,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -48248,9 +48248,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -48300,13 +48300,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -48332,7 +48332,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -48352,13 +48352,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -48384,7 +48384,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -48404,11 +48404,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x3, 0x0, arg1, arg2, arg0);
 	
@@ -48456,11 +48456,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x3, 0x1, arg1, arg2, arg0);
 	
@@ -48534,11 +48534,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -48560,9 +48560,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -48586,9 +48586,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -48612,9 +48612,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -48642,7 +48642,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -48794,11 +48794,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -48820,9 +48820,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -48850,7 +48850,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -48898,11 +48898,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -48924,9 +48924,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -48950,9 +48950,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -48976,9 +48976,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -49006,7 +49006,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -49162,7 +49162,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -49210,11 +49210,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -49236,11 +49236,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -49262,11 +49262,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -49288,9 +49288,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -49314,9 +49314,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -49340,9 +49340,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -49366,9 +49366,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -49392,9 +49392,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -49418,9 +49418,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -49444,9 +49444,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -49470,9 +49470,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -49496,9 +49496,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -49526,7 +49526,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -49552,7 +49552,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -49574,11 +49574,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -49604,7 +49604,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -49630,7 +49630,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -49704,9 +49704,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -49834,9 +49834,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -49938,9 +49938,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -50120,9 +50120,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -50250,11 +50250,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -50280,7 +50280,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -50302,9 +50302,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -50384,7 +50384,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -50462,7 +50462,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -50510,11 +50510,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -50536,9 +50536,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -50562,9 +50562,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -50644,7 +50644,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -50666,9 +50666,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -50718,11 +50718,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -50748,7 +50748,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -50770,9 +50770,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -50822,11 +50822,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -50852,7 +50852,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -50874,9 +50874,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -50926,11 +50926,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -50956,7 +50956,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -50978,9 +50978,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -51030,11 +51030,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -51060,7 +51060,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -51082,9 +51082,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -51134,11 +51134,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -51164,7 +51164,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -51186,11 +51186,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -51216,7 +51216,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -51238,9 +51238,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -51290,11 +51290,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -51320,7 +51320,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -51342,9 +51342,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -51394,11 +51394,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -51424,7 +51424,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -51446,9 +51446,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -51498,11 +51498,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -51528,7 +51528,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -51550,9 +51550,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -51602,11 +51602,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -51632,7 +51632,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -51654,9 +51654,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -51706,11 +51706,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -51736,7 +51736,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -51758,9 +51758,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -51810,11 +51810,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -51840,7 +51840,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -51862,9 +51862,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -51914,11 +51914,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -51944,7 +51944,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -51966,9 +51966,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -52018,11 +52018,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -52048,7 +52048,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -52070,9 +52070,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -52122,11 +52122,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -52152,7 +52152,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -52174,9 +52174,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -52226,11 +52226,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -52256,7 +52256,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -52278,9 +52278,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -52330,11 +52330,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -52360,7 +52360,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -52382,9 +52382,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -52434,11 +52434,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -52464,7 +52464,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -52492,7 +52492,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		// No `REX` prefix.
 	
@@ -52512,9 +52512,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -52564,11 +52564,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -52594,7 +52594,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -52616,9 +52616,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -52668,11 +52668,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -52698,7 +52698,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -52720,11 +52720,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -52750,7 +52750,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -52772,11 +52772,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -52802,7 +52802,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -52824,11 +52824,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -52854,7 +52854,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -52876,9 +52876,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -52928,11 +52928,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -52958,7 +52958,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -52980,9 +52980,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -53032,11 +53032,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -53062,7 +53062,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -53084,11 +53084,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -53114,7 +53114,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -53136,9 +53136,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -53188,11 +53188,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -53218,7 +53218,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -53240,11 +53240,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -53270,7 +53270,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -53292,11 +53292,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -53322,7 +53322,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -53344,9 +53344,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -53396,11 +53396,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -53426,7 +53426,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -53448,9 +53448,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -53500,11 +53500,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -53530,7 +53530,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -53552,11 +53552,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -53582,7 +53582,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -53604,9 +53604,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -53656,11 +53656,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -53686,7 +53686,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -53708,11 +53708,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -53738,7 +53738,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -53760,11 +53760,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -53790,7 +53790,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -53812,11 +53812,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x3, 0x0, arg1, arg2, arg0);
 	
@@ -53864,11 +53864,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x3, 0x1, arg1, arg2, arg0);
 	
@@ -53916,11 +53916,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x2, 0x0, arg1, arg2, arg0);
 	
@@ -53968,11 +53968,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x2, 0x1, arg1, arg2, arg0);
 	
@@ -54020,11 +54020,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -54050,7 +54050,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -54076,7 +54076,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -54098,11 +54098,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -54128,7 +54128,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -54150,11 +54150,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -54180,7 +54180,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -54202,11 +54202,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -54258,7 +54258,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -54284,7 +54284,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -54336,7 +54336,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -54362,7 +54362,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -54384,9 +54384,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -54436,11 +54436,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -54466,7 +54466,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -54488,9 +54488,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -54540,11 +54540,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -54570,7 +54570,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -54592,9 +54592,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -54644,11 +54644,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -54674,7 +54674,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -54696,11 +54696,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -54726,7 +54726,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -54748,9 +54748,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -54800,11 +54800,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -54830,7 +54830,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -54852,9 +54852,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -54904,11 +54904,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -54934,7 +54934,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -54956,9 +54956,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -55008,11 +55008,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -55038,7 +55038,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -55060,11 +55060,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -55090,7 +55090,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -55112,11 +55112,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -55142,7 +55142,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -55164,9 +55164,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -55216,11 +55216,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -55246,7 +55246,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -55268,9 +55268,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -55320,11 +55320,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -55350,7 +55350,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -55372,9 +55372,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -55424,11 +55424,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -55454,7 +55454,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -55476,11 +55476,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -55506,7 +55506,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -55528,11 +55528,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -55558,7 +55558,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -55580,9 +55580,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -55632,11 +55632,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -55662,7 +55662,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -55684,9 +55684,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -55736,11 +55736,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -55766,7 +55766,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -55788,11 +55788,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -55818,7 +55818,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -55840,11 +55840,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -55870,7 +55870,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -55892,11 +55892,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -55922,7 +55922,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -55944,11 +55944,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -55974,7 +55974,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -55996,9 +55996,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -56048,11 +56048,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56078,7 +56078,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56100,9 +56100,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -56152,11 +56152,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56182,7 +56182,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56204,11 +56204,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56234,7 +56234,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56256,11 +56256,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56286,7 +56286,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56338,7 +56338,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56390,7 +56390,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56412,11 +56412,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56442,7 +56442,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56464,11 +56464,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56494,7 +56494,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56516,11 +56516,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56546,7 +56546,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56568,11 +56568,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56598,7 +56598,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56620,11 +56620,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56650,7 +56650,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56672,11 +56672,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56702,7 +56702,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56724,11 +56724,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56754,7 +56754,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56776,11 +56776,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56806,7 +56806,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56828,11 +56828,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56858,7 +56858,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56880,11 +56880,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56910,7 +56910,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56932,11 +56932,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56962,7 +56962,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -56984,11 +56984,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -57014,7 +57014,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -57036,11 +57036,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -57066,7 +57066,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -57088,9 +57088,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -57140,11 +57140,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -57170,7 +57170,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -57192,9 +57192,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -57244,11 +57244,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -57274,7 +57274,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -57296,9 +57296,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -57348,11 +57348,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -57378,7 +57378,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -57400,11 +57400,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -57430,7 +57430,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -57452,9 +57452,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -57504,11 +57504,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -57534,7 +57534,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -57556,9 +57556,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -57608,11 +57608,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -57638,7 +57638,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -57690,7 +57690,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -57742,7 +57742,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -57764,11 +57764,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -57790,9 +57790,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -57820,7 +57820,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -57846,7 +57846,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -57920,13 +57920,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -57950,9 +57950,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -57972,13 +57972,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -58004,7 +58004,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -58024,13 +58024,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, rex_w());
 	
@@ -58056,7 +58056,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, rex_w());
 	
@@ -58080,7 +58080,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -58128,9 +58128,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -58180,11 +58180,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -58210,7 +58210,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -58232,9 +58232,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -58258,9 +58258,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -58284,9 +58284,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -58310,9 +58310,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -58336,9 +58336,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -58388,11 +58388,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -58418,7 +58418,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -58440,9 +58440,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -58492,11 +58492,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -58522,7 +58522,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -58544,11 +58544,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -58574,7 +58574,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -58596,13 +58596,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -58628,7 +58628,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -58648,13 +58648,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -58680,7 +58680,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -58700,9 +58700,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -58752,9 +58752,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -58804,11 +58804,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -58834,7 +58834,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -58856,9 +58856,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -58908,11 +58908,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -58938,7 +58938,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -58960,9 +58960,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -59012,11 +59012,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -59042,7 +59042,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -59090,9 +59090,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -59146,7 +59146,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -59168,11 +59168,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -59198,7 +59198,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -59224,7 +59224,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -59272,9 +59272,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -59328,7 +59328,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -59350,11 +59350,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -59380,7 +59380,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -59428,9 +59428,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -59484,7 +59484,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -59506,11 +59506,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -59536,7 +59536,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -59584,9 +59584,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -59640,7 +59640,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -59662,11 +59662,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -59692,7 +59692,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -59740,9 +59740,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -59796,7 +59796,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -59818,11 +59818,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -59848,7 +59848,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -59896,9 +59896,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -59952,7 +59952,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -59974,11 +59974,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -60004,7 +60004,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -60030,7 +60030,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -60078,9 +60078,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -60134,7 +60134,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -60156,11 +60156,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -60186,7 +60186,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -60234,9 +60234,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -60290,7 +60290,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -60312,11 +60312,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -60342,7 +60342,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -60364,9 +60364,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -60416,11 +60416,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -60446,7 +60446,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -60468,9 +60468,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -60520,11 +60520,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -60550,7 +60550,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -60572,9 +60572,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -60624,11 +60624,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -60654,7 +60654,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -60676,9 +60676,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -60728,11 +60728,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -60758,7 +60758,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -60780,9 +60780,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -60832,11 +60832,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -60862,7 +60862,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -60884,9 +60884,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -60936,11 +60936,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -60966,7 +60966,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -60988,9 +60988,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -61040,11 +61040,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -61070,7 +61070,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -61092,9 +61092,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -61144,11 +61144,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -61174,7 +61174,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -61196,11 +61196,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -61226,7 +61226,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -61248,9 +61248,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -61300,11 +61300,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -61330,7 +61330,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -61352,9 +61352,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -61404,11 +61404,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -61434,7 +61434,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -61456,11 +61456,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -61486,7 +61486,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -61508,9 +61508,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -61560,11 +61560,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -61590,7 +61590,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -61612,9 +61612,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -61664,11 +61664,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -61694,7 +61694,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -61716,9 +61716,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -61768,11 +61768,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -61798,7 +61798,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -61820,11 +61820,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -61850,7 +61850,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -61872,9 +61872,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -61924,11 +61924,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -61954,7 +61954,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -62028,11 +62028,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -62054,9 +62054,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -62084,7 +62084,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -62110,7 +62110,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -62188,7 +62188,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -62240,7 +62240,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -62318,7 +62318,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -62344,7 +62344,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -62366,9 +62366,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -62418,11 +62418,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -62448,7 +62448,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -62470,11 +62470,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -62496,11 +62496,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -62522,11 +62522,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -62548,9 +62548,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -62574,9 +62574,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -62600,9 +62600,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -62626,9 +62626,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -62652,9 +62652,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -62678,9 +62678,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -62704,9 +62704,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -62730,9 +62730,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -62756,9 +62756,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -62786,7 +62786,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -62812,7 +62812,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -62838,7 +62838,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -63172,9 +63172,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -63224,13 +63224,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -63256,7 +63256,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -63276,11 +63276,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -63302,11 +63302,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -63328,11 +63328,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -63354,9 +63354,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -63380,9 +63380,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -63406,9 +63406,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -63432,9 +63432,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -63458,9 +63458,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -63484,9 +63484,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -63510,9 +63510,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -63536,9 +63536,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -63562,9 +63562,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -63592,7 +63592,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -63618,7 +63618,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -63644,7 +63644,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -63984,7 +63984,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg0, 0x00);
 	
@@ -64010,7 +64010,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg0, rex_w());
 	
@@ -64036,7 +64036,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg0, 0x00);
 	
@@ -64062,7 +64062,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg0, rex_w());
 	
@@ -64086,7 +64086,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -64160,13 +64160,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		// No `REX` prefix.
 	
@@ -64186,13 +64186,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		// No `REX` prefix.
 	
@@ -64212,13 +64212,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, rex_w());
 	
@@ -64238,13 +64238,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		// No `REX` prefix.
 	
@@ -64264,13 +64264,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, rex_w());
 	
@@ -64296,7 +64296,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		// No `REX` prefix.
 	
@@ -64322,7 +64322,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, rex_w());
 	
@@ -64346,9 +64346,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		// No `REX` prefix.
 	
@@ -64374,7 +64374,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		// No `REX` prefix.
 	
@@ -64400,7 +64400,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, rex_w());
 	
@@ -64420,13 +64420,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		// No `REX` prefix.
 	
@@ -64446,13 +64446,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		// No `REX` prefix.
 	
@@ -64472,13 +64472,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, rex_w());
 	
@@ -64498,13 +64498,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		// No `REX` prefix.
 	
@@ -64524,13 +64524,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, rex_w());
 	
@@ -64550,13 +64550,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		// No `REX` prefix.
 	
@@ -64576,13 +64576,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		// No `REX` prefix.
 	
@@ -64602,13 +64602,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, rex_w());
 	
@@ -64628,13 +64628,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		// No `REX` prefix.
 	
@@ -64654,13 +64654,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, rex_w());
 	
@@ -64680,13 +64680,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		// No `REX` prefix.
 	
@@ -64706,13 +64706,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		// No `REX` prefix.
 	
@@ -64732,13 +64732,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, rex_w());
 	
@@ -64758,13 +64758,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		// No `REX` prefix.
 	
@@ -64784,13 +64784,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, rex_w());
 	
@@ -64810,13 +64810,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		// No `REX` prefix.
 	
@@ -64836,13 +64836,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		// No `REX` prefix.
 	
@@ -64862,13 +64862,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, rex_w());
 	
@@ -64888,13 +64888,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		// No `REX` prefix.
 	
@@ -64914,13 +64914,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, rex_w());
 	
@@ -64940,13 +64940,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		// No `REX` prefix.
 	
@@ -64966,13 +64966,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		// No `REX` prefix.
 	
@@ -64992,13 +64992,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, rex_w());
 	
@@ -65018,13 +65018,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		// No `REX` prefix.
 	
@@ -65044,13 +65044,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, rex_w());
 	
@@ -65070,13 +65070,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		// No `REX` prefix.
 	
@@ -65096,13 +65096,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		// No `REX` prefix.
 	
@@ -65122,13 +65122,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, rex_w());
 	
@@ -65148,13 +65148,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		// No `REX` prefix.
 	
@@ -65174,13 +65174,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, rex_w());
 	
@@ -65200,13 +65200,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		// No `REX` prefix.
 	
@@ -65226,13 +65226,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		// No `REX` prefix.
 	
@@ -65252,13 +65252,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, rex_w());
 	
@@ -65278,13 +65278,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		// No `REX` prefix.
 	
@@ -65304,13 +65304,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, rex_w());
 	
@@ -65434,11 +65434,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -65460,11 +65460,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -65486,11 +65486,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -65512,9 +65512,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65538,9 +65538,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65564,9 +65564,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65590,9 +65590,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65616,9 +65616,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65642,9 +65642,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65668,9 +65668,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65694,9 +65694,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65720,9 +65720,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -65750,7 +65750,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -65776,7 +65776,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -65802,7 +65802,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -66136,11 +66136,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -66162,11 +66162,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -66188,11 +66188,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -66214,9 +66214,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -66240,9 +66240,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -66266,9 +66266,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -66292,9 +66292,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -66318,9 +66318,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -66344,9 +66344,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -66370,9 +66370,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -66396,9 +66396,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -66422,9 +66422,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -66452,7 +66452,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -66478,7 +66478,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -66504,7 +66504,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -66838,11 +66838,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x03, 0x0, 0x3, 0x0, XMM0::O, arg1, arg0);
 	
@@ -66890,11 +66890,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x03, 0x0, 0x3, 0x1, XMM0::O, arg1, arg0);
 	
@@ -66942,11 +66942,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -66972,7 +66972,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -66994,11 +66994,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -67024,7 +67024,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -67046,11 +67046,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -67076,7 +67076,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -67098,11 +67098,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -67128,7 +67128,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -67150,9 +67150,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -67202,13 +67202,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -67234,7 +67234,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -67280,11 +67280,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -67306,11 +67306,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -67332,11 +67332,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -67358,9 +67358,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -67384,9 +67384,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -67410,9 +67410,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -67436,9 +67436,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -67462,9 +67462,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -67488,9 +67488,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -67514,9 +67514,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -67540,9 +67540,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -67566,9 +67566,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -67596,7 +67596,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -67622,7 +67622,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -67648,7 +67648,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -67982,11 +67982,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -68008,11 +68008,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -68034,11 +68034,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -68060,9 +68060,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -68086,9 +68086,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -68112,9 +68112,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -68138,9 +68138,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -68164,9 +68164,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -68190,9 +68190,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -68216,9 +68216,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -68242,9 +68242,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -68268,9 +68268,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -68298,7 +68298,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -68324,7 +68324,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -68350,7 +68350,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -68684,11 +68684,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x2, 0x0, arg2, arg1, arg0);
 	
@@ -68736,11 +68736,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x2, 0x1, arg2, arg1, arg0);
 	
@@ -68818,7 +68818,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -68866,11 +68866,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -68892,11 +68892,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -68918,11 +68918,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -68944,9 +68944,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -68970,9 +68970,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -68996,9 +68996,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -69022,9 +69022,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -69048,9 +69048,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -69074,9 +69074,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -69100,9 +69100,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -69126,9 +69126,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -69152,9 +69152,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -69182,7 +69182,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -69208,7 +69208,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -69230,11 +69230,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -69260,7 +69260,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -69286,7 +69286,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -69360,9 +69360,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -69490,9 +69490,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -69594,9 +69594,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -69776,9 +69776,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -69906,11 +69906,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -69932,9 +69932,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -69958,9 +69958,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -69984,9 +69984,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -70092,7 +70092,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -70114,9 +70114,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -70192,9 +70192,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -70270,9 +70270,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -70348,9 +70348,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -70426,9 +70426,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -70504,9 +70504,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -70582,9 +70582,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -70660,9 +70660,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -70738,9 +70738,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -70816,9 +70816,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -70894,9 +70894,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -70972,9 +70972,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -71050,9 +71050,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -71128,9 +71128,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -71206,9 +71206,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -71284,9 +71284,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -71362,9 +71362,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -71440,9 +71440,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -71518,9 +71518,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -71596,9 +71596,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -71674,9 +71674,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -71752,9 +71752,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -71830,9 +71830,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -71908,9 +71908,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -71986,9 +71986,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72064,9 +72064,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72142,9 +72142,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72220,9 +72220,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72298,9 +72298,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72376,9 +72376,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72480,11 +72480,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -72506,11 +72506,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -72532,11 +72532,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -72558,9 +72558,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72584,9 +72584,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72610,9 +72610,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72636,9 +72636,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72662,9 +72662,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72688,9 +72688,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72714,9 +72714,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72740,9 +72740,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72766,9 +72766,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -72796,7 +72796,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -72822,7 +72822,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -72848,7 +72848,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -73182,11 +73182,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -73208,11 +73208,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -73234,9 +73234,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -73260,9 +73260,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -73286,9 +73286,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -73312,9 +73312,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -73342,7 +73342,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -73368,7 +73368,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -73494,11 +73494,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg2, arg1, arg0);
 	
@@ -73546,11 +73546,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg2, arg1, arg0);
 	
@@ -73598,11 +73598,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -73624,11 +73624,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -73650,11 +73650,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -73676,9 +73676,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -73702,9 +73702,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -73728,9 +73728,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -73754,9 +73754,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -73780,9 +73780,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -73806,9 +73806,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -73832,9 +73832,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -73858,9 +73858,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -73884,9 +73884,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -73914,7 +73914,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -73940,7 +73940,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -73966,7 +73966,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -74300,11 +74300,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -74326,11 +74326,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -74352,9 +74352,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -74378,9 +74378,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -74404,9 +74404,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -74430,9 +74430,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -74460,7 +74460,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -74486,7 +74486,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -74612,11 +74612,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x3, 0x0, arg2, arg1, arg0);
 	
@@ -74664,11 +74664,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x3, 0x1, arg2, arg1, arg0);
 	
@@ -74716,11 +74716,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -74746,7 +74746,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -74768,9 +74768,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -74820,11 +74820,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -74850,7 +74850,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -74872,9 +74872,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -74924,13 +74924,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -74956,7 +74956,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -74976,13 +74976,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -75008,7 +75008,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -75106,9 +75106,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -75132,11 +75132,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -75158,9 +75158,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -75184,9 +75184,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -75210,9 +75210,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -75318,7 +75318,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -75370,7 +75370,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -75418,11 +75418,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -75444,11 +75444,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -75470,11 +75470,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -75496,9 +75496,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -75522,9 +75522,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -75548,9 +75548,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -75574,9 +75574,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -75600,9 +75600,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -75626,9 +75626,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -75652,9 +75652,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -75678,9 +75678,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -75704,9 +75704,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -75734,7 +75734,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -75760,7 +75760,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -75782,11 +75782,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -75812,7 +75812,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -75838,7 +75838,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -75912,9 +75912,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -76042,9 +76042,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -76146,9 +76146,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -76328,9 +76328,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -76458,11 +76458,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -76488,7 +76488,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -76510,9 +76510,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -76562,13 +76562,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -76594,7 +76594,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -76614,13 +76614,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -76646,7 +76646,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -76878,7 +76878,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -76926,11 +76926,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -76952,11 +76952,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -76978,9 +76978,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -77004,9 +77004,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -77030,9 +77030,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -77056,9 +77056,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -77082,9 +77082,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -77108,9 +77108,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -77134,9 +77134,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -77164,7 +77164,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -77190,7 +77190,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -77498,13 +77498,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -77528,9 +77528,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -77550,13 +77550,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -77582,7 +77582,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, 0x00);
 	
@@ -77602,13 +77602,13 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, rex_w());
 	
@@ -77634,7 +77634,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg1, arg0, rex_w());
 	
@@ -77654,11 +77654,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -77684,7 +77684,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -77706,9 +77706,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -77784,11 +77784,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -77814,7 +77814,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -77836,9 +77836,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -77888,11 +77888,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -77918,7 +77918,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -77940,9 +77940,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -77992,11 +77992,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -78044,11 +78044,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -78096,11 +78096,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -78148,11 +78148,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -78200,11 +78200,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x3, 0x0, arg1, arg2, arg0);
 	
@@ -78252,11 +78252,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x2, 0x0, arg1, arg2, arg0);
 	
@@ -78304,11 +78304,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -78356,11 +78356,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -78408,11 +78408,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x3, 0x0, arg1, arg2, arg0);
 	
@@ -78460,11 +78460,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x3, 0x0, arg1, arg2, arg0);
 	
@@ -78512,11 +78512,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -78564,11 +78564,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -78616,11 +78616,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -78668,11 +78668,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -78720,11 +78720,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -78772,11 +78772,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -78824,11 +78824,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -78876,11 +78876,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -78928,11 +78928,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -78980,11 +78980,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -79032,11 +79032,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -79084,11 +79084,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -79136,11 +79136,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -79188,11 +79188,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -79240,11 +79240,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -79292,11 +79292,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -79344,11 +79344,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -79396,11 +79396,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -79448,11 +79448,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -79500,11 +79500,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -79552,11 +79552,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -79604,11 +79604,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -79656,11 +79656,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -79682,11 +79682,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -79708,11 +79708,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -79760,11 +79760,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -79812,11 +79812,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -79864,11 +79864,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -79916,11 +79916,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -79968,11 +79968,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -80020,11 +80020,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -80072,11 +80072,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x3, 0x0, arg1, arg2, arg0);
 	
@@ -80124,11 +80124,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x2, 0x0, arg1, arg2, arg0);
 	
@@ -80176,11 +80176,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -80228,11 +80228,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
 	
@@ -80280,11 +80280,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
 	
@@ -80332,11 +80332,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x1, 0x2, 0x0, XMM0::O, arg1, arg0);
 	
@@ -80384,11 +80384,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
 	
@@ -80436,11 +80436,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x1, 0x0, 0x0, XMM0::O, arg1, arg0);
 	
@@ -80488,11 +80488,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x3, 0x0, XMM0::O, arg1, arg0);
 	
@@ -80514,11 +80514,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x1, 0x3, 0x0, XMM0::O, arg1, arg0);
 	
@@ -80592,11 +80592,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -80618,11 +80618,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -80696,11 +80696,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -80748,11 +80748,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -80800,11 +80800,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -80852,11 +80852,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -80904,11 +80904,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
 	
@@ -80956,11 +80956,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x1, 0x0, 0x0, XMM0::O, arg1, arg0);
 	
@@ -81008,11 +81008,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x03, 0x1, 0x1, 0x0, XMM0::O, arg0, arg1);
 	
@@ -81034,11 +81034,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
 	
@@ -81112,11 +81112,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x3, 0x0, XMM0::O, arg1, arg0);
 	
@@ -81164,11 +81164,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x3, 0x1, XMM0::O, arg1, arg0);
 	
@@ -81216,11 +81216,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x3, 0x0, arg1, arg2, arg0);
 	
@@ -81268,11 +81268,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x3, 0x0, arg1, arg2, arg0);
 	
@@ -81294,11 +81294,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x3, 0x1, arg1, arg2, arg0);
 	
@@ -81372,11 +81372,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x2, 0x0, arg1, arg2, arg0);
 	
@@ -81398,11 +81398,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x2, 0x1, arg1, arg2, arg0);
 	
@@ -81476,11 +81476,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x2, 0x0, arg1, arg2, arg0);
 	
@@ -81528,11 +81528,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
 	
@@ -81580,11 +81580,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x2, 0x1, XMM0::O, arg1, arg0);
 	
@@ -81632,11 +81632,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -81658,11 +81658,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -81736,11 +81736,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
 	
@@ -81788,11 +81788,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x1, 0x2, 0x0, XMM0::O, arg1, arg0);
 	
@@ -81840,11 +81840,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x3, 0x0, XMM0::O, arg1, arg0);
 	
@@ -81892,11 +81892,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x3, 0x1, XMM0::O, arg1, arg0);
 	
@@ -81944,11 +81944,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
 	
@@ -81996,11 +81996,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x2, 0x1, XMM0::O, arg1, arg0);
 	
@@ -82048,11 +82048,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -82100,11 +82100,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -82152,11 +82152,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -82204,11 +82204,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -82256,11 +82256,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x3, 0x0, arg1, arg2, arg0);
 	
@@ -82308,11 +82308,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x2, 0x0, arg1, arg2, arg0);
 	
@@ -82360,11 +82360,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -82412,11 +82412,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -82464,11 +82464,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -82516,9 +82516,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -82568,9 +82568,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -82620,11 +82620,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x03, 0x1, 0x1, 0x0, XMM0::O, arg0, arg1);
 	
@@ -82672,11 +82672,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x03, 0x1, 0x1, 0x0, XMM0::O, arg0, arg1);
 	
@@ -82724,11 +82724,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
 	
@@ -82776,11 +82776,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -82828,11 +82828,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -82880,11 +82880,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -82932,11 +82932,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -82984,11 +82984,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -83036,11 +83036,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -83088,11 +83088,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -83140,11 +83140,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -83192,11 +83192,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -83244,11 +83244,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -83296,11 +83296,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -83348,11 +83348,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -83400,11 +83400,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -83452,11 +83452,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -83504,11 +83504,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -83556,11 +83556,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -83608,11 +83608,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -83660,11 +83660,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -83712,11 +83712,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -83764,11 +83764,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -83816,11 +83816,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -83868,11 +83868,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -83920,11 +83920,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -83972,11 +83972,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -84024,11 +84024,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -84076,11 +84076,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -84128,11 +84128,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -84180,11 +84180,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -84232,11 +84232,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -84284,11 +84284,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -84336,11 +84336,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -84388,11 +84388,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -84440,11 +84440,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -84492,11 +84492,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -84544,11 +84544,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -84596,11 +84596,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -84648,11 +84648,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -84700,11 +84700,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -84752,11 +84752,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -84804,11 +84804,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -84856,11 +84856,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -84908,11 +84908,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -84960,11 +84960,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -85012,11 +85012,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -85064,11 +85064,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -85116,11 +85116,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -85168,11 +85168,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -85220,11 +85220,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -85272,11 +85272,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -85324,11 +85324,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -85376,11 +85376,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -85428,11 +85428,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -85480,11 +85480,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -85532,11 +85532,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -85584,11 +85584,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -85636,11 +85636,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -85688,11 +85688,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -85740,11 +85740,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -85792,11 +85792,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -85844,11 +85844,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -85896,11 +85896,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -85948,11 +85948,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -86000,11 +86000,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -86052,11 +86052,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -86104,11 +86104,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -86156,11 +86156,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -86208,11 +86208,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -86260,11 +86260,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -86312,11 +86312,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -86364,11 +86364,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -86416,11 +86416,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -86468,11 +86468,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -86520,11 +86520,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -86572,11 +86572,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -86624,11 +86624,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -86676,11 +86676,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -86728,11 +86728,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -86780,11 +86780,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -86832,11 +86832,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -86884,11 +86884,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -86936,11 +86936,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -86988,11 +86988,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -87040,11 +87040,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -87092,11 +87092,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -87144,11 +87144,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -87196,11 +87196,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -87248,11 +87248,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -87300,11 +87300,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -87352,11 +87352,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -87404,11 +87404,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -87456,11 +87456,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -87508,11 +87508,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -87560,11 +87560,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -87612,11 +87612,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -87664,11 +87664,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -87716,11 +87716,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -87768,11 +87768,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg2, arg1, arg0);
 	
@@ -87794,11 +87794,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x1, arg2, arg1, arg0);
 	
@@ -87820,11 +87820,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg2, arg1, arg0);
 	
@@ -87846,11 +87846,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg2, arg1, arg0);
 	
@@ -87872,11 +87872,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg2, arg1, arg0);
 	
@@ -87898,11 +87898,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x1, arg2, arg1, arg0);
 	
@@ -87924,11 +87924,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg2, arg1, arg0);
 	
@@ -87950,11 +87950,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg2, arg1, arg0);
 	
@@ -87976,11 +87976,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -88028,11 +88028,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -88080,11 +88080,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x3, 0x0, arg1, arg2, arg0);
 	
@@ -88132,11 +88132,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x3, 0x0, arg1, arg2, arg0);
 	
@@ -88184,11 +88184,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -88236,11 +88236,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -88288,11 +88288,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x3, 0x0, arg1, arg2, arg0);
 	
@@ -88340,11 +88340,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x3, 0x0, arg1, arg2, arg0);
 	
@@ -88392,11 +88392,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -88444,11 +88444,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -88496,11 +88496,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -88548,11 +88548,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x3, 0x0, XMM0::O, arg1, arg0);
 	
@@ -88574,11 +88574,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x1, 0x3, 0x0, XMM0::O, arg1, arg0);
 	
@@ -88600,11 +88600,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, XMM0::O, arg0, Register64Bit::RDX);
 	
@@ -88652,11 +88652,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg0, arg2);
 	
@@ -88678,11 +88678,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg0, arg2);
 	
@@ -88704,11 +88704,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -88730,11 +88730,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -88756,11 +88756,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg0, arg2);
 	
@@ -88782,11 +88782,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg0, arg2);
 	
@@ -88808,11 +88808,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -88834,11 +88834,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -88860,11 +88860,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -88912,11 +88912,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -88964,11 +88964,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -89016,11 +89016,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -89068,11 +89068,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x3, 0x0, arg1, arg2, arg0);
 	
@@ -89120,11 +89120,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x2, 0x0, arg1, arg2, arg0);
 	
@@ -89172,11 +89172,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -89224,11 +89224,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -89276,11 +89276,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -89328,11 +89328,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -89380,11 +89380,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x3, 0x0, arg1, arg2, arg0);
 	
@@ -89432,11 +89432,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x2, 0x0, arg1, arg2, arg0);
 	
@@ -89484,11 +89484,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
 	
@@ -89510,11 +89510,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, XMM0::O, arg0, arg1);
 	
@@ -89536,11 +89536,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -89614,11 +89614,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -89692,11 +89692,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, XMM0::O, arg0, arg1);
 	
@@ -89718,11 +89718,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x1, 0x0, 0x0, XMM0::O, arg0, arg1);
 	
@@ -89744,11 +89744,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
 	
@@ -89822,11 +89822,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x1, 0x0, 0x0, XMM0::O, arg1, arg0);
 	
@@ -89900,11 +89900,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
 	
@@ -89952,11 +89952,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -90004,11 +90004,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x3, 0x0, XMM0::O, arg1, arg0);
 	
@@ -90056,11 +90056,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x1, 0x3, 0x0, XMM0::O, arg1, arg0);
 	
@@ -90108,11 +90108,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
 	
@@ -90134,11 +90134,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, XMM0::O, arg0, arg1);
 	
@@ -90160,11 +90160,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -90238,11 +90238,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -90316,11 +90316,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x2, 0x0, XMM0::O, arg0, arg1);
 	
@@ -90342,11 +90342,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x1, 0x2, 0x0, XMM0::O, arg0, arg1);
 	
@@ -90368,11 +90368,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
 	
@@ -90446,11 +90446,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x1, 0x2, 0x0, XMM0::O, arg1, arg0);
 	
@@ -90550,11 +90550,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
 	
@@ -90576,11 +90576,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -90602,11 +90602,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, XMM0::O, arg0, arg1);
 	
@@ -90628,11 +90628,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -90680,11 +90680,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
 	
@@ -90706,11 +90706,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -90732,11 +90732,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, XMM0::O, arg0, arg1);
 	
@@ -90758,11 +90758,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -90992,11 +90992,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
 	
@@ -91018,11 +91018,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, XMM0::O, arg0, arg1);
 	
@@ -91044,11 +91044,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -91070,11 +91070,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -91096,11 +91096,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
 	
@@ -91122,11 +91122,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, XMM0::O, arg0, arg1);
 	
@@ -91148,11 +91148,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, XMM0::O, arg0, arg1);
 	
@@ -91174,11 +91174,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x1, 0x0, 0x0, XMM0::O, arg0, arg1);
 	
@@ -91200,11 +91200,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x1, 0x1, XMM0::O, arg0, arg1);
 	
@@ -91226,11 +91226,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
 	
@@ -91278,11 +91278,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x1, 0x1, XMM0::O, arg1, arg0);
 	
@@ -91304,11 +91304,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
 	
@@ -91408,11 +91408,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x3, 0x0, XMM0::O, arg0, arg1);
 	
@@ -91434,11 +91434,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x3, 0x0, XMM0::O, arg1, arg0);
 	
@@ -91512,11 +91512,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
 	
@@ -91564,11 +91564,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x1, 0x2, 0x0, XMM0::O, arg1, arg0);
 	
@@ -91616,11 +91616,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
 	
@@ -91668,11 +91668,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x1, 0x2, 0x0, XMM0::O, arg1, arg0);
 	
@@ -91720,11 +91720,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x2, 0x0, XMM0::O, arg0, arg1);
 	
@@ -91746,11 +91746,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
 	
@@ -91824,11 +91824,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
 	
@@ -91850,11 +91850,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, XMM0::O, arg0, arg1);
 	
@@ -91876,11 +91876,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -91954,11 +91954,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -92032,11 +92032,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, XMM0::O, arg0, arg1);
 	
@@ -92058,11 +92058,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x1, 0x0, 0x0, XMM0::O, arg0, arg1);
 	
@@ -92084,11 +92084,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
 	
@@ -92162,11 +92162,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x1, 0x0, 0x0, XMM0::O, arg1, arg0);
 	
@@ -92240,11 +92240,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -92292,11 +92292,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -92344,11 +92344,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -92396,11 +92396,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -92448,11 +92448,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -92500,11 +92500,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -92552,11 +92552,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x3, 0x0, arg1, arg2, arg0);
 	
@@ -92604,11 +92604,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x2, 0x0, arg1, arg2, arg0);
 	
@@ -92656,11 +92656,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -92708,11 +92708,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -92760,11 +92760,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -92812,11 +92812,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -92864,11 +92864,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -92916,11 +92916,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -92968,11 +92968,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -93020,11 +93020,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -93072,11 +93072,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -93124,11 +93124,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -93176,11 +93176,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -93228,11 +93228,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -93280,11 +93280,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -93332,11 +93332,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -93384,11 +93384,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -93436,11 +93436,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -93488,11 +93488,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -93540,11 +93540,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -93592,11 +93592,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -93644,11 +93644,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -93696,11 +93696,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -93748,11 +93748,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -93800,11 +93800,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -93852,11 +93852,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -93904,11 +93904,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -93956,11 +93956,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -94008,11 +94008,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -94060,11 +94060,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -94112,11 +94112,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -94164,11 +94164,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -94216,11 +94216,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -94268,11 +94268,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -94320,11 +94320,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -94372,11 +94372,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -94424,11 +94424,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -94476,11 +94476,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -94528,11 +94528,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -94580,11 +94580,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -94632,11 +94632,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -94684,11 +94684,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -94736,11 +94736,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -94788,11 +94788,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -94840,11 +94840,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -94892,11 +94892,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -94944,11 +94944,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -94996,11 +94996,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -95048,11 +95048,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -95100,11 +95100,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -95152,11 +95152,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -95204,11 +95204,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -95256,11 +95256,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -95308,11 +95308,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -95360,11 +95360,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -95412,11 +95412,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -95464,11 +95464,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -95516,11 +95516,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -95568,11 +95568,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -95620,11 +95620,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -95672,11 +95672,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -95724,11 +95724,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -95776,11 +95776,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -95828,11 +95828,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -95880,11 +95880,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -95932,11 +95932,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -95984,11 +95984,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -96036,11 +96036,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -96088,11 +96088,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -96140,11 +96140,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -96192,11 +96192,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -96244,11 +96244,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -96296,11 +96296,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -96348,11 +96348,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -96400,11 +96400,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -96452,11 +96452,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -96504,11 +96504,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -96556,11 +96556,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -96608,11 +96608,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -96660,11 +96660,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -96712,11 +96712,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -96764,11 +96764,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -96816,11 +96816,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -96868,11 +96868,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -96920,11 +96920,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -96972,11 +96972,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -97024,11 +97024,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x03, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -97076,11 +97076,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -97128,11 +97128,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -97180,11 +97180,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -97232,11 +97232,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x03, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -97284,11 +97284,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -97336,11 +97336,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x03, 0x1, 0x1, 0x1, XMM0::O, arg1, arg0);
 	
@@ -97388,11 +97388,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -97440,11 +97440,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x03, 0x1, 0x1, 0x1, XMM0::O, arg1, arg0);
 	
@@ -97492,11 +97492,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
 	
@@ -97570,11 +97570,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
 	
@@ -97622,11 +97622,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x03, 0x0, 0x1, 0x1, XMM0::O, arg0, arg1);
 	
@@ -97674,11 +97674,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
 	
@@ -97804,11 +97804,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg2, arg1, arg0);
 	
@@ -97830,11 +97830,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg2, arg1, arg0);
 	
@@ -97856,11 +97856,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg2, arg1, arg0);
 	
@@ -97882,11 +97882,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x1, arg2, arg1, arg0);
 	
@@ -97908,11 +97908,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg2, arg1, arg0);
 	
@@ -97934,11 +97934,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg2, arg1, arg0);
 	
@@ -97960,11 +97960,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg2, arg1, arg0);
 	
@@ -97986,11 +97986,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x1, arg2, arg1, arg0);
 	
@@ -98012,11 +98012,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -98064,11 +98064,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -98116,11 +98116,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -98168,11 +98168,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -98220,11 +98220,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -98272,11 +98272,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -98324,11 +98324,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -98376,11 +98376,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -98428,11 +98428,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -98480,11 +98480,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -98532,11 +98532,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -98584,11 +98584,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -98636,11 +98636,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -98688,11 +98688,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -98740,11 +98740,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -98792,11 +98792,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -98844,11 +98844,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -98896,11 +98896,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -98948,11 +98948,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -99000,11 +99000,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -99052,11 +99052,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -99104,11 +99104,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg0, arg2);
 	
@@ -99130,11 +99130,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg0, arg2);
 	
@@ -99156,11 +99156,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -99182,11 +99182,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -99208,11 +99208,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg0, arg2);
 	
@@ -99234,11 +99234,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x02, 0x1, 0x1, 0x1, arg1, arg0, arg2);
 	
@@ -99260,11 +99260,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -99286,11 +99286,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -99312,11 +99312,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -99364,11 +99364,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -99416,11 +99416,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -99468,11 +99468,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -99520,11 +99520,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -99572,11 +99572,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -99624,11 +99624,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -99676,11 +99676,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -99728,11 +99728,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -99780,11 +99780,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -99832,11 +99832,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -99884,11 +99884,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -99936,11 +99936,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -99988,11 +99988,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -100040,11 +100040,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -100092,11 +100092,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -100144,11 +100144,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -100196,11 +100196,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -100248,11 +100248,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -100300,11 +100300,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -100352,11 +100352,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -100404,11 +100404,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -100456,11 +100456,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -100612,11 +100612,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -100664,11 +100664,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -100716,11 +100716,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -100768,11 +100768,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -100820,11 +100820,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -100872,11 +100872,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -100924,11 +100924,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -100976,11 +100976,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -101028,11 +101028,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -101080,11 +101080,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -101132,11 +101132,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -101184,11 +101184,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -101236,11 +101236,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -101288,11 +101288,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -101340,11 +101340,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -101392,11 +101392,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -101444,11 +101444,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -101496,11 +101496,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -101548,11 +101548,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -101600,11 +101600,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -101652,11 +101652,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -101704,11 +101704,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -101756,11 +101756,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -101808,11 +101808,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -101860,11 +101860,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -101912,11 +101912,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -101964,11 +101964,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -102016,11 +102016,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -102068,11 +102068,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -102120,11 +102120,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -102172,11 +102172,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -102224,11 +102224,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -102276,11 +102276,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -102328,11 +102328,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -102380,11 +102380,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -102432,11 +102432,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -102484,11 +102484,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -102536,11 +102536,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -102588,11 +102588,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -102640,11 +102640,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -102692,11 +102692,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -102744,11 +102744,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -102796,11 +102796,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -102848,11 +102848,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -102900,11 +102900,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -102952,11 +102952,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -103004,11 +103004,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
 	
@@ -103056,11 +103056,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x1, 0x2, 0x0, XMM0::O, arg1, arg0);
 	
@@ -103108,11 +103108,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x3, 0x0, XMM0::O, arg1, arg0);
 	
@@ -103160,11 +103160,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x1, 0x3, 0x0, XMM0::O, arg1, arg0);
 	
@@ -103212,11 +103212,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -103264,11 +103264,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -103316,11 +103316,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -103394,11 +103394,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -103472,11 +103472,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -103602,11 +103602,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -103680,11 +103680,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -103732,11 +103732,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -103784,11 +103784,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -103836,11 +103836,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -103888,11 +103888,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -103966,11 +103966,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -104044,11 +104044,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -104122,11 +104122,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -104200,11 +104200,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -104252,11 +104252,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -104304,11 +104304,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -104382,11 +104382,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -104460,11 +104460,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -104538,11 +104538,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -104616,11 +104616,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -104746,11 +104746,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -104824,11 +104824,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -104876,11 +104876,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -104928,11 +104928,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -104980,11 +104980,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x0, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -105032,11 +105032,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x02, 0x1, 0x1, 0x1, arg1, arg2, arg0);
 	
@@ -105110,11 +105110,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -105188,11 +105188,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -105240,11 +105240,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -105292,11 +105292,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -105344,11 +105344,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -105396,11 +105396,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -105448,11 +105448,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -105500,11 +105500,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -105552,11 +105552,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -105604,11 +105604,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -105656,11 +105656,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -105708,11 +105708,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -105760,11 +105760,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -105812,11 +105812,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -105864,11 +105864,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -105916,11 +105916,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -105968,11 +105968,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -106020,11 +106020,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -106072,11 +106072,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -106124,11 +106124,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -106176,11 +106176,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -106228,11 +106228,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -106280,11 +106280,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -106332,11 +106332,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -106384,11 +106384,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -106436,11 +106436,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -106488,11 +106488,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -106540,11 +106540,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -106592,11 +106592,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -106644,11 +106644,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -106696,11 +106696,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -106748,11 +106748,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -106800,11 +106800,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -106852,11 +106852,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -106904,11 +106904,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -106956,11 +106956,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -107008,11 +107008,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -107060,11 +107060,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -107112,11 +107112,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
 	
@@ -107164,11 +107164,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x1, 0x0, 0x0, XMM0::O, arg1, arg0);
 	
@@ -107216,11 +107216,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x2, 0x0, arg1, arg2, arg0);
 	
@@ -107268,11 +107268,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -107320,11 +107320,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x03, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -107372,11 +107372,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -107424,11 +107424,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x03, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -107476,11 +107476,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -107528,11 +107528,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x03, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -107580,11 +107580,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
 	
@@ -107632,11 +107632,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x1, 0x0, 0x0, XMM0::O, arg1, arg0);
 	
@@ -107684,11 +107684,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x2, 0x0, arg1, arg2, arg0);
 	
@@ -107736,11 +107736,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -107788,11 +107788,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -107840,11 +107840,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -107892,11 +107892,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -107944,11 +107944,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -107996,11 +107996,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -108048,11 +108048,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
 	
@@ -108100,11 +108100,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x1, 0x0, 0x0, XMM0::O, arg1, arg0);
 	
@@ -108152,11 +108152,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x3, 0x0, arg1, arg2, arg0);
 	
@@ -108204,11 +108204,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x2, 0x0, arg1, arg2, arg0);
 	
@@ -108256,11 +108256,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, XMM0::O, arg0, Register64Bit::RBX);
 	
@@ -108282,11 +108282,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -108334,11 +108334,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -108386,11 +108386,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -108438,11 +108438,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -108490,11 +108490,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x3, 0x0, arg1, arg2, arg0);
 	
@@ -108542,11 +108542,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x2, 0x0, arg1, arg2, arg0);
 	
@@ -108594,11 +108594,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -108646,11 +108646,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -108698,11 +108698,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -108750,11 +108750,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -108802,11 +108802,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
 	
@@ -108854,11 +108854,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
 	
@@ -108906,11 +108906,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -108958,11 +108958,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -109010,11 +109010,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -109062,11 +109062,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -109114,11 +109114,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -109166,11 +109166,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -109218,11 +109218,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -109270,11 +109270,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -109322,11 +109322,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -109374,11 +109374,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x1, 0x0, arg1, arg2, arg0);
 	
@@ -109426,11 +109426,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x0, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -109478,11 +109478,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// Prefix Group 1 is #UD for VEX.
 	
-		self.pref_group2(arg2);
+		self.prefix_group2(arg2);
 	
 		// Prefix Group 3 is #UD for VEX.
 	
-		self.pref_group4(arg2);
+		self.prefix_group4(arg2);
 	
 		self.vex(0x01, 0x1, 0x0, 0x0, arg1, arg2, arg0);
 	
@@ -109580,7 +109580,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	{
 		// This is not a VEX encoded instruction.
 	
-		self.pref_fwait(0x9B);
+		self.prefix_fwait(0x9B);
 	
 		// No prefix group 2.
 	
@@ -109612,7 +109612,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg0, 0x00);
 	
@@ -109638,7 +109638,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg0, rex_w());
 	
@@ -109664,7 +109664,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg0, 0x00);
 	
@@ -109690,7 +109690,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		rex!(self, arg0, rex_w());
 	
@@ -109742,7 +109742,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF2);
+		self.prefix_group1(0xF2);
 	
 		// No `REX` prefix.
 	
@@ -109760,11 +109760,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -109786,9 +109786,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -109812,9 +109812,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -109838,9 +109838,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -109864,9 +109864,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -109894,7 +109894,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -110128,7 +110128,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -110176,11 +110176,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -110202,9 +110202,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -110228,9 +110228,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -110254,9 +110254,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -110280,9 +110280,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -110310,7 +110310,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -110332,11 +110332,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -110362,7 +110362,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -110388,7 +110388,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -110436,9 +110436,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -110514,9 +110514,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -110618,9 +110618,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -110774,9 +110774,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -110956,9 +110956,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -111064,7 +111064,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -111112,11 +111112,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -111138,11 +111138,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -111164,11 +111164,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -111190,9 +111190,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -111216,9 +111216,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -111242,9 +111242,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -111268,9 +111268,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -111294,9 +111294,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -111320,9 +111320,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -111346,9 +111346,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -111372,9 +111372,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -111398,9 +111398,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -111428,7 +111428,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -111454,7 +111454,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -111476,11 +111476,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -111506,7 +111506,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -111532,7 +111532,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -111606,9 +111606,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -111736,9 +111736,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -111840,9 +111840,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -112022,9 +112022,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -112152,11 +112152,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -112182,7 +112182,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -112204,9 +112204,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg1);
+		self.prefix_group2(arg1);
 	
-		self.pref_group4(arg1);
+		self.prefix_group4(arg1);
 	
 		// No prefix group 3.
 	
@@ -112262,7 +112262,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 3.
 	
-		self.pref_group1(0xF3);
+		self.prefix_group1(0xF3);
 	
 		// No `REX` prefix.
 	
@@ -112280,11 +112280,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -112306,9 +112306,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -112332,9 +112332,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -112358,11 +112358,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -112384,9 +112384,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -112410,9 +112410,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -112436,11 +112436,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -112462,9 +112462,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -112488,9 +112488,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -112514,11 +112514,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -112540,9 +112540,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -112566,9 +112566,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -112592,11 +112592,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -112618,9 +112618,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -112644,9 +112644,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -112670,11 +112670,11 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
-		self.pref_group3();
+		self.prefix_group3();
 	
 		// No prefix group 1.
 	
@@ -112696,9 +112696,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	
@@ -112722,9 +112722,9 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No `FWAIT` Prefix.
 	
-		self.pref_group2(arg0);
+		self.prefix_group2(arg0);
 	
-		self.pref_group4(arg0);
+		self.prefix_group4(arg0);
 	
 		// No prefix group 3.
 	

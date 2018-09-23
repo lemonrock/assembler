@@ -69,6 +69,28 @@ impl MemoryOperand
 	}
 }
 
+impl MemoryOperandOrBranchHint for BranchHint
+{
+	#[inline(always)]
+	fn emit_prefix_group2(self, byte_emitter: &mut ByteEmitter)
+	{
+		if self.has_segment_register()
+		{
+			let segment_register_byte = match self.segment_register_index()
+			{
+				0 => 0x26,
+				1 => 0x2E,
+				2 => 0x36,
+				3 => 0x3E,
+				4 => 0x64,
+				5 => 0x65,
+				_ => unreachable!(),
+			};
+			byte_emitter.emit_u8(segment_register_byte)
+		}
+	}
+}
+
 impl MemoryOrRegister for MemoryOperand
 {
 	#[inline(always)]
@@ -202,6 +224,15 @@ impl MemoryOperand
 	const NullGeneralPurposeRegister: u64 = 0x10;
 	
 	const NullSegmentRegister: u64 = 0x07;
+	
+	#[inline(always)]
+	pub(crate) fn emit_prefix_group4(self, byte_emitter: &mut ByteEmitter)
+	{
+		if self.has_address_override_for_32_bit()
+		{
+			byte_emitter.emit_u8(0x67)
+		}
+	}
 	
 	#[inline(always)]
 	pub fn new(displacement: Immediate32Bit, base: Option<impl GeneralPurposeRegister>, index: Option<impl GeneralPurposeRegister>, scale: IndexScale, segment_register: Option<impl AnySegmentRegister>, address_override_for_32_bit: bool, relative_instruction_pointer_offset: bool) -> Self

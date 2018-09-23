@@ -10,6 +10,37 @@ pub struct OrdinaryInstructionStream
 impl OrdinaryInstructionStream
 {
 	#[inline(always)]
+	fn prefix_fwait(&mut self, byte: u8)
+	{
+		self.byte_emitter.emit_u8(byte)
+	}
+	
+	#[inline(always)]
+	fn prefix_group1(&mut self, byte: u8)
+	{
+		self.byte_emitter.emit_u8(byte)
+	}
+	
+	#[inline(always)]
+	fn prefix_group2(&mut self, memory_operand_or_branch_hint: MemoryOperandOrBranchHint)
+	{
+		memory_operand_or_branch_hint.emit_prefix_group2(&mut self.byte_emitter)
+	}
+	
+	#[inline(always)]
+	fn prefix_group3(&mut self)
+	{
+		self.byte_emitter.emit_u8(0x66)
+	}
+	
+	#[inline(always)]
+	fn prefix_group4(&mut self, memory_operand: MemoryOperand)
+	{
+		memory_operand.emit_prefix_group4()
+	}
+	
+	
+	#[inline(always)]
 	fn opcode_1(&mut self, opcode: u8)
 	{
 		self.byte_emitter.emit_u8(opcode)
@@ -50,6 +81,9 @@ impl OrdinaryInstructionStream
 		self.displacement_immediate_1(displacement1);
 	}
 	
+	/** A symbolic representation of a Rel32. No Rel8 equivalent is provided. */
+	//Label
+	
 	/// Records internal state for a label reference.
 	/// Saves the current code position and reserves space for the resolved address by emitting zero bytes.
 	#[inline(always)]
@@ -74,15 +108,11 @@ impl OrdinaryInstructionStream
 /*
 impl OrdinaryInstructionStream
 {
-	self.pref_fwait(0x9B);
-	
 	self.pref_group2(&mut self, arg0);
 
 	self.pref_group4(&mut self, arg0);
 	
 	self.pref_group3();
-
-	self.pref_group1(0xF2);
 	
 	rex!(self, arg1, arg0, 0x00);
 	/*
