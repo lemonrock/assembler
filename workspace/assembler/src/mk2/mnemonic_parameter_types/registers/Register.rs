@@ -13,8 +13,12 @@ pub trait Register: MemoryOrRegister
 impl<R: Register> MemoryOrRegister for R
 {
 	#[inline(always)]
-	fn value(self) -> u8
+	fn emit(self, byte_emitter: &mut ByteEmitter, reg: impl Register)
 	{
-		self.index()
+		const ModRegisterAddressingMode: u8 = 0b11;
+		
+		let rm = self;
+		let mod_rm_and_sib = (ModRegisterAddressingMode << 6) | ((reg.index() << 3) & 0b0011_1000) | (rm.index() & 0x07);
+		byte_emitter.emit_u8(mod_rm_and_sib)
 	}
 }

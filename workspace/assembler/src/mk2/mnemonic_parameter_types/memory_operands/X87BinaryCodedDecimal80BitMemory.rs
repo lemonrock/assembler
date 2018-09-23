@@ -8,10 +8,9 @@ pub struct X87BinaryCodedDecimal80BitMemory(pub MemoryOperand);
 
 impl MemoryOrRegister for X87BinaryCodedDecimal80BitMemory
 {
-	/// Value.
 	#[inline(always)]
-	fn value(self) -> u8
+	fn emit(self, byte_emitter: &mut ByteEmitter, reg: impl Register)
 	{
-		self.0.value()
+		self.0.emit(byte_emitter, reg)
 	}
 }

@@ -10,10 +10,9 @@ pub struct Contiguous512ByteMemory(pub MemoryOperand);
 
 impl MemoryOrRegister for Contiguous512ByteMemory
 {
-	/// Value.
 	#[inline(always)]
-	fn value(self) -> u8
+	fn emit(self, byte_emitter: &mut ByteEmitter, reg: impl Register)
 	{
-		self.0.value()
+		self.0.emit(byte_emitter, reg)
 	}
 }

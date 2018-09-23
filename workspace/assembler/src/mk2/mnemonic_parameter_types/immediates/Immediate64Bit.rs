@@ -7,12 +7,12 @@ pub struct Immediate64Bit(pub i64);
 
 impl AsDisplacement for Immediate16Bit
 {
-	type D = u16;
+	type D = u64;
 	
 	#[inline(always)]
 	fn displacement(self) -> Self::D
 	{
-		self.0 as u16
+		self.0 as u64
 	}
 }
 

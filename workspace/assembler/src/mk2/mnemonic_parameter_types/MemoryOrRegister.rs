@@ -5,7 +5,7 @@
 /// Memory or a register.
 pub trait MemoryOrRegister
 {
-	/// Value.
+	/// Emits Mod.R/B, Scaled Index Byte and related data.
 	#[inline(always)]
-	fn value(self) -> u8;
+	fn emit(self, byte_emitter: &mut ByteEmitter, reg: impl Register);
 }

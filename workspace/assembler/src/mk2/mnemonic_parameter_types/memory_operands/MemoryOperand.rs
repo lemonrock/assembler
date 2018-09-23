@@ -6,12 +6,166 @@
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct MemoryOperand(u64);
 
+impl MemoryOperand
+{
+	#[inline(always)]
+	fn has_segment_register(self) -> bool
+	{
+		(self.0 && Self::SegmentRegisterMask) != (Self::NullSegmentRegister << Self::SegmentRegisterShift)
+	}
+	
+	#[inline(always)]
+	fn has_base_register(self) -> bool
+	{
+		(self.0 && Self::BaseRegisterMask) != (Self::NullGeneralPurposeRegister << Self::BaseRegisterShift)
+	}
+	
+	#[inline(always)]
+	fn has_index_register(self) -> bool
+	{
+		(self.0 && Self::IndexRegisterMask) != (Self::NullGeneralPurposeRegister << Self::IndexRegisterShift)
+	}
+	
+	#[inline(always)]
+	fn has_address_override_for_32_bit(self) -> bool
+	{
+		(self.0 && Self::AddressOverrideFor32BitMask) != 0
+	}
+	
+	#[inline(always)]
+	fn has_relative_instruction_pointer_offset(self) -> bool
+	{
+		(self.0 && Self::RelativeInstructionPointerOffsetMask) != 0
+	}
+	
+	#[inline(always)]
+	fn get_segment_register_index(self) -> u8
+	{
+		((self.0 & Self::SegmentRegisterMask) >> Self::SegmentRegisterShift) as u8
+	}
+	
+	#[inline(always)]
+	fn get_base_register_index(self) -> u8
+	{
+		((self.0 & Self::BaseRegisterMask) >> Self::BaseRegisterShift)) as u8
+	}
+	
+	#[inline(always)]
+	fn get_index_register_index(self) -> u8
+	{
+		((self.0 & Self::IndexRegisterMask) >> Self::IndexRegisterShift)) as u8
+	}
+	
+	#[inline(always)]
+	fn get_index_scale(self) -> IndexScale
+	{
+		unsafe { transmute((self.0 & Self::IndexScaleMask) >> Self::IndexScaleShift) }
+	}
+	
+	#[inline(always)]
+	fn get_displacement(self) -> Immediate32Bit
+	{
+		unsafe { transmute((self.0 & Self::DisplacementMask) >> Self::DisplacementShift) }
+	}
+}
+
 impl MemoryOrRegister for MemoryOperand
 {
 	#[inline(always)]
-	fn value(self) -> u8
+	fn emit(self, byte_emitter: &mut ByteEmitter, reg: impl Register)
 	{
-		// TODO: Very wrong - see the long code for encoding mod_rm_sib in assembler.cc
+		const ScaleBitsMask: u8 = 0b1100_0000;
+		const ScaleShift: u8 = 6;
+		const MidBitsMask: u8 = 0b0011_1000;
+		const MidBitsShift: u8 = 3;
+		const Mod40: u8 = 0x40;
+		const Mod80: u8 = 0x80;
+		
+		// Every path we take needs these bits for the Mod.r/m byte.
+		let rrr = (reg.index() << MidBitsShift) & 0b0011_1000;
+		
+		// Special case for `RIP+disp32` (`disp32` is a 32-bit signed displacement).
+		if self.has_relative_instruction_pointer_offset()
+		{
+			let mod_byte = 0x00 | rrr | 0x05;
+			byte_emitter.emit_u8(mod_byte);
+			
+			self.get_displacement().displacement().write(byte_emitter);
+			return
+		}
+		
+		// Special case if there is no base register.
+		if !self.has_base_register()
+		{
+			let mod_byte = 0x00 | rrr | 0x04;
+			byte_emitter.emit_u8(mod_byte);
+			
+			let scaled_index_byte = if self.has_index_register()
+			{
+				((self.get_scale() << ScaleShift) & ScaleBitsMask)
+				| ((self.get_index_register_index() << MidBitsShift) & MidBitsMask)
+				| 0x05
+			}
+			else
+			{
+				0x00 | 0x20 | 0x05
+			};
+			byte_emitter.emit_u8(scaled_index_byte);
+			
+			self.get_displacement().displacement().write(byte_emitter);
+			return
+		}
+		
+		let bbb = self.get_base_register_index() & 0x07;
+		
+		// This logic determines what the value of the mod bits will be.
+		// It also controls how many immediate bytes we emit later.
+		let displacement = self.get_displacement().0;
+		let mod_ = if displacement < -128 || displacement >= 128
+		{
+			Mod80
+		}
+		else if displacement == 0 && bbb != 0x05
+		{
+			0x00
+		}
+		else
+		{
+			Mod40
+		};
+		
+		if self.has_index_register()
+		{
+			let mod_byte = mod_ | rrr | 0x04;
+			byte_emitter.emit_u8(mod_byte);
+			
+			let scaled_index_byte = ((self.get_scale() << ScaleShift) & ScaleBitsMask) | ((self.get_index_register_index() << MidBitsShift) & MidBitsMask) | bbb;
+			byte_emitter.emit_u8(scaled_index_byte);
+		}
+		// Is the base register sitting in the `EIP+disp32` or `RIP+disp32` (where `disp32` is a 32-bit displacement) 'row' of Intel's encoding table?
+		else if bbb == 0x04
+		{
+			let mod_byte = mod_ | rrr | 0x04;
+			byte_emitter.emit_u8(mod_byte);
+			
+			let scaled_index_byte = ((self.get_scale() << ScaleShift) & ScaleBitsMask) | 0x20 | 0x04;
+			byte_emitter.emit_u8(scaled_index_byte);
+		}
+		else
+		{
+			let mod_byte = mod_ | rrr | bbb;
+			byte_emitter.emit_u8(mod_byte);
+		}
+		
+		// Write displacement if it is not zero.
+		if mod_ == Mod40
+		{
+			Immediate8Bit(displacement as i8).write(byte_emitter)
+		}
+		else if mod_ == Mod80
+		{
+			Immediate32Bit(displacement as i8).write(byte_emitter)
+		}
 	}
 }
 
@@ -23,13 +177,13 @@ impl MemoryOperand
 	
 	const IndexMask: u64 = 0x00001F0000000000;
 	
-	const ScaleMask: u64 = 0x0003000000000000;
+	const IndexScaleMask: u64 = 0x0003000000000000;
 	
 	const SegmentRegisterMask: u64 = 0x0700000000000000;
 	
-	const AddressOverrideMask: u64 = 0x1000000000000000;
+	const AddressOverrideFor32BitMask: u64 = 0x1000000000000000;
 	
-	const RelativeInstructionPointerMask: u64 = 0x2000000000000000;
+	const RelativeInstructionPointerOffsetMask: u64 = 0x2000000000000000;
 	
 	const DisplacementShift: u64 = 0;
 	
@@ -37,13 +191,13 @@ impl MemoryOperand
 	
 	const IndexShift: u64 = 40;
 	
-	const ScaleShift: u64 = 48;
+	const IndexScaleShift: u64 = 48;
 	
 	const SegmentRegisterShift: u64 = 56;
 	
-	const AddressOverrideShift: u64 = 61;
+	const AddressOverrideFor32BitShift: u64 = 61;
 	
-	const RelativeInstructionPointerShift: u64 = 61;
+	const RelativeInstructionPointerOffsetShift: u64 = 61;
 	
 	const NullGeneralPurposeRegister: u64 = 0x10;
 	
@@ -67,14 +221,14 @@ impl MemoryOperand
 				None => Self::NullGeneralPurposeRegister << Self::IndexShift,
 				Some(index) => (base.index() as u64) << Self::IndexShift,
 			}
-			| scale.to_u64() << Self::ScaleShift
+			| scale.to_u64() << Self::IndexScaleShift
 			| match segment_register
 			{
 				None => Self::NullSegmentRegister << Self::SegmentRegisterShift,
 				Some(segment_register) => (segment_register.index() as u64) << Self::SegmentRegisterShift,
 			}
-			| (address_override_for_32_bit as u64) << Self::AddressOverrideShift
-			| (relative_instruction_pointer_offset as u64) << Self::RelativeInstructionPointerShift
+			| (address_override_for_32_bit as u64) << Self::AddressOverrideFor32BitShift
+			| (relative_instruction_pointer_offset as u64) << Self::RelativeInstructionPointerOffsetShift
 		)
 	}
 	
@@ -94,28 +248,28 @@ impl MemoryOperand
 	
 	/// Create a new memory operand using the `RIP` (relative instruction pointer) form.
 	#[inline(always)]
-	pub fn rip() -> Self
+	pub fn relative_instruction_pointer_relative() -> Self
 	{
 		Self::new(Immediate32Bit(0), None, None, IndexScale::x1, None, false, true)
 	}
 	
 	/// Create a new memory operand using the `segment:RIP` (relative instruction pointer) form.
 	#[inline(always)]
-	pub fn segment_rip(segment_register: impl AnySegmentRegister) -> Self
+	pub fn segment_relative_instruction_pointer_relative(segment_register: impl AnySegmentRegister) -> Self
 	{
 		Self::new(Immediate32Bit(0), None, None, IndexScale::x1, Some(segment_register), false, true)
 	}
 	
 	/// Create a new memory operand using the `RIP+displacement` (relative instruction pointer) form.
 	#[inline(always)]
-	pub fn rip_displacement(displacement: Immediate32Bit) -> Self
+	pub fn relative_instruction_pointer_relative_displacement(displacement: Immediate32Bit) -> Self
 	{
 		Self::new(displacement, None, None, IndexScale::x1, None, false, true)
 	}
 	
 	/// Create a new memory operand using the `segment:RIP+displacement` (relative instruction pointer) form.
 	#[inline(always)]
-	pub fn segment_rip_displacement(segment_register: impl AnySegmentRegister, displacement: Immediate32) -> Self
+	pub fn segment_relative_instruction_pointer_relative_displacement(segment_register: impl AnySegmentRegister, displacement: Immediate32) -> Self
 	{
 		Self::new(displacement, None, None, IndexScale::x1, Some(segment_register), false, true)
 	}
