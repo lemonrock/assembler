@@ -7887,10 +7887,10 @@ pub trait InstructionStream
 	fn vaddpd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Add packed double-precision floating-point values from `ymm3/mem` to `ymm2` and stores result in `ymm1`.
-	fn vaddpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vaddpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Add packed double-precision floating-point values from `ymm3/mem` to `ymm2` and stores result in `ymm1`.
-	fn vaddpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vaddpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Add packed single-precision floating-point values from `xmm3/mem` to `xmm2` and stores result in `xmm1`.
 	fn vaddps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -7899,10 +7899,10 @@ pub trait InstructionStream
 	fn vaddps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Add packed single-precision floating-point values from `ymm3/mem` to `ymm2` and stores result in `ymm1`.
-	fn vaddps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vaddps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Add packed single-precision floating-point values from `ymm3/mem` to `ymm2` and stores result in `ymm1`.
-	fn vaddps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vaddps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Add the low double-precision floating-point value from `xmm3/mem` to `xmm2` and store the result in `xmm1`.
 	fn vaddsd_XMMRegister_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any64BitMemory);
@@ -7923,10 +7923,10 @@ pub trait InstructionStream
 	fn vaddsubpd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Add / subtract packed double-precision floating-point values from `ymm3/mem` to `ymm2` and stores result in `ymm1`.
-	fn vaddsubpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vaddsubpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Add / subtract packed double-precision floating-point values from `ymm3/mem` to `ymm2` and stores result in `ymm1`.
-	fn vaddsubpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vaddsubpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Add/subtract single-precision floating-point values from `xmm3/mem` to `xmm2` and stores result in `xmm1`.
 	fn vaddsubps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -7935,10 +7935,10 @@ pub trait InstructionStream
 	fn vaddsubps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Add / subtract single-precision floating-point values from `ymm3/mem` to `ymm2` and stores result in `ymm1`.
-	fn vaddsubps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vaddsubps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Add / subtract single-precision floating-point values from `ymm3/mem` to `ymm2` and stores result in `ymm1`.
-	fn vaddsubps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vaddsubps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Perform one round of an AES decryption flow, using the Equivalent Inverse Cipher, operating on a 128-bit data (state) from `xmm2` with a 128-bit round key from `xmm3/m128`.
 	///
@@ -7999,10 +7999,10 @@ pub trait InstructionStream
 	fn vandnpd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Return the bitwise logical AND NOT of packed double-precision floating-point values in `ymm2` and `ymm3/mem`.
-	fn vandnpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vandnpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Return the bitwise logical AND NOT of packed double-precision floating-point values in `ymm2` and `ymm3/mem`.
-	fn vandnpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vandnpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Return the bitwise logical AND NOT of packed single-precision floating-point values in `xmm2` and `xmm3/mem`.
 	fn vandnps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -8011,10 +8011,10 @@ pub trait InstructionStream
 	fn vandnps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Return the bitwise logical AND NOT of packed single-precision floating-point values in `ymm2` and `ymm3/mem`.
-	fn vandnps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vandnps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Return the bitwise logical AND NOT of packed single-precision floating-point values in `ymm2` and `ymm3/mem`.
-	fn vandnps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vandnps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Return the bitwise logical AND of packed double-precision floating-point values in `xmm2` and `xmm3/mem`.
 	fn vandpd_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -8023,10 +8023,10 @@ pub trait InstructionStream
 	fn vandpd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Return the bitwise logical AND of packed double-precision floating-point values in `ymm2` and `ymm3/mem`.
-	fn vandpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vandpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Return the bitwise logical AND of packed double-precision floating-point values in `ymm2` and `ymm3/mem`.
-	fn vandpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vandpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Return the bitwise logical AND of packed single-precision floating-point values in `xmm2` and `xmm3/mem`.
 	fn vandps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -8035,10 +8035,10 @@ pub trait InstructionStream
 	fn vandps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Return the bitwise logical AND of packed single-precision floating-point values in `ymm2` and `ymm3/mem`.
-	fn vandps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vandps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Return the bitwise logical AND of packed single-precision floating-point values in `ymm2` and `ymm3/mem`.
-	fn vandps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vandps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Select packed double-precision floating-point values from `xmm2` and `xmm3/m128` from mask in `imm8` and store the values in `xmm1`.
 	fn vblendpd_XMMRegister_XMMRegister_Any128BitMemory_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory, arg3: Immediate8Bit);
@@ -8047,10 +8047,10 @@ pub trait InstructionStream
 	fn vblendpd_XMMRegister_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister, arg3: Immediate8Bit);
 
 	/// Select packed double-precision floating-point values from `ymm2` and `ymm3/m256` from mask in `imm8` and store the values in `ymm1`.
-	fn vblendpd_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: Immediate8Bit);
+	fn vblendpd_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: Immediate8Bit);
 
 	/// Select packed double-precision floating-point values from `ymm2` and `ymm3/m256` from mask in `imm8` and store the values in `ymm1`.
-	fn vblendpd_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: Immediate8Bit);
+	fn vblendpd_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: Immediate8Bit);
 
 	/// Select packed single-precision floating-point values from `xmm2` and `xmm3/m128` from mask in `imm8` and store the values in `xmm1`.
 	fn vblendps_XMMRegister_XMMRegister_Any128BitMemory_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory, arg3: Immediate8Bit);
@@ -8059,10 +8059,10 @@ pub trait InstructionStream
 	fn vblendps_XMMRegister_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister, arg3: Immediate8Bit);
 
 	/// Select packed single-precision floating-point values from `ymm2` and `ymm3/m256` from mask in `imm8` and store the values in `ymm1`.
-	fn vblendps_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: Immediate8Bit);
+	fn vblendps_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: Immediate8Bit);
 
 	/// Select packed single-precision floating-point values from `ymm2` and `ymm3/m256` from mask in `imm8` and store the values in `ymm1`.
-	fn vblendps_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: Immediate8Bit);
+	fn vblendps_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: Immediate8Bit);
 
 	/// Conditionally copy double-precision floating-point values from `xmm2` or `xmm3/m128` to `xmm1`, based on mask bits in the mask operand, `xmm4`.
 	fn vblendvpd_XMMRegister_XMMRegister_Any128BitMemory_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory, arg3: XMMRegister);
@@ -8071,10 +8071,10 @@ pub trait InstructionStream
 	fn vblendvpd_XMMRegister_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister, arg3: XMMRegister);
 
 	/// Conditionally copy double-precision floating-point values from `ymm2` or `ymm3/m256` to `ymm1`, based on mask bits in the mask operand, ymm4.
-	fn vblendvpd_YMM_YMM_Any256BitMemory_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: YMM);
+	fn vblendvpd_YMM_YMM_Any256BitMemory_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: YMMRegister);
 
 	/// Conditionally copy double-precision floating-point values from `ymm2` or `ymm3/m256` to `ymm1`, based on mask bits in the mask operand, ymm4.
-	fn vblendvpd_YMM_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: YMM);
+	fn vblendvpd_YMM_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: YMMRegister);
 
 	/// Conditionally copy single-precision floating-point values from `xmm2` or `xmm3/m128` to `xmm1`, based on mask bits in the specified mask operand, `xmm4`.
 	fn vblendvps_XMMRegister_XMMRegister_Any128BitMemory_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory, arg3: XMMRegister);
@@ -8083,22 +8083,22 @@ pub trait InstructionStream
 	fn vblendvps_XMMRegister_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister, arg3: XMMRegister);
 
 	/// Conditionally copy single-precision floating-point values from `ymm2` or `ymm3/m256` to `ymm1`, based on mask bits in the specified mask register, ymm4.
-	fn vblendvps_YMM_YMM_Any256BitMemory_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: YMM);
+	fn vblendvps_YMM_YMM_Any256BitMemory_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: YMMRegister);
 
 	/// Conditionally copy single-precision floating-point values from `ymm2` or `ymm3/m256` to `ymm1`, based on mask bits in the specified mask register, ymm4.
-	fn vblendvps_YMM_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: YMM);
+	fn vblendvps_YMM_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: YMMRegister);
 
 	/// Broadcast 128 bits of floating-point data in mem to low and high 128-bits in `ymm1`.
-	fn vbroadcastf128_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: Any128BitMemory);
+	fn vbroadcastf128_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: Any128BitMemory);
 
 	/// Broadcast 128 bits of integer data in mem to low and high 128-bits in `ymm1`.
-	fn vbroadcasti128_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: Any128BitMemory);
+	fn vbroadcasti128_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: Any128BitMemory);
 
 	/// Broadcast double-precision floating-point element in mem to four locations in `ymm1`.
-	fn vbroadcastsd_YMM_Any64BitMemory(&mut self, arg0: YMM, arg1: Any64BitMemory);
+	fn vbroadcastsd_YMM_Any64BitMemory(&mut self, arg0: YMMRegister, arg1: Any64BitMemory);
 
 	/// Broadcast low double-precision floating-point element in the source operand to four locations in `ymm1`.
-	fn vbroadcastsd_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister);
+	fn vbroadcastsd_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister);
 
 	/// Broadcast single-precision floating-point element in mem to four locations in `xmm1`.
 	fn vbroadcastss_XMMRegister_Any32BitMemory(&mut self, arg0: XMMRegister, arg1: Any32BitMemory);
@@ -8107,10 +8107,10 @@ pub trait InstructionStream
 	fn vbroadcastss_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Broadcast single-precision floating-point element in mem to eight locations in `ymm1`.
-	fn vbroadcastss_YMM_Any32BitMemory(&mut self, arg0: YMM, arg1: Any32BitMemory);
+	fn vbroadcastss_YMM_Any32BitMemory(&mut self, arg0: YMMRegister, arg1: Any32BitMemory);
 
 	/// Broadcast low single-precision floating-point element in the source operand to eight locations in `ymm1`.
-	fn vbroadcastss_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister);
+	fn vbroadcastss_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister);
 
 	/// Compare packed double-precision floating-point values in `xmm3/m128` and `xmm2` using bits `4:0` of `imm8` as a comparison predicate.
 	fn vcmppd_XMMRegister_XMMRegister_Any128BitMemory_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory, arg3: Immediate8Bit);
@@ -8119,10 +8119,10 @@ pub trait InstructionStream
 	fn vcmppd_XMMRegister_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister, arg3: Immediate8Bit);
 
 	/// Compare packed double-precision floating-point values in `ymm3/m256` and `ymm2` using bits `4:0` of `imm8` as a comparison predicate.
-	fn vcmppd_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: Immediate8Bit);
+	fn vcmppd_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: Immediate8Bit);
 
 	/// Compare packed double-precision floating-point values in `ymm3/m256` and `ymm2` using bits `4:0` of `imm8` as a comparison predicate.
-	fn vcmppd_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: Immediate8Bit);
+	fn vcmppd_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: Immediate8Bit);
 
 	/// Compare packed single-precision floating-point values in `xmm3/m128` and `xmm2` using bits `4:0` of `imm8` as a comparison predicate.
 	fn vcmpps_XMMRegister_XMMRegister_Any128BitMemory_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory, arg3: Immediate8Bit);
@@ -8131,10 +8131,10 @@ pub trait InstructionStream
 	fn vcmpps_XMMRegister_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister, arg3: Immediate8Bit);
 
 	/// Compare packed single-precision floating-point values in `ymm3/m256` and `ymm2` using bits `4:0` of `imm8` as a comparison predicate.
-	fn vcmpps_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: Immediate8Bit);
+	fn vcmpps_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: Immediate8Bit);
 
 	/// Compare packed single-precision floating-point values in `ymm3/m256` and `ymm2` using bits `4:0` of `imm8` as a comparison predicate.
-	fn vcmpps_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: Immediate8Bit);
+	fn vcmpps_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: Immediate8Bit);
 
 	/// Compare low double-precision floating-point value in `xmm3/m64` and `xmm2` using bits `4:0` of `imm8` as comparison predicate.
 	fn vcmpsd_XMMRegister_XMMRegister_Any64BitMemory_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any64BitMemory, arg3: Immediate8Bit);
@@ -8167,10 +8167,10 @@ pub trait InstructionStream
 	fn vcvtdq2pd_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Convert four packed signed doubleword integers from `ymm2/mem` to four packed double-precision floating-point values in `ymm1`.
-	fn vcvtdq2pd_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: Any128BitMemory);
+	fn vcvtdq2pd_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: Any128BitMemory);
 
 	/// Convert four packed signed doubleword integers from `ymm2/mem` to four packed double-precision floating-point values in `ymm1`.
-	fn vcvtdq2pd_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister);
+	fn vcvtdq2pd_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister);
 
 	/// Convert four packed signed doubleword integers from `xmm2/mem` to four packed single-precision floating-point values in `xmm1`.
 	fn vcvtdq2ps_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -8179,10 +8179,10 @@ pub trait InstructionStream
 	fn vcvtdq2ps_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Convert eight packed signed doubleword integers from `ymm2/mem` to eight packed single-precision floating-point values in `ymm1`.
-	fn vcvtdq2ps_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
+	fn vcvtdq2ps_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory);
 
 	/// Convert eight packed signed doubleword integers from `ymm2/mem` to eight packed single-precision floating-point values in `ymm1`.
-	fn vcvtdq2ps_YMM_YMM(&mut self, arg0: YMM, arg1: YMM);
+	fn vcvtdq2ps_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister);
 
 	/// Convert two packed double-precision floating-point values in `xmm2/mem` to two signed doubleword integers in `xmm1`.
 	fn vcvtpd2dq_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -8194,7 +8194,7 @@ pub trait InstructionStream
 	fn vcvtpd2dq_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Convert four packed double-precision floating-point values in `ymm2/mem` to four signed doubleword integers in `xmm1`.
-	fn vcvtpd2dq_XMMRegister_YMM(&mut self, arg0: XMMRegister, arg1: YMM);
+	fn vcvtpd2dq_XMMRegister_YMM(&mut self, arg0: XMMRegister, arg1: YMMRegister);
 
 	/// Convert two packed double-precision floating-point values in `xmm2/mem` to two single-precision floating-point values in `xmm1`.
 	fn vcvtpd2ps_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -8206,7 +8206,7 @@ pub trait InstructionStream
 	fn vcvtpd2ps_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Convert four packed double-precision floating-point values in `ymm2/mem` to four single-precision floating-point values in `xmm1`.
-	fn vcvtpd2ps_XMMRegister_YMM(&mut self, arg0: XMMRegister, arg1: YMM);
+	fn vcvtpd2ps_XMMRegister_YMM(&mut self, arg0: XMMRegister, arg1: YMMRegister);
 
 	/// Convert four packed half precision (16-bit) floating-point values in `xmm2/m64` to packed single-precision floating-point value in `xmm1`.
 	fn vcvtph2ps_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: Any64BitMemory);
@@ -8215,10 +8215,10 @@ pub trait InstructionStream
 	fn vcvtph2ps_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Convert eight packed half precision (16-bit) floating-point values in `xmm2/m128` to packed single-precision floating-point value in `ymm1`.
-	fn vcvtph2ps_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: Any128BitMemory);
+	fn vcvtph2ps_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: Any128BitMemory);
 
 	/// Convert eight packed half precision (16-bit) floating-point values in `xmm2/m128` to packed single-precision floating-point value in `ymm1`.
-	fn vcvtph2ps_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister);
+	fn vcvtph2ps_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister);
 
 	/// Convert four packed single-precision floating-point values from `xmm2/mem` to four packed signed doubleword values in `xmm1`.
 	fn vcvtps2dq_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -8227,10 +8227,10 @@ pub trait InstructionStream
 	fn vcvtps2dq_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Convert eight packed single-precision floating-point values from `ymm2/mem` to eight packed signed doubleword values in `ymm1`.
-	fn vcvtps2dq_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
+	fn vcvtps2dq_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory);
 
 	/// Convert eight packed single-precision floating-point values from `ymm2/mem` to eight packed signed doubleword values in `ymm1`.
-	fn vcvtps2dq_YMM_YMM(&mut self, arg0: YMM, arg1: YMM);
+	fn vcvtps2dq_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister);
 
 	/// Convert two packed single-precision floating-point values in `xmm2/mem` to two packed double-precision floating-point values in `xmm1`.
 	fn vcvtps2pd_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: Any64BitMemory);
@@ -8239,15 +8239,15 @@ pub trait InstructionStream
 	fn vcvtps2pd_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Convert four packed single-precision floating-point values in `xmm2/mem` to four packed double-precision floating-point values in `ymm1`.
-	fn vcvtps2pd_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: Any128BitMemory);
+	fn vcvtps2pd_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: Any128BitMemory);
 
 	/// Convert four packed single-precision floating-point values in `xmm2/mem` to four packed double-precision floating-point values in `ymm1`.
-	fn vcvtps2pd_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister);
+	fn vcvtps2pd_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister);
 
 	/// Convert eight packed single-precision floating-point value in `ymm2` to packed half-precision (16-bit) floating-point value in `xmm1/mem`.
 	///
 	/// `imm8` provides rounding controls.
-	fn vcvtps2ph_Any128BitMemory_YMM_Immediate8Bit(&mut self, arg0: Any128BitMemory, arg1: YMM, arg2: Immediate8Bit);
+	fn vcvtps2ph_Any128BitMemory_YMM_Immediate8Bit(&mut self, arg0: Any128BitMemory, arg1: YMMRegister, arg2: Immediate8Bit);
 
 	/// Convert four packed single-precision float- ing-point value in `xmm2` to packed half- precision (16-bit) floating-point value in `xmm1/mem`.
 	///
@@ -8262,7 +8262,7 @@ pub trait InstructionStream
 	/// Convert eight packed single-precision floating-point value in `ymm2` to packed half-precision (16-bit) floating-point value in `xmm1/mem`.
 	///
 	/// `imm8` provides rounding controls.
-	fn vcvtps2ph_XMMRegister_YMM_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: YMM, arg2: Immediate8Bit);
+	fn vcvtps2ph_XMMRegister_YMM_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: YMMRegister, arg2: Immediate8Bit);
 
 	/// Convert one double-precision floating-point value from `xmm1/m64` to one signed doubleword integer `r32`.
 	fn vcvtsd2si_Register32Bit_Any64BitMemory(&mut self, arg0: Register32Bit, arg1: Any64BitMemory);
@@ -8334,7 +8334,7 @@ pub trait InstructionStream
 	fn vcvttpd2dq_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Convert four packed double-precision floating-point values in `ymm2/mem` to four signed doubleword integers in `xmm1` using truncation.
-	fn vcvttpd2dq_XMMRegister_YMM(&mut self, arg0: XMMRegister, arg1: YMM);
+	fn vcvttpd2dq_XMMRegister_YMM(&mut self, arg0: XMMRegister, arg1: YMMRegister);
 
 	/// Convert four packed single-precision floating-point values from `xmm2/mem` to four packed signed doubleword values in `xmm1` using truncation.
 	fn vcvttps2dq_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -8343,10 +8343,10 @@ pub trait InstructionStream
 	fn vcvttps2dq_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Convert eight packed single-precision floating-point values from `ymm2/mem` to eight packed signed doubleword values in `ymm1` using truncation.
-	fn vcvttps2dq_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
+	fn vcvttps2dq_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory);
 
 	/// Convert eight packed single-precision floating-point values from `ymm2/mem` to eight packed signed doubleword values in `ymm1` using truncation.
-	fn vcvttps2dq_YMM_YMM(&mut self, arg0: YMM, arg1: YMM);
+	fn vcvttps2dq_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister);
 
 	/// Convert one double-precision floating-point value from `xmm1/m64` to one signed doubleword integer in `r32` using truncation.
 	fn vcvttsd2si_Register32Bit_Any64BitMemory(&mut self, arg0: Register32Bit, arg1: Any64BitMemory);
@@ -8379,10 +8379,10 @@ pub trait InstructionStream
 	fn vdivpd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Divide packed double-precision floating-point values in `ymm2` by packed double-precision floating-point values in `ymm3/mem`.
-	fn vdivpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vdivpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Divide packed double-precision floating-point values in `ymm2` by packed double-precision floating-point values in `ymm3/mem`.
-	fn vdivpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vdivpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Divide packed single-precision floating-point values in `xmm2` by packed double-precision floating-point values in `xmm3/mem`.
 	fn vdivps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -8391,10 +8391,10 @@ pub trait InstructionStream
 	fn vdivps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Divide packed single-precision floating-point values in `ymm2` by packed double-precision floating-point values in `ymm3/mem`.
-	fn vdivps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vdivps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Divide packed single-precision floating-point values in `ymm2` by packed double-precision floating-point values in `ymm3/mem`.
-	fn vdivps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vdivps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Divide low double-precision floating-point values in `xmm2` by low double-precision floating-point value in `xmm3/mem`.
 	fn vdivsd_XMMRegister_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any64BitMemory);
@@ -8421,10 +8421,10 @@ pub trait InstructionStream
 	fn vdpps_XMMRegister_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister, arg3: Immediate8Bit);
 
 	/// Multiply packed single-precision floating-point values from `ymm2` with packed single-precision floating-point values from `ymm3/mem`, selectively add pairs of elements and store to `ymm1`.
-	fn vdpps_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: Immediate8Bit);
+	fn vdpps_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: Immediate8Bit);
 
 	/// Multiply packed single-precision floating-point values from `ymm2` with packed single-precision floating-point values from `ymm3/mem`, selectively add pairs of elements and store to `ymm1`.
-	fn vdpps_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: Immediate8Bit);
+	fn vdpps_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: Immediate8Bit);
 
 	/// Set Zero Flag (ZF) is 1 if segment specified with `r/m16` can be read.
 	fn verr_Any16BitMemory(&mut self, arg0: Any16BitMemory);
@@ -8439,16 +8439,16 @@ pub trait InstructionStream
 	fn verw_Register16Bit(&mut self, arg0: Register16Bit);
 
 	/// Extract 128 bits of packed floating-point values from `ymm2` and store results in `xmm1/mem`.
-	fn vextractf128_Any128BitMemory_YMM_Immediate8Bit(&mut self, arg0: Any128BitMemory, arg1: YMM, arg2: Immediate8Bit);
+	fn vextractf128_Any128BitMemory_YMM_Immediate8Bit(&mut self, arg0: Any128BitMemory, arg1: YMMRegister, arg2: Immediate8Bit);
 
 	/// Extract 128 bits of packed floating-point values from `ymm2` and store results in `xmm1/mem`.
-	fn vextractf128_XMMRegister_YMM_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: YMM, arg2: Immediate8Bit);
+	fn vextractf128_XMMRegister_YMM_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: YMMRegister, arg2: Immediate8Bit);
 
 	/// Extract 128 bits of integer data from `ymm2` and store results in `xmm1/mem`.
-	fn vextracti128_Any128BitMemory_YMM_Immediate8Bit(&mut self, arg0: Any128BitMemory, arg1: YMM, arg2: Immediate8Bit);
+	fn vextracti128_Any128BitMemory_YMM_Immediate8Bit(&mut self, arg0: Any128BitMemory, arg1: YMMRegister, arg2: Immediate8Bit);
 
 	/// Extract 128 bits of integer data from `ymm2` and store results in `xmm1/mem`.
-	fn vextracti128_XMMRegister_YMM_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: YMM, arg2: Immediate8Bit);
+	fn vextracti128_XMMRegister_YMM_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: YMMRegister, arg2: Immediate8Bit);
 
 	/// Extract one single-precision floating-point value from `xmm1` at the offset specified by `imm8` and store the result in `reg` or `m32`.
 	///
@@ -8467,10 +8467,10 @@ pub trait InstructionStream
 	fn vfmadd132pd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed double-precision floating-point values from `ymm0` and `ymm2/mem`, add to `ymm1` and put result in `ymm0`.
-	fn vfmadd132pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfmadd132pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed double-precision floating-point values from `ymm0` and `ymm2/mem`, add to `ymm1` and put result in `ymm0`.
-	fn vfmadd132pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfmadd132pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `xmm0` and `xmm2/mem`, add to `xmm1` and put result in `xmm0`.
 	fn vfmadd132ps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -8479,10 +8479,10 @@ pub trait InstructionStream
 	fn vfmadd132ps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `ymm0` and `ymm2/mem`, add to `ymm1` and put result in `ymm0`.
-	fn vfmadd132ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfmadd132ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed single-precision floating-point values from `ymm0` and `ymm2/mem`, add to `ymm1` and put result in `ymm0`.
-	fn vfmadd132ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfmadd132ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply scalar double-precision floating-point value from `xmm0` and `xmm2/mem`, add to `xmm1` and put result in `xmm0`.
 	fn vfmadd132sd_XMMRegister_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any64BitMemory);
@@ -8503,10 +8503,10 @@ pub trait InstructionStream
 	fn vfmadd213pd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed double-precision floating-point values from `ymm0` and `ymm1`. add to `ymm2/mem` and put result in `ymm0`.
-	fn vfmadd213pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfmadd213pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed double-precision floating-point values from `ymm0` and `ymm1`, add to `ymm2/mem` and put result in `ymm0`.
-	fn vfmadd213pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfmadd213pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `xmm0` and `xmm1`, add to `xmm2/mem` and put result in `xmm0`.
 	fn vfmadd213ps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -8515,10 +8515,10 @@ pub trait InstructionStream
 	fn vfmadd213ps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `ymm0` and `ymm1`, add to `ymm2/mem` and put result in `ymm0`.
-	fn vfmadd213ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfmadd213ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed single-precision floating-point values from `ymm0` and `ymm1`, add to `ymm2/mem` and put result in `ymm0`.
-	fn vfmadd213ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfmadd213ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply scalar double-precision floating-point value from `xmm0` and `xmm1`, add to `xmm2/mem` and put result in `xmm0`.
 	fn vfmadd213sd_XMMRegister_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any64BitMemory);
@@ -8539,10 +8539,10 @@ pub trait InstructionStream
 	fn vfmadd231pd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed double-precision floating-point values from `ymm1` and `ymm2/mem`, add to `ymm0` and put result in `ymm0`.
-	fn vfmadd231pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfmadd231pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed double-precision floating-point values from `ymm1` and `ymm2/mem`, add to `ymm0` and put result in `ymm0`.
-	fn vfmadd231pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfmadd231pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `xmm1` and `xmm2/mem`, add to `xmm0` and put result in `xmm0`.
 	fn vfmadd231ps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -8551,10 +8551,10 @@ pub trait InstructionStream
 	fn vfmadd231ps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `ymm1` and `ymm2/mem`, add to `ymm0` and put result in `ymm0`.
-	fn vfmadd231ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfmadd231ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed single-precision floating-point values from `ymm1` and `ymm2/mem`, add to `ymm0` and put result in `ymm0`.
-	fn vfmadd231ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfmadd231ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply scalar double-precision floating-point value from `xmm1` and `xmm2/mem`, add to `xmm0` and put result in `xmm0`.
 	fn vfmadd231sd_XMMRegister_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any64BitMemory);
@@ -8575,10 +8575,10 @@ pub trait InstructionStream
 	fn vfmaddsub132pd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed double-precision floating-point values from `ymm0` and `ymm2/mem`, add/subtract elements in `ymm1` and put result in `ymm0`.
-	fn vfmaddsub132pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfmaddsub132pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed double-precision floating-point values from `ymm0` and `ymm2/mem`, add/subtract elements in `ymm1` and put result in `ymm0`.
-	fn vfmaddsub132pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfmaddsub132pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `xmm0` and `xmm2/mem`, add/subtract elements in `xmm1` and put result in `xmm0`.
 	fn vfmaddsub132ps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -8587,10 +8587,10 @@ pub trait InstructionStream
 	fn vfmaddsub132ps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `ymm0` and `ymm2/mem`, add/subtract elements in `ymm1` and put result in `ymm0`.
-	fn vfmaddsub132ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfmaddsub132ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed single-precision floating-point values from `ymm0` and `ymm2/mem`, add/subtract elements in `ymm1` and put result in `ymm0`.
-	fn vfmaddsub132ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfmaddsub132ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply packed double-precision floating-point values from `xmm0` and `xmm1`, add/subtract elements in `xmm2/mem` and put result in `xmm0`.
 	fn vfmaddsub213pd_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -8599,10 +8599,10 @@ pub trait InstructionStream
 	fn vfmaddsub213pd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed double-precision floating-point values from `ymm0` and `ymm1`. add/subtract elements in `ymm2/mem` and put result in `ymm0`.
-	fn vfmaddsub213pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfmaddsub213pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed double-precision floating-point values from `ymm0` and `ymm1`. add/subtract elements in `ymm2/mem` and put result in `ymm0`.
-	fn vfmaddsub213pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfmaddsub213pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `xmm0` and `xmm1`, add/subtract elements in `xmm2/mem` and put result in `xmm0`.
 	fn vfmaddsub213ps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -8611,10 +8611,10 @@ pub trait InstructionStream
 	fn vfmaddsub213ps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `ymm0` and `ymm1`, add/subtract elements in `ymm2/mem` and put result in `ymm0`.
-	fn vfmaddsub213ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfmaddsub213ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed single-precision floating-point values from `ymm0` and `ymm1`, add/subtract elements in `ymm2/mem` and put result in `ymm0`.
-	fn vfmaddsub213ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfmaddsub213ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply packed double-precision floating-point values from `xmm1` and `xmm2/mem`, add/subtract elements in `xmm0` and put result in `xmm0`.
 	fn vfmaddsub231pd_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -8623,10 +8623,10 @@ pub trait InstructionStream
 	fn vfmaddsub231pd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed double-precision floating-point values from `ymm1` and `ymm2/mem`, add/subtract elements in `ymm0` and put result in `ymm0`.
-	fn vfmaddsub231pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfmaddsub231pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed double-precision floating-point values from `ymm1` and `ymm2/mem`, add/subtract elements in `ymm0` and put result in `ymm0`.
-	fn vfmaddsub231pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfmaddsub231pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `xmm1` and `xmm2/mem`, add/subtract elements in `xmm0` and put result in `xmm0`.
 	fn vfmaddsub231ps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -8635,10 +8635,10 @@ pub trait InstructionStream
 	fn vfmaddsub231ps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `ymm1` and `ymm2/mem`, add/subtract elements in `ymm0` and put result in `ymm0`.
-	fn vfmaddsub231ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfmaddsub231ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed single-precision floating-point values from `ymm1` and `ymm2/mem`, add/subtract elements in `ymm0` and put result in `ymm0`.
-	fn vfmaddsub231ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfmaddsub231ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply packed double-precision floating-point values from `xmm0` and `xmm2/mem`, subtract `xmm1` and put result in `xmm0`.
 	fn vfmsub132pd_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -8647,10 +8647,10 @@ pub trait InstructionStream
 	fn vfmsub132pd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed double-precision floating-point values from `ymm0` and `ymm2/mem`, subtract `ymm1` and put result in `ymm0`.
-	fn vfmsub132pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfmsub132pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed double-precision floating-point values from `ymm0` and `ymm2/mem`, subtract `ymm1` and put result in `ymm0`.
-	fn vfmsub132pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfmsub132pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `xmm0` and `xmm2/mem`, subtract `xmm1` and put result in `xmm0`.
 	fn vfmsub132ps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -8659,10 +8659,10 @@ pub trait InstructionStream
 	fn vfmsub132ps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `ymm0` and `ymm2/mem`, subtract `ymm1` and put result in `ymm0`.
-	fn vfmsub132ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfmsub132ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed single-precision floating-point values from `ymm0` and `ymm2/mem`, subtract `ymm1` and put result in `ymm0`.
-	fn vfmsub132ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfmsub132ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply scalar double-precision floating-point value from `xmm0` and `xmm2/mem`, subtract `xmm1` and put result in `xmm0`.
 	fn vfmsub132sd_XMMRegister_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any64BitMemory);
@@ -8683,10 +8683,10 @@ pub trait InstructionStream
 	fn vfmsub213pd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed double-precision floating-point values from `ymm0` and `ymm1`. subtract `ymm2/mem` and put result in `ymm0`.
-	fn vfmsub213pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfmsub213pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed double-precision floating-point values from `ymm0` and `ymm1`. subtract `ymm2/mem` and put result in `ymm0`.
-	fn vfmsub213pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfmsub213pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `xmm0` and `xmm1`, subtract `xmm2/mem` and put result in `xmm0`.
 	fn vfmsub213ps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -8695,10 +8695,10 @@ pub trait InstructionStream
 	fn vfmsub213ps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `ymm0` and `ymm1`, subtract `ymm2/mem` and put result in `ymm0`.
-	fn vfmsub213ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfmsub213ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed single-precision floating-point values from `ymm0` and `ymm1`, subtract `ymm2/mem` and put result in `ymm0`.
-	fn vfmsub213ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfmsub213ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply scalar double-precision floating-point value from `xmm0` and `xmm1`, subtract `xmm2/mem` and put result in `xmm0`.
 	fn vfmsub213sd_XMMRegister_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any64BitMemory);
@@ -8719,10 +8719,10 @@ pub trait InstructionStream
 	fn vfmsub231pd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed double-precision floating-point values from `ymm1` and `ymm2/mem`, subtract `ymm0` and put result in `ymm0`.
-	fn vfmsub231pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfmsub231pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed double-precision floating-point values from `ymm1` and `ymm2/mem`, subtract `ymm0` and put result in `ymm0`.
-	fn vfmsub231pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfmsub231pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `xmm1` and `xmm2/mem`, subtract `xmm0` and put result in `xmm0`.
 	fn vfmsub231ps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -8731,10 +8731,10 @@ pub trait InstructionStream
 	fn vfmsub231ps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `ymm1` and `ymm2/mem`, subtract `ymm0` and put result in `ymm0`.
-	fn vfmsub231ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfmsub231ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed single-precision floating-point values from `ymm1` and `ymm2/mem`, subtract `ymm0` and put result in `ymm0`.
-	fn vfmsub231ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfmsub231ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply scalar double-precision floating-point value from `xmm1` and `xmm2/mem`, subtract `xmm0` and put result in `xmm0`.
 	fn vfmsub231sd_XMMRegister_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any64BitMemory);
@@ -8755,10 +8755,10 @@ pub trait InstructionStream
 	fn vfmsubadd132pd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed double-precision floating-point values from `ymm0` and `ymm2/mem`, subtract/add elements in `ymm1` and put result in `ymm0`.
-	fn vfmsubadd132pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfmsubadd132pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed double-precision floating-point values from `ymm0` and `ymm2/mem`, subtract/add elements in `ymm1` and put result in `ymm0`.
-	fn vfmsubadd132pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfmsubadd132pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `xmm0` and `xmm2/mem`, subtract/add elements in `xmm1` and put result in `xmm0`.
 	fn vfmsubadd132ps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -8767,10 +8767,10 @@ pub trait InstructionStream
 	fn vfmsubadd132ps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `ymm0` and `ymm2/mem`, subtract/add elements in `ymm1` and put result in `ymm0`.
-	fn vfmsubadd132ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfmsubadd132ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed single-precision floating-point values from `ymm0` and `ymm2/mem`, subtract/add elements in `ymm1` and put result in `ymm0`.
-	fn vfmsubadd132ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfmsubadd132ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply packed double-precision floating-point values from `xmm0` and `xmm1`, subtract/add elements in `xmm2/mem` and put result in `xmm0`.
 	fn vfmsubadd213pd_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -8779,10 +8779,10 @@ pub trait InstructionStream
 	fn vfmsubadd213pd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed double-precision floating-point values from `ymm0` and `ymm1`, subtract/add elements in `ymm2/mem` and put result in `ymm0`.
-	fn vfmsubadd213pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfmsubadd213pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed double-precision floating-point values from `ymm0` and `ymm1`, subtract/add elements in `ymm2/mem` and put result in `ymm0`.
-	fn vfmsubadd213pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfmsubadd213pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `xmm0` and `xmm1`, subtract/add elements in `xmm2/mem` and put result in `xmm0`.
 	fn vfmsubadd213ps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -8791,10 +8791,10 @@ pub trait InstructionStream
 	fn vfmsubadd213ps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `ymm0` and `ymm1`, subtract/add elements in `ymm2/mem` and put result in `ymm0`.
-	fn vfmsubadd213ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfmsubadd213ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed single-precision floating-point values from `ymm0` and `ymm1`, subtract/add elements in `ymm2/mem` and put result in `ymm0`.
-	fn vfmsubadd213ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfmsubadd213ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply packed double-precision floating-point values from `xmm1` and `xmm2/mem`, subtract/add elements in `xmm0` and put result in `xmm0`.
 	fn vfmsubadd231pd_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -8803,10 +8803,10 @@ pub trait InstructionStream
 	fn vfmsubadd231pd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed double-precision floating-point values from `ymm1` and `ymm2/mem`, subtract/add elements in `ymm0` and put result in `ymm0`.
-	fn vfmsubadd231pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfmsubadd231pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed double-precision floating-point values from `ymm1` and `ymm2/mem`, subtract/add elements in `ymm0` and put result in `ymm0`.
-	fn vfmsubadd231pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfmsubadd231pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `xmm1` and `xmm2/mem`, subtract/add elements in `xmm0` and put result in `xmm0`.
 	fn vfmsubadd231ps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -8815,10 +8815,10 @@ pub trait InstructionStream
 	fn vfmsubadd231ps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `ymm1` and `ymm2/mem`, subtract/add elements in `ymm0` and put result in `ymm0`.
-	fn vfmsubadd231ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfmsubadd231ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed single-precision floating-point values from `ymm1` and `ymm2/mem`, subtract/add elements in `ymm0` and put result in `ymm0`.
-	fn vfmsubadd231ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfmsubadd231ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply packed double-precision floating-point values from `xmm0` and `xmm2/mem`, negate the multiplication result and add to `xmm1` and put result in `xmm0`.
 	fn vfnmadd132pd_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -8827,10 +8827,10 @@ pub trait InstructionStream
 	fn vfnmadd132pd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed double-precision floating-point values from `ymm0` and `ymm2/mem`, negate the multiplication result and add to `ymm1` and put result in `ymm0`.
-	fn vfnmadd132pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfnmadd132pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed double-precision floating-point values from `ymm0` and `ymm2/mem`, negate the multiplication result and add to `ymm1` and put result in `ymm0`.
-	fn vfnmadd132pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfnmadd132pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `xmm0` and `xmm2/mem`, negate the multiplication result and add to `xmm1` and put result in `xmm0`.
 	fn vfnmadd132ps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -8839,10 +8839,10 @@ pub trait InstructionStream
 	fn vfnmadd132ps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `ymm0` and `ymm2/mem`, negate the multiplication result and add to `ymm1` and put result in `ymm0`.
-	fn vfnmadd132ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfnmadd132ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed single-precision floating-point values from `ymm0` and `ymm2/mem`, negate the multiplication result and add to `ymm1` and put result in `ymm0`.
-	fn vfnmadd132ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfnmadd132ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply scalar double-precision floating-point value from `xmm0` and `xmm2/mem`, negate the multiplication result and add to `xmm1` and put result in `xmm0`.
 	fn vfnmadd132sd_XMMRegister_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any64BitMemory);
@@ -8863,10 +8863,10 @@ pub trait InstructionStream
 	fn vfnmadd213pd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed double-precision floating-point values from `ymm0` and `ymm1`, negate the multiplication result and add to `ymm2/mem` and put result in `ymm0`.
-	fn vfnmadd213pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfnmadd213pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed double-precision floating-point values from `ymm0` and `ymm1`, negate the multiplication result and add to `ymm2/mem` and put result in `ymm0`.
-	fn vfnmadd213pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfnmadd213pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `xmm0` and `xmm1`, negate the multiplication result and add to `xmm2/mem` and put result in `xmm0`.
 	fn vfnmadd213ps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -8875,10 +8875,10 @@ pub trait InstructionStream
 	fn vfnmadd213ps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `ymm0` and `ymm1`, negate the multiplication result and add to `ymm2/mem` and put result in `ymm0`.
-	fn vfnmadd213ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfnmadd213ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed single-precision floating-point values from `ymm0` and `ymm1`, negate the multiplication result and add to `ymm2/mem` and put result in `ymm0`.
-	fn vfnmadd213ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfnmadd213ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply scalar double-precision floating-point value from `xmm0` and `xmm1`, negate the multiplication result and add to `xmm2/mem` and put result in `xmm0`.
 	fn vfnmadd213sd_XMMRegister_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any64BitMemory);
@@ -8899,10 +8899,10 @@ pub trait InstructionStream
 	fn vfnmadd231pd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed double-precision floating-point values from `ymm1` and `ymm2/mem`, negate the multiplication result and add to `ymm0` and put result in `ymm0`.
-	fn vfnmadd231pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfnmadd231pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed double-precision floating-point values from `ymm1` and `ymm2/mem`, negate the multiplication result and add to `ymm0` and put result in `ymm0`.
-	fn vfnmadd231pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfnmadd231pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `xmm1` and `xmm2/mem`, negate the multiplication result and add to `xmm0` and put result in `xmm0`.
 	fn vfnmadd231ps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -8911,10 +8911,10 @@ pub trait InstructionStream
 	fn vfnmadd231ps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `ymm1` and `ymm2/mem`, negate the multiplication result and add to `ymm0` and put result in `ymm0`.
-	fn vfnmadd231ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfnmadd231ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed single-precision floating-point values from `ymm1` and `ymm2/mem`, negate the multiplication result and add to `ymm0` and put result in `ymm0`.
-	fn vfnmadd231ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfnmadd231ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply scalar double-precision floating-point value from `xmm1` and `xmm2/mem`, negate the multiplication result and add to `xmm0` and put result in `xmm0`.
 	fn vfnmadd231sd_XMMRegister_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any64BitMemory);
@@ -8935,10 +8935,10 @@ pub trait InstructionStream
 	fn vfnmsub132pd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed double-precision floating-point values from `ymm0` and `ymm2/mem`, negate the multiplication result and subtract `ymm1` and put result in `ymm0`.
-	fn vfnmsub132pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfnmsub132pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed double-precision floating-point values from `ymm0` and `ymm2/mem`, negate the multiplication result and subtract `ymm1` and put result in `ymm0`.
-	fn vfnmsub132pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfnmsub132pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `xmm0` and `xmm2/mem`, negate the multiplication result and subtract `xmm1` and put result in `xmm0`.
 	fn vfnmsub132ps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -8947,10 +8947,10 @@ pub trait InstructionStream
 	fn vfnmsub132ps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `ymm0` and `ymm2/mem`, negate the multiplication result and subtract `ymm1` and put result in `ymm0`.
-	fn vfnmsub132ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfnmsub132ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed single-precision floating-point values from `ymm0` and `ymm2/mem`, negate the multiplication result and subtract `ymm1` and put result in `ymm0`.
-	fn vfnmsub132ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfnmsub132ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply scalar double-precision floating-point value from `xmm0` and `xmm2/mem`, negate the multiplication result and subtract `xmm1` and put result in `xmm0`.
 	fn vfnmsub132sd_XMMRegister_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any64BitMemory);
@@ -8971,10 +8971,10 @@ pub trait InstructionStream
 	fn vfnmsub213pd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed double-precision floating-point values from `ymm0` and `ymm1`, negate the multiplication result and subtract `ymm2/mem` and put result in `ymm0`.
-	fn vfnmsub213pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfnmsub213pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed double-precision floating-point values from `ymm0` and `ymm1`, negate the multiplication result and subtract `ymm2/mem` and put result in `ymm0`.
-	fn vfnmsub213pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfnmsub213pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `xmm0` and `xmm1`, negate the multiplication result and subtract `xmm2/mem` and put result in `xmm0`.
 	fn vfnmsub213ps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -8983,10 +8983,10 @@ pub trait InstructionStream
 	fn vfnmsub213ps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `ymm0` and `ymm1`, negate the multiplication result and subtract `ymm2/mem` and put result in `ymm0`.
-	fn vfnmsub213ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfnmsub213ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed single-precision floating-point values from `ymm0` and `ymm1`, negate the multiplication result and subtract `ymm2/mem` and put result in `ymm0`.
-	fn vfnmsub213ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfnmsub213ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply scalar double-precision floating-point value from `xmm0` and `xmm1`, negate the multiplication result and subtract `xmm2/mem` and put result in `xmm0`.
 	fn vfnmsub213sd_XMMRegister_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any64BitMemory);
@@ -9007,10 +9007,10 @@ pub trait InstructionStream
 	fn vfnmsub231pd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed double-precision floating-point values from `ymm1` and `ymm2/mem`, negate the multiplication result and subtract `ymm0` and put result in `ymm0`.
-	fn vfnmsub231pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfnmsub231pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed double-precision floating-point values from `ymm1` and `ymm2/mem`, negate the multiplication result and subtract `ymm0` and put result in `ymm0`.
-	fn vfnmsub231pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfnmsub231pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `xmm1` and `xmm2/mem`, negate the multiplication result and subtract `xmm0` and put result in `xmm0`.
 	fn vfnmsub231ps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -9019,10 +9019,10 @@ pub trait InstructionStream
 	fn vfnmsub231ps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `ymm1` and `ymm2/mem`, negate the multiplication result and subtract `ymm0` and put result in `ymm0`.
-	fn vfnmsub231ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vfnmsub231ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed single-precision floating-point values from `ymm1` and `ymm2/mem`, negate the multiplication result and subtract `ymm0` and put result in `ymm0`.
-	fn vfnmsub231ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vfnmsub231ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply scalar double-precision floating-point value from `xmm1` and `xmm2/mem`, negate the multiplication result and subtract `xmm0` and put result in `xmm0`.
 	fn vfnmsub231sd_XMMRegister_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any64BitMemory);
@@ -9044,7 +9044,7 @@ pub trait InstructionStream
 	/// Using dword indices specified in vm32x, gather double-precision FP values from memory conditioned on mask specified by `ymm2`.
 	///
 	/// Conditionally gathered elements are merged into `ymm1`.
-	fn vgatherdpd_YMM_Any32BitMemory_YMM(&mut self, arg0: YMM, arg1: Any32BitMemory, arg2: YMM);
+	fn vgatherdpd_YMM_Any32BitMemory_YMM(&mut self, arg0: YMMRegister, arg1: Any32BitMemory, arg2: YMMRegister);
 
 	/// Using dword indices specified in vm32x, gather single-precision FP values from memory conditioned on mask specified by `xmm2`.
 	///
@@ -9054,7 +9054,7 @@ pub trait InstructionStream
 	/// Using dword indices specified in vm32x, gather single-precision FP values from memory conditioned on mask specified by `ymm2`.
 	///
 	/// Conditionally gathered elements are merged into `ymm1`.
-	fn vgatherdps_YMM_Any32BitMemory_YMM(&mut self, arg0: YMM, arg1: Any32BitMemory, arg2: YMM);
+	fn vgatherdps_YMM_Any32BitMemory_YMM(&mut self, arg0: YMMRegister, arg1: Any32BitMemory, arg2: YMMRegister);
 
 	/// Using qword indices specified in vm64x, gather double-precision FP values from memory conditioned on mask specified by `xmm2`.
 	///
@@ -9064,7 +9064,7 @@ pub trait InstructionStream
 	/// Using qword indices specified in vm64y, gather double-precision FP values from memory conditioned on mask specified by `ymm2`.
 	///
 	/// Conditionally gathered elements are merged into `ymm1`.
-	fn vgatherqpd_YMM_Any64BitMemory_YMM(&mut self, arg0: YMM, arg1: Any64BitMemory, arg2: YMM);
+	fn vgatherqpd_YMM_Any64BitMemory_YMM(&mut self, arg0: YMMRegister, arg1: Any64BitMemory, arg2: YMMRegister);
 
 	/// Using qword indices specified in vm64x, gather single-precision FP values from memory conditioned on mask specified by `xmm2`.
 	///
@@ -9083,10 +9083,10 @@ pub trait InstructionStream
 	fn vhaddpd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Horizontal add packed double-precision floating-point values from `ymm2` and `ymm3/mem`.
-	fn vhaddpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vhaddpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Horizontal add packed double-precision floating-point values from `ymm2` and `ymm3/mem`.
-	fn vhaddpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vhaddpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Horizontal add packed single-precision floating-point values from `xmm2` and `xmm3/mem`.
 	fn vhaddps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -9095,10 +9095,10 @@ pub trait InstructionStream
 	fn vhaddps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Horizontal add packed single-precision floating-point values from `ymm2` and `ymm3/mem`.
-	fn vhaddps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vhaddps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Horizontal add packed single-precision floating-point values from `ymm2` and `ymm3/mem`.
-	fn vhaddps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vhaddps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Horizontal subtract packed double-precision floating-point values from `xmm2` and `xmm3/mem`.
 	fn vhsubpd_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -9107,10 +9107,10 @@ pub trait InstructionStream
 	fn vhsubpd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Horizontal subtract packed double-precision floating-point values from `ymm2` and `ymm3/mem`.
-	fn vhsubpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vhsubpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Horizontal subtract packed double-precision floating-point values from `ymm2` and `ymm3/mem`.
-	fn vhsubpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vhsubpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Horizontal subtract packed single-precision floating-point values from `xmm2` and `xmm3/mem`.
 	fn vhsubps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -9119,22 +9119,22 @@ pub trait InstructionStream
 	fn vhsubps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Horizontal subtract packed single-precision floating-point values from `ymm2` and `ymm3/mem`.
-	fn vhsubps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vhsubps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Horizontal subtract packed single-precision floating-point values from `ymm2` and `ymm3/mem`.
-	fn vhsubps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vhsubps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Insert a single-precision floating-point value selected by `imm8` from `xmm3/m128` into `ymm2` at the specified destination element specified by `imm8` and zero out destination elements in `ymm1` as indicated in `imm8`.
-	fn vinsertf128_YMM_YMM_Any128BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any128BitMemory, arg3: Immediate8Bit);
+	fn vinsertf128_YMM_YMM_Any128BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any128BitMemory, arg3: Immediate8Bit);
 
 	/// Insert a single-precision floating-point value selected by `imm8` from `xmm3/m128` into `ymm2` at the specified destination element specified by `imm8` and zero out destination elements in `ymm1` as indicated in `imm8`.
-	fn vinsertf128_YMM_YMM_XMMRegister_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: XMMRegister, arg3: Immediate8Bit);
+	fn vinsertf128_YMM_YMM_XMMRegister_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: XMMRegister, arg3: Immediate8Bit);
 
 	/// Insert 128-bits of integer data from `xmm3/mem` and the remaining values from `ymm2` into `ymm1`.
-	fn vinserti128_YMM_YMM_Any128BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any128BitMemory, arg3: Immediate8Bit);
+	fn vinserti128_YMM_YMM_Any128BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any128BitMemory, arg3: Immediate8Bit);
 
 	/// Insert 128-bits of integer data from `xmm3/mem` and the remaining values from `ymm2` into `ymm1`.
-	fn vinserti128_YMM_YMM_XMMRegister_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: XMMRegister, arg3: Immediate8Bit);
+	fn vinserti128_YMM_YMM_XMMRegister_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: XMMRegister, arg3: Immediate8Bit);
 
 	/// Insert a single-precision floating-point value selected by `imm8` from `xmm3/m32` and merge into `xmm2` at the specified destination element specified by `imm8` and zero out destination elements in `xmm1` as indicated in `imm8`.
 	fn vinsertps_XMMRegister_XMMRegister_Any32BitMemory_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any32BitMemory, arg3: Immediate8Bit);
@@ -9146,7 +9146,7 @@ pub trait InstructionStream
 	fn vlddqu_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
 
 	/// Load unaligned packed integer values from mem to `ymm1`.
-	fn vlddqu_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
+	fn vlddqu_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory);
 
 	/// Load `MXCSR` register from `m32`.
 	fn vldmxcsr_Any32BitMemory(&mut self, arg0: Any32BitMemory);
@@ -9160,25 +9160,25 @@ pub trait InstructionStream
 	fn vmaskmovpd_Any128BitMemory_XMMRegister_XMMRegister(&mut self, arg0: Any128BitMemory, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Conditionally store packed double-precision values from `ymm2` using mask in `ymm1`.
-	fn vmaskmovpd_Any256BitMemory_YMM_YMM(&mut self, arg0: Any256BitMemory, arg1: YMM, arg2: YMM);
+	fn vmaskmovpd_Any256BitMemory_YMM_YMM(&mut self, arg0: Any256BitMemory, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Conditionally load packed double-precision values from `m128` using mask in `xmm2` and store in `xmm1`.
 	fn vmaskmovpd_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
 
 	/// Conditionally load packed double-precision values from m256 using mask in `ymm2` and store in `ymm1`.
-	fn vmaskmovpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vmaskmovpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Conditionally store packed single-precision values from `xmm2` using mask in `xmm1`.
 	fn vmaskmovps_Any128BitMemory_XMMRegister_XMMRegister(&mut self, arg0: Any128BitMemory, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Conditionally store packed single-precision values from `ymm2` using mask in `ymm1`.
-	fn vmaskmovps_Any256BitMemory_YMM_YMM(&mut self, arg0: Any256BitMemory, arg1: YMM, arg2: YMM);
+	fn vmaskmovps_Any256BitMemory_YMM_YMM(&mut self, arg0: Any256BitMemory, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Conditionally load packed single-precision values from `m128` using mask in `xmm2` and store in `xmm1`.
 	fn vmaskmovps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
 
 	/// Conditionally load packed single-precision values from m256 using mask in `ymm2` and store in `ymm1`.
-	fn vmaskmovps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vmaskmovps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Return the maximum double-precision floating-point values between `xmm2` and `xmm3/mem`.
 	fn vmaxpd_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -9187,10 +9187,10 @@ pub trait InstructionStream
 	fn vmaxpd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Return the maximum packed double-precision floating-point values between `ymm2` and `ymm3/mem`.
-	fn vmaxpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vmaxpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Return the maximum packed double-precision floating-point values between `ymm2` and `ymm3/mem`.
-	fn vmaxpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vmaxpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Return the maximum single-precision floating-point values between `xmm2` and `xmm3/mem`.
 	fn vmaxps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -9199,10 +9199,10 @@ pub trait InstructionStream
 	fn vmaxps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Return the maximum single double-precision floating-point values between `ymm2` and `ymm3/mem`.
-	fn vmaxps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vmaxps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Return the maximum single double-precision floating-point values between `ymm2` and `ymm3/mem`.
-	fn vmaxps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vmaxps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Return the maximum scalar double-precision floating-point value between `xmm3/mem`.4 and `xmm2`.
 	fn vmaxsd_XMMRegister_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any64BitMemory);
@@ -9223,10 +9223,10 @@ pub trait InstructionStream
 	fn vminpd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Return the minimum packed double-precision floating-point values between `ymm2` and `ymm3/mem`.
-	fn vminpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vminpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Return the minimum packed double-precision floating-point values between `ymm2` and `ymm3/mem`.
-	fn vminpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vminpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Return the minimum single-precision floating-point values between `xmm2` and `xmm3/mem`.
 	fn vminps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -9235,10 +9235,10 @@ pub trait InstructionStream
 	fn vminps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Return the minimum single double-precision floating-point values between `ymm2` and `ymm3/mem`.
-	fn vminps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vminps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Return the minimum single double-precision floating-point values between `ymm2` and `ymm3/mem`.
-	fn vminps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vminps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Return the minimum scalar double-precision floating-point value between `xmm3/mem4` and `xmm2`.
 	fn vminsd_XMMRegister_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any64BitMemory);
@@ -9256,7 +9256,7 @@ pub trait InstructionStream
 	fn vmovapd_Any128BitMemory_XMMRegister(&mut self, arg0: Any128BitMemory, arg1: XMMRegister);
 
 	/// Move aligned packed double-precision floating-point values from `ymm1` to `ymm2/mem`.
-	fn vmovapd_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMM);
+	fn vmovapd_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMMRegister);
 
 	/// Move aligned packed double-precision floating-point values from `xmm2/mem` to `xmm1`.
 	fn vmovapd_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -9268,19 +9268,19 @@ pub trait InstructionStream
 	fn vmovapd_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move aligned packed double-precision floating-point values from `ymm2/mem` to `ymm1`.
-	fn vmovapd_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
+	fn vmovapd_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory);
 
 	/// Move aligned packed double-precision floating-point values from `ymm2/mem` to `ymm1`.
-	fn vmovapd_YMM_YMM(&mut self, arg0: YMM, arg1: YMM);
+	fn vmovapd_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister);
 
 	/// Move aligned packed double-precision floating-point values from `ymm1` to `ymm2/mem`.
-	fn vmovapd_YMM_YMM_1(&mut self, arg0: YMM, arg1: YMM);
+	fn vmovapd_YMM_YMM_1(&mut self, arg0: YMMRegister, arg1: YMMRegister);
 
 	/// Move aligned packed single-precision floating-point values from `xmm1` to `xmm2/mem`.
 	fn vmovaps_Any128BitMemory_XMMRegister(&mut self, arg0: Any128BitMemory, arg1: XMMRegister);
 
 	/// Move aligned packed single-precision floating-point values from `ymm1` to `ymm2/mem`.
-	fn vmovaps_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMM);
+	fn vmovaps_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMMRegister);
 
 	/// Move aligned packed single-precision floating-point values from `xmm2/mem` to `xmm1`.
 	fn vmovaps_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -9292,13 +9292,13 @@ pub trait InstructionStream
 	fn vmovaps_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move aligned packed single-precision floating-point values from `ymm2/mem` to `ymm1`.
-	fn vmovaps_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
+	fn vmovaps_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory);
 
 	/// Move aligned packed single-precision floating-point values from `ymm2/mem` to `ymm1`.
-	fn vmovaps_YMM_YMM(&mut self, arg0: YMM, arg1: YMM);
+	fn vmovaps_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister);
 
 	/// Move aligned packed single-precision floating-point values from `ymm1` to `ymm2/mem`.
-	fn vmovaps_YMM_YMM_1(&mut self, arg0: YMM, arg1: YMM);
+	fn vmovaps_YMM_YMM_1(&mut self, arg0: YMMRegister, arg1: YMMRegister);
 
 	/// Move doubleword from `xmm1` register to `r/m32`.
 	fn vmovd_Any32BitMemory_XMMRegister(&mut self, arg0: Any32BitMemory, arg1: XMMRegister);
@@ -9319,16 +9319,16 @@ pub trait InstructionStream
 	fn vmovddup_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move even index double-precision floating-point values from `ymm2/mem` and duplicate each element into `ymm1`.
-	fn vmovddup_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
+	fn vmovddup_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory);
 
 	/// Move even index double-precision floating-point values from `ymm2/mem` and duplicate each element into `ymm1`.
-	fn vmovddup_YMM_YMM(&mut self, arg0: YMM, arg1: YMM);
+	fn vmovddup_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister);
 
 	/// Move aligned packed integer values from `xmm1` to `xmm2/mem`.
 	fn vmovdqa_Any128BitMemory_XMMRegister(&mut self, arg0: Any128BitMemory, arg1: XMMRegister);
 
 	/// Move aligned packed integer values from `ymm1` to `ymm2/mem`.
-	fn vmovdqa_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMM);
+	fn vmovdqa_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMMRegister);
 
 	/// Move aligned packed integer values from `xmm2/mem` to `xmm1`.
 	fn vmovdqa_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -9340,19 +9340,19 @@ pub trait InstructionStream
 	fn vmovdqa_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move aligned packed integer values from `ymm2/mem` to `ymm1`.
-	fn vmovdqa_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
+	fn vmovdqa_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory);
 
 	/// Move aligned packed integer values from `ymm2/mem` to `ymm1`.
-	fn vmovdqa_YMM_YMM(&mut self, arg0: YMM, arg1: YMM);
+	fn vmovdqa_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister);
 
 	/// Move aligned packed integer values from `ymm1` to `ymm2/mem`.
-	fn vmovdqa_YMM_YMM_1(&mut self, arg0: YMM, arg1: YMM);
+	fn vmovdqa_YMM_YMM_1(&mut self, arg0: YMMRegister, arg1: YMMRegister);
 
 	/// Move unaligned packed integer values from `xmm1` to `xmm2/mem`.
 	fn vmovdqu_Any128BitMemory_XMMRegister(&mut self, arg0: Any128BitMemory, arg1: XMMRegister);
 
 	/// Move unaligned packed integer values from `ymm1` to `ymm2/mem`.
-	fn vmovdqu_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMM);
+	fn vmovdqu_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMMRegister);
 
 	/// Move unaligned packed integer values from `xmm2/mem` to `xmm1`.
 	fn vmovdqu_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -9364,13 +9364,13 @@ pub trait InstructionStream
 	fn vmovdqu_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move unaligned packed integer values from `ymm2/mem` to `ymm1`.
-	fn vmovdqu_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
+	fn vmovdqu_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory);
 
 	/// Move unaligned packed integer values from `ymm2/mem` to `ymm1`.
-	fn vmovdqu_YMM_YMM(&mut self, arg0: YMM, arg1: YMM);
+	fn vmovdqu_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister);
 
 	/// Move unaligned packed integer values from `ymm1` to `ymm2/mem`.
-	fn vmovdqu_YMM_YMM_1(&mut self, arg0: YMM, arg1: YMM);
+	fn vmovdqu_YMM_YMM_1(&mut self, arg0: YMMRegister, arg1: YMMRegister);
 
 	/// Merge two packed single-precision floating-point values from high quadword of xmm3 and low quadword of `xmm2`.
 	fn vmovhlps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
@@ -9410,7 +9410,7 @@ pub trait InstructionStream
 	/// Extract 4-bit sign mask from `ymm2` and store in register.
 	///
 	/// The upper bits of `r32` or `r64` are zeroed.
-	fn vmovmskpd_Register32Bit_YMM(&mut self, arg0: Register32Bit, arg1: YMM);
+	fn vmovmskpd_Register32Bit_YMM(&mut self, arg0: Register32Bit, arg1: YMMRegister);
 
 	/// Extract 2-bit sign mask from `xmm2` and store in register.
 	///
@@ -9420,7 +9420,7 @@ pub trait InstructionStream
 	/// Extract 4-bit sign mask from `ymm2` and store in register.
 	///
 	/// The upper bits of `r32` or `r64` are zeroed.
-	fn vmovmskpd_Register64Bit_YMM(&mut self, arg0: Register64Bit, arg1: YMM);
+	fn vmovmskpd_Register64Bit_YMM(&mut self, arg0: Register64Bit, arg1: YMMRegister);
 
 	/// Extract 4-bit sign mask from `xmm2` and store in register.
 	///
@@ -9430,7 +9430,7 @@ pub trait InstructionStream
 	/// Extract 8-bit sign mask from `ymm2` and store in register.
 	///
 	/// The upper bits of `r32` or `r64` are zeroed.
-	fn vmovmskps_Register32Bit_YMM(&mut self, arg0: Register32Bit, arg1: YMM);
+	fn vmovmskps_Register32Bit_YMM(&mut self, arg0: Register32Bit, arg1: YMMRegister);
 
 	/// Extract 4-bit sign mask from `xmm2` and store in register.
 	///
@@ -9440,31 +9440,31 @@ pub trait InstructionStream
 	/// Extract 8-bit sign mask from `ymm2` and store in register.
 	///
 	/// The upper bits of `r32` or `r64` are zeroed.
-	fn vmovmskps_Register64Bit_YMM(&mut self, arg0: Register64Bit, arg1: YMM);
+	fn vmovmskps_Register64Bit_YMM(&mut self, arg0: Register64Bit, arg1: YMMRegister);
 
 	/// Move packed integer values in `xmm1` to `m128` using non-temporal hint.
 	fn vmovntdq_Any128BitMemory_XMMRegister(&mut self, arg0: Any128BitMemory, arg1: XMMRegister);
 
 	/// Move packed integer values in `ymm1` to m256 using non-temporal hint.
-	fn vmovntdq_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMM);
+	fn vmovntdq_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMMRegister);
 
 	/// Move double quadword from `m128` to `xmm` using non-temporal hint if WC memory type.
 	fn vmovntdqa_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
 
 	/// Move 256-bit data from m256 to ymm using non-temporal hint if WC memory type.
-	fn vmovntdqa_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
+	fn vmovntdqa_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory);
 
 	/// Move packed double-precision values in `xmm1` to `m128` using non-temporal hint.
 	fn vmovntpd_Any128BitMemory_XMMRegister(&mut self, arg0: Any128BitMemory, arg1: XMMRegister);
 
 	/// Move packed double-precision values in `ymm1` to m256 using non-temporal hint.
-	fn vmovntpd_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMM);
+	fn vmovntpd_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMMRegister);
 
 	/// Move packed single-precision values `xmm1` to mem using non-temporal hint.
 	fn vmovntps_Any128BitMemory_XMMRegister(&mut self, arg0: Any128BitMemory, arg1: XMMRegister);
 
 	/// Move packed single-precision values `ymm1` to mem using non-temporal hint.
-	fn vmovntps_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMM);
+	fn vmovntps_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMMRegister);
 
 	/// Move quadword from `xmm1` register to `r/m64`.
 	fn vmovq_Any64BitMemory_XMMRegister(&mut self, arg0: Any64BitMemory, arg1: XMMRegister);
@@ -9509,10 +9509,10 @@ pub trait InstructionStream
 	fn vmovshdup_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move odd index single-precision floating-point values from `ymm2/mem` and duplicate each element into `ymm1`.
-	fn vmovshdup_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
+	fn vmovshdup_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory);
 
 	/// Move odd index single-precision floating-point values from `ymm2/mem` and duplicate each element into `ymm1`.
-	fn vmovshdup_YMM_YMM(&mut self, arg0: YMM, arg1: YMM);
+	fn vmovshdup_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister);
 
 	/// Move even index single-precision floating-point values from `xmm2/mem` and duplicate each element into `xmm1`.
 	fn vmovsldup_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -9521,10 +9521,10 @@ pub trait InstructionStream
 	fn vmovsldup_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move even index single-precision floating-point values from `ymm2/mem` and duplicate each element into `ymm1`.
-	fn vmovsldup_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
+	fn vmovsldup_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory);
 
 	/// Move even index single-precision floating-point values from `ymm2/mem` and duplicate each element into `ymm1`.
-	fn vmovsldup_YMM_YMM(&mut self, arg0: YMM, arg1: YMM);
+	fn vmovsldup_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister);
 
 	/// Move scalar single-precision floating-point value from `xmm1` register to `m32`.
 	fn vmovss_Any32BitMemory_XMMRegister(&mut self, arg0: Any32BitMemory, arg1: XMMRegister);
@@ -9542,7 +9542,7 @@ pub trait InstructionStream
 	fn vmovupd_Any128BitMemory_XMMRegister(&mut self, arg0: Any128BitMemory, arg1: XMMRegister);
 
 	/// Move unaligned packed double-precision floating-point from `ymm1` to `ymm2/mem`.
-	fn vmovupd_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMM);
+	fn vmovupd_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMMRegister);
 
 	/// Move unaligned packed double-precision floating-point from `xmm2/mem` to `xmm1`.
 	fn vmovupd_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -9554,19 +9554,19 @@ pub trait InstructionStream
 	fn vmovupd_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move unaligned packed double-precision floating-point from `ymm2/mem` to `ymm1`.
-	fn vmovupd_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
+	fn vmovupd_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory);
 
 	/// Move unaligned packed double-precision floating-point from `ymm2/mem` to `ymm1`.
-	fn vmovupd_YMM_YMM(&mut self, arg0: YMM, arg1: YMM);
+	fn vmovupd_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister);
 
 	/// Move unaligned packed double-precision floating-point from `ymm1` to `ymm2/mem`.
-	fn vmovupd_YMM_YMM_1(&mut self, arg0: YMM, arg1: YMM);
+	fn vmovupd_YMM_YMM_1(&mut self, arg0: YMMRegister, arg1: YMMRegister);
 
 	/// Move unaligned packed single-precision floating-point from `xmm1` to `xmm2/mem`.
 	fn vmovups_Any128BitMemory_XMMRegister(&mut self, arg0: Any128BitMemory, arg1: XMMRegister);
 
 	/// Move unaligned packed single-precision floating-point from `ymm1` to `ymm2/mem`.
-	fn vmovups_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMM);
+	fn vmovups_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMMRegister);
 
 	/// Move unaligned packed single-precision floating-point from `xmm2/mem` to `xmm1`.
 	fn vmovups_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -9578,13 +9578,13 @@ pub trait InstructionStream
 	fn vmovups_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Move unaligned packed single-precision floating-point from `ymm2/mem` to `ymm1`.
-	fn vmovups_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
+	fn vmovups_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory);
 
 	/// Move unaligned packed single-precision floating-point from `ymm2/mem` to `ymm1`.
-	fn vmovups_YMM_YMM(&mut self, arg0: YMM, arg1: YMM);
+	fn vmovups_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister);
 
 	/// Move unaligned packed single-precision floating-point from `ymm1` to `ymm2/mem`.
-	fn vmovups_YMM_YMM_1(&mut self, arg0: YMM, arg1: YMM);
+	fn vmovups_YMM_YMM_1(&mut self, arg0: YMMRegister, arg1: YMMRegister);
 
 	/// Sums absolute 8-bit integer difference of adjacent groups of 4 byte integers in `xmm2` and `xmm3/m128` and writes the results in `xmm1`.
 	///
@@ -9599,12 +9599,12 @@ pub trait InstructionStream
 	/// Sums absolute 8-bit integer difference of adjacent groups of 4 byte integers in `xmm2` and `ymm3/m128` and writes the results in `ymm1`.
 	///
 	/// Starting offsets within `ymm2` and `xmm3/m128` are determined by `imm8`.
-	fn vmpsadbw_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: Immediate8Bit);
+	fn vmpsadbw_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: Immediate8Bit);
 
 	/// Sums absolute 8-bit integer difference of adjacent groups of 4 byte integers in `xmm2` and `ymm3/m128` and writes the results in `ymm1`.
 	///
 	/// Starting offsets within `ymm2` and `xmm3/m128` are determined by `imm8`.
-	fn vmpsadbw_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: Immediate8Bit);
+	fn vmpsadbw_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: Immediate8Bit);
 
 	/// Multiply packed double-precision floating-point values from `xmm3/mem` to `xmm2` and stores result in `xmm1`.
 	fn vmulpd_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -9613,10 +9613,10 @@ pub trait InstructionStream
 	fn vmulpd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed double-precision floating-point values from `ymm3/mem` to `ymm2` and stores result in `ymm1`.
-	fn vmulpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vmulpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed double-precision floating-point values from `ymm3/mem` to `ymm2` and stores result in `ymm1`.
-	fn vmulpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vmulpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `xmm3/mem` to `xmm2` and stores result in `xmm1`.
 	fn vmulps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -9625,10 +9625,10 @@ pub trait InstructionStream
 	fn vmulps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed single-precision floating-point values from `ymm3/mem` to `ymm2` and stores result in `ymm1`.
-	fn vmulps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vmulps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed single-precision floating-point values from `ymm3/mem` to `ymm2` and stores result in `ymm1`.
-	fn vmulps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vmulps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply the low double-precision floating-point value in `xmm3/mem4` by low double-precision floating-point value in `xmm2`.
 	fn vmulsd_XMMRegister_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any64BitMemory);
@@ -9649,10 +9649,10 @@ pub trait InstructionStream
 	fn vorpd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Return the bitwise logical OR of packed double-precision floating-point values in `ymm2` and `ymm3/mem`.
-	fn vorpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vorpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Return the bitwise logical OR of packed double-precision floating-point values in `ymm2` and `ymm3/mem`.
-	fn vorpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vorpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Return the bitwise logical OR of packed single-precision floating-point values in `xmm2` and `xmm3/mem`.
 	fn vorps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -9661,10 +9661,10 @@ pub trait InstructionStream
 	fn vorps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Return the bitwise logical OR of packed single-precision floating-point values in `ymm2` and `ymm3/mem`.
-	fn vorps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vorps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Return the bitwise logical OR of packed single-precision floating-point values in `ymm2` and `ymm3/mem`.
-	fn vorps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vorps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Compute the absolute value of bytes in `xmm2/m128` and store *unsigned* result in `xmm1`.
 	fn vpabsb_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -9673,10 +9673,10 @@ pub trait InstructionStream
 	fn vpabsb_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Compute the absolute value of bytes in `ymm2/m256` and store *unsigned* result in `ymm1`.
-	fn vpabsb_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
+	fn vpabsb_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory);
 
 	/// Compute the absolute value of bytes in `ymm2/m256` and store *unsigned* result in `ymm1`.
-	fn vpabsb_YMM_YMM(&mut self, arg0: YMM, arg1: YMM);
+	fn vpabsb_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister);
 
 	/// Compute the absolute value of 32-bit integers in `xmm2/m128` and store *unsigned* result in `xmm1`.
 	fn vpabsd_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -9685,10 +9685,10 @@ pub trait InstructionStream
 	fn vpabsd_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Compute the absolute value of 32-bit integers in `ymm2/m256` and store *unsigned* result in `ymm1`.
-	fn vpabsd_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
+	fn vpabsd_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory);
 
 	/// Compute the absolute value of 32-bit integers in `ymm2/m256` and store *unsigned* result in `ymm1`.
-	fn vpabsd_YMM_YMM(&mut self, arg0: YMM, arg1: YMM);
+	fn vpabsd_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister);
 
 	/// Compute the absolute value of 16-bit integers in `xmm2/m128` and store *unsigned* result in `xmm1`.
 	fn vpabsw_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -9697,10 +9697,10 @@ pub trait InstructionStream
 	fn vpabsw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Compute the absolute value of 16-bit integers in `ymm2/m256` and store *unsigned* result in `ymm1`.
-	fn vpabsw_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
+	fn vpabsw_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory);
 
 	/// Compute the absolute value of 16-bit integers in `ymm2/m256` and store *unsigned* result in `ymm1`.
-	fn vpabsw_YMM_YMM(&mut self, arg0: YMM, arg1: YMM);
+	fn vpabsw_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister);
 
 	/// Converts 4 packed signed doubleword integers from `xmm2` and from `xmm3/m128` into 8 packed signed word integers in `xmm1` using signed saturation.
 	fn vpackssdw_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -9709,10 +9709,10 @@ pub trait InstructionStream
 	fn vpackssdw_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Converts 8 packed signed doubleword integers from `ymm2` and from `ymm3/m256` into 16 packed signed word integers in `ymm1` using signed saturation.
-	fn vpackssdw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpackssdw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Converts 8 packed signed doubleword integers from `ymm2` and from `ymm3/m256` into 16 packed signed word integers in `ymm1` using signed saturation.
-	fn vpackssdw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpackssdw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Converts 8 packed signed word integers from `xmm2` and from `xmm3/m128` into 16 packed signed byte integers in `xmm1` using signed saturation.
 	fn vpacksswb_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -9721,10 +9721,10 @@ pub trait InstructionStream
 	fn vpacksswb_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Converts 16 packed signed word integers from `ymm2` and from `ymm3/m256` into 32 packed signed byte integers in `ymm1` using signed saturation.
-	fn vpacksswb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpacksswb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Converts 16 packed signed word integers from `ymm2` and from `ymm3/m256` into 32 packed signed byte integers in `ymm1` using signed saturation.
-	fn vpacksswb_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpacksswb_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Convert 4 packed signed doubleword integers from `xmm2` and 4 packed signed doubleword integers from `xmm3/m128` into 8 packed unsigned word integers in `xmm1` using unsigned saturation.
 	fn vpackusdw_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -9733,10 +9733,10 @@ pub trait InstructionStream
 	fn vpackusdw_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Convert 8 packed signed doubleword integers from `ymm2` and 8 packed signed doubleword integers from `ymm3/m128` into 16 packed unsigned word integers in `ymm1` using unsigned saturation.
-	fn vpackusdw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpackusdw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Convert 8 packed signed doubleword integers from `ymm2` and 8 packed signed doubleword integers from `ymm3/m128` into 16 packed unsigned word integers in `ymm1` using unsigned saturation.
-	fn vpackusdw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpackusdw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Converts 8 signed word integers from `xmm2` and 8 signed word integers from `xmm3/m128` into 16 unsigned byte integers in `xmm1` using unsigned saturation.
 	fn vpackuswb_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -9745,10 +9745,10 @@ pub trait InstructionStream
 	fn vpackuswb_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Converts 16 signed word integers from `ymm2` And 16 signed word integers from `ymm3/m256` into 32 unsigned byte integers in `ymm1` using unsigned saturation.
-	fn vpackuswb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpackuswb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Converts 16 signed word integers from `ymm2` And 16 signed word integers from `ymm3/m256` into 32 unsigned byte integers in `ymm1` using unsigned saturation.
-	fn vpackuswb_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpackuswb_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Add packed byte integers from `xmm3/m128` and `xmm2`.
 	fn vpaddb_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -9757,10 +9757,10 @@ pub trait InstructionStream
 	fn vpaddb_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Add packed byte integers from `ymm2` and `ymm3/m256` and store in `ymm1`.
-	fn vpaddb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpaddb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Add packed byte integers from `ymm2` and `ymm3/m256` and store in `ymm1`.
-	fn vpaddb_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpaddb_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Add packed doubleword integers from `xmm3/m128` and `xmm2`.
 	fn vpaddd_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -9769,10 +9769,10 @@ pub trait InstructionStream
 	fn vpaddd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Add packed doubleword integers from `ymm2`, `ymm3/m256` and store in `ymm1`.
-	fn vpaddd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpaddd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Add packed doubleword integers from `ymm2`, `ymm3/m256` and store in `ymm1`.
-	fn vpaddd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpaddd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Add packed quadword integers `xmm3/m128` and `xmm2`.
 	fn vpaddq_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -9781,10 +9781,10 @@ pub trait InstructionStream
 	fn vpaddq_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Add packed quadword integers from `ymm2`. `ymm3/m256` and store in `ymm1`.
-	fn vpaddq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpaddq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Add packed quadword integers from `ymm2`. `ymm3/m256` and store in `ymm1`.
-	fn vpaddq_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpaddq_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Add packed signed byte integers from `xmm3/m128` and `xmm2` saturate the results.
 	fn vpaddsb_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -9793,10 +9793,10 @@ pub trait InstructionStream
 	fn vpaddsb_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Add packed signed byte integers from `ymm2` and `ymm3/m256` and store the saturated results in `ymm1`.
-	fn vpaddsb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpaddsb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Add packed signed byte integers from `ymm2` and `ymm3/m256` and store the saturated results in `ymm1`.
-	fn vpaddsb_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpaddsb_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Add packed signed word integers from `xmm3/m128` and `xmm2` and saturate the results.
 	fn vpaddsw_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -9805,10 +9805,10 @@ pub trait InstructionStream
 	fn vpaddsw_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Add packed signed word integers from `ymm2` and `ymm3/m256` and store the saturated results in `ymm1`.
-	fn vpaddsw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpaddsw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Add packed signed word integers from `ymm2` and `ymm3/m256` and store the saturated results in `ymm1`.
-	fn vpaddsw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpaddsw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Add packed unsigned byte integers from `xmm3/m128` to `xmm2` and saturate the results.
 	fn vpaddusb_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -9817,10 +9817,10 @@ pub trait InstructionStream
 	fn vpaddusb_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Add packed unsigned byte integers from `ymm2` and `ymm3/m256` and store the saturated results in `ymm1`.
-	fn vpaddusb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpaddusb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Add packed unsigned byte integers from `ymm2` and `ymm3/m256` and store the saturated results in `ymm1`.
-	fn vpaddusb_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpaddusb_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Add packed unsigned word integers from `xmm3/m128` to `xmm2` and saturate the results.
 	fn vpaddusw_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -9829,10 +9829,10 @@ pub trait InstructionStream
 	fn vpaddusw_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Add packed unsigned word integers from `ymm2` and `ymm3/m256` and store the saturated results in `ymm1`.
-	fn vpaddusw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpaddusw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Add packed unsigned word integers from `ymm2` and `ymm3/m256` and store the saturated results in `ymm1`.
-	fn vpaddusw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpaddusw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Add packed word integers from `xmm3/m128` and `xmm2`.
 	fn vpaddw_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -9841,10 +9841,10 @@ pub trait InstructionStream
 	fn vpaddw_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Add packed word integers from `ymm2`, `ymm3/m256` and store in `ymm1`.
-	fn vpaddw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpaddw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Add packed word integers from `ymm2`, `ymm3/m256` and store in `ymm1`.
-	fn vpaddw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpaddw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Concatenate `xmm2` and `xmm3/m128`, extract byte aligned result shifted to the right by constant value in `imm8` and result is stored in `xmm1`.
 	fn vpalignr_XMMRegister_XMMRegister_Any128BitMemory_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory, arg3: Immediate8Bit);
@@ -9853,10 +9853,10 @@ pub trait InstructionStream
 	fn vpalignr_XMMRegister_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister, arg3: Immediate8Bit);
 
 	/// Concatenate pairs of 16 bytes in `ymm2` and `ymm3/m256` into 32-byte intermediate result, extract byte-aligned, 16-byte result shifted to the right by constant values in `imm8` from each intermediate result, and two 16-byte results are stored in `ymm1`.
-	fn vpalignr_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: Immediate8Bit);
+	fn vpalignr_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: Immediate8Bit);
 
 	/// Concatenate pairs of 16 bytes in `ymm2` and `ymm3/m256` into 32-byte intermediate result, extract byte-aligned, 16-byte result shifted to the right by constant values in `imm8` from each intermediate result, and two 16-byte results are stored in `ymm1`.
-	fn vpalignr_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: Immediate8Bit);
+	fn vpalignr_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: Immediate8Bit);
 
 	/// Bitwise AND of `xmm3/m128` and `xmm`.
 	fn vpand_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -9865,10 +9865,10 @@ pub trait InstructionStream
 	fn vpand_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Bitwise AND of `ymm2` and `ymm3/m256` and store result in `ymm1`.
-	fn vpand_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpand_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Bitwise AND of `ymm2` and `ymm3/m256` and store result in `ymm1`.
-	fn vpand_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpand_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Bitwise AND NOT of `xmm3/m128` and `xmm2`.
 	fn vpandn_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -9877,10 +9877,10 @@ pub trait InstructionStream
 	fn vpandn_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Bitwise AND NOT of `ymm2` and `ymm3/m256` and store result in `ymm1`.
-	fn vpandn_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpandn_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Bitwise AND NOT of `ymm2` and `ymm3/m256` and store result in `ymm1`.
-	fn vpandn_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpandn_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Average packed unsigned byte integers from `xmm3/m128` and `xmm2` with rounding.
 	fn vpavgb_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -9889,10 +9889,10 @@ pub trait InstructionStream
 	fn vpavgb_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Average packed unsigned byte integers from `ymm2` and `ymm3/m256` with rounding and store to `ymm1`.
-	fn vpavgb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpavgb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Average packed unsigned byte integers from `ymm2` and `ymm3/m256` with rounding and store to `ymm1`.
-	fn vpavgb_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpavgb_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Average packed unsigned word integers from `xmm3/m128` and `xmm2` with rounding.
 	fn vpavgw_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -9901,10 +9901,10 @@ pub trait InstructionStream
 	fn vpavgw_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Average packed unsigned word integers from `ymm2`, `ymm3/m256` with rounding to `ymm1`.
-	fn vpavgw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpavgw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Average packed unsigned word integers from `ymm2`, `ymm3/m256` with rounding to `ymm1`.
-	fn vpavgw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpavgw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Select dwords from `xmm2` and `xmm3/m128` from mask specified in `imm8` and store the values into `xmm1`.
 	fn vpblendd_XMMRegister_XMMRegister_Any128BitMemory_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory, arg3: Immediate8Bit);
@@ -9913,10 +9913,10 @@ pub trait InstructionStream
 	fn vpblendd_XMMRegister_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister, arg3: Immediate8Bit);
 
 	/// Select dwords from `ymm2` and `ymm3/m256` from mask specified in `imm8` and store the values into `ymm1`.
-	fn vpblendd_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: Immediate8Bit);
+	fn vpblendd_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: Immediate8Bit);
 
 	/// Select dwords from `ymm2` and `ymm3/m256` from mask specified in `imm8` and store the values into `ymm1`.
-	fn vpblendd_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: Immediate8Bit);
+	fn vpblendd_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: Immediate8Bit);
 
 	/// Select byte values from `xmm2` and `xmm3/m128` using mask bits in the specified mask register, `xmm4` and store the values into `xmm1`.
 	fn vpblendvb_XMMRegister_XMMRegister_Any128BitMemory_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory, arg3: XMMRegister);
@@ -9925,10 +9925,10 @@ pub trait InstructionStream
 	fn vpblendvb_XMMRegister_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister, arg3: XMMRegister);
 
 	/// Select byte values from `ymm2` and `ymm3/m256` from mask specified in the high bit of each byte in ymm4 and store the values into `ymm1`.
-	fn vpblendvb_YMM_YMM_Any256BitMemory_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: YMM);
+	fn vpblendvb_YMM_YMM_Any256BitMemory_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: YMMRegister);
 
 	/// Select byte values from `ymm2` and `ymm3/m256` from mask specified in the high bit of each byte in ymm4 and store the values into `ymm1`.
-	fn vpblendvb_YMM_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: YMM);
+	fn vpblendvb_YMM_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: YMMRegister);
 
 	/// Select words from `xmm2` and `xmm3/m128` from mask specified in `imm8` and store the values into `xmm1`.
 	fn vpblendw_XMMRegister_XMMRegister_Any128BitMemory_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory, arg3: Immediate8Bit);
@@ -9937,10 +9937,10 @@ pub trait InstructionStream
 	fn vpblendw_XMMRegister_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister, arg3: Immediate8Bit);
 
 	/// Select words from `ymm2` and `ymm3/m256` from mask specified in `imm8` and store the values into `ymm1`.
-	fn vpblendw_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: Immediate8Bit);
+	fn vpblendw_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: Immediate8Bit);
 
 	/// Select words from `ymm2` and `ymm3/m256` from mask specified in `imm8` and store the values into `ymm1`.
-	fn vpblendw_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: Immediate8Bit);
+	fn vpblendw_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: Immediate8Bit);
 
 	/// Broadcast a byte integer in the source operand to sixteen locations in `xmm1`.
 	fn vpbroadcastb_XMMRegister_Any8BitMemory(&mut self, arg0: XMMRegister, arg1: Any8BitMemory);
@@ -9949,10 +9949,10 @@ pub trait InstructionStream
 	fn vpbroadcastb_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Broadcast a byte integer in the source operand to thirty two locations in `ymm1`.
-	fn vpbroadcastb_YMM_Any8BitMemory(&mut self, arg0: YMM, arg1: Any8BitMemory);
+	fn vpbroadcastb_YMM_Any8BitMemory(&mut self, arg0: YMMRegister, arg1: Any8BitMemory);
 
 	/// Broadcast a byte integer in the source operand to thirty two locations in `ymm1`.
-	fn vpbroadcastb_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister);
+	fn vpbroadcastb_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister);
 
 	/// Broadcast a dword integer in the source operand to four locations in `xmm1`.
 	fn vpbroadcastd_XMMRegister_Any32BitMemory(&mut self, arg0: XMMRegister, arg1: Any32BitMemory);
@@ -9961,10 +9961,10 @@ pub trait InstructionStream
 	fn vpbroadcastd_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Broadcast a dword integer in the source operand to eight locations in `ymm1`.
-	fn vpbroadcastd_YMM_Any32BitMemory(&mut self, arg0: YMM, arg1: Any32BitMemory);
+	fn vpbroadcastd_YMM_Any32BitMemory(&mut self, arg0: YMMRegister, arg1: Any32BitMemory);
 
 	/// Broadcast a dword integer in the source operand to eight locations in `ymm1`.
-	fn vpbroadcastd_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister);
+	fn vpbroadcastd_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister);
 
 	/// Broadcast a qword element in mem to two locations in `xmm1`.
 	fn vpbroadcastq_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: Any64BitMemory);
@@ -9973,10 +9973,10 @@ pub trait InstructionStream
 	fn vpbroadcastq_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Broadcast a qword element in mem to four locations in `ymm1`.
-	fn vpbroadcastq_YMM_Any64BitMemory(&mut self, arg0: YMM, arg1: Any64BitMemory);
+	fn vpbroadcastq_YMM_Any64BitMemory(&mut self, arg0: YMMRegister, arg1: Any64BitMemory);
 
 	/// Broadcast a qword element in mem to four locations in `ymm1`.
-	fn vpbroadcastq_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister);
+	fn vpbroadcastq_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister);
 
 	/// Broadcast a word integer in the source operand to eight locations in `xmm1`.
 	fn vpbroadcastw_XMMRegister_Any16BitMemory(&mut self, arg0: XMMRegister, arg1: Any16BitMemory);
@@ -9985,10 +9985,10 @@ pub trait InstructionStream
 	fn vpbroadcastw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Broadcast a word integer in the source operand to sixteen locations in `ymm1`.
-	fn vpbroadcastw_YMM_Any16BitMemory(&mut self, arg0: YMM, arg1: Any16BitMemory);
+	fn vpbroadcastw_YMM_Any16BitMemory(&mut self, arg0: YMMRegister, arg1: Any16BitMemory);
 
 	/// Broadcast a word integer in the source operand to sixteen locations in `ymm1`.
-	fn vpbroadcastw_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister);
+	fn vpbroadcastw_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister);
 
 	/// Carry-less multiplication of one quadword of `xmm2` by one quadword of `xmm3/m128`.
 	///
@@ -10011,10 +10011,10 @@ pub trait InstructionStream
 	fn vpcmpeqb_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Compare packed bytes in `ymm3/m256` and `ymm2` for equality.
-	fn vpcmpeqb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpcmpeqb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Compare packed bytes in `ymm3/m256` and `ymm2` for equality.
-	fn vpcmpeqb_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpcmpeqb_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Compare packed doublewords in `xmm3/m128` and `xmm2` for equality.
 	fn vpcmpeqd_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10023,10 +10023,10 @@ pub trait InstructionStream
 	fn vpcmpeqd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Compare packed doublewords in `ymm3/m256` and `ymm2` for equality.
-	fn vpcmpeqd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpcmpeqd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Compare packed doublewords in `ymm3/m256` and `ymm2` for equality.
-	fn vpcmpeqd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpcmpeqd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Compare packed quadwords in `xmm3/m128` and `xmm2` for equality.
 	fn vpcmpeqq_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10035,10 +10035,10 @@ pub trait InstructionStream
 	fn vpcmpeqq_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Compare packed quadwords in `ymm3/m256` and `ymm2` for equality.
-	fn vpcmpeqq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpcmpeqq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Compare packed quadwords in `ymm3/m256` and `ymm2` for equality.
-	fn vpcmpeqq_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpcmpeqq_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Compare packed words in `xmm3/m128` and `xmm2` for equality.
 	fn vpcmpeqw_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10047,10 +10047,10 @@ pub trait InstructionStream
 	fn vpcmpeqw_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Compare packed words in `ymm3/m256` and `ymm2` for equality.
-	fn vpcmpeqw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpcmpeqw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Compare packed words in `ymm3/m256` and `ymm2` for equality.
-	fn vpcmpeqw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpcmpeqw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Perform a packed comparison of string data with explicit lengths, generating an index, and storing the result in `ECX`.
 	fn vpcmpestri_XMMRegister_Any128BitMemory_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: Any128BitMemory, arg2: Immediate8Bit);
@@ -10071,10 +10071,10 @@ pub trait InstructionStream
 	fn vpcmpgtb_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Compare packed signed byte integers in `ymm2` and `ymm3/m256` for greater than.
-	fn vpcmpgtb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpcmpgtb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Compare packed signed byte integers in `ymm2` and `ymm3/m256` for greater than.
-	fn vpcmpgtb_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpcmpgtb_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Compare packed signed doubleword integers in `xmm2` and `xmm3/m128` for greater than.
 	fn vpcmpgtd_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10083,10 +10083,10 @@ pub trait InstructionStream
 	fn vpcmpgtd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Compare packed signed doubleword integers in `ymm2` and `ymm3/m256` for greater than.
-	fn vpcmpgtd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpcmpgtd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Compare packed signed doubleword integers in `ymm2` and `ymm3/m256` for greater than.
-	fn vpcmpgtd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpcmpgtd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Compare packed signed qwords in `xmm2` and `xmm3/m128` for greater than.
 	fn vpcmpgtq_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10095,10 +10095,10 @@ pub trait InstructionStream
 	fn vpcmpgtq_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Compare packed signed qwords in `ymm2` and `ymm3/m256` for greater than.
-	fn vpcmpgtq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpcmpgtq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Compare packed signed qwords in `ymm2` and `ymm3/m256` for greater than.
-	fn vpcmpgtq_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpcmpgtq_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Compare packed signed word integers in `xmm2` and `xmm3/m128` for greater than.
 	fn vpcmpgtw_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10107,10 +10107,10 @@ pub trait InstructionStream
 	fn vpcmpgtw_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Compare packed signed word integers in `ymm2` and `ymm3/m256` for greater than.
-	fn vpcmpgtw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpcmpgtw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Compare packed signed word integers in `ymm2` and `ymm3/m256` for greater than.
-	fn vpcmpgtw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpcmpgtw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Perform a packed comparison of string data with implicit lengths, generating an index, and storing the result in `ECX`.
 	fn vpcmpistri_XMMRegister_Any128BitMemory_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: Any128BitMemory, arg2: Immediate8Bit);
@@ -10125,22 +10125,22 @@ pub trait InstructionStream
 	fn vpcmpistrm_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Immediate8Bit);
 
 	/// Permute 128-bit floating-point fields in `ymm2` and `ymm3/mem` using controls from `imm8` and store result in `ymm1`.
-	fn vperm2f128_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: Immediate8Bit);
+	fn vperm2f128_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: Immediate8Bit);
 
 	/// Permute 128-bit floating-point fields in `ymm2` and `ymm3/mem` using controls from `imm8` and store result in `ymm1`.
-	fn vperm2f128_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: Immediate8Bit);
+	fn vperm2f128_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: Immediate8Bit);
 
 	/// Permute 128-bit integer data in `ymm2` and `ymm3/mem` using controls from `imm8` and store result in `ymm1`.
-	fn vperm2i128_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: Immediate8Bit);
+	fn vperm2i128_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: Immediate8Bit);
 
 	/// Permute 128-bit integer data in `ymm2` and `ymm3/mem` using controls from `imm8` and store result in `ymm1`.
-	fn vperm2i128_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: Immediate8Bit);
+	fn vperm2i128_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: Immediate8Bit);
 
 	/// Permute doublewords in `ymm3/m256` using indexes in `ymm2` and store the result in `ymm1`.
-	fn vpermd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpermd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Permute doublewords in `ymm3/m256` using indexes in `ymm2` and store the result in `ymm1`.
-	fn vpermd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpermd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Permute double-precision floating-point values in `xmm2/mem` using controls from `imm8`.
 	fn vpermilpd_XMMRegister_Any128BitMemory_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: Any128BitMemory, arg2: Immediate8Bit);
@@ -10155,16 +10155,16 @@ pub trait InstructionStream
 	fn vpermilpd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Permute double-precision floating-point values in `ymm2/mem` using controls from `imm8`.
-	fn vpermilpd_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: Any256BitMemory, arg2: Immediate8Bit);
+	fn vpermilpd_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: Any256BitMemory, arg2: Immediate8Bit);
 
 	/// Permute double-precision floating-point values in `ymm2/mem` using controls from `imm8`.
-	fn vpermilpd_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit);
+	fn vpermilpd_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit);
 
 	/// Permute double-precision floating-point values in `ymm2` using controls from `ymm3/mem` and store result in `ymm1`.
-	fn vpermilpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpermilpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Permute double-precision floating-point values in `ymm2` using controls from `ymm3/mem` and store result in `ymm1`.
-	fn vpermilpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpermilpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Permute single-precision floating-point values in `xmm2/mem` using controls from `imm8` and store result in `xmm1`.
 	fn vpermilps_XMMRegister_Any128BitMemory_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: Any128BitMemory, arg2: Immediate8Bit);
@@ -10179,34 +10179,34 @@ pub trait InstructionStream
 	fn vpermilps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Permute single-precision floating-point values in `ymm2/mem` using controls from `imm8` and store result in `ymm1`.
-	fn vpermilps_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: Any256BitMemory, arg2: Immediate8Bit);
+	fn vpermilps_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: Any256BitMemory, arg2: Immediate8Bit);
 
 	/// Permute single-precision floating-point values in `ymm2/mem` using controls from `imm8` and store result in `ymm1`.
-	fn vpermilps_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit);
+	fn vpermilps_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit);
 
 	/// Permute single-precision floating-point values in `ymm2` using controls from `ymm3/mem` and store result in `ymm1`.
-	fn vpermilps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpermilps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Permute single-precision floating-point values in `ymm2` using controls from `ymm3/mem` and store result in `ymm1`.
-	fn vpermilps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpermilps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Permute double-precision floating-point elements in `ymm2/m256` using indexes in `imm8` and store the result in `ymm1`.
-	fn vpermpd_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: Any256BitMemory, arg2: Immediate8Bit);
+	fn vpermpd_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: Any256BitMemory, arg2: Immediate8Bit);
 
 	/// Permute double-precision floating-point elements in `ymm2/m256` using indexes in `imm8` and store the result in `ymm1`.
-	fn vpermpd_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit);
+	fn vpermpd_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit);
 
 	/// Permute single-precision floating-point elements in `ymm3/m256` using indexes in `ymm2` and store the result in `ymm1`.
-	fn vpermps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpermps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Permute single-precision floating-point elements in `ymm3/m256` using indexes in `ymm2` and store the result in `ymm1`.
-	fn vpermps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpermps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Permute qwords in `ymm2/m256` using indexes in `imm8` and store the result in `ymm1`.
-	fn vpermq_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: Any256BitMemory, arg2: Immediate8Bit);
+	fn vpermq_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: Any256BitMemory, arg2: Immediate8Bit);
 
 	/// Permute qwords in `ymm2/m256` using indexes in `imm8` and store the result in `ymm1`.
-	fn vpermq_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit);
+	fn vpermq_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit);
 
 	/// Extract a byte integer value from `xmm2` at the source byte offset specified by `imm8` into `reg` or `m8`.
 	/// The upper bits of `r64/r32` is filled with zeros.
@@ -10260,7 +10260,7 @@ pub trait InstructionStream
 
 	/// Using dword indices specified in vm32y, gather dword from memory conditioned on mask specified by `ymm2`.
 	/// Conditionally gathered elements are merged into `ymm1`.
-	fn vpgatherdd_YMM_Any32BitMemory_YMM(&mut self, arg0: YMM, arg1: Any32BitMemory, arg2: YMM);
+	fn vpgatherdd_YMM_Any32BitMemory_YMM(&mut self, arg0: YMMRegister, arg1: Any32BitMemory, arg2: YMMRegister);
 
 	/// Using dword indices specified in vm32x, gather qword values from memory conditioned on mask specified by `xmm2`.
 	/// Conditionally gathered elements are merged into `xmm1`.
@@ -10268,7 +10268,7 @@ pub trait InstructionStream
 
 	/// Using dword indices specified in vm32x, gather qword values from memory conditioned on mask specified by `ymm2`.
 	/// Conditionally gathered elements are merged into `ymm1`.
-	fn vpgatherdq_YMM_Any32BitMemory_YMM(&mut self, arg0: YMM, arg1: Any32BitMemory, arg2: YMM);
+	fn vpgatherdq_YMM_Any32BitMemory_YMM(&mut self, arg0: YMMRegister, arg1: Any32BitMemory, arg2: YMMRegister);
 
 	/// Using qword indices specified in vm64x, gather dword values from memory conditioned on mask specified by `xmm2`.
 	/// Conditionally gathered elements are merged into `xmm1`.
@@ -10284,7 +10284,7 @@ pub trait InstructionStream
 
 	/// Using qword indices specified in vm64y, gather qword values from memory conditioned on mask specified by `ymm2`.
 	/// Conditionally gathered elements are merged into `ymm1`.
-	fn vpgatherqq_YMM_Any64BitMemory_YMM(&mut self, arg0: YMM, arg1: Any64BitMemory, arg2: YMM);
+	fn vpgatherqq_YMM_Any64BitMemory_YMM(&mut self, arg0: YMMRegister, arg1: Any64BitMemory, arg2: YMMRegister);
 
 	/// Add 32-bit integers horizontally, pack to `xmm1`.
 	fn vphaddd_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10293,10 +10293,10 @@ pub trait InstructionStream
 	fn vphaddd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Add 32-bit signed integers horizontally, pack to `ymm1`.
-	fn vphaddd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vphaddd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Add 32-bit signed integers horizontally, pack to `ymm1`.
-	fn vphaddd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vphaddd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Add 16-bit signed integers horizontally, pack saturated integers to `xmm1`.
 	fn vphaddsw_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10305,10 +10305,10 @@ pub trait InstructionStream
 	fn vphaddsw_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Add 16-bit signed integers horizontally, pack saturated integers to `ymm1`.
-	fn vphaddsw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vphaddsw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Add 16-bit signed integers horizontally, pack saturated integers to `ymm1`.
-	fn vphaddsw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vphaddsw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Add 16-bit integers horizontally, pack to `xmm1`.
 	fn vphaddw_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10317,10 +10317,10 @@ pub trait InstructionStream
 	fn vphaddw_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Add 16-bit signed integers horizontally, pack to `ymm1`.
-	fn vphaddw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vphaddw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Add 16-bit signed integers horizontally, pack to `ymm1`.
-	fn vphaddw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vphaddw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Find the minimum unsigned word in `xmm2/m128` and place its value in the low word of `xmm1` and its index in the second-lowest word of `xmm1`.
 	fn vphminposuw_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -10335,10 +10335,10 @@ pub trait InstructionStream
 	fn vphsubd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Subtract 32-bit signed integers horizontally, pack to `ymm1`.
-	fn vphsubd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vphsubd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Subtract 32-bit signed integers horizontally, pack to `ymm1`.
-	fn vphsubd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vphsubd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Subtract 16-bit signed integer horizontally, pack saturated integers to `xmm1`.
 	fn vphsubsw_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10347,10 +10347,10 @@ pub trait InstructionStream
 	fn vphsubsw_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Subtract 16-bit signed integer horizontally, pack saturated integers to `ymm1`.
-	fn vphsubsw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vphsubsw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Subtract 16-bit signed integer horizontally, pack saturated integers to `ymm1`.
-	fn vphsubsw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vphsubsw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Subtract 16-bit signed integers horizontally, pack to `xmm1`.
 	fn vphsubw_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10359,10 +10359,10 @@ pub trait InstructionStream
 	fn vphsubw_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Subtract 16-bit signed integers horizontally, pack to `ymm1`.
-	fn vphsubw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vphsubw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Subtract 16-bit signed integers horizontally, pack to `ymm1`.
-	fn vphsubw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vphsubw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Merge a byte integer value from `r32`/m8 and rest from `xmm2` into `xmm1` at the byte offset in `imm8`.
 	fn vpinsrb_XMMRegister_XMMRegister_Any8BitMemory_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any8BitMemory, arg3: Immediate8Bit);
@@ -10395,10 +10395,10 @@ pub trait InstructionStream
 	fn vpmaddubsw_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply signed and unsigned bytes, add horizontal pair of signed words, pack saturated signed-words to `ymm1`.
-	fn vpmaddubsw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpmaddubsw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply signed and unsigned bytes, add horizontal pair of signed words, pack saturated signed-words to `ymm1`.
-	fn vpmaddubsw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpmaddubsw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply the packed word integers in `xmm2` by the packed word integers in `xmm3/m128`, add adjacent doubleword results, and store in `xmm1`.
 	fn vpmaddwd_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10407,34 +10407,34 @@ pub trait InstructionStream
 	fn vpmaddwd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply the packed word integers in `ymm2` by the packed word integers in `ymm3/m256`, add adjacent doubleword results, and store in `ymm1`.
-	fn vpmaddwd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpmaddwd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply the packed word integers in `ymm2` by the packed word integers in `ymm3/m256`, add adjacent doubleword results, and store in `ymm1`.
-	fn vpmaddwd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpmaddwd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Conditionally store dword values from `xmm2` using mask in `xmm1`.
 	fn vpmaskmovd_Any128BitMemory_XMMRegister_XMMRegister(&mut self, arg0: Any128BitMemory, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Conditionally store dword values from `ymm2` using mask in `ymm1`.
-	fn vpmaskmovd_Any256BitMemory_YMM_YMM(&mut self, arg0: Any256BitMemory, arg1: YMM, arg2: YMM);
+	fn vpmaskmovd_Any256BitMemory_YMM_YMM(&mut self, arg0: Any256BitMemory, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Conditionally load dword values from `m128` using mask in `xmm2` and store in `xmm1`.
 	fn vpmaskmovd_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
 
 	/// Conditionally load dword values from m256 using mask in `ymm2` and store in `ymm1`.
-	fn vpmaskmovd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpmaskmovd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Conditionally store qword values from `xmm2` using mask in `xmm1`.
 	fn vpmaskmovq_Any128BitMemory_XMMRegister_XMMRegister(&mut self, arg0: Any128BitMemory, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Conditionally store qword values from `ymm2` using mask in `ymm1`.
-	fn vpmaskmovq_Any256BitMemory_YMM_YMM(&mut self, arg0: Any256BitMemory, arg1: YMM, arg2: YMM);
+	fn vpmaskmovq_Any256BitMemory_YMM_YMM(&mut self, arg0: Any256BitMemory, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Conditionally load qword values from `m128` using mask in `xmm2` and store in `xmm1`.
 	fn vpmaskmovq_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
 
 	/// Conditionally load qword values from m256 using mask in `ymm2` and store in `ymm1`.
-	fn vpmaskmovq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpmaskmovq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Compare packed signed byte integers in `xmm2` and `xmm3/m128` and store packed maximum values in `xmm1`.
 	fn vpmaxsb_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10443,10 +10443,10 @@ pub trait InstructionStream
 	fn vpmaxsb_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Compare packed signed byte integers in `ymm2` and `ymm3/m128` and store packed maximum values in `ymm1`.
-	fn vpmaxsb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpmaxsb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Compare packed signed byte integers in `ymm2` and `ymm3/m128` and store packed maximum values in `ymm1`.
-	fn vpmaxsb_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpmaxsb_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Compare packed signed dword integers in `xmm2` and `xmm3/m128` and store packed maximum values in `xmm1`.
 	fn vpmaxsd_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10455,10 +10455,10 @@ pub trait InstructionStream
 	fn vpmaxsd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Compare packed signed dword integers in `ymm2` and `ymm3/m128` and store packed maximum values in `ymm1`.
-	fn vpmaxsd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpmaxsd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Compare packed signed dword integers in `ymm2` and `ymm3/m128` and store packed maximum values in `ymm1`.
-	fn vpmaxsd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpmaxsd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Compare packed signed word integers in `xmm3/m128` and `xmm2` and store packed maximum values in `xmm1`.
 	fn vpmaxsw_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10467,10 +10467,10 @@ pub trait InstructionStream
 	fn vpmaxsw_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Compare packed signed word integers in `ymm3/m128` and `ymm2` and store packed maximum values in `ymm1`.
-	fn vpmaxsw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpmaxsw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Compare packed signed word integers in `ymm3/m128` and `ymm2` and store packed maximum values in `ymm1`.
-	fn vpmaxsw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpmaxsw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Compare packed unsigned byte integers in `xmm2` and `xmm3/m128` and store packed maximum values in `xmm1`.
 	fn vpmaxub_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10479,10 +10479,10 @@ pub trait InstructionStream
 	fn vpmaxub_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Compare packed unsigned byte integers in `ymm2` and `ymm3/m256` and store packed maximum values in `ymm1`.
-	fn vpmaxub_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpmaxub_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Compare packed unsigned byte integers in `ymm2` and `ymm3/m256` and store packed maximum values in `ymm1`.
-	fn vpmaxub_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpmaxub_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Compare packed unsigned dword integers in `xmm2` and `xmm3/m128` and store packed maximum values in `xmm1`.
 	fn vpmaxud_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10491,10 +10491,10 @@ pub trait InstructionStream
 	fn vpmaxud_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Compare packed unsigned dword integers in `ymm2` and `ymm3/m256` and store packed maximum values in `ymm1`.
-	fn vpmaxud_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpmaxud_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Compare packed unsigned dword integers in `ymm2` and `ymm3/m256` and store packed maximum values in `ymm1`.
-	fn vpmaxud_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpmaxud_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Compare packed unsigned word integers in `xmm3/m128` and `xmm2` and store maximum packed values in `xmm1`.
 	fn vpmaxuw_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10503,10 +10503,10 @@ pub trait InstructionStream
 	fn vpmaxuw_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Compare packed unsigned word integers in `ymm3/m256` and `ymm2` and store maximum packed values in `ymm1`.
-	fn vpmaxuw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpmaxuw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Compare packed unsigned word integers in `ymm3/m256` and `ymm2` and store maximum packed values in `ymm1`.
-	fn vpmaxuw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpmaxuw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Compare packed signed byte integers in `xmm2` and `xmm3/m128` and store packed minimum values in `xmm1`.
 	fn vpminsb_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10515,10 +10515,10 @@ pub trait InstructionStream
 	fn vpminsb_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Compare packed signed byte integers in `ymm2` and `ymm3/m256` and store packed minimum values in `ymm1`.
-	fn vpminsb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpminsb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Compare packed signed byte integers in `ymm2` and `ymm3/m256` and store packed minimum values in `ymm1`.
-	fn vpminsb_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpminsb_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Compare packed signed dword integers in `xmm2` and `xmm3/m128` and store packed minimum values in `xmm1`.
 	fn vpminsd_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10527,10 +10527,10 @@ pub trait InstructionStream
 	fn vpminsd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Compare packed signed dword integers in `ymm2` and `ymm3/m128` and store packed minimum values in `ymm1`.
-	fn vpminsd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpminsd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Compare packed signed dword integers in `ymm2` and `ymm3/m128` and store packed minimum values in `ymm1`.
-	fn vpminsd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpminsd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Compare packed signed word integers in `xmm3/m128` and `xmm2` and return packed minimum values in `xmm1`.
 	fn vpminsw_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10545,10 +10545,10 @@ pub trait InstructionStream
 	fn vpminub_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Compare packed unsigned byte integers in `ymm2` and `ymm3/m256` and store packed minimum values in `ymm1`.
-	fn vpminub_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpminub_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Compare packed unsigned byte integers in `ymm2` and `ymm3/m256` and store packed minimum values in `ymm1`.
-	fn vpminub_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpminub_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Compare packed unsigned dword integers in `xmm2` and `xmm3/m128` and store packed minimum values in `xmm1`.
 	fn vpminud_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10557,10 +10557,10 @@ pub trait InstructionStream
 	fn vpminud_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Compare packed unsigned dword integers in `ymm2` and `ymm3/m256` and store packed minimum values in `ymm1`.
-	fn vpminud_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpminud_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Compare packed unsigned dword integers in `ymm2` and `ymm3/m256` and store packed minimum values in `ymm1`.
-	fn vpminud_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpminud_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Compare packed unsigned word integers in `xmm3/m128` and `xmm2` and return packed minimum values in `xmm1`.
 	fn vpminuw_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10569,10 +10569,10 @@ pub trait InstructionStream
 	fn vpminuw_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Compare packed unsigned word integers in `ymm3/m256` and `ymm2` and return packed minimum values in `ymm1`.
-	fn vpminuw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpminuw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Compare packed unsigned word integers in `ymm3/m256` and `ymm2` and return packed minimum values in `ymm1`.
-	fn vpminuw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpminuw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Move a byte mask of `xmm1` to register.
 	/// The upper bits of `r32` or `r64` are filled with zeros.
@@ -10580,7 +10580,7 @@ pub trait InstructionStream
 
 	/// Move a 32-bit mask of `ymm1` to register.
 	/// The upper bits of `r64` are filled with zeros.
-	fn vpmovmskb_Register32Bit_YMM(&mut self, arg0: Register32Bit, arg1: YMM);
+	fn vpmovmskb_Register32Bit_YMM(&mut self, arg0: Register32Bit, arg1: YMMRegister);
 
 	/// Move a byte mask of `xmm1` to register.
 	/// The upper bits of `r32` or `r64` are filled with zeros.
@@ -10588,7 +10588,7 @@ pub trait InstructionStream
 
 	/// Move a 32-bit mask of `ymm1` to register.
 	/// The upper bits of `r64` are filled with zeros.
-	fn vpmovmskb_Register64Bit_YMM(&mut self, arg0: Register64Bit, arg1: YMM);
+	fn vpmovmskb_Register64Bit_YMM(&mut self, arg0: Register64Bit, arg1: YMMRegister);
 
 	/// Sign extend 4 packed 8-bit integers in the low 4 bytes of `xmm2/m32` to 4 packed 32-bit integers in `xmm1`.
 	fn vpmovsxbd_XMMRegister_Any32BitMemory(&mut self, arg0: XMMRegister, arg1: Any32BitMemory);
@@ -10597,10 +10597,10 @@ pub trait InstructionStream
 	fn vpmovsxbd_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Sign extend 8 packed 8-bit integers in the low 8 bytes of `xmm2/m64` to 8 packed 32-bit integers in `ymm1`.
-	fn vpmovsxbd_YMM_Any64BitMemory(&mut self, arg0: YMM, arg1: Any64BitMemory);
+	fn vpmovsxbd_YMM_Any64BitMemory(&mut self, arg0: YMMRegister, arg1: Any64BitMemory);
 
 	/// Sign extend 8 packed 8-bit integers in the low 8 bytes of `xmm2/m64` to 8 packed 32-bit integers in `ymm1`.
-	fn vpmovsxbd_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister);
+	fn vpmovsxbd_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister);
 
 	/// Sign extend 2 packed 8-bit integers in the low 2 bytes of `xmm2`.m16 to 2 packed 64-bit integers in `xmm1`.
 	fn vpmovsxbq_XMMRegister_Any16BitMemory(&mut self, arg0: XMMRegister, arg1: Any16BitMemory);
@@ -10609,10 +10609,10 @@ pub trait InstructionStream
 	fn vpmovsxbq_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Sign extend 4 packed 8-bit integers in the low 4 bytes of `xmm2/m32` to 4 packed 64-bit integers in `ymm1`.
-	fn vpmovsxbq_YMM_Any32BitMemory(&mut self, arg0: YMM, arg1: Any32BitMemory);
+	fn vpmovsxbq_YMM_Any32BitMemory(&mut self, arg0: YMMRegister, arg1: Any32BitMemory);
 
 	/// Sign extend 4 packed 8-bit integers in the low 4 bytes of `xmm2/m32` to 4 packed 64-bit integers in `ymm1`.
-	fn vpmovsxbq_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister);
+	fn vpmovsxbq_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister);
 
 	/// Sign extend 8 packed 8-bit integers in the low 8 bytes of `xmm2/m64` to 8 packed 16-bit integers in `xmm1`.
 	fn vpmovsxbw_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: Any64BitMemory);
@@ -10621,10 +10621,10 @@ pub trait InstructionStream
 	fn vpmovsxbw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Sign extend 16 packed 8-bit integers in `xmm2/m128` to 16 packed 16-bit integers in `ymm1`.
-	fn vpmovsxbw_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: Any128BitMemory);
+	fn vpmovsxbw_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: Any128BitMemory);
 
 	/// Sign extend 16 packed 8-bit integers in `xmm2/m128` to 16 packed 16-bit integers in `ymm1`.
-	fn vpmovsxbw_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister);
+	fn vpmovsxbw_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister);
 
 	/// Sign extend 2 packed 32-bit integers in the low 8 bytes of `xmm2/m64` to 2 packed 64-bit integers in `xmm1`.
 	fn vpmovsxdq_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: Any64BitMemory);
@@ -10633,10 +10633,10 @@ pub trait InstructionStream
 	fn vpmovsxdq_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Sign extend 4 packed 32-bit integers in the low 16 bytes of `xmm2/m128` to 4 packed 64-bit integers in `ymm1`.
-	fn vpmovsxdq_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: Any128BitMemory);
+	fn vpmovsxdq_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: Any128BitMemory);
 
 	/// Sign extend 4 packed 32-bit integers in the low 16 bytes of `xmm2/m128` to 4 packed 64-bit integers in `ymm1`.
-	fn vpmovsxdq_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister);
+	fn vpmovsxdq_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister);
 
 	/// Sign extend 4 packed 16-bit integers in the low 8 bytes of `xmm2/m64` to 4 packed 32-bit integers in `xmm1`.
 	fn vpmovsxwd_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: Any64BitMemory);
@@ -10645,10 +10645,10 @@ pub trait InstructionStream
 	fn vpmovsxwd_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Sign extend 8 packed 16-bit integers in the low 16 bytes of `xmm2/m128` to 8 packed 32-bit integers in `ymm1`.
-	fn vpmovsxwd_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: Any128BitMemory);
+	fn vpmovsxwd_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: Any128BitMemory);
 
 	/// Sign extend 8 packed 16-bit integers in the low 16 bytes of `xmm2/m128` to 8 packed 32-bit integers in `ymm1`.
-	fn vpmovsxwd_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister);
+	fn vpmovsxwd_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister);
 
 	/// Sign extend 2 packed 16-bit integers in the low 4 bytes of `xmm2/m32` to 2 packed 64-bit integers in `xmm1`.
 	fn vpmovsxwq_XMMRegister_Any32BitMemory(&mut self, arg0: XMMRegister, arg1: Any32BitMemory);
@@ -10657,10 +10657,10 @@ pub trait InstructionStream
 	fn vpmovsxwq_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Sign extend 4 packed 16-bit integers in the low 8 bytes of `xmm2/m64` to 4 packed 64-bit integers in `ymm1`.
-	fn vpmovsxwq_YMM_Any64BitMemory(&mut self, arg0: YMM, arg1: Any64BitMemory);
+	fn vpmovsxwq_YMM_Any64BitMemory(&mut self, arg0: YMMRegister, arg1: Any64BitMemory);
 
 	/// Sign extend 4 packed 16-bit integers in the low 8 bytes of `xmm2/m64` to 4 packed 64-bit integers in `ymm1`.
-	fn vpmovsxwq_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister);
+	fn vpmovsxwq_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister);
 
 	/// Zero extend 4 packed 8-bit integers in the low 4 bytes of `xmm2/m32` to 4 packed 32-bit integers in `xmm1`.
 	fn vpmovzxbd_XMMRegister_Any32BitMemory(&mut self, arg0: XMMRegister, arg1: Any32BitMemory);
@@ -10669,10 +10669,10 @@ pub trait InstructionStream
 	fn vpmovzxbd_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Zero extend 8 packed 8-bit integers in the low 8 bytes of `xmm2/m64` to 8 packed 32-bit integers in `ymm1`.
-	fn vpmovzxbd_YMM_Any64BitMemory(&mut self, arg0: YMM, arg1: Any64BitMemory);
+	fn vpmovzxbd_YMM_Any64BitMemory(&mut self, arg0: YMMRegister, arg1: Any64BitMemory);
 
 	/// Zero extend 8 packed 8-bit integers in the low 8 bytes of `xmm2/m64` to 8 packed 32-bit integers in `ymm1`.
-	fn vpmovzxbd_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister);
+	fn vpmovzxbd_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister);
 
 	/// Zero extend 2 packed 8-bit integers in the low 2 bytes of `xmm2`.m16 to 2 packed 64-bit integers in `xmm1`.
 	fn vpmovzxbq_XMMRegister_Any16BitMemory(&mut self, arg0: XMMRegister, arg1: Any16BitMemory);
@@ -10681,10 +10681,10 @@ pub trait InstructionStream
 	fn vpmovzxbq_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Zero extend 4 packed 8-bit integers in the low 4 bytes of `xmm2/m32` to 4 packed 64-bit integers in `ymm1`.
-	fn vpmovzxbq_YMM_Any32BitMemory(&mut self, arg0: YMM, arg1: Any32BitMemory);
+	fn vpmovzxbq_YMM_Any32BitMemory(&mut self, arg0: YMMRegister, arg1: Any32BitMemory);
 
 	/// Zero extend 4 packed 8-bit integers in the low 4 bytes of `xmm2/m32` to 4 packed 64-bit integers in `ymm1`.
-	fn vpmovzxbq_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister);
+	fn vpmovzxbq_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister);
 
 	/// Zero extend 8 packed 8-bit integers in the low 8 bytes of `xmm2/m64` to 8 packed 16-bit integers in `xmm1`.
 	fn vpmovzxbw_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: Any64BitMemory);
@@ -10693,10 +10693,10 @@ pub trait InstructionStream
 	fn vpmovzxbw_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Zero extend 16 packed 8-bit integers in the low 16 bytes of `xmm2/m128` to 16 packed 16-bit integers in `ymm1`.
-	fn vpmovzxbw_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: Any128BitMemory);
+	fn vpmovzxbw_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: Any128BitMemory);
 
 	/// Zero extend 16 packed 8-bit integers in the low 16 bytes of `xmm2/m128` to 16 packed 16-bit integers in `ymm1`.
-	fn vpmovzxbw_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister);
+	fn vpmovzxbw_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister);
 
 	/// Zero extend 2 packed 32-bit integers in the low 8 bytes of `xmm2/m64` to 2 packed 64-bit integers in `xmm1`.
 	fn vpmovzxdq_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: Any64BitMemory);
@@ -10705,10 +10705,10 @@ pub trait InstructionStream
 	fn vpmovzxdq_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Zero extend 4 packed 32-bit integers in the low 16 bytes of `xmm2/m128` to 4 packed 64-bit integers in `ymm1`.
-	fn vpmovzxdq_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: Any128BitMemory);
+	fn vpmovzxdq_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: Any128BitMemory);
 
 	/// Zero extend 4 packed 32-bit integers in the low 16 bytes of `xmm2/m128` to 4 packed 64-bit integers in `ymm1`.
-	fn vpmovzxdq_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister);
+	fn vpmovzxdq_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister);
 
 	/// Zero extend 4 packed 16-bit integers in the low 8 bytes of `xmm2/m64` to 4 packed 32-bit integers in `xmm1`.
 	fn vpmovzxwd_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: Any64BitMemory);
@@ -10717,10 +10717,10 @@ pub trait InstructionStream
 	fn vpmovzxwd_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Zero extend 8 packed 16-bit integers in the low 16 bytes of `xmm2/m128` to 8 packed 32-bit integers in `ymm1`.
-	fn vpmovzxwd_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: Any128BitMemory);
+	fn vpmovzxwd_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: Any128BitMemory);
 
 	/// Zero extend 8 packed 16-bit integers in the low 16 bytes of `xmm2/m128` to 8 packed 32-bit integers in `ymm1`.
-	fn vpmovzxwd_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister);
+	fn vpmovzxwd_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister);
 
 	/// Zero extend 2 packed 16-bit integers in the low 4 bytes of `xmm2/m32` to 2 packed 64-bit integers in `xmm1`.
 	fn vpmovzxwq_XMMRegister_Any32BitMemory(&mut self, arg0: XMMRegister, arg1: Any32BitMemory);
@@ -10729,10 +10729,10 @@ pub trait InstructionStream
 	fn vpmovzxwq_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Zero extend 4 packed 16-bit integers in the low 8 bytes of `xmm2/m64` to 4 packed 64-bit integers in `xmm1`.
-	fn vpmovzxwq_YMM_Any64BitMemory(&mut self, arg0: YMM, arg1: Any64BitMemory);
+	fn vpmovzxwq_YMM_Any64BitMemory(&mut self, arg0: YMMRegister, arg1: Any64BitMemory);
 
 	/// Zero extend 4 packed 16-bit integers in the low 8 bytes of `xmm2/m64` to 4 packed 64-bit integers in `xmm1`.
-	fn vpmovzxwq_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister);
+	fn vpmovzxwq_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister);
 
 	/// Multiply packed signed doubleword integers in `xmm2` by packed signed doubleword integers in `xmm3/m128` and store the quadword results in `xmm1`.
 	fn vpmuldq_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10741,10 +10741,10 @@ pub trait InstructionStream
 	fn vpmuldq_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed signed doubleword integers in `ymm2` by packed signed doubleword integers in `ymm3/m256`, and store the quadword results in `ymm1`.
-	fn vpmuldq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpmuldq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed signed doubleword integers in `ymm2` by packed signed doubleword integers in `ymm3/m256`, and store the quadword results in `ymm1`.
-	fn vpmuldq_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpmuldq_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply 16-bit signed words, scale and round signed doublewords, pack high 16 bits to `xmm1`.
 	fn vpmulhrsw_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10753,10 +10753,10 @@ pub trait InstructionStream
 	fn vpmulhrsw_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply 16-bit signed words, scale and round signed doublewords, pack high 16 bits to `ymm1`.
-	fn vpmulhrsw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpmulhrsw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply 16-bit signed words, scale and round signed doublewords, pack high 16 bits to `ymm1`.
-	fn vpmulhrsw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpmulhrsw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply the packed unsigned word integers in `xmm2` and `xmm3/m128` and store the high 16 bits of the results in `xmm1`.
 	fn vpmulhuw_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10765,10 +10765,10 @@ pub trait InstructionStream
 	fn vpmulhuw_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply the packed unsigned word integers in `ymm2` and `ymm3/m256`, and store the high 16 bits of the results in `ymm1`.
-	fn vpmulhuw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpmulhuw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply the packed unsigned word integers in `ymm2` and `ymm3/m256`, and store the high 16 bits of the results in `ymm1`.
-	fn vpmulhuw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpmulhuw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply the packed signed word integers in `xmm2` and `xmm3/m128` and store the high 16 bits of the results in `xmm1`.
 	fn vpmulhw_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10777,10 +10777,10 @@ pub trait InstructionStream
 	fn vpmulhw_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply the packed signed word integers in `ymm2` and `ymm3/m256`, and store the high 16 bits of the results in `ymm1`.
-	fn vpmulhw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpmulhw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply the packed signed word integers in `ymm2` and `ymm3/m256`, and store the high 16 bits of the results in `ymm1`.
-	fn vpmulhw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpmulhw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply the packed dword signed integers in `xmm2` and `xmm3/m128` and store the low 32 bits of each product in `xmm1`.
 	fn vpmulld_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10789,10 +10789,10 @@ pub trait InstructionStream
 	fn vpmulld_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply the packed dword signed integers in `ymm2` and `ymm3/m256` and store the low 32 bits of each product in `ymm1`.
-	fn vpmulld_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpmulld_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply the packed dword signed integers in `ymm2` and `ymm3/m256` and store the low 32 bits of each product in `ymm1`.
-	fn vpmulld_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpmulld_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply the packed dword signed integers in `xmm2` and `xmm3/m128` and store the low 32 bits of each product in `xmm1`.
 	fn vpmullw_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10801,10 +10801,10 @@ pub trait InstructionStream
 	fn vpmullw_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply the packed signed word integers in `ymm2` and `ymm3/m256`, and store the low 16 bits of the results in `ymm1`.
-	fn vpmullw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpmullw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply the packed signed word integers in `ymm2` and `ymm3/m256`, and store the low 16 bits of the results in `ymm1`.
-	fn vpmullw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpmullw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Multiply packed unsigned doubleword integers in `xmm2` by packed unsigned doubleword integers in `xmm3/m128` and store the quadword results in `xmm1`.
 	fn vpmuludq_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10813,10 +10813,10 @@ pub trait InstructionStream
 	fn vpmuludq_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Multiply packed unsigned doubleword integers in `ymm2` by packed unsigned doubleword integers in `ymm3/m256`, and store the quadword results in `ymm1`.
-	fn vpmuludq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpmuludq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Multiply packed unsigned doubleword integers in `ymm2` by packed unsigned doubleword integers in `ymm3/m256`, and store the quadword results in `ymm1`.
-	fn vpmuludq_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpmuludq_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Bitwise OR of `xmm2/m128` and `xmm3`.
 	fn vpor_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10825,10 +10825,10 @@ pub trait InstructionStream
 	fn vpor_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Bitwise OR of `ymm2/m256` and `ymm3`.
-	fn vpor_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpor_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Bitwise OR of `ymm2/m256` and `ymm3`.
-	fn vpor_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpor_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Computes the absolute differences of the packed unsigned byte integers from xmm3 /m128 and `xmm2`.
 	/// The 8 low differences and 8 high differences are then summed separately to produce two unsigned word integer results.
@@ -10840,11 +10840,11 @@ pub trait InstructionStream
 
 	/// Computes the absolute differences of the packed unsigned byte integers from `ymm3/m256` and `ymm2`.
 	/// Then each consecutive 8 differences are summed separately to produce four unsigned word integer results.
-	fn vpsadbw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpsadbw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Computes the absolute differences of the packed unsigned byte integers from `ymm3/m256` and `ymm2`.
 	/// Then each consecutive 8 differences are summed separately to produce four unsigned word integer results.
-	fn vpsadbw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpsadbw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Shuffle bytes in `xmm2` according to contents of `xmm3/m128`.
 	fn vpshufb_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10853,10 +10853,10 @@ pub trait InstructionStream
 	fn vpshufb_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Shuffle bytes in `ymm2` according to contents of `ymm3/m256`.
-	fn vpshufb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpshufb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Shuffle bytes in `ymm2` according to contents of `ymm3/m256`.
-	fn vpshufb_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpshufb_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Shuffle the doublewords in `xmm2/m128` based on the encoding in `imm8` and store the result in `xmm1`.
 	fn vpshufd_XMMRegister_Any128BitMemory_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: Any128BitMemory, arg2: Immediate8Bit);
@@ -10865,10 +10865,10 @@ pub trait InstructionStream
 	fn vpshufd_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Immediate8Bit);
 
 	/// Shuffle the doublewords in `ymm2/m256` based on the encoding in `imm8` and store the result in `ymm1`.
-	fn vpshufd_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: Any256BitMemory, arg2: Immediate8Bit);
+	fn vpshufd_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: Any256BitMemory, arg2: Immediate8Bit);
 
 	/// Shuffle the doublewords in `ymm2/m256` based on the encoding in `imm8` and store the result in `ymm1`.
-	fn vpshufd_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit);
+	fn vpshufd_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit);
 
 	/// Shuffle the high words in `xmm2/m128` based on the encoding in `imm8` and store the result in `xmm1`.
 	fn vpshufhw_XMMRegister_Any128BitMemory_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: Any128BitMemory, arg2: Immediate8Bit);
@@ -10877,10 +10877,10 @@ pub trait InstructionStream
 	fn vpshufhw_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Immediate8Bit);
 
 	/// Shuffle the high words in `ymm2/m256` based on the encoding in `imm8` and store the result in `ymm1`.
-	fn vpshufhw_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: Any256BitMemory, arg2: Immediate8Bit);
+	fn vpshufhw_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: Any256BitMemory, arg2: Immediate8Bit);
 
 	/// Shuffle the high words in `ymm2/m256` based on the encoding in `imm8` and store the result in `ymm1`.
-	fn vpshufhw_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit);
+	fn vpshufhw_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit);
 
 	/// Shuffle the low words in `xmm2/m128` based on the encoding in `imm8` and store the result in `xmm1`.
 	fn vpshuflw_XMMRegister_Any128BitMemory_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: Any128BitMemory, arg2: Immediate8Bit);
@@ -10889,10 +10889,10 @@ pub trait InstructionStream
 	fn vpshuflw_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Immediate8Bit);
 
 	/// Shuffle the low words in `ymm2/m256` based on the encoding in `imm8` and store the result in `ymm1`.
-	fn vpshuflw_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: Any256BitMemory, arg2: Immediate8Bit);
+	fn vpshuflw_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: Any256BitMemory, arg2: Immediate8Bit);
 
 	/// Shuffle the low words in `ymm2/m256` based on the encoding in `imm8` and store the result in `ymm1`.
-	fn vpshuflw_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit);
+	fn vpshuflw_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit);
 
 	/// Negate/zero/preserve packed byte integers in `xmm2` depending on the corresponding sign in `xmm3/m128`.
 	fn vpsignb_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10922,19 +10922,19 @@ pub trait InstructionStream
 	fn vpslld_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Shift doublewords in `ymm2` left by `imm8` while shifting in zero-signed.
-	fn vpslld_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit);
+	fn vpslld_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit);
 
 	/// Shift doublewords in `ymm2` left by amount specified in `xmm3/m128` while shifting in zero-signed.
-	fn vpslld_YMM_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any128BitMemory);
+	fn vpslld_YMM_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any128BitMemory);
 
 	/// Shift doublewords in `ymm2` left by amount specified in `xmm3/m128` while shifting in zero-signed.
-	fn vpslld_YMM_YMM_XMMRegister(&mut self, arg0: YMM, arg1: YMM, arg2: XMMRegister);
+	fn vpslld_YMM_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: XMMRegister);
 
 	/// Shift `xmm2` left by `imm8` bytes while shifting in zero-signed and store result in `xmm1`.
 	fn vpslldq_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Immediate8Bit);
 
 	/// Shift `ymm2` left by `imm8` bytes while shifting in zero-signed and store result in `ymm1`.
-	fn vpslldq_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit);
+	fn vpslldq_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit);
 
 	/// Shift quadwords in `xmm2` left by `imm8` while shifting in zero-signed.
 	fn vpsllq_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Immediate8Bit);
@@ -10946,13 +10946,13 @@ pub trait InstructionStream
 	fn vpsllq_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Shift quadwords in `ymm2` left by `imm8` while shifting in zero-signed.
-	fn vpsllq_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit);
+	fn vpsllq_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit);
 
 	/// Shift quadwords in `ymm2` left by amount specified in `xmm3/m128` while shifting in zero-signed.
-	fn vpsllq_YMM_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any128BitMemory);
+	fn vpsllq_YMM_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any128BitMemory);
 
 	/// Shift quadwords in `ymm2` left by amount specified in `xmm3/m128` while shifting in zero-signed.
-	fn vpsllq_YMM_YMM_XMMRegister(&mut self, arg0: YMM, arg1: YMM, arg2: XMMRegister);
+	fn vpsllq_YMM_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: XMMRegister);
 
 	/// Shift bits in doublewords in `xmm2` left by amount specified in the corresponding element of `xmm3/m128` while shifting in zero-signed.
 	fn vpsllvd_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10961,10 +10961,10 @@ pub trait InstructionStream
 	fn vpsllvd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Shift bits in doublewords in `ymm2` left by amount specified in the corresponding element of `ymm3/m256` while shifting in zero-signed.
-	fn vpsllvd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpsllvd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Shift bits in doublewords in `ymm2` left by amount specified in the corresponding element of `ymm3/m256` while shifting in zero-signed.
-	fn vpsllvd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpsllvd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Shift bits in quadwords in `xmm2` left by amount specified in the corresponding element of `xmm3/m128` while shifting in zero-signed.
 	fn vpsllvq_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -10973,10 +10973,10 @@ pub trait InstructionStream
 	fn vpsllvq_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Shift bits in quadwords in `ymm2` left by amount specified in the corresponding element of `ymm3/m256` while shifting in zero-signed.
-	fn vpsllvq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpsllvq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Shift bits in quadwords in `ymm2` left by amount specified in the corresponding element of `ymm3/m256` while shifting in zero-signed.
-	fn vpsllvq_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpsllvq_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Shift words in `xmm2` left by `imm8` while shifting in zero-signed.
 	fn vpsllw_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Immediate8Bit);
@@ -10988,13 +10988,13 @@ pub trait InstructionStream
 	fn vpsllw_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Shift words in `ymm2` left by `imm8` while shifting in zero-signed.
-	fn vpsllw_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit);
+	fn vpsllw_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit);
 
 	/// Shift words in `ymm2` left by amount specified in `xmm3/m128` while shifting in zero-signed.
-	fn vpsllw_YMM_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any128BitMemory);
+	fn vpsllw_YMM_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any128BitMemory);
 
 	/// Shift words in `ymm2` left by amount specified in `xmm3/m128` while shifting in zero-signed.
-	fn vpsllw_YMM_YMM_XMMRegister(&mut self, arg0: YMM, arg1: YMM, arg2: XMMRegister);
+	fn vpsllw_YMM_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: XMMRegister);
 
 	/// Shift doublewords in `xmm2` right by `imm8` while shifting in sign bits.
 	fn vpsrad_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Immediate8Bit);
@@ -11006,13 +11006,13 @@ pub trait InstructionStream
 	fn vpsrad_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Shift doublewords in `ymm2` right by `imm8` while shifting in sign bits.
-	fn vpsrad_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit);
+	fn vpsrad_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit);
 
 	/// Shift doublewords in `ymm2` right by amount specified in `xmm3/m128` while shifting in sign bits.
-	fn vpsrad_YMM_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any128BitMemory);
+	fn vpsrad_YMM_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any128BitMemory);
 
 	/// Shift doublewords in `ymm2` right by amount specified in `xmm3/m128` while shifting in sign bits.
-	fn vpsrad_YMM_YMM_XMMRegister(&mut self, arg0: YMM, arg1: YMM, arg2: XMMRegister);
+	fn vpsrad_YMM_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: XMMRegister);
 
 	/// Shift bits in doublewords in `xmm2` right by amount specified in the corresponding element of `xmm3/m128` while shifting in the sign bits.
 	fn vpsravd_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -11021,10 +11021,10 @@ pub trait InstructionStream
 	fn vpsravd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Shift bits in doublewords in `ymm2` right by amount specified in the corresponding element of `ymm3/m256` while shifting in the sign bits.
-	fn vpsravd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpsravd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Shift bits in doublewords in `ymm2` right by amount specified in the corresponding element of `ymm3/m256` while shifting in the sign bits.
-	fn vpsravd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpsravd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Shift words in `xmm2` right by `imm8` while shifting in sign bits.
 	fn vpsraw_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Immediate8Bit);
@@ -11036,13 +11036,13 @@ pub trait InstructionStream
 	fn vpsraw_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Shift words in `ymm2` right by `imm8` while shifting in sign bits.
-	fn vpsraw_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit);
+	fn vpsraw_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit);
 
 	/// Shift words in `ymm2` right by amount specified in `xmm3/m128` while shifting in sign bits.
-	fn vpsraw_YMM_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any128BitMemory);
+	fn vpsraw_YMM_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any128BitMemory);
 
 	/// Shift words in `ymm2` right by amount specified in `xmm3/m128` while shifting in sign bits.
-	fn vpsraw_YMM_YMM_XMMRegister(&mut self, arg0: YMM, arg1: YMM, arg2: XMMRegister);
+	fn vpsraw_YMM_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: XMMRegister);
 
 	/// Shift doublewords in `xmm2` right by `imm8` while shifting in zero-signed.
 	fn vpsrld_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Immediate8Bit);
@@ -11054,19 +11054,19 @@ pub trait InstructionStream
 	fn vpsrld_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Shift doublewords in `ymm2` right by `imm8` while shifting in zero-signed.
-	fn vpsrld_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit);
+	fn vpsrld_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit);
 
 	/// Shift doublewords in `ymm2` right by amount specified in `xmm3/m128` while shifting in zero-signed.
-	fn vpsrld_YMM_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any128BitMemory);
+	fn vpsrld_YMM_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any128BitMemory);
 
 	/// Shift doublewords in `ymm2` right by amount specified in `xmm3/m128` while shifting in zero-signed.
-	fn vpsrld_YMM_YMM_XMMRegister(&mut self, arg0: YMM, arg1: YMM, arg2: XMMRegister);
+	fn vpsrld_YMM_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: XMMRegister);
 
 	/// Shift `xmm2` right by `imm8` bytes while shifting in zero-signed.
 	fn vpsrldq_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Immediate8Bit);
 
 	/// Shift `ymm1` right by `imm8` bytes while shifting in zero-signed.
-	fn vpsrldq_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit);
+	fn vpsrldq_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit);
 
 	/// Shift quadwords in `xmm2` right by `imm8` while shifting in zero-signed.
 	fn vpsrlq_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Immediate8Bit);
@@ -11078,13 +11078,13 @@ pub trait InstructionStream
 	fn vpsrlq_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Shift quadwords in `ymm2` right by `imm8` while shifting in zero-signed.
-	fn vpsrlq_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit);
+	fn vpsrlq_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit);
 
 	/// Shift quadwords in `ymm2` right by amount specified in `xmm3/m128` while shifting in zero-signed.
-	fn vpsrlq_YMM_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any128BitMemory);
+	fn vpsrlq_YMM_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any128BitMemory);
 
 	/// Shift quadwords in `ymm2` right by amount specified in `xmm3/m128` while shifting in zero-signed.
-	fn vpsrlq_YMM_YMM_XMMRegister(&mut self, arg0: YMM, arg1: YMM, arg2: XMMRegister);
+	fn vpsrlq_YMM_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: XMMRegister);
 
 	/// Shift bits in doublewords in `xmm2` right by amount specified in the corresponding element of `xmm3/m128` while shifting in zero-signed.
 	fn vpsrlvd_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -11093,10 +11093,10 @@ pub trait InstructionStream
 	fn vpsrlvd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Shift bits in doublewords in `ymm2` right by amount specified in the corresponding element of `ymm3/m256` while shifting in zero-signed.
-	fn vpsrlvd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpsrlvd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Shift bits in doublewords in `ymm2` right by amount specified in the corresponding element of `ymm3/m256` while shifting in zero-signed.
-	fn vpsrlvd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpsrlvd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Shift bits in quadwords in `xmm2` right by amount specified in the corresponding element of `xmm3/m128` while shifting in zero-signed.
 	fn vpsrlvq_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -11105,10 +11105,10 @@ pub trait InstructionStream
 	fn vpsrlvq_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Shift bits in quadwords in `ymm2` right by amount specified in the corresponding element of `ymm3/m256` while shifting in zero-signed.
-	fn vpsrlvq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpsrlvq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Shift bits in quadwords in `ymm2` right by amount specified in the corresponding element of `ymm3/m256` while shifting in zero-signed.
-	fn vpsrlvq_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpsrlvq_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Shift words in `xmm2` right by `imm8` while shifting in zero-signed.
 	fn vpsrlw_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Immediate8Bit);
@@ -11120,13 +11120,13 @@ pub trait InstructionStream
 	fn vpsrlw_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Shift words in `ymm2` right by `imm8` while shifting in zero-signed.
-	fn vpsrlw_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit);
+	fn vpsrlw_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit);
 
 	/// Shift words in `ymm2` right by amount specified in `xmm3/m128` while shifting in zero-signed.
-	fn vpsrlw_YMM_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any128BitMemory);
+	fn vpsrlw_YMM_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any128BitMemory);
 
 	/// Shift words in `ymm2` right by amount specified in `xmm3/m128` while shifting in zero-signed.
-	fn vpsrlw_YMM_YMM_XMMRegister(&mut self, arg0: YMM, arg1: YMM, arg2: XMMRegister);
+	fn vpsrlw_YMM_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: XMMRegister);
 
 	/// Subtract packed byte integers in `xmm3/m128` from `xmm2`.
 	fn vpsubb_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -11135,10 +11135,10 @@ pub trait InstructionStream
 	fn vpsubb_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Subtract packed byte integers in `ymm3/m256` from `ymm2`.
-	fn vpsubb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpsubb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Subtract packed byte integers in `ymm3/m256` from `ymm2`.
-	fn vpsubb_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpsubb_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Subtract packed doubleword integers in `xmm3/m128` from `xmm2`.
 	fn vpsubd_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -11147,10 +11147,10 @@ pub trait InstructionStream
 	fn vpsubd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Subtract packed doubleword integers in `ymm3/m256` from `ymm2`.
-	fn vpsubd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpsubd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Subtract packed doubleword integers in `ymm3/m256` from `ymm2`.
-	fn vpsubd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpsubd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Subtract packed quadword integers in `xmm3/m128` from `xmm2`.
 	fn vpsubq_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -11159,10 +11159,10 @@ pub trait InstructionStream
 	fn vpsubq_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Subtract packed quadword integers in `ymm3/m256` from `ymm2`.
-	fn vpsubq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpsubq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Subtract packed quadword integers in `ymm3/m256` from `ymm2`.
-	fn vpsubq_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpsubq_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Subtract packed signed byte integers in `xmm3/m128` from packed signed byte integers in `xmm2` and saturate results.
 	fn vpsubsb_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -11171,10 +11171,10 @@ pub trait InstructionStream
 	fn vpsubsb_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Subtract packed signed byte integers in `ymm3/m256` from packed signed byte integers in `ymm2` and saturate results.
-	fn vpsubsb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpsubsb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Subtract packed signed byte integers in `ymm3/m256` from packed signed byte integers in `ymm2` and saturate results.
-	fn vpsubsb_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpsubsb_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Subtract packed signed word integers in `xmm3/m128` from packed signed word integers in `xmm2` and saturate results.
 	fn vpsubsw_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -11183,10 +11183,10 @@ pub trait InstructionStream
 	fn vpsubsw_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Subtract packed signed word integers in `ymm3/m256` from packed signed word integers in `ymm2` and saturate results.
-	fn vpsubsw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpsubsw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Subtract packed signed word integers in `ymm3/m256` from packed signed word integers in `ymm2` and saturate results.
-	fn vpsubsw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpsubsw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Subtract packed unsigned byte integers in `xmm3/m128` from packed unsigned byte integers in `xmm2` and saturate result.
 	fn vpsubusb_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -11195,10 +11195,10 @@ pub trait InstructionStream
 	fn vpsubusb_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Subtract packed unsigned byte integers in `ymm3/m256` from packed unsigned byte integers in `ymm2` and saturate result.
-	fn vpsubusb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpsubusb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Subtract packed unsigned byte integers in `ymm3/m256` from packed unsigned byte integers in `ymm2` and saturate result.
-	fn vpsubusb_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpsubusb_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Subtract packed unsigned word integers in `xmm3/m128` from packed unsigned word integers in `xmm2` and saturate result.
 	fn vpsubusw_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -11207,10 +11207,10 @@ pub trait InstructionStream
 	fn vpsubusw_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Subtract packed unsigned word integers in `ymm3/m256` from packed unsigned word integers in `ymm2` and saturate result.
-	fn vpsubusw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpsubusw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Subtract packed unsigned word integers in `ymm3/m256` from packed unsigned word integers in `ymm2` and saturate result.
-	fn vpsubusw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpsubusw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Subtract packed word integers in `xmm3/m128` from `xmm2`.
 	fn vpsubw_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -11219,10 +11219,10 @@ pub trait InstructionStream
 	fn vpsubw_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Subtract packed word integers in `ymm3/m256` from `ymm2`.
-	fn vpsubw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpsubw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Subtract packed word integers in `ymm3/m256` from `ymm2`.
-	fn vpsubw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpsubw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Set Zero Flag (ZF) and Carry Flag (CF) depending on bitwise AND and ANDN of sources.
 	fn vptest_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -11231,10 +11231,10 @@ pub trait InstructionStream
 	fn vptest_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Set Zero Flag (ZF) and Carry Flag (CF) depending on bitwise AND and ANDN of sources.
-	fn vptest_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
+	fn vptest_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory);
 
 	/// Set Zero Flag (ZF) and Carry Flag (CF) depending on bitwise AND and ANDN of sources.
-	fn vptest_YMM_YMM(&mut self, arg0: YMM, arg1: YMM);
+	fn vptest_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister);
 
 	/// Interleave high-order bytes from `xmm2` and `xmm3/m128` into `xmm1`.
 	fn vpunpckhbw_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -11243,10 +11243,10 @@ pub trait InstructionStream
 	fn vpunpckhbw_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Interleave high-order bytes from `ymm2` and `ymm3/m256` into `ymm1`.
-	fn vpunpckhbw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpunpckhbw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Interleave high-order bytes from `ymm2` and `ymm3/m256` into `ymm1`.
-	fn vpunpckhbw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpunpckhbw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Interleave high-order doublewords from `xmm2` and `xmm3/m128` into `xmm1`.
 	fn vpunpckhdq_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -11255,10 +11255,10 @@ pub trait InstructionStream
 	fn vpunpckhdq_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Interleave high-order doublewords from `ymm2` and `ymm3/m256` into `ymm1`.
-	fn vpunpckhdq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpunpckhdq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Interleave high-order doublewords from `ymm2` and `ymm3/m256` into `ymm1`.
-	fn vpunpckhdq_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpunpckhdq_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Interleave high-order quadword from `xmm2` and `xmm3/m128` into `xmm1`.
 	fn vpunpckhqdq_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -11267,10 +11267,10 @@ pub trait InstructionStream
 	fn vpunpckhqdq_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Interleave high-order quadword from `ymm2` and `ymm3/m256` into `ymm1`.
-	fn vpunpckhqdq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpunpckhqdq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Interleave high-order quadword from `ymm2` and `ymm3/m256` into `ymm1`.
-	fn vpunpckhqdq_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpunpckhqdq_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Interleave high-order words from `xmm2` and `xmm3/m128` into `xmm1`.
 	fn vpunpckhwd_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -11279,10 +11279,10 @@ pub trait InstructionStream
 	fn vpunpckhwd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Interleave high-order words from `ymm2` and `ymm3/m256` into `ymm1`.
-	fn vpunpckhwd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpunpckhwd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Interleave high-order words from `ymm2` and `ymm3/m256` into `ymm1`.
-	fn vpunpckhwd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpunpckhwd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Interleave low-order bytes from `xmm2` and `xmm3/m128` into `xmm1`.
 	fn vpunpcklbw_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -11291,10 +11291,10 @@ pub trait InstructionStream
 	fn vpunpcklbw_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Interleave low-order bytes from `ymm2` and `ymm3/m256` into `ymm1`.
-	fn vpunpcklbw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpunpcklbw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Interleave low-order bytes from `ymm2` and `ymm3/m256` into `ymm1`.
-	fn vpunpcklbw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpunpcklbw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Interleave low-order doublewords from `xmm2` and `xmm3/m128` into `xmm1`.
 	fn vpunpckldq_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -11303,10 +11303,10 @@ pub trait InstructionStream
 	fn vpunpckldq_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Interleave low-order doublewords from `ymm2` and `ymm3/m256` into `ymm1`.
-	fn vpunpckldq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpunpckldq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Interleave low-order doublewords from `ymm2` and `ymm3/m256` into `ymm1`.
-	fn vpunpckldq_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpunpckldq_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Interleave low-order quadword from `xmm2` and `xmm3/m128` into `xmm1`.
 	fn vpunpcklqdq_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -11315,10 +11315,10 @@ pub trait InstructionStream
 	fn vpunpcklqdq_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Interleave low-order quadword from `ymm2` and `ymm3/m256` into `ymm1`.
-	fn vpunpcklqdq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpunpcklqdq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Interleave low-order quadword from `ymm2` and `ymm3/m256` into `ymm1`.
-	fn vpunpcklqdq_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpunpcklqdq_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Interleave low-order words from `xmm2` and `xmm3/m128` into `xmm1`.
 	fn vpunpcklwd_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -11327,10 +11327,10 @@ pub trait InstructionStream
 	fn vpunpcklwd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Interleave low-order words from `ymm2` and `ymm3/m256` into `ymm1`.
-	fn vpunpcklwd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpunpcklwd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Interleave low-order words from `ymm2` and `ymm3/m256` into `ymm1`.
-	fn vpunpcklwd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpunpcklwd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Bitwise XOR of `xmm3/m128` and `xmm2`.
 	fn vpxor_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -11339,10 +11339,10 @@ pub trait InstructionStream
 	fn vpxor_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Bitwise XOR of `ymm3/m256` and `ymm2`.
-	fn vpxor_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vpxor_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Bitwise XOR of `ymm3/m256` and `ymm2`.
-	fn vpxor_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vpxor_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Computes the approximate reciprocals of packed single-precision values in `xmm2/mem` and stores the results in `xmm1`.
 	fn vrcpps_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -11351,10 +11351,10 @@ pub trait InstructionStream
 	fn vrcpps_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Computes the approximate reciprocals of packed single-precision values in `ymm2/mem` and stores the results in `ymm1`.
-	fn vrcpps_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
+	fn vrcpps_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory);
 
 	/// Computes the approximate reciprocals of packed single-precision values in `ymm2/mem` and stores the results in `ymm1`.
-	fn vrcpps_YMM_YMM(&mut self, arg0: YMM, arg1: YMM);
+	fn vrcpps_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister);
 
 	/// Computes the approximate reciprocal of the scalar single-precision floating-point value in `xmm3/m32` and stores the result in `xmm1`.
 	///
@@ -11379,12 +11379,12 @@ pub trait InstructionStream
 	/// Round packed double-precision floating-point values in `ymm2/m256` and place the result in `ymm1`.
 	///
 	/// The rounding mode is determined by `imm8`.
-	fn vroundpd_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: Any256BitMemory, arg2: Immediate8Bit);
+	fn vroundpd_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: Any256BitMemory, arg2: Immediate8Bit);
 
 	/// Round packed double-precision floating-point values in `ymm2/m256` and place the result in `ymm1`.
 	///
 	/// The rounding mode is determined by `imm8`.
-	fn vroundpd_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit);
+	fn vroundpd_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit);
 
 	/// Round packed single-precision floating-point values in `xmm2/m128` and place the result in `xmm1`.
 	///
@@ -11399,12 +11399,12 @@ pub trait InstructionStream
 	/// Round packed single-precision floating-point values in `ymm2/m256` and place the result in `ymm1`.
 	///
 	/// The rounding mode is determined by `imm8`.
-	fn vroundps_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: Any256BitMemory, arg2: Immediate8Bit);
+	fn vroundps_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: Any256BitMemory, arg2: Immediate8Bit);
 
 	/// Round packed single-precision floating-point values in `ymm2/m256` and place the result in `ymm1`.
 	///
 	/// The rounding mode is determined by `imm8`.
-	fn vroundps_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit);
+	fn vroundps_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit);
 
 	/// Round the low packed double-precision floating-point value in `xmm3/m64` and place the result in `xmm1`.
 	///
@@ -11441,10 +11441,10 @@ pub trait InstructionStream
 	fn vrsqrtps_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Computes the approximate reciprocals of the square roots of packed single-precision values in `ymm2/mem` and stores the results in `ymm1`.
-	fn vrsqrtps_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
+	fn vrsqrtps_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory);
 
 	/// Computes the approximate reciprocals of the square roots of packed single-precision values in `ymm2/mem` and stores the results in `ymm1`.
-	fn vrsqrtps_YMM_YMM(&mut self, arg0: YMM, arg1: YMM);
+	fn vrsqrtps_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister);
 
 	/// Computes the approximate reciprocal of the square root of the low single-precision floating-point value in `xmm3/m32` and stores the results in `xmm1`.
 	///
@@ -11463,10 +11463,10 @@ pub trait InstructionStream
 	fn vshufpd_XMMRegister_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister, arg3: Immediate8Bit);
 
 	/// Shuffle Packed double-precision floating-point values selected by `imm8` from `ymm2` and `ymm3/mem`.
-	fn vshufpd_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: Immediate8Bit);
+	fn vshufpd_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: Immediate8Bit);
 
 	/// Shuffle Packed double-precision floating-point values selected by `imm8` from `ymm2` and `ymm3/mem`.
-	fn vshufpd_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: Immediate8Bit);
+	fn vshufpd_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: Immediate8Bit);
 
 	/// Shuffle Packed single-precision floating-point values selected by `imm8` from `xmm2` and `xmm3/mem`.
 	fn vshufps_XMMRegister_XMMRegister_Any128BitMemory_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory, arg3: Immediate8Bit);
@@ -11475,10 +11475,10 @@ pub trait InstructionStream
 	fn vshufps_XMMRegister_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister, arg3: Immediate8Bit);
 
 	/// Shuffle Packed single-precision floating-point values selected by `imm8` from `ymm2` and `ymm3/mem`.
-	fn vshufps_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: Immediate8Bit);
+	fn vshufps_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: Immediate8Bit);
 
 	/// Shuffle Packed single-precision floating-point values selected by `imm8` from `ymm2` and `ymm3/mem`.
-	fn vshufps_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: Immediate8Bit);
+	fn vshufps_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: Immediate8Bit);
 
 	/// Computes Square Roots of the packed double-precision floating-point values in `xmm2/m128` and stores the result in `xmm1`.
 	fn vsqrtpd_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -11487,10 +11487,10 @@ pub trait InstructionStream
 	fn vsqrtpd_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Computes Square Roots of the packed double-precision floating-point values in `ymm2/m256` and stores the result in `ymm1`.
-	fn vsqrtpd_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
+	fn vsqrtpd_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory);
 
 	/// Computes Square Roots of the packed double-precision floating-point values in `ymm2/m256` and stores the result in `ymm1`.
-	fn vsqrtpd_YMM_YMM(&mut self, arg0: YMM, arg1: YMM);
+	fn vsqrtpd_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister);
 
 	/// Computes Square Roots of the packed single-precision floating-point values in `xmm2/m128` and stores the result in `xmm1`.
 	fn vsqrtps_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -11499,10 +11499,10 @@ pub trait InstructionStream
 	fn vsqrtps_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Computes Square Roots of the packed single-precision floating-point values in `ymm2/m256` and stores the result in `ymm1`.
-	fn vsqrtps_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
+	fn vsqrtps_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory);
 
 	/// Computes Square Roots of the packed single-precision floating-point values in `ymm2/m256` and stores the result in `ymm1`.
-	fn vsqrtps_YMM_YMM(&mut self, arg0: YMM, arg1: YMM);
+	fn vsqrtps_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister);
 
 	/// Computes square root of the low double-precision floating-point value in `xmm3/m64` and stores the results in `xmm2`.
 	///
@@ -11534,10 +11534,10 @@ pub trait InstructionStream
 	fn vsubpd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Subtract packed double-precision floating-point values in `ymm3/mem` from `ymm2` and stores result in `ymm1`.
-	fn vsubpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vsubpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Subtract packed double-precision floating-point values in `ymm3/mem` from `ymm2` and stores result in `ymm1`.
-	fn vsubpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vsubpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Subtract packed single-precision floating-point values in `xmm3/mem` from `xmm2` and stores result in `xmm1`.
 	fn vsubps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -11546,10 +11546,10 @@ pub trait InstructionStream
 	fn vsubps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Subtract packed single-precision floating-point values in `ymm3/mem` from `ymm2` and stores result in `ymm1`.
-	fn vsubps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vsubps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Subtract packed single-precision floating-point values in `ymm3/mem` from `ymm2` and stores result in `ymm1`.
-	fn vsubps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vsubps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Subtract the low double-precision floating-point value in `xmm3/mem` from `xmm2` and store the result in `xmm1`.
 	fn vsubsd_XMMRegister_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any64BitMemory);
@@ -11570,10 +11570,10 @@ pub trait InstructionStream
 	fn vtestpd_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Set Zero Flag (ZF) and Carry Flag (CF) depending on sign bit AND and ANDN of packed double-precision floating-point sources.
-	fn vtestpd_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
+	fn vtestpd_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory);
 
 	/// Set Zero Flag (ZF) and Carry Flag (CF) depending on sign bit AND and ANDN of packed double-precision floating-point sources.
-	fn vtestpd_YMM_YMM(&mut self, arg0: YMM, arg1: YMM);
+	fn vtestpd_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister);
 
 	/// Set Zero Flag (ZF) and Carry Flag (CF) depending on sign bit AND and ANDN of packed single-precision floating-point sources.
 	fn vtestps_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: Any128BitMemory);
@@ -11582,10 +11582,10 @@ pub trait InstructionStream
 	fn vtestps_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Set Zero Flag (ZF) and Carry Flag (CF) depending on sign bit AND and ANDN of packed single-precision floating-point sources.
-	fn vtestps_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory);
+	fn vtestps_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory);
 
 	/// Set Zero Flag (ZF) and Carry Flag (CF) depending on sign bit AND and ANDN of packed single-precision floating-point sources.
-	fn vtestps_YMM_YMM(&mut self, arg0: YMM, arg1: YMM);
+	fn vtestps_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister);
 
 	/// Compare low double-precision floating-point values in `xmm1` and `xmm2/mem64` and sets the appropriate flags in `EFLAGS` accordingly.
 	fn vucomisd_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: Any64BitMemory);
@@ -11606,10 +11606,10 @@ pub trait InstructionStream
 	fn vunpckhpd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Unpacks and Interleaves double-precision floating-point values from high quadwords of `ymm2` and `ymm3/m256`.
-	fn vunpckhpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vunpckhpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Unpacks and Interleaves double-precision floating-point values from high quadwords of `ymm2` and `ymm3/m256`.
-	fn vunpckhpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vunpckhpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Unpacks and Interleaves single-precision floating-point values from high quadwords of `xmm2` and `xmm3/m128`.
 	fn vunpckhps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -11618,10 +11618,10 @@ pub trait InstructionStream
 	fn vunpckhps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Unpacks and Interleaves single-precision floating-point values from high quadwords of `ymm2` and `ymm3/m256`.
-	fn vunpckhps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vunpckhps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Unpacks and Interleaves single-precision floating-point values from high quadwords of `ymm2` and `ymm3/m256`.
-	fn vunpckhps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vunpckhps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Unpacks and Interleaves double-precision floating-point values low high quadwords of `xmm2` and `xmm3/m128`.
 	fn vunpcklpd_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -11630,10 +11630,10 @@ pub trait InstructionStream
 	fn vunpcklpd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Unpacks and Interleaves double-precision floating-point values low high quadwords of `ymm2` and `ymm3/m256`.
-	fn vunpcklpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vunpcklpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Unpacks and Interleaves double-precision floating-point values low high quadwords of `ymm2` and `ymm3/m256`.
-	fn vunpcklpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vunpcklpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Unpacks and Interleaves single-precision floating-point values from low quadwords of `xmm2` and `xmm3/m128`.
 	fn vunpcklps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -11642,10 +11642,10 @@ pub trait InstructionStream
 	fn vunpcklps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Unpacks and Interleaves single-precision floating-point values from low quadwords of `ymm2` and `ymm3/m256`.
-	fn vunpcklps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vunpcklps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Unpacks and Interleaves single-precision floating-point values from low quadwords of `ymm2` and `ymm3/m256`.
-	fn vunpcklps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vunpcklps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Return the bitwise logical XOR of packed double-precision floating-point values in `xmm2` and `xmm3/mem`.
 	fn vxorpd_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -11654,10 +11654,10 @@ pub trait InstructionStream
 	fn vxorpd_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Return the bitwise logical XOR of packed double-precision floating-point values in `ymm2` and `ymm3/mem`.
-	fn vxorpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vxorpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Return the bitwise logical XOR of packed double-precision floating-point values in `ymm2` and `ymm3/mem`.
-	fn vxorpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vxorpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Return the bitwise logical XOR of packed single-precision floating-point values in `xmm2` and `xmm3/mem`.
 	fn vxorps_XMMRegister_XMMRegister_Any128BitMemory(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Any128BitMemory);
@@ -11666,10 +11666,10 @@ pub trait InstructionStream
 	fn vxorps_XMMRegister_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister);
 
 	/// Return the bitwise logical XOR of packed single-precision floating-point values in `ymm2` and `ymm3/mem`.
-	fn vxorps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory);
+	fn vxorps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory);
 
 	/// Return the bitwise logical XOR of packed single-precision floating-point values in `ymm2` and `ymm3/mem`.
-	fn vxorps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM);
+	fn vxorps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister);
 
 	/// Zero all YMM registers.
 	fn vzeroall(&mut self);
@@ -44342,7 +44342,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn mov_RAX_MemoryOffset64Bit(&mut self, arg0: RAX, arg1MemoryOffset64Bit)
+	fn mov_RAX_MemoryOffset64Bit(&mut self, arg0: RAX, arg1: MemoryOffset64Bit)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -78038,7 +78038,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vaddpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vaddpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -78064,7 +78064,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vaddpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vaddpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -78142,7 +78142,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vaddps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vaddps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -78168,7 +78168,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vaddps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vaddps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -78350,7 +78350,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vaddsubpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vaddsubpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -78376,7 +78376,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vaddsubpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vaddsubpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -78454,7 +78454,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vaddsubps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vaddsubps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -78480,7 +78480,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vaddsubps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vaddsubps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -78870,7 +78870,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vandnpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vandnpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -78896,7 +78896,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vandnpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vandnpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -78974,7 +78974,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vandnps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vandnps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -79000,7 +79000,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vandnps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vandnps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -79078,7 +79078,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vandpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vandpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -79104,7 +79104,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vandpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vandpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -79182,7 +79182,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vandps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vandps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -79208,7 +79208,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vandps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vandps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -79286,7 +79286,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vblendpd_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: Immediate8Bit)
+	fn vblendpd_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -79312,7 +79312,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vblendpd_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: Immediate8Bit)
+	fn vblendpd_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -79390,7 +79390,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vblendps_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: Immediate8Bit)
+	fn vblendps_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -79416,7 +79416,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vblendps_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: Immediate8Bit)
+	fn vblendps_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -79494,7 +79494,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vblendvpd_YMM_YMM_Any256BitMemory_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: YMM)
+	fn vblendvpd_YMM_YMM_Any256BitMemory_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -79520,7 +79520,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vblendvpd_YMM_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: YMM)
+	fn vblendvpd_YMM_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -79598,7 +79598,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vblendvps_YMM_YMM_Any256BitMemory_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: YMM)
+	fn vblendvps_YMM_YMM_Any256BitMemory_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -79624,7 +79624,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vblendvps_YMM_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: YMM)
+	fn vblendvps_YMM_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -79650,7 +79650,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vbroadcastf128_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: Any128BitMemory)
+	fn vbroadcastf128_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: Any128BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -79676,7 +79676,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vbroadcasti128_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: Any128BitMemory)
+	fn vbroadcasti128_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: Any128BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -79702,7 +79702,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vbroadcastsd_YMM_Any64BitMemory(&mut self, arg0: YMM, arg1: Any64BitMemory)
+	fn vbroadcastsd_YMM_Any64BitMemory(&mut self, arg0: YMMRegister, arg1: Any64BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -79728,7 +79728,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vbroadcastsd_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister)
+	fn vbroadcastsd_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -79806,7 +79806,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vbroadcastss_YMM_Any32BitMemory(&mut self, arg0: YMM, arg1: Any32BitMemory)
+	fn vbroadcastss_YMM_Any32BitMemory(&mut self, arg0: YMMRegister, arg1: Any32BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -79832,7 +79832,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vbroadcastss_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister)
+	fn vbroadcastss_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -79910,7 +79910,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vcmppd_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: Immediate8Bit)
+	fn vcmppd_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -79936,7 +79936,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vcmppd_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: Immediate8Bit)
+	fn vcmppd_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -80014,7 +80014,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vcmpps_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: Immediate8Bit)
+	fn vcmpps_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -80040,7 +80040,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vcmpps_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: Immediate8Bit)
+	fn vcmpps_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -80326,7 +80326,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vcvtdq2pd_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: Any128BitMemory)
+	fn vcvtdq2pd_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: Any128BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -80352,7 +80352,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vcvtdq2pd_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister)
+	fn vcvtdq2pd_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -80430,7 +80430,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vcvtdq2ps_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory)
+	fn vcvtdq2ps_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -80456,7 +80456,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vcvtdq2ps_YMM_YMM(&mut self, arg0: YMM, arg1: YMM)
+	fn vcvtdq2ps_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -80560,7 +80560,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vcvtpd2dq_XMMRegister_YMM(&mut self, arg0: XMMRegister, arg1: YMM)
+	fn vcvtpd2dq_XMMRegister_YMM(&mut self, arg0: XMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -80664,7 +80664,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vcvtpd2ps_XMMRegister_YMM(&mut self, arg0: XMMRegister, arg1: YMM)
+	fn vcvtpd2ps_XMMRegister_YMM(&mut self, arg0: XMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -80742,7 +80742,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vcvtph2ps_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: Any128BitMemory)
+	fn vcvtph2ps_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: Any128BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -80768,7 +80768,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vcvtph2ps_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister)
+	fn vcvtph2ps_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -80846,7 +80846,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vcvtps2dq_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory)
+	fn vcvtps2dq_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -80872,7 +80872,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vcvtps2dq_YMM_YMM(&mut self, arg0: YMM, arg1: YMM)
+	fn vcvtps2dq_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -80950,7 +80950,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vcvtps2pd_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: Any128BitMemory)
+	fn vcvtps2pd_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: Any128BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -80976,7 +80976,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vcvtps2pd_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister)
+	fn vcvtps2pd_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -81002,7 +81002,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vcvtps2ph_Any128BitMemory_YMM_Immediate8Bit(&mut self, arg0: Any128BitMemory, arg1: YMM, arg2: Immediate8Bit)
+	fn vcvtps2ph_Any128BitMemory_YMM_Immediate8Bit(&mut self, arg0: Any128BitMemory, arg1: YMMRegister, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -81080,7 +81080,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vcvtps2ph_XMMRegister_YMM_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: YMM, arg2: Immediate8Bit)
+	fn vcvtps2ph_XMMRegister_YMM_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: YMMRegister, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -81704,7 +81704,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vcvttpd2dq_XMMRegister_YMM(&mut self, arg0: XMMRegister, arg1: YMM)
+	fn vcvttpd2dq_XMMRegister_YMM(&mut self, arg0: XMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -81782,7 +81782,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vcvttps2dq_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory)
+	fn vcvttps2dq_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -81808,7 +81808,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vcvttps2dq_YMM_YMM(&mut self, arg0: YMM, arg1: YMM)
+	fn vcvttps2dq_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -82094,7 +82094,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vdivpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vdivpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -82120,7 +82120,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vdivpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vdivpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -82198,7 +82198,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vdivps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vdivps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -82224,7 +82224,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vdivps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vdivps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -82458,7 +82458,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vdpps_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: Immediate8Bit)
+	fn vdpps_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -82484,7 +82484,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vdpps_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: Immediate8Bit)
+	fn vdpps_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -82614,7 +82614,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vextractf128_Any128BitMemory_YMM_Immediate8Bit(&mut self, arg0: Any128BitMemory, arg1: YMM, arg2: Immediate8Bit)
+	fn vextractf128_Any128BitMemory_YMM_Immediate8Bit(&mut self, arg0: Any128BitMemory, arg1: YMMRegister, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -82640,7 +82640,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vextractf128_XMMRegister_YMM_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: YMM, arg2: Immediate8Bit)
+	fn vextractf128_XMMRegister_YMM_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: YMMRegister, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -82666,7 +82666,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vextracti128_Any128BitMemory_YMM_Immediate8Bit(&mut self, arg0: Any128BitMemory, arg1: YMM, arg2: Immediate8Bit)
+	fn vextracti128_Any128BitMemory_YMM_Immediate8Bit(&mut self, arg0: Any128BitMemory, arg1: YMMRegister, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -82692,7 +82692,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vextracti128_XMMRegister_YMM_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: YMM, arg2: Immediate8Bit)
+	fn vextracti128_XMMRegister_YMM_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: YMMRegister, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -82822,7 +82822,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmadd132pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfmadd132pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -82848,7 +82848,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmadd132pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfmadd132pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -82926,7 +82926,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmadd132ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfmadd132ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -82952,7 +82952,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmadd132ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfmadd132ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -83134,7 +83134,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmadd213pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfmadd213pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -83160,7 +83160,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmadd213pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfmadd213pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -83238,7 +83238,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmadd213ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfmadd213ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -83264,7 +83264,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmadd213ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfmadd213ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -83446,7 +83446,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmadd231pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfmadd231pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -83472,7 +83472,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmadd231pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfmadd231pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -83550,7 +83550,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmadd231ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfmadd231ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -83576,7 +83576,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmadd231ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfmadd231ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -83758,7 +83758,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmaddsub132pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfmaddsub132pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -83784,7 +83784,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmaddsub132pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfmaddsub132pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -83862,7 +83862,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmaddsub132ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfmaddsub132ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -83888,7 +83888,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmaddsub132ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfmaddsub132ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -83966,7 +83966,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmaddsub213pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfmaddsub213pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -83992,7 +83992,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmaddsub213pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfmaddsub213pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -84070,7 +84070,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmaddsub213ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfmaddsub213ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -84096,7 +84096,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmaddsub213ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfmaddsub213ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -84174,7 +84174,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmaddsub231pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfmaddsub231pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -84200,7 +84200,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmaddsub231pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfmaddsub231pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -84278,7 +84278,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmaddsub231ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfmaddsub231ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -84304,7 +84304,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmaddsub231ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfmaddsub231ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -84382,7 +84382,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmsub132pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfmsub132pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -84408,7 +84408,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmsub132pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfmsub132pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -84486,7 +84486,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmsub132ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfmsub132ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -84512,7 +84512,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmsub132ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfmsub132ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -84694,7 +84694,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmsub213pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfmsub213pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -84720,7 +84720,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmsub213pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfmsub213pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -84798,7 +84798,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmsub213ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfmsub213ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -84824,7 +84824,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmsub213ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfmsub213ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -85006,7 +85006,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmsub231pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfmsub231pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -85032,7 +85032,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmsub231pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfmsub231pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -85110,7 +85110,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmsub231ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfmsub231ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -85136,7 +85136,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmsub231ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfmsub231ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -85318,7 +85318,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmsubadd132pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfmsubadd132pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -85344,7 +85344,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmsubadd132pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfmsubadd132pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -85422,7 +85422,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmsubadd132ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfmsubadd132ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -85448,7 +85448,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmsubadd132ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfmsubadd132ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -85526,7 +85526,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmsubadd213pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfmsubadd213pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -85552,7 +85552,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmsubadd213pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfmsubadd213pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -85630,7 +85630,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmsubadd213ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfmsubadd213ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -85656,7 +85656,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmsubadd213ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfmsubadd213ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -85734,7 +85734,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmsubadd231pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfmsubadd231pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -85760,7 +85760,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmsubadd231pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfmsubadd231pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -85838,7 +85838,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmsubadd231ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfmsubadd231ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -85864,7 +85864,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfmsubadd231ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfmsubadd231ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -85942,7 +85942,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfnmadd132pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfnmadd132pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -85968,7 +85968,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfnmadd132pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfnmadd132pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -86046,7 +86046,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfnmadd132ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfnmadd132ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -86072,7 +86072,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfnmadd132ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfnmadd132ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -86254,7 +86254,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfnmadd213pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfnmadd213pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -86280,7 +86280,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfnmadd213pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfnmadd213pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -86358,7 +86358,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfnmadd213ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfnmadd213ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -86384,7 +86384,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfnmadd213ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfnmadd213ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -86566,7 +86566,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfnmadd231pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfnmadd231pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -86592,7 +86592,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfnmadd231pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfnmadd231pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -86670,7 +86670,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfnmadd231ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfnmadd231ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -86696,7 +86696,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfnmadd231ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfnmadd231ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -86878,7 +86878,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfnmsub132pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfnmsub132pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -86904,7 +86904,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfnmsub132pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfnmsub132pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -86982,7 +86982,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfnmsub132ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfnmsub132ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -87008,7 +87008,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfnmsub132ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfnmsub132ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -87190,7 +87190,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfnmsub213pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfnmsub213pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -87216,7 +87216,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfnmsub213pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfnmsub213pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -87294,7 +87294,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfnmsub213ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfnmsub213ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -87320,7 +87320,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfnmsub213ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfnmsub213ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -87502,7 +87502,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfnmsub231pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfnmsub231pd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -87528,7 +87528,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfnmsub231pd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfnmsub231pd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -87606,7 +87606,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfnmsub231ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vfnmsub231ps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -87632,7 +87632,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vfnmsub231ps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vfnmsub231ps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -87788,7 +87788,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vgatherdpd_YMM_Any32BitMemory_YMM(&mut self, arg0: YMM, arg1: Any32BitMemory, arg2: YMM)
+	fn vgatherdpd_YMM_Any32BitMemory_YMM(&mut self, arg0: YMMRegister, arg1: Any32BitMemory, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -87840,7 +87840,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vgatherdps_YMM_Any32BitMemory_YMM(&mut self, arg0: YMM, arg1: Any32BitMemory, arg2: YMM)
+	fn vgatherdps_YMM_Any32BitMemory_YMM(&mut self, arg0: YMMRegister, arg1: Any32BitMemory, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -87892,7 +87892,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vgatherqpd_YMM_Any64BitMemory_YMM(&mut self, arg0: YMM, arg1: Any64BitMemory, arg2: YMM)
+	fn vgatherqpd_YMM_Any64BitMemory_YMM(&mut self, arg0: YMMRegister, arg1: Any64BitMemory, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -88022,7 +88022,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vhaddpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vhaddpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -88048,7 +88048,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vhaddpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vhaddpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -88126,7 +88126,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vhaddps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vhaddps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -88152,7 +88152,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vhaddps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vhaddps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -88230,7 +88230,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vhsubpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vhsubpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -88256,7 +88256,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vhsubpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vhsubpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -88334,7 +88334,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vhsubps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vhsubps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -88360,7 +88360,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vhsubps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vhsubps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -88386,7 +88386,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vinsertf128_YMM_YMM_Any128BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any128BitMemory, arg3: Immediate8Bit)
+	fn vinsertf128_YMM_YMM_Any128BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any128BitMemory, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -88412,7 +88412,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vinsertf128_YMM_YMM_XMMRegister_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: XMMRegister, arg3: Immediate8Bit)
+	fn vinsertf128_YMM_YMM_XMMRegister_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: XMMRegister, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -88438,7 +88438,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vinserti128_YMM_YMM_Any128BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any128BitMemory, arg3: Immediate8Bit)
+	fn vinserti128_YMM_YMM_Any128BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any128BitMemory, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -88464,7 +88464,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vinserti128_YMM_YMM_XMMRegister_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: XMMRegister, arg3: Immediate8Bit)
+	fn vinserti128_YMM_YMM_XMMRegister_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: XMMRegister, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -88568,7 +88568,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vlddqu_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory)
+	fn vlddqu_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -88672,7 +88672,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmaskmovpd_Any256BitMemory_YMM_YMM(&mut self, arg0: Any256BitMemory, arg1: YMM, arg2: YMM)
+	fn vmaskmovpd_Any256BitMemory_YMM_YMM(&mut self, arg0: Any256BitMemory, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -88724,7 +88724,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmaskmovpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vmaskmovpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -88776,7 +88776,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmaskmovps_Any256BitMemory_YMM_YMM(&mut self, arg0: Any256BitMemory, arg1: YMM, arg2: YMM)
+	fn vmaskmovps_Any256BitMemory_YMM_YMM(&mut self, arg0: Any256BitMemory, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -88828,7 +88828,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmaskmovps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vmaskmovps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -88906,7 +88906,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmaxpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vmaxpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -88932,7 +88932,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmaxpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vmaxpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -89010,7 +89010,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmaxps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vmaxps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -89036,7 +89036,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmaxps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vmaxps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -89218,7 +89218,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vminpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vminpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -89244,7 +89244,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vminpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vminpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -89322,7 +89322,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vminps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vminps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -89348,7 +89348,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vminps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vminps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -89504,7 +89504,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovapd_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMM)
+	fn vmovapd_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -89608,7 +89608,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovapd_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory)
+	fn vmovapd_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -89634,7 +89634,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovapd_YMM_YMM(&mut self, arg0: YMM, arg1: YMM)
+	fn vmovapd_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -89660,7 +89660,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovapd_YMM_YMM_1(&mut self, arg0: YMM, arg1: YMM)
+	fn vmovapd_YMM_YMM_1(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -89712,7 +89712,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovaps_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMM)
+	fn vmovaps_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -89816,7 +89816,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovaps_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory)
+	fn vmovaps_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -89842,7 +89842,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovaps_YMM_YMM(&mut self, arg0: YMM, arg1: YMM)
+	fn vmovaps_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -89868,7 +89868,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovaps_YMM_YMM_1(&mut self, arg0: YMM, arg1: YMM)
+	fn vmovaps_YMM_YMM_1(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -90050,7 +90050,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovddup_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory)
+	fn vmovddup_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -90076,7 +90076,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovddup_YMM_YMM(&mut self, arg0: YMM, arg1: YMM)
+	fn vmovddup_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -90128,7 +90128,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovdqa_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMM)
+	fn vmovdqa_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -90232,7 +90232,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovdqa_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory)
+	fn vmovdqa_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -90258,7 +90258,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovdqa_YMM_YMM(&mut self, arg0: YMM, arg1: YMM)
+	fn vmovdqa_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -90284,7 +90284,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovdqa_YMM_YMM_1(&mut self, arg0: YMM, arg1: YMM)
+	fn vmovdqa_YMM_YMM_1(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -90336,7 +90336,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovdqu_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMM)
+	fn vmovdqu_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -90440,7 +90440,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovdqu_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory)
+	fn vmovdqu_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -90466,7 +90466,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovdqu_YMM_YMM(&mut self, arg0: YMM, arg1: YMM)
+	fn vmovdqu_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -90492,7 +90492,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovdqu_YMM_YMM_1(&mut self, arg0: YMM, arg1: YMM)
+	fn vmovdqu_YMM_YMM_1(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -90804,7 +90804,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovmskpd_Register32Bit_YMM(&mut self, arg0: Register32Bit, arg1: YMM)
+	fn vmovmskpd_Register32Bit_YMM(&mut self, arg0: Register32Bit, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -90856,7 +90856,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovmskpd_Register64Bit_YMM(&mut self, arg0: Register64Bit, arg1: YMM)
+	fn vmovmskpd_Register64Bit_YMM(&mut self, arg0: Register64Bit, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -90908,7 +90908,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovmskps_Register32Bit_YMM(&mut self, arg0: Register32Bit, arg1: YMM)
+	fn vmovmskps_Register32Bit_YMM(&mut self, arg0: Register32Bit, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -90960,7 +90960,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovmskps_Register64Bit_YMM(&mut self, arg0: Register64Bit, arg1: YMM)
+	fn vmovmskps_Register64Bit_YMM(&mut self, arg0: Register64Bit, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -91012,7 +91012,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovntdq_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMM)
+	fn vmovntdq_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -91064,7 +91064,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovntdqa_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory)
+	fn vmovntdqa_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -91116,7 +91116,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovntpd_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMM)
+	fn vmovntpd_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -91168,7 +91168,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovntps_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMM)
+	fn vmovntps_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -91558,7 +91558,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovshdup_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory)
+	fn vmovshdup_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -91584,7 +91584,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovshdup_YMM_YMM(&mut self, arg0: YMM, arg1: YMM)
+	fn vmovshdup_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -91662,7 +91662,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovsldup_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory)
+	fn vmovsldup_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -91688,7 +91688,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovsldup_YMM_YMM(&mut self, arg0: YMM, arg1: YMM)
+	fn vmovsldup_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -91844,7 +91844,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovupd_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMM)
+	fn vmovupd_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -91948,7 +91948,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovupd_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory)
+	fn vmovupd_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -91974,7 +91974,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovupd_YMM_YMM(&mut self, arg0: YMM, arg1: YMM)
+	fn vmovupd_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -92000,7 +92000,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovupd_YMM_YMM_1(&mut self, arg0: YMM, arg1: YMM)
+	fn vmovupd_YMM_YMM_1(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -92052,7 +92052,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovups_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMM)
+	fn vmovups_Any256BitMemory_YMM(&mut self, arg0: Any256BitMemory, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -92156,7 +92156,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovups_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory)
+	fn vmovups_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -92182,7 +92182,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovups_YMM_YMM(&mut self, arg0: YMM, arg1: YMM)
+	fn vmovups_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -92208,7 +92208,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmovups_YMM_YMM_1(&mut self, arg0: YMM, arg1: YMM)
+	fn vmovups_YMM_YMM_1(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -92286,7 +92286,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmpsadbw_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: Immediate8Bit)
+	fn vmpsadbw_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -92312,7 +92312,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmpsadbw_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: Immediate8Bit)
+	fn vmpsadbw_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -92390,7 +92390,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmulpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vmulpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -92416,7 +92416,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmulpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vmulpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -92494,7 +92494,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmulps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vmulps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -92520,7 +92520,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vmulps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vmulps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -92702,7 +92702,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vorpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vorpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -92728,7 +92728,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vorpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vorpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -92806,7 +92806,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vorps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vorps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -92832,7 +92832,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vorps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vorps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -92910,7 +92910,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpabsb_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory)
+	fn vpabsb_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -92936,7 +92936,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpabsb_YMM_YMM(&mut self, arg0: YMM, arg1: YMM)
+	fn vpabsb_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -93014,7 +93014,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpabsd_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory)
+	fn vpabsd_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -93040,7 +93040,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpabsd_YMM_YMM(&mut self, arg0: YMM, arg1: YMM)
+	fn vpabsd_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -93118,7 +93118,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpabsw_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory)
+	fn vpabsw_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -93144,7 +93144,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpabsw_YMM_YMM(&mut self, arg0: YMM, arg1: YMM)
+	fn vpabsw_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -93222,7 +93222,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpackssdw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpackssdw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -93248,7 +93248,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpackssdw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpackssdw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -93326,7 +93326,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpacksswb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpacksswb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -93352,7 +93352,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpacksswb_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpacksswb_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -93430,7 +93430,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpackusdw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpackusdw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -93456,7 +93456,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpackusdw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpackusdw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -93534,7 +93534,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpackuswb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpackuswb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -93560,7 +93560,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpackuswb_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpackuswb_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -93638,7 +93638,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpaddb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpaddb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -93664,7 +93664,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpaddb_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpaddb_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -93742,7 +93742,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpaddd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpaddd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -93768,7 +93768,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpaddd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpaddd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -93846,7 +93846,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpaddq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpaddq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -93872,7 +93872,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpaddq_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpaddq_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -93950,7 +93950,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpaddsb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpaddsb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -93976,7 +93976,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpaddsb_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpaddsb_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -94054,7 +94054,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpaddsw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpaddsw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -94080,7 +94080,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpaddsw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpaddsw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -94158,7 +94158,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpaddusb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpaddusb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -94184,7 +94184,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpaddusb_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpaddusb_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -94262,7 +94262,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpaddusw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpaddusw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -94288,7 +94288,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpaddusw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpaddusw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -94366,7 +94366,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpaddw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpaddw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -94392,7 +94392,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpaddw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpaddw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -94470,7 +94470,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpalignr_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: Immediate8Bit)
+	fn vpalignr_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -94496,7 +94496,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpalignr_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: Immediate8Bit)
+	fn vpalignr_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -94574,7 +94574,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpand_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpand_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -94600,7 +94600,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpand_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpand_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -94678,7 +94678,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpandn_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpandn_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -94704,7 +94704,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpandn_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpandn_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -94782,7 +94782,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpavgb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpavgb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -94808,7 +94808,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpavgb_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpavgb_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -94886,7 +94886,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpavgw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpavgw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -94912,7 +94912,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpavgw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpavgw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -94990,7 +94990,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpblendd_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: Immediate8Bit)
+	fn vpblendd_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -95016,7 +95016,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpblendd_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: Immediate8Bit)
+	fn vpblendd_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -95094,7 +95094,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpblendvb_YMM_YMM_Any256BitMemory_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: YMM)
+	fn vpblendvb_YMM_YMM_Any256BitMemory_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -95120,7 +95120,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpblendvb_YMM_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: YMM)
+	fn vpblendvb_YMM_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -95198,7 +95198,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpblendw_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: Immediate8Bit)
+	fn vpblendw_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -95224,7 +95224,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpblendw_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: Immediate8Bit)
+	fn vpblendw_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -95302,7 +95302,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpbroadcastb_YMM_Any8BitMemory(&mut self, arg0: YMM, arg1: Any8BitMemory)
+	fn vpbroadcastb_YMM_Any8BitMemory(&mut self, arg0: YMMRegister, arg1: Any8BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -95328,7 +95328,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpbroadcastb_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister)
+	fn vpbroadcastb_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -95406,7 +95406,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpbroadcastd_YMM_Any32BitMemory(&mut self, arg0: YMM, arg1: Any32BitMemory)
+	fn vpbroadcastd_YMM_Any32BitMemory(&mut self, arg0: YMMRegister, arg1: Any32BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -95432,7 +95432,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpbroadcastd_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister)
+	fn vpbroadcastd_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -95510,7 +95510,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpbroadcastq_YMM_Any64BitMemory(&mut self, arg0: YMM, arg1: Any64BitMemory)
+	fn vpbroadcastq_YMM_Any64BitMemory(&mut self, arg0: YMMRegister, arg1: Any64BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -95536,7 +95536,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpbroadcastq_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister)
+	fn vpbroadcastq_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -95614,7 +95614,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpbroadcastw_YMM_Any16BitMemory(&mut self, arg0: YMM, arg1: Any16BitMemory)
+	fn vpbroadcastw_YMM_Any16BitMemory(&mut self, arg0: YMMRegister, arg1: Any16BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -95640,7 +95640,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpbroadcastw_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister)
+	fn vpbroadcastw_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -95770,7 +95770,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpcmpeqb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpcmpeqb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -95796,7 +95796,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpcmpeqb_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpcmpeqb_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -95874,7 +95874,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpcmpeqd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpcmpeqd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -95900,7 +95900,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpcmpeqd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpcmpeqd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -95978,7 +95978,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpcmpeqq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpcmpeqq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -96004,7 +96004,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpcmpeqq_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpcmpeqq_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -96082,7 +96082,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpcmpeqw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpcmpeqw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -96108,7 +96108,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpcmpeqw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpcmpeqw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -96290,7 +96290,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpcmpgtb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpcmpgtb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -96316,7 +96316,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpcmpgtb_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpcmpgtb_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -96394,7 +96394,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpcmpgtd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpcmpgtd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -96420,7 +96420,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpcmpgtd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpcmpgtd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -96498,7 +96498,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpcmpgtq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpcmpgtq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -96524,7 +96524,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpcmpgtq_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpcmpgtq_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -96602,7 +96602,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpcmpgtw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpcmpgtw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -96628,7 +96628,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpcmpgtw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpcmpgtw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -96758,7 +96758,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vperm2f128_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: Immediate8Bit)
+	fn vperm2f128_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -96784,7 +96784,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vperm2f128_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: Immediate8Bit)
+	fn vperm2f128_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -96810,7 +96810,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vperm2i128_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: Immediate8Bit)
+	fn vperm2i128_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -96836,7 +96836,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vperm2i128_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: Immediate8Bit)
+	fn vperm2i128_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -96862,7 +96862,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpermd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpermd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -96888,7 +96888,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpermd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpermd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -97018,7 +97018,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpermilpd_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: Any256BitMemory, arg2: Immediate8Bit)
+	fn vpermilpd_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: Any256BitMemory, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -97044,7 +97044,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpermilpd_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit)
+	fn vpermilpd_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -97070,7 +97070,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpermilpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpermilpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -97096,7 +97096,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpermilpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpermilpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -97226,7 +97226,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpermilps_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: Any256BitMemory, arg2: Immediate8Bit)
+	fn vpermilps_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: Any256BitMemory, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -97252,7 +97252,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpermilps_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit)
+	fn vpermilps_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -97278,7 +97278,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpermilps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpermilps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -97304,7 +97304,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpermilps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpermilps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -97330,7 +97330,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpermpd_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: Any256BitMemory, arg2: Immediate8Bit)
+	fn vpermpd_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: Any256BitMemory, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -97356,7 +97356,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpermpd_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit)
+	fn vpermpd_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -97382,7 +97382,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpermps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpermps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -97408,7 +97408,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpermps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpermps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -97434,7 +97434,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpermq_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: Any256BitMemory, arg2: Immediate8Bit)
+	fn vpermq_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: Any256BitMemory, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -97460,7 +97460,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpermq_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit)
+	fn vpermq_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -97824,7 +97824,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpgatherdd_YMM_Any32BitMemory_YMM(&mut self, arg0: YMM, arg1: Any32BitMemory, arg2: YMM)
+	fn vpgatherdd_YMM_Any32BitMemory_YMM(&mut self, arg0: YMMRegister, arg1: Any32BitMemory, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -97876,7 +97876,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpgatherdq_YMM_Any32BitMemory_YMM(&mut self, arg0: YMM, arg1: Any32BitMemory, arg2: YMM)
+	fn vpgatherdq_YMM_Any32BitMemory_YMM(&mut self, arg0: YMMRegister, arg1: Any32BitMemory, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -97980,7 +97980,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpgatherqq_YMM_Any64BitMemory_YMM(&mut self, arg0: YMM, arg1: Any64BitMemory, arg2: YMM)
+	fn vpgatherqq_YMM_Any64BitMemory_YMM(&mut self, arg0: YMMRegister, arg1: Any64BitMemory, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -98058,7 +98058,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vphaddd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vphaddd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -98084,7 +98084,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vphaddd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vphaddd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -98162,7 +98162,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vphaddsw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vphaddsw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -98188,7 +98188,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vphaddsw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vphaddsw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -98266,7 +98266,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vphaddw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vphaddw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -98292,7 +98292,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vphaddw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vphaddw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -98422,7 +98422,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vphsubd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vphsubd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -98448,7 +98448,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vphsubd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vphsubd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -98526,7 +98526,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vphsubsw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vphsubsw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -98552,7 +98552,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vphsubsw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vphsubsw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -98630,7 +98630,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vphsubw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vphsubw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -98656,7 +98656,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vphsubw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vphsubw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -98942,7 +98942,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmaddubsw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpmaddubsw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -98968,7 +98968,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmaddubsw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpmaddubsw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -99046,7 +99046,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmaddwd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpmaddwd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -99072,7 +99072,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmaddwd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpmaddwd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -99124,7 +99124,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmaskmovd_Any256BitMemory_YMM_YMM(&mut self, arg0: Any256BitMemory, arg1: YMM, arg2: YMM)
+	fn vpmaskmovd_Any256BitMemory_YMM_YMM(&mut self, arg0: Any256BitMemory, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -99176,7 +99176,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmaskmovd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpmaskmovd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -99228,7 +99228,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmaskmovq_Any256BitMemory_YMM_YMM(&mut self, arg0: Any256BitMemory, arg1: YMM, arg2: YMM)
+	fn vpmaskmovq_Any256BitMemory_YMM_YMM(&mut self, arg0: Any256BitMemory, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -99280,7 +99280,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmaskmovq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpmaskmovq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -99358,7 +99358,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmaxsb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpmaxsb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -99384,7 +99384,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmaxsb_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpmaxsb_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -99462,7 +99462,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmaxsd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpmaxsd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -99488,7 +99488,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmaxsd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpmaxsd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -99566,7 +99566,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmaxsw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpmaxsw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -99592,7 +99592,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmaxsw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpmaxsw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -99670,7 +99670,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmaxub_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpmaxub_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -99696,7 +99696,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmaxub_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpmaxub_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -99774,7 +99774,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmaxud_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpmaxud_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -99800,7 +99800,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmaxud_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpmaxud_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -99878,7 +99878,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmaxuw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpmaxuw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -99904,7 +99904,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmaxuw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpmaxuw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -99982,7 +99982,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpminsb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpminsb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -100008,7 +100008,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpminsb_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpminsb_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -100086,7 +100086,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpminsd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpminsd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -100112,7 +100112,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpminsd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpminsd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -100242,7 +100242,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpminub_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpminub_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -100268,7 +100268,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpminub_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpminub_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -100346,7 +100346,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpminud_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpminud_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -100372,7 +100372,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpminud_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpminud_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -100450,7 +100450,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpminuw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpminuw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -100476,7 +100476,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpminuw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpminuw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -100528,7 +100528,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmovmskb_Register32Bit_YMM(&mut self, arg0: Register32Bit, arg1: YMM)
+	fn vpmovmskb_Register32Bit_YMM(&mut self, arg0: Register32Bit, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -100580,7 +100580,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmovmskb_Register64Bit_YMM(&mut self, arg0: Register64Bit, arg1: YMM)
+	fn vpmovmskb_Register64Bit_YMM(&mut self, arg0: Register64Bit, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -100658,7 +100658,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmovsxbd_YMM_Any64BitMemory(&mut self, arg0: YMM, arg1: Any64BitMemory)
+	fn vpmovsxbd_YMM_Any64BitMemory(&mut self, arg0: YMMRegister, arg1: Any64BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -100684,7 +100684,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmovsxbd_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister)
+	fn vpmovsxbd_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -100762,7 +100762,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmovsxbq_YMM_Any32BitMemory(&mut self, arg0: YMM, arg1: Any32BitMemory)
+	fn vpmovsxbq_YMM_Any32BitMemory(&mut self, arg0: YMMRegister, arg1: Any32BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -100788,7 +100788,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmovsxbq_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister)
+	fn vpmovsxbq_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -100866,7 +100866,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmovsxbw_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: Any128BitMemory)
+	fn vpmovsxbw_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: Any128BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -100892,7 +100892,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmovsxbw_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister)
+	fn vpmovsxbw_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -100970,7 +100970,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmovsxdq_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: Any128BitMemory)
+	fn vpmovsxdq_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: Any128BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -100996,7 +100996,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmovsxdq_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister)
+	fn vpmovsxdq_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -101074,7 +101074,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmovsxwd_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: Any128BitMemory)
+	fn vpmovsxwd_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: Any128BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -101100,7 +101100,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmovsxwd_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister)
+	fn vpmovsxwd_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -101178,7 +101178,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmovsxwq_YMM_Any64BitMemory(&mut self, arg0: YMM, arg1: Any64BitMemory)
+	fn vpmovsxwq_YMM_Any64BitMemory(&mut self, arg0: YMMRegister, arg1: Any64BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -101204,7 +101204,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmovsxwq_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister)
+	fn vpmovsxwq_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -101282,7 +101282,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmovzxbd_YMM_Any64BitMemory(&mut self, arg0: YMM, arg1: Any64BitMemory)
+	fn vpmovzxbd_YMM_Any64BitMemory(&mut self, arg0: YMMRegister, arg1: Any64BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -101308,7 +101308,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmovzxbd_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister)
+	fn vpmovzxbd_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -101386,7 +101386,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmovzxbq_YMM_Any32BitMemory(&mut self, arg0: YMM, arg1: Any32BitMemory)
+	fn vpmovzxbq_YMM_Any32BitMemory(&mut self, arg0: YMMRegister, arg1: Any32BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -101412,7 +101412,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmovzxbq_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister)
+	fn vpmovzxbq_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -101490,7 +101490,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmovzxbw_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: Any128BitMemory)
+	fn vpmovzxbw_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: Any128BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -101516,7 +101516,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmovzxbw_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister)
+	fn vpmovzxbw_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -101594,7 +101594,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmovzxdq_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: Any128BitMemory)
+	fn vpmovzxdq_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: Any128BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -101620,7 +101620,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmovzxdq_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister)
+	fn vpmovzxdq_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -101698,7 +101698,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmovzxwd_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: Any128BitMemory)
+	fn vpmovzxwd_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: Any128BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -101724,7 +101724,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmovzxwd_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister)
+	fn vpmovzxwd_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -101802,7 +101802,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmovzxwq_YMM_Any64BitMemory(&mut self, arg0: YMM, arg1: Any64BitMemory)
+	fn vpmovzxwq_YMM_Any64BitMemory(&mut self, arg0: YMMRegister, arg1: Any64BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -101828,7 +101828,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmovzxwq_YMM_XMMRegister(&mut self, arg0: YMM, arg1: XMMRegister)
+	fn vpmovzxwq_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -101906,7 +101906,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmuldq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpmuldq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -101932,7 +101932,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmuldq_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpmuldq_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -102010,7 +102010,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmulhrsw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpmulhrsw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -102036,7 +102036,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmulhrsw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpmulhrsw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -102114,7 +102114,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmulhuw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpmulhuw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -102140,7 +102140,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmulhuw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpmulhuw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -102218,7 +102218,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmulhw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpmulhw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -102244,7 +102244,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmulhw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpmulhw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -102322,7 +102322,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmulld_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpmulld_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -102348,7 +102348,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmulld_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpmulld_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -102426,7 +102426,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmullw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpmullw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -102452,7 +102452,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmullw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpmullw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -102530,7 +102530,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmuludq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpmuludq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -102556,7 +102556,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpmuludq_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpmuludq_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -102634,7 +102634,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpor_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpor_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -102660,7 +102660,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpor_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpor_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -102738,7 +102738,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsadbw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpsadbw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -102764,7 +102764,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsadbw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpsadbw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -102842,7 +102842,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpshufb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpshufb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -102868,7 +102868,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpshufb_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpshufb_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -102946,7 +102946,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpshufd_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: Any256BitMemory, arg2: Immediate8Bit)
+	fn vpshufd_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: Any256BitMemory, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -102972,7 +102972,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpshufd_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit)
+	fn vpshufd_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -103050,7 +103050,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpshufhw_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: Any256BitMemory, arg2: Immediate8Bit)
+	fn vpshufhw_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: Any256BitMemory, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -103076,7 +103076,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpshufhw_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit)
+	fn vpshufhw_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -103154,7 +103154,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpshuflw_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: Any256BitMemory, arg2: Immediate8Bit)
+	fn vpshuflw_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: Any256BitMemory, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -103180,7 +103180,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpshuflw_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit)
+	fn vpshuflw_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -103440,7 +103440,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpslld_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit)
+	fn vpslld_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -103466,7 +103466,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpslld_YMM_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any128BitMemory)
+	fn vpslld_YMM_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any128BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -103492,7 +103492,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpslld_YMM_YMM_XMMRegister(&mut self, arg0: YMM, arg1: YMM, arg2: XMMRegister)
+	fn vpslld_YMM_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -103544,7 +103544,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpslldq_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit)
+	fn vpslldq_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -103648,7 +103648,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsllq_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit)
+	fn vpsllq_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -103674,7 +103674,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsllq_YMM_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any128BitMemory)
+	fn vpsllq_YMM_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any128BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -103700,7 +103700,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsllq_YMM_YMM_XMMRegister(&mut self, arg0: YMM, arg1: YMM, arg2: XMMRegister)
+	fn vpsllq_YMM_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -103778,7 +103778,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsllvd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpsllvd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -103804,7 +103804,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsllvd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpsllvd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -103882,7 +103882,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsllvq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpsllvq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -103908,7 +103908,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsllvq_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpsllvq_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -104012,7 +104012,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsllw_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit)
+	fn vpsllw_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -104038,7 +104038,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsllw_YMM_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any128BitMemory)
+	fn vpsllw_YMM_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any128BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -104064,7 +104064,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsllw_YMM_YMM_XMMRegister(&mut self, arg0: YMM, arg1: YMM, arg2: XMMRegister)
+	fn vpsllw_YMM_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -104168,7 +104168,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsrad_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit)
+	fn vpsrad_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -104194,7 +104194,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsrad_YMM_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any128BitMemory)
+	fn vpsrad_YMM_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any128BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -104220,7 +104220,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsrad_YMM_YMM_XMMRegister(&mut self, arg0: YMM, arg1: YMM, arg2: XMMRegister)
+	fn vpsrad_YMM_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -104298,7 +104298,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsravd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpsravd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -104324,7 +104324,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsravd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpsravd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -104428,7 +104428,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsraw_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit)
+	fn vpsraw_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -104454,7 +104454,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsraw_YMM_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any128BitMemory)
+	fn vpsraw_YMM_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any128BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -104480,7 +104480,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsraw_YMM_YMM_XMMRegister(&mut self, arg0: YMM, arg1: YMM, arg2: XMMRegister)
+	fn vpsraw_YMM_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -104584,7 +104584,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsrld_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit)
+	fn vpsrld_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -104610,7 +104610,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsrld_YMM_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any128BitMemory)
+	fn vpsrld_YMM_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any128BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -104636,7 +104636,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsrld_YMM_YMM_XMMRegister(&mut self, arg0: YMM, arg1: YMM, arg2: XMMRegister)
+	fn vpsrld_YMM_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -104688,7 +104688,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsrldq_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit)
+	fn vpsrldq_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -104792,7 +104792,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsrlq_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit)
+	fn vpsrlq_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -104818,7 +104818,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsrlq_YMM_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any128BitMemory)
+	fn vpsrlq_YMM_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any128BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -104844,7 +104844,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsrlq_YMM_YMM_XMMRegister(&mut self, arg0: YMM, arg1: YMM, arg2: XMMRegister)
+	fn vpsrlq_YMM_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -104922,7 +104922,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsrlvd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpsrlvd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -104948,7 +104948,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsrlvd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpsrlvd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -105026,7 +105026,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsrlvq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpsrlvq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -105052,7 +105052,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsrlvq_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpsrlvq_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -105156,7 +105156,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsrlw_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit)
+	fn vpsrlw_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -105182,7 +105182,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsrlw_YMM_YMM_Any128BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any128BitMemory)
+	fn vpsrlw_YMM_YMM_Any128BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any128BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -105208,7 +105208,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsrlw_YMM_YMM_XMMRegister(&mut self, arg0: YMM, arg1: YMM, arg2: XMMRegister)
+	fn vpsrlw_YMM_YMM_XMMRegister(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -105286,7 +105286,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsubb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpsubb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -105312,7 +105312,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsubb_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpsubb_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -105390,7 +105390,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsubd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpsubd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -105416,7 +105416,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsubd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpsubd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -105494,7 +105494,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsubq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpsubq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -105520,7 +105520,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsubq_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpsubq_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -105598,7 +105598,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsubsb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpsubsb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -105624,7 +105624,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsubsb_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpsubsb_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -105702,7 +105702,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsubsw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpsubsw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -105728,7 +105728,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsubsw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpsubsw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -105806,7 +105806,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsubusb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpsubusb_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -105832,7 +105832,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsubusb_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpsubusb_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -105910,7 +105910,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsubusw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpsubusw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -105936,7 +105936,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsubusw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpsubusw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -106014,7 +106014,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsubw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpsubw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -106040,7 +106040,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpsubw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpsubw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -106118,7 +106118,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vptest_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory)
+	fn vptest_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -106144,7 +106144,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vptest_YMM_YMM(&mut self, arg0: YMM, arg1: YMM)
+	fn vptest_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -106222,7 +106222,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpunpckhbw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpunpckhbw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -106248,7 +106248,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpunpckhbw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpunpckhbw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -106326,7 +106326,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpunpckhdq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpunpckhdq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -106352,7 +106352,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpunpckhdq_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpunpckhdq_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -106430,7 +106430,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpunpckhqdq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpunpckhqdq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -106456,7 +106456,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpunpckhqdq_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpunpckhqdq_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -106534,7 +106534,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpunpckhwd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpunpckhwd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -106560,7 +106560,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpunpckhwd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpunpckhwd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -106638,7 +106638,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpunpcklbw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpunpcklbw_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -106664,7 +106664,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpunpcklbw_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpunpcklbw_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -106742,7 +106742,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpunpckldq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpunpckldq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -106768,7 +106768,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpunpckldq_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpunpckldq_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -106846,7 +106846,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpunpcklqdq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpunpcklqdq_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -106872,7 +106872,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpunpcklqdq_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpunpcklqdq_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -106950,7 +106950,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpunpcklwd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpunpcklwd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -106976,7 +106976,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpunpcklwd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpunpcklwd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -107054,7 +107054,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpxor_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vpxor_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -107080,7 +107080,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vpxor_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vpxor_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -107158,7 +107158,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vrcpps_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory)
+	fn vrcpps_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -107184,7 +107184,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vrcpps_YMM_YMM(&mut self, arg0: YMM, arg1: YMM)
+	fn vrcpps_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -107314,7 +107314,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vroundpd_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: Any256BitMemory, arg2: Immediate8Bit)
+	fn vroundpd_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: Any256BitMemory, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -107340,7 +107340,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vroundpd_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit)
+	fn vroundpd_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -107418,7 +107418,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vroundps_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: Any256BitMemory, arg2: Immediate8Bit)
+	fn vroundps_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: Any256BitMemory, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -107444,7 +107444,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vroundps_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Immediate8Bit)
+	fn vroundps_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -107626,7 +107626,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vrsqrtps_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory)
+	fn vrsqrtps_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -107652,7 +107652,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vrsqrtps_YMM_YMM(&mut self, arg0: YMM, arg1: YMM)
+	fn vrsqrtps_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -107782,7 +107782,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vshufpd_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: Immediate8Bit)
+	fn vshufpd_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -107808,7 +107808,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vshufpd_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: Immediate8Bit)
+	fn vshufpd_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -107886,7 +107886,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vshufps_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory, arg3: Immediate8Bit)
+	fn vshufps_YMM_YMM_Any256BitMemory_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -107912,7 +107912,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vshufps_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMM, arg1: YMM, arg2: YMM, arg3: Immediate8Bit)
+	fn vshufps_YMM_YMM_YMM_Immediate8Bit(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister, arg3: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -107990,7 +107990,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vsqrtpd_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory)
+	fn vsqrtpd_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -108016,7 +108016,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vsqrtpd_YMM_YMM(&mut self, arg0: YMM, arg1: YMM)
+	fn vsqrtpd_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -108094,7 +108094,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vsqrtps_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory)
+	fn vsqrtps_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -108120,7 +108120,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vsqrtps_YMM_YMM(&mut self, arg0: YMM, arg1: YMM)
+	fn vsqrtps_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -108328,7 +108328,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vsubpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vsubpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -108354,7 +108354,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vsubpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vsubpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -108432,7 +108432,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vsubps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vsubps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -108458,7 +108458,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vsubps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vsubps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -108640,7 +108640,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vtestpd_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory)
+	fn vtestpd_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -108666,7 +108666,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vtestpd_YMM_YMM(&mut self, arg0: YMM, arg1: YMM)
+	fn vtestpd_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -108744,7 +108744,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vtestps_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: Any256BitMemory)
+	fn vtestps_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -108770,7 +108770,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vtestps_YMM_YMM(&mut self, arg0: YMM, arg1: YMM)
+	fn vtestps_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -108952,7 +108952,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vunpckhpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vunpckhpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -108978,7 +108978,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vunpckhpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vunpckhpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -109056,7 +109056,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vunpckhps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vunpckhps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -109082,7 +109082,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vunpckhps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vunpckhps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -109160,7 +109160,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vunpcklpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vunpcklpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -109186,7 +109186,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vunpcklpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vunpcklpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -109264,7 +109264,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vunpcklps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vunpcklps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -109290,7 +109290,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vunpcklps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vunpcklps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -109368,7 +109368,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vxorpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vxorpd_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -109394,7 +109394,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vxorpd_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vxorpd_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -109472,7 +109472,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vxorps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMM, arg1: YMM, arg2: Any256BitMemory)
+	fn vxorps_YMM_YMM_Any256BitMemory(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: Any256BitMemory)
 	{
 		// This is a VEX encoded instruction.
 	
@@ -109498,7 +109498,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn vxorps_YMM_YMM_YMM(&mut self, arg0: YMM, arg1: YMM, arg2: YMM)
+	fn vxorps_YMM_YMM_YMM(&mut self, arg0: YMMRegister, arg1: YMMRegister, arg2: YMMRegister)
 	{
 		// This is a VEX encoded instruction.
 	

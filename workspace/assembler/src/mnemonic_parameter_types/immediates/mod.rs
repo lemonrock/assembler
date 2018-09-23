@@ -2,7 +2,7 @@
 // Copyright © 2018 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-use self::*;
+use super::*;
 
 
 include!("Immediate.rs");
