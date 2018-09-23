@@ -3,6 +3,7 @@
 
 
 /// An ordinary instruction stream.
+#[derive(Debug)]
 pub struct OrdinaryInstructionStream
 {
 	byte_emitter: ByteEmitter,

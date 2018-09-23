@@ -13292,7 +13292,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13318,7 +13318,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13370,7 +13370,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13396,7 +13396,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13448,7 +13448,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13474,7 +13474,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13526,7 +13526,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x80);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13604,7 +13604,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13630,7 +13630,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13734,7 +13734,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13760,7 +13760,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13864,7 +13864,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x81);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13890,7 +13890,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x83);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -13994,7 +13994,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x80);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -14176,7 +14176,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x80);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -28658,7 +28658,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD8);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -28684,7 +28684,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDC);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -29802,7 +29802,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDE);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -29828,7 +29828,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDA);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -30062,7 +30062,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDF);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -30088,7 +30088,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDB);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -30556,7 +30556,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD9);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -30582,7 +30582,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xDD);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -32504,7 +32504,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -32530,7 +32530,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -33934,7 +33934,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -33960,7 +33960,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -33986,7 +33986,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -34012,7 +34012,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFE);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -34038,7 +34038,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -34064,7 +34064,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -34090,7 +34090,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFF);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -34116,7 +34116,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFE);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -34142,7 +34142,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xFE);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -43320,7 +43320,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC7);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -43398,7 +43398,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC7);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -43450,7 +43450,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC7);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -43528,7 +43528,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC6);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -43762,7 +43762,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC7);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -43918,7 +43918,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC7);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -44022,7 +44022,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC7);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -44204,7 +44204,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC6);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -44412,7 +44412,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC6);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -48806,7 +48806,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x1F);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -48832,7 +48832,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x1F);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -48858,7 +48858,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x1F);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -48884,7 +48884,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x1F);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -57776,7 +57776,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x8F);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -57802,7 +57802,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x8F);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -57828,7 +57828,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x8F);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -57880,7 +57880,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0x8F);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -58244,7 +58244,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x18);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -63990,7 +63990,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -64016,7 +64016,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0xAE);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -65446,7 +65446,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -65472,7 +65472,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -65498,7 +65498,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -65524,7 +65524,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -65550,7 +65550,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -65576,7 +65576,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -65602,7 +65602,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -65628,7 +65628,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -65654,7 +65654,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -65680,7 +65680,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD2);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -65706,7 +65706,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC0);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -65732,7 +65732,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD0);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -65758,7 +65758,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -65784,7 +65784,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -65810,7 +65810,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -65836,7 +65836,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -65862,7 +65862,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -65888,7 +65888,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -65914,7 +65914,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD3);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -65940,7 +65940,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC1);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -65966,7 +65966,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD1);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -65992,7 +65992,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD2);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -66018,7 +66018,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC0);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -66044,7 +66044,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD0);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -66070,7 +66070,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD2);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -66096,7 +66096,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xC0);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -66122,7 +66122,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xD0);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -66844,7 +66844,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x03, 0x0, 0x3, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x0, 0x3, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xF0);
 	
@@ -66870,7 +66870,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x03, 0x0, 0x3, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x0, 0x3, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xF0);
 	
@@ -66896,7 +66896,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x03, 0x0, 0x3, 0x1, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x0, 0x3, 0x1, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xF0);
 	
@@ -66922,7 +66922,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x03, 0x0, 0x3, 0x1, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x0, 0x3, 0x1, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xF0);
 	
@@ -70126,7 +70126,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x97);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70152,7 +70152,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x97);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70178,7 +70178,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x97);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70204,7 +70204,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x93);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70230,7 +70230,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x93);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70256,7 +70256,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x93);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70282,7 +70282,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x92);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70308,7 +70308,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x92);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70334,7 +70334,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x92);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70360,7 +70360,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x96);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70386,7 +70386,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x96);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70412,7 +70412,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x96);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70438,7 +70438,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x92);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70464,7 +70464,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x92);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70490,7 +70490,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x92);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70516,7 +70516,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x94);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70542,7 +70542,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x94);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70568,7 +70568,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x94);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70594,7 +70594,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9F);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70620,7 +70620,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9F);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70646,7 +70646,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9F);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70672,7 +70672,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9D);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70698,7 +70698,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9D);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70724,7 +70724,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9D);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70750,7 +70750,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9C);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70776,7 +70776,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9C);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70802,7 +70802,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9C);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70828,7 +70828,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9E);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70854,7 +70854,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9E);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70880,7 +70880,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9E);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70906,7 +70906,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x96);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70932,7 +70932,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x96);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70958,7 +70958,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x96);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -70984,7 +70984,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x92);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71010,7 +71010,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x92);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71036,7 +71036,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x92);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71062,7 +71062,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x93);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71088,7 +71088,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x93);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71114,7 +71114,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x93);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71140,7 +71140,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x97);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71166,7 +71166,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x97);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71192,7 +71192,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x97);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71218,7 +71218,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x93);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71244,7 +71244,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x93);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71270,7 +71270,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x93);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71296,7 +71296,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x95);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71322,7 +71322,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x95);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71348,7 +71348,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x95);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71374,7 +71374,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9E);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71400,7 +71400,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9E);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71426,7 +71426,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9E);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71452,7 +71452,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9C);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71478,7 +71478,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9C);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71504,7 +71504,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9C);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71530,7 +71530,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9D);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71556,7 +71556,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9D);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71582,7 +71582,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9D);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71608,7 +71608,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9F);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71634,7 +71634,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9F);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71660,7 +71660,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9F);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71686,7 +71686,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x91);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71712,7 +71712,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x91);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71738,7 +71738,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x91);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71764,7 +71764,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9B);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71790,7 +71790,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9B);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71816,7 +71816,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9B);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71842,7 +71842,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x99);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71868,7 +71868,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x99);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71894,7 +71894,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x99);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71920,7 +71920,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x95);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71946,7 +71946,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x95);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71972,7 +71972,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x95);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -71998,7 +71998,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x90);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -72024,7 +72024,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x90);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -72050,7 +72050,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x90);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -72076,7 +72076,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9A);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -72102,7 +72102,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9A);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -72128,7 +72128,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9A);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -72154,7 +72154,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9A);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -72180,7 +72180,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9A);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -72206,7 +72206,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9A);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -72232,7 +72232,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9B);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -72258,7 +72258,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9B);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -72284,7 +72284,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x9B);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -72310,7 +72310,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x98);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -72336,7 +72336,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x98);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -72362,7 +72362,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x98);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -72388,7 +72388,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x94);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -72414,7 +72414,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x94);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -72440,7 +72440,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_2(0x0F, 0x94);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		// No displacement or immediate.
 	
@@ -76938,7 +76938,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -76990,7 +76990,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -77042,7 +77042,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -77094,7 +77094,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF6);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -77172,7 +77172,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -77224,7 +77224,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -77276,7 +77276,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF7);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -77328,7 +77328,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF6);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -77432,7 +77432,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.opcode_1(0xF6);
 	
-		self.mod_rm_sib(arg0, RAX::O);
+		self.mod_rm_sib(arg0, Register64Bit::RAX);
 	
 		self.displacement_immediate_1(arg1);
 	
@@ -78726,7 +78726,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xDB);
 	
@@ -78752,7 +78752,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xDB);
 	
@@ -78778,7 +78778,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xDF);
 	
@@ -78804,7 +78804,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xDF);
 	
@@ -79662,7 +79662,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x1A);
 	
@@ -79688,7 +79688,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x5A);
 	
@@ -79714,7 +79714,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x19);
 	
@@ -79740,7 +79740,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x19);
 	
@@ -79766,7 +79766,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x18);
 	
@@ -79792,7 +79792,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x18);
 	
@@ -79818,7 +79818,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x18);
 	
@@ -79844,7 +79844,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x18);
 	
@@ -80182,7 +80182,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x2F);
 	
@@ -80208,7 +80208,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x2F);
 	
@@ -80234,7 +80234,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x2F);
 	
@@ -80260,7 +80260,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x2F);
 	
@@ -80286,7 +80286,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xE6);
 	
@@ -80312,7 +80312,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xE6);
 	
@@ -80338,7 +80338,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x1, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xE6);
 	
@@ -80364,7 +80364,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xE6);
 	
@@ -80390,7 +80390,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x5B);
 	
@@ -80416,7 +80416,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x5B);
 	
@@ -80442,7 +80442,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x1, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x5B);
 	
@@ -80468,7 +80468,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x5B);
 	
@@ -80494,7 +80494,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x3, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x3, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xE6);
 	
@@ -80520,7 +80520,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x1, 0x3, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x3, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xE6);
 	
@@ -80546,7 +80546,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x3, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x3, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xE6);
 	
@@ -80572,7 +80572,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x3, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x3, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xE6);
 	
@@ -80598,7 +80598,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x5A);
 	
@@ -80624,7 +80624,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x5A);
 	
@@ -80650,7 +80650,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x5A);
 	
@@ -80676,7 +80676,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x5A);
 	
@@ -80702,7 +80702,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x13);
 	
@@ -80728,7 +80728,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x13);
 	
@@ -80754,7 +80754,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x13);
 	
@@ -80780,7 +80780,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x13);
 	
@@ -80806,7 +80806,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x5B);
 	
@@ -80832,7 +80832,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x5B);
 	
@@ -80858,7 +80858,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x5B);
 	
@@ -80884,7 +80884,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x5B);
 	
@@ -80910,7 +80910,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x5A);
 	
@@ -80936,7 +80936,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x5A);
 	
@@ -80962,7 +80962,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x1, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x5A);
 	
@@ -80988,7 +80988,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x5A);
 	
@@ -81014,7 +81014,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x03, 0x1, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x03, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x1D);
 	
@@ -81040,7 +81040,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x1D);
 	
@@ -81066,7 +81066,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x1D);
 	
@@ -81092,7 +81092,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x03, 0x1, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x03, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x1D);
 	
@@ -81118,7 +81118,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x3, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x3, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x2D);
 	
@@ -81144,7 +81144,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x3, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x3, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x2D);
 	
@@ -81170,7 +81170,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x3, 0x1, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x3, 0x1, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x2D);
 	
@@ -81196,7 +81196,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x3, 0x1, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x3, 0x1, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x2D);
 	
@@ -81534,7 +81534,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x2D);
 	
@@ -81560,7 +81560,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x2D);
 	
@@ -81586,7 +81586,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x2, 0x1, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x2, 0x1, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x2D);
 	
@@ -81612,7 +81612,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x2, 0x1, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x2, 0x1, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x2D);
 	
@@ -81638,7 +81638,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xE6);
 	
@@ -81664,7 +81664,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xE6);
 	
@@ -81690,7 +81690,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xE6);
 	
@@ -81716,7 +81716,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xE6);
 	
@@ -81742,7 +81742,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x5B);
 	
@@ -81768,7 +81768,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x5B);
 	
@@ -81794,7 +81794,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x1, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x5B);
 	
@@ -81820,7 +81820,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x5B);
 	
@@ -81846,7 +81846,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x3, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x3, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x2C);
 	
@@ -81872,7 +81872,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x3, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x3, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x2C);
 	
@@ -81898,7 +81898,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x3, 0x1, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x3, 0x1, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x2C);
 	
@@ -81924,7 +81924,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x3, 0x1, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x3, 0x1, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x2C);
 	
@@ -81950,7 +81950,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x2C);
 	
@@ -81976,7 +81976,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x2C);
 	
@@ -82002,7 +82002,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x2, 0x1, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x2, 0x1, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x2C);
 	
@@ -82028,7 +82028,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x2, 0x1, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x2, 0x1, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x2C);
 	
@@ -82626,7 +82626,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x03, 0x1, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x03, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x19);
 	
@@ -82652,7 +82652,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x03, 0x1, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x03, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x19);
 	
@@ -82678,7 +82678,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x03, 0x1, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x03, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x39);
 	
@@ -82704,7 +82704,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x03, 0x1, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x03, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x39);
 	
@@ -82730,7 +82730,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x17);
 	
@@ -82756,7 +82756,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x17);
 	
@@ -88554,7 +88554,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x3, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x3, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xF0);
 	
@@ -88580,7 +88580,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x1, 0x3, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x3, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xF0);
 	
@@ -88606,7 +88606,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg0, Register64Bit::RDX);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg0, Register64Bit::RDX);
 	
 		self.opcode_1(0xAE);
 	
@@ -88632,7 +88632,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xF7);
 	
@@ -89490,7 +89490,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x29);
 	
@@ -89516,7 +89516,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x1, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x29);
 	
@@ -89542,7 +89542,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x28);
 	
@@ -89568,7 +89568,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x28);
 	
@@ -89594,7 +89594,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x29);
 	
@@ -89620,7 +89620,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x28);
 	
@@ -89646,7 +89646,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x28);
 	
@@ -89672,7 +89672,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x29);
 	
@@ -89698,7 +89698,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x29);
 	
@@ -89724,7 +89724,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x1, 0x0, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x1, 0x0, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x29);
 	
@@ -89750,7 +89750,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x28);
 	
@@ -89776,7 +89776,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x28);
 	
@@ -89802,7 +89802,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x29);
 	
@@ -89828,7 +89828,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x1, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x28);
 	
@@ -89854,7 +89854,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x28);
 	
@@ -89880,7 +89880,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x0, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x1, 0x0, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x29);
 	
@@ -89906,7 +89906,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x7E);
 	
@@ -89932,7 +89932,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x7E);
 	
@@ -89958,7 +89958,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x6E);
 	
@@ -89984,7 +89984,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x6E);
 	
@@ -90010,7 +90010,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x3, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x3, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x12);
 	
@@ -90036,7 +90036,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x3, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x3, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x12);
 	
@@ -90062,7 +90062,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x1, 0x3, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x3, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x12);
 	
@@ -90088,7 +90088,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x3, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x3, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x12);
 	
@@ -90114,7 +90114,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x7F);
 	
@@ -90140,7 +90140,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x1, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x7F);
 	
@@ -90166,7 +90166,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x6F);
 	
@@ -90192,7 +90192,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x6F);
 	
@@ -90218,7 +90218,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x7F);
 	
@@ -90244,7 +90244,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x6F);
 	
@@ -90270,7 +90270,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x6F);
 	
@@ -90296,7 +90296,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x7F);
 	
@@ -90322,7 +90322,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x0, 0x2, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x0, 0x2, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x7F);
 	
@@ -90348,7 +90348,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x1, 0x2, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x1, 0x2, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x7F);
 	
@@ -90374,7 +90374,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x6F);
 	
@@ -90400,7 +90400,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x6F);
 	
@@ -90426,7 +90426,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x2, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x0, 0x2, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x7F);
 	
@@ -90452,7 +90452,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x1, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x6F);
 	
@@ -90478,7 +90478,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x6F);
 	
@@ -90504,7 +90504,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x2, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x1, 0x2, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x7F);
 	
@@ -90556,7 +90556,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x17);
 	
@@ -90608,7 +90608,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x17);
 	
@@ -90686,7 +90686,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x13);
 	
@@ -90738,7 +90738,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x13);
 	
@@ -90790,7 +90790,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x50);
 	
@@ -90816,7 +90816,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x50);
 	
@@ -90842,7 +90842,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x50);
 	
@@ -90868,7 +90868,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x50);
 	
@@ -90894,7 +90894,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x50);
 	
@@ -90920,7 +90920,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x50);
 	
@@ -90946,7 +90946,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x50);
 	
@@ -90972,7 +90972,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x50);
 	
@@ -90998,7 +90998,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0xE7);
 	
@@ -91024,7 +91024,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x1, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0xE7);
 	
@@ -91050,7 +91050,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x2A);
 	
@@ -91076,7 +91076,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x2A);
 	
@@ -91102,7 +91102,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x2B);
 	
@@ -91128,7 +91128,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x1, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x2B);
 	
@@ -91154,7 +91154,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x2B);
 	
@@ -91180,7 +91180,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x1, 0x0, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x1, 0x0, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x2B);
 	
@@ -91206,7 +91206,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x1, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x0, 0x1, 0x1, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x7E);
 	
@@ -91232,7 +91232,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0xD6);
 	
@@ -91258,7 +91258,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x1, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x0, 0x1, 0x1, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x7E);
 	
@@ -91284,7 +91284,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x1, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x1, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x6E);
 	
@@ -91310,7 +91310,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x7E);
 	
@@ -91336,7 +91336,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x1, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x1, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x6E);
 	
@@ -91362,7 +91362,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x7E);
 	
@@ -91388,7 +91388,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0xD6);
 	
@@ -91414,7 +91414,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x0, 0x3, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x0, 0x3, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x11);
 	
@@ -91440,7 +91440,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x3, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x3, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x10);
 	
@@ -91518,7 +91518,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x16);
 	
@@ -91544,7 +91544,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x16);
 	
@@ -91570,7 +91570,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x1, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x16);
 	
@@ -91596,7 +91596,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x16);
 	
@@ -91622,7 +91622,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x12);
 	
@@ -91648,7 +91648,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x12);
 	
@@ -91674,7 +91674,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x1, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x12);
 	
@@ -91700,7 +91700,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x12);
 	
@@ -91726,7 +91726,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x0, 0x2, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x0, 0x2, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x11);
 	
@@ -91752,7 +91752,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x10);
 	
@@ -91830,7 +91830,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x11);
 	
@@ -91856,7 +91856,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x1, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x11);
 	
@@ -91882,7 +91882,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x10);
 	
@@ -91908,7 +91908,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x10);
 	
@@ -91934,7 +91934,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x11);
 	
@@ -91960,7 +91960,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x10);
 	
@@ -91986,7 +91986,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x10);
 	
@@ -92012,7 +92012,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x11);
 	
@@ -92038,7 +92038,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x11);
 	
@@ -92064,7 +92064,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x1, 0x0, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x1, 0x0, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x11);
 	
@@ -92090,7 +92090,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x10);
 	
@@ -92116,7 +92116,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x10);
 	
@@ -92142,7 +92142,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x11);
 	
@@ -92168,7 +92168,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x1, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x10);
 	
@@ -92194,7 +92194,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x10);
 	
@@ -92220,7 +92220,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x0, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x01, 0x1, 0x0, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x11);
 	
@@ -92870,7 +92870,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x1C);
 	
@@ -92896,7 +92896,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x1C);
 	
@@ -92922,7 +92922,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x1C);
 	
@@ -92948,7 +92948,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x1C);
 	
@@ -92974,7 +92974,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x1E);
 	
@@ -93000,7 +93000,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x1E);
 	
@@ -93026,7 +93026,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x1E);
 	
@@ -93052,7 +93052,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x1E);
 	
@@ -93078,7 +93078,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x1D);
 	
@@ -93104,7 +93104,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x1D);
 	
@@ -93130,7 +93130,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x1D);
 	
@@ -93156,7 +93156,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x1D);
 	
@@ -95262,7 +95262,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x78);
 	
@@ -95288,7 +95288,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x78);
 	
@@ -95314,7 +95314,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x78);
 	
@@ -95340,7 +95340,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x78);
 	
@@ -95366,7 +95366,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x58);
 	
@@ -95392,7 +95392,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x58);
 	
@@ -95418,7 +95418,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x58);
 	
@@ -95444,7 +95444,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x58);
 	
@@ -95470,7 +95470,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x59);
 	
@@ -95496,7 +95496,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x59);
 	
@@ -95522,7 +95522,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x59);
 	
@@ -95548,7 +95548,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x59);
 	
@@ -95574,7 +95574,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x79);
 	
@@ -95600,7 +95600,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x79);
 	
@@ -95626,7 +95626,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x79);
 	
@@ -95652,7 +95652,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x79);
 	
@@ -96146,7 +96146,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x61);
 	
@@ -96172,7 +96172,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x61);
 	
@@ -96198,7 +96198,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x60);
 	
@@ -96224,7 +96224,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x60);
 	
@@ -96666,7 +96666,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x63);
 	
@@ -96692,7 +96692,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x63);
 	
@@ -96718,7 +96718,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x62);
 	
@@ -96744,7 +96744,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x62);
 	
@@ -96926,7 +96926,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x05);
 	
@@ -96952,7 +96952,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x05);
 	
@@ -97030,7 +97030,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x03, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x05);
 	
@@ -97056,7 +97056,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x03, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x05);
 	
@@ -97134,7 +97134,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x04);
 	
@@ -97160,7 +97160,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x04);
 	
@@ -97238,7 +97238,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x03, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x04);
 	
@@ -97264,7 +97264,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x03, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x04);
 	
@@ -97342,7 +97342,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x03, 0x1, 0x1, 0x1, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x1, 0x1, 0x1, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x01);
 	
@@ -97368,7 +97368,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x03, 0x1, 0x1, 0x1, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x1, 0x1, 0x1, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x01);
 	
@@ -97446,7 +97446,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x03, 0x1, 0x1, 0x1, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x1, 0x1, 0x1, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x00);
 	
@@ -97472,7 +97472,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x03, 0x1, 0x1, 0x1, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x1, 0x1, 0x1, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x00);
 	
@@ -97498,7 +97498,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x14);
 	
@@ -97524,7 +97524,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x14);
 	
@@ -97550,7 +97550,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x14);
 	
@@ -97576,7 +97576,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x16);
 	
@@ -97602,7 +97602,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x16);
 	
@@ -97628,7 +97628,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x1, XMM0::O, arg0, arg1);
+		self.vex_7(0x03, 0x0, 0x1, 0x1, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x16);
 	
@@ -97654,7 +97654,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x1, XMM0::O, arg0, arg1);
+		self.vex_7(0x03, 0x0, 0x1, 0x1, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x16);
 	
@@ -97680,7 +97680,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x15);
 	
@@ -97706,7 +97706,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xC5);
 	
@@ -97732,7 +97732,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x15);
 	
@@ -97758,7 +97758,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xC5);
 	
@@ -97784,7 +97784,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg0, arg1);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg0, arg1);
 	
 		self.opcode_1(0x15);
 	
@@ -98330,7 +98330,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x41);
 	
@@ -98356,7 +98356,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x41);
 	
@@ -100514,7 +100514,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xD7);
 	
@@ -100540,7 +100540,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xD7);
 	
@@ -100566,7 +100566,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xD7);
 	
@@ -100592,7 +100592,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0xD7);
 	
@@ -100618,7 +100618,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x21);
 	
@@ -100644,7 +100644,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x21);
 	
@@ -100670,7 +100670,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x21);
 	
@@ -100696,7 +100696,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x21);
 	
@@ -100722,7 +100722,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x22);
 	
@@ -100748,7 +100748,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x22);
 	
@@ -100774,7 +100774,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x22);
 	
@@ -100800,7 +100800,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x22);
 	
@@ -100826,7 +100826,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x20);
 	
@@ -100852,7 +100852,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x20);
 	
@@ -100878,7 +100878,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x20);
 	
@@ -100904,7 +100904,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x20);
 	
@@ -100930,7 +100930,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x25);
 	
@@ -100956,7 +100956,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x25);
 	
@@ -100982,7 +100982,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x25);
 	
@@ -101008,7 +101008,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x25);
 	
@@ -101034,7 +101034,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x23);
 	
@@ -101060,7 +101060,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x23);
 	
@@ -101086,7 +101086,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x23);
 	
@@ -101112,7 +101112,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x23);
 	
@@ -101138,7 +101138,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x24);
 	
@@ -101164,7 +101164,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x24);
 	
@@ -101190,7 +101190,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x24);
 	
@@ -101216,7 +101216,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x24);
 	
@@ -101242,7 +101242,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x31);
 	
@@ -101268,7 +101268,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x31);
 	
@@ -101294,7 +101294,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x31);
 	
@@ -101320,7 +101320,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x31);
 	
@@ -101346,7 +101346,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x32);
 	
@@ -101372,7 +101372,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x32);
 	
@@ -101398,7 +101398,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x32);
 	
@@ -101424,7 +101424,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x32);
 	
@@ -101450,7 +101450,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x30);
 	
@@ -101476,7 +101476,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x30);
 	
@@ -101502,7 +101502,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x30);
 	
@@ -101528,7 +101528,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x30);
 	
@@ -101554,7 +101554,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x35);
 	
@@ -101580,7 +101580,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x35);
 	
@@ -101606,7 +101606,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x35);
 	
@@ -101632,7 +101632,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x35);
 	
@@ -101658,7 +101658,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x33);
 	
@@ -101684,7 +101684,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x33);
 	
@@ -101710,7 +101710,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x33);
 	
@@ -101736,7 +101736,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x33);
 	
@@ -101762,7 +101762,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x34);
 	
@@ -101788,7 +101788,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x34);
 	
@@ -101814,7 +101814,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x34);
 	
@@ -101840,7 +101840,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x34);
 	
@@ -102906,7 +102906,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x70);
 	
@@ -102932,7 +102932,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x70);
 	
@@ -102958,7 +102958,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x70);
 	
@@ -102984,7 +102984,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x70);
 	
@@ -103010,7 +103010,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x70);
 	
@@ -103036,7 +103036,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x70);
 	
@@ -103062,7 +103062,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x1, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x70);
 	
@@ -103088,7 +103088,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x2, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x2, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x70);
 	
@@ -103114,7 +103114,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x3, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x3, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x70);
 	
@@ -103140,7 +103140,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x3, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x3, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x70);
 	
@@ -103166,7 +103166,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x1, 0x3, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x3, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x70);
 	
@@ -103192,7 +103192,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x3, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x3, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x70);
 	
@@ -106078,7 +106078,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x17);
 	
@@ -106104,7 +106104,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x17);
 	
@@ -106130,7 +106130,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x17);
 	
@@ -106156,7 +106156,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x17);
 	
@@ -107118,7 +107118,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x53);
 	
@@ -107144,7 +107144,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x53);
 	
@@ -107170,7 +107170,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x1, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x53);
 	
@@ -107196,7 +107196,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x53);
 	
@@ -107274,7 +107274,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x09);
 	
@@ -107300,7 +107300,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x09);
 	
@@ -107326,7 +107326,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x03, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x09);
 	
@@ -107352,7 +107352,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x03, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x09);
 	
@@ -107378,7 +107378,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x08);
 	
@@ -107404,7 +107404,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x03, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x08);
 	
@@ -107430,7 +107430,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x03, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x08);
 	
@@ -107456,7 +107456,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x03, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x03, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x08);
 	
@@ -107586,7 +107586,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x52);
 	
@@ -107612,7 +107612,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x52);
 	
@@ -107638,7 +107638,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x1, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x52);
 	
@@ -107664,7 +107664,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x52);
 	
@@ -107950,7 +107950,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x51);
 	
@@ -107976,7 +107976,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x51);
 	
@@ -108002,7 +108002,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x51);
 	
@@ -108028,7 +108028,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x51);
 	
@@ -108054,7 +108054,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x51);
 	
@@ -108080,7 +108080,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x51);
 	
@@ -108106,7 +108106,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x1, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x51);
 	
@@ -108132,7 +108132,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x1, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x1, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x51);
 	
@@ -108262,7 +108262,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg0);
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg0, Register64Bit::RBX);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg0, Register64Bit::RBX);
 	
 		self.opcode_1(0xAE);
 	
@@ -108600,7 +108600,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x0F);
 	
@@ -108626,7 +108626,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x0F);
 	
@@ -108652,7 +108652,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x0F);
 	
@@ -108678,7 +108678,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x0F);
 	
@@ -108704,7 +108704,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x0E);
 	
@@ -108730,7 +108730,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x0E);
 	
@@ -108756,7 +108756,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x0E);
 	
@@ -108782,7 +108782,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x02, 0x1, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x02, 0x1, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x0E);
 	
@@ -108808,7 +108808,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x2E);
 	
@@ -108834,7 +108834,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x1, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x1, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x2E);
 	
@@ -108860,7 +108860,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group4(arg1);
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x2E);
 	
@@ -108886,7 +108886,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_7(0x01, 0x0, 0x0, 0x0, XMM0::O, arg1, arg0);
+		self.vex_7(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0, arg1, arg0);
 	
 		self.opcode_1(0x2E);
 	
@@ -109536,7 +109536,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_5(0x01, 0x1, 0x0, 0x0, XMM0::O);
+		self.vex_5(0x01, 0x1, 0x0, 0x0, XMMRegister::XMM0);
 	
 		self.opcode_1(0x77);
 	
@@ -109562,7 +109562,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No prefix group 4.
 	
-		self.vex_5(0x01, 0x0, 0x0, 0x0, XMM0::O);
+		self.vex_5(0x01, 0x0, 0x0, 0x0, XMMRegister::XMM0);
 	
 		self.opcode_1(0x77);
 	

@@ -5,10 +5,6 @@
 use super::*;
 
 
-/// Singleton registers, which are usually optimal for encoding.
-pub mod singleton;
-
-
 include!("GeneralPurposeRegister.rs");
 include!("MMRegister.rs");
 include!("Register.rs");
