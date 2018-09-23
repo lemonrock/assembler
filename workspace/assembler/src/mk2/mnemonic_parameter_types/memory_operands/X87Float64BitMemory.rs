@@ -9,8 +9,29 @@ pub struct X87Float64BitMemory(pub MemoryOperand);
 impl MemoryOrRegister for X87Float64BitMemory
 {
 	#[inline(always)]
-	fn emit(self, byte_emitter: &mut ByteEmitter, reg: impl Register)
+	fn emit_mod_rm_sib(self, byte_emitter: &mut ByteEmitter, reg: impl Register)
 	{
-		self.0.emit(byte_emitter, reg)
+		self.0.emit_mod_rm_sib(byte_emitter, reg)
+	}
+}
+
+impl MemoryOrBranchHint for X87Float64BitMemory
+{
+	#[inline(always)]
+	fn emit_prefix_group2(self, byte_emitter: &mut ByteEmitter)
+	{
+		self.0.emit_prefix_group2(byte_emitter)
+	}
+	
+	#[inline(always)]
+	fn emit_rex_3(self, byte_emitter: &mut ByteEmitter, r: impl Register, byte: u8)
+	{
+		self.0.emit_rex_3(byte_emitter, r, byte)
+	}
+	
+	#[inline(always)]
+	fn emit_rex_2(self, byte_emitter: &mut ByteEmitter, byte: u8)
+	{
+		self.0.emit_rex_2(byte_emitter, byte)
 	}
 }

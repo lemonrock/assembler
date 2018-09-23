@@ -8,68 +8,9 @@ pub struct MemoryOperand(u64);
 
 impl MemoryOperand
 {
-	#[inline(always)]
-	fn has_segment_register(self) -> bool
-	{
-		(self.0 && Self::SegmentRegisterMask) != (Self::NullSegmentRegister << Self::SegmentRegisterShift)
-	}
-	
-	#[inline(always)]
-	fn has_base_register(self) -> bool
-	{
-		(self.0 && Self::BaseRegisterMask) != (Self::NullGeneralPurposeRegister << Self::BaseRegisterShift)
-	}
-	
-	#[inline(always)]
-	fn has_index_register(self) -> bool
-	{
-		(self.0 && Self::IndexRegisterMask) != (Self::NullGeneralPurposeRegister << Self::IndexRegisterShift)
-	}
-	
-	#[inline(always)]
-	fn has_address_override_for_32_bit(self) -> bool
-	{
-		(self.0 && Self::AddressOverrideFor32BitMask) != 0
-	}
-	
-	#[inline(always)]
-	fn has_relative_instruction_pointer_offset(self) -> bool
-	{
-		(self.0 && Self::RelativeInstructionPointerOffsetMask) != 0
-	}
-	
-	#[inline(always)]
-	fn get_segment_register_index(self) -> u8
-	{
-		((self.0 & Self::SegmentRegisterMask) >> Self::SegmentRegisterShift) as u8
-	}
-	
-	#[inline(always)]
-	fn get_base_register_index(self) -> u8
-	{
-		((self.0 & Self::BaseRegisterMask) >> Self::BaseRegisterShift)) as u8
-	}
-	
-	#[inline(always)]
-	fn get_index_register_index(self) -> u8
-	{
-		((self.0 & Self::IndexRegisterMask) >> Self::IndexRegisterShift)) as u8
-	}
-	
-	#[inline(always)]
-	fn get_index_scale(self) -> IndexScale
-	{
-		unsafe { transmute((self.0 & Self::IndexScaleMask) >> Self::IndexScaleShift) }
-	}
-	
-	#[inline(always)]
-	fn get_displacement(self) -> Immediate32Bit
-	{
-		unsafe { transmute((self.0 & Self::DisplacementMask) >> Self::DisplacementShift) }
-	}
 }
 
-impl MemoryOperandOrBranchHint for BranchHint
+impl MemoryOrBranchHint for MemoryOperand
 {
 	#[inline(always)]
 	fn emit_prefix_group2(self, byte_emitter: &mut ByteEmitter)
@@ -94,7 +35,7 @@ impl MemoryOperandOrBranchHint for BranchHint
 impl MemoryOrRegister for MemoryOperand
 {
 	#[inline(always)]
-	fn emit(self, byte_emitter: &mut ByteEmitter, reg: impl Register)
+	fn emit_mod_rm_sib(self, byte_emitter: &mut ByteEmitter, reg: impl Register)
 	{
 		const ScaleBitsMask: u8 = 0b1100_0000;
 		const ScaleShift: u8 = 6;
@@ -189,6 +130,56 @@ impl MemoryOrRegister for MemoryOperand
 			Immediate32Bit(displacement as i8).write(byte_emitter)
 		}
 	}
+	
+	#[inline(always)]
+	fn emit_rex_3(self, byte_emitter: &mut ByteEmitter, r: impl Register, mut byte: u8)
+	{
+		byte |= if r.requires_rex_byte()
+		{
+			OrdinaryInstructionStream::REX
+		}
+		else
+		{
+			0x00
+		};
+		
+		byte |= if r.requires_rex_bit()
+		{
+			OrdinaryInstructionStream::REX_R
+		}
+		else
+		{
+			0x00
+		};
+		
+		self.emit_rex_2(byte_emitter, byte)
+	}
+	
+	#[inline(always)]
+	fn emit_rex_2(self, byte_emitter: &mut ByteEmitter, mut byte: u8)
+	{
+		let rm = self;
+		
+		byte |= if rm.has_base_register() && rm.get_base_register().requires_rex_bit()
+		{
+			OrdinaryInstructionStream::REX_B
+		}
+		else
+		{
+			0x00
+		};
+		
+		byte |= if rm.has_index_register() && rm.get_index_register().requires_rex_bit()
+		{
+			OrdinaryInstructionStream::REX_X
+		}
+		else
+		{
+			0x00;
+		};
+		
+		byte_emitter.emit_u8_if_not_zero(byte);
+	}
 }
 
 impl MemoryOperand
@@ -224,6 +215,78 @@ impl MemoryOperand
 	const NullGeneralPurposeRegister: u64 = 0x10;
 	
 	const NullSegmentRegister: u64 = 0x07;
+	
+	#[inline(always)]
+	fn has_segment_register(self) -> bool
+	{
+		(self.0 && Self::SegmentRegisterMask) != (Self::NullSegmentRegister << Self::SegmentRegisterShift)
+	}
+	
+	#[inline(always)]
+	fn has_base_register(self) -> bool
+	{
+		(self.0 && Self::BaseRegisterMask) != (Self::NullGeneralPurposeRegister << Self::BaseRegisterShift)
+	}
+	
+	#[inline(always)]
+	fn has_index_register(self) -> bool
+	{
+		(self.0 && Self::IndexRegisterMask) != (Self::NullGeneralPurposeRegister << Self::IndexRegisterShift)
+	}
+	
+	#[inline(always)]
+	fn has_address_override_for_32_bit(self) -> bool
+	{
+		(self.0 && Self::AddressOverrideFor32BitMask) != 0
+	}
+	
+	#[inline(always)]
+	fn has_relative_instruction_pointer_offset(self) -> bool
+	{
+		(self.0 && Self::RelativeInstructionPointerOffsetMask) != 0
+	}
+	
+	#[inline(always)]
+	fn get_segment_register_index(self) -> u8
+	{
+		((self.0 & Self::SegmentRegisterMask) >> Self::SegmentRegisterShift) as u8
+	}
+	
+	#[inline(always)]
+	fn get_base_register_index(self) -> u8
+	{
+		((self.0 & Self::BaseRegisterMask) >> Self::BaseRegisterShift) as u8
+	}
+	
+	#[inline(always)]
+	fn get_base_register(self) -> Register64Bit
+	{
+		unsafe { transmute(self.get_base_register_index()) }
+	}
+	
+	#[inline(always)]
+	fn get_index_register_index(self) -> u8
+	{
+		((self.0 & Self::IndexRegisterMask) >> Self::IndexRegisterShift) as u8
+	}
+	
+	#[inline(always)]
+	fn get_index_register(self) -> Register64Bit
+	{
+		unsafe { transmute(self.get_index_register_index()) }
+	}
+	
+	#[inline(always)]
+	fn get_index_scale(self) -> IndexScale
+	{
+		unsafe { transmute((self.0 & Self::IndexScaleMask) >> Self::IndexScaleShift) }
+	}
+	
+	#[inline(always)]
+	fn get_displacement(self) -> Immediate32Bit
+	{
+		unsafe { transmute((self.0 & Self::DisplacementMask) >> Self::DisplacementShift) }
+	}
 	
 	#[inline(always)]
 	pub(crate) fn emit_prefix_group4(self, byte_emitter: &mut ByteEmitter)

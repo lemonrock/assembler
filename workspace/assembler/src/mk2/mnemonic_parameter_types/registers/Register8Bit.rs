@@ -2,15 +2,19 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// Register 0 (`AL`) and Register 1 (`CL`) are not defined on this enumeration.
+/// Register 0 (`AL`) and Register 1 (`CL`) are defined on this enumeration but optimal encodings of them in combination with mnemonics exist and should be preferred as they increase code density.
 ///
-/// Whilst technically valid to use, they are better encoded via the specialist singleton registers `AL::O` and `CL::O` as these produce a higher code density.
-///
-/// Registers 8 to 15 when encoded decrease code density (ie they are less efficiently encoded than register 2 to 7).
+/// Registers 8 to 15 when encoded decrease code density (ie they are less efficiently encoded than registers 1 to 7).
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 #[repr(u8)]
 pub enum Register8Bit
 {
+	/// Register 0.
+	AL = 1,
+	
+	/// Register 1.
+	CL = 1,
+	
 	/// Register 2.
 	DL = 2,
 
@@ -59,7 +63,7 @@ impl Default for Register8Bit
 	#[inline(always)]
 	fn default() -> Self
 	{
-		Register8Bit::DL
+		Register8Bit::AL
 	}
 }
 
@@ -74,6 +78,8 @@ impl ToOpcode for Register8Bit
 
 impl Register for Register8Bit
 {
+	const IsRegister8Bit: bool = true;
+	
 	#[inline(always)]
 	fn index(self) -> u8
 	{

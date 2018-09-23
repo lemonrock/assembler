@@ -7,6 +7,8 @@
 pub enum MemoryOffset32Bit
 {
 	/// `segment:offset` form.
+	///
+	/// Segment register is ignored in 64-bit long mode.
 	SegmentOffsetForm32(SegmentRegister, Immediate64Bit),
 
 	/// `offset` form.

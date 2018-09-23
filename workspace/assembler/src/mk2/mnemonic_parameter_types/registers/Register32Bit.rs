@@ -2,15 +2,16 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// Register 0 (`EAX`)is not defined on this enumeration.
-///
-/// Whilst technically valid to use, it is better encoded via the specialist singleton register `EAX::O` as this produces a higher code density.
+/// Register 0 (`EAX`) is defined on this enumeration but optimal encodings of it in combination with mnemonics exist and should be preferred as they increase code density.
 ///
 /// Registers 8 to 15 when encoded decrease code density (ie they are less efficiently encoded than registers 1 to 7).
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 #[repr(u8)]
 pub enum Register32Bit
 {
+	/// Register 0.
+	EAX = 0,
+	
 	/// Register 1.
 	ECX = 1,
 
@@ -62,7 +63,7 @@ impl Default for Register32Bit
 	#[inline(always)]
 	fn default() -> Self
 	{
-		Register32Bit::ECX
+		Register32Bit::EAX
 	}
 }
 

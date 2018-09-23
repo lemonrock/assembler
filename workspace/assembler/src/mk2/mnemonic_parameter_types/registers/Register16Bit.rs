@@ -2,17 +2,21 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// Register 0 (`AL`) and Register 2 (`DX`) are not defined on this enumeration.
+/// Register 0 (`AL`) and Register 2 (`DX`) are defined on this enumeration but optimal encodings of them in combination with mnemonics exist and should be preferred as they increase code density.
 ///
-/// Whilst technically valid to use, they are better encoded via the specialist singleton registers `AX::O` and `DX::O` as these produce a higher code density.
-///
-/// Registers 8 to 15 when encoded decrease code density (ie they are less efficiently encoded than registers 1 and 3 to 7).
+/// Registers 8 to 15 when encoded decrease code density (ie they are less efficiently encoded than registers 1 to 7).
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 #[repr(u8)]
 pub enum Register16Bit
 {
+	/// Register 0.
+	AX = 0,
+	
 	/// Register 1.
 	CX = 1,
+	
+	/// Register 2.
+	DX = 2,
 
 	/// Register 3.
 	BX = 3,
@@ -59,7 +63,7 @@ impl Default for Register16Bit
 	#[inline(always)]
 	fn default() -> Self
 	{
-		Register16Bit::CX
+		Register16Bit::AX
 	}
 }
 

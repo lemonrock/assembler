@@ -22,7 +22,7 @@ impl Displacement for u16
 	#[inline(always)]
 	fn write(self, byte_emitter: &mut ByteEmitter)
 	{
-		byte_emitter.emit_u16(self.to_le())
+		byte_emitter.emit_u16(self)
 	}
 }
 
@@ -31,7 +31,7 @@ impl Displacement for u32
 	#[inline(always)]
 	fn write(self, byte_emitter: &mut ByteEmitter)
 	{
-		byte_emitter.emit_u32(self.to_le())
+		byte_emitter.emit_u32(self)
 	}
 }
 
@@ -40,6 +40,6 @@ impl Displacement for u64
 	#[inline(always)]
 	fn write(self, byte_emitter: &mut ByteEmitter)
 	{
-		byte_emitter.emit_u64(self.to_le())
+		byte_emitter.emit_u64(self)
 	}
 }

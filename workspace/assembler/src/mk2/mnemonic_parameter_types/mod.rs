@@ -35,6 +35,6 @@ pub mod singletons;
 
 include!("AsDisplacement.rs");
 include!("BranchHint.rs");
-include!("MemoryOperandOrBranchHint.rs");
+include!("MemoryOrBranchHint.rs");
 include!("MemoryOrRegister.rs");
 include!("ToOpcode.rs");

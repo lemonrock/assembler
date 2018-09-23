@@ -9,6 +9,83 @@ pub struct OrdinaryInstructionStream
 
 impl OrdinaryInstructionStream
 {
+	/// `REX.W` prefix.
+	const REX_W: u8 = 0x48;
+	
+	/// `REX.R` prefix.
+	pub(crate) const REX_R: u8 = 0x44;
+	
+	/// `REX.X` prefix.
+	pub(crate) const REX_X: u8 = 0x42;
+	
+	/// `REX.B` prefix.
+	pub(crate) const REX_B: u8 = 0x41;
+	
+	/// `REX` prefix.
+	pub(crate) const REX: u8 = 0x40;
+	
+	#[inline(always)]
+	fn vex(&mut self)
+	{
+		/*
+		  /** Emits a 2-byte vex prefix. See Figure 2-9: Intel Manual Vol 2A 2-14. */
+  void vex2(uint8_t r_bit, const Operand& vvvv, uint8_t l, uint8_t pp) {
+    fxn_->emit_byte(0xc5);
+    fxn_->emit_byte(r_bit | ((~vvvv.val_ << 3) & 0x78) | (l << 2) | pp);
+  }
+
+  /** Emits a 3-byte vex prefix. See Figure 2-9: Intel Manual Vol 2A 2-14. */
+  void vex3(uint8_t r_bit, uint8_t x_bit, uint8_t b_bit, uint8_t mmmmm,
+            uint8_t w, const Operand& vvvv, uint8_t l, uint8_t pp) {
+    fxn_->emit_byte(0xc4);
+    fxn_->emit_byte(r_bit | x_bit | b_bit | mmmmm);
+    fxn_->emit_byte((w << 7) | ((~vvvv.val_ << 3) & 0x78) | (l << 2) | pp);
+  }
+
+  // Emits a vex prefix. See Figure 2-9: Intel Manual Vol 2A 2-14. */
+		template <typename T>
+	void vex(uint8_t mmmmm, uint8_t l, uint8_t pp, uint8_t w,
+		const Operand& vvvv, const M<T>& rm,
+		const Operand& r) {
+		uint8_t r_bit = (~r.val_ << 4) & 0x80;
+		uint8_t x_bit = rm.contains_index() ?
+		(~rm.get_index().val_ << 3) & 0x40 : 0x40;
+		uint8_t b_bit = rm.contains_base() ?
+		(~rm.get_base().val_ << 2) & 0x20 : 0x20;
+		
+		if (x_bit == 0x40 && b_bit == 0x20 && mmmmm == 0x01 && w == 0) {
+			vex2(r_bit, vvvv, l, pp);
+		} else {
+			vex3(r_bit, x_bit, b_bit, mmmmm, w, vvvv, l, pp);
+		}
+	}
+		
+		/** Emits a vex prefix. See Figure 2-9: Intel Manual Vol 2A 2-14. */
+		void vex(uint8_t mmmmm, uint8_t l, uint8_t pp, uint8_t w,
+		const Operand& vvvv, const Operand& rm,
+		const Operand& r) {
+		uint8_t r_bit = (~r.val_ << 4) & 0x80;
+		uint8_t b_bit = (~rm.val_ << 2) & 0x20;
+		
+		if (b_bit == 0x20 && mmmmm == 0x01 && w == 0) {
+			vex2(r_bit, vvvv, l, pp);
+		} else {
+			vex3(r_bit, 0x40, b_bit, mmmmm, w, vvvv, l, pp);
+		}
+	}
+		
+		/** Emits a vex prefix. See Figure 2-9: Intel Manual Vol 2A 2-14. */
+		void vex(uint8_t mmmmm, uint8_t l, uint8_t pp, uint8_t w,
+		const Operand& vvvv) {
+		if (mmmmm == 0x01 && w == 0) {
+			vex2(0x80, vvvv, l, pp);
+		} else {
+			vex3(0x80, 0x40, 0x20, mmmmm, w, vvvv, l, pp);
+		}
+	}
+		*/
+	}
+	
 	#[inline(always)]
 	fn prefix_fwait(&mut self, byte: u8)
 	{
@@ -22,7 +99,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn prefix_group2(&mut self, memory_operand_or_branch_hint: MemoryOperandOrBranchHint)
+	fn prefix_group2(&mut self, memory_operand_or_branch_hint: MemoryOrBranchHint)
 	{
 		memory_operand_or_branch_hint.emit_prefix_group2(&mut self.byte_emitter)
 	}
@@ -38,6 +115,26 @@ impl OrdinaryInstructionStream
 	{
 		memory_operand.emit_prefix_group4()
 	}
+	
+	#[inline(always)]
+	fn rex_3(&mut self, rm: MemoryOrRegister, r: impl Register, byte: u8)
+	{
+		rm.emit_rex_3(&mut self.byte_emitter, r, byte)
+	}
+	
+	#[inline(always)]
+	fn rex_2(&mut self, rm: MemoryOrRegister, byte: u8)
+	{
+		rm.emit_rex_2(&mut self.byte_emitter, byte)
+	}
+	
+    /*
+    
+    TODO: self.vex(0x02, 0x0, 0x0, 0x0, arg1, arg2, arg0);
+    
+ TODO: Now remove redundant arguments like arg0: XMM0, RAX, etc.!
+ 
+	*/
 	
 	
 	#[inline(always)]
@@ -104,51 +201,3 @@ impl OrdinaryInstructionStream
 		self.byte_emitter.emit_u32(0);
 	}
 }
-
-/*
-impl OrdinaryInstructionStream
-{
-	self.pref_group2(&mut self, arg0);
-
-	self.pref_group4(&mut self, arg0);
-	
-	self.pref_group3();
-	
-	rex!(self, arg1, arg0, 0x00);
-	/*
-	
-  /** Emits a rex prefix for rm/r memory/register instructions */
-  template <typename T>
-  void rex(const M<T>& rm, const Operand& r, uint8_t byte) {
-    byte |= requires_rex_byte(r) ? rex() : 0x00;
-    byte |= requires_rex_bit(r) ? rex_r() : 0x00;
-    rex(rm, byte);
-  }
-
-  /** Emits a rex prefix for rm memory instructions */
-  template <typename T>
-  void rex(const M<T>& rm, uint8_t byte) {
-    byte |= (rm.contains_base() && requires_rex_bit(rm.get_base())) ?
-      rex_b() : 0x00;
-    byte |= (rm.contains_index() && requires_rex_bit(rm.get_index())) ?
-      rex_x() : 0x00;
-    rex(byte);
-  }
-
-  /** Emits a rex prefix for rm/r register/register instructions */
-  void rex(const Operand& rm, const Operand& r, uint8_t byte) {
-    byte |= requires_rex_byte(r) ? rex() : 0x00;
-    byte |= requires_rex_bit(r) ? rex_r() : 0x00;
-    rex(rm, byte);
-  }
-
-  /** Emits a rex prefix for rm register instructions */
-  void rex(const Operand& rm, uint8_t byte) {
-    byte |= requires_rex_byte(rm) ? rex() : 0x00;
-    byte |= requires_rex_bit(rm) ? rex_b() : 0x00;
-    rex(byte);
-  }
-
-	*/
-}
-*/

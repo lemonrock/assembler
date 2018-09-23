@@ -6,6 +6,8 @@ singleton_register!(AL);
 
 impl Register for AL
 {
+	const IsRegister8Bit: bool = true;
+	
 	#[inline(always)]
 	fn index(self) -> u8
 	{

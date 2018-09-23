@@ -2,9 +2,7 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// Register 4 (`FS`) and Register 5 (`GS`) are not defined on this enumeration.
-///
-/// Whilst technically valid to use, they are better encoded via the specialist singleton registers `FS::O` and `GS::O` as these produce a higher code density.
+/// Register 4 (`FS`) and Register 5 (`GS`)  are defined on this enumeration but optimal encodings of them in combination with mnemonics exist and should be preferred as they increase code density.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 #[repr(u8)]
 pub enum SegmentRegister
@@ -28,6 +26,16 @@ pub enum SegmentRegister
 	///
 	/// One of four `Data Segment` registers, this one is typically used for local data.
 	DS = 3,
+
+	/// Register 4.
+	///
+	/// One of four `Data Segment` registers.
+	FS = 3,
+
+	/// Register 5.
+	///
+	/// One of four `Data Segment` registers.
+	GS = 3,
 }
 
 impl Default for SegmentRegister

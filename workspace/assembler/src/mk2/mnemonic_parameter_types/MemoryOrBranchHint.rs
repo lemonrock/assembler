@@ -3,7 +3,7 @@
 
 
 /// Memory operand or branch hint.
-pub trait MemoryOperandOrBranchHint
+pub trait MemoryOrBranchHint
 {
 	#[inline(always)]
 	fn emit_prefix_group2(self, byte_emitter: &mut ByteEmitter);

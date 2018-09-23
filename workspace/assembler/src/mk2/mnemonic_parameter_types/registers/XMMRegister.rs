@@ -2,15 +2,14 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// Register 0 (`XMM0`)is not defined on this enumeration.
-///
-/// Whilst technically valid to use, it is better encoded via the specialist singleton register `XMM0::O` as this produces a higher code density.
-///
-/// XMM registers.
+/// Register 0 (`XMM0`) is defined on this enumeration but optimal encodings of it in combination with mnemonics exist and should be preferred as they increase code density.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 #[repr(u8)]
 pub enum XMMRegister
 {
+	/// Register 0.
+	XMM0 = 0,
+	
 	/// Register 1.
 	XMM1 = 1,
 	
@@ -62,7 +61,7 @@ impl Default for XMMRegister
 	#[inline(always)]
 	fn default() -> Self
 	{
-		XMMRegister::XMM1
+		XMMRegister::XMM0
 	}
 }
 

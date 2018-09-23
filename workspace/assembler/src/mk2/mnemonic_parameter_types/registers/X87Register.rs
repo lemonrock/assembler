@@ -2,13 +2,14 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// (`ST(0)` is not defined on this enumeration.
-///
-/// Whilst technically valid to use, it is better encoded via the specialist singleton register `STO::O` as this produces a higher code density.
+/// Register 0 (`ST(0)`) is defined on this enumeration but optimal encodings of it in combination with mnemonics exist and should be preferred as they increase code density.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 #[repr(u8)]
 pub enum X87Register
 {
+	/// Register `ST(0)`.
+	ST0 = 0,
+	
 	/// Register `ST(1)`.
 	ST1 = 1,
 	
@@ -36,7 +37,7 @@ impl Default for X87Register
 	#[inline(always)]
 	fn default() -> Self
 	{
-		X87Register::ST1
+		X87Register::ST0
 	}
 }
 

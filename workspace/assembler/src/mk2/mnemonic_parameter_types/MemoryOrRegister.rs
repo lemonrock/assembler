@@ -7,5 +7,13 @@ pub trait MemoryOrRegister
 {
 	/// Emits Mod.R/B, Scaled Index Byte and related data.
 	#[inline(always)]
-	fn emit(self, byte_emitter: &mut ByteEmitter, reg: impl Register);
+	fn emit_mod_rm_sib(self, byte_emitter: &mut ByteEmitter, reg: impl Register);
+	
+	/// Emits REX prefix.
+	#[inline(always)]
+	fn emit_rex_3(self, byte_emitter: &mut ByteEmitter, r: impl Register, byte: u8);
+	
+	/// Emits REX prefix.
+	#[inline(always)]
+	fn emit_rex_2(self, byte_emitter: &mut ByteEmitter, byte: u8);
 }

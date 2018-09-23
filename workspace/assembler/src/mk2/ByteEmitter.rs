@@ -13,6 +13,15 @@ pub(crate) struct ByteEmitter
 impl ByteEmitter
 {
 	#[inline(always)]
+	pub(crate) fn emit_u8_if_not_zero(&mut self, byte: u8)
+	{
+		if byte != 0x00
+		{
+			self.byte_emitter.emit_u8(byte)
+		}
+	}
+	
+	#[inline(always)]
 	pub(crate) fn emit_u8(&mut self, emit: u8)
 	{
 		const Size: usize = 1;
@@ -26,7 +35,7 @@ impl ByteEmitter
 	{
 		const Size: usize = 2;
 		debug_assert!(self.instruction_pointer + Size <= self.end_instruction_pointer, "Not enough space to emit an u16");
-		unsafe { *(self.instruction_pointer as *mut u16) } = emit;
+		unsafe { *(self.instruction_pointer as *mut u16) } = emit.to_le();
 		self.instruction_pointer += Size;
 	}
 	
@@ -35,7 +44,7 @@ impl ByteEmitter
 	{
 		const Size: usize = 4;
 		debug_assert!(self.instruction_pointer + Size <= self.end_instruction_pointer, "Not enough space to emit an u32");
-		unsafe { *(self.instruction_pointer as *mut u32) } = emit;
+		unsafe { *(self.instruction_pointer as *mut u32) } = emit.to_le();
 		self.instruction_pointer += Size;
 	}
 	
@@ -44,7 +53,7 @@ impl ByteEmitter
 	{
 		const Size: usize = 8;
 		debug_assert!(self.instruction_pointer + Size <= self.end_instruction_pointer, "Not enough space to emit an u64");
-		unsafe { *(self.instruction_pointer as *mut u64) } = emit;
+		unsafe { *(self.instruction_pointer as *mut u64) } = emit.to_le();
 		self.instruction_pointer += Size;
 	}
 }
