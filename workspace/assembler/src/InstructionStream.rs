@@ -28478,7 +28478,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No 'ModR/M' byte or Scaled Index Byte (SIB).
 	
-		self.displacement_immediate_2(arg0, arg1);
+		self.displacement_immediate_2(Immediate8Bit(1), arg1);
 	
 		// No label displacement.
 	}
@@ -28504,7 +28504,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		// No 'ModR/M' byte or Scaled Index Byte (SIB).
 	
-		self.displacement_immediate_2(arg0, arg1);
+		self.displacement_immediate_2(Immediate8Bit(0), arg1);
 	
 		// No label displacement.
 	}
