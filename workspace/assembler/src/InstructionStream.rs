@@ -356,10 +356,13 @@ impl<'a> InstructionStream<'a>
 	{
 		let offset = self.instruction_pointer() % alignment;
 		
+		if offset == 0
+		{
+			return
+		}
+		
 		match alignment - offset
 		{
-			0 => (),
-			
 			1 => self.nop_1(),
 			
 			2 => self.nop_2(),
