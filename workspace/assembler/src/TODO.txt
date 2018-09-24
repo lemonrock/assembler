@@ -4,3 +4,6 @@
 // TODO: Consider using enum variants for Memory Operand, or, at least, parts of memory operand like the RIP-mode and base-less addressing.
 // TODO: Construct ordinary instruction stream.
 
+// TODO: Instructions using just segments and address size 32 bit
+	setz_Any8BitMemory
+	Things matching the pattern `fn [a-z]+_Any` => 446 functions, although some have already been converted.
