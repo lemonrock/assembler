@@ -19,3 +19,4 @@ version = "0.0.0"
 
 [dependencies]
 libc = "^0.2"
+likely = "^0.1"

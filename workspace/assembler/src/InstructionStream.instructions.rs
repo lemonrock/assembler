@@ -24753,8 +24753,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if `ECX` register is 0.
 	#[inline(always)]
-	pub fn jecxz_Label(&mut self, arg0: Label)
+	pub fn jecxz_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.

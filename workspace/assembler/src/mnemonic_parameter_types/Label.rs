@@ -6,4 +6,4 @@
 ///
 /// Created using `InstructStream.create_label()`.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct Label(usize);
+pub struct Label(pub(crate) usize);

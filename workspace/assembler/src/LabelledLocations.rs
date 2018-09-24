@@ -72,7 +72,7 @@ impl LabelledLocations
 	#[inline(always)]
 	pub(crate) fn potential_target_instruction_pointer(&self, label: Label) -> InstructionPointer
 	{
-		unsafe { *self.pointer_at_index(label) }
+		unsafe { *self.pointer_at_index(label.0) }
 	}
 	
 	#[inline(always)]

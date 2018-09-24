@@ -7,6 +7,7 @@
 #![allow(non_camel_case_types)]
 #![deny(missing_docs)]
 #![deny(unreachable_patterns)]
+#![feature(core_intrinsics)]
 
 
 //! #assembler

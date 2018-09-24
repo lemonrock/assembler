@@ -105,6 +105,38 @@ impl ByteEmitter
 	}
 	
 	#[inline(always)]
+	pub(crate) fn insert_8_bit_effective_address_displacement(&mut self, insert_at_instruction_pointer: InstructionPointer, target_instruction_pointer: InstructionPointer) -> ShortJmpResult
+	{
+		let displacement = (target_instruction_pointer as isize) - (self.start_instruction_pointer as isize) - 1;
+		if unlikely!(displacement >= -127 && displacement < 128)
+		{
+			return Err(())
+		}
+		self.emit_u8_at((displacement) as u8, insert_at_instruction_pointer);
+		Ok(())
+	}
+	
+	#[inline(always)]
+	pub(crate) fn insert_32_bit_effective_address_displacement(&mut self, insert_at_instruction_pointer: InstructionPointer, target_instruction_pointer: InstructionPointer)
+	{
+		let displacement = (target_instruction_pointer as isize) - (self.start_instruction_pointer as isize) - 4;
+		debug_assert!(displacement >= ::std::isize::MIN && displacement < ::std::isize::MAX, "displacement would exceed range of i32");
+		self.emit_u32_at((displacement) as u32, insert_at_instruction_pointer)
+	}
+	
+	#[inline(always)]
+	fn emit_u8_at(&mut self, emit: u8, at: InstructionPointer)
+	{
+		unsafe { *(at as *mut u8) = emit };
+	}
+	
+	#[inline(always)]
+	fn emit_u32_at(&mut self, emit: u32, at: InstructionPointer)
+	{
+		unsafe { *(at as *mut u32) = emit };
+	}
+	
+	#[inline(always)]
 	pub(crate) fn emit_u8(&mut self, emit: u8)
 	{
 		const Size: usize = 1;

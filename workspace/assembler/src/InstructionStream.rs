@@ -53,26 +53,6 @@ impl<'a> InstructionStream<'a>
 		}
 	}
 	
-	#[inline(always)]
-	fn insert_8_bit_effective_address_displacement(&mut self, insert_at_instruction_pointer: InstructionPointer, target_instruction_pointer: InstructionPointer) -> ShortJmpResult
-	{
-		let displacement = (target_instruction_pointer as isize) - (self.byte_emitter.start_instruction_pointer as isize) - 1;
-		if unlikely!(displacement >= -127 && displacement < 128)
-		{
-			return Err()
-		}
-		self.byte_emitter.emit_u8_at((displacement) as u8, insert_at_instruction_pointer);
-		Ok(())
-	}
-	
-	#[inline(always)]
-	fn insert_32_bit_effective_address_displacement(&mut self, insert_at_instruction_pointer: InstructionPointer, target_instruction_pointer: InstructionPointer)
-	{
-		let displacement = (target_instruction_pointer as isize) - (self.byte_emitter.start_instruction_pointer as isize) - 4;
-		debug_assert!(displacement >= ::std::isize::MIN && displacement < ::std::isize::MAX, "displacement would exceed range of i32");
-		self.byte_emitter.emit_u32_at((displacement) as u32, insert_at_instruction_pointer)
-	}
-	
 	/// Resolves all remaining labels and makes code executable.
 	///
 	/// Will panic in debug builds if labels can not be resolved, 8-bit JMPs are too far away or 32-bit JMPs have displacements of more than 2Gb!
@@ -83,8 +63,8 @@ impl<'a> InstructionStream<'a>
 		{
 			let target_instruction_pointer = self.labelled_locations.potential_target_instruction_pointer(label);
 			debug_assert!(target_instruction_pointer.is_valid(), "unresolved label '{:?}'", label);
-			let result = self.insert_8_bit_effective_address_displacement(insert_at_instruction_pointer, target_instruction_pointer);
-			debug_assert!(result.is_none(), "8-bit JMP for label '{:?}' was too far", label)
+			let result = self.byte_emitter.insert_8_bit_effective_address_displacement(insert_at_instruction_pointer, target_instruction_pointer);
+			debug_assert!(result.is_err(), "8-bit JMP for label '{:?}' was too far", label)
 		}
 		
 		for (label, insert_at_instruction_pointer) in self.instruction_pointers_to_replace_labels_with_32_bit_displacements
@@ -92,10 +72,8 @@ impl<'a> InstructionStream<'a>
 			let target_instruction_pointer = self.labelled_locations.potential_target_instruction_pointer(label);
 			debug_assert!(target_instruction_pointer.is_valid(), "unresolved label '{:?}'", label);
 			
-			self.insert_32_bit_effective_address_displacement(insert_at_instruction_pointer, target_instruction_pointer)
+			self.byte_emitter.insert_32_bit_effective_address_displacement(insert_at_instruction_pointer, target_instruction_pointer)
 		}
-		
-		self.labelled_locations.iterate(|label, instruction_pointer| {});
 		
 		self.executable_anonymous_memory_map.make_executable()
 	}
@@ -103,7 +81,7 @@ impl<'a> InstructionStream<'a>
 	#[inline(always)]
 	fn bookmark(&mut self)
 	{
-		self.byte_emitter.bookmark()
+		self.byte_emitter.store_bookmark()
 	}
 	
 	/// Returns an error if displacement would exceed 8 bits.
@@ -113,7 +91,8 @@ impl<'a> InstructionStream<'a>
 		let target_instruction_pointer = self.labelled_locations.potential_target_instruction_pointer(label);
 		if target_instruction_pointer.is_valid()
 		{
-			match self.insert_8_bit_effective_address_displacement(ins, target_instruction_pointer)
+			let insert_at_instruction_pointer = self.byte_emitter.instruction_pointer;
+			match self.byte_emitter.insert_8_bit_effective_address_displacement(insert_at_instruction_pointer, target_instruction_pointer)
 			{
 				Ok(()) => Ok(()),
 				Err(()) =>
@@ -125,7 +104,8 @@ impl<'a> InstructionStream<'a>
 		}
 		else
 		{
-			self.instruction_pointers_to_replace_labels_with_8_bit_displacements.push((label, self.instruction_pointer()));
+			let instruction_pointer = self.instruction_pointer();
+			self.instruction_pointers_to_replace_labels_with_8_bit_displacements.push((label, instruction_pointer));
 			self.byte_emitter.skip_u8();
 			Ok(())
 		}
@@ -137,14 +117,16 @@ impl<'a> InstructionStream<'a>
 	#[inline(always)]
 	fn displacement_label_32bit(&mut self, label: Label)
 	{
-		let instruction_pointer = self.labelled_locations.potential_target_instruction_pointer(label);
-		if instruction_pointer.is_valid()
+		let target_instruction_pointer = self.labelled_locations.potential_target_instruction_pointer(label);
+		if target_instruction_pointer.is_valid()
 		{
-			self.insert_32_bit_effective_address_displacement(insert_at_instruction_pointer, target_instruction_pointer)
+			let insert_at_instruction_pointer = self.byte_emitter.instruction_pointer;
+			self.byte_emitter.insert_32_bit_effective_address_displacement(insert_at_instruction_pointer, target_instruction_pointer)
 		}
 		else
 		{
-			self.instruction_pointers_to_replace_labels_with_32_bit_displacements.push((label, self.instruction_pointer()));
+			let instruction_pointer = self.instruction_pointer();
+			self.instruction_pointers_to_replace_labels_with_32_bit_displacements.push((label, instruction_pointer));
 			self.byte_emitter.skip_u32();
 		}
 	}
@@ -154,7 +136,7 @@ impl<'a> InstructionStream<'a>
 	pub fn create_and_attach_label(&mut self) -> Label
 	{
 		let label = self.create_label();
-		self.label(label);
+		self.attach_label(label);
 		label
 	}
 	
@@ -177,7 +159,8 @@ impl<'a> InstructionStream<'a>
 	#[inline(always)]
 	pub fn attach_label(&mut self, label: Label)
 	{
-		self.labelled_locations.set(label, self.instruction_pointer())
+		let instruction_pointer = self.instruction_pointer();
+		self.labelled_locations.set(label, instruction_pointer)
 	}
 	
 	/// Creates a function pointer to the current location that takes no arguments and returns a result of type `R`.
