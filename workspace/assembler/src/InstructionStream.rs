@@ -779,18 +779,22 @@ pub trait InstructionStream
 	fn bzhi_Register64Bit_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit, arg2: Register64Bit);
 
 	/// Call far, absolute indirect address given in `m16:16`.
+	///
 	/// In 32-bit mode: if selector points to a gate, then `RIP` = 32-bit zero extended displacement taken from gate else `RIP` = zero extended 16-bit offset from far pointer referenced in the instruction.
 	fn call_FarPointer16BitTo16Bit(&mut self, arg0: FarPointer16BitTo16Bit);
 
 	/// Call far, absolute indirect address given in `m16:32`.
+	///
 	/// In 64-bit mode: If selector points to a gate, then `RIP` = 64-bit displacement taken from gate else `RIP` = zero extended 32-bit offset from far pointer referenced in the instruction.
 	fn call_FarPointer16BitTo32Bit(&mut self, arg0: FarPointer16BitTo32Bit);
 
 	/// Call far, absolute indirect address given in `m16:64`.
+	///
 	/// In 64-bit mode: If selector points to a gate, then `RIP` = 64-bit displacement taken from gate else `RIP` = 64-bit offset from far pointer referenced in the instruction.
 	fn call_FarPointer16BitTo64Bit(&mut self, arg0: FarPointer16BitTo64Bit);
 
 	/// Call near, relative, displacement relative to next instruction.
+	///
 	/// 32-bit displacement sign extended to 64-bits in 64-bit mode.
 	fn call_Label(&mut self, arg0: Label);
 
@@ -801,6 +805,7 @@ pub trait InstructionStream
 	fn call_Register64Bit(&mut self, arg0: Register64Bit);
 
 	/// Call near, relative, displacement relative to next instruction.
+	///
 	/// 32-bit displacement sign extended to 64-bits in 64-bit mode.
 	fn call_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit);
 
@@ -1565,46 +1570,63 @@ pub trait InstructionStream
 	/// For legacy mode, compare word at address `DS:(E)SI` with word at address `ES:(E)DI`.
 	///
 	/// For 64-bit mode compare word at address `(R|E)SI` with word at address `(R|E)DI`.
+	///
 	/// The status flags are set accordingly.
 	fn cmpsw(&mut self);
 
 	/// Compare `AX` with `r/m16`.
+	///
 	/// If equal the Zero Flag (ZF) is set and `r16` is loaded into `r/m16`.
+	///
 	/// Otherwise clears the Zero Flag (ZF) and loads `r/m16` into `AX`.
 	fn cmpxchg_Any16BitMemory_Register16Bit(&mut self, arg0: Any16BitMemory, arg1: Register16Bit);
 
 	/// Compare `EAX` with `r/m32`.
+	///
 	/// If equal the Zero Flag (ZF) is set and `r32` is loaded into `r/m32`.
+	///
 	/// Otherwise clears the Zero Flag (ZF) and loads `r/m32` into `EAX`.
 	fn cmpxchg_Any32BitMemory_Register32Bit(&mut self, arg0: Any32BitMemory, arg1: Register32Bit);
 
 	/// Compare `RAX` with `r/m64`.
+	///
 	/// If equal the Zero Flag (ZF) is set and `r64` is loaded into `r/m64`.
+	///
 	/// Otherwise clears the Zero Flag (ZF) and loads `r/m64` into `RAX`.
 	fn cmpxchg_Any64BitMemory_Register64Bit(&mut self, arg0: Any64BitMemory, arg1: Register64Bit);
 
 	/// Compare `AL` with `r/m8`.
+	///
 	/// If equal the Zero Flag (ZF) is set and `r8` is loaded into `r/m8`.
+	///
 	/// Otherwise clears the Zero Flag (ZF) and loads `r/m8` into `AL`.
 	fn cmpxchg_Any8BitMemory_Register8Bit(&mut self, arg0: Any8BitMemory, arg1: Register8Bit);
 
 	/// Compare `AL` with `r/m8`.
+	///
 	/// If equal the Zero Flag (ZF) is set and `r8` is loaded into `r/m8`.
+	///
 	/// Otherwise clears the Zero Flag (ZF) and loads `r/m8` into `AL`.
 	fn cmpxchg_Any8BitMemory_RegisterHigh8BitsOf16Bits(&mut self, arg0: Any8BitMemory, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Compare `AX` with `r/m16`.
+	///
 	/// If equal the Zero Flag (ZF) is set and `r16` is loaded into `r/m16`.
+	///
 	/// Otherwise clears the Zero Flag (ZF) and loads `r/m16` into `AX`.
 	fn cmpxchg_Register16Bit_Register16Bit(&mut self, arg0: Register16Bit, arg1: Register16Bit);
 
 	/// Compare `EAX` with `r/m32`.
+	///
 	/// If equal the Zero Flag (ZF) is set and `r32` is loaded into `r/m32`.
+	///
 	/// Otherwise clears the Zero Flag (ZF) and loads `r/m32` into `EAX`.
 	fn cmpxchg_Register32Bit_Register32Bit(&mut self, arg0: Register32Bit, arg1: Register32Bit);
 
 	/// Compare `RAX` with `r/m64`.
+	///
 	/// If equal the Zero Flag (ZF) is set and `r64` is loaded into `r/m64`.
+	///
 	/// Otherwise clears the Zero Flag (ZF) and loads `r/m64` into `RAX`.
 	fn cmpxchg_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
@@ -1614,27 +1636,37 @@ pub trait InstructionStream
 	fn cmpxchg_Register8Bit_Register8Bit(&mut self, arg0: Register8Bit, arg1: Register8Bit);
 
 	/// Compare `AL` with `r/m8`.
+	///
 	/// If equal the Zero Flag (ZF) is set and `r8` is loaded into `r/m8`.
+	///
 	/// Otherwise clears the Zero Flag (ZF) and loads `r/m8` into `AL`.
 	fn cmpxchg_Register8Bit_RegisterHigh8BitsOf16Bits(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Compare `AL` with `r/m8`.
+	///
 	/// If equal the Zero Flag (ZF) is set and `r8` is loaded into `r/m8`.
+	///
 	/// Otherwise clears the Zero Flag (ZF) and loads `r/m8` into `AL`.
 	fn cmpxchg_RegisterHigh8BitsOf16Bits_Register8Bit(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit);
 
 	/// Compare `AL` with `r/m8`.
+	///
 	/// If equal the Zero Flag (ZF) is set and `r8` is loaded into `r/m8`.
+	///
 	/// Otherwise clears the Zero Flag (ZF) and loads `r/m8` into `AL`.
 	fn cmpxchg_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits);
 
 	/// Compare `RDX:RAX` with `m128`.
+	///
 	/// If equal, set ZF and load `RCX:RBX` into `m128`.
+	///
 	/// Otherwise clears the Zero Flag (ZF) and loads `m128` into `RDX:RAX`.
 	fn cmpxchg16b_Any128BitMemory(&mut self, arg0: Any128BitMemory);
 
 	/// Compare `EDX:EAX` with `m64`.
+	///
 	/// If equal, set ZF and load `ECX:EBX` into `m64`.
+	///
 	/// Otherwise clears the Zero Flag (ZF) and loads `m64` into `EDX:EAX`.
 	fn cmpxchg8b_Any64BitMemory(&mut self, arg0: Any64BitMemory);
 
@@ -2269,6 +2301,7 @@ pub trait InstructionStream
 	fn fnop(&mut self);
 
 	/// Store Floating Point Unit (FPU) environment to `m94byte` or `m108byte` without checking for pending unmasked floating-point exceptions.
+	///
 	/// Then re-initialize the Floating Point Unit (FPU).
 	fn fnsave_Contiguous108ByteMemory(&mut self, arg0: Contiguous108ByteMemory);
 
@@ -2276,6 +2309,7 @@ pub trait InstructionStream
 	fn fnstcw_Contiguous2ByteMemory(&mut self, arg0: Contiguous2ByteMemory);
 
 	/// Store Floating Point Unit (FPU) environment to `m14byte` or `m28byte` without checking for pending unmasked floating-point exceptions.
+	///
 	/// Then mask all floating-point exceptions.
 	fn fnstenv_Contiguous28ByteMemory(&mut self, arg0: Contiguous28ByteMemory);
 
@@ -2304,6 +2338,7 @@ pub trait InstructionStream
 	fn frstor_Contiguous108ByteMemory(&mut self, arg0: Contiguous108ByteMemory);
 
 	/// Store Floating Point Unit (FPU) state to `m94byte` or `m108byte` after checking for pending unmasked floating-point exceptions.
+	///
 	/// Then re-initialize the Floating Point Unit (FPU).
 	fn fsave_Contiguous108ByteMemory(&mut self, arg0: Contiguous108ByteMemory);
 
@@ -2332,6 +2367,7 @@ pub trait InstructionStream
 	fn fstcw_Contiguous2ByteMemory(&mut self, arg0: Contiguous2ByteMemory);
 
 	/// Store Floating Point Unit (FPU) environment to `m14byte` or `m28byte` after checking for pending unmasked floating-point exceptions.
+	///
 	/// Then mask all floating-point exceptions.
 	fn fstenv_Contiguous28ByteMemory(&mut self, arg0: Contiguous28ByteMemory);
 
@@ -3521,7 +3557,7 @@ pub trait InstructionStream
 	fn lock(&mut self);
 
 	/// For legacy mode load word at address `DS:(E)SI` into `AX`.
-	
+	///
 	/// For 64-bit mode load word at address `(R)SI` into `AX`.
 	fn lods_Any16BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool);
 
@@ -3620,10 +3656,12 @@ pub trait InstructionStream
 	fn lzcnt_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit);
 
 	/// Selectively write bytes from `xmm1` to memory location using the byte mask in `xmm2`.
+	///
 	/// The default memory location is specified by `DS:DI`, `EDI` or `RDI`.
 	fn maskmovdqu_XMMRegister_XMMRegister(&mut self, arg0: XMMRegister, arg1: XMMRegister);
 
 	/// Selectively write bytes from `mm1` to memory location using the byte mask in mm2.
+	///
 	/// The default memory location is specified by `DS:DI`, `EDI` or `RDI`.
 	fn maskmovq_MMRegister_MMRegister(&mut self, arg0: MMRegister, arg1: MMRegister);
 
@@ -3981,18 +4019,22 @@ pub trait InstructionStream
 	fn movlps_XMMRegister_Any64BitMemory(&mut self, arg0: XMMRegister, arg1: Any64BitMemory);
 
 	/// Extract 2-bit sign mask from `xmm` and store in `r32`.
+	///
 	/// The upper bits of `r32` or `r64` are filled with zeros.
 	fn movmskpd_Register32Bit_XMMRegister(&mut self, arg0: Register32Bit, arg1: XMMRegister);
 
 	/// Extract 2-bit sign mask from `xmm` and store in `r64`.
+	///
 	/// The upper bits of `r32` or `r64` are filled with zeros.
 	fn movmskpd_Register64Bit_XMMRegister(&mut self, arg0: Register64Bit, arg1: XMMRegister);
 
 	/// Extract 4-bit sign mask from `xmm` and store in `r32`.
+	///
 	/// The upper bits of `r32` or `r64` are filled with zeros.
 	fn movmskps_Register32Bit_XMMRegister(&mut self, arg0: Register32Bit, arg1: XMMRegister);
 
 	/// Extract 4-bit sign mask from `xmm` and store in `r64`.
+	///
 	/// The upper bits of `r32` or `r64` are filled with zeros.
 	fn movmskps_Register64Bit_XMMRegister(&mut self, arg0: Register64Bit, arg1: XMMRegister);
 
@@ -4243,10 +4285,12 @@ pub trait InstructionStream
 	fn movzx_Register64Bit_Register8Bit(&mut self, arg0: Register64Bit, arg1: Register8Bit);
 
 	/// Sums absolute 8-bit integer difference of adjacent groups of 4 byte integers in `xmm1` and `xmm2/m128` and writes the results in `xmm1`.
+	///
 	/// Starting offsets within `xmm1` and `xmm2/m128` are determined by `imm8`.
 	fn mpsadbw_XMMRegister_Any128BitMemory_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: Any128BitMemory, arg2: Immediate8Bit);
 
 	/// Sums absolute 8-bit integer difference of adjacent groups of 4 byte integers in `xmm1` and `xmm2/m128` and writes the results in `xmm1`.
+	///
 	/// Starting offsets within `xmm1` and `xmm2/m128` are determined by `imm8`.
 	fn mpsadbw_XMMRegister_XMMRegister_Immediate8Bit(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: Immediate8Bit);
 
@@ -4981,30 +5025,37 @@ pub trait InstructionStream
 	fn pextrq_Register64Bit_XMMRegister_Immediate8Bit(&mut self, arg0: Register64Bit, arg1: XMMRegister, arg2: Immediate8Bit);
 
 	/// Extract the word specified by `imm8` from `xmm` and copy it to lowest 16 bits of `reg` or `m16`.
+	///
 	/// Zero-extend the result in the destination, `r32` or `r64`.
 	fn pextrw_Any16BitMemory_XMMRegister_Immediate8Bit(&mut self, arg0: Any16BitMemory, arg1: XMMRegister, arg2: Immediate8Bit);
 
 	/// Extract the word specified by `imm8` from `mm` and move it to `reg`, bits 15-0.
+	///
 	/// The upper bits of `r32` or `r64` is zeroed.
 	fn pextrw_Register32Bit_MMRegister_Immediate8Bit(&mut self, arg0: Register32Bit, arg1: MMRegister, arg2: Immediate8Bit);
 
 	/// Extract the word specified by `imm8` from `xmm` and move it to `reg`, bits 15-0.
+	///
 	/// The upper bits of `r32` or `r64` is zeroed.
 	fn pextrw_Register32Bit_XMMRegister_Immediate8Bit(&mut self, arg0: Register32Bit, arg1: XMMRegister, arg2: Immediate8Bit);
 
 	/// Extract the word specified by `imm8` from `xmm` and copy it to lowest 16 bits of `reg` or `m16`.
+	///
 	/// Zero-extend the result in the destination, `r32` or `r64`.
 	fn pextrw_Register32Bit_XMMRegister_Immediate8Bit_REX_W(&mut self, arg0: Register32Bit, arg1: XMMRegister, arg3: Immediate8Bit);
 
 	/// Extract the word specified by `imm8` from `mm` and move it to `reg`, bits 15-0.
+	///
 	/// The upper bits of `r32` or `r64` is zeroed.
 	fn pextrw_Register64Bit_MMRegister_Immediate8Bit(&mut self, arg0: Register64Bit, arg1: MMRegister, arg2: Immediate8Bit);
 
 	/// Extract the word specified by `imm8` from `xmm` and move it to `reg`, bits 15-0.
+	///
 	/// The upper bits of `r32` or `r64` is zeroed.
 	fn pextrw_Register64Bit_XMMRegister_Immediate8Bit(&mut self, arg0: Register64Bit, arg1: XMMRegister, arg2: Immediate8Bit);
 
 	/// Extract the word specified by `imm8` from `xmm` and copy it to lowest 16 bits of `reg` or `m16`.
+	///
 	/// Zero-extend the result in the destination, `r32` or `r64`.
 	fn pextrw_Register64Bit_XMMRegister_Immediate8Bit_REX_W(&mut self, arg0: Register64Bit, arg1: XMMRegister, arg3: Immediate8Bit);
 
