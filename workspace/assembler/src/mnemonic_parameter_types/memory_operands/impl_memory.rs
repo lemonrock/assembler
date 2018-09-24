@@ -64,7 +64,7 @@ macro_rules! impl_memory
 			}
 		}
 		
-		impl MemoryOrBranchHint for $struct_name
+		impl PrefixGroup2 for $struct_name
 		{
 			#[inline(always)]
 			fn emit_prefix_group2(self, byte_emitter: &mut ByteEmitter)

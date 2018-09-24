@@ -28,9 +28,13 @@ pub enum Register32Bit
 	EBP = 5,
 
 	/// Register 6.
+	///
+	/// The 'source' operand in string instructions.
 	ESI = 6,
 
 	/// Register 7.
+	///
+	/// The 'destination' operand in string instructions.
 	EDI = 7,
 
 	/// Register 8.

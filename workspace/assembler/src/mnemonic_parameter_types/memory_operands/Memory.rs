@@ -3,7 +3,7 @@
 
 
 /// Memory.
-pub(crate) trait Memory: MemoryOrRegister + MemoryOrBranchHint
+pub(crate) trait Memory: MemoryOrRegister + PrefixGroup2
 {
 	/// Underlying memory operand.
 	#[inline(always)]

@@ -13,6 +13,23 @@ pub(crate) struct ByteEmitter
 impl ByteEmitter
 {
 	#[inline(always)]
+	pub(crate) fn emit_prefix_group2_for_segment_register(&mut self, segment_register: SegmentRegister)
+	{
+		use self::SegmentRegister::*;
+		
+		let segment_register_byte = match segment_register
+		{
+			ES => 0x26,
+			CS => 0x2E,
+			SS => 0x36,
+			DS => 0x3E,
+			FS => 0x64,
+			GS => 0x65,
+		};
+		self.emit_u8(segment_register_byte)
+	}
+	
+	#[inline(always)]
 	pub(crate) fn emit_2_byte_vex_prefix(&mut self, r_bit: u8, vvvv: impl Register, l: u8, pp: u8)
 	{
 		self.emit_u8(0xC5);

@@ -14,7 +14,7 @@ pub enum BranchHint
 	NotTaken = 0x2E,
 }
 
-impl MemoryOrBranchHint for BranchHint
+impl PrefixGroup2 for BranchHint
 {
 	#[inline(always)]
 	fn emit_prefix_group2(self, byte_emitter: &mut ByteEmitter)

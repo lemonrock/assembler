@@ -28,6 +28,6 @@ pub mod relative_addresses;
 include!("AsDisplacement.rs");
 include!("BranchHint.rs");
 include!("Label.rs");
-include!("MemoryOrBranchHint.rs");
 include!("MemoryOrRegister.rs");
+include!("PrefixGroup2.rs");
 include!("ToOpcode.rs");

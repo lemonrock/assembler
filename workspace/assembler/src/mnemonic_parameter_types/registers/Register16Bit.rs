@@ -28,9 +28,13 @@ pub enum Register16Bit
 	BP = 5,
 
 	/// Register 6.
+	///
+	/// The 'source' operand in string instructions.
 	SI = 6,
 
 	/// Register 7.
+	///
+	/// The 'destination' operand in string instructions.
 	DI = 7,
 
 	/// Register 8.

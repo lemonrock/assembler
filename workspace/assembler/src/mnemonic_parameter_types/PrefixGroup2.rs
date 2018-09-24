@@ -3,8 +3,20 @@
 
 
 /// Memory operand or branch hint.
-pub(crate) trait MemoryOrBranchHint
+pub(crate) trait PrefixGroup2
 {
 	#[inline(always)]
 	fn emit_prefix_group2(self, byte_emitter: &mut ByteEmitter);
+}
+
+impl PrefixGroup2 for Option<SegmentRegister>
+{
+	#[inline(always)]
+	fn emit_prefix_group2(self, byte_emitter: &mut ByteEmitter)
+	{
+		if let Some(segment_register) = self
+		{
+			byte_emitter.emit_prefix_group2_for_segment_register(segment_register)
+		}
+	}
 }

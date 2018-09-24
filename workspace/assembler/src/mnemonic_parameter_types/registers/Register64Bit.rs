@@ -28,9 +28,13 @@ pub enum Register64Bit
 	RBP = 5,
 
 	/// Register 6.
+	///
+	/// The 'source' operand in string instructions.
 	RSI = 6,
 
 	/// Register 7.
+	///
+	/// The 'destination' operand in string instructions.
 	RDI = 7,
 
 	/// Register 8.

@@ -60,7 +60,7 @@ impl OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn prefix_group2(&mut self, memory_operand_or_branch_hint: impl MemoryOrBranchHint)
+	fn prefix_group2(&mut self, memory_operand_or_branch_hint: impl PrefixGroup2)
 	{
 		memory_operand_or_branch_hint.emit_prefix_group2(&mut self.byte_emitter)
 	}
@@ -74,7 +74,17 @@ impl OrdinaryInstructionStream
 	#[inline(always)]
 	fn prefix_group4(&mut self, memory: impl Memory)
 	{
-		memory.memory_operand().emit_prefix_group4(&mut self.byte_emitter)
+		self.prefix_group4_if_address_override(memory.memory_operand().has_address_override_for_32_bit())
+	}
+	
+	#[inline(always)]
+	fn prefix_group4_if_address_override(&mut self, address_override_for_32_bit: bool)
+	{
+		if address_override_for_32_bit
+		{
+			const AddressOverridePrefix: u8 = 0x67;
+			self.byte_emitter.emit_u8(AddressOverridePrefix)
+		}
 	}
 	
 	#[inline(always)]

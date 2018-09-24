@@ -1514,24 +1514,24 @@ pub trait InstructionStream
 	/// For 64-bit mode compare word at address `(R|E)SI` with word at address `(R|E)DI`.
 	///
 	/// The status flags are set accordingly.
-	fn cmps_Any16BitMemory_Any16BitMemory(&mut self, arg0: Any16BitMemory, arg1: Any16BitMemory);
+	fn cmps_Any16BitMemory_Any16BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool);
 
 	/// For legacy mode, compare dword at address `DS:(E)SI` at dword at address `ES:(E)DI`.
 	///
 	/// For 64-bit mode compare dword at address ``(R|E)SI`` at dword at address `(R|E)DI`.
 	///
 	/// The status flags are set accordingly.
-	fn cmps_Any32BitMemory_Any32BitMemory(&mut self, arg0: Any32BitMemory, arg1: Any32BitMemory);
+	fn cmps_Any32BitMemory_Any32BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool);
 
 	/// Compares quadword at address `(R|E)SI` with quadword at address `(R|E)DI` and sets the status flags accordingly.
-	fn cmps_Any64BitMemory_Any64BitMemory(&mut self, arg0: Any64BitMemory, arg1: Any64BitMemory);
+	fn cmps_Any64BitMemory_Any64BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool);
 
 	/// For legacy mode, compare byte at address `DS:(E)SI` with byte at address `ES:(E)DI`.
 	///
 	/// For 64-bit mode compare byte at address `(R|E)SI` to byte at address `(R|E)DI`.
 	///
 	/// The status flags are set accordingly.
-	fn cmps_Any8BitMemory_Any8BitMemory(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory);
+	fn cmps_Any8BitMemory_Any8BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool);
 
 	/// For legacy mode, compare byte at address `DS:(E)SI` with byte at address `ES:(E)DI`.
 	///
@@ -6257,19 +6257,19 @@ pub trait InstructionStream
 	fn rep_stos_Any8BitMemory_1(&mut self, arg0: Any8BitMemory);
 
 	/// Find nonmatching words in `ES:[(E)DI]` and `DS:[(E)SI]`.
-	fn repe_cmps_Any16BitMemory_Any16BitMemory(&mut self, arg0: Any16BitMemory, arg1: Any16BitMemory);
+	fn repe_cmps_Any16BitMemory_Any16BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool);
 
 	/// Find nonmatching doublewords in `ES:[(E)DI]` and `DS:[(E)SI]`.
-	fn repe_cmps_Any32BitMemory_Any32BitMemory(&mut self, arg0: Any32BitMemory, arg1: Any32BitMemory);
+	fn repe_cmps_Any32BitMemory_Any32BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool);
 
 	/// Find non-matching quadwords in `[RDI]` and `[RSI]`.
-	fn repe_cmps_Any64BitMemory_Any64BitMemory(&mut self, arg0: Any64BitMemory, arg1: Any64BitMemory);
+	fn repe_cmps_Any64BitMemory_Any64BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool);
 
 	/// Find nonmatching bytes in `ES:[(E)DI]` and `DS:[(E)SI]`.
-	fn repe_cmps_Any8BitMemory_Any8BitMemory(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory);
+	fn repe_cmps_Any8BitMemory_Any8BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool);
 
 	/// Find non-matching bytes in `[RDI]` and `[RSI]`.
-	fn repe_cmps_Any8BitMemory_Any8BitMemory_1(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory);
+	fn repe_cmps_Any8BitMemory_Any8BitMemory_1(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool);
 
 	/// Find non-AX word starting at `ES:[(E)DI]`.
 	fn repe_scas_Any16BitMemory(&mut self, arg0: Any16BitMemory);
@@ -6287,19 +6287,19 @@ pub trait InstructionStream
 	fn repe_scas_Any8BitMemory_1(&mut self, arg0: Any8BitMemory);
 
 	/// Find matching words in `ES:[(E)DI]` and `DS:[(E)SI]`.
-	fn repne_cmps_Any16BitMemory_Any16BitMemory(&mut self, arg0: Any16BitMemory, arg1: Any16BitMemory);
+	fn repne_cmps_Any16BitMemory_Any16BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool);
 
 	/// Find matching doublewords in `ES:[(E)DI]` and `DS:[(E)SI]`.
-	fn repne_cmps_Any32BitMemory_Any32BitMemory(&mut self, arg0: Any32BitMemory, arg1: Any32BitMemory);
+	fn repne_cmps_Any32BitMemory_Any32BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool);
 
 	/// Find matching doublewords in `[RDI]` and `[RSI]`.
-	fn repne_cmps_Any64BitMemory_Any64BitMemory(&mut self, arg0: Any64BitMemory, arg1: Any64BitMemory);
+	fn repne_cmps_Any64BitMemory_Any64BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool);
 
 	/// Find matching bytes in `ES:[(E)DI]` and `DS:[(E)SI]`.
 	fn repne_scas_Any8BitMemory_Any8BitMemory(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory);
 
 	/// Find matching bytes in `[RDI]` and `[RSI]`.
-	fn repne_cmps_Any8BitMemory_Any8BitMemory_1(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory);
+	fn repne_cmps_Any8BitMemory_Any8BitMemory_1(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool);
 
 	/// Find AX, starting at `ES:[(E)DI]`.
 	fn repne_scas_Any16BitMemory(&mut self, arg0: Any16BitMemory);
@@ -25000,7 +25000,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn cmps_Any16BitMemory_Any16BitMemory(&mut self, arg0: Any16BitMemory, arg1: Any16BitMemory)
+	fn cmps_Any16BitMemory_Any16BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -25008,7 +25008,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group2(arg0);
 	
-		self.prefix_group4(arg0);
+		self.prefix_group4_if_address_override(address_override_for_32_bit);
 	
 		self.prefix_group3();
 	
@@ -25026,7 +25026,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn cmps_Any32BitMemory_Any32BitMemory(&mut self, arg0: Any32BitMemory, arg1: Any32BitMemory)
+	fn cmps_Any32BitMemory_Any32BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -25034,7 +25034,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group2(arg0);
 	
-		self.prefix_group4(arg0);
+		self.prefix_group4_if_address_override(address_override_for_32_bit);
 	
 		// No prefix group 3.
 	
@@ -25052,7 +25052,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn cmps_Any64BitMemory_Any64BitMemory(&mut self, arg0: Any64BitMemory, arg1: Any64BitMemory)
+	fn cmps_Any64BitMemory_Any64BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -25060,7 +25060,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group2(arg0);
 	
-		self.prefix_group4(arg0);
+		self.prefix_group4_if_address_override(address_override_for_32_bit);
 	
 		// No prefix group 3.
 	
@@ -25078,7 +25078,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn cmps_Any8BitMemory_Any8BitMemory(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory)
+	fn cmps_Any8BitMemory_Any8BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -25086,7 +25086,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group2(arg0);
 	
-		self.prefix_group4(arg0);
+		self.prefix_group4_if_address_override(address_override_for_32_bit);
 	
 		// No prefix group 3.
 	
@@ -64804,7 +64804,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn repe_cmps_Any16BitMemory_Any16BitMemory(&mut self, arg0: Any16BitMemory, arg1: Any16BitMemory)
+	fn repe_cmps_Any16BitMemory_Any16BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -64812,7 +64812,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group2(arg0);
 	
-		self.prefix_group4(arg0);
+		self.prefix_group4_if_address_override(address_override_for_32_bit);
 	
 		self.prefix_group3();
 	
@@ -64830,7 +64830,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn repe_cmps_Any32BitMemory_Any32BitMemory(&mut self, arg0: Any32BitMemory, arg1: Any32BitMemory)
+	fn repe_cmps_Any32BitMemory_Any32BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -64838,7 +64838,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group2(arg0);
 	
-		self.prefix_group4(arg0);
+		self.prefix_group4_if_address_override(address_override_for_32_bit);
 	
 		// No prefix group 3.
 	
@@ -64856,7 +64856,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn repe_cmps_Any64BitMemory_Any64BitMemory(&mut self, arg0: Any64BitMemory, arg1: Any64BitMemory)
+	fn repe_cmps_Any64BitMemory_Any64BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -64864,7 +64864,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group2(arg0);
 	
-		self.prefix_group4(arg0);
+		self.prefix_group4_if_address_override(address_override_for_32_bit);
 	
 		// No prefix group 3.
 	
@@ -64882,7 +64882,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn repe_cmps_Any8BitMemory_Any8BitMemory(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory)
+	fn repe_cmps_Any8BitMemory_Any8BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -64890,7 +64890,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group2(arg0);
 	
-		self.prefix_group4(arg0);
+		self.prefix_group4_if_address_override(address_override_for_32_bit);
 	
 		// No prefix group 3.
 	
@@ -64908,7 +64908,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn repe_cmps_Any8BitMemory_Any8BitMemory_1(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory)
+	fn repe_cmps_Any8BitMemory_Any8BitMemory_1(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -64916,7 +64916,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group2(arg0);
 	
-		self.prefix_group4(arg0);
+		self.prefix_group4_if_address_override(address_override_for_32_bit);
 	
 		// No prefix group 3.
 	
@@ -65064,7 +65064,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn repne_cmps_Any16BitMemory_Any16BitMemory(&mut self, arg0: Any16BitMemory, arg1: Any16BitMemory)
+	fn repne_cmps_Any16BitMemory_Any16BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -65072,7 +65072,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group2(arg0);
 	
-		self.prefix_group4(arg0);
+		self.prefix_group4_if_address_override(address_override_for_32_bit);
 	
 		self.prefix_group3();
 	
@@ -65090,7 +65090,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn repne_cmps_Any32BitMemory_Any32BitMemory(&mut self, arg0: Any32BitMemory, arg1: Any32BitMemory)
+	fn repne_cmps_Any32BitMemory_Any32BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -65098,7 +65098,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group2(arg0);
 	
-		self.prefix_group4(arg0);
+		self.prefix_group4_if_address_override(address_override_for_32_bit);
 	
 		// No prefix group 3.
 	
@@ -65116,7 +65116,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn repne_cmps_Any64BitMemory_Any64BitMemory(&mut self, arg0: Any64BitMemory, arg1: Any64BitMemory)
+	fn repne_cmps_Any64BitMemory_Any64BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -65124,7 +65124,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group2(arg0);
 	
-		self.prefix_group4(arg0);
+		self.prefix_group4_if_address_override(address_override_for_32_bit);
 	
 		// No prefix group 3.
 	
@@ -65168,7 +65168,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn repne_cmps_Any8BitMemory_Any8BitMemory_1(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory)
+	fn repne_cmps_Any8BitMemory_Any8BitMemory_1(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -65176,7 +65176,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group2(arg0);
 	
-		self.prefix_group4(arg0);
+		self.prefix_group4_if_address_override(address_override_for_32_bit);
 	
 		// No prefix group 3.
 	

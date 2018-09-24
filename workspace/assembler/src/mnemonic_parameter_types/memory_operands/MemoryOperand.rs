@@ -6,24 +6,14 @@
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct MemoryOperand(u64);
 
-impl MemoryOrBranchHint for MemoryOperand
+impl PrefixGroup2 for MemoryOperand
 {
 	#[inline(always)]
 	fn emit_prefix_group2(self, byte_emitter: &mut ByteEmitter)
 	{
 		if self.has_segment_register()
 		{
-			let segment_register_byte = match self.get_segment_register_index()
-			{
-				0 => 0x26,
-				1 => 0x2E,
-				2 => 0x36,
-				3 => 0x3E,
-				4 => 0x64,
-				5 => 0x65,
-				_ => unreachable!(),
-			};
-			byte_emitter.emit_u8(segment_register_byte)
+			byte_emitter.emit_prefix_group2_for_segment_register(self.get_segment_register())
 		}
 	}
 }
@@ -269,7 +259,7 @@ impl MemoryOperand
 	}
 	
 	#[inline(always)]
-	fn has_address_override_for_32_bit(self) -> bool
+	pub(crate) fn has_address_override_for_32_bit(self) -> bool
 	{
 		(self.0 & Self::AddressOverrideFor32BitMask) != 0
 	}
@@ -284,6 +274,12 @@ impl MemoryOperand
 	fn get_segment_register_index(self) -> u8
 	{
 		((self.0 & Self::SegmentRegisterMask) >> Self::SegmentRegisterShift) as u8
+	}
+	
+	#[inline(always)]
+	fn get_segment_register(self) -> SegmentRegister
+	{
+		unsafe { transmute(self.get_segment_register_index()) }
 	}
 	
 	#[inline(always)]
@@ -320,15 +316,6 @@ impl MemoryOperand
 	fn get_displacement(self) -> Immediate32Bit
 	{
 		Immediate32Bit(((self.0 & Self::DisplacementMask) >> Self::DisplacementShift) as u32 as i32)
-	}
-	
-	#[inline(always)]
-	pub(crate) fn emit_prefix_group4(self, byte_emitter: &mut ByteEmitter)
-	{
-		if self.has_address_override_for_32_bit()
-		{
-			byte_emitter.emit_u8(0x67)
-		}
 	}
 	
 	#[inline(always)]
