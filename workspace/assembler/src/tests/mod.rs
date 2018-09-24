@@ -44,7 +44,7 @@ pub fn simple_function()
 	{
 		let mut instruction_stream = map.instruction_stream(128);
 		
-		//instruction_stream.emit_alignment(64);
+		instruction_stream.emit_alignment(64);
 		
 		let function_pointer: unsafe extern "C" fn() -> i32 = instruction_stream.nullary_function_pointer();
 		
@@ -56,12 +56,13 @@ pub fn simple_function()
 		instruction_stream.xor_Register32Bit_Register32Bit(EAX, EAX);
 		
 		// Pop stack frame and return.
+		instruction_stream.mov_Register64Bit_Register64Bit_rm64_r64(RSP, RBP);
 		instruction_stream.pop_Register64Bit_r64(RBP);
 		instruction_stream.ret();
 		
 		let encoded_bytes = instruction_stream.finish();
 		
-		assert_eq!(&bytes_to_string(encoded_bytes), "55 48 8B EC 31 C0 5D C3", "Encoding of a basic function was wrong");
+		assert_eq!(&bytes_to_string(encoded_bytes), "55 48 8B EC 31 C0 48 8B E5 5D C3", "Encoding of a basic function was wrong");
 		
 		function_pointer
 	};
