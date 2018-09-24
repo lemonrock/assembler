@@ -33,7 +33,7 @@ pub fn labelling()
 
 
 #[test]
-pub fn simple_instructions()
+pub fn simple_function()
 {
 	use self::Register64Bit::*;
 	use self::Register32Bit::*;
