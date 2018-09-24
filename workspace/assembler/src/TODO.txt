@@ -5,5 +5,6 @@
 // TODO: Construct ordinary instruction stream.
 
 // TODO: Instructions using just segments and address size 32 bit
-	setz_Any8BitMemory
-	Things matching the pattern `fn [a-z]+_Any` => 446 functions, although some have already been converted.
+	eg setz_Any8BitMemory
+	Things matching the pattern `^\t\tself.prefix_group2\(arg0\);\n\n\t\tself.prefix_group4\(arg0\);` => 472 functions.
+	Things matching the pattern `^\t\tself.prefix_group2\(arg1\);\n\n\t\tself.prefix_group4\(arg1\);` => 525 functions.
