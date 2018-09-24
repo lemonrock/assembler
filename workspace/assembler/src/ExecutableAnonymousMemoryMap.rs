@@ -41,7 +41,7 @@ impl ExecutableAnonymousMemoryMap
 		};
 		
 		let result = unsafe { mmap(null_mut(), aligned_length, PROT_NONE, MAP_ANON | MAP_SHARED, NoFileDescriptor, NoOffset) };
-		if result == MAP_FAILED
+		if unlikely!(result == MAP_FAILED)
 		{
 			Err(io::Error::last_os_error())
 		}

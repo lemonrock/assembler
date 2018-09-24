@@ -5,8 +5,10 @@
 #[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub(crate) struct ByteEmitter
 {
-	instruction_pointer: usize,
-	end_instruction_pointer: usize,
+	start_instruction_pointer: InstructionPointer,
+	instruction_pointer: InstructionPointer,
+	end_instruction_pointer: InstructionPointer,
+	bookmark: InstructionPointer,
 }
 
 impl ByteEmitter
@@ -19,9 +21,23 @@ impl ByteEmitter
 		
 		Self
 		{
+			start_instruction_pointer: instruction_pointer,
 			instruction_pointer,
 			end_instruction_pointer: instruction_pointer + length,
+			bookmark: instruction_pointer,
 		}
+	}
+	
+	#[inline(always)]
+	pub(crate) fn store_bookmark(&mut self)
+	{
+		self.bookmark = self.instruction_pointer
+	}
+	
+	#[inline(always)]
+	pub(crate) fn reset_to_bookmark(&mut self)
+	{
+		self.instruction_pointer = self.bookmark
 	}
 	
 	#[inline(always)]
@@ -130,6 +146,22 @@ impl ByteEmitter
 		const Size: usize = 16;
 		debug_assert!(self.instruction_pointer + Size <= self.end_instruction_pointer, "Not enough space to emit an u128");
 		unsafe { *(self.instruction_pointer as *mut u128) = emit.to_le() };
+		self.instruction_pointer += Size;
+	}
+	
+	#[inline(always)]
+	pub(crate) fn skip_u8(&mut self)
+	{
+		const Size: usize = 1;
+		debug_assert!(self.instruction_pointer + Size <= self.end_instruction_pointer, "Not enough space to skip an u8");
+		self.instruction_pointer += Size;
+	}
+	
+	#[inline(always)]
+	pub(crate) fn skip_u32(&mut self)
+	{
+		const Size: usize = 4;
+		debug_assert!(self.instruction_pointer + Size <= self.end_instruction_pointer, "Not enough space to skip an u32");
 		self.instruction_pointer += Size;
 	}
 }

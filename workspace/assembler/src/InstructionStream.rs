@@ -3,11 +3,22 @@
 
 
 /// An instruction stream.
+///
+/// Has functions for writing x64 instructions, organized by mnemonic and the parameters they need.
+///
+/// When finished, call `finish()`.
+///
+/// When writing 8-bit `Jcc` (`JMP` and conditional `JMP` instructions), a `ShortJmpResult` is returned in error if the target effective address could be resolved and its displacement exceeds the size of an `i8`. In this case, the instruction stream is rolled back to point to just before where the instruction started to be emitted. Use this result to try to make a 8-bit `JMP` and then replace it with a 32-bit one if an error occurs.
+///
+/// Note that unresolved labels (ie those yet to be attached to a location in the instruction stream) will not produce such an error. Instead a panic (in debug builds) or silent error will occur when `finish()` is called.
 #[derive(Debug)]
 pub struct InstructionStream<'a>
 {
 	byte_emitter: ByteEmitter,
 	executable_anonymous_memory_map: &'a mut ExecutableAnonymousMemoryMap,
+	labelled_locations: LabelledLocations,
+	instruction_pointers_to_replace_labels_with_8_bit_displacements: Vec<(Label, InstructionPointer)>,
+	instruction_pointers_to_replace_labels_with_32_bit_displacements: Vec<(Label, InstructionPointer)>,
 }
 
 impl<'a> InstructionStream<'a>
@@ -36,7 +47,137 @@ impl<'a> InstructionStream<'a>
 		{
 			byte_emitter: ByteEmitter::new(executable_anonymous_memory_map),
 			executable_anonymous_memory_map,
+			labelled_locations: LabelledLocations::new(likely_number_of_labels_hint),
+			instruction_pointers_to_replace_labels_with_8_bit_displacements: Vec::with_capacity(likely_number_of_labels_hint),
+			instruction_pointers_to_replace_labels_with_32_bit_displacements: Vec::with_capacity(likely_number_of_labels_hint),
 		}
+	}
+	
+	#[inline(always)]
+	fn insert_8_bit_effective_address_displacement(&mut self, insert_at_instruction_pointer: InstructionPointer, target_instruction_pointer: InstructionPointer) -> ShortJmpResult
+	{
+		let displacement = (target_instruction_pointer as isize) - (self.byte_emitter.start_instruction_pointer as isize) - 1;
+		if unlikely!(displacement >= -127 && displacement < 128)
+		{
+			return Err()
+		}
+		self.byte_emitter.emit_u8_at((displacement) as u8, insert_at_instruction_pointer);
+		Ok(())
+	}
+	
+	#[inline(always)]
+	fn insert_32_bit_effective_address_displacement(&mut self, insert_at_instruction_pointer: InstructionPointer, target_instruction_pointer: InstructionPointer)
+	{
+		let displacement = (target_instruction_pointer as isize) - (self.byte_emitter.start_instruction_pointer as isize) - 4;
+		debug_assert!(displacement >= ::std::isize::MIN && displacement < ::std::isize::MAX, "displacement would exceed range of i32");
+		self.byte_emitter.emit_u32_at((displacement) as u32, insert_at_instruction_pointer)
+	}
+	
+	/// Resolves all remaining labels and makes code executable.
+	///
+	/// Will panic in debug builds if labels can not be resolved, 8-bit JMPs are too far away or 32-bit JMPs have displacements of more than 2Gb!
+	#[inline(always)]
+	pub fn finish(mut self)
+	{
+		for (label, insert_at_instruction_pointer) in self.instruction_pointers_to_replace_labels_with_8_bit_displacements
+		{
+			let target_instruction_pointer = self.labelled_locations.potential_target_instruction_pointer(label);
+			debug_assert!(target_instruction_pointer.is_valid(), "unresolved label '{:?}'", label);
+			let result = self.insert_8_bit_effective_address_displacement(insert_at_instruction_pointer, target_instruction_pointer);
+			debug_assert!(result.is_none(), "8-bit JMP for label '{:?}' was too far", label)
+		}
+		
+		for (label, insert_at_instruction_pointer) in self.instruction_pointers_to_replace_labels_with_32_bit_displacements
+		{
+			let target_instruction_pointer = self.labelled_locations.potential_target_instruction_pointer(label);
+			debug_assert!(target_instruction_pointer.is_valid(), "unresolved label '{:?}'", label);
+			
+			self.insert_32_bit_effective_address_displacement(insert_at_instruction_pointer, target_instruction_pointer)
+		}
+		
+		self.labelled_locations.iterate(|label, instruction_pointer| {});
+		
+		self.executable_anonymous_memory_map.make_executable()
+	}
+	
+	#[inline(always)]
+	fn bookmark(&mut self)
+	{
+		self.byte_emitter.bookmark()
+	}
+	
+	/// Returns an error if displacement would exceed 8 bits.
+	#[inline(always)]
+	fn displacement_label_8bit(&mut self, label: Label) -> ShortJmpResult
+	{
+		let target_instruction_pointer = self.labelled_locations.potential_target_instruction_pointer(label);
+		if target_instruction_pointer.is_valid()
+		{
+			match self.insert_8_bit_effective_address_displacement(ins, target_instruction_pointer)
+			{
+				Ok(()) => Ok(()),
+				Err(()) =>
+				{
+					self.byte_emitter.reset_to_bookmark();
+					Err(())
+				}
+			}
+		}
+		else
+		{
+			self.instruction_pointers_to_replace_labels_with_8_bit_displacements.push((label, self.instruction_pointer()));
+			self.byte_emitter.skip_u8();
+			Ok(())
+		}
+	}
+	
+	/// Does not return an error if displacement would exceed 32 bits, but panics in debug builds.
+	///
+	/// Errors are very unlikely indeed for such overly large displacements, are almost certainly a mistake and can not realistically be recovered from, in any event.
+	#[inline(always)]
+	fn displacement_label_32bit(&mut self, label: Label)
+	{
+		let instruction_pointer = self.labelled_locations.potential_target_instruction_pointer(label);
+		if instruction_pointer.is_valid()
+		{
+			self.insert_32_bit_effective_address_displacement(insert_at_instruction_pointer, target_instruction_pointer)
+		}
+		else
+		{
+			self.instruction_pointers_to_replace_labels_with_32_bit_displacements.push((label, self.instruction_pointer()));
+			self.byte_emitter.skip_u32();
+		}
+	}
+	
+	/// Creates an unique label and uses it to label the current location.
+	#[inline(always)]
+	pub fn create_and_attach_label(&mut self) -> Label
+	{
+		let label = self.create_label();
+		self.label(label);
+		label
+	}
+	
+	/// Creates an unique label, scoped to this instance of the Instruction Stream.
+	///
+	/// The label is created unattached.
+	#[inline(always)]
+	pub fn create_label(&mut self) -> Label
+	{
+		self.labelled_locations.create_label()
+	}
+	
+	/// Labels the current location.
+	///
+	/// It is an error to use the same label to label more than one location (or to label the current location with the same label twice or more).
+	///
+	/// This only checked for in debug builds where it causes a runtime panic.
+	///
+	/// Labels should be created using `self.create_label()`; no checks are made for labels created with another instance and attached to this one.
+	#[inline(always)]
+	pub fn attach_label(&mut self, label: Label)
+	{
+		self.labelled_locations.set(label, self.instruction_pointer())
 	}
 	
 	/// Creates a function pointer to the current location that takes no arguments and returns a result of type `R`.
@@ -311,15 +452,8 @@ impl<'a> InstructionStream<'a>
 		}
 	}
 	
-	/// Resolves all remaining labels and makes code executable.
 	#[inline(always)]
-	pub fn finish(mut self)
-	{
-		self.executable_anonymous_memory_map.make_executable()
-	}
-	
-	#[inline(always)]
-	fn instruction_pointer(&self) -> usize
+	fn instruction_pointer(&self) -> InstructionPointer
 	{
 		self.byte_emitter.instruction_pointer
 	}
@@ -442,26 +576,6 @@ impl<'a> InstructionStream<'a>
 		// NOTE: This order is correct, with the second displacement emitted before the first.
 		self.displacement_immediate_1(displacement2);
 		self.displacement_immediate_1(displacement1);
-	}
-	
-	/// Records internal state for a label reference.
-	/// Saves the current code position and reserves space for the resolved address by emitting zero bytes.
-	#[inline(always)]
-	fn displacement_label_8bit(&mut self, _l: Label)
-	{
-		// TODO: fxn_->label8_rels_.push_back(std::make_pair(fxn_->size(), l.val_));
-		unimplemented!();
-		self.byte_emitter.emit_u8(0);
-	}
-	
-	/// Records internal state for a label reference.
-	/// Saves the current code position and reserves space for the resolved address by emitting zero bytes.
-	#[inline(always)]
-	fn displacement_label_32bit(&mut self, _l: Label)
-	{
-		// TODO: fxn_->label32_rels_.push_back(std::make_pair(fxn_->size(), l.val_));
-		unimplemented!();
-		self.byte_emitter.emit_u32(0);
 	}
 }
 

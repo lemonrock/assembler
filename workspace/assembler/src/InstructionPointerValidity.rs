@@ -2,8 +2,17 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// A symbolic representation of a RIP-relative offset.
-///
-/// Created using `InstructStream.create_label()`.
-#[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct Label(usize);
+pub(crate) trait InstructionPointerValidity: Sized + Copy
+{
+	#[inline(always)]
+	fn is_valid(self) -> bool;
+}
+
+impl InstructionPointerValidity for InstructionPointer
+{
+	#[inline(always)]
+	fn is_valid(self) -> bool
+	{
+		self != LabelledLocations::UnlabelledSentinel
+	}
+}

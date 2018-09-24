@@ -23433,8 +23433,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	#[inline(always)]
-	pub fn ja_Label(&mut self, arg0: Label)
+	pub fn ja_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -23455,7 +23457,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
@@ -23487,8 +23489,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	#[inline(always)]
-	pub fn ja_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn ja_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -23509,7 +23513,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
@@ -23649,8 +23653,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if above or equal (Carry Flag (CF) is 0).
 	#[inline(always)]
-	pub fn jae_Label(&mut self, arg0: Label)
+	pub fn jae_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -23671,7 +23677,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if above or equal (Carry Flag (CF) is 0).
@@ -23703,8 +23709,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if above or equal (Carry Flag (CF) is 0).
 	#[inline(always)]
-	pub fn jae_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jae_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -23725,7 +23733,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if above or equal (Carry Flag (CF) is 0).
@@ -23865,8 +23873,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if below (Carry Flag (CF) is 1).
 	#[inline(always)]
-	pub fn jb_Label(&mut self, arg0: Label)
+	pub fn jb_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -23887,7 +23897,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if below (Carry Flag (CF) is 1).
@@ -23919,8 +23929,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if below (Carry Flag (CF) is 1).
 	#[inline(always)]
-	pub fn jb_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jb_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -23941,7 +23953,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if below (Carry Flag (CF) is 1).
@@ -24081,8 +24093,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	#[inline(always)]
-	pub fn jbe_Label(&mut self, arg0: Label)
+	pub fn jbe_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -24103,7 +24117,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
@@ -24135,8 +24149,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	#[inline(always)]
-	pub fn jbe_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jbe_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -24157,7 +24173,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
@@ -24297,8 +24313,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if carry (Carry Flag (CF) is 1).
 	#[inline(always)]
-	pub fn jc_Label(&mut self, arg0: Label)
+	pub fn jc_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -24319,7 +24337,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if carry (Carry Flag (CF) is 1).
@@ -24351,8 +24369,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if carry (Carry Flag (CF) is 1).
 	#[inline(always)]
-	pub fn jc_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jc_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -24373,7 +24393,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if carry (Carry Flag (CF) is 1).
@@ -24513,8 +24533,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if equal (Zero Flag (ZF) is 1).
 	#[inline(always)]
-	pub fn je_Label(&mut self, arg0: Label)
+	pub fn je_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -24535,7 +24557,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if 0 (Zero Flag (ZF) is 1).
@@ -24567,8 +24589,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if equal (Zero Flag (ZF) is 1).
 	#[inline(always)]
-	pub fn je_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn je_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -24589,7 +24613,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if 0 (Zero Flag (ZF) is 1).
@@ -24751,13 +24775,15 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump short if `ECX` register is 0.
 	#[inline(always)]
-	pub fn jecxz_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jecxz_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -24778,7 +24804,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump short if `ECX` register is 0.
@@ -24837,8 +24863,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if greater (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jg_Label(&mut self, arg0: Label)
+	pub fn jg_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -24859,7 +24887,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if greater (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
@@ -24891,8 +24919,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if greater (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jg_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jg_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -24913,7 +24943,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if greater (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
@@ -25053,8 +25083,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if greater or equal (Sign Flag (SF) == Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jge_Label(&mut self, arg0: Label)
+	pub fn jge_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -25075,7 +25107,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if greater or equal (Sign Flag (SF) == Overflow Flag (OF)).
@@ -25107,8 +25139,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if greater or equal (Sign Flag (SF) == Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jge_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jge_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -25129,7 +25163,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if greater or equal (Sign Flag (SF) == Overflow Flag (OF)).
@@ -25269,8 +25303,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if less (Sign Flag (SF) != Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jl_Label(&mut self, arg0: Label)
+	pub fn jl_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -25291,7 +25327,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if less (Sign Flag (SF) != Overflow Flag (OF)).
@@ -25323,8 +25359,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if less (Sign Flag (SF) != Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jl_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jl_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -25345,7 +25383,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if less (Sign Flag (SF) != Overflow Flag (OF)).
@@ -25485,8 +25523,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if less or equal (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jle_Label(&mut self, arg0: Label)
+	pub fn jle_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -25507,7 +25547,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if less or equal (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
@@ -25539,8 +25579,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if less or equal (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jle_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jle_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -25561,7 +25603,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if less or equal (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
@@ -25782,8 +25824,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short, `RIP` = `RIP` + 8-bit displacement sign extended to 64-bits.
 	#[inline(always)]
-	pub fn jmp_Label(&mut self, arg0: Label)
+	pub fn jmp_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -25804,7 +25848,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near, relative, `RIP` = `RIP` + 32-bit displacement sign extended to 64-bits.
@@ -25944,8 +25988,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	#[inline(always)]
-	pub fn jna_Label(&mut self, arg0: Label)
+	pub fn jna_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -25966,7 +26012,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
@@ -25998,8 +26044,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	#[inline(always)]
-	pub fn jna_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jna_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -26020,7 +26068,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
@@ -26160,8 +26208,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if not above or equal (Carry Flag (CF) is 1).
 	#[inline(always)]
-	pub fn jnae_Label(&mut self, arg0: Label)
+	pub fn jnae_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -26182,7 +26232,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if not above or equal (Carry Flag (CF) is 1).
@@ -26214,8 +26264,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if not above or equal (Carry Flag (CF) is 1).
 	#[inline(always)]
-	pub fn jnae_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jnae_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -26236,7 +26288,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if not above or equal (Carry Flag (CF) is 1).
@@ -26376,8 +26428,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if not below (Carry Flag (CF) is 0).
 	#[inline(always)]
-	pub fn jnb_Label(&mut self, arg0: Label)
+	pub fn jnb_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -26398,7 +26452,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if not below (Carry Flag (CF) is 0).
@@ -26430,8 +26484,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if not below (Carry Flag (CF) is 0).
 	#[inline(always)]
-	pub fn jnb_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jnb_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -26452,7 +26508,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if not below (Carry Flag (CF) is 0).
@@ -26592,8 +26648,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	#[inline(always)]
-	pub fn jnbe_Label(&mut self, arg0: Label)
+	pub fn jnbe_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -26614,7 +26672,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
@@ -26646,8 +26704,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	#[inline(always)]
-	pub fn jnbe_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jnbe_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -26668,7 +26728,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
@@ -26808,8 +26868,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if not carry (Carry Flag (CF) is 0).
 	#[inline(always)]
-	pub fn jnc_Label(&mut self, arg0: Label)
+	pub fn jnc_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -26830,7 +26892,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if not carry (Carry Flag (CF) is 0).
@@ -26862,8 +26924,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if not carry (Carry Flag (CF) is 0).
 	#[inline(always)]
-	pub fn jnc_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jnc_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -26884,7 +26948,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if not carry (Carry Flag (CF) is 0).
@@ -27024,8 +27088,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if not equal (Zero Flag (ZF) is 0).
 	#[inline(always)]
-	pub fn jne_Label(&mut self, arg0: Label)
+	pub fn jne_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -27046,7 +27112,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if not equal (Zero Flag (ZF) is 0).
@@ -27078,8 +27144,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if not equal (Zero Flag (ZF) is 0).
 	#[inline(always)]
-	pub fn jne_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jne_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -27100,7 +27168,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if not equal (Zero Flag (ZF) is 0).
@@ -27240,8 +27308,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if not greater (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jng_Label(&mut self, arg0: Label)
+	pub fn jng_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -27262,7 +27332,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if not greater (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
@@ -27294,8 +27364,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if not greater (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jng_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jng_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -27316,7 +27388,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if not greater (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
@@ -27456,8 +27528,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if not greater or equal (Sign Flag (SF) != Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jnge_Label(&mut self, arg0: Label)
+	pub fn jnge_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -27478,7 +27552,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if not greater or equal (Sign Flag (SF) != Overflow Flag (OF)).
@@ -27510,8 +27584,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if not greater or equal (Sign Flag (SF) != Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jnge_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jnge_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -27532,7 +27608,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if not greater or equal (Sign Flag (SF) != Overflow Flag (OF)).
@@ -27672,8 +27748,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if not less (Sign Flag (SF) == Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jnl_Label(&mut self, arg0: Label)
+	pub fn jnl_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -27694,7 +27772,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if not less (Sign Flag (SF) == Overflow Flag (OF)).
@@ -27726,8 +27804,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if not less (Sign Flag (SF) == Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jnl_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jnl_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -27748,7 +27828,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if not less (Sign Flag (SF) == Overflow Flag (OF)).
@@ -27888,8 +27968,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if not less or equal (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jnle_Label(&mut self, arg0: Label)
+	pub fn jnle_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -27910,7 +27992,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if not less or equal (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
@@ -27942,8 +28024,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if not less or equal (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jnle_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jnle_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -27964,7 +28048,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if not less or equal (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
@@ -28104,8 +28188,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if not overflow (Overflow Flag (OF) is 0).
 	#[inline(always)]
-	pub fn jno_Label(&mut self, arg0: Label)
+	pub fn jno_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -28126,7 +28212,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if not overflow (Overflow Flag (OF) is 0).
@@ -28158,8 +28244,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if not overflow (Overflow Flag (OF) is 0).
 	#[inline(always)]
-	pub fn jno_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jno_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -28180,7 +28268,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if not overflow (Overflow Flag (OF) is 0).
@@ -28320,8 +28408,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if not parity (Parity Flag (PF) is 0).
 	#[inline(always)]
-	pub fn jnp_Label(&mut self, arg0: Label)
+	pub fn jnp_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -28342,7 +28432,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if not parity (Parity Flag (PF) is 0).
@@ -28374,8 +28464,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if not parity (Parity Flag (PF) is 0).
 	#[inline(always)]
-	pub fn jnp_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jnp_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -28396,7 +28488,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if not parity (Parity Flag (PF) is 0).
@@ -28536,8 +28628,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if not sign (Sign Flag (SF) is 0).
 	#[inline(always)]
-	pub fn jns_Label(&mut self, arg0: Label)
+	pub fn jns_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -28558,7 +28652,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if not sign (Sign Flag (SF) is 0).
@@ -28590,8 +28684,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if not sign (Sign Flag (SF) is 0).
 	#[inline(always)]
-	pub fn jns_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jns_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -28612,7 +28708,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if not sign (Sign Flag (SF) is 0).
@@ -28752,8 +28848,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if not zero (Zero Flag (ZF) is 0).
 	#[inline(always)]
-	pub fn jnz_Label(&mut self, arg0: Label)
+	pub fn jnz_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -28774,7 +28872,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if not zero (Zero Flag (ZF) is 0).
@@ -28806,8 +28904,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if not zero (Zero Flag (ZF) is 0).
 	#[inline(always)]
-	pub fn jnz_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jnz_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -28828,7 +28928,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if not zero (Zero Flag (ZF) is 0).
@@ -28968,8 +29068,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if overflow (Overflow Flag (OF) is 1).
 	#[inline(always)]
-	pub fn jo_Label(&mut self, arg0: Label)
+	pub fn jo_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -28990,7 +29092,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if overflow (Overflow Flag (OF) is 1).
@@ -29022,8 +29124,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if overflow (Overflow Flag (OF) is 1).
 	#[inline(always)]
-	pub fn jo_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jo_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -29044,7 +29148,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if overflow (Overflow Flag (OF) is 1).
@@ -29184,8 +29288,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if parity (Parity Flag (PF) is 1).
 	#[inline(always)]
-	pub fn jp_Label(&mut self, arg0: Label)
+	pub fn jp_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -29206,7 +29312,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if parity (Parity Flag (PF) is 1).
@@ -29238,8 +29344,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if parity (Parity Flag (PF) is 1).
 	#[inline(always)]
-	pub fn jp_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jp_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -29260,7 +29368,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if parity (Parity Flag (PF) is 1).
@@ -29400,8 +29508,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if parity even (Parity Flag (PF) is 1).
 	#[inline(always)]
-	pub fn jpe_Label(&mut self, arg0: Label)
+	pub fn jpe_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -29422,7 +29532,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if parity even (Parity Flag (PF) is 1).
@@ -29454,8 +29564,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if parity even (Parity Flag (PF) is 1).
 	#[inline(always)]
-	pub fn jpe_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jpe_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -29476,7 +29588,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if parity even (Parity Flag (PF) is 1).
@@ -29616,8 +29728,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if parity odd (Parity Flag (PF) is 0).
 	#[inline(always)]
-	pub fn jpo_Label(&mut self, arg0: Label)
+	pub fn jpo_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -29638,7 +29752,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if parity odd (Parity Flag (PF) is 0).
@@ -29670,8 +29784,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if parity odd (Parity Flag (PF) is 0).
 	#[inline(always)]
-	pub fn jpo_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jpo_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -29692,7 +29808,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if parity odd (Parity Flag (PF) is 0).
@@ -29832,8 +29948,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if `RCX` register is 0.
 	#[inline(always)]
-	pub fn jrcxz_Label(&mut self, arg0: Label)
+	pub fn jrcxz_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -29854,13 +29972,15 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump short if `RCX` register is 0.
 	#[inline(always)]
-	pub fn jrcxz_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jrcxz_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -29881,7 +30001,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump short if `RCX` register is 0.
@@ -29940,8 +30060,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if sign (Sign Flag (SF) is 1).
 	#[inline(always)]
-	pub fn js_Label(&mut self, arg0: Label)
+	pub fn js_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -29962,7 +30084,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if sign (Sign Flag (SF) is 1).
@@ -29994,8 +30116,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if sign (Sign Flag (SF) is 1).
 	#[inline(always)]
-	pub fn js_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn js_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -30016,7 +30140,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if sign (Sign Flag (SF) is 1).
@@ -30156,8 +30280,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if zero (Zero Flag (ZF) is 1).
 	#[inline(always)]
-	pub fn jz_Label(&mut self, arg0: Label)
+	pub fn jz_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -30178,7 +30304,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if 0 (Zero Flag (ZF) is 1).
@@ -30210,8 +30336,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump short if zero (Zero Flag (ZF) is 1).
 	#[inline(always)]
-	pub fn jz_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jz_Label_BranchHint(&mut self, arg0: Label, arg1: BranchHint) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -30232,7 +30360,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Jump near if 0 (Zero Flag (ZF) is 1).
@@ -31356,8 +31484,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Decrement count; jump short if count != 0.
 	#[inline(always)]
-	pub fn loop_Label(&mut self, arg0: Label)
+	pub fn loop_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -31378,7 +31508,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Decrement count; jump short if count != 0.
@@ -31410,8 +31540,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Decrement count; jump short if count != 0 and Zero Flag (ZF) is 1.
 	#[inline(always)]
-	pub fn loope_Label(&mut self, arg0: Label)
+	pub fn loope_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -31432,7 +31564,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Decrement count; jump short if count != 0 and Zero Flag (ZF) is 1.
@@ -31464,8 +31596,10 @@ impl<'a> InstructionStream<'a>
 
 	/// Decrement count; jump short if count != 0 and Zero Flag (ZF) is 0.
 	#[inline(always)]
-	pub fn loopne_Label(&mut self, arg0: Label)
+	pub fn loopne_Label(&mut self, arg0: Label) -> ShortJmpResult
 	{
+		self.bookmark();
+		
 		// This is not a VEX encoded instruction.
 
 		// No `FWAIT` Prefix.
@@ -31486,7 +31620,7 @@ impl<'a> InstructionStream<'a>
 
 		// No displacement or immediate.
 
-		self.displacement_label_8bit(arg0);
+		self.displacement_label_8bit(arg0)
 	}
 
 	/// Decrement count; jump short if count != 0 and Zero Flag (ZF) is 0.

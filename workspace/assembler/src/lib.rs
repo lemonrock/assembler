@@ -43,6 +43,7 @@
 
 
 extern crate libc;
+#[macro_use] extern crate likely;
 
 
 use self::mnemonic_parameter_types::*;
@@ -52,9 +53,16 @@ use self::mnemonic_parameter_types::memory_operands::*;
 use self::mnemonic_parameter_types::registers::*;
 use self::mnemonic_parameter_types::relative_addresses::*;
 use ::libc::*;
+use ::std::alloc::alloc;
+use ::std::alloc::realloc;
+use ::std::alloc::dealloc;
+use ::std::alloc::Layout;
 use ::std::io;
+use ::std::mem::align_of;
+use ::std::mem::size_of;
 use ::std::mem::transmute;
 use ::std::ptr::copy_nonoverlapping;
+use ::std::ptr::NonNull;
 use ::std::ptr::null_mut;
 
 
@@ -65,4 +73,8 @@ pub mod mnemonic_parameter_types;
 include!("ByteEmitter.rs");
 include!("Displacement.rs");
 include!("ExecutableAnonymousMemoryMap.rs");
+include!("InstructionPointer.rs");
+include!("InstructionPointerValidity.rs");
 include!("InstructionStream.rs");
+include!("LabelledLocations.rs");
+include!("ShortJmpResult.rs");
