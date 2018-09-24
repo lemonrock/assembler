@@ -297,7 +297,7 @@ impl<'a> InstructionStream<'a>
 	fn nop_1(&mut self)
 	{
 		const NOP: u8 = 0x90;
-		self.emit_byte(0x90)
+		self.emit_byte(NOP)
 	}
 	
 	#[inline(always)]
@@ -536,8 +536,47 @@ impl<'a> InstructionStream<'a>
 				self.nop_5()
 			}
 			
+			33 =>
+			{
+				self.nop_9();
+				self.nop_9();
+				self.nop_9();
+				self.nop_6()
+			}
+			
+			34 =>
+			{
+				self.nop_9();
+				self.nop_9();
+				self.nop_9();
+				self.nop_7()
+			}
+			
+			35 =>
+			{
+				self.nop_9();
+				self.nop_9();
+				self.nop_9();
+				self.nop_8()
+			}
+			
+			36 =>
+			{
+				self.nop_9();
+				self.nop_9();
+				self.nop_9();
+				self.nop_9()
+			}
+			
 			nop_count @ _ =>
 			{
+				self.nop_9();
+				self.nop_9();
+				self.nop_9();
+				self.nop_9();
+				let nop_count = nop_count - 36;
+				
+				
 				let nop_9s = nop_count / 9;
 				for _ in 0 .. nop_9s
 				{
