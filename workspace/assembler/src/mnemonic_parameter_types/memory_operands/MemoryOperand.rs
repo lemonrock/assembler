@@ -122,7 +122,7 @@ impl MemoryOrRegister for MemoryOperand
 	{
 		byte |= if r.requires_rex_byte()
 		{
-			OrdinaryInstructionStream::REX
+			InstructionStream::REX
 		}
 		else
 		{
@@ -131,7 +131,7 @@ impl MemoryOrRegister for MemoryOperand
 		
 		byte |= if r.requires_rex_bit()
 		{
-			OrdinaryInstructionStream::REX_R
+			InstructionStream::REX_R
 		}
 		else
 		{
@@ -148,7 +148,7 @@ impl MemoryOrRegister for MemoryOperand
 		
 		byte |= if rm.has_base_register() && rm.get_base_register().requires_rex_bit()
 		{
-			OrdinaryInstructionStream::REX_B
+			InstructionStream::REX_B
 		}
 		else
 		{
@@ -157,7 +157,7 @@ impl MemoryOrRegister for MemoryOperand
 		
 		byte |= if rm.has_index_register() && rm.get_index_register().requires_rex_bit()
 		{
-			OrdinaryInstructionStream::REX_X
+			InstructionStream::REX_X
 		}
 		else
 		{

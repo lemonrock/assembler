@@ -44,7 +44,7 @@ impl<R: Register> MemoryOrRegister for R
 	{
 		byte |= if r.requires_rex_byte()
 		{
-			OrdinaryInstructionStream::REX
+			InstructionStream::REX
 		}
 		else
 		{
@@ -53,7 +53,7 @@ impl<R: Register> MemoryOrRegister for R
 		
 		byte |= if r.requires_rex_bit()
 		{
-			OrdinaryInstructionStream::REX_R
+			InstructionStream::REX_R
 		}
 		else
 		{
@@ -70,7 +70,7 @@ impl<R: Register> MemoryOrRegister for R
 		
 		byte |= if rm.requires_rex_byte()
 		{
-			OrdinaryInstructionStream::REX
+			InstructionStream::REX
 		}
 		else
 		{
@@ -79,7 +79,7 @@ impl<R: Register> MemoryOrRegister for R
 		
 		byte |= if rm.requires_rex_bit()
 		{
-			OrdinaryInstructionStream::REX_B
+			InstructionStream::REX_B
 		}
 		else
 		{
