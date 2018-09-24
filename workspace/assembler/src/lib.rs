@@ -83,6 +83,9 @@ use ::std::ptr::null_mut;
 /// Mnemonic parameter types.
 pub mod mnemonic_parameter_types;
 
+#[cfg(test)]
+mod tests;
+
 
 include!("ByteEmitter.rs");
 include!("Displacement.rs");

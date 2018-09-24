@@ -11,9 +11,13 @@ pub enum RegisterHigh8BitsOf16Bits
 	AH = 4,
 	
 	/// Register 1.
+	///
+	/// The fourth function argument in the System V Application Binary Interface for x86-64.
 	CH = 5,
 	
 	/// Register 2.
+	///
+	/// The third function argument in the System V Application Binary Interface for x86-64.
 	DH = 6,
 	
 	/// Register 3.
@@ -26,15 +30,6 @@ impl Default for RegisterHigh8BitsOf16Bits
 	fn default() -> Self
 	{
 		RegisterHigh8BitsOf16Bits::AH
-	}
-}
-
-impl ToOpcode for RegisterHigh8BitsOf16Bits
-{
-	#[inline(always)]
-	fn to_opcode(self) -> u8
-	{
-		self.index() & 0x07
 	}
 }
 

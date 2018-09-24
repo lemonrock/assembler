@@ -29,5 +29,5 @@ include!("AsDisplacement.rs");
 include!("BranchHint.rs");
 include!("Label.rs");
 include!("MemoryOrRegister.rs");
+include!("OpcodeEncoding.rs");
 include!("PrefixGroup2.rs");
-include!("ToOpcode.rs");

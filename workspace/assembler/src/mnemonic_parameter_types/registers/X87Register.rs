@@ -41,15 +41,6 @@ impl Default for X87Register
 	}
 }
 
-impl ToOpcode for X87Register
-{
-	#[inline(always)]
-	fn to_opcode(self) -> u8
-	{
-		self.index() & 0x07
-	}
-}
-
 impl Register for X87Register
 {
 	#[inline(always)]

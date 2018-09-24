@@ -13,9 +13,13 @@ pub enum Register8Bit
 	AL = 0,
 	
 	/// Register 1.
+	///
+	/// The fourth function argument in the System V Application Binary Interface for x86-64.
 	CL = 1,
 	
 	/// Register 2.
+	///
+	/// The third function argument in the System V Application Binary Interface for x86-64.
 	DL = 2,
 
 	/// Register 3.
@@ -30,17 +34,25 @@ pub enum Register8Bit
 	/// Register 6.
 	///
 	/// The 'source' operand in string instructions.
+	///
+	/// The second function argument in the System V Application Binary Interface for x86-64.
 	SIL = 6,
 
 	/// Register 7.
 	///
 	/// The 'destination' operand in string instructions.
+	///
+	/// The first function argument in the System V Application Binary Interface for x86-64.
 	DIL = 7,
 
 	/// Register 8.
+	///
+	/// The fifth function argument in the System V Application Binary Interface for x86-64.
 	R8B = 8,
 
 	/// Register 9.
+	///
+	/// The sixth function argument in the System V Application Binary Interface for x86-64.
 	R9B = 9,
 
 	/// Register 10.
@@ -68,15 +80,6 @@ impl Default for Register8Bit
 	fn default() -> Self
 	{
 		Register8Bit::AL
-	}
-}
-
-impl ToOpcode for Register8Bit
-{
-	#[inline(always)]
-	fn to_opcode(self) -> u8
-	{
-		self.index() & 0x07
 	}
 }
 

@@ -13,9 +13,13 @@ pub enum Register32Bit
 	EAX = 0,
 	
 	/// Register 1.
+	///
+	/// The fourth function argument in the System V Application Binary Interface for x86-64.
 	ECX = 1,
 
 	/// Register 2.
+	///
+	/// The third function argument in the System V Application Binary Interface for x86-64.
 	EDX = 2,
 
 	/// Register 3.
@@ -30,17 +34,25 @@ pub enum Register32Bit
 	/// Register 6.
 	///
 	/// The 'source' operand in string instructions.
+	///
+	/// The second function argument in the System V Application Binary Interface for x86-64.
 	ESI = 6,
 
 	/// Register 7.
 	///
 	/// The 'destination' operand in string instructions.
+	///
+	/// The first function argument in the System V Application Binary Interface for x86-64.
 	EDI = 7,
 
 	/// Register 8.
+	///
+	/// The fifth function argument in the System V Application Binary Interface for x86-64.
 	R8D = 8,
 
 	/// Register 9.
+	///
+	/// The sixth function argument in the System V Application Binary Interface for x86-64.
 	R9D = 9,
 
 	/// Register 10.
@@ -68,15 +80,6 @@ impl Default for Register32Bit
 	fn default() -> Self
 	{
 		Register32Bit::EAX
-	}
-}
-
-impl ToOpcode for Register32Bit
-{
-	#[inline(always)]
-	fn to_opcode(self) -> u8
-	{
-		self.index() & 0x07
 	}
 }
 

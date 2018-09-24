@@ -1,6 +1,6 @@
 # assembler
 
-[assembler] provides a fast, run-time assembler for x86-64 instructions using function calls for Rust. In using a design that Rust's Release build optimizations can work effectively with, it provides the ability to embed the assembled machine code instructions as templates inside Rust code, so as to make specialized code generation as fast as possible. Relocation can then happen at runtime.
+[assembler] provides a fast, run-time assembler for x86-64 instructions using function calls for Rust. In using a design that Rust's release build optimizations can work effectively with, it provides the ability to embed the assembled machine code instructions as templates inside Rust code, so as to make specialized code generation as fast as possible. Relocation can then happen at runtime.
 
 Since it is very brittle to try to parse or integrate with Rust code at compile time, this crate tries to generate code at build time (or at runtime, if used lazily) by parsing strings. This allows one to keep assembler logic outside of Rust files, so enabling the use of regular assembler tools.
 

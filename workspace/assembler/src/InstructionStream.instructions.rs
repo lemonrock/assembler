@@ -33525,7 +33525,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move `r64` to `r/m64`.
 	#[inline(always)]
-	pub fn mov_Register64Bit_Register64Bit(&mut self, arg0: Register64Bit, arg1: Register64Bit)
+	pub fn mov_Register64Bit_Register64Bit_r64_rm64(&mut self, arg0: Register64Bit, arg1: Register64Bit)
 	{
 		// This is not a VEX encoded instruction.
 
@@ -33552,7 +33552,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move `r/m64` to `r64`.
 	#[inline(always)]
-	pub fn mov_Register64Bit_Register64Bit_REX_W(&mut self, arg0: Register64Bit, arg1: Register64Bit)
+	pub fn mov_Register64Bit_Register64Bit_rm64_r64(&mut self, arg0: Register64Bit, arg1: Register64Bit)
 	{
 		// This is not a VEX encoded instruction.
 
@@ -47914,7 +47914,7 @@ impl<'a> InstructionStream<'a>
 	///
 	/// Cannot encode 32-bit operand size.
 	#[inline(always)]
-	pub fn pop_Register64Bit(&mut self, arg0: Register64Bit)
+	pub fn pop_Register64Bit_m64(&mut self, arg0: Register64Bit)
 	{
 		// This is not a VEX encoded instruction.
 
@@ -47943,7 +47943,7 @@ impl<'a> InstructionStream<'a>
 	///
 	/// Cannot encode 32-bit operand size.
 	#[inline(always)]
-	pub fn pop_Register64Bit_REX_W(&mut self, arg0: Register64Bit)
+	pub fn pop_Register64Bit_r64(&mut self, arg0: Register64Bit)
 	{
 		// This is not a VEX encoded instruction.
 
@@ -52348,7 +52348,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Push `r/m64`.
 	#[inline(always)]
-	pub fn push_Register64Bit(&mut self, arg0: Register64Bit)
+	pub fn push_Register64Bit_rm64(&mut self, arg0: Register64Bit)
 	{
 		// This is not a VEX encoded instruction.
 
@@ -52375,7 +52375,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Push `r64`.
 	#[inline(always)]
-	pub fn push_Register64Bit_REX_W(&mut self, arg0: Register64Bit)
+	pub fn push_Register64Bit_r64(&mut self, arg0: Register64Bit)
 	{
 		// This is not a VEX encoded instruction.
 

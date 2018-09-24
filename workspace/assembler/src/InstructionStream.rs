@@ -57,7 +57,7 @@ impl<'a> InstructionStream<'a>
 	///
 	/// Will panic in debug builds if labels can not be resolved, 8-bit JMPs are too far away or 32-bit JMPs have displacements of more than 2Gb!
 	#[inline(always)]
-	pub fn finish(mut self)
+	pub fn finish(mut self) -> &'a [u8]
 	{
 		for (label, insert_at_instruction_pointer) in self.instruction_pointers_to_replace_labels_with_8_bit_displacements
 		{
@@ -75,7 +75,10 @@ impl<'a> InstructionStream<'a>
 			self.byte_emitter.insert_32_bit_effective_address_displacement(insert_at_instruction_pointer, target_instruction_pointer)
 		}
 		
-		self.executable_anonymous_memory_map.make_executable()
+		self.executable_anonymous_memory_map.make_executable();
+		
+		let length = self.byte_emitter.instruction_pointer - self.byte_emitter.start_instruction_pointer;
+		unsafe { ::std::slice::from_raw_parts(self.byte_emitter.start_instruction_pointer as *const u8, length) }
 	}
 	
 	#[inline(always)]
@@ -521,24 +524,21 @@ impl<'a> InstructionStream<'a>
 	}
 	
 	#[inline(always)]
-	fn opcode_1(&mut self, opcode: u8)
+	pub(crate) fn opcode_1(&mut self, opcode: u8)
 	{
 		self.byte_emitter.emit_u8(opcode)
 	}
 	
 	#[inline(always)]
-	fn opcode_2(&mut self, opcode1: u8, opcode2: impl ToOpcode)
+	fn opcode_2(&mut self, opcode1: u8, rcode: impl OpcodeEncoding)
 	{
-		self.opcode_1(opcode1);
-		self.opcode_1(opcode2.to_opcode());
+		rcode.emit_2(self, opcode1)
 	}
 	
 	#[inline(always)]
-	fn opcode_3(&mut self, opcode1: u8, opcode2: u8, opcode3: impl ToOpcode)
+	fn opcode_3(&mut self, opcode1: u8, opcode2: u8, rcode: impl OpcodeEncoding)
 	{
-		self.opcode_1(opcode1);
-		self.opcode_1(opcode2);
-		self.opcode_1(opcode3.to_opcode());
+		rcode.emit_3(self, opcode1, opcode2)
 	}
 	
 	#[inline(always)]
