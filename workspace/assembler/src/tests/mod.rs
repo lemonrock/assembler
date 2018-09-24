@@ -39,27 +39,35 @@ pub fn simple_instructions()
 	use self::Register32Bit::*;
 	
 	let mut map = ExecutableAnonymousMemoryMap::new(4096).expect("Could not anonymously mmap");
-	let mut instruction_stream = map.instruction_stream(128);
 	
-	instruction_stream.emit_alignment(64);
+	let _function_pointer =
+	{
+		let mut instruction_stream = map.instruction_stream(128);
+		
+		//instruction_stream.emit_alignment(64);
+		
+		let function_pointer: unsafe extern "C" fn() -> i32 = instruction_stream.nullary_function_pointer();
+		
+		// Push stack frame.
+		instruction_stream.push_Register64Bit_r64(RBP);
+		instruction_stream.mov_Register64Bit_Register64Bit_rm64_r64(RBP, RSP);
+		
+		// Return 0
+		instruction_stream.xor_Register32Bit_Register32Bit(EAX, EAX);
+		
+		// Pop stack frame and return.
+		instruction_stream.pop_Register64Bit_r64(RBP);
+		instruction_stream.ret();
+		
+		let encoded_bytes = instruction_stream.finish();
+		
+		assert_eq!(&bytes_to_string(encoded_bytes), "55 48 8B EC 31 C0 5D C3", "Encoding of a basic function was wrong");
+		
+		function_pointer
+	};
 	
-	let _function_pointer: unsafe extern "C" fn() -> i32 = instruction_stream.nullary_function_pointer();
-	
-	// Push stack frame.
-	instruction_stream.push_Register64Bit_r64(RBP);
-	instruction_stream.mov_Register64Bit_Register64Bit_rm64_r64(RBP, RSP);
-	
-	// Return 0
-	instruction_stream.xor_Register32Bit_Register32Bit(EAX, EAX);
-	
-	// Pop stack frame.
-	instruction_stream.pop_Register64Bit_r64(RBP);
-	
-	let encoded_bytes = instruction_stream.finish();
-	assert_eq!(&bytes_to_string(encoded_bytes), "55 48 8B EC 31 C0 5D", "Encoding of a basic function was wrong");
-	
-//	let result = unsafe { _function_pointer() };
-//	assert_eq!(result, 0, "function result was not zero")
+	let result = unsafe { _function_pointer() };
+	assert_eq!(result, 0, "function result was not zero")
 }
 
 // Suitable for https://onlinedisassembler.com/odaweb/ .
