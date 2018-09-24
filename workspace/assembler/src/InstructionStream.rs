@@ -512,7 +512,7 @@ impl<'a> InstructionStream<'a>
 				self.nop_2()
 			}
 			
-			29 =>
+			30 =>
 			{
 				self.nop_9();
 				self.nop_9();
@@ -520,7 +520,7 @@ impl<'a> InstructionStream<'a>
 				self.nop_3()
 			}
 			
-			30 =>
+			31 =>
 			{
 				self.nop_9();
 				self.nop_9();
@@ -528,7 +528,7 @@ impl<'a> InstructionStream<'a>
 				self.nop_4()
 			}
 			
-			31 =>
+			32 =>
 			{
 				self.nop_9();
 				self.nop_9();
