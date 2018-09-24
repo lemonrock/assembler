@@ -11841,7 +11841,7 @@ pub trait InstructionStream
 	fn xgetbv(&mut self);
 
 	/// Set `AL` to memory byte `DS:[(E)BX + unsigned AL]`.
-	fn xlat_Any8BitMemory(&mut self, arg0: Any8BitMemory);
+	fn xlat_Any8BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool);
 
 	/// Set `AL` to memory byte `DS:[(E)BX + unsigned AL]`.
 	fn xlatb(&mut self);
@@ -110950,7 +110950,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn xlat_Any8BitMemory(&mut self, arg0: Any8BitMemory)
+	fn xlat_Any8BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -110958,7 +110958,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group2(arg0);
 	
-		self.prefix_group4(arg0);
+		self.prefix_group4_if_address_override(address_override_for_32_bit);
 	
 		// No prefix group 3.
 	

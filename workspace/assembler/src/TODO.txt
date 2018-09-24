@@ -3,3 +3,9 @@
 // TODO: Merge instruction stream trait into struct (?how?)
 // TODO: Consider using enum variants for Memory Operand, or, at least, parts of memory operand like the RIP-mode and base-less addressing.
 // TODO: Construct ordinary instruction stream.
+
+
+
+xlat_Any8BitMemory
+arg0: Option<SegmentRegister>, address_override_for_32_bit: bool
+		self.prefix_group4_if_address_override(address_override_for_32_bit);
