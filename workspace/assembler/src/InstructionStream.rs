@@ -348,7 +348,6 @@ impl<'a> InstructionStream<'a>
 		self.emit_bytes(&[0x66, 0x0F, 0x1F, 0x84, 0x00, 0x00, 0x00, 0x00, 0x00])
 	}
 	
-	
 	/// Emits (pushes) `NOP`s (No Operation) opcodes into the instruction stream at the current location to ensure the desired `alignment`.
 	///
 	/// Efficient for alignments up to 32 (needed for AVX-2).
