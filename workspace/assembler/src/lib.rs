@@ -13,10 +13,36 @@
 //!
 //! This is a new code base to efficiently assemble 64-bit x86 (AMD64 long mode) machine code at runtime.
 //!
-//! Instructions are emitted by using the mnemonic-like methods on the `InstructionStream` trait.
+//! Instructions are emitted by using the mnemonic-like methods on the `InstructionStream`.
 //! These are designed to work with Rust's Release optimizations to compile down to just a sequence of byte stores to memory.
 //!
 //! In addition, labels are supported which are then calculated using a second-pass.
+//!
+//! ## Example Usage
+//!
+//! ```
+//! extern crate assembler;
+//!
+//! use ::assembler::*;
+//! use ::assembler::mnemonic_parameter_types::BranchHint;
+//! use ::assembler::mnemonic_parameter_types::Label;
+//! use ::assembler::mnemonic_parameter_types::memory_operands::*;
+//! use ::assembler::mnemonic_parameter_types::immediates::*;
+//! use ::assembler::mnemonic_parameter_types::registers::*;
+//!
+//! fn main()
+//! {
+//! 	// SOME_LENGTH will be rounded up to the nearest power of two, with a minimum of the page size (4Kb).
+//! 	const SOME_LENGTH: usize = 4096;
+//! 	let memory_map = ExecutableAnonymousMemoryMap::new(SOME_LENGTH).unwrap();
+//!
+//!
+//! }
+//!
+//! ```
+
+
+extern crate libc;
 
 
 use self::mnemonic_parameter_types::*;
@@ -25,7 +51,11 @@ use self::mnemonic_parameter_types::memory_offsets::*;
 use self::mnemonic_parameter_types::memory_operands::*;
 use self::mnemonic_parameter_types::registers::*;
 use self::mnemonic_parameter_types::relative_addresses::*;
+use ::libc::*;
+use ::std::io;
 use ::std::mem::transmute;
+use ::std::ptr::copy_nonoverlapping;
+use ::std::ptr::null_mut;
 
 
 /// Mnemonic parameter types.
@@ -34,4 +64,5 @@ pub mod mnemonic_parameter_types;
 
 include!("ByteEmitter.rs");
 include!("Displacement.rs");
+include!("ExecutableAnonymousMemoryMap.rs");
 include!("InstructionStream.rs");

@@ -16,3 +16,6 @@ include = ["README.md", "LICENSE", "COPYRIGHT", "src/**/*.rs", "Cargo.toml", "ru
 readme = "README.md"
 publish = false
 version = "0.0.0"
+
+[dependencies]
+libc = "^0.2"

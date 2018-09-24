@@ -2,7 +2,7 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-impl InstructionStream
+impl<'a> InstructionStream<'a>
 {
 	/// Add with carry `imm8` to `AL`.
 	#[inline(always)]
@@ -44033,6 +44033,7 @@ impl InstructionStream
 	/// Extract the word specified by `imm8` from `xmm` and move it to `reg`, bits 15-0.
 	///
 	/// The upper bits of `r32` or `r64` is zeroed.
+	#[inline(always)]
 	pub fn pextrw_Register32Bit_XMMRegister_Immediate8Bit_REX_W(&mut self, arg0: Register32Bit, arg1: XMMRegister, arg2: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
@@ -44119,6 +44120,7 @@ impl InstructionStream
 	/// Extract the word specified by `imm8` from `xmm` and move it to `reg`, bits 15-0.
 	///
 	/// The upper bits of `r32` or `r64` is zeroed.
+	#[inline(always)]
 	pub fn pextrw_Register64Bit_XMMRegister_Immediate8Bit_REX_W(&mut self, arg0: Register64Bit, arg1: XMMRegister, arg2: Immediate8Bit)
 	{
 		// This is not a VEX encoded instruction.
@@ -79196,6 +79198,7 @@ impl InstructionStream
 	/// Using qword indices specified in vm64x, gather single-precision FP values from memory conditioned on mask specified by `xmm2`.
 	///
 	/// Conditionally gathered elements are merged into `xmm1`.
+	#[inline(always)]
 	pub fn vgatherqps_XMMRegister_Any64BitMemory_XMMRegister_REX_W(&mut self, arg0: XMMRegister, arg1: Any64BitMemory, arg2: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
@@ -82885,6 +82888,7 @@ impl InstructionStream
 	}
 	
 	/// Merge scalar double-precision floating-point value from `xmm2` and xmm3 to `xmm1`.
+	#[inline(always)]
 	pub fn vmovsd_XMMRegister_XMMRegister_XMMRegister_REX_W(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
@@ -83208,6 +83212,7 @@ impl InstructionStream
 	}
 	
 	/// Merge scalar single-precision floating-point value from `xmm2` and xmm3 to `xmm1`.
+	#[inline(always)]
 	pub fn vmovss_XMMRegister_XMMRegister_XMMRegister_REX_W(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister)
 	{
 		// This is a VEX encoded instruction.
@@ -89395,6 +89400,7 @@ impl InstructionStream
 	/// Zero-extend the result.
 	///
 	/// The upper bits of `r64/r32` is filled with zeros.
+	#[inline(always)]
 	pub fn vpextrw_Register32Bit_XMMRegister_Immediate8Bit_REX_W(&mut self, arg0: Register32Bit, arg1: XMMRegister, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
@@ -89456,6 +89462,7 @@ impl InstructionStream
 	/// Zero-extend the result.
 	///
 	/// The upper bits of `r64/r32` is filled with zeros.
+	#[inline(always)]
 	pub fn vpextrw_Register64Bit_XMMRegister_Immediate8Bit_REX_W(&mut self, arg0: Register64Bit, arg1: XMMRegister, arg2: Immediate8Bit)
 	{
 		// This is a VEX encoded instruction.
@@ -89629,6 +89636,7 @@ impl InstructionStream
 	/// Using qword indices specified in vm64x, gather dword values from memory conditioned on mask specified by `xmm2`.
 	///
 	/// Conditionally gathered elements are merged into `xmm1`.
+	#[inline(always)]
 	pub fn vpgatherqd_XMMRegister_Any64BitMemory_XMMRegister_REX_W(&mut self, arg0: XMMRegister, arg1: Any64BitMemory, arg2: XMMRegister)
 	{
 		// This is a VEX encoded instruction.

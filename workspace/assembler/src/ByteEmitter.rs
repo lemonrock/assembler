@@ -5,13 +5,48 @@
 #[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub(crate) struct ByteEmitter
 {
-	start_instruction_point: usize,
 	instruction_pointer: usize,
 	end_instruction_pointer: usize,
 }
 
 impl ByteEmitter
 {
+	#[inline(always)]
+	pub(crate) fn new(executable_anonymous_memory_map: & mut ExecutableAnonymousMemoryMap) -> Self
+	{
+		let instruction_pointer = executable_anonymous_memory_map.address as usize;
+		let length = executable_anonymous_memory_map.length;
+		
+		Self
+		{
+			instruction_pointer,
+			end_instruction_pointer: instruction_pointer + length,
+		}
+	}
+	
+	#[inline(always)]
+	pub(crate) fn emit_bytes(&mut self, bytes: &[u8])
+	{
+		let length = bytes.len();
+		
+		if length == 0
+		{
+			return
+		}
+		else if length == 1
+		{
+			self.emit_u8(unsafe { *bytes.get_unchecked(0) });
+			return
+		}
+		
+		debug_assert!(self.instruction_pointer + length <= self.end_instruction_pointer, "Not enough space to emit '{}' byte(s)", length);
+		unsafe
+		{
+			copy_nonoverlapping(bytes.as_ptr(), self.instruction_pointer as *mut u8, length);
+			self.instruction_pointer += length;
+		}
+	}
+	
 	#[inline(always)]
 	pub(crate) fn emit_prefix_group2_for_segment_register(&mut self, segment_register: SegmentRegister)
 	{
@@ -86,6 +121,15 @@ impl ByteEmitter
 		const Size: usize = 8;
 		debug_assert!(self.instruction_pointer + Size <= self.end_instruction_pointer, "Not enough space to emit an u64");
 		unsafe { *(self.instruction_pointer as *mut u64) = emit.to_le() };
+		self.instruction_pointer += Size;
+	}
+	
+	#[inline(always)]
+	pub(crate) fn emit_u128(&mut self, emit: u128)
+	{
+		const Size: usize = 16;
+		debug_assert!(self.instruction_pointer + Size <= self.end_instruction_pointer, "Not enough space to emit an u128");
+		unsafe { *(self.instruction_pointer as *mut u128) = emit.to_le() };
 		self.instruction_pointer += Size;
 	}
 }
