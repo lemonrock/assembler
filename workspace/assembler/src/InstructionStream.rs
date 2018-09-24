@@ -573,9 +573,8 @@ impl<'a> InstructionStream<'a>
 				self.nop_9();
 				self.nop_9();
 				self.nop_9();
+				
 				let nop_count = nop_count - 36;
-				
-				
 				let nop_9s = nop_count / 9;
 				for _ in 0 .. nop_9s
 				{
