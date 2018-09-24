@@ -14,6 +14,6 @@ arg0: Option<SegmentRegister>, address_override_for_32_bit: bool
 
 // TODO: Check for segment / address override only uses of arg0 (or for in/out, arg1) in
 	cmovs
-	in / out string functions eg rep_outs_DX_Any8BitMemory_1 and rep_ins_*
+	all rep_ repe_ repne_ repnz_ etc prefixes.
 
 // TODO: _1(&mut self) forms - do these use a REX.W prefix always?
