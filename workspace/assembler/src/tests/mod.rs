@@ -52,7 +52,7 @@ pub fn simple_function()
 		instruction_stream.push_Register64Bit_r64(RBP);
 		instruction_stream.mov_Register64Bit_Register64Bit_rm64_r64(RBP, RSP);
 		
-		// Return 0
+		// Return 0 (or SUB EAX, EAX).
 		instruction_stream.xor_Register32Bit_Register32Bit(EAX, EAX);
 		
 		// Pop stack frame and return.

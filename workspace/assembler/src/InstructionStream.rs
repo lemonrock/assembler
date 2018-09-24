@@ -293,150 +293,280 @@ impl<'a> InstructionStream<'a>
 		self.byte_emitter.emit_bytes(bytes)
 	}
 	
+	#[inline(always)]
+	fn nop_1(&mut self)
+	{
+		const NOP: u8 = 0x90;
+		self.emit_byte(0x90)
+	}
+	
+	#[inline(always)]
+	fn nop_2(&mut self)
+	{
+		self.emit_word(0x6690)
+	}
+	
+	#[inline(always)]
+	fn nop_3(&mut self)
+	{
+		self.emit_bytes(&[0x0F, 0x1F, 0x00])
+	}
+	
+	#[inline(always)]
+	fn nop_4(&mut self)
+	{
+		self.emit_double_word(0x0F1F4000)
+	}
+	
+	#[inline(always)]
+	fn nop_5(&mut self)
+	{
+		self.emit_bytes(&[0x0F, 0x1F, 0x44, 0x00, 0x00])
+	}
+	
+	#[inline(always)]
+	fn nop_6(&mut self)
+	{
+		self.emit_bytes(&[0x66, 0x0F, 0x1F, 0x44, 0x00, 0x00])
+	}
+	
+	#[inline(always)]
+	fn nop_7(&mut self)
+	{
+		self.emit_bytes(&[0x0F, 0x1F, 0x80, 0x00, 0x00, 0x00, 0x00])
+	}
+	
+	#[inline(always)]
+	fn nop_8(&mut self)
+	{
+		self.emit_quad_word(0x0F1F840000000000)
+	}
+	
+	#[inline(always)]
+	fn nop_9(&mut self)
+	{
+		self.emit_bytes(&[0x66, 0x0F, 0x1F, 0x84, 0x00, 0x00, 0x00, 0x00, 0x00])
+	}
+	
+	
 	/// Emits (pushes) `NOP`s (No Operation) opcodes into the instruction stream at the current location to ensure the desired `alignment`.
 	///
-	/// Efficient for alignments up to 64 (needed for AVX-512).
+	/// Efficient for alignments up to 32 (needed for AVX-2).
 	#[inline(always)]
 	pub fn emit_alignment(&mut self, alignment: usize)
 	{
 		let offset = self.instruction_pointer() % alignment;
 		
-		const NOP: u8 = 0x90;
-		
-		match offset
+		match alignment - offset
 		{
 			0 => (),
 			
-			1 => self.emit_byte(0x90),
+			1 => self.nop_1(),
 			
-			2 => self.emit_word(0x9090),
+			2 => self.nop_2(),
 			
-			3 => self.emit_bytes(&[NOP, NOP, NOP]),
+			3 => self.nop_3(),
 			
-			4 => self.emit_double_word(0x90909090),
+			4 => self.nop_4(),
 			
-			5 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP]),
+			5 => self.nop_5(),
 			
-			6 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP]),
+			6 => self.nop_6(),
 			
-			7 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
+			7 => self.nop_7(),
 			
-			8 => self.emit_quad_word(0x9090909090909090),
+			8 => self.nop_8(),
 			
-			9 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
+			9 => self.nop_9(),
 			
-			10 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			11 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			12 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			13 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			14 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			15 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			16 => self.emit_double_quad_word(0x90909090909090909090909090909090),
-			
-			17 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			18 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			19 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			20 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			21 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			22 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			23 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			24 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			25 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			26 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			27 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			28 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			29 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			30 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			31 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			32 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			33 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			34 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			35 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			36 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			37 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			38 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			39 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			40 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			41 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			42 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			43 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			44 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			45 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			46 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			47 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			48 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			49 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			50 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			51 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			52 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			53 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			54 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			55 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			56 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			57 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			58 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			59 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			60 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			61 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			62 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			63 => self.emit_bytes(&[NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP, NOP]),
-			
-			_ => for _ in 0 .. (alignment - offset)
+			10 =>
 			{
-				self.emit_byte(0x90);
-			},
+				self.nop_9();
+				self.nop_1()
+			}
+			
+			11 =>
+			{
+				self.nop_9();
+				self.nop_2()
+			}
+			
+			12 =>
+			{
+				self.nop_9();
+				self.nop_3()
+			}
+			
+			13 =>
+			{
+				self.nop_9();
+				self.nop_4()
+			}
+			
+			14 =>
+			{
+				self.nop_9();
+				self.nop_5()
+			}
+			
+			15 =>
+			{
+				self.nop_9();
+				self.nop_6()
+			}
+			
+			16 =>
+			{
+				self.nop_9();
+				self.nop_7()
+			}
+			
+			17 =>
+			{
+				self.nop_9();
+				self.nop_8()
+			}
+			
+			18 =>
+			{
+				self.nop_9();
+				self.nop_9()
+			}
+			
+			19 =>
+			{
+				self.nop_9();
+				self.nop_9();
+				self.nop_1()
+			}
+			
+			20 =>
+			{
+				self.nop_9();
+				self.nop_9();
+				self.nop_2()
+			}
+			
+			21 =>
+			{
+				self.nop_9();
+				self.nop_9();
+				self.nop_3()
+			}
+			
+			22 =>
+			{
+				self.nop_9();
+				self.nop_9();
+				self.nop_4()
+			}
+			
+			23 =>
+			{
+				self.nop_9();
+				self.nop_9();
+				self.nop_5()
+			}
+			
+			24 =>
+			{
+				self.nop_9();
+				self.nop_9();
+				self.nop_6()
+			}
+			
+			25 =>
+			{
+				self.nop_9();
+				self.nop_9();
+				self.nop_7()
+			}
+			
+			26 =>
+			{
+				self.nop_9();
+				self.nop_9();
+				self.nop_8()
+			}
+			
+			27 =>
+			{
+				self.nop_9();
+				self.nop_9();
+				self.nop_9()
+			}
+			
+			28 =>
+			{
+				self.nop_9();
+				self.nop_9();
+				self.nop_9();
+				self.nop_1()
+			}
+			
+			29 =>
+			{
+				self.nop_9();
+				self.nop_9();
+				self.nop_9();
+				self.nop_2()
+			}
+			
+			29 =>
+			{
+				self.nop_9();
+				self.nop_9();
+				self.nop_9();
+				self.nop_3()
+			}
+			
+			30 =>
+			{
+				self.nop_9();
+				self.nop_9();
+				self.nop_9();
+				self.nop_4()
+			}
+			
+			31 =>
+			{
+				self.nop_9();
+				self.nop_9();
+				self.nop_9();
+				self.nop_5()
+			}
+			
+			nop_count @ _ =>
+			{
+				let nop_9s = nop_count / 9;
+				for _ in 0 .. nop_9s
+				{
+					self.nop_9()
+				}
+				
+				match nop_count % 9
+				{
+					0 => (),
+					
+					1 => self.nop_1(),
+					
+					2 => self.nop_2(),
+					
+					3 => self.nop_3(),
+					
+					4 => self.nop_4(),
+					
+					5 => self.nop_5(),
+					
+					6 => self.nop_6(),
+					
+					7 => self.nop_7(),
+					
+					8 => self.nop_8(),
+					
+					_ => unreachable!(),
+				}
+			}
 		}
 	}
 	
