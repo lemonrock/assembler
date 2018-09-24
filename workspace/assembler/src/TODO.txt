@@ -3,17 +3,3 @@
 // TODO: Merge instruction stream trait into struct (?how?)
 // TODO: Consider using enum variants for Memory Operand, or, at least, parts of memory operand like the RIP-mode and base-less addressing.
 // TODO: Construct ordinary instruction stream.
-
-
-
-
-arg0: Option<SegmentRegister>, address_override_for_32_bit: bool
-
-
-		self.prefix_group4_if_address_override(address_override_for_32_bit);
-
-// TODO: Check for segment / address override only uses of arg0 (or for in/out, arg1) in
-	cmovs
-	all rep_ repe_ repne_ repnz_ etc prefixes.
-
-// TODO: _1(&mut self) forms - do these use a REX.W prefix always?
