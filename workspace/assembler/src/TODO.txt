@@ -8,7 +8,7 @@
 
 
 
-arg0: Option<SegmentRegister>, arg1: address_override_for_32_bit
+arg0: Option<SegmentRegister>, address_override_for_32_bit: bool
 
 movs_Any16BitMemory_Any16BitMemory(&mut self, arg0: Any16BitMemory, arg1: Any16BitMemory)
 movs_Any32BitMemory_Any32BitMemory(&mut self, arg0: Any32BitMemory, arg1: Any32BitMemory)

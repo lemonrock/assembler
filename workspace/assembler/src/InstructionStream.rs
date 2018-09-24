@@ -4071,20 +4071,20 @@ pub trait InstructionStream
 	/// For legacy mode, move word from address `DS:(E)SI` to `ES:(E)DI`.
 	///
 	/// For 64-bit mode move word at address (R|E)SI to `(R|E)DI`.
-	fn movs_Any16BitMemory_Any16BitMemory(&mut self, arg0: Any16BitMemory, arg1: Any16BitMemory);
+	fn movs_Any16BitMemory_Any16BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool);
 
 	/// For legacy mode, move dword from address `DS:(E)SI` to `ES:(E)DI`.
 	///
 	/// For 64-bit mode move dword from address (R|E)SI to `(R|E)DI`.
-	fn movs_Any32BitMemory_Any32BitMemory(&mut self, arg0: Any32BitMemory, arg1: Any32BitMemory);
+	fn movs_Any32BitMemory_Any32BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool);
 
 	/// Move qword from address (R|E)SI to `(R|E)DI`.
-	fn movs_Any64BitMemory_Any64BitMemory(&mut self, arg0: Any64BitMemory, arg1: Any64BitMemory);
+	fn movs_Any64BitMemory_Any64BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool);
 
 	/// For legacy mode, Move byte from address `DS:(E)SI` to `ES:(E)DI`.
 	///
 	/// For 64-bit mode move byte from address `(R|E)SI` to `(R|E)DI`.
-	fn movs_Any8BitMemory_Any8BitMemory(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory);
+	fn movs_Any8BitMemory_Any8BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool);
 
 	/// For legacy mode, Move byte from address `DS:(E)SI` to `ES:(E)DI`.
 	///
@@ -6212,19 +6212,19 @@ pub trait InstructionStream
 	fn rep_lods_RAX(&mut self);
 
 	/// Move `(E)CX` words from `DS:[(E)SI]` to `ES:[(E)DI]`.
-	fn rep_movs_Any16BitMemory_Any16BitMemory(&mut self, arg0: Any16BitMemory, arg1: Any16BitMemory);
+	fn rep_movs_Any16BitMemory_Any16BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool);
 
 	/// Move `(E)CX` doublewords from `DS:[(E)SI]` to `ES:[(E)DI]`.
-	fn rep_movs_Any32BitMemory_Any32BitMemory(&mut self, arg0: Any32BitMemory, arg1: Any32BitMemory);
+	fn rep_movs_Any32BitMemory_Any32BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool);
 
 	/// Move `RCX` quadwords from `[RSI]` to `[RDI]`.
-	fn rep_movs_Any64BitMemory_Any64BitMemory(&mut self, arg0: Any64BitMemory, arg1: Any64BitMemory);
+	fn rep_movs_Any64BitMemory_Any64BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool);
 
 	/// Move `(E)CX` bytes from `DS:[(E)SI]` to `ES:[(E)DI]`.
-	fn rep_movs_Any8BitMemory_Any8BitMemory(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory);
+	fn rep_movs_Any8BitMemory_Any8BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool);
 
 	/// Move `RCX` bytes from `[RSI]` to `[RDI]`.
-	fn rep_movs_Any8BitMemory_Any8BitMemory_1(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory);
+	fn rep_movs_Any8BitMemory_Any8BitMemory_1(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool);
 
 	/// Output `(E)CX` words from `DS:[(E)SI]` to port `DX`.
 	fn rep_outs_DX_Any16BitMemory(&mut self, arg1: Any16BitMemory);
@@ -6296,7 +6296,7 @@ pub trait InstructionStream
 	fn repne_cmps_Any64BitMemory_Any64BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool);
 
 	/// Find matching bytes in `ES:[(E)DI]` and `DS:[(E)SI]`.
-	fn repne_scas_Any8BitMemory_Any8BitMemory(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory);
+	fn repne_scas_Any8BitMemory_Any8BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool);
 
 	/// Find matching bytes in `[RDI]` and `[RSI]`.
 	fn repne_cmps_Any8BitMemory_Any8BitMemory_1(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool);
@@ -46500,7 +46500,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn movs_Any16BitMemory_Any16BitMemory(&mut self, arg0: Any16BitMemory, arg1: Any16BitMemory)
+	fn movs_Any16BitMemory_Any16BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -46508,7 +46508,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group2(arg0);
 	
-		self.prefix_group4(arg0);
+		self.prefix_group4_if_address_override(address_override_for_32_bit);
 	
 		self.prefix_group3();
 	
@@ -46526,7 +46526,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn movs_Any32BitMemory_Any32BitMemory(&mut self, arg0: Any32BitMemory, arg1: Any32BitMemory)
+	fn movs_Any32BitMemory_Any32BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -46534,7 +46534,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group2(arg0);
 	
-		self.prefix_group4(arg0);
+		self.prefix_group4_if_address_override(address_override_for_32_bit);
 	
 		// No prefix group 3.
 	
@@ -46552,7 +46552,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn movs_Any64BitMemory_Any64BitMemory(&mut self, arg0: Any64BitMemory, arg1: Any64BitMemory)
+	fn movs_Any64BitMemory_Any64BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -46560,7 +46560,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group2(arg0);
 	
-		self.prefix_group4(arg0);
+		self.prefix_group4_if_address_override(address_override_for_32_bit);
 	
 		// No prefix group 3.
 	
@@ -46578,7 +46578,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn movs_Any8BitMemory_Any8BitMemory(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory)
+	fn movs_Any8BitMemory_Any8BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -46586,7 +46586,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group2(arg0);
 	
-		self.prefix_group4(arg0);
+		self.prefix_group4_if_address_override(address_override_for_32_bit);
 	
 		// No prefix group 3.
 	
@@ -64414,7 +64414,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn rep_movs_Any16BitMemory_Any16BitMemory(&mut self, arg0: Any16BitMemory, arg1: Any16BitMemory)
+	fn rep_movs_Any16BitMemory_Any16BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -64422,7 +64422,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group2(arg0);
 	
-		self.prefix_group4(arg0);
+		self.prefix_group4_if_address_override(address_override_for_32_bit);
 	
 		self.prefix_group3();
 	
@@ -64440,7 +64440,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn rep_movs_Any32BitMemory_Any32BitMemory(&mut self, arg0: Any32BitMemory, arg1: Any32BitMemory)
+	fn rep_movs_Any32BitMemory_Any32BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -64448,7 +64448,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group2(arg0);
 	
-		self.prefix_group4(arg0);
+		self.prefix_group4_if_address_override(address_override_for_32_bit);
 	
 		// No prefix group 3.
 	
@@ -64466,7 +64466,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn rep_movs_Any64BitMemory_Any64BitMemory(&mut self, arg0: Any64BitMemory, arg1: Any64BitMemory)
+	fn rep_movs_Any64BitMemory_Any64BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -64474,7 +64474,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group2(arg0);
 	
-		self.prefix_group4(arg0);
+		self.prefix_group4_if_address_override(address_override_for_32_bit);
 	
 		// No prefix group 3.
 	
@@ -64492,7 +64492,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn rep_movs_Any8BitMemory_Any8BitMemory(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory)
+	fn rep_movs_Any8BitMemory_Any8BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -64500,7 +64500,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group2(arg0);
 	
-		self.prefix_group4(arg0);
+		self.prefix_group4_if_address_override(address_override_for_32_bit);
 	
 		// No prefix group 3.
 	
@@ -64518,7 +64518,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn rep_movs_Any8BitMemory_Any8BitMemory_1(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory)
+	fn rep_movs_Any8BitMemory_Any8BitMemory_1(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -64526,7 +64526,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group2(arg0);
 	
-		self.prefix_group4(arg0);
+		self.prefix_group4_if_address_override(address_override_for_32_bit);
 	
 		// No prefix group 3.
 	
@@ -65142,7 +65142,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	}
 	
 	#[inline(always)]
-	fn repne_scas_Any8BitMemory_Any8BitMemory(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory)
+	fn repne_scas_Any8BitMemory_Any8BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		// This is not a VEX encoded instruction.
 	
@@ -65150,7 +65150,7 @@ impl InstructionStream for OrdinaryInstructionStream
 	
 		self.prefix_group2(arg0);
 	
-		self.prefix_group4(arg0);
+		self.prefix_group4_if_address_override(address_override_for_32_bit);
 	
 		// No prefix group 3.
 	
