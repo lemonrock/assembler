@@ -56,6 +56,8 @@ impl<'a> InstructionStream<'a>
 	/// Resolves all remaining labels and makes code executable.
 	///
 	/// Will panic in debug builds if labels can not be resolved, 8-bit JMPs are too far away or 32-bit JMPs have displacements of more than 2Gb!
+	///
+	/// Returns a slice containing just the instructions encoded; useful for testing or for dumping to a file.
 	#[inline(always)]
 	pub fn finish(mut self) -> &'a [u8]
 	{
@@ -78,7 +80,7 @@ impl<'a> InstructionStream<'a>
 		self.executable_anonymous_memory_map.make_executable();
 		
 		let length = self.byte_emitter.instruction_pointer - self.byte_emitter.start_instruction_pointer;
-		unsafe { ::std::slice::from_raw_parts(self.byte_emitter.start_instruction_pointer as *const u8, length) }
+		unsafe { from_raw_parts(self.byte_emitter.start_instruction_pointer as *const u8, length) }
 	}
 	
 	#[inline(always)]

@@ -78,6 +78,7 @@ use ::std::mem::transmute;
 use ::std::ptr::copy_nonoverlapping;
 use ::std::ptr::NonNull;
 use ::std::ptr::null_mut;
+use ::std::slice::from_raw_parts;
 
 
 /// Mnemonic parameter types.
