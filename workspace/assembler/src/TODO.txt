@@ -1,3 +1,0 @@
-// TODO: Labels !!!
-// TODO: AnonMemoryMap and function calls
-// TODO: Construct ordinary instruction stream.
