@@ -15,9 +15,9 @@
 //! This is a new code base to efficiently assemble 64-bit x86 (AMD64 long mode) machine code at runtime.
 //!
 //! Instructions are emitted by using the mnemonic-like methods on the `InstructionStream`.
-//! These are designed to work with Rust's Release optimizations to compile down to just a sequence of byte stores to memory.
+//! These are designed to work with Rust's release build optimizations to compile down to just a sequence of byte stores to memory.
 //!
-//! In addition, labels are supported which are then calculated using a second-pass.
+//! In addition, labels are supported; use of short (8-bit) labelled jumps is supported, and, where possible, are used.
 //!
 //! ## Example Usage
 //!
@@ -37,7 +37,20 @@
 //! 	const SOME_LENGTH: usize = 4096;
 //! 	let memory_map = ExecutableAnonymousMemoryMap::new(SOME_LENGTH).unwrap();
 //!
+//! 	const SOME_LIKELY_NUMBER_OF_LABELS: usize = 512;
+//!		let instruction_stream = memory_map.instruction_stream(SOME_LIKELY_NUMBER_OF_LABELS);
 //!
+//! 	instruction_stream.mov_...();
+//!
+//! 	let label = instruction_stream.create_and_attach_label();
+//!
+//! 	instruction_stream.jmp_Label(label)?;
+//!
+//! 	let function_pointer = instruction_stream.nullary_function::<()>():
+//!
+//! 	instruction_stream.finish();
+//!
+//! 	function_pointer();
 //! }
 //!
 //! ```

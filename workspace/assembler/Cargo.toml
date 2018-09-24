@@ -14,8 +14,8 @@ repository = "https://github.com/lemonrock/assembler.git"
 exclude = ["*"]
 include = ["README.md", "LICENSE", "COPYRIGHT", "src/**/*.rs", "Cargo.toml", "rustfmt.toml", "clippy.toml"]
 readme = "README.md"
-publish = false
-version = "0.0.0"
+publish = true
+version = "0.1.0"
 
 [dependencies]
 libc = "^0.2"
