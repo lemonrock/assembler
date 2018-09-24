@@ -3,26 +3,17 @@
 // TODO: Merge instruction stream trait into struct (?how?)
 // TODO: Consider using enum variants for Memory Operand, or, at least, parts of memory operand like the RIP-mode and base-less addressing.
 // TODO: Construct ordinary instruction stream.
-// TODO: Fix various string functions with unused arguments:-
 
 
 
 
 arg0: Option<SegmentRegister>, address_override_for_32_bit: bool
 
-movs_Any16BitMemory_Any16BitMemory(&mut self, arg0: Any16BitMemory, arg1: Any16BitMemory)
-movs_Any32BitMemory_Any32BitMemory(&mut self, arg0: Any32BitMemory, arg1: Any32BitMemory)
-movs_Any64BitMemory_Any64BitMemory(&mut self, arg0: Any64BitMemory, arg1: Any64BitMemory)
-movs_Any8BitMemory_Any8BitMemory(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory)
-rep_movs_Any16BitMemory_Any16BitMemory(&mut self, arg0: Any16BitMemory, arg1: Any16BitMemory)
-rep_movs_Any32BitMemory_Any32BitMemory(&mut self, arg0: Any32BitMemory, arg1: Any32BitMemory)
-rep_movs_Any64BitMemory_Any64BitMemory(&mut self, arg0: Any64BitMemory, arg1: Any64BitMemory)
-rep_movs_Any8BitMemory_Any8BitMemory(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory)
-rep_movs_Any8BitMemory_Any8BitMemory_1(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory)
 
+		self.prefix_group4_if_address_override(address_override_for_32_bit);
 
+// TODO: Check for segment / address override only uses of arg0 (or for in/out, arg1) in
+	cmovs
+	in / out string functions eg rep_outs_DX_Any8BitMemory_1 and rep_ins_*
 
-
-repne_scas_Any8BitMemory_Any8BitMemory(&mut self, arg0: Any8BitMemory, arg1: Any8BitMemory)
-
-Look at other repe / repne / string instructions and also make necessary changes, eg repe_scas_Any8BitMemory_1
+// TODO: _1(&mut self) forms - do these use a REX.W prefix always?
