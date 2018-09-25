@@ -45,6 +45,28 @@ impl InstructionStreamHints
 		self.number_of_32_bit_jumps = Self::adjust_value(self.number_of_32_bit_jumps);
 	}
 	
+	/// Ensures that a maximum high-water-mark is kept.
+	#[inline(always)]
+	pub fn maximize(&mut self, mut newer_unadjusted_hints: Self)
+	{
+		newer_unadjusted_hints.adjust();
+		
+		if newer_unadjusted_hints.number_of_labels > self.number_of_labels
+		{
+			self.number_of_labels = newer_unadjusted_hints.number_of_labels
+		}
+		
+		if newer_unadjusted_hints.number_of_8_bit_jumps > self.number_of_8_bit_jumps
+		{
+			self.number_of_8_bit_jumps = newer_unadjusted_hints.number_of_8_bit_jumps
+		}
+		
+		if newer_unadjusted_hints.number_of_32_bit_jumps > self.number_of_32_bit_jumps
+		{
+			self.number_of_32_bit_jumps = newer_unadjusted_hints.number_of_32_bit_jumps
+		}
+	}
+	
 	fn adjust_value(value: usize) -> usize
 	{
 		if value < Self::MinimumValue
