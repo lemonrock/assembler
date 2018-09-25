@@ -3,6 +3,7 @@
 
 
 use super::ExecutableAnonymousMemoryMap;
+use super::InstructionStreamHints;
 use super::mnemonic_parameter_types::registers::Register32Bit;
 use super::mnemonic_parameter_types::registers::Register64Bit;
 use ::std::io::Write;
@@ -12,7 +13,7 @@ use ::std::io::Write;
 pub fn lifecycle()
 {
 	let mut map = ExecutableAnonymousMemoryMap::new(4096).expect("Could not anonymously mmap");
-	let instruction_stream = map.instruction_stream(128);
+	let instruction_stream = map.instruction_stream(&InstructionStreamHints::default());
 	
 	instruction_stream.finish();
 }
@@ -21,7 +22,7 @@ pub fn lifecycle()
 pub fn labelling()
 {
 	let mut map = ExecutableAnonymousMemoryMap::new(4096).expect("Could not anonymously mmap");
-	let mut instruction_stream = map.instruction_stream(128);
+	let mut instruction_stream = map.instruction_stream(&InstructionStreamHints::default());
 	
 	let label1 = instruction_stream.create_label();
 	instruction_stream.attach_label(label1);
@@ -42,7 +43,7 @@ pub fn simple_function()
 	
 	let _function_pointer =
 	{
-		let mut instruction_stream = map.instruction_stream(128);
+		let mut instruction_stream = map.instruction_stream(&InstructionStreamHints::default());
 		
 		instruction_stream.emit_alignment(64);
 		
@@ -60,7 +61,7 @@ pub fn simple_function()
 		instruction_stream.pop_Register64Bit_r64(RBP);
 		instruction_stream.ret();
 		
-		let encoded_bytes = instruction_stream.finish();
+		let (encoded_bytes, _hints) = instruction_stream.finish();
 		
 		assert_eq!(&bytes_to_string(encoded_bytes), "55 48 8B EC 31 C0 48 8B E5 5D C3", "Encoding of a basic function was wrong");
 		
@@ -74,7 +75,7 @@ pub fn simple_function()
 // Suitable for https://onlinedisassembler.com/odaweb/ .
 fn bytes_to_string(encoded_bytes: &[u8]) -> String
 {
-	let mut string = Vec::with_capacity(128);
+	let mut string = Vec::with_capacity(encoded_bytes.len() * 3);
 	
 	let mut after_first = false;
 	for byte in encoded_bytes

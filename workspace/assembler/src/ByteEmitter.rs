@@ -29,6 +29,12 @@ impl ByteEmitter
 	}
 	
 	#[inline(always)]
+	pub(crate) fn remaining_space(&mut self) -> usize
+	{
+		self.end_instruction_pointer - self.instruction_pointer
+	}
+	
+	#[inline(always)]
 	pub(crate) fn store_bookmark(&mut self)
 	{
 		self.bookmark = self.instruction_pointer

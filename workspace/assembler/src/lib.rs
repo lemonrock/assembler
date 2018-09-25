@@ -94,5 +94,6 @@ include!("ExecutableAnonymousMemoryMap.rs");
 include!("InstructionPointer.rs");
 include!("InstructionPointerValidity.rs");
 include!("InstructionStream.rs");
+include!("InstructionStreamHints.rs");
 include!("LabelledLocations.rs");
 include!("ShortJmpResult.rs");

@@ -39,7 +39,7 @@ impl<'a> InstructionStream<'a>
 	pub(crate) const REX: u8 = 0x40;
 	
 	#[inline(always)]
-	pub(crate) fn new(executable_anonymous_memory_map: &'a mut ExecutableAnonymousMemoryMap, likely_number_of_labels_hint: usize) -> Self
+	pub(crate) fn new(executable_anonymous_memory_map: &'a mut ExecutableAnonymousMemoryMap, instruction_stream_hints: &InstructionStreamHints) -> Self
 	{
 		executable_anonymous_memory_map.make_writable();
 		
@@ -47,9 +47,37 @@ impl<'a> InstructionStream<'a>
 		{
 			byte_emitter: ByteEmitter::new(executable_anonymous_memory_map),
 			executable_anonymous_memory_map,
-			labelled_locations: LabelledLocations::new(likely_number_of_labels_hint),
-			instruction_pointers_to_replace_labels_with_8_bit_displacements: Vec::with_capacity(likely_number_of_labels_hint),
-			instruction_pointers_to_replace_labels_with_32_bit_displacements: Vec::with_capacity(likely_number_of_labels_hint),
+			labelled_locations: LabelledLocations::new(instruction_stream_hints.number_of_labels),
+			instruction_pointers_to_replace_labels_with_8_bit_displacements: Vec::with_capacity(instruction_stream_hints.number_of_8_bit_jumps),
+			instruction_pointers_to_replace_labels_with_32_bit_displacements: Vec::with_capacity(instruction_stream_hints.number_of_32_bit_jumps),
+		}
+	}
+	
+	#[cfg(any(target_os = "android", target_os = "linux"))]
+	#[inline(always)]
+	fn attempt_to_resize_in_place(&mut self) -> io::Result<()>
+	{
+		let new_length = self.executable_anonymous_memory_map.attempt_to_resize_in_place_whilst_writing()?;
+		self.byte_emitter.end_instruction_pointer += new_length;
+		Ok(())
+	}
+	
+	#[cfg(not(any(target_os = "android", target_os = "linux")))]
+	#[inline(always)]
+	fn attempt_to_resize_in_place(&mut self) -> io::Result<()>
+	{
+		Err(io::Error::new(io::ErrorKind::Other, "Could not resize in place"))
+	}
+	
+	/// Returns `(number_of_labels, number_of_8_bit_jumps, number_of_32_bit_jumps)` which can be used as input to tweak the next version.
+	#[inline(always)]
+	fn hints_for_next_instance(&self) -> InstructionStreamHints
+	{
+		InstructionStreamHints
+		{
+			number_of_labels: self.labelled_locations.next_label_index,
+			number_of_8_bit_jumps: self.instruction_pointers_to_replace_labels_with_8_bit_displacements.len(),
+			number_of_32_bit_jumps: self.instruction_pointers_to_replace_labels_with_32_bit_displacements.len(),
 		}
 	}
 	
@@ -57,10 +85,12 @@ impl<'a> InstructionStream<'a>
 	///
 	/// Will panic in debug builds if labels can not be resolved, 8-bit JMPs are too far away or 32-bit JMPs have displacements of more than 2Gb!
 	///
-	/// Returns a slice containing just the instructions encoded; useful for testing or for dumping to a file.
+	/// Returns a slice containing just the instructions encoded; useful for testing or for dumping to a file; and hints to use for the next instance.
 	#[inline(always)]
-	pub fn finish(mut self) -> &'a [u8]
+	pub fn finish(mut self) -> (&'a [u8], InstructionStreamHints)
 	{
+		let hints = self.hints_for_next_instance();
+		
 		for (label, insert_at_instruction_pointer) in self.instruction_pointers_to_replace_labels_with_8_bit_displacements
 		{
 			let target_instruction_pointer = self.labelled_locations.potential_target_instruction_pointer(label);
@@ -80,60 +110,8 @@ impl<'a> InstructionStream<'a>
 		self.executable_anonymous_memory_map.make_executable();
 		
 		let length = self.byte_emitter.instruction_pointer - self.byte_emitter.start_instruction_pointer;
-		unsafe { from_raw_parts(self.byte_emitter.start_instruction_pointer as *const u8, length) }
-	}
-	
-	#[inline(always)]
-	fn bookmark(&mut self)
-	{
-		self.byte_emitter.store_bookmark()
-	}
-	
-	/// Returns an error if displacement would exceed 8 bits.
-	#[inline(always)]
-	fn displacement_label_8bit(&mut self, label: Label) -> ShortJmpResult
-	{
-		let target_instruction_pointer = self.labelled_locations.potential_target_instruction_pointer(label);
-		if target_instruction_pointer.is_valid()
-		{
-			let insert_at_instruction_pointer = self.byte_emitter.instruction_pointer;
-			match self.byte_emitter.insert_8_bit_effective_address_displacement(insert_at_instruction_pointer, target_instruction_pointer)
-			{
-				Ok(()) => Ok(()),
-				Err(()) =>
-				{
-					self.byte_emitter.reset_to_bookmark();
-					Err(())
-				}
-			}
-		}
-		else
-		{
-			let instruction_pointer = self.instruction_pointer();
-			self.instruction_pointers_to_replace_labels_with_8_bit_displacements.push((label, instruction_pointer));
-			self.byte_emitter.skip_u8();
-			Ok(())
-		}
-	}
-	
-	/// Does not return an error if displacement would exceed 32 bits, but panics in debug builds.
-	///
-	/// Errors are very unlikely indeed for such overly large displacements, are almost certainly a mistake and can not realistically be recovered from, in any event.
-	#[inline(always)]
-	fn displacement_label_32bit(&mut self, label: Label)
-	{
-		let target_instruction_pointer = self.labelled_locations.potential_target_instruction_pointer(label);
-		if target_instruction_pointer.is_valid()
-		{
-			let insert_at_instruction_pointer = self.byte_emitter.instruction_pointer;
-			self.byte_emitter.insert_32_bit_effective_address_displacement(insert_at_instruction_pointer, target_instruction_pointer)
-		}
-		else
-		{
-			let instruction_pointer = self.instruction_pointer();
-			self.instruction_pointers_to_replace_labels_with_32_bit_displacements.push((label, instruction_pointer));
-			self.byte_emitter.skip_u32();
-		}
+		let slice = unsafe { from_raw_parts(self.byte_emitter.start_instruction_pointer as *const u8, length) };
+		(slice, hints)
 	}
 	
 	/// Creates an unique label and uses it to label the current location.
@@ -237,6 +215,7 @@ impl<'a> InstructionStream<'a>
 	#[inline(always)]
 	pub fn emit_byte(&mut self, byte: u8)
 	{
+		self.reserve_space(1);
 		self.byte_emitter.emit_u8(byte)
 	}
 	
@@ -248,6 +227,7 @@ impl<'a> InstructionStream<'a>
 	#[inline(always)]
 	pub fn emit_word(&mut self, word: u16)
 	{
+		self.reserve_space(2);
 		self.byte_emitter.emit_u16(word)
 	}
 	
@@ -259,6 +239,7 @@ impl<'a> InstructionStream<'a>
 	#[inline(always)]
 	pub fn emit_double_word(&mut self, double_word: u32)
 	{
+		self.reserve_space(4);
 		self.byte_emitter.emit_u32(double_word)
 	}
 	
@@ -270,6 +251,7 @@ impl<'a> InstructionStream<'a>
 	#[inline(always)]
 	pub fn emit_quad_word(&mut self, quad_word: u64)
 	{
+		self.reserve_space(8);
 		self.byte_emitter.emit_u64(quad_word)
 	}
 	
@@ -281,6 +263,7 @@ impl<'a> InstructionStream<'a>
 	#[inline(always)]
 	pub fn emit_double_quad_word(&mut self, double_quad_word: u128)
 	{
+		self.reserve_space(16);
 		self.byte_emitter.emit_u128(double_quad_word)
 	}
 	
@@ -290,62 +273,28 @@ impl<'a> InstructionStream<'a>
 	#[inline(always)]
 	pub fn emit_bytes(&mut self, bytes: &[u8])
 	{
+		self.reserve_space(bytes.len());
 		self.byte_emitter.emit_bytes(bytes)
 	}
 	
+	/// Skips over a byte in the instruction stream at the current location.
+	///
+	/// The byte can be data or instructions.
 	#[inline(always)]
-	fn nop_1(&mut self)
+	pub(crate) fn skip_byte(&mut self)
 	{
-		const NOP: u8 = 0x90;
-		self.emit_byte(NOP)
+		self.reserve_space(1);
+		self.byte_emitter.skip_u8()
 	}
 	
+	/// Skips over a byte in the instruction stream at the current location.
+	///
+	/// The byte can be data or instructions.
 	#[inline(always)]
-	fn nop_2(&mut self)
+	pub(crate) fn skip_double_word(&mut self)
 	{
-		self.emit_word(0x6690)
-	}
-	
-	#[inline(always)]
-	fn nop_3(&mut self)
-	{
-		self.emit_bytes(&[0x0F, 0x1F, 0x00])
-	}
-	
-	#[inline(always)]
-	fn nop_4(&mut self)
-	{
-		self.emit_double_word(0x0F1F4000)
-	}
-	
-	#[inline(always)]
-	fn nop_5(&mut self)
-	{
-		self.emit_bytes(&[0x0F, 0x1F, 0x44, 0x00, 0x00])
-	}
-	
-	#[inline(always)]
-	fn nop_6(&mut self)
-	{
-		self.emit_bytes(&[0x66, 0x0F, 0x1F, 0x44, 0x00, 0x00])
-	}
-	
-	#[inline(always)]
-	fn nop_7(&mut self)
-	{
-		self.emit_bytes(&[0x0F, 0x1F, 0x80, 0x00, 0x00, 0x00, 0x00])
-	}
-	
-	#[inline(always)]
-	fn nop_8(&mut self)
-	{
-		self.emit_quad_word(0x0F1F840000000000)
-	}
-	
-	#[inline(always)]
-	fn nop_9(&mut self)
-	{
-		self.emit_bytes(&[0x66, 0x0F, 0x1F, 0x84, 0x00, 0x00, 0x00, 0x00, 0x00])
+		self.reserve_space(4);
+		self.byte_emitter.skip_u32()
 	}
 	
 	/// Emits (pushes) `NOP`s (No Operation) opcodes into the instruction stream at the current location to ensure the desired `alignment`.
@@ -607,6 +556,134 @@ impl<'a> InstructionStream<'a>
 					_ => unreachable!(),
 				}
 			}
+		}
+	}
+	
+	#[inline(always)]
+	fn nop_1(&mut self)
+	{
+		const NOP: u8 = 0x90;
+		self.emit_byte(NOP)
+	}
+	
+	#[inline(always)]
+	fn nop_2(&mut self)
+	{
+		self.emit_word(0x6690)
+	}
+	
+	#[inline(always)]
+	fn nop_3(&mut self)
+	{
+		self.emit_bytes(&[0x0F, 0x1F, 0x00])
+	}
+	
+	#[inline(always)]
+	fn nop_4(&mut self)
+	{
+		self.emit_double_word(0x0F1F4000)
+	}
+	
+	#[inline(always)]
+	fn nop_5(&mut self)
+	{
+		self.emit_bytes(&[0x0F, 0x1F, 0x44, 0x00, 0x00])
+	}
+	
+	#[inline(always)]
+	fn nop_6(&mut self)
+	{
+		self.emit_bytes(&[0x66, 0x0F, 0x1F, 0x44, 0x00, 0x00])
+	}
+	
+	#[inline(always)]
+	fn nop_7(&mut self)
+	{
+		self.emit_bytes(&[0x0F, 0x1F, 0x80, 0x00, 0x00, 0x00, 0x00])
+	}
+	
+	#[inline(always)]
+	fn nop_8(&mut self)
+	{
+		self.emit_quad_word(0x0F1F840000000000)
+	}
+	
+	#[inline(always)]
+	fn nop_9(&mut self)
+	{
+		self.emit_bytes(&[0x66, 0x0F, 0x1F, 0x84, 0x00, 0x00, 0x00, 0x00, 0x00])
+	}
+	
+	#[inline(always)]
+	fn reserve_space(&mut self, length: usize)
+	{
+		let remaining_space = self.byte_emitter.remaining_space();
+		if unlikely!(remaining_space < length)
+		{
+			if self.attempt_to_resize_in_place().is_err()
+			{
+				panic!("There is no more space in the buffer and remap failed")
+			}
+		}
+	}
+	
+	#[inline(always)]
+	fn reserve_space_for_instruction(&mut self)
+	{
+		const MaximumOpcodeLength: usize = 15;
+		self.reserve_space(MaximumOpcodeLength)
+	}
+	
+	#[inline(always)]
+	fn bookmark(&mut self)
+	{
+		self.byte_emitter.store_bookmark()
+	}
+	
+	/// Returns an error if displacement would exceed 8 bits.
+	#[inline(always)]
+	fn displacement_label_8bit(&mut self, label: Label) -> ShortJmpResult
+	{
+		let target_instruction_pointer = self.labelled_locations.potential_target_instruction_pointer(label);
+		if target_instruction_pointer.is_valid()
+		{
+			let insert_at_instruction_pointer = self.byte_emitter.instruction_pointer;
+			match self.byte_emitter.insert_8_bit_effective_address_displacement(insert_at_instruction_pointer, target_instruction_pointer)
+			{
+				Ok(()) => Ok(()),
+				Err(()) =>
+				{
+					self.byte_emitter.reset_to_bookmark();
+					Err(())
+				}
+			}
+		}
+		else
+		{
+			let instruction_pointer = self.instruction_pointer();
+			self.instruction_pointers_to_replace_labels_with_8_bit_displacements.push((label, instruction_pointer));
+			self.skip_byte();
+			Ok(())
+		}
+	}
+	
+	/// Does not return an error if displacement would exceed 32 bits, but panics in debug builds.
+	///
+	/// Errors are very unlikely indeed for such overly large displacements, are almost certainly a mistake and can not realistically be recovered from, in any event.
+	#[inline(always)]
+	fn displacement_label_32bit(&mut self, label: Label)
+	{
+		let target_instruction_pointer = self.labelled_locations.potential_target_instruction_pointer(label);
+		if target_instruction_pointer.is_valid()
+		{
+			let insert_at_instruction_pointer = self.byte_emitter.instruction_pointer;
+			self.byte_emitter.insert_32_bit_effective_address_displacement(insert_at_instruction_pointer, target_instruction_pointer)
+		}
+		else
+		{
+			let instruction_pointer = self.instruction_pointer();
+			self.instruction_pointers_to_replace_labels_with_32_bit_displacements.push((label, instruction_pointer));
+			self.skip_double_word();
 		}
 	}
 	

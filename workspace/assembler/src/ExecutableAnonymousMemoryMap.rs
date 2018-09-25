@@ -24,6 +24,8 @@ impl ExecutableAnonymousMemoryMap
 	/// Create a new instance.
 	///
 	/// `length` is rounded up to the nearest power of two, and is floored at the smallest page size (4Kb).
+	///
+	/// Memory is created using an anonymous, shared mmap with no access rights (not even read) which is then locked (`mlock`'d).
 	#[inline(always)]
 	pub fn new(length: usize) -> io::Result<Self>
 	{
@@ -47,39 +49,95 @@ impl ExecutableAnonymousMemoryMap
 		}
 		else
 		{
-			Ok
-			(
-				Self
+			let address = result;
+			let result = unsafe { mlock(address, length) };
+			if unlikely!(result != 0)
+			{
+				if likely!(result == 1)
 				{
-					address: result as *mut _,
-					length,
+					Err(io::Error::last_os_error())
 				}
-			)
+				else
+				{
+					panic!("Unexpected result code from mlock '{}'", result)
+				}
+			}
+			else
+			{
+				Ok
+				(
+					Self
+					{
+						address: address as *mut _,
+						length,
+					}
+				)
+			}
 		}
 	}
 	
 	/// Get an assembler to this anonymous map.
 	#[inline(always)]
-	pub fn instruction_stream(&mut self, likely_number_of_labels_hint: usize) -> InstructionStream
+	pub fn instruction_stream(&mut self, instruction_stream_hints: &InstructionStreamHints) -> InstructionStream
 	{
-		InstructionStream::new(self, likely_number_of_labels_hint)
+		InstructionStream::new(self, &instruction_stream_hints)
 	}
 	
 	#[inline(always)]
 	pub(crate) fn make_writable(&mut self)
 	{
-		self.mprotect(PROT_WRITE)
+		self.mprotect(self.address, self.length, PROT_WRITE)
 	}
 	
 	#[inline(always)]
 	pub(crate) fn make_executable(&mut self)
 	{
-		self.mprotect(PROT_EXEC)
+		self.mprotect(self.address, self.length, PROT_EXEC)
+	}
+	
+	#[cfg(any(target_os = "android", target_os = "linux"))]
+	#[inline(always)]
+	pub(crate) fn attempt_to_resize_in_place_whilst_writing(&mut self) -> io::Result<usize>
+	{
+		const NoFlags: i32 = 0;
+		let old_length = self.length;
+		let new_length = self.length * 2;
+		let old_address = self.address;
+		let new_address = unsafe { mremap(old_address, old_length, new_length, NoFlags) };
+		if unlikely!(new_address == MAP_FAILED)
+		{
+			Err(io::Error::last_os_error())
+		}
+		else
+		{
+			debug_assert!(new_address, old_address, "address has changed");
+			
+			let new_memory_address = old_address + old_length;
+			
+			let result = unsafe { mlock(new_memory_address, old_length) };
+			if unlikely!(result != 0)
+			{
+				if likely!(result == 1)
+				{
+					Err(io::Error::last_os_error())
+				}
+				else
+				{
+					panic!("Unexpected result code from mlock '{}'", result)
+				}
+			}
+			else
+			{
+				self.mprotect(new_memory_address, old_length, PROT_WRITE);
+				self.length = new_length;
+				Ok(new_length)
+			}
+		}
 	}
 	
 	#[inline(always)]
-	fn mprotect(&self, protection_flags: i32)
+	fn mprotect(&self, address: *mut u8, length: usize, protection_flags: i32)
 	{
-		unsafe { mprotect(self.address as *mut _, self.length, protection_flags) };
+		unsafe { mprotect(address as *mut _, length, protection_flags) };
 	}
 }
