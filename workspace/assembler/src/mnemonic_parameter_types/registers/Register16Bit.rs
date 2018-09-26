@@ -14,6 +14,8 @@ pub enum Register16Bit
 	/// Contains the integer return value from a function call when using the System V Application Binary Interface (ABI) for x86-64.
 	///
 	/// Contains the integer return value from a function call when using the Microsoft x64 Calling Convention.
+	///
+	/// A scratch register (also known as a temporary or (function) caller-saved register) when using the System V Application Binary Interface (ABI) for x86-64.
 	AX = 0,
 	
 	/// Register 1.
@@ -21,6 +23,8 @@ pub enum Register16Bit
 	/// Contains the fourth integer function argument to a function call when using the System V Application Binary Interface for x86-64.
 	///
 	/// Contains the first integer function argument to a function call when using the Microsoft x64 Calling Convention.
+	///
+	/// A scratch register (also known as a temporary or (function) caller-saved register) when using the System V Application Binary Interface (ABI) for x86-64.
 	CX = 1,
 	
 	/// Register 2.
@@ -28,15 +32,29 @@ pub enum Register16Bit
 	/// Contains the third integer function argument to a function call when using the System V Application Binary Interface for x86-64.
 	///
 	/// Contains the second integer function argument to a function call when using the Microsoft x64 Calling Convention.
+	///
+	/// A scratch register (also known as a temporary or (function) caller-saved register) when using the System V Application Binary Interface (ABI) for x86-64.
 	DX = 2,
 
 	/// Register 3.
+	///
+	/// A callee-saved register: a called function must preserve the value in this register when using the System V Application Binary Interface (ABI) for x86-64.
+	/// In other words, upon returning, it should make sure the value originally in this register when the call was made is the current value of this register.
 	BX = 3,
 
 	/// Register 4.
+	///
+	/// Contains the stack pointer.
+	///
+	/// When using the System V Application Binary Interface (ABI) for x86-64, the stack moves downward and function arguments that did not fit into registers are passed on the stack in reversed order.
 	SP = 4,
 
 	/// Register 5.
+	///
+	/// A callee-saved register: a called function must preserve the value in this register when using the System V Application Binary Interface (ABI) for x86-64.
+	/// In other words, upon returning, it should make sure the value originally in this register when the call was made is the current value of this register.
+	///
+	/// May contain the frame pointer; not needed for leaf functions.
 	BP = 5,
 
 	/// Register 6.
@@ -44,6 +62,8 @@ pub enum Register16Bit
 	/// The 'source' operand in string instructions.
 	///
 	/// Contains the second integer function argument to a function call when using the System V Application Binary Interface for x86-64.
+	///
+	/// A scratch register (also known as a temporary or (function) caller-saved register) when using the System V Application Binary Interface (ABI) for x86-64.
 	SI = 6,
 
 	/// Register 7.
@@ -51,6 +71,8 @@ pub enum Register16Bit
 	/// The 'destination' operand in string instructions.
 	///
 	/// Contains the first integer function argument to a function call when using the System V Application Binary Interface for x86-64.
+	///
+	/// A scratch register (also known as a temporary or (function) caller-saved register) when using the System V Application Binary Interface (ABI) for x86-64.
 	DI = 7,
 
 	/// Register 8.
@@ -58,6 +80,8 @@ pub enum Register16Bit
 	/// Contains the fifth integer function argument to a function call when using the System V Application Binary Interface for x86-64.
 	///
 	/// Contains the third integer function argument to a function call when using the Microsoft x64 Calling Convention.
+	///
+	/// A scratch register (also known as a temporary or (function) caller-saved register) when using the System V Application Binary Interface (ABI) for x86-64.
 	R8W = 8,
 
 	/// Register 9.
@@ -65,24 +89,46 @@ pub enum Register16Bit
 	/// Contains the sixth integer function argument to a function call when using the System V Application Binary Interface for x86-64.
 	///
 	/// Contains the fourth integer function argument to a function call when using the Microsoft x64 Calling Convention.
+	///
+	/// A scratch register (also known as a temporary or (function) caller-saved register) when using the System V Application Binary Interface (ABI) for x86-64.
 	R9W = 9,
 
 	/// Register 10.
+	///
+	/// A scratch register (also known as a temporary or (function) caller-saved register) when using the System V Application Binary Interface (ABI) for x86-64.
+	///
+	/// Contains a function's static chain pointer.
 	R10W = 10,
 
 	/// Register 11.
+	///
+	/// A scratch register (also known as a temporary or (function) caller-saved register) when using the System V Application Binary Interface (ABI) for x86-64.
 	R11W = 11,
 
 	/// Register 12.
+	///
+	/// A callee-saved register: a called function must preserve the value in this register when using the System V Application Binary Interface (ABI) for x86-64.
+	/// In other words, upon returning, it should make sure the value originally in this register when the call was made is the current value of this register.
 	R12W = 12,
 
 	/// Register 13.
+	///
+	/// A callee-saved register: a called function must preserve the value in this register when using the System V Application Binary Interface (ABI) for x86-64.
+	/// In other words, upon returning, it should make sure the value originally in this register when the call was made is the current value of this register.
 	R13W = 13,
 
 	/// Register 14.
+	///
+	/// A callee-saved register: a called function must preserve the value in this register when using the System V Application Binary Interface (ABI) for x86-64.
+	/// In other words, upon returning, it should make sure the value originally in this register when the call was made is the current value of this register.
 	R14W = 14,
 
 	/// Register 15.
+	///
+	/// A callee-saved register: a called function must preserve the value in this register when using the System V Application Binary Interface (ABI) for x86-64.
+	/// In other words, upon returning, it should make sure the value originally in this register when the call was made is the current value of this register.
+	///
+	/// May also be used a 'GOT' pointer for relocations of location-independent code.
 	R15W = 15,
 }
 
