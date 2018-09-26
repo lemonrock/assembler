@@ -2,18 +2,6 @@
 // Copyright © 2018 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-
-//TODO:Functions preserve the registers rbx, rsp, rbp, r12, r13, r14, and r15; while
-//
-// r8, r9, r10, r11 are scratch registers.
-
-// TODO: The return value is stored in the rax register, or if it is a 128-bit value, then the higher 64-bits go in rdx
-
-/*
-This subsection discusses usage of each register. Registers %rbp, %rbx and %r12 through %r15 “belong” to the calling function and the called function is required to preserve their values. In other words, a called function must preserve these registers’ values for its caller. Remaining registers “belong” to the called function.7 If a calling function wants to preserve such a register value across a function call, it must save the value in its local stack frame.
-*/
-
-
 /// Register 0 (`RAX`) is defined on this enumeration but optimal encodings of it in combination with mnemonics exist and should be preferred as they increase code density.
 ///
 /// Registers 8 to 15 when encoded decrease code density (ie they are less efficiently encoded than registers 1 to 7).
