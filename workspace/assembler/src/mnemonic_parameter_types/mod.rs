@@ -27,6 +27,7 @@ pub mod relative_addresses;
 
 include!("AsDisplacement.rs");
 include!("BranchHint.rs");
+include!("FunctionPointer.rs");
 include!("Label.rs");
 include!("MemoryOrRegister.rs");
 include!("OpcodeEncoding.rs");

@@ -23,7 +23,7 @@ impl Drop for LabelledLocations
 
 impl LabelledLocations
 {
-	/// Using a value of 0xFFFFFFFF_FFFFFFFF is preferable to 0; this is because it is possible to map anonymous memory at location 0x00 and get a label to it; the limitations of the x64 address model make this larger value impossible.
+	/// Using a value of 0xFFFFFFFF_FFFFFFFF is preferable to 0; this is because it is possible to map anonymous memory at location 0x00 and get a label to it; the limitations of the x64 address model to 48-bit addresses make this larger value impossible.
 	const UnlabelledSentinel: usize = ::std::usize::MAX;
 	
 	#[inline(always)]

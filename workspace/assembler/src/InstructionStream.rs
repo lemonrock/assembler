@@ -146,6 +146,21 @@ impl<'a> InstructionStream<'a>
 		self.labelled_locations.set(label, instruction_pointer)
 	}
 	
+	/// Calculates a relative address from an absolute address, such as a function pointer or static constant pointer.
+	///
+	/// **WARNING**: Be very careful using the resultant value for CALL, JMP, etc, as it would need correcting for the size of the emitted opcode sequence including displacement.
+	///
+	/// **WARNING**: The location of emitted code may be such that if it is more than 2Gb away from common library function calls (eg `printf`); it may be preferrable to use an absolute address indirectly in this case.
+	///
+	/// **WARNING**: No checks are made for addresses that would exceed the boundaries of signed integers...
+	///
+	/// **WARNING**: In Kernel-model code, addresses are in the top half of the address space and so the casts below to `isize` will be invalid.
+	#[inline(always)]
+	fn relative_address_32bit(&self, absolute_address: impl FunctionPointer, offset_to_end_of_opcode_encoding: usize) -> RelativeAddress32Bit
+	{
+		RelativeAddress32Bit(((absolute_address.absolute_virtual_address() as isize) - ((self.instruction_pointer() + offset_to_end_of_opcode_encoding) as isize)) as i32)
+	}
+	
 	/// Creates a function pointer to the current location that takes no arguments and returns a result of type `R`.
 	///
 	/// Resultant function will not execute (and in all likelihood cause an uncaught signal to occur) until `self.finish()` is called.

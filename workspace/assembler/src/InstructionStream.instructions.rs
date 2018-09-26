@@ -7503,6 +7503,8 @@ impl<'a> InstructionStream<'a>
 	/// Call near, relative, displacement relative to next instruction.
 	///
 	/// 32-bit displacement sign extended to 64-bits in 64-bit mode.
+	///
+	/// Identical encoding to `call_function` and `call_RelativeAddress32Bit`.
 	#[inline(always)]
 	pub fn call_Label(&mut self, arg0: Label)
 	{
@@ -7560,7 +7562,7 @@ impl<'a> InstructionStream<'a>
 		// No label displacement.
 	}
 
-	/// Call near, absolute indirect, address given in `r/m64`.
+	/// Call near, absolute indirect, address given in `r64`.
 	#[inline(always)]
 	pub fn call_Register64Bit(&mut self, arg0: Register64Bit)
 	{
@@ -7592,6 +7594,25 @@ impl<'a> InstructionStream<'a>
 	/// Call near, relative, displacement relative to next instruction.
 	///
 	/// 32-bit displacement sign extended to 64-bits in 64-bit mode.
+	///
+	/// Identical encoding to `call_Label` and `call_RelativeAddress32Bit`.
+	///
+	/// **WARNING**: The location of emitted code may be such that if it is more than 2Gb away from common library function calls (eg `printf`); it may be preferrable to use an absolute address indirectly in this case, eg `call_Register64Bit` or `call_Any64BitMemory`.
+	///
+	/// **WARNING**: No checks are made for addresses that would exceed the boundaries of signed integers...
+	///
+	/// **WARNING**: In Kernel-model code, addresses are in the top half of the address space and so this function will be invalid.
+	pub fn call_function(&mut self, function_pointer: impl FunctionPointer)
+	{
+		let relative_address = self.relative_address_32bit(function_pointer, 1 + 4);
+		self.call_RelativeAddress32Bit(relative_address)
+	}
+
+	/// Call near, relative, displacement relative to next instruction.
+	///
+	/// 32-bit displacement sign extended to 64-bits in 64-bit mode.
+	///
+	/// Identical encoding to `call_Label` and `call_function`.
 	#[inline(always)]
 	pub fn call_RelativeAddress32Bit(&mut self, arg0: RelativeAddress32Bit)
 	{
