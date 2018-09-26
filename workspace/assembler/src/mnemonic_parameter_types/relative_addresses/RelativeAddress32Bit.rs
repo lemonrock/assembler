@@ -2,20 +2,7 @@
 // Copyright © 2018 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// A 32-bit relative address.
-#[derive(Default, Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct RelativeAddress32Bit(pub i32);
-
-impl AsDisplacement for RelativeAddress32Bit
-{
-	type D = u32;
-	
-	#[inline(always)]
-	fn displacement(self) -> Self::D
-	{
-		self.0 as u32
-	}
-}
+impl_relative_address!(RelativeAddress32Bit, i32, u32, Immediate32Bit);
 
 impl From<Immediate8Bit> for RelativeAddress32Bit
 {
@@ -34,15 +21,6 @@ impl From<Immediate16Bit> for RelativeAddress32Bit
 	{
 		let into: i16 = value.into();
 		RelativeAddress32Bit(into as i32)
-	}
-}
-
-impl From<Immediate32Bit> for RelativeAddress32Bit
-{
-	#[inline(always)]
-	fn from(value: Immediate32Bit) -> Self
-	{
-		RelativeAddress32Bit(value.into())
 	}
 }
 
@@ -82,51 +60,6 @@ impl From<u16> for RelativeAddress32Bit
 	}
 }
 
-impl From<i32> for RelativeAddress32Bit
-{
-	#[inline(always)]
-	fn from(value: i32) -> Self
-	{
-		RelativeAddress32Bit(value as i32)
-	}
-}
-
-impl From<u32> for RelativeAddress32Bit
-{
-	#[inline(always)]
-	fn from(value: u32) -> Self
-	{
-		RelativeAddress32Bit(value as i32)
-	}
-}
-
-impl Into<Immediate32Bit> for RelativeAddress32Bit
-{
-	#[inline(always)]
-	fn into(self) -> Immediate32Bit
-	{
-		Immediate32Bit(self.0)
-	}
-}
-
-impl Into<i32> for RelativeAddress32Bit
-{
-	#[inline(always)]
-	fn into(self) -> i32
-	{
-		self.0
-	}
-}
-
-impl Into<u32> for RelativeAddress32Bit
-{
-	#[inline(always)]
-	fn into(self) -> u32
-	{
-		self.0 as u32
-	}
-}
-
 impl From<RelativeAddress8Bit> for RelativeAddress32Bit
 {
 	#[inline(always)]
@@ -134,8 +67,4 @@ impl From<RelativeAddress8Bit> for RelativeAddress32Bit
 	{
 		RelativeAddress32Bit(value.0 as i32)
 	}
-}
-
-impl RelativeAddress<u32> for RelativeAddress32Bit
-{
 }

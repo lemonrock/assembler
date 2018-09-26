@@ -50,17 +50,11 @@ pub fn simple_function()
 		
 		let function_pointer: unsafe extern "C" fn() -> i32 = instruction_stream.nullary_function_pointer();
 		
-		// Push stack frame.
-		instruction_stream.push_Register64Bit_r64(RBP);
-		instruction_stream.mov_Register64Bit_Register64Bit_rm64_r64(RBP, RSP);
+		instruction_stream.push_stack_frame();
 		
-		// Return 0 (or SUB EAX, EAX).
-		instruction_stream.xor_Register32Bit_Register32Bit(EAX, EAX);
+		instruction_stream.zero_RAX();
 		
-		// Pop stack frame and return.
-		instruction_stream.mov_Register64Bit_Register64Bit_rm64_r64(RSP, RBP);
-		instruction_stream.pop_Register64Bit_r64(RBP);
-		instruction_stream.ret();
+		instruction_stream.pop_stack_frame_and_return();
 		
 		let (encoded_bytes, _hints) = instruction_stream.finish();
 		
@@ -84,7 +78,8 @@ pub fn validate_that_rust_follows_the_system_v_abi_for_bool()
 		
 		let function_pointer: unsafe extern "C" fn() -> bool = instruction_stream.nullary_function_pointer();
 		
-		instruction_stream.xor_Register32Bit_Register32Bit(EAX, EAX);
+		instruction_stream.mov_Register64Bit_Immediate64Bit(RAX, 0xFFFFFFFF_FFFFFFFFu64.into());
+		instruction_stream.set_RAX_to_c_bool_false();
 		instruction_stream.ret();
 		
 		let _ = instruction_stream.finish();
@@ -105,7 +100,8 @@ pub fn validate_that_rust_follows_the_system_v_abi_for_bool()
 		
 		let function_pointer: unsafe extern "C" fn() -> bool = instruction_stream.nullary_function_pointer();
 		
-		instruction_stream.mov_Register64Bit_Immediate64Bit(RAX, 0xFFFFFFFF_FFFFFF01u64.into());
+		instruction_stream.mov_Register64Bit_Immediate64Bit(RAX, 0xFFFFFFFF_FFFFFFFFu64.into());
+		instruction_stream.set_RAX_to_c_bool_true();
 		instruction_stream.ret();
 		
 		let _ = instruction_stream.finish();

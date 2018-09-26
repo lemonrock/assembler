@@ -5,6 +5,9 @@
 use super::*;
 
 
+include!("impl_relative_address.rs");
+
+
 include!("RelativeAddress.rs");
 include!("RelativeAddress8Bit.rs");
 include!("RelativeAddress32Bit.rs");

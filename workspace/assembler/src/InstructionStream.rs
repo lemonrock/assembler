@@ -161,6 +161,62 @@ impl<'a> InstructionStream<'a>
 		RelativeAddress32Bit(((absolute_address.absolute_virtual_address() as isize) - ((self.instruction_pointer() + offset_to_end_of_opcode_encoding) as isize)) as i32)
 	}
 	
+	/// Emits a non-leaf function prologue suitable for both the System V Application Binary Interface for AMD64 and the Microsoft x64 Calling Convention.
+	#[inline(always)]
+	pub fn push_stack_frame(&mut self)
+	{
+		use self::Register64Bit::RBP;
+		use self::Register64Bit::RSP;
+		
+		self.push_Register64Bit_r64(RBP);
+		self.mov_Register64Bit_Register64Bit_rm64_r64(RBP, RSP);
+	}
+	
+	/// Emits a non-leaf function epilogue (which returns) suitable for both the System V Application Binary Interface for AMD64 and the Microsoft x64 Calling Convention.
+	#[inline(always)]
+	pub fn pop_stack_frame_and_return(&mut self)
+	{
+		use self::Register64Bit::RBP;
+		use self::Register64Bit::RSP;
+		
+		self.mov_Register64Bit_Register64Bit_rm64_r64(RSP, RBP);
+		self.pop_Register64Bit_r64(RBP);
+		self.ret();
+	}
+	
+	/// Zeroes the `RAX` register using the most efficient code (`XOR RAX, RAX`, although could just as easily be `SUB RAX, RAX`).
+	///
+	/// Also equivalent to a C _Bool's false value.
+	#[inline(always)]
+	pub fn zero_RAX(&mut self)
+	{
+		use self::Register32Bit::EAX;
+		
+		self.xor_Register32Bit_Register32Bit(EAX, EAX);
+	}
+	
+	/// Sets the `RAX` register to be equivalent to a C _Bool's false value using the most efficient code (`MOV AL, 0x00`).
+	///
+	/// Note that this is not necessarily `0x00000000_00000001`, just that the bottom eight bits of `RAX` are `0x00`.
+	#[inline(always)]
+	pub fn set_RAX_to_c_bool_false(&mut self)
+	{
+		use self::Register8Bit::AL;
+		
+		self.mov_Register8Bit_Immediate8Bit(AL, Immediate8Bit::Zero);
+	}
+	
+	/// Sets the `RAX` register to be equivalent to a C _Bool's true value using the most efficient code (`MOV AL, 0x01`).
+	///
+	/// Note that this is not necessarily `0x00000000_00000001`, just that the bottom eight bits of `RAX` are `0x01`.
+	#[inline(always)]
+	pub fn set_RAX_to_c_bool_true(&mut self)
+	{
+		use self::Register8Bit::AL;
+		
+		self.mov_Register8Bit_Immediate8Bit(AL, Immediate8Bit::One);
+	}
+	
 	/// Creates a function pointer to the current location that takes no arguments and returns a result of type `R`.
 	///
 	/// Resultant function will not execute (and in all likelihood cause an uncaught signal to occur) until `self.finish()` is called.

@@ -2,11 +2,11 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-macro_rules! impl_immediate
+macro_rules! impl_relative_address
 {
-	($name: tt, $signed_size: tt, $unsigned_size: tt) =>
+	($name: tt, $signed_size: tt, $unsigned_size: tt, $immediate: tt) =>
 	{
-		/// An immediate argument, typically used for a displacement.
+		/// An relative address.
 		#[derive(Default, Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 		pub struct $name(pub $signed_size);
 		
@@ -20,23 +20,35 @@ macro_rules! impl_immediate
 				self.0 as $unsigned_size
 			}
 		}
-		
-		impl Immediate for $name
+
+		impl RelativeAddress<$unsigned_size> for $name
 		{
-			const Zero: Self = $name(0);
-			
-			const One: Self = $name(1);
-			
-			const Minimum: Self = $name(::std::$signed_size::MIN);
-			
-			const Maximum: Self = $name(::std::$signed_size::MAX);
-			
-			type SignedInteger = $signed_size;
-			
+		}
+		
+		impl From<$signed_size> for $name
+		{
 			#[inline(always)]
-			fn value(self) -> Self::SignedInteger
+			fn from(value: $signed_size) -> Self
 			{
-				self.0
+				$name(value)
+			}
+		}
+		
+		impl From<$unsigned_size> for $name
+		{
+			#[inline(always)]
+			fn from(value: $unsigned_size) -> Self
+			{
+				$name(value as $signed_size)
+			}
+		}
+		
+		impl From<$immediate> for $name
+		{
+			#[inline(always)]
+			fn from(value: $immediate) -> Self
+			{
+				$name(value.into())
 			}
 		}
 		
@@ -58,30 +70,21 @@ macro_rules! impl_immediate
 			}
 		}
 		
-		impl From<$unsigned_size> for $name
+		impl Into<$immediate> for $name
 		{
 			#[inline(always)]
-			fn from(immediate: $unsigned_size) -> Self
+			fn into(self) -> $immediate
 			{
-				$name(immediate as $signed_size)
+				$immediate(self.0)
 			}
 		}
 		
-		impl From<$signed_size> for $name
-		{
-			#[inline(always)]
-			fn from(immediate: $signed_size) -> Self
-			{
-				$name(immediate)
-			}
-		}
-
-		impl Add<$name> for $name
+		impl Add<$immediate> for $name
 		{
 			type Output = Self;
 			
 			#[inline(always)]
-			fn add(self, rhs: Self) -> Self::Output
+			fn add(self, rhs: $immediate) -> Self::Output
 			{
 				$name(self.0 + rhs.0)
 			}
@@ -98,10 +101,10 @@ macro_rules! impl_immediate
 			}
 		}
 		
-		impl AddAssign for $name
+		impl AddAssign<$immediate> for $name
 		{
 			#[inline(always)]
-			fn add_assign(&mut self, rhs: Self)
+			fn add_assign(&mut self, rhs: $immediate)
 			{
 				self.0 += rhs.0
 			}
@@ -116,12 +119,12 @@ macro_rules! impl_immediate
 			}
 		}
 		
-		impl BitAnd<$name> for $name
+		impl BitAnd<$immediate> for $name
 		{
 			type Output = Self;
 			
 			#[inline(always)]
-			fn bitand(self, rhs: Self) -> Self::Output
+			fn bitand(self, rhs: $immediate) -> Self::Output
 			{
 				$name(self.0 & rhs.0)
 			}
@@ -138,10 +141,10 @@ macro_rules! impl_immediate
 			}
 		}
 		
-		impl BitAndAssign for $name
+		impl BitAndAssign<$immediate> for $name
 		{
 			#[inline(always)]
-			fn bitand_assign(&mut self, rhs: Self)
+			fn bitand_assign(&mut self, rhs: $immediate)
 			{
 				self.0 &= rhs.0
 			}
@@ -156,12 +159,12 @@ macro_rules! impl_immediate
 			}
 		}
 		
-		impl BitOr<$name> for $name
+		impl BitOr<$immediate> for $name
 		{
 			type Output = Self;
 			
 			#[inline(always)]
-			fn bitor(self, rhs: Self) -> Self::Output
+			fn bitor(self, rhs: $immediate) -> Self::Output
 			{
 				$name(self.0 | rhs.0)
 			}
@@ -178,10 +181,10 @@ macro_rules! impl_immediate
 			}
 		}
 		
-		impl BitOrAssign for $name
+		impl BitOrAssign<$immediate> for $name
 		{
 			#[inline(always)]
-			fn bitor_assign(&mut self, rhs: Self)
+			fn bitor_assign(&mut self, rhs: $immediate)
 			{
 				self.0 |= rhs.0
 			}
@@ -196,12 +199,12 @@ macro_rules! impl_immediate
 			}
 		}
 		
-		impl BitXor<$name> for $name
+		impl BitXor<$immediate> for $name
 		{
 			type Output = Self;
 			
 			#[inline(always)]
-			fn bitxor(self, rhs: Self) -> Self::Output
+			fn bitxor(self, rhs: $immediate) -> Self::Output
 			{
 				$name(self.0 ^ rhs.0)
 			}
@@ -218,10 +221,10 @@ macro_rules! impl_immediate
 			}
 		}
 		
-		impl BitXorAssign for $name
+		impl BitXorAssign<$immediate> for $name
 		{
 			#[inline(always)]
-			fn bitxor_assign(&mut self, rhs: Self)
+			fn bitxor_assign(&mut self, rhs: $immediate)
 			{
 				self.0 ^= rhs.0
 			}
@@ -236,12 +239,12 @@ macro_rules! impl_immediate
 			}
 		}
 		
-		impl Div<$name> for $name
+		impl Div<$immediate> for $name
 		{
 			type Output = Self;
 			
 			#[inline(always)]
-			fn div(self, rhs: Self) -> Self::Output
+			fn div(self, rhs: $immediate) -> Self::Output
 			{
 				$name(self.0 / rhs.0)
 			}
@@ -258,10 +261,10 @@ macro_rules! impl_immediate
 			}
 		}
 		
-		impl DivAssign for $name
+		impl DivAssign<$immediate> for $name
 		{
 			#[inline(always)]
-			fn div_assign(&mut self, rhs: Self)
+			fn div_assign(&mut self, rhs: $immediate)
 			{
 				self.0 /= rhs.0
 			}
@@ -276,12 +279,12 @@ macro_rules! impl_immediate
 			}
 		}
 		
-		impl Mul<$name> for $name
+		impl Mul<$immediate> for $name
 		{
 			type Output = Self;
 			
 			#[inline(always)]
-			fn mul(self, rhs: Self) -> Self::Output
+			fn mul(self, rhs: $immediate) -> Self::Output
 			{
 				$name(self.0 * rhs.0)
 			}
@@ -298,10 +301,10 @@ macro_rules! impl_immediate
 			}
 		}
 		
-		impl MulAssign for $name
+		impl MulAssign<$immediate> for $name
 		{
 			#[inline(always)]
-			fn mul_assign(&mut self, rhs: Self)
+			fn mul_assign(&mut self, rhs: $immediate)
 			{
 				self.0 *= rhs.0
 			}
@@ -338,12 +341,12 @@ macro_rules! impl_immediate
 			}
 		}
 		
-		impl Rem<$name> for $name
+		impl Rem<$immediate> for $name
 		{
 			type Output = Self;
 			
 			#[inline(always)]
-			fn rem(self, rhs: Self) -> Self::Output
+			fn rem(self, rhs: $immediate) -> Self::Output
 			{
 				$name(self.0 % rhs.0)
 			}
@@ -360,10 +363,10 @@ macro_rules! impl_immediate
 			}
 		}
 		
-		impl RemAssign for $name
+		impl RemAssign<$immediate> for $name
 		{
 			#[inline(always)]
-			fn rem_assign(&mut self, rhs: Self)
+			fn rem_assign(&mut self, rhs: $immediate)
 			{
 				self.0 %= rhs.0
 			}
@@ -378,21 +381,21 @@ macro_rules! impl_immediate
 			}
 		}
 		
-		impl Shl for $name
+		impl Shl<$immediate> for $name
 		{
 			type Output = Self;
-			
+
 			#[inline(always)]
-			fn shl(self, rhs: Self) -> Self::Output
+			fn shl(self, rhs: $immediate) -> Self::Output
 			{
 				$name(self.0 << rhs.0)
 			}
 		}
-		
+
 		impl Shl<$signed_size> for $name
 		{
 			type Output = Self;
-			
+
 			#[inline(always)]
 			fn shl(self, rhs: $signed_size) -> Self::Output
 			{
@@ -400,10 +403,10 @@ macro_rules! impl_immediate
 			}
 		}
 		
-		impl ShlAssign for $name
+		impl ShlAssign<$immediate> for $name
 		{
 			#[inline(always)]
-			fn shl_assign(&mut self, rhs: Self)
+			fn shl_assign(&mut self, rhs: $immediate)
 			{
 				self.0 = self.0 << rhs.0
 			}
@@ -418,21 +421,21 @@ macro_rules! impl_immediate
 			}
 		}
 		
-		impl Shr for $name
+		impl Shr<$immediate> for $name
 		{
 			type Output = Self;
-			
+
 			#[inline(always)]
-			fn shr(self, rhs: Self) -> Self::Output
+			fn shr(self, rhs: $immediate) -> Self::Output
 			{
 				$name(self.0 >> rhs.0)
 			}
 		}
-		
+
 		impl Shr<$signed_size> for $name
 		{
 			type Output = Self;
-			
+
 			#[inline(always)]
 			fn shr(self, rhs: $signed_size) -> Self::Output
 			{
@@ -440,10 +443,10 @@ macro_rules! impl_immediate
 			}
 		}
 		
-		impl ShrAssign for $name
+		impl ShrAssign<$immediate> for $name
 		{
 			#[inline(always)]
-			fn shr_assign(&mut self, rhs: Self)
+			fn shr_assign(&mut self, rhs: $immediate)
 			{
 				self.0 = self.0 >> rhs.0
 			}
@@ -458,12 +461,12 @@ macro_rules! impl_immediate
 			}
 		}
 		
-		impl Sub<$name> for $name
+		impl Sub<$immediate> for $name
 		{
 			type Output = Self;
 			
 			#[inline(always)]
-			fn sub(self, rhs: Self) -> Self::Output
+			fn sub(self, rhs: $immediate) -> Self::Output
 			{
 				$name(self.0 - rhs.0)
 			}
@@ -480,10 +483,10 @@ macro_rules! impl_immediate
 			}
 		}
 		
-		impl SubAssign for $name
+		impl SubAssign<$immediate> for $name
 		{
 			#[inline(always)]
-			fn sub_assign(&mut self, rhs: Self)
+			fn sub_assign(&mut self, rhs: $immediate)
 			{
 				self.0 -= rhs.0
 			}
