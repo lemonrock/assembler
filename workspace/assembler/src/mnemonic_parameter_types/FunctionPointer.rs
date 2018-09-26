@@ -12,7 +12,6 @@ pub trait FunctionPointer
 
 impl FunctionPointer for usize
 {
-	/// Absolute virtual address.
 	#[inline(always)]
 	fn absolute_virtual_address(self) -> usize
 	{
