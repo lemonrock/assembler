@@ -148,6 +148,15 @@ impl AsDisplacement for XMMRegister
 	}
 }
 
+impl From<YMMRegister> for XMMRegister
+{
+	#[inline(always)]
+	fn from(value: YMMRegister) -> Self
+	{
+		unsafe { transmute(value) }
+	}
+}
+
 impl XMMRegister
 {
 	/// Contains the floating-point return value from a function call when using the System V Application Binary Interface (ABI) for AMD64.

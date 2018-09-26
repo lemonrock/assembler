@@ -74,3 +74,12 @@ impl Register for MMRegister
 		self.into()
 	}
 }
+
+impl From<X87Register> for MMRegister
+{
+	#[inline(always)]
+	fn from(value: X87Register) -> Self
+	{
+		unsafe { transmute(value) }
+	}
+}

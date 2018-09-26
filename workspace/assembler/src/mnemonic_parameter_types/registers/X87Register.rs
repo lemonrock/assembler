@@ -79,6 +79,15 @@ impl Register for X87Register
 	}
 }
 
+impl From<MMRegister> for X87Register
+{
+	#[inline(always)]
+	fn from(value: MMRegister) -> Self
+	{
+		unsafe { transmute(value) }
+	}
+}
+
 impl X87Register
 {
 	/// Contains the first `long double` floating-point return value from a function call when using the System V Application Binary Interface (ABI) for AMD64.

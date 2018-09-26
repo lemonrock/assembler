@@ -201,6 +201,42 @@ impl LowGeneralPurposeRegister for Register64Bit
 	const MicrosoftX64CallingConventionIntegerFunctionArgument3: Self = Register64Bit::R9;
 }
 
+impl From<RegisterHigh8BitsOf16Bits> for Register64Bit
+{
+	#[inline(always)]
+	fn from(value: RegisterHigh8BitsOf16Bits) -> Self
+	{
+		unsafe { transmute(value) }
+	}
+}
+
+impl From<Register8Bit> for Register64Bit
+{
+	#[inline(always)]
+	fn from(value: Register8Bit) -> Self
+	{
+		unsafe { transmute(value) }
+	}
+}
+
+impl From<Register16Bit> for Register64Bit
+{
+	#[inline(always)]
+	fn from(value: Register16Bit) -> Self
+	{
+		unsafe { transmute(value) }
+	}
+}
+
+impl From<Register32Bit> for Register64Bit
+{
+	#[inline(always)]
+	fn from(value: Register32Bit) -> Self
+	{
+		unsafe { transmute(value) }
+	}
+}
+
 impl Register64Bit
 {
 	/// When returning 128-bit integer values, contains the high bits of such as value (and `RAX` / `SystemVApplicationBinaryInterface64IntegerFunctionReturn` contains the low bits).

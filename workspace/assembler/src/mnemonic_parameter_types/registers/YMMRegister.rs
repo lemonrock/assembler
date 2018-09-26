@@ -93,3 +93,12 @@ impl AsDisplacement for YMMRegister
 		(self as u8) << 4
 	}
 }
+
+impl From<XMMRegister> for YMMRegister
+{
+	#[inline(always)]
+	fn from(value: XMMRegister) -> Self
+	{
+		unsafe { transmute(value) }
+	}
+}
