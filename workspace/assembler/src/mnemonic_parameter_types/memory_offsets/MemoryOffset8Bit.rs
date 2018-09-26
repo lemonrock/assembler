@@ -35,6 +35,161 @@ impl AsDisplacement for MemoryOffset8Bit
 	}
 }
 
+impl From<(SegmentRegister, Immediate64Bit)> for MemoryOffset8Bit
+{
+	#[inline(always)]
+	fn from(value: (SegmentRegister, Immediate64Bit)) -> Self
+	{
+		MemoryOffset8Bit::SegmentOffsetForm8(value.0, value.1)
+	}
+}
+
+impl From<(Option<SegmentRegister>, Immediate64Bit)> for MemoryOffset8Bit
+{
+	#[inline(always)]
+	fn from(value: (Option<SegmentRegister>, Immediate64Bit)) -> Self
+	{
+		use self::MemoryOffset8Bit::*;
+		
+		match value.0
+		{
+			Some(segment_register) => SegmentOffsetForm8(segment_register, value.1),
+			None => OffsetForm8(value.1),
+		}
+	}
+}
+
+impl From<Immediate64Bit> for MemoryOffset8Bit
+{
+	#[inline(always)]
+	fn from(value: Immediate64Bit) -> Self
+	{
+		MemoryOffset8Bit::OffsetForm8(value)
+	}
+}
+
+impl From<i8> for MemoryOffset8Bit
+{
+	#[inline(always)]
+	fn from(value: i8) -> Self
+	{
+		MemoryOffset8Bit::OffsetForm8(value.into())
+	}
+}
+
+impl From<u8> for MemoryOffset8Bit
+{
+	#[inline(always)]
+	fn from(value: u8) -> Self
+	{
+		MemoryOffset8Bit::OffsetForm8(value.into())
+	}
+}
+
+impl From<i16> for MemoryOffset8Bit
+{
+	#[inline(always)]
+	fn from(value: i16) -> Self
+	{
+		MemoryOffset8Bit::OffsetForm8(value.into())
+	}
+}
+
+impl From<u16> for MemoryOffset8Bit
+{
+	#[inline(always)]
+	fn from(value: u16) -> Self
+	{
+		MemoryOffset8Bit::OffsetForm8(value.into())
+	}
+}
+
+impl From<i32> for MemoryOffset8Bit
+{
+	#[inline(always)]
+	fn from(value: i32) -> Self
+	{
+		MemoryOffset8Bit::OffsetForm8(value.into())
+	}
+}
+
+impl From<u32> for MemoryOffset8Bit
+{
+	#[inline(always)]
+	fn from(value: u32) -> Self
+	{
+		MemoryOffset8Bit::OffsetForm8(value.into())
+	}
+}
+
+impl From<i64> for MemoryOffset8Bit
+{
+	#[inline(always)]
+	fn from(value: i64) -> Self
+	{
+		MemoryOffset8Bit::OffsetForm8(value.into())
+	}
+}
+
+impl From<u64> for MemoryOffset8Bit
+{
+	#[inline(always)]
+	fn from(value: u64) -> Self
+	{
+		MemoryOffset8Bit::OffsetForm8(value.into())
+	}
+}
+
+impl Into<(Option<SegmentRegister>, Immediate64Bit)> for MemoryOffset8Bit
+{
+	#[inline(always)]
+	fn into(self) -> (Option<SegmentRegister>, Immediate64Bit)
+	{
+		use self::MemoryOffset8Bit::*;
+		
+		match self
+		{
+			SegmentOffsetForm8(segment_register, immediate) => (Some(segment_register), immediate),
+			OffsetForm8(immediate) => (None, immediate),
+		}
+	}
+}
+
+impl Into<Immediate64Bit> for MemoryOffset8Bit
+{
+	#[inline(always)]
+	fn into(self) -> Immediate64Bit
+	{
+		use self::MemoryOffset8Bit::*;
+		
+		match self
+		{
+			SegmentOffsetForm8(_, immediate) => immediate,
+			OffsetForm8(immediate) => immediate,
+		}
+	}
+}
+
+impl Into<i64> for MemoryOffset8Bit
+{
+	#[inline(always)]
+	fn into(self) -> i64
+	{
+		let immediate: Immediate64Bit = self.into();
+		immediate.into()
+	}
+}
+
+impl Into<u64> for MemoryOffset8Bit
+{
+	#[inline(always)]
+	fn into(self) -> u64
+	{
+		let immediate: Immediate64Bit = self.into();
+		immediate.into()
+	}
+}
+
 impl MemoryOffset for MemoryOffset8Bit
 {
 	#[inline(always)]

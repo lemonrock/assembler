@@ -47,11 +47,20 @@ impl Default for SegmentRegister
 	}
 }
 
+impl Into<u8> for SegmentRegister
+{
+	#[inline(always)]
+	fn into(self) -> u8
+	{
+		self as u8
+	}
+}
+
 impl Register for SegmentRegister
 {
 	#[inline(always)]
 	fn index(self) -> u8
 	{
-		self as u8
+		self.into()
 	}
 }

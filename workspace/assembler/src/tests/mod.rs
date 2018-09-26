@@ -72,6 +72,33 @@ pub fn simple_function()
 	assert_eq!(result, 0, "function result was not zero")
 }
 
+//#[test]
+//pub fn bake_off()
+//{
+//	use self::Register8Bit::*;
+//	use self::Register64Bit::*;
+//	use self::Register32Bit::*;
+//
+//	let mut instruction_stream = ExecutableAnonymousMemoryMap::new(4096).unwrap().instruction_stream(&InstructionStreamHints::default());
+//
+//	instruction_stream.mov_Register8Bit_Immediate8Bit(AL, 1.into())
+//	// mov_Register8Bit_Immediate8Bit
+//	// mov_Register8Bit_Immediate8Bit_1
+//
+//	// mov_Register16Bit_Immediate16Bit
+//	// mov_Register16Bit_Immediate16Bit_1
+//
+//	// mov_Register32Bit_Immediate32Bit
+//	// mov_Register32Bit_Immediate32Bit_1
+//
+//	// mov_Register64Bit_Immediate32Bit
+//	// mov_Register64Bit_Immediate64Bit
+//	instruction_stream.mov_Register64Bit_Register64Bit_rm64_r64(RSP, RBP);
+//
+//	let (encoded_bytes, _) = instruction_stream.finish();
+//	println!("{}", bytes_to_string(encoded_bytes))
+//}
+
 // Suitable for https://onlinedisassembler.com/odaweb/ .
 fn bytes_to_string(encoded_bytes: &[u8]) -> String
 {

@@ -17,6 +17,42 @@ impl AsDisplacement for RelativeAddress8Bit
 	}
 }
 
+impl From<i8> for RelativeAddress8Bit
+{
+	#[inline(always)]
+	fn from(value: i8) -> Self
+	{
+		RelativeAddress8Bit(value)
+	}
+}
+
+impl From<u8> for RelativeAddress8Bit
+{
+	#[inline(always)]
+	fn from(value: u8) -> Self
+	{
+		RelativeAddress8Bit(value as i8)
+	}
+}
+
+impl Into<i8> for RelativeAddress8Bit
+{
+	#[inline(always)]
+	fn into(self) -> i8
+	{
+		self.0
+	}
+}
+
+impl Into<u8> for RelativeAddress8Bit
+{
+	#[inline(always)]
+	fn into(self) -> u8
+	{
+		self.0 as u8
+	}
+}
+
 impl RelativeAddress<u8> for RelativeAddress8Bit
 {
 }

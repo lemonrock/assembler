@@ -17,6 +17,42 @@ impl AsDisplacement for Immediate8Bit
 	}
 }
 
+impl Into<i8> for Immediate8Bit
+{
+	#[inline(always)]
+	fn into(self) -> i8
+	{
+		self.0
+	}
+}
+
+impl Into<u8> for Immediate8Bit
+{
+	#[inline(always)]
+	fn into(self) -> u8
+	{
+		self.0 as u8
+	}
+}
+
+impl From<u8> for Immediate8Bit
+{
+	#[inline(always)]
+	fn from(immediate: u8) -> Self
+	{
+		Immediate8Bit(immediate as i8)
+	}
+}
+
+impl From<i8> for Immediate8Bit
+{
+	#[inline(always)]
+	fn from(immediate: i8) -> Self
+	{
+		Immediate8Bit(immediate)
+	}
+}
+
 impl Immediate<u8> for Immediate8Bit
 {
 }

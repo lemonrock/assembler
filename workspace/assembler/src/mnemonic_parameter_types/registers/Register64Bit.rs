@@ -83,12 +83,21 @@ impl Default for Register64Bit
 	}
 }
 
+impl Into<u8> for Register64Bit
+{
+	#[inline(always)]
+	fn into(self) -> u8
+	{
+		self as u8
+	}
+}
+
 impl Register for Register64Bit
 {
 	#[inline(always)]
 	fn index(self) -> u8
 	{
-		self as u8
+		self.into()
 	}
 }
 

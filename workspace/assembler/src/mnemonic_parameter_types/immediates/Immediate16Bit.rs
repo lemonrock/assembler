@@ -20,3 +20,66 @@ impl AsDisplacement for Immediate16Bit
 impl Immediate<u16> for Immediate16Bit
 {
 }
+
+impl From<Immediate8Bit> for Immediate16Bit
+{
+	#[inline(always)]
+	fn from(immediate: Immediate8Bit) -> Self
+	{
+		Self::from(immediate.0)
+	}
+}
+
+impl Into<i16> for Immediate16Bit
+{
+	#[inline(always)]
+	fn into(self) -> i16
+	{
+		self.0
+	}
+}
+
+impl Into<u16> for Immediate16Bit
+{
+	#[inline(always)]
+	fn into(self) -> u16
+	{
+		self.0 as u16
+	}
+}
+
+impl From<u8> for Immediate16Bit
+{
+	#[inline(always)]
+	fn from(immediate: u8) -> Self
+	{
+		Immediate16Bit(immediate as i16)
+	}
+}
+
+impl From<i8> for Immediate16Bit
+{
+	#[inline(always)]
+	fn from(immediate: i8) -> Self
+	{
+		Immediate16Bit(immediate as i16)
+	}
+}
+
+impl From<u16> for Immediate16Bit
+{
+	#[inline(always)]
+	fn from(immediate: u16) -> Self
+	{
+		Immediate16Bit(immediate as i16)
+	}
+}
+
+impl From<i16> for Immediate16Bit
+{
+	#[inline(always)]
+	fn from(immediate: i16) -> Self
+	{
+		Immediate16Bit(immediate)
+	}
+}

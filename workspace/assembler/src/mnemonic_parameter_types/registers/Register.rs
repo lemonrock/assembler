@@ -3,7 +3,7 @@
 
 
 /// A register.
-pub trait Register: Copy + Sized
+pub trait Register: Copy + Sized + Into<u8>
 {
 	#[doc(hidden)]
 	const IsRegister8Bit: bool = false;

@@ -20,3 +20,120 @@ impl AsDisplacement for Immediate64Bit
 impl Immediate<u64> for Immediate64Bit
 {
 }
+
+impl From<Immediate8Bit> for Immediate64Bit
+{
+	#[inline(always)]
+	fn from(immediate: Immediate8Bit) -> Self
+	{
+		Self::from(immediate.0)
+	}
+}
+
+impl From<Immediate16Bit> for Immediate64Bit
+{
+	#[inline(always)]
+	fn from(immediate: Immediate16Bit) -> Self
+	{
+		Self::from(immediate.0)
+	}
+}
+
+impl From<Immediate32Bit> for Immediate64Bit
+{
+	#[inline(always)]
+	fn from(immediate: Immediate32Bit) -> Self
+	{
+		Self::from(immediate.0)
+	}
+}
+
+impl Into<i64> for Immediate64Bit
+{
+	#[inline(always)]
+	fn into(self) -> i64
+	{
+		self.0
+	}
+}
+
+impl Into<u64> for Immediate64Bit
+{
+	#[inline(always)]
+	fn into(self) -> u64
+	{
+		self.0 as u64
+	}
+}
+
+impl From<u8> for Immediate64Bit
+{
+	#[inline(always)]
+	fn from(immediate: u8) -> Self
+	{
+		Immediate64Bit(immediate as i64)
+	}
+}
+
+impl From<i8> for Immediate64Bit
+{
+	#[inline(always)]
+	fn from(immediate: i8) -> Self
+	{
+		Immediate64Bit(immediate as i64)
+	}
+}
+
+impl From<u16> for Immediate64Bit
+{
+	#[inline(always)]
+	fn from(immediate: u16) -> Self
+	{
+		Immediate64Bit(immediate as i64)
+	}
+}
+
+impl From<i16> for Immediate64Bit
+{
+	#[inline(always)]
+	fn from(immediate: i16) -> Self
+	{
+		Immediate64Bit(immediate as i64)
+	}
+}
+
+impl From<u32> for Immediate64Bit
+{
+	#[inline(always)]
+	fn from(immediate: u32) -> Self
+	{
+		Immediate64Bit(immediate as i64)
+	}
+}
+
+impl From<i32> for Immediate64Bit
+{
+	#[inline(always)]
+	fn from(immediate: i32) -> Self
+	{
+		Immediate64Bit(immediate as i64)
+	}
+}
+
+impl From<u64> for Immediate64Bit
+{
+	#[inline(always)]
+	fn from(immediate: u64) -> Self
+	{
+		Immediate64Bit(immediate as i64)
+	}
+}
+
+impl From<i64> for Immediate64Bit
+{
+	#[inline(always)]
+	fn from(immediate: i64) -> Self
+	{
+		Immediate64Bit(immediate)
+	}
+}

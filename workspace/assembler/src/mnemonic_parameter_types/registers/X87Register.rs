@@ -41,11 +41,20 @@ impl Default for X87Register
 	}
 }
 
+impl Into<u8> for X87Register
+{
+	#[inline(always)]
+	fn into(self) -> u8
+	{
+		self as u8
+	}
+}
+
 impl Register for X87Register
 {
 	#[inline(always)]
 	fn index(self) -> u8
 	{
-		self as u8
+		self.into()
 	}
 }

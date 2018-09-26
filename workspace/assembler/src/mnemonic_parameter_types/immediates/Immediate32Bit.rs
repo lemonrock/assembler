@@ -21,6 +21,96 @@ impl Immediate<u32> for Immediate32Bit
 {
 }
 
+impl From<Immediate8Bit> for Immediate32Bit
+{
+	#[inline(always)]
+	fn from(immediate: Immediate8Bit) -> Self
+	{
+		Self::from(immediate.0)
+	}
+}
+
+impl From<Immediate16Bit> for Immediate32Bit
+{
+	#[inline(always)]
+	fn from(immediate: Immediate16Bit) -> Self
+	{
+		Self::from(immediate.0)
+	}
+}
+
+impl Into<i32> for Immediate32Bit
+{
+	#[inline(always)]
+	fn into(self) -> i32
+	{
+		self.0
+	}
+}
+
+impl Into<u32> for Immediate32Bit
+{
+	#[inline(always)]
+	fn into(self) -> u32
+	{
+		self.0 as u32
+	}
+}
+
+impl From<u8> for Immediate32Bit
+{
+	#[inline(always)]
+	fn from(immediate: u8) -> Self
+	{
+		Immediate32Bit(immediate as i32)
+	}
+}
+
+impl From<i8> for Immediate32Bit
+{
+	#[inline(always)]
+	fn from(immediate: i8) -> Self
+	{
+		Immediate32Bit(immediate as i32)
+	}
+}
+
+impl From<u16> for Immediate32Bit
+{
+	#[inline(always)]
+	fn from(immediate: u16) -> Self
+	{
+		Immediate32Bit(immediate as i32)
+	}
+}
+
+impl From<i16> for Immediate32Bit
+{
+	#[inline(always)]
+	fn from(immediate: i16) -> Self
+	{
+		Immediate32Bit(immediate as i32)
+	}
+}
+
+impl From<u32> for Immediate32Bit
+{
+	#[inline(always)]
+	fn from(immediate: u32) -> Self
+	{
+		Immediate32Bit(immediate as i32)
+	}
+}
+
+impl From<i32> for Immediate32Bit
+{
+	#[inline(always)]
+	fn from(immediate: i32) -> Self
+	{
+		Immediate32Bit(immediate)
+	}
+}
+
 impl Immediate32Bit
 {
 	#[inline(always)]

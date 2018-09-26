@@ -83,6 +83,15 @@ impl Default for Register8Bit
 	}
 }
 
+impl Into<u8> for Register8Bit
+{
+	#[inline(always)]
+	fn into(self) -> u8
+	{
+		self as u8
+	}
+}
+
 impl Register for Register8Bit
 {
 	const IsRegister8Bit: bool = true;
@@ -90,7 +99,7 @@ impl Register for Register8Bit
 	#[inline(always)]
 	fn index(self) -> u8
 	{
-		self as u8
+		self.into()
 	}
 }
 

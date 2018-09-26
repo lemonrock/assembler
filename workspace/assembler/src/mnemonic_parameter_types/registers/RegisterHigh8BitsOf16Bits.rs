@@ -33,12 +33,21 @@ impl Default for RegisterHigh8BitsOf16Bits
 	}
 }
 
+impl Into<u8> for RegisterHigh8BitsOf16Bits
+{
+	#[inline(always)]
+	fn into(self) -> u8
+	{
+		self as u8
+	}
+}
+
 impl Register for RegisterHigh8BitsOf16Bits
 {
 	#[inline(always)]
 	fn index(self) -> u8
 	{
-		self as u8
+		self.into()
 	}
 }
 

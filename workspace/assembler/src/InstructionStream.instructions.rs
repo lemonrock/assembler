@@ -557,7 +557,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Add with carry `r/m16` to `r16`.
 	#[inline(always)]
-	pub fn adc_Register16Bit_Register16Bit_REX_W(&mut self, arg0: Register16Bit, arg1: Register16Bit)
+	pub fn adc_Register16Bit_Register16Bit_1(&mut self, arg0: Register16Bit, arg1: Register16Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -702,7 +702,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Add with Carry Flag (CF) `r/m32` to `r32`.
 	#[inline(always)]
-	pub fn adc_Register32Bit_Register32Bit_REX_W(&mut self, arg0: Register32Bit, arg1: Register32Bit)
+	pub fn adc_Register32Bit_Register32Bit_1(&mut self, arg0: Register32Bit, arg1: Register32Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -847,7 +847,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Add with Carry Flag (CF) `r/m64` to `r64`.
 	#[inline(always)]
-	pub fn adc_Register64Bit_Register64Bit_REX_W(&mut self, arg0: Register64Bit, arg1: Register64Bit)
+	pub fn adc_Register64Bit_Register64Bit_1(&mut self, arg0: Register64Bit, arg1: Register64Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -963,7 +963,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Add with carry `r/m8` to byte register.
 	#[inline(always)]
-	pub fn adc_Register8Bit_Register8Bit_REX_W(&mut self, arg0: Register8Bit, arg1: Register8Bit)
+	pub fn adc_Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -1021,7 +1021,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Add with carry `r/m8` to byte register.
 	#[inline(always)]
-	pub fn adc_Register8Bit_RegisterHigh8BitsOf16Bits_REX_W(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
+	pub fn adc_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		self.reserve_space_for_instruction();
 
@@ -1166,7 +1166,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Add with carry `r/m8` to byte register.
 	#[inline(always)]
-	pub fn adc_RegisterHigh8BitsOf16Bits_Register8Bit_REX_W(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
+	pub fn adc_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -1224,7 +1224,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Add with carry `r/m8` to byte register.
 	#[inline(always)]
-	pub fn adc_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_REX_W(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
+	pub fn adc_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		self.reserve_space_for_instruction();
 
@@ -1804,7 +1804,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Add `r/m16` to `r16`.
 	#[inline(always)]
-	pub fn add_Register16Bit_Register16Bit_REX_W(&mut self, arg0: Register16Bit, arg1: Register16Bit)
+	pub fn add_Register16Bit_Register16Bit_1(&mut self, arg0: Register16Bit, arg1: Register16Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -1949,7 +1949,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Add `r/m32` to `r32`.
 	#[inline(always)]
-	pub fn add_Register32Bit_Register32Bit_REX_W(&mut self, arg0: Register32Bit, arg1: Register32Bit)
+	pub fn add_Register32Bit_Register32Bit_1(&mut self, arg0: Register32Bit, arg1: Register32Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -2094,7 +2094,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Add `r/m64` to `r64`.
 	#[inline(always)]
-	pub fn add_Register64Bit_Register64Bit_REX_W(&mut self, arg0: Register64Bit, arg1: Register64Bit)
+	pub fn add_Register64Bit_Register64Bit_1(&mut self, arg0: Register64Bit, arg1: Register64Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -2210,7 +2210,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Add `r/m8` to `r8`.
 	#[inline(always)]
-	pub fn add_Register8Bit_Register8Bit_REX_W(&mut self, arg0: Register8Bit, arg1: Register8Bit)
+	pub fn add_Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -2268,7 +2268,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Add `r/m8` to `r8`.
 	#[inline(always)]
-	pub fn add_Register8Bit_RegisterHigh8BitsOf16Bits_REX_W(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
+	pub fn add_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		self.reserve_space_for_instruction();
 
@@ -2413,7 +2413,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Add `r/m8` to `r8`.
 	#[inline(always)]
-	pub fn add_RegisterHigh8BitsOf16Bits_Register8Bit_REX_W(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
+	pub fn add_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -2471,7 +2471,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Add `r/m8` to `r8`.
 	#[inline(always)]
-	pub fn add_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_REX_W(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
+	pub fn add_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		self.reserve_space_for_instruction();
 
@@ -3747,7 +3747,7 @@ impl<'a> InstructionStream<'a>
 
 	/// `r16 && r/m16`.
 	#[inline(always)]
-	pub fn and_Register16Bit_Register16Bit_REX_W(&mut self, arg0: Register16Bit, arg1: Register16Bit)
+	pub fn and_Register16Bit_Register16Bit_1(&mut self, arg0: Register16Bit, arg1: Register16Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -3892,7 +3892,7 @@ impl<'a> InstructionStream<'a>
 
 	/// `r32 && r/m32`.
 	#[inline(always)]
-	pub fn and_Register32Bit_Register32Bit_REX_W(&mut self, arg0: Register32Bit, arg1: Register32Bit)
+	pub fn and_Register32Bit_Register32Bit_1(&mut self, arg0: Register32Bit, arg1: Register32Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -4037,7 +4037,7 @@ impl<'a> InstructionStream<'a>
 
 	/// `r64 && r/m64`.
 	#[inline(always)]
-	pub fn and_Register64Bit_Register64Bit_REX_W(&mut self, arg0: Register64Bit, arg1: Register64Bit)
+	pub fn and_Register64Bit_Register64Bit_1(&mut self, arg0: Register64Bit, arg1: Register64Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -4153,7 +4153,7 @@ impl<'a> InstructionStream<'a>
 
 	/// `r8 && r/m8`.
 	#[inline(always)]
-	pub fn and_Register8Bit_Register8Bit_REX_W(&mut self, arg0: Register8Bit, arg1: Register8Bit)
+	pub fn and_Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -4211,7 +4211,7 @@ impl<'a> InstructionStream<'a>
 
 	/// `r8 && r/m8`.
 	#[inline(always)]
-	pub fn and_Register8Bit_RegisterHigh8BitsOf16Bits_REX_W(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
+	pub fn and_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		self.reserve_space_for_instruction();
 
@@ -4356,7 +4356,7 @@ impl<'a> InstructionStream<'a>
 
 	/// `r8 && r/m8`.
 	#[inline(always)]
-	pub fn and_RegisterHigh8BitsOf16Bits_Register8Bit_REX_W(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
+	pub fn and_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -4414,7 +4414,7 @@ impl<'a> InstructionStream<'a>
 
 	/// `r8 && r/m8`.
 	#[inline(always)]
-	pub fn and_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_REX_W(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
+	pub fn and_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		self.reserve_space_for_instruction();
 
@@ -13625,7 +13625,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Compare `r/m16` with `r16`.
 	#[inline(always)]
-	pub fn cmp_Register16Bit_Register16Bit_REX_W(&mut self, arg0: Register16Bit, arg1: Register16Bit)
+	pub fn cmp_Register16Bit_Register16Bit_1(&mut self, arg0: Register16Bit, arg1: Register16Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -13770,7 +13770,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Compare `r/m32` with `r32`.
 	#[inline(always)]
-	pub fn cmp_Register32Bit_Register32Bit_REX_W(&mut self, arg0: Register32Bit, arg1: Register32Bit)
+	pub fn cmp_Register32Bit_Register32Bit_1(&mut self, arg0: Register32Bit, arg1: Register32Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -13915,7 +13915,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Compare `r/m64` with `r64`.
 	#[inline(always)]
-	pub fn cmp_Register64Bit_Register64Bit_REX_W(&mut self, arg0: Register64Bit, arg1: Register64Bit)
+	pub fn cmp_Register64Bit_Register64Bit_1(&mut self, arg0: Register64Bit, arg1: Register64Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -14031,7 +14031,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Compare `r/m8` with `r8`.
 	#[inline(always)]
-	pub fn cmp_Register8Bit_Register8Bit_REX_W(&mut self, arg0: Register8Bit, arg1: Register8Bit)
+	pub fn cmp_Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -14089,7 +14089,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Compare `r/m8` with `r8`.
 	#[inline(always)]
-	pub fn cmp_Register8Bit_RegisterHigh8BitsOf16Bits_REX_W(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
+	pub fn cmp_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		self.reserve_space_for_instruction();
 
@@ -14234,7 +14234,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Compare `r/m8` with `r8`.
 	#[inline(always)]
-	pub fn cmp_RegisterHigh8BitsOf16Bits_Register8Bit_REX_W(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
+	pub fn cmp_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -14292,7 +14292,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Compare `r/m8` with `r8`.
 	#[inline(always)]
-	pub fn cmp_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_REX_W(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
+	pub fn cmp_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		self.reserve_space_for_instruction();
 
@@ -25190,7 +25190,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	#[inline(always)]
-	pub fn ja_Label_REX_W(&mut self, arg0: Label)
+	pub fn ja_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -25250,7 +25250,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if above (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	#[inline(always)]
-	pub fn ja_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn ja_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -25426,7 +25426,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if above or equal (Carry Flag (CF) is 0).
 	#[inline(always)]
-	pub fn jae_Label_REX_W(&mut self, arg0: Label)
+	pub fn jae_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -25486,7 +25486,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if above or equal (Carry Flag (CF) is 0).
 	#[inline(always)]
-	pub fn jae_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jae_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -25662,7 +25662,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if below (Carry Flag (CF) is 1).
 	#[inline(always)]
-	pub fn jb_Label_REX_W(&mut self, arg0: Label)
+	pub fn jb_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -25722,7 +25722,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if below (Carry Flag (CF) is 1).
 	#[inline(always)]
-	pub fn jb_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jb_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -25898,7 +25898,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	#[inline(always)]
-	pub fn jbe_Label_REX_W(&mut self, arg0: Label)
+	pub fn jbe_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -25958,7 +25958,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if below or equal (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	#[inline(always)]
-	pub fn jbe_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jbe_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -26134,7 +26134,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if carry (Carry Flag (CF) is 1).
 	#[inline(always)]
-	pub fn jc_Label_REX_W(&mut self, arg0: Label)
+	pub fn jc_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -26194,7 +26194,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if carry (Carry Flag (CF) is 1).
 	#[inline(always)]
-	pub fn jc_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jc_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -26370,7 +26370,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if 0 (Zero Flag (ZF) is 1).
 	#[inline(always)]
-	pub fn je_Label_REX_W(&mut self, arg0: Label)
+	pub fn je_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -26430,7 +26430,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if 0 (Zero Flag (ZF) is 1).
 	#[inline(always)]
-	pub fn je_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn je_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -26726,7 +26726,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if greater (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jg_Label_REX_W(&mut self, arg0: Label)
+	pub fn jg_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -26786,7 +26786,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if greater (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jg_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jg_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -26962,7 +26962,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if greater or equal (Sign Flag (SF) == Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jge_Label_REX_W(&mut self, arg0: Label)
+	pub fn jge_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -27022,7 +27022,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if greater or equal (Sign Flag (SF) == Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jge_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jge_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -27198,7 +27198,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if less (Sign Flag (SF) != Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jl_Label_REX_W(&mut self, arg0: Label)
+	pub fn jl_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -27258,7 +27258,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if less (Sign Flag (SF) != Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jl_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jl_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -27434,7 +27434,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if less or equal (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jle_Label_REX_W(&mut self, arg0: Label)
+	pub fn jle_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -27494,7 +27494,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if less or equal (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jle_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jle_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -27757,7 +27757,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near, relative, `RIP` = `RIP` + 32-bit displacement sign extended to 64-bits.
 	#[inline(always)]
-	pub fn jmp_Label_REX_W(&mut self, arg0: Label)
+	pub fn jmp_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -27933,7 +27933,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	#[inline(always)]
-	pub fn jna_Label_REX_W(&mut self, arg0: Label)
+	pub fn jna_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -27993,7 +27993,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if not above (Carry Flag (CF) is 1 or Zero Flag (ZF) is 1).
 	#[inline(always)]
-	pub fn jna_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jna_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -28169,7 +28169,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if not above or equal (Carry Flag (CF) is 1).
 	#[inline(always)]
-	pub fn jnae_Label_REX_W(&mut self, arg0: Label)
+	pub fn jnae_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -28229,7 +28229,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if not above or equal (Carry Flag (CF) is 1).
 	#[inline(always)]
-	pub fn jnae_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jnae_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -28405,7 +28405,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if not below (Carry Flag (CF) is 0).
 	#[inline(always)]
-	pub fn jnb_Label_REX_W(&mut self, arg0: Label)
+	pub fn jnb_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -28465,7 +28465,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if not below (Carry Flag (CF) is 0).
 	#[inline(always)]
-	pub fn jnb_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jnb_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -28641,7 +28641,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	#[inline(always)]
-	pub fn jnbe_Label_REX_W(&mut self, arg0: Label)
+	pub fn jnbe_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -28701,7 +28701,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if not below or equal (Carry Flag (CF) is 0 and Zero Flag (ZF) is 0).
 	#[inline(always)]
-	pub fn jnbe_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jnbe_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -28877,7 +28877,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if not carry (Carry Flag (CF) is 0).
 	#[inline(always)]
-	pub fn jnc_Label_REX_W(&mut self, arg0: Label)
+	pub fn jnc_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -28937,7 +28937,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if not carry (Carry Flag (CF) is 0).
 	#[inline(always)]
-	pub fn jnc_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jnc_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -29113,7 +29113,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if not equal (Zero Flag (ZF) is 0).
 	#[inline(always)]
-	pub fn jne_Label_REX_W(&mut self, arg0: Label)
+	pub fn jne_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -29173,7 +29173,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if not equal (Zero Flag (ZF) is 0).
 	#[inline(always)]
-	pub fn jne_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jne_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -29349,7 +29349,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if not greater (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jng_Label_REX_W(&mut self, arg0: Label)
+	pub fn jng_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -29409,7 +29409,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if not greater (Zero Flag (ZF) is 1 or Sign Flag (SF) != Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jng_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jng_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -29585,7 +29585,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if not greater or equal (Sign Flag (SF) != Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jnge_Label_REX_W(&mut self, arg0: Label)
+	pub fn jnge_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -29645,7 +29645,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if not greater or equal (Sign Flag (SF) != Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jnge_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jnge_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -29821,7 +29821,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if not less (Sign Flag (SF) == Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jnl_Label_REX_W(&mut self, arg0: Label)
+	pub fn jnl_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -29881,7 +29881,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if not less (Sign Flag (SF) == Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jnl_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jnl_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -30057,7 +30057,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if not less or equal (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jnle_Label_REX_W(&mut self, arg0: Label)
+	pub fn jnle_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -30117,7 +30117,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if not less or equal (Zero Flag (ZF) is 0 and Sign Flag (SF) == Overflow Flag (OF)).
 	#[inline(always)]
-	pub fn jnle_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jnle_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -30293,7 +30293,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if not overflow (Overflow Flag (OF) is 0).
 	#[inline(always)]
-	pub fn jno_Label_REX_W(&mut self, arg0: Label)
+	pub fn jno_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -30353,7 +30353,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if not overflow (Overflow Flag (OF) is 0).
 	#[inline(always)]
-	pub fn jno_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jno_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -30529,7 +30529,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if not parity (Parity Flag (PF) is 0).
 	#[inline(always)]
-	pub fn jnp_Label_REX_W(&mut self, arg0: Label)
+	pub fn jnp_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -30589,7 +30589,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if not parity (Parity Flag (PF) is 0).
 	#[inline(always)]
-	pub fn jnp_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jnp_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -30765,7 +30765,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if not sign (Sign Flag (SF) is 0).
 	#[inline(always)]
-	pub fn jns_Label_REX_W(&mut self, arg0: Label)
+	pub fn jns_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -30825,7 +30825,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if not sign (Sign Flag (SF) is 0).
 	#[inline(always)]
-	pub fn jns_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jns_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -31001,7 +31001,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if not zero (Zero Flag (ZF) is 0).
 	#[inline(always)]
-	pub fn jnz_Label_REX_W(&mut self, arg0: Label)
+	pub fn jnz_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -31061,7 +31061,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if not zero (Zero Flag (ZF) is 0).
 	#[inline(always)]
-	pub fn jnz_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jnz_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -31237,7 +31237,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if overflow (Overflow Flag (OF) is 1).
 	#[inline(always)]
-	pub fn jo_Label_REX_W(&mut self, arg0: Label)
+	pub fn jo_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -31297,7 +31297,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if overflow (Overflow Flag (OF) is 1).
 	#[inline(always)]
-	pub fn jo_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jo_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -31473,7 +31473,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if parity (Parity Flag (PF) is 1).
 	#[inline(always)]
-	pub fn jp_Label_REX_W(&mut self, arg0: Label)
+	pub fn jp_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -31533,7 +31533,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if parity (Parity Flag (PF) is 1).
 	#[inline(always)]
-	pub fn jp_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jp_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -31709,7 +31709,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if parity even (Parity Flag (PF) is 1).
 	#[inline(always)]
-	pub fn jpe_Label_REX_W(&mut self, arg0: Label)
+	pub fn jpe_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -31769,7 +31769,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if parity even (Parity Flag (PF) is 1).
 	#[inline(always)]
-	pub fn jpe_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jpe_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -31945,7 +31945,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if parity odd (Parity Flag (PF) is 0).
 	#[inline(always)]
-	pub fn jpo_Label_REX_W(&mut self, arg0: Label)
+	pub fn jpo_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -32005,7 +32005,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if parity odd (Parity Flag (PF) is 0).
 	#[inline(always)]
-	pub fn jpo_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jpo_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -32301,7 +32301,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if sign (Sign Flag (SF) is 1).
 	#[inline(always)]
-	pub fn js_Label_REX_W(&mut self, arg0: Label)
+	pub fn js_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -32361,7 +32361,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if sign (Sign Flag (SF) is 1).
 	#[inline(always)]
-	pub fn js_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn js_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -32537,7 +32537,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if 0 (Zero Flag (ZF) is 1).
 	#[inline(always)]
-	pub fn jz_Label_REX_W(&mut self, arg0: Label)
+	pub fn jz_Label_1(&mut self, arg0: Label)
 	{
 		self.reserve_space_for_instruction();
 
@@ -32597,7 +32597,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump near if 0 (Zero Flag (ZF) is 1).
 	#[inline(always)]
-	pub fn jz_Label_BranchHint_REX_W(&mut self, arg0: Label, arg1: BranchHint)
+	pub fn jz_Label_BranchHint_1(&mut self, arg0: Label, arg1: BranchHint)
 	{
 		self.reserve_space_for_instruction();
 
@@ -34999,7 +34999,7 @@ impl<'a> InstructionStream<'a>
 		// No label displacement.
 	}
 
-	/// Move byte at `seg:offset` to `AL`.
+	/// Move byte at `segment:offset` to `AL`.
 	#[inline(always)]
 	pub fn mov_AL_MemoryOffset8Bit(&mut self, arg1: MemoryOffset8Bit)
 	{
@@ -35057,7 +35057,7 @@ impl<'a> InstructionStream<'a>
 		// No label displacement.
 	}
 
-	/// Move word at `seg:offset` to `AX`.
+	/// Move word at `segment:offset` to `AX`.
 	#[inline(always)]
 	pub fn mov_AX_MemoryOffset16Bit(&mut self, arg1: MemoryOffset16Bit)
 	{
@@ -35086,7 +35086,7 @@ impl<'a> InstructionStream<'a>
 		// No label displacement.
 	}
 
-	/// Move doubleword at `seg:offset` to `EAX`.
+	/// Move doubleword at `segment:offset` to `EAX`.
 	#[inline(always)]
 	pub fn mov_EAX_MemoryOffset32Bit(&mut self, arg1: MemoryOffset32Bit)
 	{
@@ -35434,7 +35434,7 @@ impl<'a> InstructionStream<'a>
 		// No label displacement.
 	}
 
-	/// Move `AX` to `seg:offset`.
+	/// Move `AX` to `segment:offset`.
 	#[inline(always)]
 	pub fn mov_MemoryOffset16Bit_AX(&mut self, arg0: MemoryOffset16Bit)
 	{
@@ -35463,7 +35463,7 @@ impl<'a> InstructionStream<'a>
 		// No label displacement.
 	}
 
-	/// Move `EAX` to `seg:offset`.
+	/// Move `EAX` to `segment:offset`.
 	#[inline(always)]
 	pub fn mov_MemoryOffset32Bit_EAX(&mut self, arg0: MemoryOffset32Bit)
 	{
@@ -35521,7 +35521,7 @@ impl<'a> InstructionStream<'a>
 		// No label displacement.
 	}
 
-	/// Move `AL` to `seg:offset`.
+	/// Move `AL` to `segment:offset`.
 	#[inline(always)]
 	pub fn mov_MemoryOffset8Bit_AL(&mut self, arg0: MemoryOffset8Bit)
 	{
@@ -35610,7 +35610,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move `imm16` to `r/m16`.
 	#[inline(always)]
-	pub fn mov_Register16Bit_Immediate16Bit_REX_W(&mut self, arg0: Register16Bit, arg1: Immediate16Bit)
+	pub fn mov_Register16Bit_Immediate16Bit_1(&mut self, arg0: Register16Bit, arg1: Immediate16Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -35697,7 +35697,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move `r/m16` to `r16`.
 	#[inline(always)]
-	pub fn mov_Register16Bit_Register16Bit_REX_W(&mut self, arg0: Register16Bit, arg1: Register16Bit)
+	pub fn mov_Register16Bit_Register16Bit_1(&mut self, arg0: Register16Bit, arg1: Register16Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -35784,7 +35784,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move `imm32` to `r/m32`.
 	#[inline(always)]
-	pub fn mov_Register32Bit_Immediate32Bit_REX_W(&mut self, arg0: Register32Bit, arg1: Immediate32Bit)
+	pub fn mov_Register32Bit_Immediate32Bit_1(&mut self, arg0: Register32Bit, arg1: Immediate32Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -35871,7 +35871,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move `r/m32` to `r32`.
 	#[inline(always)]
-	pub fn mov_Register32Bit_Register32Bit_REX_W(&mut self, arg0: Register32Bit, arg1: Register32Bit)
+	pub fn mov_Register32Bit_Register32Bit_1(&mut self, arg0: Register32Bit, arg1: Register32Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -36103,7 +36103,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move `imm8` to `r/m8`.
 	#[inline(always)]
-	pub fn mov_Register8Bit_Immediate8Bit_REX_W(&mut self, arg0: Register8Bit, arg1: Immediate8Bit)
+	pub fn mov_Register8Bit_Immediate8Bit_1(&mut self, arg0: Register8Bit, arg1: Immediate8Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -36190,7 +36190,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move `r/m8` to `r8`.
 	#[inline(always)]
-	pub fn mov_Register8Bit_Register8Bit_REX_W(&mut self, arg0: Register8Bit, arg1: Register8Bit)
+	pub fn mov_Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -36248,7 +36248,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move `r/m8` to `r8`.
 	#[inline(always)]
-	pub fn mov_Register8Bit_RegisterHigh8BitsOf16Bits_REX_W(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
+	pub fn mov_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		self.reserve_space_for_instruction();
 
@@ -36335,7 +36335,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move `imm8` to `r/m8`.
 	#[inline(always)]
-	pub fn mov_RegisterHigh8BitsOf16Bits_Immediate8Bit_REX_W(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit)
+	pub fn mov_RegisterHigh8BitsOf16Bits_Immediate8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Immediate8Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -36422,7 +36422,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move `r/m8` to `r8`.
 	#[inline(always)]
-	pub fn mov_RegisterHigh8BitsOf16Bits_Register8Bit_REX_W(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
+	pub fn mov_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -36480,7 +36480,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move `r/m8` to `r8`.
 	#[inline(always)]
-	pub fn mov_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_REX_W(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
+	pub fn mov_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		self.reserve_space_for_instruction();
 
@@ -36712,7 +36712,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move packed double-precision floating-point values from `xmm1` to `xmm2/m128`.
 	#[inline(always)]
-	pub fn movapd_XMMRegister_XMMRegister_REX_W(&mut self, arg0: XMMRegister, arg1: XMMRegister)
+	pub fn movapd_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -36828,7 +36828,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move packed single-precision floating-point values from `xmm1` to `xmm2/m128`.
 	#[inline(always)]
-	pub fn movaps_XMMRegister_XMMRegister_REX_W(&mut self, arg0: XMMRegister, arg1: XMMRegister)
+	pub fn movaps_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -37437,7 +37437,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move aligned double quadword from `xmm1` to `xmm2/m128`.
 	#[inline(always)]
-	pub fn movdqa_XMMRegister_XMMRegister_REX_W(&mut self, arg0: XMMRegister, arg1: XMMRegister)
+	pub fn movdqa_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -37553,7 +37553,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move unaligned double quadword from `xmm1` to `xmm2/m128`.
 	#[inline(always)]
-	pub fn movdqu_XMMRegister_XMMRegister_REX_W(&mut self, arg0: XMMRegister, arg1: XMMRegister)
+	pub fn movdqu_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -38228,7 +38228,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move quadword from `mm` to `mm/m64`.
 	#[inline(always)]
-	pub fn movq_Any64BitMemory_MMRegister_REX_W(&mut self, arg0: Any64BitMemory, arg1: MMRegister)
+	pub fn movq_Any64BitMemory_MMRegister_1(&mut self, arg0: Any64BitMemory, arg1: MMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -38286,7 +38286,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move quadword from `xmm1` to `xmm2/mem64`.
 	#[inline(always)]
-	pub fn movq_Any64BitMemory_XMMRegister_REX_W(&mut self, arg0: Any64BitMemory, arg1: XMMRegister)
+	pub fn movq_Any64BitMemory_XMMRegister_1(&mut self, arg0: Any64BitMemory, arg1: XMMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -38344,7 +38344,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move quadword from `mm/m64` to `mm`.
 	#[inline(always)]
-	pub fn movq_MMRegister_Any64BitMemory_REX_W(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
+	pub fn movq_MMRegister_Any64BitMemory_1(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
 	{
 		self.reserve_space_for_instruction();
 
@@ -38402,7 +38402,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move quadword from `mm` to `mm/m64`.
 	#[inline(always)]
-	pub fn movq_MMRegister_MMRegister_REX_W(&mut self, arg0: MMRegister, arg1: MMRegister)
+	pub fn movq_MMRegister_MMRegister_1(&mut self, arg0: MMRegister, arg1: MMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -38547,7 +38547,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move quadword from `xmm2/mem64` to `xmm1`.
 	#[inline(always)]
-	pub fn movq_XMMRegister_Any64BitMemory_REX_W(&mut self, arg0: XMMRegister, arg1: Any64BitMemory)
+	pub fn movq_XMMRegister_Any64BitMemory_1(&mut self, arg0: XMMRegister, arg1: Any64BitMemory)
 	{
 		self.reserve_space_for_instruction();
 
@@ -38634,7 +38634,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move quadword from `xmm1` to `xmm2/mem64`.
 	#[inline(always)]
-	pub fn movq_XMMRegister_XMMRegister_REX_W(&mut self, arg0: XMMRegister, arg1: XMMRegister)
+	pub fn movq_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -38975,7 +38975,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move scalar double-precision floating-point value from `xmm1` register to `xmm2/m64`.
 	#[inline(always)]
-	pub fn movsd_XMMRegister_XMMRegister_REX_W(&mut self, arg0: XMMRegister, arg1: XMMRegister)
+	pub fn movsd_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -39238,7 +39238,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move scalar single-precision floating-point value from `xmm1` register to `xmm2/m32`.
 	#[inline(always)]
-	pub fn movss_XMMRegister_XMMRegister_REX_W(&mut self, arg0: XMMRegister, arg1: XMMRegister)
+	pub fn movss_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -39793,7 +39793,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move packed double-precision floating-point values from `xmm1` to `xmm2/m128`.
 	#[inline(always)]
-	pub fn movupd_XMMRegister_XMMRegister_REX_W(&mut self, arg0: XMMRegister, arg1: XMMRegister)
+	pub fn movupd_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -39909,7 +39909,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move packed single-precision floating-point values from `xmm1` to `xmm2/m128`.
 	#[inline(always)]
-	pub fn movups_XMMRegister_XMMRegister_REX_W(&mut self, arg0: XMMRegister, arg1: XMMRegister)
+	pub fn movups_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -42204,7 +42204,7 @@ impl<'a> InstructionStream<'a>
 
 	/// `r16` OR `r/m16`.
 	#[inline(always)]
-	pub fn or_Register16Bit_Register16Bit_REX_W(&mut self, arg0: Register16Bit, arg1: Register16Bit)
+	pub fn or_Register16Bit_Register16Bit_1(&mut self, arg0: Register16Bit, arg1: Register16Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -42349,7 +42349,7 @@ impl<'a> InstructionStream<'a>
 
 	/// `r32` OR `r/m32`.
 	#[inline(always)]
-	pub fn or_Register32Bit_Register32Bit_REX_W(&mut self, arg0: Register32Bit, arg1: Register32Bit)
+	pub fn or_Register32Bit_Register32Bit_1(&mut self, arg0: Register32Bit, arg1: Register32Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -42494,7 +42494,7 @@ impl<'a> InstructionStream<'a>
 
 	/// `r64` OR `r/m64`.
 	#[inline(always)]
-	pub fn or_Register64Bit_Register64Bit_REX_W(&mut self, arg0: Register64Bit, arg1: Register64Bit)
+	pub fn or_Register64Bit_Register64Bit_1(&mut self, arg0: Register64Bit, arg1: Register64Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -42610,7 +42610,7 @@ impl<'a> InstructionStream<'a>
 
 	/// `r8` OR `r/m8`.
 	#[inline(always)]
-	pub fn or_Register8Bit_Register8Bit_REX_W(&mut self, arg0: Register8Bit, arg1: Register8Bit)
+	pub fn or_Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -42668,7 +42668,7 @@ impl<'a> InstructionStream<'a>
 
 	/// `r8` OR `r/m8`.
 	#[inline(always)]
-	pub fn or_Register8Bit_RegisterHigh8BitsOf16Bits_REX_W(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
+	pub fn or_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		self.reserve_space_for_instruction();
 
@@ -42813,7 +42813,7 @@ impl<'a> InstructionStream<'a>
 
 	/// `r8` OR `r/m8`.
 	#[inline(always)]
-	pub fn or_RegisterHigh8BitsOf16Bits_Register8Bit_REX_W(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
+	pub fn or_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -42871,7 +42871,7 @@ impl<'a> InstructionStream<'a>
 
 	/// `r8` OR `r/m8`.
 	#[inline(always)]
-	pub fn or_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_REX_W(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
+	pub fn or_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		self.reserve_space_for_instruction();
 
@@ -47416,7 +47416,7 @@ impl<'a> InstructionStream<'a>
 	///
 	/// The upper bits of `r32` or `r64` is zeroed.
 	#[inline(always)]
-	pub fn pextrw_Register32Bit_XMMRegister_Immediate8Bit_REX_W(&mut self, arg0: Register32Bit, arg1: XMMRegister, arg2: Immediate8Bit)
+	pub fn pextrw_Register32Bit_XMMRegister_Immediate8Bit_1(&mut self, arg0: Register32Bit, arg1: XMMRegister, arg2: Immediate8Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -47509,7 +47509,7 @@ impl<'a> InstructionStream<'a>
 	///
 	/// The upper bits of `r32` or `r64` is zeroed.
 	#[inline(always)]
-	pub fn pextrw_Register64Bit_XMMRegister_Immediate8Bit_REX_W(&mut self, arg0: Register64Bit, arg1: XMMRegister, arg2: Immediate8Bit)
+	pub fn pextrw_Register64Bit_XMMRegister_Immediate8Bit_1(&mut self, arg0: Register64Bit, arg1: XMMRegister, arg2: Immediate8Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -51405,7 +51405,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Pop top of stack into `r16` and increment stack pointer.
 	#[inline(always)]
-	pub fn pop_Register16Bit_REX_W(&mut self, arg0: Register16Bit)
+	pub fn pop_Register16Bit_1(&mut self, arg0: Register16Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -56169,7 +56169,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Push `r16`.
 	#[inline(always)]
-	pub fn push_Register16Bit_REX_W(&mut self, arg0: Register16Bit)
+	pub fn push_Register16Bit_1(&mut self, arg0: Register16Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -58604,7 +58604,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Input `RCX` bytes from port `DX` into `[RDI]`.
 	#[inline(always)]
-	pub fn rep_ins_Any8BitMemory_DX_REX_W(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
+	pub fn rep_ins_Any8BitMemory_DX_1(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		self.reserve_space_for_instruction();
 
@@ -58662,7 +58662,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Load `RCX` bytes from `[RSI]` to `AL`.
 	#[inline(always)]
-	pub fn rep_lods_AL_REX_W(&mut self)
+	pub fn rep_lods_AL_1(&mut self)
 	{
 		self.reserve_space_for_instruction();
 
@@ -58894,7 +58894,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move `RCX` bytes from `[RSI]` to `[RDI]`.
 	#[inline(always)]
-	pub fn rep_movs_Any8BitMemory_Any8BitMemory_REX_W(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
+	pub fn rep_movs_Any8BitMemory_Any8BitMemory_1(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		self.reserve_space_for_instruction();
 
@@ -59039,7 +59039,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Output `RCX` bytes from `[RSI]` to port `DX`.
 	#[inline(always)]
-	pub fn rep_outs_DX_Any8BitMemory_REX_W(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
+	pub fn rep_outs_DX_Any8BitMemory_1(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		self.reserve_space_for_instruction();
 
@@ -59184,7 +59184,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Fill `RCX` bytes at `[RDI]` with `AL`.
 	#[inline(always)]
-	pub fn rep_stos_Any8BitMemory_REX_W(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
+	pub fn rep_stos_Any8BitMemory_1(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		self.reserve_space_for_instruction();
 
@@ -59329,7 +59329,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Find non-matching bytes in `[RDI]` and `[RSI]`.
 	#[inline(always)]
-	pub fn repe_cmps_Any8BitMemory_Any8BitMemory_REX_W(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
+	pub fn repe_cmps_Any8BitMemory_Any8BitMemory_1(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		self.reserve_space_for_instruction();
 
@@ -59474,7 +59474,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Find non-AL byte starting at `[RDI]`.
 	#[inline(always)]
-	pub fn repe_scas_Any8BitMemory_REX_W(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
+	pub fn repe_scas_Any8BitMemory_1(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		self.reserve_space_for_instruction();
 
@@ -59619,7 +59619,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Find matching bytes in `[RDI]` and `[RSI]`.
 	#[inline(always)]
-	pub fn repne_cmps_Any8BitMemory_Any8BitMemory_REX_W(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
+	pub fn repne_cmps_Any8BitMemory_Any8BitMemory_1(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		self.reserve_space_for_instruction();
 
@@ -59764,7 +59764,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Find AL, starting at `[RDI]`.
 	#[inline(always)]
-	pub fn repne_scas_Any8BitMemory_REX_W(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
+	pub fn repne_scas_Any8BitMemory_1(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
 		self.reserve_space_for_instruction();
 
@@ -64241,7 +64241,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Subtract with borrow `r/m16` from `r16`.
 	#[inline(always)]
-	pub fn sbb_Register16Bit_Register16Bit_REX_W(&mut self, arg0: Register16Bit, arg1: Register16Bit)
+	pub fn sbb_Register16Bit_Register16Bit_1(&mut self, arg0: Register16Bit, arg1: Register16Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -64386,7 +64386,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Subtract with borrow `r/m32` from `r32`.
 	#[inline(always)]
-	pub fn sbb_Register32Bit_Register32Bit_REX_W(&mut self, arg0: Register32Bit, arg1: Register32Bit)
+	pub fn sbb_Register32Bit_Register32Bit_1(&mut self, arg0: Register32Bit, arg1: Register32Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -64531,7 +64531,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Subtract with borrow `r/m64` from `r64`.
 	#[inline(always)]
-	pub fn sbb_Register64Bit_Register64Bit_REX_W(&mut self, arg0: Register64Bit, arg1: Register64Bit)
+	pub fn sbb_Register64Bit_Register64Bit_1(&mut self, arg0: Register64Bit, arg1: Register64Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -64647,7 +64647,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Subtract with borrow `r/m8` from `r8`.
 	#[inline(always)]
-	pub fn sbb_Register8Bit_Register8Bit_REX_W(&mut self, arg0: Register8Bit, arg1: Register8Bit)
+	pub fn sbb_Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -64705,7 +64705,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Subtract with borrow `r/m8` from `r8`.
 	#[inline(always)]
-	pub fn sbb_Register8Bit_RegisterHigh8BitsOf16Bits_REX_W(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
+	pub fn sbb_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		self.reserve_space_for_instruction();
 
@@ -64850,7 +64850,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Subtract with borrow `r/m8` from `r8`.
 	#[inline(always)]
-	pub fn sbb_RegisterHigh8BitsOf16Bits_Register8Bit_REX_W(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
+	pub fn sbb_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -64908,7 +64908,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Subtract with borrow `r/m8` from `r8`.
 	#[inline(always)]
-	pub fn sbb_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_REX_W(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
+	pub fn sbb_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		self.reserve_space_for_instruction();
 
@@ -71563,7 +71563,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Subtract `r/m16` from `r16`.
 	#[inline(always)]
-	pub fn sub_Register16Bit_Register16Bit_REX_W(&mut self, arg0: Register16Bit, arg1: Register16Bit)
+	pub fn sub_Register16Bit_Register16Bit_1(&mut self, arg0: Register16Bit, arg1: Register16Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -71708,7 +71708,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Subtract `r/m32` from `r32`.
 	#[inline(always)]
-	pub fn sub_Register32Bit_Register32Bit_REX_W(&mut self, arg0: Register32Bit, arg1: Register32Bit)
+	pub fn sub_Register32Bit_Register32Bit_1(&mut self, arg0: Register32Bit, arg1: Register32Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -71853,7 +71853,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Subtract `r/m64` from `r64`.
 	#[inline(always)]
-	pub fn sub_Register64Bit_Register64Bit_REX_W(&mut self, arg0: Register64Bit, arg1: Register64Bit)
+	pub fn sub_Register64Bit_Register64Bit_1(&mut self, arg0: Register64Bit, arg1: Register64Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -71969,7 +71969,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Subtract `r/m8` from `r8`.
 	#[inline(always)]
-	pub fn sub_Register8Bit_Register8Bit_REX_W(&mut self, arg0: Register8Bit, arg1: Register8Bit)
+	pub fn sub_Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -72027,7 +72027,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Subtract `r/m8` from `r8`.
 	#[inline(always)]
-	pub fn sub_Register8Bit_RegisterHigh8BitsOf16Bits_REX_W(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
+	pub fn sub_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		self.reserve_space_for_instruction();
 
@@ -72172,7 +72172,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Subtract `r/m8` from `r8`.
 	#[inline(always)]
-	pub fn sub_RegisterHigh8BitsOf16Bits_Register8Bit_REX_W(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
+	pub fn sub_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -72230,7 +72230,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Subtract `r/m8` from `r8`.
 	#[inline(always)]
-	pub fn sub_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_REX_W(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
+	pub fn sub_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		self.reserve_space_for_instruction();
 
@@ -85171,7 +85171,7 @@ impl<'a> InstructionStream<'a>
 	///
 	/// Conditionally gathered elements are merged into `xmm1`.
 	#[inline(always)]
-	pub fn vgatherqps_XMMRegister_Any64BitMemory_XMMRegister_REX_W(&mut self, arg0: XMMRegister, arg1: Any64BitMemory, arg2: XMMRegister)
+	pub fn vgatherqps_XMMRegister_Any64BitMemory_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: Any64BitMemory, arg2: XMMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -87000,7 +87000,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move aligned packed double-precision floating-point values from `xmm1` to `xmm2/mem`.
 	#[inline(always)]
-	pub fn vmovapd_XMMRegister_XMMRegister_REX_W(&mut self, arg0: XMMRegister, arg1: XMMRegister)
+	pub fn vmovapd_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -87087,7 +87087,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move aligned packed double-precision floating-point values from `ymm1` to `ymm2/mem`.
 	#[inline(always)]
-	pub fn vmovapd_YMM_YMM_REX_W(&mut self, arg0: YMMRegister, arg1: YMMRegister)
+	pub fn vmovapd_YMM_YMM_1(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -87232,7 +87232,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move aligned packed single-precision floating-point values from `xmm1` to `xmm2/mem`.
 	#[inline(always)]
-	pub fn vmovaps_XMMRegister_XMMRegister_REX_W(&mut self, arg0: XMMRegister, arg1: XMMRegister)
+	pub fn vmovaps_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -87319,7 +87319,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move aligned packed single-precision floating-point values from `ymm1` to `ymm2/mem`.
 	#[inline(always)]
-	pub fn vmovaps_YMM_YMM_REX_W(&mut self, arg0: YMMRegister, arg1: YMMRegister)
+	pub fn vmovaps_YMM_YMM_1(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -87696,7 +87696,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move aligned packed integer values from `xmm1` to `xmm2/mem`.
 	#[inline(always)]
-	pub fn vmovdqa_XMMRegister_XMMRegister_REX_W(&mut self, arg0: XMMRegister, arg1: XMMRegister)
+	pub fn vmovdqa_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -87783,7 +87783,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move aligned packed integer values from `ymm1` to `ymm2/mem`.
 	#[inline(always)]
-	pub fn vmovdqa_YMM_YMM_REX_W(&mut self, arg0: YMMRegister, arg1: YMMRegister)
+	pub fn vmovdqa_YMM_YMM_1(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -87928,7 +87928,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move unaligned packed integer values from `xmm1` to `xmm2/mem`.
 	#[inline(always)]
-	pub fn vmovdqu_XMMRegister_XMMRegister_REX_W(&mut self, arg0: XMMRegister, arg1: XMMRegister)
+	pub fn vmovdqu_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -88015,7 +88015,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move unaligned packed integer values from `ymm1` to `ymm2/mem`.
 	#[inline(always)]
-	pub fn vmovdqu_YMM_YMM_REX_W(&mut self, arg0: YMMRegister, arg1: YMMRegister)
+	pub fn vmovdqu_YMM_YMM_1(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -88843,7 +88843,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move quadword from `xmm2` register to `xmm1/m64`.
 	#[inline(always)]
-	pub fn vmovq_Any64BitMemory_XMMRegister_REX_W(&mut self, arg0: Any64BitMemory, arg1: XMMRegister)
+	pub fn vmovq_Any64BitMemory_XMMRegister_1(&mut self, arg0: Any64BitMemory, arg1: XMMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -88930,7 +88930,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Load quadword from `m64` to `xmm1`.
 	#[inline(always)]
-	pub fn vmovq_XMMRegister_Any64BitMemory_REX_W(&mut self, arg0: XMMRegister, arg1: Any64BitMemory)
+	pub fn vmovq_XMMRegister_Any64BitMemory_1(&mut self, arg0: XMMRegister, arg1: Any64BitMemory)
 	{
 		self.reserve_space_for_instruction();
 
@@ -89017,7 +89017,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move quadword from `xmm2` register to `xmm1/m64`.
 	#[inline(always)]
-	pub fn vmovq_XMMRegister_XMMRegister_REX_W(&mut self, arg0: XMMRegister, arg1: XMMRegister)
+	pub fn vmovq_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -89133,7 +89133,7 @@ impl<'a> InstructionStream<'a>
 	
 	/// Merge scalar double-precision floating-point value from `xmm2` and xmm3 to `xmm1`.
 	#[inline(always)]
-	pub fn vmovsd_XMMRegister_XMMRegister_XMMRegister_REX_W(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister)
+	pub fn vmovsd_XMMRegister_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -89481,7 +89481,7 @@ impl<'a> InstructionStream<'a>
 	
 	/// Merge scalar single-precision floating-point value from `xmm2` and xmm3 to `xmm1`.
 	#[inline(always)]
-	pub fn vmovss_XMMRegister_XMMRegister_XMMRegister_REX_W(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister)
+	pub fn vmovss_XMMRegister_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister, arg2: XMMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -89626,7 +89626,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move unaligned packed double-precision floating-point from `xmm1` to `xmm2/mem`.
 	#[inline(always)]
-	pub fn vmovupd_XMMRegister_XMMRegister_REX_W(&mut self, arg0: XMMRegister, arg1: XMMRegister)
+	pub fn vmovupd_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -89713,7 +89713,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move unaligned packed double-precision floating-point from `ymm1` to `ymm2/mem`.
 	#[inline(always)]
-	pub fn vmovupd_YMM_YMM_REX_W(&mut self, arg0: YMMRegister, arg1: YMMRegister)
+	pub fn vmovupd_YMM_YMM_1(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -89858,7 +89858,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move unaligned packed single-precision floating-point from `xmm1` to `xmm2/mem`.
 	#[inline(always)]
-	pub fn vmovups_XMMRegister_XMMRegister_REX_W(&mut self, arg0: XMMRegister, arg1: XMMRegister)
+	pub fn vmovups_XMMRegister_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: XMMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -89945,7 +89945,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Move unaligned packed single-precision floating-point from `ymm1` to `ymm2/mem`.
 	#[inline(always)]
-	pub fn vmovups_YMM_YMM_REX_W(&mut self, arg0: YMMRegister, arg1: YMMRegister)
+	pub fn vmovups_YMM_YMM_1(&mut self, arg0: YMMRegister, arg1: YMMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -96125,7 +96125,7 @@ impl<'a> InstructionStream<'a>
 	///
 	/// The upper bits of `r64/r32` is filled with zeros.
 	#[inline(always)]
-	pub fn vpextrw_Register32Bit_XMMRegister_Immediate8Bit_REX_W(&mut self, arg0: Register32Bit, arg1: XMMRegister, arg2: Immediate8Bit)
+	pub fn vpextrw_Register32Bit_XMMRegister_Immediate8Bit_1(&mut self, arg0: Register32Bit, arg1: XMMRegister, arg2: Immediate8Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -96191,7 +96191,7 @@ impl<'a> InstructionStream<'a>
 	///
 	/// The upper bits of `r64/r32` is filled with zeros.
 	#[inline(always)]
-	pub fn vpextrw_Register64Bit_XMMRegister_Immediate8Bit_REX_W(&mut self, arg0: Register64Bit, arg1: XMMRegister, arg2: Immediate8Bit)
+	pub fn vpextrw_Register64Bit_XMMRegister_Immediate8Bit_1(&mut self, arg0: Register64Bit, arg1: XMMRegister, arg2: Immediate8Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -96377,7 +96377,7 @@ impl<'a> InstructionStream<'a>
 	///
 	/// Conditionally gathered elements are merged into `xmm1`.
 	#[inline(always)]
-	pub fn vpgatherqd_XMMRegister_Any64BitMemory_XMMRegister_REX_W(&mut self, arg0: XMMRegister, arg1: Any64BitMemory, arg2: XMMRegister)
+	pub fn vpgatherqd_XMMRegister_Any64BitMemory_XMMRegister_1(&mut self, arg0: XMMRegister, arg1: Any64BitMemory, arg2: XMMRegister)
 	{
 		self.reserve_space_for_instruction();
 
@@ -110336,7 +110336,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Exchange word from `r/m16` with `r16`.
 	#[inline(always)]
-	pub fn xchg_Register16Bit_Register16Bit_REX_W(&mut self, arg0: Register16Bit, arg1: Register16Bit)
+	pub fn xchg_Register16Bit_Register16Bit_1(&mut self, arg0: Register16Bit, arg1: Register16Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -110452,7 +110452,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Exchange doubleword from `r/m32` with `r32`.
 	#[inline(always)]
-	pub fn xchg_Register32Bit_Register32Bit_REX_W(&mut self, arg0: Register32Bit, arg1: Register32Bit)
+	pub fn xchg_Register32Bit_Register32Bit_1(&mut self, arg0: Register32Bit, arg1: Register32Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -110539,7 +110539,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Exchange quadword from `r/m64` with `r64`.
 	#[inline(always)]
-	pub fn xchg_Register64Bit_Register64Bit_REX_W(&mut self, arg0: Register64Bit, arg1: Register64Bit)
+	pub fn xchg_Register64Bit_Register64Bit_1(&mut self, arg0: Register64Bit, arg1: Register64Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -110655,7 +110655,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Exchange byte from `r/m8` with `r8` (alternate form).
 	#[inline(always)]
-	pub fn xchg_Register8Bit_Register8Bit_REX_W(&mut self, arg0: Register8Bit, arg1: Register8Bit)
+	pub fn xchg_Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -110713,7 +110713,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Exchange byte from `r/m8` with `r8` (alternate form).
 	#[inline(always)]
-	pub fn xchg_Register8Bit_RegisterHigh8BitsOf16Bits_REX_W(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
+	pub fn xchg_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		self.reserve_space_for_instruction();
 
@@ -110829,7 +110829,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Exchange byte from `r/m8` with `r8` (alternate form).
 	#[inline(always)]
-	pub fn xchg_RegisterHigh8BitsOf16Bits_Register8Bit_REX_W(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
+	pub fn xchg_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -110887,7 +110887,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Exchange byte from `r/m8` with `r8` (alternate form).
 	#[inline(always)]
-	pub fn xchg_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_REX_W(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
+	pub fn xchg_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		self.reserve_space_for_instruction();
 
@@ -111032,7 +111032,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Set `AL` to memory byte `[RBX + unsigned AL]`.
 	#[inline(always)]
-	pub fn xlatb_REX_W(&mut self)
+	pub fn xlatb_1(&mut self)
 	{
 		self.reserve_space_for_instruction();
 
@@ -111612,7 +111612,7 @@ impl<'a> InstructionStream<'a>
 
 	/// `r16` XOR `r/m16`.
 	#[inline(always)]
-	pub fn xor_Register16Bit_Register16Bit_REX_W(&mut self, arg0: Register16Bit, arg1: Register16Bit)
+	pub fn xor_Register16Bit_Register16Bit_1(&mut self, arg0: Register16Bit, arg1: Register16Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -111757,7 +111757,7 @@ impl<'a> InstructionStream<'a>
 
 	/// `r32` XOR `r/m32`.
 	#[inline(always)]
-	pub fn xor_Register32Bit_Register32Bit_REX_W(&mut self, arg0: Register32Bit, arg1: Register32Bit)
+	pub fn xor_Register32Bit_Register32Bit_1(&mut self, arg0: Register32Bit, arg1: Register32Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -111902,7 +111902,7 @@ impl<'a> InstructionStream<'a>
 
 	/// `r64` XOR `r/m64`.
 	#[inline(always)]
-	pub fn xor_Register64Bit_Register64Bit_REX_W(&mut self, arg0: Register64Bit, arg1: Register64Bit)
+	pub fn xor_Register64Bit_Register64Bit_1(&mut self, arg0: Register64Bit, arg1: Register64Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -112018,7 +112018,7 @@ impl<'a> InstructionStream<'a>
 
 	/// `r8` XOR `r/m8`.
 	#[inline(always)]
-	pub fn xor_Register8Bit_Register8Bit_REX_W(&mut self, arg0: Register8Bit, arg1: Register8Bit)
+	pub fn xor_Register8Bit_Register8Bit_1(&mut self, arg0: Register8Bit, arg1: Register8Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -112076,7 +112076,7 @@ impl<'a> InstructionStream<'a>
 
 	/// `r8` XOR `r/m8`.
 	#[inline(always)]
-	pub fn xor_Register8Bit_RegisterHigh8BitsOf16Bits_REX_W(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
+	pub fn xor_Register8Bit_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: Register8Bit, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		self.reserve_space_for_instruction();
 
@@ -112221,7 +112221,7 @@ impl<'a> InstructionStream<'a>
 
 	/// `r8` XOR `r/m8`.
 	#[inline(always)]
-	pub fn xor_RegisterHigh8BitsOf16Bits_Register8Bit_REX_W(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
+	pub fn xor_RegisterHigh8BitsOf16Bits_Register8Bit_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: Register8Bit)
 	{
 		self.reserve_space_for_instruction();
 
@@ -112279,7 +112279,7 @@ impl<'a> InstructionStream<'a>
 
 	/// `r8` XOR `r/m8`.
 	#[inline(always)]
-	pub fn xor_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_REX_W(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
+	pub fn xor_RegisterHigh8BitsOf16Bits_RegisterHigh8BitsOf16Bits_1(&mut self, arg0: RegisterHigh8BitsOf16Bits, arg1: RegisterHigh8BitsOf16Bits)
 	{
 		self.reserve_space_for_instruction();
 

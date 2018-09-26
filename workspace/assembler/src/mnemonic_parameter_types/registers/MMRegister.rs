@@ -41,11 +41,20 @@ impl Default for MMRegister
 	}
 }
 
+impl Into<u8> for MMRegister
+{
+	#[inline(always)]
+	fn into(self) -> u8
+	{
+		self as u8
+	}
+}
+
 impl Register for MMRegister
 {
 	#[inline(always)]
 	fn index(self) -> u8
 	{
-		0
+		self.into()
 	}
 }

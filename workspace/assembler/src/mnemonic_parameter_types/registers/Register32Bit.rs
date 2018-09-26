@@ -83,12 +83,21 @@ impl Default for Register32Bit
 	}
 }
 
+impl Into<u8> for Register32Bit
+{
+	#[inline(always)]
+	fn into(self) -> u8
+	{
+		self as u8
+	}
+}
+
 impl Register for Register32Bit
 {
 	#[inline(always)]
 	fn index(self) -> u8
 	{
-		self as u8
+		self.into()
 	}
 }
 

@@ -65,14 +65,12 @@ impl Default for YMMRegister
 	}
 }
 
-impl AsDisplacement for YMMRegister
+impl Into<u8> for YMMRegister
 {
-	type D = u8;
-	
 	#[inline(always)]
-	fn displacement(self) -> Self::D
+	fn into(self) -> u8
 	{
-		(self as u8) << 4
+		self as u8
 	}
 }
 
@@ -81,6 +79,17 @@ impl Register for YMMRegister
 	#[inline(always)]
 	fn index(self) -> u8
 	{
-		self as u8
+		self.into()
+	}
+}
+
+impl AsDisplacement for YMMRegister
+{
+	type D = u8;
+	
+	#[inline(always)]
+	fn displacement(self) -> Self::D
+	{
+		(self as u8) << 4
 	}
 }
