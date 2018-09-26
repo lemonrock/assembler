@@ -99,7 +99,7 @@ pub enum Register8Bit
 	///
 	/// A scratch register (also known as a temporary or (function) caller-saved register) when using the System V Application Binary Interface (ABI) for AMD64.
 	///
-	/// Contains a function's static chain pointer.
+	/// Contains a function's static chain pointer (used for nested functions).
 	R10B = 10,
 
 	/// Register 11.
