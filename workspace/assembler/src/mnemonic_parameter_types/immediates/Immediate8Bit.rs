@@ -17,6 +17,17 @@ impl AsDisplacement for Immediate8Bit
 	}
 }
 
+impl Immediate for Immediate8Bit
+{
+	type SignedInteger = i8;
+	
+	#[inline(always)]
+	fn value(self) -> Self::SignedInteger
+	{
+		self.0
+	}
+}
+
 impl Into<i8> for Immediate8Bit
 {
 	#[inline(always)]
@@ -51,8 +62,4 @@ impl From<i8> for Immediate8Bit
 	{
 		Immediate8Bit(immediate)
 	}
-}
-
-impl Immediate<u8> for Immediate8Bit
-{
 }

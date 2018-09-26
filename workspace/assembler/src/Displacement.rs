@@ -13,7 +13,7 @@ impl Displacement for u8
 	#[inline(always)]
 	fn emit(self, byte_emitter: &mut ByteEmitter)
 	{
-		byte_emitter.emit_u8(self.to_le())
+		byte_emitter.emit_u8(self)
 	}
 }
 

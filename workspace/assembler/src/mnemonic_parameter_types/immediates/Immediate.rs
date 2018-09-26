@@ -3,6 +3,12 @@
 
 
 /// An immediate value.
-pub(crate) trait Immediate<D: Displacement>: AsDisplacement<D=D>
+pub trait Immediate: From<i8> + From<u8>
 {
+	/// Signed integer type of the underlying value.
+	type SignedInteger;
+	
+	/// Underlying signed value.
+	#[inline(always)]
+	fn value(self) -> Self::SignedInteger;
 }

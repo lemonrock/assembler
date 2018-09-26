@@ -797,7 +797,7 @@ impl<'a> InstructionStream<'a>
 	}
 	
 	#[inline(always)]
-	fn displacement_immediate_1<D: Displacement>(&mut self, displacement: impl AsDisplacement<D=D>)
+	fn displacement_immediate_1(&mut self, displacement: impl AsDisplacement)
 	{
 		displacement.displacement().emit(&mut self.byte_emitter)
 	}

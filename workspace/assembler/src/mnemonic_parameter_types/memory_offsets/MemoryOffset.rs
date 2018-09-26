@@ -3,7 +3,7 @@
 
 
 /// Memory Offset.
-pub(crate) trait MemoryOffset: AsDisplacement<D=u64>
+pub(crate) trait MemoryOffset: AsDisplacement<D=u64> + From<(SegmentRegister, Immediate64Bit)> + From<(Option<SegmentRegister>, Immediate64Bit)> + From<Immediate64Bit> + From<i8> + From<u8> + From<i16> + From<u16> + From<i32> + From<u32> + From<i64> + From<u64> + Into<(Option<SegmentRegister>, Immediate64Bit)> + Into<Immediate64Bit> + Into<i64> + Into<u64>
 {
 	/// Get the segment register, if any.
 	#[inline(always)]

@@ -17,16 +17,14 @@ impl AsDisplacement for Immediate16Bit
 	}
 }
 
-impl Immediate<u16> for Immediate16Bit
+impl Immediate for Immediate16Bit
 {
-}
-
-impl From<Immediate8Bit> for Immediate16Bit
-{
+	type SignedInteger = i16;
+	
 	#[inline(always)]
-	fn from(immediate: Immediate8Bit) -> Self
+	fn value(self) -> Self::SignedInteger
 	{
-		Self::from(immediate.0)
+		self.0
 	}
 }
 
