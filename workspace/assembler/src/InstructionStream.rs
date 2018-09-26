@@ -146,21 +146,6 @@ impl<'a> InstructionStream<'a>
 		self.labelled_locations.set(label, instruction_pointer)
 	}
 	
-	/// Calculates a relative address from an absolute address, such as a function pointer or static constant pointer.
-	///
-	/// **WARNING**: Be very careful using the resultant value for CALL, JMP, etc, as it would need correcting for the size of the emitted opcode sequence including displacement.
-	///
-	/// **WARNING**: The location of emitted code may be such that if it is more than 2Gb away from common library function calls (eg `printf`); it may be preferrable to use an absolute address indirectly in this case.
-	///
-	/// **WARNING**: No checks are made for addresses that would exceed the boundaries of signed integers...
-	///
-	/// **WARNING**: In Kernel-model code, addresses are in the top half of the address space and so the casts below to `isize` will be invalid.
-	#[inline(always)]
-	fn relative_address_32bit(&self, absolute_address: impl FunctionPointer, offset_to_end_of_opcode_encoding: usize) -> RelativeAddress32Bit
-	{
-		RelativeAddress32Bit(((absolute_address.absolute_virtual_address() as isize) - ((self.instruction_pointer() + offset_to_end_of_opcode_encoding) as isize)) as i32)
-	}
-	
 	/// Emits a non-leaf function prologue suitable for both the System V Application Binary Interface for AMD64 and the Microsoft x64 Calling Convention.
 	#[inline(always)]
 	pub fn push_stack_frame(&mut self)
@@ -711,53 +696,6 @@ impl<'a> InstructionStream<'a>
 		self.byte_emitter.store_bookmark()
 	}
 	
-	/// Returns an error if displacement would exceed 8 bits.
-	#[inline(always)]
-	fn displacement_label_8bit(&mut self, label: Label) -> ShortJmpResult
-	{
-		let target_instruction_pointer = self.labelled_locations.potential_target_instruction_pointer(label);
-		if target_instruction_pointer.is_valid()
-		{
-			let insert_at_instruction_pointer = self.byte_emitter.instruction_pointer;
-			match self.byte_emitter.insert_8_bit_effective_address_displacement(insert_at_instruction_pointer, target_instruction_pointer)
-			{
-				Ok(()) => Ok(()),
-				Err(()) =>
-				{
-					self.byte_emitter.reset_to_bookmark();
-					Err(())
-				}
-			}
-		}
-		else
-		{
-			let instruction_pointer = self.instruction_pointer();
-			self.instruction_pointers_to_replace_labels_with_8_bit_displacements.push((label, instruction_pointer));
-			self.skip_byte();
-			Ok(())
-		}
-	}
-	
-	/// Does not return an error if displacement would exceed 32 bits, but panics in debug builds.
-	///
-	/// Errors are very unlikely indeed for such overly large displacements, are almost certainly a mistake and can not realistically be recovered from, in any event.
-	#[inline(always)]
-	fn displacement_label_32bit(&mut self, label: Label)
-	{
-		let target_instruction_pointer = self.labelled_locations.potential_target_instruction_pointer(label);
-		if target_instruction_pointer.is_valid()
-		{
-			let insert_at_instruction_pointer = self.byte_emitter.instruction_pointer;
-			self.byte_emitter.insert_32_bit_effective_address_displacement(insert_at_instruction_pointer, target_instruction_pointer)
-		}
-		else
-		{
-			let instruction_pointer = self.instruction_pointer();
-			self.instruction_pointers_to_replace_labels_with_32_bit_displacements.push((label, instruction_pointer));
-			self.skip_double_word();
-		}
-	}
-	
 	#[inline(always)]
 	fn instruction_pointer(&self) -> InstructionPointer
 	{
@@ -879,6 +817,68 @@ impl<'a> InstructionStream<'a>
 		// NOTE: This order is correct, with the second displacement emitted before the first.
 		self.displacement_immediate_1(displacement2);
 		self.displacement_immediate_1(displacement1);
+	}
+	
+	/// Returns an error if displacement would exceed 8 bits.
+	#[inline(always)]
+	fn displacement_label_8bit(&mut self, label: Label) -> ShortJmpResult
+	{
+		let target_instruction_pointer = self.labelled_locations.potential_target_instruction_pointer(label);
+		if target_instruction_pointer.is_valid()
+		{
+			let insert_at_instruction_pointer = self.byte_emitter.instruction_pointer;
+			match self.byte_emitter.insert_8_bit_effective_address_displacement(insert_at_instruction_pointer, target_instruction_pointer)
+			{
+				Ok(()) => Ok(()),
+				Err(()) =>
+				{
+					self.byte_emitter.reset_to_bookmark();
+					Err(())
+				}
+			}
+		}
+		else
+		{
+			let instruction_pointer = self.instruction_pointer();
+			self.instruction_pointers_to_replace_labels_with_8_bit_displacements.push((label, instruction_pointer));
+			self.skip_byte();
+			Ok(())
+		}
+	}
+	
+	/// Does not return an error if displacement would exceed 32 bits, but panics in debug builds.
+	///
+	/// Errors are very unlikely indeed for such overly large displacements, are almost certainly a mistake and can not realistically be recovered from, in any event.
+	#[inline(always)]
+	fn displacement_label_32bit(&mut self, label: Label)
+	{
+		let target_instruction_pointer = self.labelled_locations.potential_target_instruction_pointer(label);
+		if target_instruction_pointer.is_valid()
+		{
+			let insert_at_instruction_pointer = self.byte_emitter.instruction_pointer;
+			self.byte_emitter.insert_32_bit_effective_address_displacement(insert_at_instruction_pointer, target_instruction_pointer)
+		}
+		else
+		{
+			let instruction_pointer = self.instruction_pointer();
+			self.instruction_pointers_to_replace_labels_with_32_bit_displacements.push((label, instruction_pointer));
+			self.skip_double_word();
+		}
+	}
+	
+	/// Calculates a relative address from an absolute address, such as a function pointer or static constant pointer.
+	///
+	/// **WARNING**: Be very careful using the resultant value for CALL, JMP, etc, as it would need correcting for the size of the emitted opcode sequence including displacement.
+	///
+	/// **WARNING**: The location of emitted code may be such that if it is more than 2Gb away from common library function calls (eg `printf`); it may be preferrable to use an absolute address indirectly in this case.
+	///
+	/// **WARNING**: No checks are made for addresses that would exceed the boundaries of signed integers...
+	///
+	/// **WARNING**: In Kernel-model code, addresses are in the top half of the address space and so the casts below to `isize` will be invalid.
+	#[inline(always)]
+	fn relative_address_32bit(&self, absolute_address: impl FunctionPointer, offset_to_end_of_opcode_encoding: usize) -> RelativeAddress32Bit
+	{
+		RelativeAddress32Bit(((absolute_address.absolute_virtual_address() as isize) - ((self.instruction_pointer() + offset_to_end_of_opcode_encoding) as isize)) as i32)
 	}
 }
 

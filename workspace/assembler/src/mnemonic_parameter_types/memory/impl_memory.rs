@@ -91,27 +91,27 @@ macro_rules! impl_memory
 			}
 			
 			#[inline(always)]
-			fn displacement_base_64(base_64: Register64Bit, displacement: Immediate32Bit) -> Self
+			fn base_64_displacement(base_64: Register64Bit, displacement: Immediate32Bit) -> Self
 			{
-				$struct_name(MemoryOperand::displacement_base_64(base_64, displacement))
+				$struct_name(MemoryOperand::base_64_displacement(base_64, displacement))
 			}
 			
 			#[inline(always)]
-			fn displacement_base_32(base_32: Register32Bit, displacement: Immediate32Bit) -> Self
+			fn base_32_displacement(base_32: Register32Bit, displacement: Immediate32Bit) -> Self
 			{
-				$struct_name(MemoryOperand::displacement_base_32(base_32, displacement))
+				$struct_name(MemoryOperand::base_32_displacement(base_32, displacement))
 			}
 			
 			#[inline(always)]
-			fn segment_displacement_base_64(segment_register: SegmentRegister, base_64: Register64Bit, displacement: Immediate32Bit) -> Self
+			fn segment_base_64_displacement(segment_register: SegmentRegister, base_64: Register64Bit, displacement: Immediate32Bit) -> Self
 			{
-				$struct_name(MemoryOperand::segment_displacement_base_64(segment_register, base_64, displacement))
+				$struct_name(MemoryOperand::segment_base_64_displacement(segment_register, base_64, displacement))
 			}
 			
 			#[inline(always)]
-			fn segment_displacement_base_32(segment_register: SegmentRegister, base_32: Register32Bit, displacement: Immediate32Bit) -> Self
+			fn segment_base_32_displacement(segment_register: SegmentRegister, base_32: Register32Bit, displacement: Immediate32Bit) -> Self
 			{
-				$struct_name(MemoryOperand::segment_displacement_base_32(segment_register, base_32, displacement))
+				$struct_name(MemoryOperand::segment_base_32_displacement(segment_register, base_32, displacement))
 			}
 			
 			#[inline(always)]
@@ -139,27 +139,27 @@ macro_rules! impl_memory
 			}
 			
 			#[inline(always)]
-			fn displacement_index_64_scale(index_64: Register64Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
+			fn index_64_scale_displacement(index_64: Register64Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
 			{
-				$struct_name(MemoryOperand::displacement_index_64_scale(index_64, scale, displacement))
+				$struct_name(MemoryOperand::index_64_scale_displacement(index_64, scale, displacement))
 			}
 			
 			#[inline(always)]
-			fn displacement_index_32_scale(index_32: Register32Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
+			fn index_32_scale_displacement(index_32: Register32Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
 			{
-				$struct_name(MemoryOperand::displacement_index_32_scale(index_32, scale, displacement))
+				$struct_name(MemoryOperand::index_32_scale_displacement(index_32, scale, displacement))
 			}
 			
 			#[inline(always)]
-			fn segment_displacement_index_64_scale(segment_register: SegmentRegister, index_64: Register64Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
+			fn segment_index_64_scale_displacement(segment_register: SegmentRegister, index_64: Register64Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
 			{
-				$struct_name(MemoryOperand::segment_displacement_index_64_scale(segment_register, index_64, scale, displacement))
+				$struct_name(MemoryOperand::segment_index_64_scale_displacement(segment_register, index_64, scale, displacement))
 			}
 			
 			#[inline(always)]
-			fn segment_displacement_index_32_scale(segment_register: SegmentRegister, index_32: Register32Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
+			fn segment_index_32_scale_displacement(segment_register: SegmentRegister, index_32: Register32Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
 			{
-				$struct_name(MemoryOperand::segment_displacement_index_32_scale(segment_register, index_32, scale, displacement))
+				$struct_name(MemoryOperand::segment_index_32_scale_displacement(segment_register, index_32, scale, displacement))
 			}
 			
 			#[inline(always)]
@@ -187,27 +187,27 @@ macro_rules! impl_memory
 			}
 			
 			#[inline(always)]
-			fn displacement_base_64_index_64_scale(base_64: Register64Bit, index_64: Register64Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
+			fn base_64_index_64_scale_displacement(base_64: Register64Bit, index_64: Register64Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
 			{
-				$struct_name(MemoryOperand::displacement_base_64_index_64_scale(base_64, index_64, scale, displacement))
+				$struct_name(MemoryOperand::base_64_index_64_scale_displacement(base_64, index_64, scale, displacement))
 			}
 			
 			#[inline(always)]
-			fn displacement_base_32_index_32_scale(base_32: Register32Bit, index_32: Register32Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
+			fn base_32_index_32_scale_displacement(base_32: Register32Bit, index_32: Register32Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
 			{
-				$struct_name(MemoryOperand::displacement_base_32_index_32_scale(base_32, index_32, scale, displacement))
+				$struct_name(MemoryOperand::base_32_index_32_scale_displacement(base_32, index_32, scale, displacement))
 			}
 			
 			#[inline(always)]
-			fn segment_displacement_base_64_index_64_scale(segment_register: SegmentRegister, base_64: Register64Bit, index_64: Register64Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
+			fn segment_base_64_index_64_scale_displacement(segment_register: SegmentRegister, base_64: Register64Bit, index_64: Register64Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
 			{
-				$struct_name(MemoryOperand::segment_displacement_base_64_index_64_scale(segment_register, base_64, index_64, scale, displacement))
+				$struct_name(MemoryOperand::segment_base_64_index_64_scale_displacement(segment_register, base_64, index_64, scale, displacement))
 			}
 			
 			#[inline(always)]
-			fn segment_displacement_base_32_index_32_scale(segment_register: SegmentRegister, base_32: Register32Bit, index_32: Register32Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
+			fn segment_base_32_index_32_scale_displacement(segment_register: SegmentRegister, base_32: Register32Bit, index_32: Register32Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
 			{
-				$struct_name(MemoryOperand::segment_displacement_base_32_index_32_scale(segment_register, base_32, index_32, scale, displacement))
+				$struct_name(MemoryOperand::segment_base_32_index_32_scale_displacement(segment_register, base_32, index_32, scale, displacement))
 			}
 		}
 		
