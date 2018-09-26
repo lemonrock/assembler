@@ -34,6 +34,10 @@ pub enum Register64Bit
 	/// Contains the second integer function argument to a function call when using the Microsoft x64 Calling Convention.
 	///
 	/// A scratch register (also known as a temporary or (function) caller-saved register) when using the System V Application Binary Interface (ABI) for AMD64.
+	/// 
+	/// When returning 128-bit integer values, contains the high bits of such as value (and `RAX` / `SystemVApplicationBinaryInterface64IntegerFunctionReturn` contains the low bits).
+	///
+	/// Useful for returning tuples of 64-bit values.
 	RDX = 2,
 
 	/// Register 3.
