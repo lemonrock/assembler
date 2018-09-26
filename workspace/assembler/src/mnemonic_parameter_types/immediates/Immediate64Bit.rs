@@ -2,29 +2,14 @@
 // Copyright © 2018 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// An immediate argument.
-#[derive(Default, Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct Immediate64Bit(pub i64);
+impl_immediate!(Immediate64Bit, i64, u64);
 
-impl AsDisplacement for Immediate64Bit
+impl From<Immediate8Bit> for Immediate64Bit
 {
-	type D = u64;
-	
 	#[inline(always)]
-	fn displacement(self) -> Self::D
+	fn from(immediate: Immediate8Bit) -> Self
 	{
-		self.0 as u64
-	}
-}
-
-impl Immediate for Immediate64Bit
-{
-	type SignedInteger = i64;
-	
-	#[inline(always)]
-	fn value(self) -> Self::SignedInteger
-	{
-		self.0
+		Self::from(immediate.0)
 	}
 }
 
@@ -43,24 +28,6 @@ impl From<Immediate32Bit> for Immediate64Bit
 	fn from(immediate: Immediate32Bit) -> Self
 	{
 		Self::from(immediate.0)
-	}
-}
-
-impl Into<i64> for Immediate64Bit
-{
-	#[inline(always)]
-	fn into(self) -> i64
-	{
-		self.0
-	}
-}
-
-impl Into<u64> for Immediate64Bit
-{
-	#[inline(always)]
-	fn into(self) -> u64
-	{
-		self.0 as u64
 	}
 }
 
@@ -115,23 +82,5 @@ impl From<i32> for Immediate64Bit
 	fn from(immediate: i32) -> Self
 	{
 		Immediate64Bit(immediate as i64)
-	}
-}
-
-impl From<u64> for Immediate64Bit
-{
-	#[inline(always)]
-	fn from(immediate: u64) -> Self
-	{
-		Immediate64Bit(immediate as i64)
-	}
-}
-
-impl From<i64> for Immediate64Bit
-{
-	#[inline(always)]
-	fn from(immediate: i64) -> Self
-	{
-		Immediate64Bit(immediate)
 	}
 }

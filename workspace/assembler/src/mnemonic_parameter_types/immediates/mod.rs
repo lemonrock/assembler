@@ -5,6 +5,9 @@
 use super::*;
 
 
+include!("impl_immediate.rs");
+
+
 include!("Immediate.rs");
 include!("Immediate8Bit.rs");
 include!("Immediate16Bit.rs");

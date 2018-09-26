@@ -2,29 +2,14 @@
 // Copyright © 2018 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-/// An immediate argument, typically used for a displacement.
-#[derive(Default, Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct Immediate32Bit(pub i32);
+impl_immediate!(Immediate32Bit, i32, u32);
 
-impl AsDisplacement for Immediate32Bit
+impl From<Immediate8Bit> for Immediate32Bit
 {
-	type D = u32;
-	
 	#[inline(always)]
-	fn displacement(self) -> Self::D
+	fn from(immediate: Immediate8Bit) -> Self
 	{
-		self.0 as u32
-	}
-}
-
-impl Immediate for Immediate32Bit
-{
-	type SignedInteger = i32;
-	
-	#[inline(always)]
-	fn value(self) -> Self::SignedInteger
-	{
-		self.0
+		Self::from(immediate.0)
 	}
 }
 
@@ -34,24 +19,6 @@ impl From<Immediate16Bit> for Immediate32Bit
 	fn from(immediate: Immediate16Bit) -> Self
 	{
 		Self::from(immediate.0)
-	}
-}
-
-impl Into<i32> for Immediate32Bit
-{
-	#[inline(always)]
-	fn into(self) -> i32
-	{
-		self.0
-	}
-}
-
-impl Into<u32> for Immediate32Bit
-{
-	#[inline(always)]
-	fn into(self) -> u32
-	{
-		self.0 as u32
 	}
 }
 
@@ -88,24 +55,6 @@ impl From<i16> for Immediate32Bit
 	fn from(immediate: i16) -> Self
 	{
 		Immediate32Bit(immediate as i32)
-	}
-}
-
-impl From<u32> for Immediate32Bit
-{
-	#[inline(always)]
-	fn from(immediate: u32) -> Self
-	{
-		Immediate32Bit(immediate as i32)
-	}
-}
-
-impl From<i32> for Immediate32Bit
-{
-	#[inline(always)]
-	fn from(immediate: i32) -> Self
-	{
-		Immediate32Bit(immediate)
 	}
 }
 

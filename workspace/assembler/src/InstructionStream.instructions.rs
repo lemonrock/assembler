@@ -38810,9 +38810,7 @@ impl<'a> InstructionStream<'a>
 
 	/// For legacy mode, Move byte from address `DS:(E)SI` to `ES:(E)DI`.
 	///
-	/// For 64-bit mode move byte from address `(R
-	///E)SI` to `(R
-	///E)DI`.
+	/// For 64-bit mode move byte from address `(R|E)SI` to `(R|E)DI`.
 	#[inline(always)]
 	pub fn movs_Any8BitMemory_Any8BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
@@ -38843,9 +38841,7 @@ impl<'a> InstructionStream<'a>
 
 	/// For legacy mode, Move byte from address `DS:(E)SI` to `ES:(E)DI`.
 	///
-	/// For 64-bit mode move byte from address `(R
-	///E)SI` to `(R
-	///E)DI`.
+	/// For 64-bit mode move byte from address `(R|E)SI` to `(R|E)DI`.
 	#[inline(always)]
 	pub fn movsb(&mut self)
 	{
@@ -38876,9 +38872,7 @@ impl<'a> InstructionStream<'a>
 
 	/// For legacy mode, move dword from address `DS:(E)SI` to `ES:(E)DI`.
 	///
-	/// For 64-bit mode move dword from address `(R
-	///E)SI` to `(R
-	///E)DI`.
+	/// For 64-bit mode move dword from address `(R|E)SI` to `(R|E)DI`.
 	#[inline(always)]
 	pub fn movsd(&mut self)
 	{
@@ -39139,9 +39133,7 @@ impl<'a> InstructionStream<'a>
 		// No label displacement.
 	}
 
-	/// Move qword from address `(R
-	///E)SI` to `(R
-	///E)DI`.
+	/// Move qword from address `(R|E)SI` to `(R|E)DI`.
 	#[inline(always)]
 	pub fn movsq(&mut self)
 	{
@@ -39288,9 +39280,7 @@ impl<'a> InstructionStream<'a>
 
 	/// For legacy mode, move word from address `DS:(E)SI` to `ES:(E)DI`.
 	///
-	/// For 64-bit mode move word at address `(R
-	///E)SI` to `(R
-	///E)DI`.
+	/// For 64-bit mode move word at address `(R|E)SI` to `(R|E)DI`.
 	#[inline(always)]
 	pub fn movsw(&mut self)
 	{

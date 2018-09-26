@@ -5,7 +5,7 @@
 /// A general purpose register which can be encoded in a Scaled Index Byte (SIB).
 pub trait GeneralPurposeRegister: Register
 {
-	/// Contains the integer return value from a function call when using the System V Application Binary Interface (ABI) for x86-64.
+	/// Contains the integer return value from a function call when using the System V Application Binary Interface (ABI) for AMD64.
 	const SystemVApplicationBinaryInterface64IntegerFunctionReturn: Self;
 	
 	/// Contains the third integer function argument to a function call when using the System V Application Binary Interface for x86-64.

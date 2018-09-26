@@ -5,6 +5,18 @@
 /// An immediate value.
 pub trait Immediate: From<i8> + From<u8>
 {
+	/// Zero.
+	const Zero: Self;
+	
+	/// One.
+	const One: Self;
+	
+	/// Minimum.
+	const Minimum: Self;
+	
+	/// Maximum.
+	const Maximum: Self;
+	
 	/// Signed integer type of the underlying value.
 	type SignedInteger;
 	
