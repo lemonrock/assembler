@@ -17,6 +17,35 @@ impl AsDisplacement for RelativeAddress32Bit
 	}
 }
 
+impl From<Immediate8Bit> for RelativeAddress32Bit
+{
+	#[inline(always)]
+	fn from(value: Immediate8Bit) -> Self
+	{
+		let into: i8 = value.into();
+		RelativeAddress32Bit(into as i32)
+	}
+}
+
+impl From<Immediate16Bit> for RelativeAddress32Bit
+{
+	#[inline(always)]
+	fn from(value: Immediate16Bit) -> Self
+	{
+		let into: i16 = value.into();
+		RelativeAddress32Bit(into as i32)
+	}
+}
+
+impl From<Immediate32Bit> for RelativeAddress32Bit
+{
+	#[inline(always)]
+	fn from(value: Immediate32Bit) -> Self
+	{
+		RelativeAddress32Bit(value.into())
+	}
+}
+
 impl From<i8> for RelativeAddress32Bit
 {
 	#[inline(always)]
@@ -68,6 +97,15 @@ impl From<u32> for RelativeAddress32Bit
 	fn from(value: u32) -> Self
 	{
 		RelativeAddress32Bit(value as i32)
+	}
+}
+
+impl Into<Immediate32Bit> for RelativeAddress32Bit
+{
+	#[inline(always)]
+	fn into(self) -> Immediate32Bit
+	{
+		Immediate32Bit(self.0)
 	}
 }
 
