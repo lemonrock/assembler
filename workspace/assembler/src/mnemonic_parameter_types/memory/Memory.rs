@@ -3,6 +3,140 @@
 
 
 /// Memory.
-pub(crate) trait Memory: From<MemoryOperand> + Into<MemoryOperand> + Sized
+pub trait Memory: From<MemoryOperand> + Into<MemoryOperand> + Sized
 {
+	/// Create a new memory operand using the `displacement` form.
+	#[inline(always)]
+	fn displacement(displacement: Immediate32Bit) -> Self;
+	
+	/// Create a new memory operand using the `segment:displacement` form.
+	#[inline(always)]
+	fn segment_displacement(segment_register: SegmentRegister, displacement: Immediate32Bit) -> Self;
+	
+	/// Create a new memory operand using the `RIP` (relative instruction pointer) form.
+	#[inline(always)]
+	fn relative_instruction_pointer_relative() -> Self;
+	
+	/// Create a new memory operand using the `segment:RIP` (relative instruction pointer) form.
+	#[inline(always)]
+	fn segment_relative_instruction_pointer_relative(segment_register: SegmentRegister) -> Self;
+	
+	/// Create a new memory operand using the `RIP+displacement` (relative instruction pointer) form.
+	#[inline(always)]
+	fn relative_instruction_pointer_relative_displacement(displacement: Immediate32Bit) -> Self;
+	
+	/// Create a new memory operand using the `segment:RIP+displacement` (relative instruction pointer) form.
+	#[inline(always)]
+	fn segment_relative_instruction_pointer_relative_displacement(segment_register: SegmentRegister, displacement: Immediate32Bit) -> Self;
+	
+	/// Create a new memory operand using the `base64` form.
+	///
+	/// Note that this has nothing to do with the binary encoding scheme `Base64`.
+	#[inline(always)]
+	fn base_64(base_64: Register64Bit) -> Self;
+	
+	/// Create a new memory operand using the `base32` form.
+	///
+	/// Note that this has nothing to do with the binary encoding scheme `Base32`.
+	#[inline(always)]
+	fn base_32(base_32: Register32Bit) -> Self;
+	
+	/// Create a new memory operand using the `segment:base64` form.
+	///
+	/// Note that this has nothing to do with the binary encoding scheme `Base64`.
+	#[inline(always)]
+	fn segment_base_64(segment_register: SegmentRegister, base_64: Register64Bit) -> Self;
+	
+	/// Create a new memory operand using the `segment:base32` form.
+	///
+	/// Note that this has nothing to do with the binary encoding scheme `Base32`.
+	#[inline(always)]
+	fn segment_base_32(segment_register: SegmentRegister, base_32: Register32Bit) -> Self;
+	
+	/// Create a new memory operand using the `displacement(base64)` form.
+	///
+	/// Note that this has nothing to do with the binary encoding scheme `Base64`.
+	#[inline(always)]
+	fn displacement_base_64(base_64: Register64Bit, displacement: Immediate32Bit) -> Self;
+	
+	/// Create a new memory operand using the `displacement(base32)` form.
+	///
+	/// Note that this has nothing to do with the binary encoding scheme `Base32`.
+	#[inline(always)]
+	fn displacement_base_32(base_32: Register32Bit, displacement: Immediate32Bit) -> Self;
+	
+	/// Create a new memory operand using the `segment:displacement(base64)` form.
+	///
+	/// Note that this has nothing to do with the binary encoding scheme `Base64`.
+	#[inline(always)]
+	fn segment_displacement_base_64(segment_register: SegmentRegister, base_64: Register64Bit, displacement: Immediate32Bit) -> Self;
+	
+	/// Create a new memory operand using the `segment:displacement(base32)` form.
+	///
+	/// Note that this has nothing to do with the binary encoding scheme `Base32`.
+	#[inline(always)]
+	fn segment_displacement_base_32(segment_register: SegmentRegister, base_32: Register32Bit, displacement: Immediate32Bit) -> Self;
+	
+	/// Create a new memory operand using the `(index64,scale)` form.
+	#[inline(always)]
+	fn index_64_scale(index_64: Register64Bit, scale: IndexScale) -> Self;
+	
+	/// Create a new memory operand using the `(index32,scale)` form.
+	#[inline(always)]
+	fn index_32_scale(index_32: Register32Bit, scale: IndexScale) -> Self;
+	
+	/// Create a new memory operand using the `segment:(index64,scale)` form.
+	#[inline(always)]
+	fn segment_index_64_scale(segment_register: SegmentRegister, index_64: Register64Bit, scale: IndexScale) -> Self;
+	
+	/// Create a new memory operand using the `segment:(index32,scale)` form.
+	#[inline(always)]
+	fn segment_index_32_scale(segment_register: SegmentRegister, index_32: Register32Bit, scale: IndexScale) -> Self;
+	
+	/// Create a new memory operand using the `displacement:(index64,scale)` form.
+	#[inline(always)]
+	fn displacement_index_64_scale(index_64: Register64Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self;
+	
+	/// Create a new memory operand using the `displacement:(index32,scale)` form.
+	#[inline(always)]
+	fn displacement_index_32_scale(index_32: Register32Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self;
+	
+	/// Create a new memory operand using the `segment:displacement:(index64,scale)` form.
+	#[inline(always)]
+	fn segment_displacement_index_64_scale(segment_register: SegmentRegister, index_64: Register64Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self;
+	
+	/// Create a new memory operand using the `segment:displacement:(index32,scale)` form.
+	#[inline(always)]
+	fn segment_displacement_index_32_scale(segment_register: SegmentRegister, index_32: Register32Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self;
+	
+	/// Create a new memory operand using the `(base64,index64,scale)` form.
+	#[inline(always)]
+	fn base_64_index_64_scale(base_64: Register64Bit, index_64: Register64Bit, scale: IndexScale) -> Self;
+	
+	/// Create a new memory operand using the `(base32,index32,scale)` form.
+	#[inline(always)]
+	fn base_32_index_32_scale(base_32: Register32Bit, index_32: Register32Bit, scale: IndexScale) -> Self;
+	
+	/// Create a new memory operand using the `segment:(base64,index64,scale)` form.
+	#[inline(always)]
+	fn segment_base_64_index_64_scale(segment_register: SegmentRegister, base_64: Register64Bit, index_64: Register64Bit, scale: IndexScale) -> Self;
+	/// Create a new memory operand using the `segment:(base32,index32,scale)` form.
+	#[inline(always)]
+	fn segment_base_32_index_32_scale(segment_register: SegmentRegister, base_32: Register32Bit, index_32: Register32Bit, scale: IndexScale) -> Self;
+	
+	/// Create a new memory operand using the `displacement(base64,index64,scale)` form.
+	#[inline(always)]
+	fn displacement_base_64_index_64_scale(base_64: Register64Bit, index_64: Register64Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self;
+	
+	/// Create a new memory operand using the `displacement(base32,index32,scale)` form.
+	#[inline(always)]
+	fn displacement_base_32_index_32_scale(base_32: Register32Bit, index_32: Register32Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self;
+	
+	/// Create a new memory operand using the `segment:displacement(base64,index64,scale)` form.
+	#[inline(always)]
+	fn segment_displacement_base_64_index_64_scale(segment_register: SegmentRegister, base_64: Register64Bit, index_64: Register64Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self;
+	
+	/// Create a new memory operand using the `segment:displacement(base32,index32,scale)` form.
+	#[inline(always)]
+	fn segment_displacement_base_32_index_32_scale(segment_register: SegmentRegister, base_32: Register32Bit, index_32: Register32Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self;
 }
