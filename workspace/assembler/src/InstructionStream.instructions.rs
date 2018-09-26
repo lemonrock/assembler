@@ -7411,7 +7411,7 @@ impl<'a> InstructionStream<'a>
 	///
 	/// In 32-bit mode: if selector points to a gate, then `RIP` = 32-bit zero extended displacement taken from gate else `RIP` = zero extended 16-bit offset from far pointer referenced in the instruction.
 	#[inline(always)]
-	pub fn call_FarPointer16BitTo16Bit(&mut self, arg0: FarPointer16BitTo16Bit)
+	pub fn call_FarPointer16BitTo16BitMemory(&mut self, arg0: FarPointer16BitTo16BitMemory)
 	{
 		self.reserve_space_for_instruction();
 
@@ -7442,7 +7442,7 @@ impl<'a> InstructionStream<'a>
 	///
 	/// In 64-bit mode: If selector points to a gate, then `RIP` = 64-bit displacement taken from gate else `RIP` = zero extended 32-bit offset from far pointer referenced in the instruction.
 	#[inline(always)]
-	pub fn call_FarPointer16BitTo32Bit(&mut self, arg0: FarPointer16BitTo32Bit)
+	pub fn call_FarPointer16BitTo32BitMemory(&mut self, arg0: FarPointer16BitTo32BitMemory)
 	{
 		self.reserve_space_for_instruction();
 
@@ -7473,7 +7473,7 @@ impl<'a> InstructionStream<'a>
 	///
 	/// In 64-bit mode: If selector points to a gate, then `RIP` = 64-bit displacement taken from gate else `RIP` = 64-bit offset from far pointer referenced in the instruction.
 	#[inline(always)]
-	pub fn call_FarPointer16BitTo64Bit(&mut self, arg0: FarPointer16BitTo64Bit)
+	pub fn call_FarPointer16BitTo64BitMemory(&mut self, arg0: FarPointer16BitTo64BitMemory)
 	{
 		self.reserve_space_for_instruction();
 
@@ -27639,7 +27639,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump far, absolute indirect, address given in `m16:16`.
 	#[inline(always)]
-	pub fn jmp_FarPointer16BitTo16Bit(&mut self, arg0: FarPointer16BitTo16Bit)
+	pub fn jmp_FarPointer16BitTo16BitMemory(&mut self, arg0: FarPointer16BitTo16BitMemory)
 	{
 		self.reserve_space_for_instruction();
 
@@ -27668,7 +27668,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump far, absolute indirect, address given in m16:32.
 	#[inline(always)]
-	pub fn jmp_FarPointer16BitTo32Bit(&mut self, arg0: FarPointer16BitTo32Bit)
+	pub fn jmp_FarPointer16BitTo32BitMemory(&mut self, arg0: FarPointer16BitTo32BitMemory)
 	{
 		self.reserve_space_for_instruction();
 
@@ -27697,7 +27697,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Jump far, absolute indirect, address given in m16:64.
 	#[inline(always)]
-	pub fn jmp_FarPointer16BitTo64Bit(&mut self, arg0: FarPointer16BitTo64Bit)
+	pub fn jmp_FarPointer16BitTo64BitMemory(&mut self, arg0: FarPointer16BitTo64BitMemory)
 	{
 		self.reserve_space_for_instruction();
 
@@ -33351,7 +33351,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Load `FS:r16` with far pointer from memory.
 	#[inline(always)]
-	pub fn lfs_Register16Bit_FarPointer16BitTo16Bit(&mut self, arg0: Register16Bit, arg1: FarPointer16BitTo16Bit)
+	pub fn lfs_Register16Bit_FarPointer16BitTo16BitMemory(&mut self, arg0: Register16Bit, arg1: FarPointer16BitTo16BitMemory)
 	{
 		self.reserve_space_for_instruction();
 
@@ -33380,7 +33380,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Load `FS:r32` with far pointer from memory.
 	#[inline(always)]
-	pub fn lfs_Register32Bit_FarPointer16BitTo32Bit(&mut self, arg0: Register32Bit, arg1: FarPointer16BitTo32Bit)
+	pub fn lfs_Register32Bit_FarPointer16BitTo32BitMemory(&mut self, arg0: Register32Bit, arg1: FarPointer16BitTo32BitMemory)
 	{
 		self.reserve_space_for_instruction();
 
@@ -33409,7 +33409,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Load `FS:r64` with far pointer from memory.
 	#[inline(always)]
-	pub fn lfs_Register64Bit_FarPointer16BitTo64Bit(&mut self, arg0: Register64Bit, arg1: FarPointer16BitTo64Bit)
+	pub fn lfs_Register64Bit_FarPointer16BitTo64BitMemory(&mut self, arg0: Register64Bit, arg1: FarPointer16BitTo64BitMemory)
 	{
 		self.reserve_space_for_instruction();
 
@@ -33438,7 +33438,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Load `GS:r16` with far pointer from memory.
 	#[inline(always)]
-	pub fn lgs_Register16Bit_FarPointer16BitTo16Bit(&mut self, arg0: Register16Bit, arg1: FarPointer16BitTo16Bit)
+	pub fn lgs_Register16Bit_FarPointer16BitTo16BitMemory(&mut self, arg0: Register16Bit, arg1: FarPointer16BitTo16BitMemory)
 	{
 		self.reserve_space_for_instruction();
 
@@ -33467,7 +33467,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Load `GS:r32` with far pointer from memory.
 	#[inline(always)]
-	pub fn lgs_Register32Bit_FarPointer16BitTo32Bit(&mut self, arg0: Register32Bit, arg1: FarPointer16BitTo32Bit)
+	pub fn lgs_Register32Bit_FarPointer16BitTo32BitMemory(&mut self, arg0: Register32Bit, arg1: FarPointer16BitTo32BitMemory)
 	{
 		self.reserve_space_for_instruction();
 
@@ -33496,7 +33496,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Load `GS:r64` with far pointer from memory.
 	#[inline(always)]
-	pub fn lgs_Register64Bit_FarPointer16BitTo64Bit(&mut self, arg0: Register64Bit, arg1: FarPointer16BitTo64Bit)
+	pub fn lgs_Register64Bit_FarPointer16BitTo64BitMemory(&mut self, arg0: Register64Bit, arg1: FarPointer16BitTo64BitMemory)
 	{
 		self.reserve_space_for_instruction();
 
@@ -34152,7 +34152,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Load `SS:r16` with far pointer from memory.
 	#[inline(always)]
-	pub fn lss_Register16Bit_FarPointer16BitTo16Bit(&mut self, arg0: Register16Bit, arg1: FarPointer16BitTo16Bit)
+	pub fn lss_Register16Bit_FarPointer16BitTo16BitMemory(&mut self, arg0: Register16Bit, arg1: FarPointer16BitTo16BitMemory)
 	{
 		self.reserve_space_for_instruction();
 
@@ -34181,7 +34181,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Load `SS:r32` with far pointer from memory.
 	#[inline(always)]
-	pub fn lss_Register32Bit_FarPointer16BitTo32Bit(&mut self, arg0: Register32Bit, arg1: FarPointer16BitTo32Bit)
+	pub fn lss_Register32Bit_FarPointer16BitTo32BitMemory(&mut self, arg0: Register32Bit, arg1: FarPointer16BitTo32BitMemory)
 	{
 		self.reserve_space_for_instruction();
 
@@ -34210,7 +34210,7 @@ impl<'a> InstructionStream<'a>
 
 	/// Load `SS:r64` with far pointer from memory.
 	#[inline(always)]
-	pub fn lss_Register64Bit_FarPointer16BitTo64Bit(&mut self, arg0: Register64Bit, arg1: FarPointer16BitTo64Bit)
+	pub fn lss_Register64Bit_FarPointer16BitTo64BitMemory(&mut self, arg0: Register64Bit, arg1: FarPointer16BitTo64BitMemory)
 	{
 		self.reserve_space_for_instruction();
 

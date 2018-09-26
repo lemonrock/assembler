@@ -2,4 +2,4 @@
 // Copyright © 2018 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-impl_memory!(FarPointer16BitTo64Bit);
+impl_memory!(FarPointer16BitTo32BitMemory);

@@ -30,6 +30,10 @@ macro_rules! impl_memory
 		
 		impl Memory for $struct_name
 		{
+		}
+		
+		impl HasMemoryOperand for $struct_name
+		{
 			#[inline(always)]
 			fn memory_operand(self) -> MemoryOperand
 			{

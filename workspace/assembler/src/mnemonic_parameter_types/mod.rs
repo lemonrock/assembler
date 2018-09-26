@@ -13,8 +13,8 @@ pub mod immediates;
 pub mod memory_offsets;
 
 
-/// Memory Operands.
-pub mod memory_operands;
+/// Memory.
+pub mod memory;
 
 
 /// Registers.
