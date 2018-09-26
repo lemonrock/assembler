@@ -93,3 +93,42 @@ impl AsDisplacement for XMMRegister
 		(self as u8) << 4
 	}
 }
+
+impl XMMRegister
+{
+	/// Contains the floating-point return value from a function call when using the System V Application Binary Interface (ABI) for x86-64.
+	const SystemVApplicationBinaryInterface64FloatingPointFunctionReturn: Self = XMMRegister::XMM0;
+	
+	/// Contains the first floating-point function argument to a function call when using the System V Application Binary Interface for x86-64.
+	const SystemVApplicationBinaryInterface64FloatingPointFunctionArgument0: Self = XMMRegister::XMM0;
+	
+	/// Contains the second floating-point function argument to a function call when using the System V Application Binary Interface for x86-64.
+	const SystemVApplicationBinaryInterface64FloatingPointFunctionArgument1: Self = XMMRegister::XMM1;
+	
+	/// Contains the third floating-point function argument to a function call when using the System V Application Binary Interface for x86-64.
+	const SystemVApplicationBinaryInterface64FloatingPointFunctionArgument2: Self = XMMRegister::XMM2;
+	
+	/// Contains the fourth floating-point function argument to a function call when using the System V Application Binary Interface for x86-64.
+	const SystemVApplicationBinaryInterface64FloatingPointFunctionArgument3: Self = XMMRegister::XMM3;
+	
+	/// Contains the fifth floating-point function argument to a function call when using the System V Application Binary Interface for x86-64.
+	const SystemVApplicationBinaryInterface64FloatingPointFunctionArgument4: Self = XMMRegister::XMM4;
+	
+	/// Contains the sixth floating-point function argument to a function call when using the System V Application Binary Interface for x86-64.
+	const SystemVApplicationBinaryInterface64FloatingPointFunctionArgument5: Self = XMMRegister::XMM5;
+	
+	/// Contains the floating-point return value from a function call when using the Microsoft x64 Calling Convention.
+	const MicrosoftX64CallingConventionFloatingPointFunctionArgumentReturn: Self = XMMRegister::XMM0;
+	
+	/// Contains the first floating-point function argument to a function call when using the Microsoft x64 Calling Convention.
+	const MicrosoftX64CallingConventionFloatingPointFunctionArgument0: Self = XMMRegister::XMM0;
+	
+	/// Contains the second floating-point function argument to a function call when using the Microsoft x64 Calling Convention.
+	const MicrosoftX64CallingConventionFloatingPointFunctionArgument1: Self = XMMRegister::XMM1;
+	
+	/// Contains the third floating-point function argument to a function call when using the Microsoft x64 Calling Convention.
+	const MicrosoftX64CallingConventionFloatingPointFunctionArgument2: Self = XMMRegister::XMM2;
+	
+	/// Contains the fourth floating-point function argument to a function call when using the Microsoft x64 Calling Convention.
+	const MicrosoftX64CallingConventionFloatingPointFunctionArgument3: Self = XMMRegister::XMM3;
+}

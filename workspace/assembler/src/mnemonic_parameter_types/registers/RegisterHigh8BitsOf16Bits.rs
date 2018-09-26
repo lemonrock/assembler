@@ -8,16 +8,24 @@
 pub enum RegisterHigh8BitsOf16Bits
 {
 	/// Register 0.
+	///
+	/// Contains the integer return value from a function call when using the System V Application Binary Interface (ABI) for x86-64.
+	///
+	/// Contains the integer return value from a function call when using the Microsoft x64 Calling Convention.
 	AH = 4,
 	
 	/// Register 1.
 	///
-	/// The fourth function argument in the System V Application Binary Interface for x86-64.
+	/// Contains the fourth integer function argument to a function call when using the System V Application Binary Interface for x86-64.
+	///
+	/// Contains the first integer function argument to a function call when using the Microsoft x64 Calling Convention.
 	CH = 5,
 	
 	/// Register 2.
 	///
-	/// The third function argument in the System V Application Binary Interface for x86-64.
+	/// Contains the third integer function argument to a function call when using the System V Application Binary Interface for x86-64.
+	///
+	/// Contains the second integer function argument to a function call when using the Microsoft x64 Calling Convention.
 	DH = 6,
 	
 	/// Register 3.
@@ -53,4 +61,15 @@ impl Register for RegisterHigh8BitsOf16Bits
 
 impl GeneralPurposeRegister for RegisterHigh8BitsOf16Bits
 {
+	const SystemVApplicationBinaryInterface64IntegerFunctionReturn: Self = RegisterHigh8BitsOf16Bits::AH;
+	
+	const SystemVApplicationBinaryInterface64IntegerFunctionArgument2: Self = RegisterHigh8BitsOf16Bits::DH;
+	
+	const SystemVApplicationBinaryInterface64IntegerFunctionArgument3: Self = RegisterHigh8BitsOf16Bits::CH;
+	
+	const MicrosoftX64CallingConventionIntegerFunctionArgumentReturn: Self = RegisterHigh8BitsOf16Bits::AH;
+	
+	const MicrosoftX64CallingConventionIntegerFunctionArgument0: Self = RegisterHigh8BitsOf16Bits::CH;
+	
+	const MicrosoftX64CallingConventionIntegerFunctionArgument1: Self = RegisterHigh8BitsOf16Bits::DH;
 }

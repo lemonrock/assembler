@@ -10,16 +10,24 @@
 pub enum Register32Bit
 {
 	/// Register 0.
+	///
+	/// Contains the integer return value from a function call when using the System V Application Binary Interface (ABI) for x86-64.
+	///
+	/// Contains the integer return value from a function call when using the Microsoft x64 Calling Convention.
 	EAX = 0,
 	
 	/// Register 1.
 	///
-	/// The fourth function argument in the System V Application Binary Interface for x86-64.
+	/// Contains the fourth integer function argument to a function call when using the System V Application Binary Interface for x86-64.
+	///
+	/// Contains the first integer function argument to a function call when using the Microsoft x64 Calling Convention.
 	ECX = 1,
 
 	/// Register 2.
 	///
-	/// The third function argument in the System V Application Binary Interface for x86-64.
+	/// Contains the third integer function argument to a function call when using the System V Application Binary Interface for x86-64.
+	///
+	/// Contains the second integer function argument to a function call when using the Microsoft x64 Calling Convention.
 	EDX = 2,
 
 	/// Register 3.
@@ -35,24 +43,28 @@ pub enum Register32Bit
 	///
 	/// The 'source' operand in string instructions.
 	///
-	/// The second function argument in the System V Application Binary Interface for x86-64.
+	/// Contains the second integer function argument to a function call when using the System V Application Binary Interface for x86-64.
 	ESI = 6,
 
 	/// Register 7.
 	///
 	/// The 'destination' operand in string instructions.
 	///
-	/// The first function argument in the System V Application Binary Interface for x86-64.
+	/// Contains the first integer function argument to a function call when using the System V Application Binary Interface for x86-64.
 	EDI = 7,
 
 	/// Register 8.
 	///
-	/// The fifth function argument in the System V Application Binary Interface for x86-64.
+	/// Contains the fifth integer function argument to a function call when using the System V Application Binary Interface for x86-64.
+	///
+	/// Contains the third integer function argument to a function call when using the Microsoft x64 Calling Convention.
 	R8D = 8,
 
 	/// Register 9.
 	///
-	/// The sixth function argument in the System V Application Binary Interface for x86-64.
+	/// Contains the sixth integer function argument to a function call when using the System V Application Binary Interface for x86-64.
+	///
+	/// Contains the fourth integer function argument to a function call when using the Microsoft x64 Calling Convention.
 	R9D = 9,
 
 	/// Register 10.
@@ -103,4 +115,30 @@ impl Register for Register32Bit
 
 impl GeneralPurposeRegister for Register32Bit
 {
+	const SystemVApplicationBinaryInterface64IntegerFunctionReturn: Self = Register32Bit::EAX;
+	
+	const SystemVApplicationBinaryInterface64IntegerFunctionArgument2: Self = Register32Bit::EDX;
+	
+	const SystemVApplicationBinaryInterface64IntegerFunctionArgument3: Self = Register32Bit::ECX;
+	
+	const MicrosoftX64CallingConventionIntegerFunctionArgumentReturn: Self = Register32Bit::EAX;
+	
+	const MicrosoftX64CallingConventionIntegerFunctionArgument0: Self = Register32Bit::ECX;
+	
+	const MicrosoftX64CallingConventionIntegerFunctionArgument1: Self = Register32Bit::EDX;
+}
+
+impl LowGeneralPurposeRegister for Register32Bit
+{
+	const SystemVApplicationBinaryInterface64IntegerFunctionArgument0: Self = Register32Bit::EDI;
+	
+	const SystemVApplicationBinaryInterface64IntegerFunctionArgument1: Self = Register32Bit::ESI;
+	
+	const SystemVApplicationBinaryInterface64IntegerFunctionArgument4: Self = Register32Bit::R8D;
+	
+	const SystemVApplicationBinaryInterface64IntegerFunctionArgument5: Self = Register32Bit::R9D;
+	
+	const MicrosoftX64CallingConventionIntegerFunctionArgument2: Self = Register32Bit::R8D;
+	
+	const MicrosoftX64CallingConventionIntegerFunctionArgument3: Self = Register32Bit::R9D;
 }

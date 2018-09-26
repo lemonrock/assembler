@@ -10,16 +10,24 @@
 pub enum Register8Bit
 {
 	/// Register 0.
+	///
+	/// Contains the integer return value from a function call when using the System V Application Binary Interface (ABI) for x86-64.
+	///
+	/// Contains the integer return value from a function call when using the Microsoft x64 Calling Convention.
 	AL = 0,
 	
 	/// Register 1.
 	///
-	/// The fourth function argument in the System V Application Binary Interface for x86-64.
+	/// Contains the fourth integer function argument to a function call when using the System V Application Binary Interface for x86-64.
+	///
+	/// Contains the first integer function argument to a function call when using the Microsoft x64 Calling Convention.
 	CL = 1,
 	
 	/// Register 2.
 	///
-	/// The third function argument in the System V Application Binary Interface for x86-64.
+	/// Contains the third integer function argument to a function call when using the System V Application Binary Interface for x86-64.
+	///
+	/// Contains the second integer function argument to a function call when using the Microsoft x64 Calling Convention.
 	DL = 2,
 
 	/// Register 3.
@@ -35,24 +43,28 @@ pub enum Register8Bit
 	///
 	/// The 'source' operand in string instructions.
 	///
-	/// The second function argument in the System V Application Binary Interface for x86-64.
+	/// Contains the second integer function argument to a function call when using the System V Application Binary Interface for x86-64.
 	SIL = 6,
 
 	/// Register 7.
 	///
 	/// The 'destination' operand in string instructions.
 	///
-	/// The first function argument in the System V Application Binary Interface for x86-64.
+	/// Contains the first integer function argument to a function call when using the System V Application Binary Interface for x86-64.
 	DIL = 7,
 
 	/// Register 8.
 	///
-	/// The fifth function argument in the System V Application Binary Interface for x86-64.
+	/// Contains the fifth integer function argument to a function call when using the System V Application Binary Interface for x86-64.
+	///
+	/// Contains the third integer function argument to a function call when using the Microsoft x64 Calling Convention.
 	R8B = 8,
 
 	/// Register 9.
 	///
-	/// The sixth function argument in the System V Application Binary Interface for x86-64.
+	/// Contains the sixth integer function argument to a function call when using the System V Application Binary Interface for x86-64.
+	///
+	/// Contains the fourth integer function argument to a function call when using the Microsoft x64 Calling Convention.
 	R9B = 9,
 
 	/// Register 10.
@@ -105,4 +117,30 @@ impl Register for Register8Bit
 
 impl GeneralPurposeRegister for Register8Bit
 {
+	const SystemVApplicationBinaryInterface64IntegerFunctionReturn: Self = Register8Bit::AL;
+	
+	const SystemVApplicationBinaryInterface64IntegerFunctionArgument2: Self = Register8Bit::DL;
+	
+	const SystemVApplicationBinaryInterface64IntegerFunctionArgument3: Self = Register8Bit::CL;
+	
+	const MicrosoftX64CallingConventionIntegerFunctionArgumentReturn: Self = Register8Bit::AL;
+	
+	const MicrosoftX64CallingConventionIntegerFunctionArgument0: Self = Register8Bit::CL;
+	
+	const MicrosoftX64CallingConventionIntegerFunctionArgument1: Self = Register8Bit::DL;
+}
+
+impl LowGeneralPurposeRegister for Register8Bit
+{
+	const SystemVApplicationBinaryInterface64IntegerFunctionArgument0: Self = Register8Bit::DIL;
+	
+	const SystemVApplicationBinaryInterface64IntegerFunctionArgument1: Self = Register8Bit::SIL;
+	
+	const SystemVApplicationBinaryInterface64IntegerFunctionArgument4: Self = Register8Bit::R8B;
+	
+	const SystemVApplicationBinaryInterface64IntegerFunctionArgument5: Self = Register8Bit::R9B;
+	
+	const MicrosoftX64CallingConventionIntegerFunctionArgument2: Self = Register8Bit::R8B;
+	
+	const MicrosoftX64CallingConventionIntegerFunctionArgument3: Self = Register8Bit::R9B;
 }

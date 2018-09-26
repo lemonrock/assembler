@@ -6,6 +6,7 @@ use super::*;
 
 
 include!("GeneralPurposeRegister.rs");
+include!("LowGeneralPurposeRegister.rs");
 include!("MMRegister.rs");
 include!("Register.rs");
 include!("Register8Bit.rs");
