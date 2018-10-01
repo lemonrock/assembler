@@ -109,8 +109,8 @@ impl<'a> InstructionStream<'a>
 		
 		self.executable_anonymous_memory_map.make_executable();
 		
-		let length = self.byte_emitter.instruction_pointer - self.start_instruction_pointer();
-		let slice = unsafe { from_raw_parts(self.start_instruction_pointer() as *const u8, length) };
+		let length = self.byte_emitter.instruction_pointer - self.byte_emitter.start_instruction_pointer;
+		let slice = unsafe { from_raw_parts(self.byte_emitter.start_instruction_pointer as *const u8, length) };
 		(slice, hints)
 	}
 	
