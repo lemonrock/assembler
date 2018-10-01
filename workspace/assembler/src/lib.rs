@@ -8,6 +8,7 @@
 #![deny(missing_docs)]
 #![deny(unreachable_patterns)]
 #![feature(core_intrinsics)]
+#![feature(min_const_fn)]
 
 
 //! #assembler

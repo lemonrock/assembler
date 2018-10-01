@@ -18,65 +18,186 @@ impl PrefixGroup2 for MemoryOperand
 	}
 }
 
-impl MemoryOrRegister for MemoryOperand
+// Implementation details for emitting the Mod.R/M byte, scaled index byte (SIB) and displacement.
+impl MemoryOperand
 {
+	const Mod_0b00: u8 = 0x00;
+	const Mod_0b01: u8 = 0x40;
+	const Mod_0b10: u8 = 0x80;
+	
+	const NoIndex: u8 = Self::index_register_shifted_(0b100);
+	
+	const BaseRegisterIsRbpOrR13: u8 = 0b101;
+	
+	/// Special case for `RIP+disp32` (`disp32` is a 32-bit signed displacement).
 	#[inline(always)]
-	fn emit_mod_rm_sib(self, byte_emitter: &mut ByteEmitter, reg: impl Register)
+	fn emit_mod_rm_sib_for_relative_instruction_pointer_addressing(self, byte_emitter: &mut ByteEmitter, rrr: u8)
 	{
-		const ScaleBitsMask: u8 = 0b1100_0000;
-		const ScaleShift: u8 = 6;
-		const MidBitsMask: u8 = 0b0011_1000;
-		const MidBitsShift: u8 = 3;
-		const Mod40: u8 = 0x40;
-		const Mod80: u8 = 0x80;
+		// ModR/M byte.
+		Self::emit_mod_r_m_byte(byte_emitter, Self::Mod_0b00, rrr, 0b101);
 		
-		// Every path we take needs these bits for the Mod.r/m byte.
-		let rrr = (reg.index() << MidBitsShift) & 0b0011_1000;
+		// No scaled index byte (SIB).
 		
-		// Special case for `RIP+disp32` (`disp32` is a 32-bit signed displacement).
-		if self.has_relative_instruction_pointer_offset()
+		// Displacement.
+		self.emit_displacement_32bit(byte_emitter)
+	}
+	
+	/// Special case if there is no base register (uses `RBP` as base implicitly) BUT displacement is always 32-bit - there is no 8-bit optimal encoding of it.
+	#[inline(always)]
+	fn emit_mod_rm_sib_if_no_base_register(self, byte_emitter: &mut ByteEmitter, rrr: u8)
+	{
+		// ModR/M byte.
+		Self::emit_mod_r_m_byte(byte_emitter, Self::Mod_0b00, rrr, 0b100);
+		
+		// Scaled index byte (SIB).
 		{
-			let mod_byte = 0x00 | rrr | 0x05;
-			byte_emitter.emit_u8(mod_byte);
+			const NoBaseRegister: u8 = 0b101;
 			
-			self.get_displacement().displacement().emit(byte_emitter);
-			return
-		}
-		
-		// Special case if there is no base register (uses `RBP` as base implicitly) BUT displacement is always 32-bit - there is no 8-bit optimal encoding of it.
-		if !self.has_base_register()
-		{
-			let mod_byte = 0x00 | rrr | 0x04;
-			byte_emitter.emit_u8(mod_byte);
-			
-			let scaled_index_byte = if self.has_index_register()
+			let (scale, index) = if self.has_index_register()
 			{
-				((self.get_index_scale() << ScaleShift) & ScaleBitsMask)
-				| ((self.get_index_register_index() << MidBitsShift) & MidBitsMask)
-				| 0x05
+				(self.index_scale_shifted(), self.index_register_shifted())
 			}
 			else
 			{
-				0x00 | 0x20 | 0x05
+				const NoScale: u8 = MemoryOperand::index_scale_shifted_(0b00);
+				
+				(NoScale, Self::NoIndex)
 			};
-			byte_emitter.emit_u8(scaled_index_byte);
 			
-			self.get_displacement().displacement().emit(byte_emitter);
-			return
+			Self::emit_scaled_index_byte(byte_emitter, scale, index, NoBaseRegister)
 		}
 		
+		// Displacement.
+		self.emit_displacement_32bit(byte_emitter)
+	}
+	
+	#[inline(always)]
+	fn emit_mod_rm_sib_for_all_other_addressing_modes(self, byte_emitter: &mut ByteEmitter, rrr: u8)
+	{
 		let bbb = self.get_base_register_index() & 0x07;
 		
-		#[inline(always)]
-		fn bbb_is_not_RBP_or_R13(bbb: u8) -> bool
-		{
-			bbb != 0x05
-		}
+		const BaseRegisterIsRspOrR12: u8 = 0b100;
 		
 		#[inline(always)]
 		fn bbb_is_RSP_or_R12(bbb: u8) -> bool
 		{
-			bbb == 0x04
+			bbb == BaseRegisterIsRspOrR12
+		}
+		
+		let (displacement, mod_) = self.displacement_and_mod(bbb);
+		
+		if self.has_index_register()
+		{
+			// ModR/M byte.
+			Self::emit_mod_r_m_byte(byte_emitter, mod_, rrr, BaseRegisterIsRspOrR12);
+			
+			// Scaled index byte (SIB).
+			{
+				let scale = self.index_scale_shifted();
+				let index = self.index_register_shifted();
+				Self::emit_scaled_index_byte(byte_emitter, scale, index, bbb)
+			}
+			
+			// Displacement.
+			Self::emit_displacement_if_not_zero(byte_emitter, mod_, displacement)
+		}
+		// Is the base register sitting in the `EIP+disp32` or `RIP+disp32` (where `disp32` is a 32-bit displacement) 'row' of Intel's encoding table?
+		else if bbb_is_RSP_or_R12(bbb)
+		{
+			// ModR/M byte.
+			Self::emit_mod_r_m_byte(byte_emitter, mod_, rrr, BaseRegisterIsRspOrR12);
+			
+			// Scaled index byte (SIB).
+			{
+				let scale = self.index_scale_shifted();
+				Self::emit_scaled_index_byte(byte_emitter, scale, Self::NoIndex, BaseRegisterIsRspOrR12)
+			}
+			
+			// Displacement.
+			Self::emit_displacement_if_not_zero(byte_emitter, mod_, displacement)
+		}
+		else
+		{
+			// ModR/M byte.
+			Self::emit_mod_r_m_byte(byte_emitter, mod_, rrr, bbb);
+			
+			// No scaled index byte (SIB).
+			
+			// Displacement.
+			Self::emit_displacement_if_not_zero(byte_emitter, mod_, displacement)
+		}
+	}
+	
+	#[inline(always)]
+	fn emit_mod_r_m_byte(byte_emitter: &mut ByteEmitter, mod_: u8, rrr: u8, base: u8)
+	{
+		let mod_r_m_byte = mod_ | rrr | base;
+		byte_emitter.emit_u8(mod_r_m_byte)
+	}
+	
+	#[inline(always)]
+	fn emit_scaled_index_byte(byte_emitter: &mut ByteEmitter, scale: u8, index: u8, base_register: u8)
+	{
+		let scaled_index_byte = scale | index | base_register;
+		byte_emitter.emit_u8(scaled_index_byte)
+	}
+	
+	#[inline(always)]
+	fn emit_displacement_32bit(self, byte_emitter: &mut ByteEmitter)
+	{
+		self.get_displacement().displacement().emit(byte_emitter)
+	}
+	
+	#[inline(always)]
+	fn emit_displacement_if_not_zero(byte_emitter: &mut ByteEmitter, mod_: u8, displacement: i32)
+	{
+		if mod_ == Self::Mod_0b01
+		{
+			Immediate8Bit(displacement as i8).displacement().emit(byte_emitter)
+		}
+		else if mod_ == Self::Mod_0b10
+		{
+			Immediate32Bit(displacement).displacement().emit(byte_emitter)
+		}
+	}
+	
+	#[inline(always)]
+	fn index_register_shifted(self) -> u8
+	{
+		Self::index_register_shifted_(self.get_index_register_index())
+	}
+	
+	#[inline(always)]
+	const fn index_register_shifted_(index_register_index: u8) -> u8
+	{
+		const ScaleRegisterBitsMask: u8 = 0b0011_1000;
+		const ScaleRegisterBitsShift: u8 = 3;
+		
+		(index_register_index << ScaleRegisterBitsShift) & ScaleRegisterBitsMask
+	}
+	
+	#[inline(always)]
+	fn index_scale_shifted(self) -> u8
+	{
+		Self::index_scale_shifted_(self.get_index_scale())
+	}
+	
+	#[inline(always)]
+	const fn index_scale_shifted_(index_scale: u8) -> u8
+	{
+		const ScaleBitsMask: u8 = 0b1100_0000;
+		const ScaleShift: u8 = 6;
+		
+		(index_scale << ScaleShift) & ScaleBitsMask
+	}
+	
+	#[inline(always)]
+	fn displacement_and_mod(self, bbb: u8) -> (i32, u8)
+	{
+		#[inline(always)]
+		fn bbb_is_not_RBP_or_R13(bbb: u8) -> bool
+		{
+			bbb != MemoryOperand::BaseRegisterIsRbpOrR13
 		}
 		
 		// This logic determines what the value of the mod bits will be.
@@ -84,49 +205,47 @@ impl MemoryOrRegister for MemoryOperand
 		let displacement = self.get_displacement().0;
 		let mod_ = if displacement < -128 || displacement >= 128
 		{
-			Mod80
+			Self::Mod_0b10
 		}
-		// RBP or R13
 		else if displacement == 0 && bbb_is_not_RBP_or_R13(bbb)
 		{
-			0x00
+			Self::Mod_0b00
 		}
 		else
 		{
-			Mod40
+			Self::Mod_0b01
 		};
+		(displacement, mod_)
+	}
+	
+	#[inline(always)]
+	fn rrr(reg: impl Register) -> u8
+	{
+		const ModRMRegisterBitsMask: u8 = 0b0011_1000;
+		const ModRMRegisterBitsShift: u8 = 3;
 		
-		if self.has_index_register()
+		(reg.index() << ModRMRegisterBitsShift) & ModRMRegisterBitsMask
+	}
+}
+
+impl MemoryOrRegister for MemoryOperand
+{
+	#[inline(always)]
+	fn emit_mod_rm_sib(self, byte_emitter: &mut ByteEmitter, reg: impl Register)
+	{
+		let rrr = Self::rrr(reg);
+		
+		if self.has_relative_instruction_pointer_offset()
 		{
-			let mod_byte = mod_ | rrr | 0x04;
-			byte_emitter.emit_u8(mod_byte);
-			
-			let scaled_index_byte = ((self.get_index_scale() << ScaleShift) & ScaleBitsMask) | ((self.get_index_register_index() << MidBitsShift) & MidBitsMask) | bbb;
-			byte_emitter.emit_u8(scaled_index_byte);
+			self.emit_mod_rm_sib_for_relative_instruction_pointer_addressing(byte_emitter, rrr)
 		}
-		// Is the base register sitting in the `EIP+disp32` or `RIP+disp32` (where `disp32` is a 32-bit displacement) 'row' of Intel's encoding table?
-		else if bbb_is_RSP_or_R12(bbb)
+		else if self.has_base_register()
 		{
-			let mod_byte = mod_ | rrr | 0x04;
-			byte_emitter.emit_u8(mod_byte);
-			
-			let scaled_index_byte = ((self.get_index_scale() << ScaleShift) & ScaleBitsMask) | 0x20 | 0x04;
-			byte_emitter.emit_u8(scaled_index_byte);
+			self.emit_mod_rm_sib_for_all_other_addressing_modes(byte_emitter, rrr)
 		}
 		else
 		{
-			let mod_byte = mod_ | rrr | bbb;
-			byte_emitter.emit_u8(mod_byte);
-		}
-		
-		// Write displacement if it is not zero.
-		if mod_ == Mod40
-		{
-			Immediate8Bit(displacement as i8).displacement().emit(byte_emitter)
-		}
-		else if mod_ == Mod80
-		{
-			Immediate32Bit(displacement).displacement().emit(byte_emitter)
+			self.emit_mod_rm_sib_if_no_base_register(byte_emitter, rrr)
 		}
 	}
 	
