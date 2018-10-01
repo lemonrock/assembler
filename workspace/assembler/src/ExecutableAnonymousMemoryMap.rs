@@ -26,6 +26,7 @@ impl ExecutableAnonymousMemoryMap
 	/// `length` is rounded up to the nearest power of two, and is floored at the smallest page size (4Kb).
 	///
 	/// Memory is created using an anonymous, shared mmap with no access rights (not even read) which is then locked (`mlock`'d).
+	#[cfg_attr(not(any(target_os = "android", target_os = "linux")), allow(unused_variables))]
 	#[inline(always)]
 	pub fn new(length: usize, allocate_in_first_2Gb: bool) -> io::Result<Self>
 	{
@@ -42,11 +43,24 @@ impl ExecutableAnonymousMemoryMap
 			length.next_power_of_two()
 		};
 		
-		let mut flags = MAP_ANON | MAP_SHARED;
-		if try_to_allocate_in_first_2Gb
+		
+		let flags =
 		{
-			flags |= MAP_32BIT
-		}
+			#[cfg(any(target_os = "android", target_os = "linux"))]
+			{
+				let mut flags = MAP_ANON | MAP_SHARED;
+				if allocate_in_first_2Gb
+				{
+					flags |= MAP_32BIT
+				}
+				flags
+			}
+			
+			#[cfg(not(any(target_os = "android", target_os = "linux")))]
+			{
+				MAP_ANON | MAP_SHARED
+			}
+		};
 		
 		let result = unsafe { mmap(null_mut(), aligned_length, PROT_NONE, flags, NoFileDescriptor, NoOffset) };
 		if unlikely!(result == MAP_FAILED)
