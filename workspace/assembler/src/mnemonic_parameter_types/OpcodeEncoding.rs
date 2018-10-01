@@ -17,7 +17,7 @@ impl<R: Register> OpcodeEncoding for R
 	fn emit_2(self, instruction_stream: &mut InstructionStream, opcode1: u8)
 	{
 		let rcode = self;
-		let delta = rcode.index() & 0x07;
+		let delta = rcode.index_truncated_to_lowest_3_bits();
 		instruction_stream.opcode_1(opcode1 + delta);
 	}
 	
@@ -25,7 +25,7 @@ impl<R: Register> OpcodeEncoding for R
 	fn emit_3(self, instruction_stream: &mut InstructionStream, opcode1: u8, opcode2: u8)
 	{
 		let rcode = self;
-		let delta = rcode.index() & 0x07;
+		let delta = rcode.index_truncated_to_lowest_3_bits();
 		instruction_stream.opcode_1(opcode1);
 		instruction_stream.opcode_1(opcode2 + delta);
 	}

@@ -25,6 +25,13 @@ pub trait Register: Copy + Sized + Into<u8> + Default
 	{
 		self.index() > 7
 	}
+	
+	#[doc(hidden)]
+	#[inline(always)]
+	fn index_truncated_to_lowest_3_bits(self) -> u8
+	{
+		self.index() & 0b111
+	}
 }
 
 impl<R: Register> MemoryOrRegister for R
@@ -32,11 +39,14 @@ impl<R: Register> MemoryOrRegister for R
 	#[inline(always)]
 	fn emit_mod_rm_sib(self, byte_emitter: &mut ByteEmitter, reg: impl Register)
 	{
-		const ModRegisterAddressingMode: u8 = 0b11;
-		
 		let rm = self;
-		let mod_rm_and_sib = (ModRegisterAddressingMode << 6) | ((reg.index() << 3) & 0b0011_1000) | (rm.index() & 0x07);
-		byte_emitter.emit_u8(mod_rm_and_sib)
+		
+		const mod_: u8 = MemoryOperand::ModRegisterAddressingMode;
+		let rrr = MemoryOperand::rrr(reg);
+		let bbb = rm.index_truncated_to_lowest_3_bits();
+		
+		let mod_rm_byte = mod_ | rrr | bbb;
+		byte_emitter.emit_u8(mod_rm_byte)
 	}
 	
 	#[inline(always)]

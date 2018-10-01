@@ -479,20 +479,25 @@ impl MemoryOperand
 // Implementation details for emitting the Mod.R/M byte, scaled index byte (SIB) and displacement.
 impl MemoryOperand
 {
-	const Mod_0b00: u8 = 0x00;
-	const Mod_0b01: u8 = 0x40;
-	const Mod_0b10: u8 = 0x80;
+	const ModBitsShift: u8 = 6;
+	
+	const Mod_0b00: u8 = 0b00 << Self::ModBitsShift;
+	const Mod_0b01: u8 = 0b01 << Self::ModBitsShift;
+	const Mod_0b10: u8 = 0b10 << Self::ModBitsShift;
+	pub(crate) const ModRegisterAddressingMode: u8 = 0b11 << Self::ModBitsShift;
 	
 	const NoIndex: u8 = Self::index_register_shifted_(0b100);
 	
-	const BaseRegisterIsRbpOrR13: u8 = 0b101;
+	const RegisterRspOrR12: u8 = 0b100;
+	
+	const RegisterRbpOrR13: u8 = 0b101;
 	
 	/// Special case for `RIP+disp32` (`disp32` is a 32-bit signed displacement).
 	#[inline(always)]
 	fn emit_mod_rm_sib_for_relative_instruction_pointer_addressing(self, byte_emitter: &mut ByteEmitter, rrr: u8)
 	{
 		// ModR/M byte.
-		Self::emit_mod_r_m_byte(byte_emitter, Self::Mod_0b00, rrr, 0b101);
+		Self::emit_mod_r_m_byte(byte_emitter, Self::Mod_0b00, rrr, Self::RegisterRbpOrR13);
 		
 		// No scaled index byte (SIB).
 		
@@ -505,12 +510,10 @@ impl MemoryOperand
 	fn emit_mod_rm_sib_if_no_base_register(self, byte_emitter: &mut ByteEmitter, rrr: u8)
 	{
 		// ModR/M byte.
-		Self::emit_mod_r_m_byte(byte_emitter, Self::Mod_0b00, rrr, 0b100);
+		Self::emit_mod_r_m_byte(byte_emitter, Self::Mod_0b00, rrr, Self::RegisterRspOrR12);
 		
 		// Scaled index byte (SIB).
 		{
-			const NoBaseRegister: u8 = 0b101;
-			
 			let (scale, index) = if self.has_index_register()
 			{
 				(self.index_scale_shifted(), self.index_register_shifted())
@@ -522,7 +525,7 @@ impl MemoryOperand
 				(NoScale, Self::NoIndex)
 			};
 			
-			Self::emit_scaled_index_byte(byte_emitter, scale, index, NoBaseRegister)
+			Self::emit_scaled_index_byte(byte_emitter, scale, index, Self::RegisterRbpOrR13)
 		}
 		
 		// Displacement.
@@ -532,14 +535,12 @@ impl MemoryOperand
 	#[inline(always)]
 	fn emit_mod_rm_sib_for_all_other_addressing_modes(self, byte_emitter: &mut ByteEmitter, rrr: u8)
 	{
-		let bbb = self.get_base_register_index() & 0x07;
-		
-		const BaseRegisterIsRspOrR12: u8 = 0b100;
+		let bbb = self.get_base_register().index_truncated_to_lowest_3_bits();
 		
 		#[inline(always)]
 		fn bbb_is_RSP_or_R12(bbb: u8) -> bool
 		{
-			bbb == BaseRegisterIsRspOrR12
+			bbb == MemoryOperand::RegisterRspOrR12
 		}
 		
 		let (displacement, mod_) = self.displacement_and_mod(bbb);
@@ -547,7 +548,7 @@ impl MemoryOperand
 		if self.has_index_register()
 		{
 			// ModR/M byte.
-			Self::emit_mod_r_m_byte(byte_emitter, mod_, rrr, BaseRegisterIsRspOrR12);
+			Self::emit_mod_r_m_byte(byte_emitter, mod_, rrr, Self::RegisterRspOrR12);
 			
 			// Scaled index byte (SIB).
 			{
@@ -563,12 +564,12 @@ impl MemoryOperand
 		else if bbb_is_RSP_or_R12(bbb)
 		{
 			// ModR/M byte.
-			Self::emit_mod_r_m_byte(byte_emitter, mod_, rrr, BaseRegisterIsRspOrR12);
+			Self::emit_mod_r_m_byte(byte_emitter, mod_, rrr, Self::RegisterRspOrR12);
 			
 			// Scaled index byte (SIB).
 			{
 				let scale = self.index_scale_shifted();
-				Self::emit_scaled_index_byte(byte_emitter, scale, Self::NoIndex, BaseRegisterIsRspOrR12)
+				Self::emit_scaled_index_byte(byte_emitter, scale, Self::NoIndex, Self::RegisterRspOrR12)
 			}
 			
 			// Displacement.
@@ -655,7 +656,7 @@ impl MemoryOperand
 		#[inline(always)]
 		fn bbb_is_not_RBP_or_R13(bbb: u8) -> bool
 		{
-			bbb != MemoryOperand::BaseRegisterIsRbpOrR13
+			bbb != MemoryOperand::RegisterRbpOrR13
 		}
 		
 		// This logic determines what the value of the mod bits will be.
@@ -677,7 +678,7 @@ impl MemoryOperand
 	}
 	
 	#[inline(always)]
-	fn rrr(reg: impl Register) -> u8
+	pub(crate) fn rrr(reg: impl Register) -> u8
 	{
 		const ModRMRegisterBitsMask: u8 = 0b0011_1000;
 		const ModRMRegisterBitsShift: u8 = 3;
