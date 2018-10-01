@@ -5,14 +5,6 @@
 /// Memory.
 pub trait Memory: From<MemoryOperand> + Into<MemoryOperand> + Sized
 {
-	/// Create a new memory operand using the `displacement` form.
-	#[inline(always)]
-	fn displacement(displacement: Immediate32Bit) -> Self;
-	
-	/// Create a new memory operand using the `segment:displacement` form.
-	#[inline(always)]
-	fn segment_displacement(segment_register: SegmentRegister, displacement: Immediate32Bit) -> Self;
-	
 	/// Create a new memory operand using the `RIP` (relative instruction pointer) form.
 	#[inline(always)]
 	fn relative_instruction_pointer_relative() -> Self;
@@ -28,6 +20,14 @@ pub trait Memory: From<MemoryOperand> + Into<MemoryOperand> + Sized
 	/// Create a new memory operand using the `segment:RIP+displacement` (relative instruction pointer) form.
 	#[inline(always)]
 	fn segment_relative_instruction_pointer_relative_displacement(segment_register: SegmentRegister, displacement: Immediate32Bit) -> Self;
+	
+	/// Create a new memory operand using the `displacement` form.
+	#[inline(always)]
+	fn displacement(displacement: Immediate32Bit) -> Self;
+	
+	/// Create a new memory operand using the `segment:displacement` form.
+	#[inline(always)]
+	fn segment_displacement(segment_register: SegmentRegister, displacement: Immediate32Bit) -> Self;
 	
 	/// Create a new memory operand using the `base64` form.
 	///
@@ -77,6 +77,14 @@ pub trait Memory: From<MemoryOperand> + Into<MemoryOperand> + Sized
 	#[inline(always)]
 	fn segment_base_32_displacement(segment_register: SegmentRegister, base_32: Register32Bit, displacement: Immediate32Bit) -> Self;
 	
+	/// Create a new memory operand using the `(index64,scale)` form where `scale` is `1`.
+	#[inline(always)]
+	fn index_64(index_64: Register64Bit) -> Self;
+	
+	/// Create a new memory operand using the `(index32,scale)` form where `scale` is `1`.
+	#[inline(always)]
+	fn index_32(index_32: Register32Bit) -> Self;
+	
 	/// Create a new memory operand using the `(index64,scale)` form.
 	#[inline(always)]
 	fn index_64_scale(index_64: Register64Bit, scale: IndexScale) -> Self;
@@ -108,6 +116,14 @@ pub trait Memory: From<MemoryOperand> + Into<MemoryOperand> + Sized
 	/// Create a new memory operand using the `segment:displacement:(index32,scale)` form.
 	#[inline(always)]
 	fn segment_index_32_scale_displacement(segment_register: SegmentRegister, index_32: Register32Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self;
+	
+	/// Create a new memory operand using the `(base64,index64,scale)` form where `scale` is 1.
+	#[inline(always)]
+	fn base_64_index_64(base_64: Register64Bit, index_64: Register64Bit) -> Self;
+	
+	/// Create a new memory operand using the `(base32,index32,scale)` form where `scale` is 1.
+	#[inline(always)]
+	fn base_32_index_32(base_32: Register32Bit, index_32: Register32Bit) -> Self;
 	
 	/// Create a new memory operand using the `(base64,index64,scale)` form.
 	#[inline(always)]

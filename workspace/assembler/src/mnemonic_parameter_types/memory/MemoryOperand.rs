@@ -218,18 +218,6 @@ impl MemoryOrRegister for MemoryOperand
 impl Memory for MemoryOperand
 {
 	#[inline(always)]
-	fn displacement(displacement: Immediate32Bit) -> Self
-	{
-		Self::new(displacement, Self::NoBaseOrIndexRegister, Self::NoBaseOrIndexRegister, IndexScale::x1, Self::NoSegmentRegister, false, false)
-	}
-	
-	#[inline(always)]
-	fn segment_displacement(segment_register: SegmentRegister, displacement: Immediate32Bit) -> Self
-	{
-		Self::new(displacement, Self::NoBaseOrIndexRegister, Self::NoBaseOrIndexRegister, IndexScale::x1, Some(segment_register), false, false)
-	}
-	
-	#[inline(always)]
 	fn relative_instruction_pointer_relative() -> Self
 	{
 		Self::new(Immediate32Bit(0), Self::NoBaseOrIndexRegister, Self::NoBaseOrIndexRegister, IndexScale::x1, Self::NoSegmentRegister, false, true)
@@ -251,6 +239,18 @@ impl Memory for MemoryOperand
 	fn segment_relative_instruction_pointer_relative_displacement(segment_register: SegmentRegister, displacement: Immediate32Bit) -> Self
 	{
 		Self::new(displacement, Self::NoBaseOrIndexRegister, Self::NoBaseOrIndexRegister, IndexScale::x1, Some(segment_register), false, true)
+	}
+	
+	#[inline(always)]
+	fn displacement(displacement: Immediate32Bit) -> Self
+	{
+		Self::new(displacement, Self::NoBaseOrIndexRegister, Self::NoBaseOrIndexRegister, IndexScale::x1, Self::NoSegmentRegister, false, false)
+	}
+	
+	#[inline(always)]
+	fn segment_displacement(segment_register: SegmentRegister, displacement: Immediate32Bit) -> Self
+	{
+		Self::new(displacement, Self::NoBaseOrIndexRegister, Self::NoBaseOrIndexRegister, IndexScale::x1, Some(segment_register), false, false)
 	}
 	
 	#[inline(always)]
@@ -302,6 +302,18 @@ impl Memory for MemoryOperand
 	}
 	
 	#[inline(always)]
+	fn index_64(index_64: Register64Bit) -> Self
+	{
+		Self::new(Immediate32Bit(0), Self::NoBaseOrIndexRegister, Some(index_64), IndexScale::x1, Self::NoSegmentRegister, false, false)
+	}
+	
+	#[inline(always)]
+	fn index_32(index_32: Register32Bit) -> Self
+	{
+		Self::new(Immediate32Bit(0), Self::NoBaseOrIndexRegister, Some(index_32), IndexScale::x1, Self::NoSegmentRegister, true, false)
+	}
+	
+	#[inline(always)]
 	fn index_64_scale(index_64: Register64Bit, scale: IndexScale) -> Self
 	{
 		Self::new(Immediate32Bit(0), Self::NoBaseOrIndexRegister, Some(index_64), scale, Self::NoSegmentRegister, false, false)
@@ -350,11 +362,22 @@ impl Memory for MemoryOperand
 	}
 	
 	#[inline(always)]
+	fn base_64_index_64(base_64: Register64Bit, index_64: Register64Bit) -> Self
+	{
+		Self::new(Immediate32Bit(0), Some(base_64), Some(index_64), IndexScale::x1, Self::NoSegmentRegister, false, false)
+	}
+	
+	#[inline(always)]
+	fn base_32_index_32(base_32: Register32Bit, index_32: Register32Bit) -> Self
+	{
+		Self::new(Immediate32Bit(0), Some(base_32), Some(index_32), IndexScale::x1, Self::NoSegmentRegister, true, false)
+	}
+	
+	#[inline(always)]
 	fn base_64_index_64_scale(base_64: Register64Bit, index_64: Register64Bit, scale: IndexScale) -> Self
 	{
 		Self::new(Immediate32Bit(0), Some(base_64), Some(index_64), scale, Self::NoSegmentRegister, false, false)
 	}
-	
 	#[inline(always)]
 	fn base_32_index_32_scale(base_32: Register32Bit, index_32: Register32Bit, scale: IndexScale) -> Self
 	{
