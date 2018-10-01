@@ -45,8 +45,7 @@ impl<R: Register> MemoryOrRegister for R
 		let rrr = MemoryOperand::rrr(reg);
 		let bbb = rm.index_truncated_to_lowest_3_bits();
 		
-		let mod_rm_byte = mod_ | rrr | bbb;
-		byte_emitter.emit_u8(mod_rm_byte)
+		byte_emitter.emit_mod_r_m_byte(mod_, rrr, bbb);
 	}
 	
 	#[inline(always)]
