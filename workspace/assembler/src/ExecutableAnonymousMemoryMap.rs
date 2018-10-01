@@ -27,7 +27,7 @@ impl ExecutableAnonymousMemoryMap
 	///
 	/// Memory is created using an anonymous, shared mmap with no access rights (not even read) which is then locked (`mlock`'d).
 	#[inline(always)]
-	pub fn new(length: usize) -> io::Result<Self>
+	pub fn new(length: usize, allocate_in_first_2Gb: bool) -> io::Result<Self>
 	{
 		const PageSize: usize = 4096;
 		const NoFileDescriptor: i32 = -1;
@@ -42,7 +42,13 @@ impl ExecutableAnonymousMemoryMap
 			length.next_power_of_two()
 		};
 		
-		let result = unsafe { mmap(null_mut(), aligned_length, PROT_NONE, MAP_ANON | MAP_SHARED, NoFileDescriptor, NoOffset) };
+		let mut flags = MAP_ANON | MAP_SHARED;
+		if try_to_allocate_in_first_2Gb
+		{
+			flags |= MAP_32BIT
+		}
+		
+		let result = unsafe { mmap(null_mut(), aligned_length, PROT_NONE, flags, NoFileDescriptor, NoOffset) };
 		if unlikely!(result == MAP_FAILED)
 		{
 			Err(io::Error::last_os_error())

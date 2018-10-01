@@ -880,6 +880,24 @@ impl<'a> InstructionStream<'a>
 	{
 		RelativeAddress32Bit(((absolute_address.absolute_virtual_address() as isize) - ((self.instruction_pointer() + offset_to_end_of_opcode_encoding) as isize)) as i32)
 	}
+	
+	/// Attempts to calculate a Jump destination which uses an index register and scale but an absolute offset from address 0.
+	///
+	/// Will panic in debug builds and will be useless in release builds if the computed displacement required does not exist in the first 2Gb.
+	///
+	/// Typically used for when building jump tables and for other uses of 'computed jumps'.
+	///
+	/// Make sure the argument `allocate_in_first_2Gb` to `ExecutableAnonymousMemoryMap::new()` is `true`.
+	#[inline(always)]
+	pub fn jmp_AnyMemory64Bit_within_first_2Gb(&self, index_register: Register64Bit, scale: IndexScale) -> Any64BitMemory
+	{
+		const SizeOfJump: usize = 3;
+		const SizeOfDisplacement: usize = 4;
+		const offset_to_end_of_opcode_encoding: usize = SizeOfJump + SizeOfDisplacement;
+		let absolute_displacement = (self.instruction_pointer() + offset_to_end_of_opcode_encoding) as u64;
+		debug_assert!(absolute_displacement <= ::std::isize::MAX as usize, "absolute_displacement '{}' exceeds ::std::isize::MAX", absolute_displacement);
+		self.jmp_AnyMemory64Bit(Any64BitMemory::index_64_scale_displacement(index_register, scale, absolute_displacement.into()))
+	}
 }
 
 include!("InstructionStream.instructions.rs");
