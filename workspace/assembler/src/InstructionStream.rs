@@ -335,7 +335,7 @@ impl<'a> InstructionStream<'a>
 	
 	/// Rewinds by the length of a byte (1 byte) and then emits `byte`.
 	#[inline(always)]
-	pub(crate) fn rewind_to_emit_byte(&mut self, byte: u8)
+	pub fn rewind_to_emit_byte(&mut self, byte: u8)
 	{
 		let instruction_pointer = self.instruction_pointer();
 		self.byte_emitter.emit_u8_at(byte, instruction_pointer - 1)
@@ -343,7 +343,7 @@ impl<'a> InstructionStream<'a>
 	
 	/// Rewinds by the length of a double word (4 bytes) and then emits `double_word`.
 	#[inline(always)]
-	pub(crate) fn rewind_to_emit_double_word(&mut self, double_word: u32)
+	pub fn rewind_to_emit_double_word(&mut self, double_word: u32)
 	{
 		let instruction_pointer = self.instruction_pointer();
 		self.byte_emitter.emit_u32_at(double_word, instruction_pointer - 4)
@@ -718,6 +718,12 @@ impl<'a> InstructionStream<'a>
 		self.byte_emitter.store_bookmark()
 	}
 	
+	#[inline(always)]
+	fn reset_to_bookmark(&mut self)
+	{
+		self.byte_emitter.reset_to_bookmark()
+	}
+	
 	/// The current instruction pointer.
 	#[inline(always)]
 	pub fn instruction_pointer(&self) -> InstructionPointer
@@ -862,7 +868,7 @@ impl<'a> InstructionStream<'a>
 				Ok(()) => Ok(()),
 				Err(()) =>
 				{
-					self.byte_emitter.reset_to_bookmark();
+					self.reset_to_bookmark();
 					Err(())
 				}
 			}
@@ -913,49 +919,32 @@ impl<'a> InstructionStream<'a>
 	
 	/// Attempts to calculate a Jump destination which uses an index register and scale but an absolute offset from address 0.
 	///
-	/// Will panic in debug builds and will be useless in release builds if the computed displacement required does not exist in the first 2Gb.
+	/// Will try to use a form that does not need a register first, falling back to a form that does if `base_register_holding_start_of_instructions_pointer` is Some; if it is None, will panic.
 	///
 	/// Typically used for when building jump tables and for other uses of 'computed jumps' (also known as indirect branches, indirect jumps and register-indirect jumps).
 	///
-	/// Make sure the argument `allocate_in_first_2Gb` to `ExecutableAnonymousMemoryMap::new()` is `true`.
+	/// Ideally, make sure the argument `allocate_in_first_2Gb` to `ExecutableAnonymousMemoryMap::new()` is `true` and then `base_register_holding_start_of_instructions_pointer` can be None safely.
 	#[inline(always)]
-	pub fn jmp_Any64BitMemory_within_first_2Gb(&mut self, index_register: Register64Bit, scale: IndexScale)
+	pub fn jmp_Any64BitMemory_accounting_for_first_2Gb(&mut self, index_register: Register64Bit, scale: IndexScale, base_register_holding_start_of_instructions_pointer: Option<Register64Bit>)
 	{
-		let absolute_displacement = self.absolute_displacement_to_end_of_jump_instruction();
-		debug_assert!(absolute_displacement <= ::std::i32::MAX as usize, "absolute_displacement '{}' exceeds ::std::i32::MAX", absolute_displacement);
+		const ArtificallyLargeDisplacementPlaceholder: Immediate32Bit = Immediate32Bit(::std::i32::MAX);
 		
-		let displacement = absolute_displacement as i32;
-		self.jmp_Any64BitMemory(Any64BitMemory::index_64_scale_displacement(index_register, scale, displacement.into()))
-	}
-	
-	/// Attempts to calculate a Jump destination which uses an index register and scale, with a relative displacement to a base register that hold the absolute address of the first instruction of this instruction stream.
-	#[inline(always)]
-	pub fn jmp_Any64BitMemory_beyond_first_2Gb(&mut self, index_register: Register64Bit, scale: IndexScale, base_register_holding_start_of_instructions_pointer: Register64Bit)
-	{
-		let absolute_displacement = self.absolute_displacement_to_end_of_jump_instruction();
-		let relative_displacement = absolute_displacement - self.start_instruction_pointer();
-		debug_assert!(relative_displacement <= ::std::i32::MAX as usize, "relative_displacement '{}' exceeds ::std::i32::MAX", relative_displacement);
+		self.bookmark();
 		
-		self.jmp_Any64BitMemory(Any64BitMemory::base_64_index_64_scale_displacement(base_register_holding_start_of_instructions_pointer, index_register, scale, (relative_displacement as i32).into()))
-	}
-	
-	/// Attempts to calculate a Jump destination using the best possible strategy.
-	#[inline(always)]
-	pub fn jmp_Any64BitMemory_accounting_for_first_2Gb(&mut self, index_register: Register64Bit, scale: IndexScale, base_register_holding_start_of_instructions_pointer: Register64Bit)
-	{
-		let absolute_displacement = self.absolute_displacement_to_end_of_jump_instruction();
-		if absolute_displacement < ::std::i32::MAX as usize
+		self.jmp_Any64BitMemory(Any64BitMemory::index_64_scale_displacement(index_register, scale, ArtificallyLargeDisplacementPlaceholder));
+		
+		let displacement = self.instruction_pointer() - self.start_instruction_pointer();
+		if displacement <= ::std::i32::MAX as usize
 		{
-			let displacement = absolute_displacement as i32;
-			self.jmp_Any64BitMemory(Any64BitMemory::index_64_scale_displacement(index_register, scale, displacement.into()))
+			self.rewind_to_emit_double_word(displacement as u32);
+			return
 		}
-		else
-		{
-			let relative_displacement = absolute_displacement - self.start_instruction_pointer();
-			debug_assert!(relative_displacement <= ::std::i32::MAX as usize, "relative_displacement '{}' exceeds ::std::i32::MAX", relative_displacement);
-			
-			self.jmp_Any64BitMemory(Any64BitMemory::base_64_index_64_scale_displacement(base_register_holding_start_of_instructions_pointer, index_register, scale, (relative_displacement as i32).into()))
-		}
+		
+		self.reset_to_bookmark();
+		
+		self.jmp_Any64BitMemory(Any64BitMemory::base_64_index_64_scale_displacement(base_register_holding_start_of_instructions_pointer.expect("Large absolute jumps require a register to hold the start of instructions"), index_register, scale, ArtificallyLargeDisplacementPlaceholder));
+		let displacement = self.instruction_pointer() - self.start_instruction_pointer();
+		self.rewind_to_emit_double_word(displacement as u32)
 	}
 	
 	/// Emits a block of a fixed size (blocks are padded to the desired size).
@@ -980,16 +969,6 @@ impl<'a> InstructionStream<'a>
 		self.skip_bytes(desired_block_size - block_size);
 		
 		result
-	}
-	
-	#[inline(always)]
-	fn absolute_displacement_to_end_of_jump_instruction(&self) -> usize
-	{
-		const SizeOfJump: usize = 3;
-		const SizeOfDisplacement: usize = 4;
-		const JumpOpcodeEncodingSize: usize = SizeOfJump + SizeOfDisplacement;
-		
-		self.instruction_pointer() + JumpOpcodeEncodingSize
 	}
 }
 
