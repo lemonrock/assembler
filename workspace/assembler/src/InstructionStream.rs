@@ -334,8 +334,6 @@ impl<'a> InstructionStream<'a>
 	}
 	
 	/// Skips over a byte in the instruction stream at the current location.
-	///
-	/// The byte can be data or instructions.
 	#[inline(always)]
 	pub(crate) fn skip_byte(&mut self)
 	{
@@ -343,7 +341,7 @@ impl<'a> InstructionStream<'a>
 		self.byte_emitter.skip_u8()
 	}
 	
-	/// Skips over a byte in the instruction stream at the current location.
+	/// Skips over a double word in the instruction stream at the current location.
 	///
 	/// The byte can be data or instructions.
 	#[inline(always)]
@@ -351,6 +349,14 @@ impl<'a> InstructionStream<'a>
 	{
 		self.reserve_space(4);
 		self.byte_emitter.skip_u32()
+	}
+	
+	/// Skips over zero or more `count` bytes in the instruction stream at the current location.
+	#[inline(always)]
+	pub fn skip_bytes(&mut self, count: usize)
+	{
+		self.reserve_space(count);
+		self.byte_emitter.skip_bytes(count)
 	}
 	
 	/// Emits (pushes) `NOP`s (No Operation) opcodes into the instruction stream at the current location to ensure the desired `alignment`.
@@ -934,6 +940,30 @@ impl<'a> InstructionStream<'a>
 			
 			self.jmp_Any64BitMemory(Any64BitMemory::base_64_index_64_scale_displacement(base_register_holding_start_of_instructions_pointer, index_register, scale, (relative_displacement as i32).into()))
 		}
+	}
+	
+	/// Emits a block of a fixed size (blocks are padded to the desired size).
+	///
+	/// Panics in debug builds if the block is too large.
+	///
+	/// Typically used for jump table blocks.
+	///
+	/// Size is actually specified as a scale (power of two); use a `u8` or `IndexScale`.
+	#[inline(always)]
+	pub fn emit_fixed_size_block<R>(&mut self, scale: impl Into<u8>, emit_instructions: impl Fn(&mut Self) -> R) -> R
+	{
+		let scale = scale.into();
+		let desired_block_size = 1 << (scale as usize);
+		
+		let start = self.instruction_pointer();
+		
+		let result = emit_instructions(self);
+		
+		let block_size = self.instruction_pointer() - start;
+		debug_assert!(block_size <= desired_block_size, "block_size '{}' exceeds desired_block_size '{}' (scale '{})", block_size, desired_block_size, scale);
+		self.skip_bytes(desired_block_size - block_size);
+		
+		result
 	}
 	
 	#[inline(always)]

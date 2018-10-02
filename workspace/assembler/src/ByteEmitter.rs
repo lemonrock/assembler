@@ -214,4 +214,11 @@ impl ByteEmitter
 		debug_assert!(self.instruction_pointer + Size <= self.end_instruction_pointer, "Not enough space to skip an u32");
 		self.instruction_pointer += Size;
 	}
+	
+	#[inline(always)]
+	pub(crate) fn skip_bytes(&mut self, count: usize)
+	{
+		debug_assert!(self.instruction_pointer + count <= self.end_instruction_pointer, "Not enough space to skip '{}' bytes", count);
+		self.instruction_pointer += count;
+	}
 }
