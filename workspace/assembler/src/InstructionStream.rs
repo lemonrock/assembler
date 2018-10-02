@@ -927,7 +927,7 @@ impl<'a> InstructionStream<'a>
 	#[inline(always)]
 	pub fn jmp_Any64BitMemory_accounting_for_first_2Gb(&mut self, index_register: Register64Bit, scale: IndexScale, base_register_holding_start_of_instructions_pointer: Option<Register64Bit>)
 	{
-		const ArtificallyLargeDisplacementPlaceholder: Immediate32Bit = Immediate32Bit(::std::i32::MAX);
+		const ArtificallyLargeDisplacementPlaceholder: Immediate32Bit = Immediate32Bit::Maximum;
 		
 		self.bookmark();
 		
