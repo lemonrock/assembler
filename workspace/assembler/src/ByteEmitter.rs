@@ -143,13 +143,13 @@ impl ByteEmitter
 	}
 	
 	#[inline(always)]
-	fn emit_u8_at(&mut self, emit: u8, at: InstructionPointer)
+	pub(crate) fn emit_u8_at(&mut self, emit: u8, at: InstructionPointer)
 	{
 		unsafe { *(at as *mut u8) = emit };
 	}
 	
 	#[inline(always)]
-	fn emit_u32_at(&mut self, emit: u32, at: InstructionPointer)
+	pub(crate) fn emit_u32_at(&mut self, emit: u32, at: InstructionPointer)
 	{
 		unsafe { *(at as *mut u32) = emit };
 	}

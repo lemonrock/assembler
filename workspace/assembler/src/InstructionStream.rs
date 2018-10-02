@@ -333,6 +333,22 @@ impl<'a> InstructionStream<'a>
 		self.byte_emitter.emit_bytes(bytes)
 	}
 	
+	/// Rewinds by the length of a byte (1 byte) and then emits `byte`.
+	#[inline(always)]
+	pub(crate) fn rewind_to_emit_byte(&mut self, byte: u8)
+	{
+		let instruction_pointer = self.instruction_pointer();
+		self.byte_emitter.emit_u8_at(byte, instruction_pointer - 1)
+	}
+	
+	/// Rewinds by the length of a double word (4 bytes) and then emits `double_word`.
+	#[inline(always)]
+	pub(crate) fn rewind_to_emit_double_word(&mut self, double_word: u32)
+	{
+		let instruction_pointer = self.instruction_pointer();
+		self.byte_emitter.emit_u32_at(double_word, instruction_pointer - 4)
+	}
+	
 	/// Skips over a byte in the instruction stream at the current location.
 	#[inline(always)]
 	pub(crate) fn skip_byte(&mut self)
