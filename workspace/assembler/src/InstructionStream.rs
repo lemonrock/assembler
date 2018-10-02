@@ -950,7 +950,7 @@ impl<'a> InstructionStream<'a>
 	///
 	/// Size is actually specified as a scale (power of two); use a `u8` or `IndexScale`.
 	#[inline(always)]
-	pub fn emit_fixed_size_block<R>(&mut self, scale: impl Into<u8>, emit_instructions: impl Fn(&mut Self) -> R) -> R
+	pub fn emit_fixed_size_block<R>(&mut self, scale: impl Into<u8>, mut emit_instructions: impl FnMut(&mut Self) -> R) -> R
 	{
 		let scale = scale.into();
 		let desired_block_size = 1 << (scale as usize);
