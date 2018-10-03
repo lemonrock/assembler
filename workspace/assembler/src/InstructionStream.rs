@@ -919,32 +919,71 @@ impl<'a> InstructionStream<'a>
 	
 	/// Attempts to calculate a Jump destination which uses an index register and scale but an absolute offset from address 0.
 	///
-	/// Will try to use a form that does not need a register first, falling back to a form that does if `base_register_holding_start_of_instructions_pointer` is Some; if it is None, will panic.
-	///
 	/// Typically used for when building jump tables and for other uses of 'computed jumps' (also known as indirect branches, indirect jumps and register-indirect jumps).
 	///
-	/// Ideally, make sure the argument `allocate_in_first_2Gb` to `ExecutableAnonymousMemoryMap::new()` is `true` and then `base_register_holding_start_of_instructions_pointer` can be None safely.
+	/// Will try to use a form that does not need a register first (See Agner Fog's Optimizing Volume 2 (Optimizing subroutines in assembly language) § 3.3 Addressing Modes - Addressing static arrays in 64 bit mode, Example 3.11b).
+	///
+	/// If this is not possible, then falls back to Agner Fog's Optimizing Volume 2 (Optimizing subroutines in assembly language) § 3.3 Addressing Modes - Addressing static arrays in 64 bit mode, Example 3.11c using the value in `base_register_holding_start_of_instructions_pointer`.
+	///
+	/// A typically register to use for `base_register_holding_start_of_instructions_pointer` would be `RBX`.
+	///
+	/// The fallback approach will panic if `base_register_holding_start_of_instructions_pointer` is None, or if the required Jump is more than 2Gb relatively (unlikely).
+	///
+	/// Ideally, make sure the argument `allocate_in_first_2Gb` to `ExecutableAnonymousMemoryMap::new()` is `true` (or test that the start of instructions is below 0x80000000 (2^31 bytes)) and then `base_register_holding_start_of_instructions_pointer` can be None safely.
 	#[inline(always)]
-	pub fn jmp_Any64BitMemory_accounting_for_first_2Gb(&mut self, index_register: Register64Bit, scale: IndexScale, base_register_holding_start_of_instructions_pointer: Option<Register64Bit>)
+	pub fn jmp_Any64BitMemory_statically_relative_address(&mut self, index_register: Register64Bit, scale: IndexScale, base_register_holding_start_of_instructions_pointer: Option<Register64Bit>)
 	{
 		const ArtificallyLargeDisplacementPlaceholder: Immediate32Bit = Immediate32Bit::Maximum;
 		
 		self.bookmark();
 		
-		self.jmp_Any64BitMemory(Any64BitMemory::index_64_scale_displacement(index_register, scale, ArtificallyLargeDisplacementPlaceholder));
+		// Firstly, try to use absolute addressing within the first 2Gb.
+		let memory_destination = Any64BitMemory::index_64_scale_displacement(index_register, scale, ArtificallyLargeDisplacementPlaceholder);
+		self.jmp_Any64BitMemory(memory_destination);
 		
-		let displacement = self.instruction_pointer() - self.start_instruction_pointer();
-		if displacement <= ::std::i32::MAX as usize
+		let instruction_pointer = self.instruction_pointer();
+		
+		if instruction_pointer <= ::std::i32::MAX as usize
 		{
-			self.rewind_to_emit_double_word(displacement as u32);
+			self.rewind_to_emit_double_word(instruction_pointer as u32);
 			return
 		}
 		
 		self.reset_to_bookmark();
 		
-		self.jmp_Any64BitMemory(Any64BitMemory::base_64_index_64_scale_displacement(base_register_holding_start_of_instructions_pointer.expect("Large absolute jumps require a register to hold the start of instructions"), index_register, scale, ArtificallyLargeDisplacementPlaceholder));
-		let displacement = self.instruction_pointer() - self.start_instruction_pointer();
+		// Fallback to using an image-relative addressing.
+		let memory_destination = Any64BitMemory::base_64_index_64_scale_displacement(base_register_holding_start_of_instructions_pointer.expect("Large absolute jumps require a register to hold the start of instructions"), index_register, scale, ArtificallyLargeDisplacementPlaceholder);
+		self.jmp_Any64BitMemory(memory_destination);
+		
+		let image_base = self.start_instruction_pointer();
+		let displacement = self.instruction_pointer() - image_base;
+		debug_assert!(displacement <= ::std::i32::MAX as usize, "Jumps of more than 2Gb are not supported");
 		self.rewind_to_emit_double_word(displacement as u32)
+	}
+	
+	/// Typically used for when trying to reference static (global) arrays in memory using an index with instructions such as `MOV` or `VPTEST`.
+	///
+	/// Can be used with `jmp_Any64BitMemory()`, but only if the start of the jump table is known in advance.
+	///
+	/// If it is not, use the method `jmp_Any64BitMemory_accounting_for_first_2Gb()`.
+	///
+	/// The result is only valid as long as an instruction is not written into this instruction stream.
+	///
+	/// Will try to use a form that does not need a register first (See Agner Fog's Optimizing Volume 2 (Optimizing subroutines in assembly language) § 3.3 Addressing Modes - Addressing static arrays in 64 bit mode, Example 3.11b).
+	///
+	/// If this is not possible, then falls back to Agner Fog's Optimizing Volume 2 (Optimizing subroutines in assembly language) § 3.3 Addressing Modes - Addressing static arrays in 64 bit mode, Example 3.11c using the value in `base_register_holding_start_of_instructions_pointer`.
+	///
+	/// A typically register to use for `base_register_holding_start_of_instructions_pointer` would be `RBX`.
+	///
+	/// The fallback approach will panic if the required Jump is more than 2Gb relatively (unlikely).
+	///
+	/// If the result is `None`, one can apply Agner Fog's Optimizing Volume 2 (Optimizing subroutines in assembly language) § 3.3 Addressing Modes - Addressing static arrays in 64 bit mode, Example 3.11e (this will require a `LEA Register, [array_location_in_memory]` prior to this instruction).
+	///
+	/// Ideally, make sure the argument `allocate_in_first_2Gb` to `ExecutableAnonymousMemoryMap::new()` is `true` (or test that the start of instructions is below 0x80000000 (2^31 bytes)) and then `base_register_holding_start_of_instructions_pointer` can be None safely.
+	#[inline(always)]
+	pub fn statically_relative_address<BM: BitMemory>(&self, array_location_in_memory: InstructionPointer, index_register: Register64Bit, scale: IndexScale, base_register_holding_start_of_instructions_pointer: Register64Bit) -> BM
+	{
+		BM::statically_relative_address(self, array_location_in_memory, index_register, scale, base_register_holding_start_of_instructions_pointer)
 	}
 	
 	/// Emits a block of a fixed size (blocks are padded to the desired size).

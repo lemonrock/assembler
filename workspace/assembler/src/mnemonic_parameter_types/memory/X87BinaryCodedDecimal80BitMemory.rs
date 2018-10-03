@@ -3,3 +3,7 @@
 
 
 impl_memory!(X87BinaryCodedDecimal80BitMemory);
+
+impl BitMemory for X87BinaryCodedDecimal80BitMemory
+{
+}

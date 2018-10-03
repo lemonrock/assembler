@@ -4,3 +4,7 @@
 
 impl_memory!(X87Float64BitMemory);
 
+impl BitMemory for X87Float64BitMemory
+{
+}
+

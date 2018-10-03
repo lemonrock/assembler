@@ -3,3 +3,7 @@
 
 
 impl_memory!(X87Integer16BitMemory);
+
+impl BitMemory for X87Integer16BitMemory
+{
+}

@@ -3,3 +3,7 @@
 
 
 impl_memory!(Any64BitMemory);
+
+impl BitMemory for Any64BitMemory
+{
+}

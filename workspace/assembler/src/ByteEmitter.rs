@@ -47,9 +47,9 @@ impl ByteEmitter
 	}
 	
 	#[inline(always)]
-	pub(crate) fn emit_mod_r_m_byte(&mut self, mod_: u8, rrr: u8, bbb: u8)
+	pub(crate) fn emit_mod_r_m_byte(&mut self, mod_: u8, reg: u8, rm: u8)
 	{
-		self.emit_u8(mod_ | rrr | bbb)
+		self.emit_u8(mod_ | reg | rm)
 	}
 	
 	#[inline(always)]

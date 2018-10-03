@@ -13,6 +13,7 @@ include!("Any32BitMemory.rs");
 include!("Any64BitMemory.rs");
 include!("Any128BitMemory.rs");
 include!("Any256BitMemory.rs");
+include!("BitMemory.rs");
 include!("Contiguous2ByteMemory.rs");
 include!("Contiguous28ByteMemory.rs");
 include!("Contiguous108ByteMemory.rs");

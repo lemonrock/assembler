@@ -1,8 +1,55 @@
 # assembler
 
-[assembler] provides a fast, run-time assembler for x86-64 instructions using function calls for Rust. In using a design that Rust's release build optimizations can work effectively with, it provides the ability to embed the assembled machine code instructions as templates inside Rust code, so as to make specialized code generation as fast as possible. Relocation can then happen at runtime.
+[assembler] provides a fast, run-time assembler for x86-64 long mode instructions using function calls for Rust. In using a design that Rust's release build optimizations can work effectively with, it provides the ability to embed the assembled machine code instructions as templates inside Rust code, so as to make specialized code generation as fast as possible. It is particularly suited to being the backend to a JIT.
 
-Since it is very brittle to try to parse or integrate with Rust code at compile time, this crate tries to generate code at build time (or at runtime, if used lazily) by parsing strings. This allows one to keep assembler logic outside of Rust files, so enabling the use of regular assembler tools.
+This technique differs to that used in [dynasm], but was driven by the need to programmatically generate complex assembler to optimize message filters at runtime. The code for instruction generation is inspired by that from Stanford's [x64asm].
+
+As a consequence, jump (and similar) instruction relaxation is not performed, ie all jumps use 32-bit displacements instead of being optimized for 8-bit displacements. Additional dedicated support is also included (eg `BitMemory`) to work with code that might be placed outside of the first 2Gb (eg on Mac OS X).
+
+
+## Getting Started
+
+Add the crate `assembler` to your Cargo.toml file as usual and add an `extern crate assembler`. Create a new instance of `ExecutableAnonymousMemoryMap` and use this to get an instance of `InstructionStream`. This contains just about everything you could want, from outputing instruciton permutations to emitting raw bytes, obtaining function pointers, using labels and dedicated support for indexed computed jumps.
+
+
+## Features
+
+* All valid x64 instructions
+* Multi-byte NOPs
+* All instruction set extensions except for AVX512, 3D Now!, XOP and AMD's deprecated bit manipulation
+* All 8-bit (including high 8-bit), 16-bit, 32-bit and 64-bit general purpose registers
+* All floating point, SSE (MM), XMM and YMM registers
+* All segment registers
+* Labels
+* Computed Jumps
+* Short cuts for C _bool returns
+* Short cuts for function prologues and epilogues
+
+
+## What's Missing
+
+
+## Desirable
+
+Pull requests implementing these would be much appreciated\*.
+* Any support at all of the AVX512 instructions and associated memory operands.
+* 3D Now! (eg `PREFETCHW`).
+* Support for using the debug, control and bound registers.
+* `if` clauses inside some instruction generation sequences to output more efficient known register forms, eg those that default to `RAX`.
+
+
+<sup>\* With copyright assignment to the project, of course!</sup>
+
+
+### Unlikely to be added
+
+* XOP (deprecated)
+* AMD's bit manipulation
+* Instruction relaxation; requires using a linked list to manage 'bundles' of instructions
+* Dynamic relocation
+* 32-bit compatibility mode
+* 32-bit legacy mode, 16-bit mode, real mode, etc
+
 
 ## Licensing
 
@@ -11,3 +58,4 @@ The license for this project is Affero GNU Public License 3.0 (AGPL-3.0). Note t
 
 [assembler]: https://github.com/lemonrock/assembler "assembler GitHub page"
 [dynasm]: https://github.com/CensoredUsername/dynasm-rs "dynasm GitHub page"
+[x64asm]: https://github.com/StanfordPL/x64asm "x64asm GitHub page"

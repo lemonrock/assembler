@@ -3,3 +3,7 @@
 
 
 impl_memory!(X87Float80BitMemory);
+
+impl BitMemory for X87Float80BitMemory
+{
+}

@@ -174,18 +174,27 @@ impl Memory for MemoryOperand
 		Self::new(displacement, Self::NoBaseOrIndexRegister, Some(index_64), scale, Self::NoSegmentRegister, false, false)
 	}
 	
+	/// If `base_64` is `RBP`, then the SIB byte is followed by four-byte `disp32` field and the addressing mode is absolute.
+	///
+	/// If `index_64` is `RSP`, then the index is ignored.
 	#[inline(always)]
 	fn base_64_index_64(base_64: Register64Bit, index_64: Register64Bit) -> Self
 	{
 		Self::new(Immediate32Bit(0), Some(base_64), Some(index_64), IndexScale::x1, Self::NoSegmentRegister, false, false)
 	}
 	
+	/// If `base_64` is `RBP`, then the SIB byte is followed by four-byte `disp32` field and the addressing mode is absolute.
+	///
+	/// If `index_64` is `RSP`, then the index is ignored.
 	#[inline(always)]
 	fn base_64_index_64_scale(base_64: Register64Bit, index_64: Register64Bit, scale: IndexScale) -> Self
 	{
 		Self::new(Immediate32Bit(0), Some(base_64), Some(index_64), scale, Self::NoSegmentRegister, false, false)
 	}
 	
+	/// If `base_64` is `RBP`, then the SIB byte is followed by four-byte `disp32` field and the addressing mode is absolute.
+	///
+	/// If `index_64` is `RSP`, then the index is ignored.
 	#[inline(always)]
 	fn base_64_index_64_scale_displacement(base_64: Register64Bit, index_64: Register64Bit, scale: IndexScale, displacement: Immediate32Bit) -> Self
 	{
@@ -495,10 +504,10 @@ impl MemoryOperand
 	
 	/// Special case for `RIP+disp32` (`disp32` is a 32-bit signed displacement).
 	#[inline(always)]
-	fn emit_mod_rm_sib_for_relative_instruction_pointer_addressing(self, byte_emitter: &mut ByteEmitter, rrr: u8)
+	fn emit_mod_rm_sib_for_relative_instruction_pointer_addressing(self, byte_emitter: &mut ByteEmitter, reg: u8)
 	{
 		// ModR/M byte.
-		byte_emitter.emit_mod_r_m_byte(Self::Mod_0b00, rrr, Self::RegisterRbpOrR13);
+		byte_emitter.emit_mod_r_m_byte(Self::Mod_0b00, reg, Self::RegisterRbpOrR13);
 		
 		// No scaled index byte (SIB).
 		
@@ -508,10 +517,10 @@ impl MemoryOperand
 	
 	/// Special case if there is no base register (uses `RBP` as base implicitly) BUT displacement is always 32-bit - there is no 8-bit optimal encoding of it.
 	#[inline(always)]
-	fn emit_mod_rm_sib_if_no_base_register(self, byte_emitter: &mut ByteEmitter, rrr: u8)
+	fn emit_mod_rm_sib_if_no_base_register(self, byte_emitter: &mut ByteEmitter, reg: u8)
 	{
 		// ModR/M byte.
-		byte_emitter.emit_mod_r_m_byte(Self::Mod_0b00, rrr, Self::RegisterRspOrR12);
+		byte_emitter.emit_mod_r_m_byte(Self::Mod_0b00, reg, Self::RegisterRspOrR12);
 		
 		// Scaled index byte (SIB).
 		{
@@ -534,7 +543,7 @@ impl MemoryOperand
 	}
 	
 	#[inline(always)]
-	fn emit_mod_rm_sib_for_all_other_addressing_modes(self, byte_emitter: &mut ByteEmitter, rrr: u8)
+	fn emit_mod_rm_sib_for_all_other_addressing_modes(self, byte_emitter: &mut ByteEmitter, reg: u8)
 	{
 		let bbb = self.get_base_register().index_truncated_to_lowest_3_bits();
 		
@@ -550,7 +559,7 @@ impl MemoryOperand
 		if self.has_index_register()
 		{
 			// ModR/M byte.
-			byte_emitter.emit_mod_r_m_byte(mod_, rrr, Self::RegisterRspOrR12);
+			byte_emitter.emit_mod_r_m_byte(mod_, reg, Self::RegisterRspOrR12);
 			
 			// Scaled index byte (SIB).
 			{
@@ -565,7 +574,7 @@ impl MemoryOperand
 		else if base_register_is_relative_instruction_pointer_plus_displacement_32bit(bbb)
 		{
 			// ModR/M byte.
-			byte_emitter.emit_mod_r_m_byte(mod_, rrr, Self::RegisterRspOrR12);
+			byte_emitter.emit_mod_r_m_byte(mod_, reg, Self::RegisterRspOrR12);
 			
 			// Scaled index byte (SIB).
 			{
@@ -579,7 +588,7 @@ impl MemoryOperand
 		else
 		{
 			// ModR/M byte.
-			byte_emitter.emit_mod_r_m_byte(mod_, rrr, bbb);
+			byte_emitter.emit_mod_r_m_byte(mod_, reg, bbb);
 			
 			// No scaled index byte (SIB).
 			

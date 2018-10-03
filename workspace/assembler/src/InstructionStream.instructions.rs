@@ -18821,7 +18821,7 @@ impl<'a> InstructionStream<'a>
 		// No label displacement.
 	}
 
-	/// Store `ST(0)` in `m80bcd` and pop `ST(0)`.
+	/// Store `ST(0)` in `arg0` and pop `ST(0)`.
 	#[inline(always)]
 	pub fn fbstp_X87BinaryCodedDecimal80BitMemory(&mut self, arg0: X87BinaryCodedDecimal80BitMemory)
 	{

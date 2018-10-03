@@ -3,3 +3,7 @@
 
 
 impl_memory!(Any128BitMemory);
+
+impl BitMemory for Any128BitMemory
+{
+}
