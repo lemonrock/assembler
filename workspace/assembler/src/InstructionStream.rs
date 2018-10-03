@@ -986,6 +986,28 @@ impl<'a> InstructionStream<'a>
 		BM::statically_relative_address(self, array_location_in_memory, index_register, scale, base_register_holding_start_of_instructions_pointer)
 	}
 	
+	/// Use as follows with `Memory::relative_instruction_pointer_relative()`:-
+	///
+	/// ```
+	/// instruction_stream.vmovdqa_YMM_Any256BitMemory(ymm_register, Any256BitMemory::relative_instruction_pointer_relative());
+	/// instruction_stream.overwrite_last_displacement_with_relative_address_to(absolute_address);
+	/// ```
+	///
+	/// Will panic in debug builds if the required displacement is more than 2Gb (such a displacement is extremely unlikely).
+	#[inline(always)]
+	pub fn overwrite_last_32bit_displacement_with_relative_address_to(&mut self, location_in_memory: InstructionPointer)
+	{
+		debug_assert!(location_in_memory <= ::std::isize::MAX as usize, "location_in_memory is larger than ::std::isize::MAX");
+		
+		let instruction_pointer = self.instruction_pointer();
+		debug_assert!(instruction_pointer <= ::std::isize::MAX as usize, "instruction_pointer is larger than ::std::isize::MAX");
+		
+		let offset = (location_in_memory as isize) - (instruction_pointer as isize);
+		debug_assert!(offset <= (::std::i32::MAX as isize) && offset >= (::std::i32::MIN as isize), "offset to location_in_memory is bigger than a 32-bit displacement can hold");
+		
+		self.rewind_to_emit_double_word(offset as i32 as u32);
+	}
+	
 	/// Emits a block of a fixed size (blocks are padded to the desired size).
 	///
 	/// Panics in debug builds if the block is too large.
