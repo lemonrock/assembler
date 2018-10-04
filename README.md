@@ -49,6 +49,7 @@ Pull requests implementing these would be much appreciated\*.
 ### Unlikely to be added
 
 * Intel Xeon Phi specific instructions.
+* Legacy AMD 3D Now! instructions including `PREFETCH`.
 * AMD's deprecated bit manipulation instructions and `XOP` encoding prefix.
 * Instruction relaxation; requires using a linked list to manage 'bundles' of instructions
 * Dynamic relocation
