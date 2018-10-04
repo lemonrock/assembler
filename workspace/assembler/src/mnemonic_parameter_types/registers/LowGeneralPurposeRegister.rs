@@ -3,7 +3,7 @@
 
 
 /// A general purpose register which uses the lower part (ie all general purpose registers apart from `AH`, `DH`, `CH` and `BH`).
-pub trait LowGeneralPurposeRegister: GeneralPurposeRegister + From<Register8Bit> + From<Register16Bit> + From<Register32Bit> + From<Register64Bit>
+pub trait LowGeneralPurposeRegister: GeneralPurposeRegister + Into<Register8Bit> + Into<Register16Bit> + Into<Register32Bit> + Into<Register64Bit>
 {
 	/// Contains the first integer function argument to a function call when using the System V Application Binary Interface for x86-64.
 	const SystemVApplicationBinaryInterface64IntegerFunctionArgument0: Self;

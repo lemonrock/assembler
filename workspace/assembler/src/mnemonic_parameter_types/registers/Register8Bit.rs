@@ -193,38 +193,29 @@ impl LowGeneralPurposeRegister for Register8Bit
 	const MicrosoftX64CallingConventionIntegerFunctionArgument3: Self = Register8Bit::R9B;
 }
 
-impl From<RegisterHigh8BitsOf16Bits> for Register8Bit
+impl Into<Register64Bit> for Register8Bit
 {
 	#[inline(always)]
-	fn from(value: RegisterHigh8BitsOf16Bits) -> Self
+	fn into(self) -> Register64Bit
 	{
-		unsafe { transmute(value) }
+		unsafe { transmute(self) }
 	}
 }
 
-impl From<Register16Bit> for Register8Bit
+impl Into<Register32Bit> for Register8Bit
 {
 	#[inline(always)]
-	fn from(value: Register16Bit) -> Self
+	fn into(self) -> Register32Bit
 	{
-		unsafe { transmute(value) }
+		unsafe { transmute(self) }
 	}
 }
 
-impl From<Register32Bit> for Register8Bit
+impl Into<Register16Bit> for Register8Bit
 {
 	#[inline(always)]
-	fn from(value: Register32Bit) -> Self
+	fn into(self) -> Register16Bit
 	{
-		unsafe { transmute(value) }
-	}
-}
-
-impl From<Register64Bit> for Register8Bit
-{
-	#[inline(always)]
-	fn from(value: Register64Bit) -> Self
-	{
-		unsafe { transmute(value) }
+		unsafe { transmute(self) }
 	}
 }

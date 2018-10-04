@@ -68,6 +68,42 @@ impl Register for RegisterHigh8BitsOf16Bits
 	}
 }
 
+impl Into<Register64Bit> for RegisterHigh8BitsOf16Bits
+{
+	#[inline(always)]
+	fn into(self) -> Register64Bit
+	{
+		unsafe { transmute(self) }
+	}
+}
+
+impl Into<Register32Bit> for RegisterHigh8BitsOf16Bits
+{
+	#[inline(always)]
+	fn into(self) -> Register32Bit
+	{
+		unsafe { transmute(self) }
+	}
+}
+
+impl Into<Register16Bit> for RegisterHigh8BitsOf16Bits
+{
+	#[inline(always)]
+	fn into(self) -> Register16Bit
+	{
+		unsafe { transmute(self) }
+	}
+}
+
+impl Into<Register8Bit> for RegisterHigh8BitsOf16Bits
+{
+	#[inline(always)]
+	fn into(self) -> Register8Bit
+	{
+		unsafe { transmute(self) }
+	}
+}
+
 impl GeneralPurposeRegister for RegisterHigh8BitsOf16Bits
 {
 	const SystemVApplicationBinaryInterface64IntegerFunctionReturn: Self = RegisterHigh8BitsOf16Bits::AH;
