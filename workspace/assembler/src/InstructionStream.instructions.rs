@@ -51969,6 +51969,37 @@ impl<'a> InstructionStream<'a>
 		// No label displacement.
 	}
 
+	/// Move data from `m8` closer to the processor in anticipation of a write.
+	///
+	/// Introduced with AMD's 3DNow! instructions.
+	#[inline(always)]
+	pub fn prefetchw_Any8BitMemory(&mut self, arg0: Any8BitMemory)
+	{
+		self.reserve_space_for_instruction();
+
+		// This is not a VEX encoded instruction.
+
+		// No `FWAIT` Prefix.
+
+		self.prefix_group2(arg0);
+
+		self.prefix_group4(arg0);
+
+		// No prefix group 3.
+
+		// No prefix group 1.
+
+		self.rex_2(arg0, 0x00);
+
+		self.opcode_2(0x0F, 0x0D);
+		
+		self.mod_rm_sib(arg0, Register64Bit::RCX);
+
+		// No displacement or immediate.
+
+		// No label displacement.
+	}
+
 	/// Computes the absolute differences of the packed unsigned byte integers from `mm2/m64` and `mm1`; differences are then summed to produce an unsigned word integer result.
 	#[inline(always)]
 	pub fn psadbw_MMRegister_Any64BitMemory(&mut self, arg0: MMRegister, arg1: Any64BitMemory)
