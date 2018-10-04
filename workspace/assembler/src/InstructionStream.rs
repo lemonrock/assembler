@@ -931,7 +931,7 @@ impl<'a> InstructionStream<'a>
 	///
 	/// Ideally, make sure the argument `allocate_in_first_2Gb` to `ExecutableAnonymousMemoryMap::new()` is `true` (or test that the start of instructions is below 0x80000000 (2^31 bytes)) and then `base_register_holding_start_of_instructions_pointer` can be None safely.
 	#[inline(always)]
-	pub fn jmp_Any64BitMemory_statically_relative_address(&mut self, index_register: Register64Bit, scale: IndexScale, base_register_holding_start_of_instructions_pointer: Option<Register64Bit>)
+	pub fn jmp_Any64BitMemory_statically_relative_address(&mut self, index_register: Register64Bit, scale: IndexScale, base_register_holding_start_of_instructions_pointer: Register64Bit)
 	{
 		const ArtificallyLargeDisplacementPlaceholder: Immediate32Bit = Immediate32Bit::Maximum;
 		
@@ -952,7 +952,7 @@ impl<'a> InstructionStream<'a>
 		self.reset_to_bookmark();
 		
 		// Fallback to using an image-relative addressing.
-		let memory_destination = Any64BitMemory::base_64_index_64_scale_displacement(base_register_holding_start_of_instructions_pointer.expect("Large absolute jumps require a register to hold the start of instructions"), index_register, scale, ArtificallyLargeDisplacementPlaceholder);
+		let memory_destination = Any64BitMemory::base_64_index_64_scale_displacement(base_register_holding_start_of_instructions_pointer, index_register, scale, ArtificallyLargeDisplacementPlaceholder);
 		self.jmp_Any64BitMemory(memory_destination);
 		
 		let image_base = self.start_instruction_pointer();
