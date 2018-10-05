@@ -16,7 +16,7 @@ use ::std::io::Write;
 #[test]
 pub fn lifecycle()
 {
-	let mut map = ExecutableAnonymousMemoryMap::new(4096).expect("Could not anonymously mmap");
+	let mut map = ExecutableAnonymousMemoryMap::new(4096, false).expect("Could not anonymously mmap");
 	let instruction_stream = map.instruction_stream(&InstructionStreamHints::default());
 	
 	instruction_stream.finish();
@@ -25,7 +25,7 @@ pub fn lifecycle()
 #[test]
 pub fn labelling()
 {
-	let mut map = ExecutableAnonymousMemoryMap::new(4096).expect("Could not anonymously mmap");
+	let mut map = ExecutableAnonymousMemoryMap::new(4096, false).expect("Could not anonymously mmap");
 	let mut instruction_stream = map.instruction_stream(&InstructionStreamHints::default());
 	
 	let label1 = instruction_stream.create_label();
@@ -40,7 +40,7 @@ pub fn labelling()
 #[test]
 pub fn simple_function()
 {
-	let mut map = ExecutableAnonymousMemoryMap::new(4096).expect("Could not anonymously mmap");
+	let mut map = ExecutableAnonymousMemoryMap::new(4096, false).expect("Could not anonymously mmap");
 	
 	let _function_pointer =
 	{
@@ -70,7 +70,7 @@ pub fn simple_function()
 #[test]
 pub fn validate_that_rust_follows_the_system_v_abi_for_bool()
 {
-	let mut map = ExecutableAnonymousMemoryMap::new(4096).expect("Could not anonymously mmap");
+	let mut map = ExecutableAnonymousMemoryMap::new(4096, false).expect("Could not anonymously mmap");
 	
 	let false_function_pointer =
 	{
@@ -92,7 +92,7 @@ pub fn validate_that_rust_follows_the_system_v_abi_for_bool()
 	// See AMD64 ABI 1.0 – August 13, 2018 – 8:25, page 22, third-to-last paragraph and footnote 16.
 	// In essence, a _Bool should be interpreted only from the bottom 8 bits.
 	
-	let mut map = ExecutableAnonymousMemoryMap::new(4096).expect("Could not anonymously mmap");
+	let mut map = ExecutableAnonymousMemoryMap::new(4096, false).expect("Could not anonymously mmap");
 	
 	let false_function_pointer =
 	{
@@ -113,32 +113,103 @@ pub fn validate_that_rust_follows_the_system_v_abi_for_bool()
 }
 
 #[test]
+pub fn validate_that_rust_follows_the_system_v_abi_for_u128()
+{
+	let mut map = ExecutableAnonymousMemoryMap::new(4096, false).expect("Could not anonymously mmap");
+	
+	let u128_function_pointer: unsafe extern "C" fn() -> u128 =
+	{
+		let mut instruction_stream = map.instruction_stream(&InstructionStreamHints::default());
+		
+		let function_pointer = instruction_stream.nullary_function_pointer();
+		
+		instruction_stream.mov_Register64Bit_Immediate64Bit(RAX, 0xFFFFFFFF_FFFFFFFFu64.into());
+		instruction_stream.mov_Register64Bit_Immediate64Bit(RDX, 0xAAAAAAAA_AAAAAAAAu64.into());
+		instruction_stream.ret();
+		
+		let _ = instruction_stream.finish();
+		
+		function_pointer
+	};
+	
+	assert_eq!(unsafe { u128_function_pointer() }, 0xAAAAAAAA_AAAAAAAA_FFFFFFFF_FFFFFFFF, "function result was not as expected for u128");
+	
+	#[derive(Debug, Copy, Clone, Ord, PartialOrd, Eq, PartialEq, Hash)]
+	#[repr(C)]
+	struct TupleWrapper
+	{
+		rax: u64,
+		rdx: u64,
+	}
+	
+	let u64_u64_function_pointer: unsafe extern "C" fn() -> TupleWrapper =
+	{
+		let mut instruction_stream = map.instruction_stream(&InstructionStreamHints::default());
+		
+		let function_pointer = instruction_stream.nullary_function_pointer();
+		
+		instruction_stream.mov_Register64Bit_Immediate64Bit(RAX, 0xFFFFFFFF_FFFFFFFFu64.into());
+		instruction_stream.mov_Register64Bit_Immediate64Bit(RDX, 0xAAAAAAAA_AAAAAAAAu64.into());
+		instruction_stream.ret();
+		
+		let _ = instruction_stream.finish();
+		
+		function_pointer
+	};
+	
+	assert_eq!(unsafe { u64_u64_function_pointer() }, TupleWrapper { rax: 0xFFFFFFFF_FFFFFFFF, rdx: 0xAAAAAAAA_AAAAAAAA }, "function result was not as expected for (u64, u64)");
+	
+	#[derive(Debug, Copy, Clone, Ord, PartialOrd, Eq, PartialEq, Hash)]
+	#[repr(C)]
+	struct BoolU64
+	{
+		rax: bool,
+		rdx: usize,
+	}
+	
+	let bool_u64_function_pointer: unsafe extern "C" fn() -> BoolU64 =
+	{
+		let mut instruction_stream = map.instruction_stream(&InstructionStreamHints::default());
+		
+		let function_pointer = instruction_stream.nullary_function_pointer();
+		
+		instruction_stream.mov_Register64Bit_Immediate64Bit(RAX, 0xFFFFFFFF_FFFFFFFFu64.into());
+		instruction_stream.set_RAX_to_c_bool_true();
+		instruction_stream.mov_Register64Bit_Immediate64Bit(RDX, 0xAAAAAAAA_AAAAAAAAu64.into());
+		instruction_stream.ret();
+		
+		let _ = instruction_stream.finish();
+		
+		function_pointer
+	};
+	
+	assert_eq!(unsafe { bool_u64_function_pointer() }, BoolU64 { rax: true, rdx: 0xAAAAAAAA_AAAAAAAA }, "function result was not as expected for (bool, u64)");
+}
+
+#[test]
 pub fn bake_off()
 {
-	let mut map = ExecutableAnonymousMemoryMap::new(4096).unwrap();
+	let mut map = ExecutableAnonymousMemoryMap::new(4096, false).unwrap();
 	let mut instruction_stream = map.instruction_stream(&InstructionStreamHints::default());
 
 	instruction_stream.mov_Register8Bit_Immediate8Bit(AL, Immediate8Bit::One);
 	instruction_stream.mov_Register8Bit_Immediate8Bit_1(AL, Immediate8Bit::One);
-	
+
 	instruction_stream.mov_Register16Bit_Immediate16Bit(AX, Immediate16Bit::One);
 	instruction_stream.mov_Register16Bit_Immediate16Bit_1(AX, Immediate16Bit::One);
-	
+
 	instruction_stream.mov_Register32Bit_Immediate32Bit(EAX, Immediate32Bit::One);
 	instruction_stream.mov_Register32Bit_Immediate32Bit_1(EAX, Immediate32Bit::One);
-	
+
 	instruction_stream.mov_Register64Bit_Immediate32Bit(RAX, Immediate32Bit::One);
 	instruction_stream.mov_Register64Bit_Immediate64Bit(RAX, Immediate64Bit::One);
-	
+
 	instruction_stream.mov_Register8Bit_Immediate8Bit(AL, Immediate8Bit::Zero);
 	instruction_stream.xor_Register32Bit_Register32Bit(EAX, EAX);
 
 	let (encoded_bytes, _) = instruction_stream.finish();
 	println!("{}", bytes_to_string(encoded_bytes))
 }
-
-// TODO: Work out how to use the redzone (128-bit; space for 2 registers) for local variable storage (eg for callee-persisted registers): The callee function may use the red zone for storing local variables without the extra overhead of modifying the stack pointer
-
 
 // Suitable for https://onlinedisassembler.com/odaweb/ .
 fn bytes_to_string(encoded_bytes: &[u8]) -> String

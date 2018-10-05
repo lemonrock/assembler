@@ -3,17 +3,26 @@
 
 
 /// A memory operand.
-#[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct MemoryOperand(u64);
+#[derive(Default, Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
+pub struct MemoryOperand
+{
+	displacement: Immediate32Bit,
+	base_register: Option<Register64Bit>,
+	index_register: Option<Register64Bit>,
+	index_scale: IndexScale,
+	segment_register: Option<SegmentRegister>,
+	pub(crate) address_override_for_32_bit: bool,
+	relative_instruction_pointer_offset: bool
+}
 
 impl PrefixGroup2 for MemoryOperand
 {
 	#[inline(always)]
 	fn emit_prefix_group2(self, byte_emitter: &mut ByteEmitter)
 	{
-		if self.has_segment_register()
+		if let Some(segment_register) = self.segment_register
 		{
-			byte_emitter.emit_prefix_group2_for_segment_register(self.get_segment_register())
+			byte_emitter.emit_prefix_group2_for_segment_register(segment_register)
 		}
 	}
 }
@@ -25,7 +34,7 @@ impl MemoryOrRegister for MemoryOperand
 	{
 		let rrr = Self::rrr(reg);
 		
-		if self.has_relative_instruction_pointer_offset()
+		if self.relative_instruction_pointer_offset
 		{
 			self.emit_mod_rm_sib_for_relative_instruction_pointer_addressing(byte_emitter, rrr)
 		}
@@ -342,147 +351,67 @@ impl Memory for MemoryOperand
 
 impl MemoryOperand
 {
-	const DisplacementMask: u64 = 0x00000000FFFFFFFF;
-	
-	const BaseRegisterMask: u64 = 0x0000001F00000000;
-	
-	const IndexRegisterMask: u64 = 0x00001F0000000000;
-	
-	const IndexScaleMask: u64 = 0x0003000000000000;
-	
-	const SegmentRegisterMask: u64 = 0x0700000000000000;
-	
-	const AddressOverrideFor32BitMask: u64 = 0x1000000000000000;
-	
-	const RelativeInstructionPointerOffsetMask: u64 = 0x2000000000000000;
-	
-	const DisplacementShift: u64 = 0;
-	
-	const BaseRegisterShift: u64 = 32;
-	
-	const IndexRegisterShift: u64 = 40;
-	
-	const IndexScaleShift: u64 = 48;
-	
-	const SegmentRegisterShift: u64 = 56;
-	
-	const AddressOverrideFor32BitShift: u64 = 61;
-	
-	const RelativeInstructionPointerOffsetShift: u64 = 61;
-	
-	const NullGeneralPurposeRegister: u64 = 0x10;
-	
-	const NullSegmentRegister: u64 = 0x07;
-	
 	const NoBaseOrIndexRegister: Option<Register64Bit> = None;
 	
 	const NoSegmentRegister: Option<SegmentRegister> = None;
 	
 	#[inline(always)]
-	fn has_segment_register(self) -> bool
-	{
-		(self.0 & Self::SegmentRegisterMask) != (Self::NullSegmentRegister << Self::SegmentRegisterShift)
-	}
-	
-	#[inline(always)]
 	fn has_base_register(self) -> bool
 	{
-		(self.0 & Self::BaseRegisterMask) != (Self::NullGeneralPurposeRegister << Self::BaseRegisterShift)
-	}
-	
-	#[inline(always)]
-	fn has_index_register(self) -> bool
-	{
-		(self.0 & Self::IndexRegisterMask) != (Self::NullGeneralPurposeRegister << Self::IndexRegisterShift)
-	}
-	
-	#[inline(always)]
-	pub(crate) fn has_address_override_for_32_bit(self) -> bool
-	{
-		(self.0 & Self::AddressOverrideFor32BitMask) != 0
-	}
-	
-	#[inline(always)]
-	fn has_relative_instruction_pointer_offset(self) -> bool
-	{
-		(self.0 & Self::RelativeInstructionPointerOffsetMask) != 0
-	}
-	
-	#[inline(always)]
-	fn get_segment_register_index(self) -> u8
-	{
-		((self.0 & Self::SegmentRegisterMask) >> Self::SegmentRegisterShift) as u8
-	}
-	
-	#[inline(always)]
-	fn get_segment_register(self) -> SegmentRegister
-	{
-		unsafe { transmute(self.get_segment_register_index()) }
-	}
-	
-	#[inline(always)]
-	fn get_base_register_index(self) -> u8
-	{
-		((self.0 & Self::BaseRegisterMask) >> Self::BaseRegisterShift) as u8
+		self.base_register.is_some()
 	}
 	
 	#[inline(always)]
 	fn get_base_register(self) -> Register64Bit
 	{
-		unsafe { transmute(self.get_base_register_index()) }
+		self.base_register.unwrap()
 	}
 	
 	#[inline(always)]
-	fn get_index_register_index(self) -> u8
+	fn get_base_register_index(self) -> u8
 	{
-		((self.0 & Self::IndexRegisterMask) >> Self::IndexRegisterShift) as u8
+		self.get_base_register().index()
+	}
+	
+	#[inline(always)]
+	fn has_index_register(self) -> bool
+	{
+		self.index_register.is_some()
 	}
 	
 	#[inline(always)]
 	fn get_index_register(self) -> Register64Bit
 	{
-		unsafe { transmute(self.get_index_register_index()) }
+		self.index_register.unwrap()
 	}
 	
 	#[inline(always)]
-	fn get_index_scale(self) -> u8
+	fn get_index_register_index(self) -> u8
 	{
-		(unsafe { transmute::<u64, IndexScale>((self.0 & Self::IndexScaleMask) >> Self::IndexScaleShift) }).into()
+		self.get_index_register().index()
 	}
 	
 	#[inline(always)]
 	fn get_displacement(self) -> i32
 	{
-		((self.0 & Self::DisplacementMask) >> Self::DisplacementShift) as u32 as i32
+		self.displacement.into()
 	}
 	
 	#[inline(always)]
-	fn new(displacement: Immediate32Bit, base_register: Option<impl GeneralPurposeRegister>, index_register: Option<impl GeneralPurposeRegister>, scale: IndexScale, segment_register: Option<SegmentRegister>, address_override_for_32_bit: bool, relative_instruction_pointer_offset: bool) -> Self
+	fn new(displacement: Immediate32Bit, base_register: Option<impl GeneralPurposeRegister>, index_register: Option<impl GeneralPurposeRegister>, index_scale: IndexScale, segment_register: Option<SegmentRegister>, address_override_for_32_bit: bool, relative_instruction_pointer_offset: bool) -> Self
 	{
 		debug_assert_eq!(address_override_for_32_bit && relative_instruction_pointer_offset, false, "address_override_for_32_bit and relative_instruction_pointer_offset can not both be specified");
 		
-		MemoryOperand
-		(
-			(displacement.to_u64() | Self::DisplacementMask)
-			| match base_register
-			{
-				None => Self::NullGeneralPurposeRegister << Self::BaseRegisterShift,
-				Some(base_register) => (base_register.index() as u64) << Self::BaseRegisterShift,
-			}
-			| match index_register
-			{
-				None => Self::NullGeneralPurposeRegister << Self::IndexRegisterShift,
-				Some(index_register) => (index_register.index() as u64) << Self::IndexRegisterShift,
-			}
-			| scale.to_u64() << Self::IndexScaleShift
-			| match segment_register
-			{
-				None => Self::NullSegmentRegister << Self::SegmentRegisterShift,
-				Some(segment_register) => (segment_register.index() as u64) << Self::SegmentRegisterShift,
-			}
-			| (address_override_for_32_bit as u64) << Self::AddressOverrideFor32BitShift
-			| (relative_instruction_pointer_offset as u64) << Self::RelativeInstructionPointerOffsetShift
-		)
+		Self
+		{
+			displacement,
+			base_register: base_register.map(|register| unsafe { transmute(register.index()) }),
+			index_register: index_register.map(|register| unsafe { transmute(register.index()) }),
+			index_scale,
+			segment_register,
+			address_override_for_32_bit,
+			relative_instruction_pointer_offset,
+		}
 	}
 }
 
@@ -640,7 +569,7 @@ impl MemoryOperand
 	#[inline(always)]
 	fn index_scale_shifted(self) -> u8
 	{
-		Self::index_scale_shifted_(self.get_index_scale())
+		Self::index_scale_shifted_(self.index_scale.into())
 	}
 	
 	#[inline(always)]

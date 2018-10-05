@@ -57,12 +57,3 @@ impl From<i16> for Immediate32Bit
 		Immediate32Bit(immediate as i32)
 	}
 }
-
-impl Immediate32Bit
-{
-	#[inline(always)]
-	pub(crate) fn to_u64(self) -> u64
-	{
-		(self.0 as u32) as u64
-	}
-}

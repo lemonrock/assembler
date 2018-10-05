@@ -37,12 +37,3 @@ impl Default for IndexScale
 		IndexScale::x1
 	}
 }
-
-impl IndexScale
-{
-	#[inline(always)]
-	pub(crate) fn to_u64(self) -> u64
-	{
-		self as u64
-	}
-}

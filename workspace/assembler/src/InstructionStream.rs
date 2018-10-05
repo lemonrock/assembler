@@ -786,7 +786,7 @@ impl<'a> InstructionStream<'a>
 	#[inline(always)]
 	fn prefix_group4(&mut self, memory: impl HasMemoryOperand)
 	{
-		self.prefix_group4_if_address_override(memory.memory_operand().has_address_override_for_32_bit())
+		self.prefix_group4_if_address_override(memory.memory_operand().address_override_for_32_bit)
 	}
 	
 	#[inline(always)]
