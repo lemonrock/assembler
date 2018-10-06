@@ -2,13 +2,10 @@
 // Copyright © 2017 The developers of assembler. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/assembler/master/COPYRIGHT.
 
 
-use self::Register8Bit::*;
-use self::Register16Bit::*;
-use self::Register32Bit::*;
 use self::Register64Bit::*;
 use super::ExecutableAnonymousMemoryMap;
 use super::InstructionStreamHints;
-use super::mnemonic_parameter_types::immediates::*;
+use super::mnemonic_parameter_types::memory::*;
 use super::mnemonic_parameter_types::registers::*;
 use ::std::io::Write;
 
@@ -187,26 +184,16 @@ pub fn validate_that_rust_follows_the_system_v_abi_for_u128()
 }
 
 #[test]
-pub fn bake_off()
+pub fn emit()
 {
 	let mut map = ExecutableAnonymousMemoryMap::new(4096, false).unwrap();
 	let mut instruction_stream = map.instruction_stream(&InstructionStreamHints::default());
-
-	instruction_stream.mov_Register8Bit_Immediate8Bit(AL, Immediate8Bit::One);
-	instruction_stream.mov_Register8Bit_Immediate8Bit_1(AL, Immediate8Bit::One);
-
-	instruction_stream.mov_Register16Bit_Immediate16Bit(AX, Immediate16Bit::One);
-	instruction_stream.mov_Register16Bit_Immediate16Bit_1(AX, Immediate16Bit::One);
-
-	instruction_stream.mov_Register32Bit_Immediate32Bit(EAX, Immediate32Bit::One);
-	instruction_stream.mov_Register32Bit_Immediate32Bit_1(EAX, Immediate32Bit::One);
-
-	instruction_stream.mov_Register64Bit_Immediate32Bit(RAX, Immediate32Bit::One);
-	instruction_stream.mov_Register64Bit_Immediate64Bit(RAX, Immediate64Bit::One);
-
-	instruction_stream.mov_Register8Bit_Immediate8Bit(AL, Immediate8Bit::Zero);
-	instruction_stream.xor_Register32Bit_Register32Bit(EAX, EAX);
-
+	
+	let offset: usize = 64;
+	let displacement = (offset as i32).into();
+	let memory = Any8BitMemory::base_64_displacement(Register64Bit::SystemVApplicationBinaryInterface64IntegerFunctionArgument0, displacement);
+	instruction_stream.prefetcht0_Any8BitMemory(memory);
+	
 	let (encoded_bytes, _) = instruction_stream.finish();
 	println!("{}", bytes_to_string(encoded_bytes))
 }
