@@ -219,6 +219,17 @@ impl ByteEmitter
 	pub(crate) fn skip_bytes(&mut self, count: usize)
 	{
 		debug_assert!(self.instruction_pointer + count <= self.end_instruction_pointer, "Not enough space to skip '{}' bytes", count);
-		self.instruction_pointer += count;
+		if cfg!(debug_assertions)
+		{
+			const NOP: u8 = 0x90;
+			for _ in 0 .. count
+			{
+				self.emit_u8(0x90)
+			}
+		}
+		else
+		{
+			self.instruction_pointer += count;
+		}
 	}
 }
