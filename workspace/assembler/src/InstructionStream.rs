@@ -379,17 +379,12 @@ impl<'a> InstructionStream<'a>
 	///
 	/// Efficient for alignments up to 32 (needed for AVX-2).
 	#[inline(always)]
-	pub fn emit_alignment(&mut self, alignment: usize)
+	pub fn emit_nops(&mut self, count: usize)
 	{
-		let offset = self.instruction_pointer() % alignment;
-		
-		if offset == 0
+		match count
 		{
-			return
-		}
-		
-		match alignment - offset
-		{
+			0 => (),
+			
 			1 => self.nop_1(),
 			
 			2 => self.nop_2(),
@@ -597,14 +592,14 @@ impl<'a> InstructionStream<'a>
 				self.nop_9()
 			}
 			
-			nop_count @ _ =>
+			_ =>
 			{
 				self.nop_9();
 				self.nop_9();
 				self.nop_9();
 				self.nop_9();
 				
-				let nop_count = nop_count - 36;
+				let nop_count = count - 36;
 				let nop_9s = nop_count / 9;
 				for _ in 0 .. nop_9s
 				{
@@ -635,6 +630,24 @@ impl<'a> InstructionStream<'a>
 				}
 			}
 		}
+	}
+	
+	/// Emits (pushes) `NOP`s (No Operation) opcodes into the instruction stream at the current location to ensure the desired `alignment`.
+	///
+	/// Efficient for alignments up to 32 (needed for AVX-2).
+	#[inline(always)]
+	pub fn emit_alignment(&mut self, alignment: usize)
+	{
+		let offset = self.instruction_pointer() % alignment;
+		
+		if offset == 0
+		{
+			return
+		}
+		
+		let count = alignment - offset;
+		
+		self.emit_nops(count);
 	}
 	
 	#[inline(always)]
