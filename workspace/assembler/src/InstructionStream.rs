@@ -915,7 +915,6 @@ impl<'a> InstructionStream<'a>
 		else
 		{
 			self.instruction_pointers_to_replace_labels_with_32_bit_displacements.push((label, insert_at_instruction_pointer));
-			self.skip_double_word();
 		}
 	}
 	
