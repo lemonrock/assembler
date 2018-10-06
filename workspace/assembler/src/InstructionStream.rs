@@ -872,10 +872,13 @@ impl<'a> InstructionStream<'a>
 	#[inline(always)]
 	fn displacement_label_8bit(&mut self, label: Label) -> ShortJmpResult
 	{
+		let insert_at_instruction_pointer = self.instruction_pointer();
+		self.byte_emitter.skip_byte();
+		
 		let target_instruction_pointer = self.labelled_locations.potential_target_instruction_pointer(label);
+		
 		if target_instruction_pointer.is_valid()
 		{
-			let insert_at_instruction_pointer = self.byte_emitter.instruction_pointer;
 			match self.byte_emitter.insert_8_bit_effective_address_displacement(insert_at_instruction_pointer, target_instruction_pointer)
 			{
 				Ok(()) => Ok(()),
@@ -888,9 +891,7 @@ impl<'a> InstructionStream<'a>
 		}
 		else
 		{
-			let instruction_pointer = self.instruction_pointer();
-			self.instruction_pointers_to_replace_labels_with_8_bit_displacements.push((label, instruction_pointer));
-			self.skip_byte();
+			self.instruction_pointers_to_replace_labels_with_8_bit_displacements.push((label, insert_at_instruction_pointer));
 			Ok(())
 		}
 	}
@@ -901,7 +902,11 @@ impl<'a> InstructionStream<'a>
 	#[inline(always)]
 	fn displacement_label_32bit(&mut self, label: Label)
 	{
+		let insert_at_instruction_pointer = self.instruction_pointer();
+		self.byte_emitter.skip_double_word();
+		
 		let target_instruction_pointer = self.labelled_locations.potential_target_instruction_pointer(label);
+		
 		if target_instruction_pointer.is_valid()
 		{
 			let insert_at_instruction_pointer = self.byte_emitter.instruction_pointer;
@@ -909,8 +914,7 @@ impl<'a> InstructionStream<'a>
 		}
 		else
 		{
-			let instruction_pointer = self.instruction_pointer();
-			self.instruction_pointers_to_replace_labels_with_32_bit_displacements.push((label, instruction_pointer));
+			self.instruction_pointers_to_replace_labels_with_32_bit_displacements.push((label, insert_at_instruction_pointer));
 			self.skip_double_word();
 		}
 	}

@@ -125,20 +125,29 @@ impl ByteEmitter
 	#[inline(always)]
 	pub(crate) fn insert_8_bit_effective_address_displacement(&mut self, insert_at_instruction_pointer: InstructionPointer, target_instruction_pointer: InstructionPointer) -> ShortJmpResult
 	{
-		let displacement = (target_instruction_pointer as isize) - (self.start_instruction_pointer as isize) - 1;
+		let end_of_jmp_instruction = (insert_at_instruction_pointer + 1) as isize;
+		
+		let displacement = (target_instruction_pointer as isize) - end_of_jmp_instruction;
+		
 		if unlikely!(displacement >= -127 && displacement < 128)
 		{
 			return Err(())
 		}
+		
 		self.emit_u8_at((displacement) as u8, insert_at_instruction_pointer);
+		
 		Ok(())
 	}
 	
 	#[inline(always)]
 	pub(crate) fn insert_32_bit_effective_address_displacement(&mut self, insert_at_instruction_pointer: InstructionPointer, target_instruction_pointer: InstructionPointer)
 	{
-		let displacement = (target_instruction_pointer as isize) - (self.start_instruction_pointer as isize) - 4;
-		debug_assert!(displacement >= ::std::isize::MIN && displacement < ::std::isize::MAX, "displacement would exceed range of i32");
+		let end_of_jmp_instruction = (insert_at_instruction_pointer + 4) as isize;
+		
+		let displacement = (target_instruction_pointer as isize) - end_of_jmp_instruction;
+		
+		debug_assert!(displacement >= ::std::i32::MIN && displacement < ::std::i32::MAX, "displacement would exceed range of i32");
+		
 		self.emit_u32_at((displacement) as u32, insert_at_instruction_pointer)
 	}
 	
@@ -224,7 +233,7 @@ impl ByteEmitter
 			const NOP: u8 = 0x90;
 			for _ in 0 .. count
 			{
-				self.emit_u8(0x90)
+				self.emit_u8(NOP)
 			}
 		}
 		else
