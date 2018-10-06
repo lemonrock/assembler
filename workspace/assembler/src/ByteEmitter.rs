@@ -146,7 +146,7 @@ impl ByteEmitter
 		
 		let displacement = (target_instruction_pointer as isize) - end_of_jmp_instruction;
 		
-		debug_assert!(displacement >= ::std::i32::MIN && displacement < ::std::i32::MAX, "displacement would exceed range of i32");
+		debug_assert!(displacement >= ::std::i32::MIN as isize && displacement < ::std::i32::MAX as isize, "displacement would exceed range of i32");
 		
 		self.emit_u32_at((displacement) as u32, insert_at_instruction_pointer)
 	}

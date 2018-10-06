@@ -873,7 +873,7 @@ impl<'a> InstructionStream<'a>
 	fn displacement_label_8bit(&mut self, label: Label) -> ShortJmpResult
 	{
 		let insert_at_instruction_pointer = self.instruction_pointer();
-		self.byte_emitter.skip_byte();
+		self.skip_byte();
 		
 		let target_instruction_pointer = self.labelled_locations.potential_target_instruction_pointer(label);
 		
@@ -903,7 +903,7 @@ impl<'a> InstructionStream<'a>
 	fn displacement_label_32bit(&mut self, label: Label)
 	{
 		let insert_at_instruction_pointer = self.instruction_pointer();
-		self.byte_emitter.skip_double_word();
+		self.skip_double_word();
 		
 		let target_instruction_pointer = self.labelled_locations.potential_target_instruction_pointer(label);
 		
