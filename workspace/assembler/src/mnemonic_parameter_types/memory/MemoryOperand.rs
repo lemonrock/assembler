@@ -593,7 +593,7 @@ impl MemoryOperand
 		// This logic determines what the value of the mod bits will be.
 		// It also controls how many immediate bytes we emit later.
 		let displacement = self.get_displacement();
-		let mod_ = if displacement < -128 || displacement >= 128
+		let mod_ = if displacement < -128 || displacement > 127
 		{
 			Self::Mod_0b10
 		}

@@ -4,7 +4,7 @@
 
 /// Represents the result of attempting a mnemonic with a short jump.
 ///
-/// Will be an error if a label could be resolved and the jump exceed -127 >= < 128 bytes.
+/// Will be an error if a label could be resolved and the jump exceeded the (inclusive range) -128 to +127 bytes.
 ///
 /// In this case, the instruction stream will be reset to where it was before the prefixes, opcodes and displacements where emitted for the `Jcc` instruction.
 pub type ShortJmpResult = Result<(), ()>;

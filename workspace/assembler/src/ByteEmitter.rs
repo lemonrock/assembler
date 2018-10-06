@@ -129,7 +129,7 @@ impl ByteEmitter
 		
 		let displacement = (target_instruction_pointer as isize) - end_of_jmp_instruction;
 		
-		if unlikely!(displacement >= -127 && displacement < 128)
+		if unlikely!(displacement < -128 && displacement > 127)
 		{
 			return Err(())
 		}
