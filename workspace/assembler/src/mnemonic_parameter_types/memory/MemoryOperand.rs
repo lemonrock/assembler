@@ -99,7 +99,7 @@ impl MemoryOrRegister for MemoryOperand
 	}
 	
 	#[inline(always)]
-	fn emit_vex_prefix(self, byte_emitter: &mut ByteEmitter, mmmmm: u8, L: u8, pp: u8, w: u8, vvvv: impl Register, r: impl Register)
+	fn emit_vex_prefix(self, byte_emitter: &mut ByteEmitter, mmmmm: u8, L: u8, pp: u8, W: u8, vvvv: impl Register, r: impl Register)
 	{
 		let rm = self;
 		
@@ -122,13 +122,13 @@ impl MemoryOrRegister for MemoryOperand
 			0x20
 		};
 		
-		if x_bit == 0x40 && b_bit == 0x20 && mmmmm == 0x01 && w == 0
+		if x_bit == 0x40 && b_bit == 0x20 && mmmmm == 0x01 && W == 0
 		{
 			byte_emitter.emit_2_byte_vex_prefix(r_bit, vvvv, L, pp)
 		}
 		else
 		{
-			byte_emitter.emit_3_byte_vex_prefix(r_bit, x_bit, b_bit, mmmmm, w, vvvv, L, pp)
+			byte_emitter.emit_3_byte_vex_prefix(r_bit, x_bit, b_bit, mmmmm, W, vvvv, L, pp)
 		}
 	}
 }

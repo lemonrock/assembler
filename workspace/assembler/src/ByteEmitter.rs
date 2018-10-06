@@ -106,11 +106,11 @@ impl ByteEmitter
 	}
 	
 	#[inline(always)]
-	pub(crate) fn emit_3_byte_vex_prefix(&mut self, r_bit: u8, x_bit: u8, b_bit: u8, mmmmm: u8, w: u8, vvvv: impl Register, l: u8, pp: u8)
+	pub(crate) fn emit_3_byte_vex_prefix(&mut self, r_bit: u8, x_bit: u8, b_bit: u8, mmmmm: u8, W: u8, vvvv: impl Register, l: u8, pp: u8)
 	{
-		self.emit_u8(0xC5);
+		self.emit_u8(0xC4);
 		self.emit_u8(r_bit | x_bit | b_bit | mmmmm);
-		self.emit_u8((w << 7) | ((!vvvv.index() << 3) & 0x78) | (l << 2) | pp);
+		self.emit_u8((W << 7) | ((!vvvv.index() << 3) & 0x78) | (l << 2) | pp);
 	}
 	
 	#[inline(always)]

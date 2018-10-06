@@ -753,22 +753,22 @@ impl<'a> InstructionStream<'a>
 	
 	// See Figure 2-9, Intel Manual Volume 2A Section 2-15 (May 2018).
 	#[inline(always)]
-	fn vex_7(&mut self, mmmmm: u8, L: u8, pp: u8, w: u8, vvvv: impl Register, rm: impl MemoryOrRegister, r: impl Register)
+	fn vex_7(&mut self, mmmmm: u8, L: u8, pp: u8, W: u8, vvvv: impl Register, rm: impl MemoryOrRegister, r: impl Register)
 	{
-		rm.emit_vex_prefix(&mut self.byte_emitter, mmmmm, L, pp, w, vvvv, r)
+		rm.emit_vex_prefix(&mut self.byte_emitter, mmmmm, L, pp, W, vvvv, r)
 	}
 	
 	// See Figure 2-9, Intel Manual Volume 2A Section 2-15 (May 2018).
 	#[inline(always)]
-	fn vex_5(&mut self, mmmmm: u8, L: u8, pp: u8, w: u8, vvvv: impl Register)
+	fn vex_5(&mut self, mmmmm: u8, L: u8, pp: u8, W: u8, vvvv: impl Register)
 	{
-		if mmmmm == 0x01 && w == 0
+		if mmmmm == 0x01 && W == 0
 		{
 			self.byte_emitter.emit_2_byte_vex_prefix(0x80, vvvv, L, pp)
 		}
 		else
 		{
-			self.byte_emitter.emit_3_byte_vex_prefix(0x80, 0x40, 0x20, mmmmm, w, vvvv, L, pp)
+			self.byte_emitter.emit_3_byte_vex_prefix(0x80, 0x40, 0x20, mmmmm, W, vvvv, L, pp)
 		}
 	}
 	
