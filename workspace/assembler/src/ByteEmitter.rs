@@ -213,7 +213,15 @@ impl ByteEmitter
 	{
 		const Size: usize = 1;
 		debug_assert!(self.instruction_pointer + Size <= self.end_instruction_pointer, "Not enough space to skip an u8");
-		self.instruction_pointer += Size;
+		
+		if cfg!(debug_assertions)
+		{
+			self.emit_nop()
+		}
+		else
+		{
+			self.instruction_pointer += Size;
+		}
 	}
 	
 	#[inline(always)]
@@ -221,7 +229,18 @@ impl ByteEmitter
 	{
 		const Size: usize = 4;
 		debug_assert!(self.instruction_pointer + Size <= self.end_instruction_pointer, "Not enough space to skip an u32");
-		self.instruction_pointer += Size;
+		
+		if cfg!(debug_assertions)
+		{
+			self.emit_nop();
+			self.emit_nop();
+			self.emit_nop();
+			self.emit_nop()
+		}
+		else
+		{
+			self.instruction_pointer += Size;
+		}
 	}
 	
 	#[inline(always)]
@@ -230,15 +249,21 @@ impl ByteEmitter
 		debug_assert!(self.instruction_pointer + count <= self.end_instruction_pointer, "Not enough space to skip '{}' bytes", count);
 		if cfg!(debug_assertions)
 		{
-			const NOP: u8 = 0x90;
 			for _ in 0 .. count
 			{
-				self.emit_u8(NOP)
+				self.emit_nop()
 			}
 		}
 		else
 		{
 			self.instruction_pointer += count;
 		}
+	}
+	
+	#[inline(always)]
+	fn emit_nop(&mut self)
+	{
+		const NOP: u8 = 0x90;
+		self.emit_u8(NOP)
 	}
 }

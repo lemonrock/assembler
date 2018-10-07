@@ -33,7 +33,6 @@ pub fn labelling()
 	instruction_stream.finish();
 }
 
-
 #[test]
 pub fn simple_function()
 {
@@ -193,6 +192,30 @@ pub fn emit()
 	let displacement = (offset as i32).into();
 	let memory = Any8BitMemory::base_64_displacement(Register64Bit::SystemVApplicationBinaryInterface64IntegerFunctionArgument0, displacement);
 	instruction_stream.prefetcht0_Any8BitMemory(memory);
+	
+	instruction_stream.nop();
+	instruction_stream.nop();
+	let label = instruction_stream.create_label();
+	instruction_stream.nop();
+	
+	instruction_stream.prefetcht0_Any8BitMemory(memory);
+	
+	instruction_stream.jmp_Label_1(label);
+	
+	instruction_stream.nop();
+	instruction_stream.nop();
+	instruction_stream.nop();
+	instruction_stream.nop();
+	instruction_stream.nop();
+	instruction_stream.nop();
+	instruction_stream.nop();
+	instruction_stream.nop();
+	instruction_stream.nop();
+	instruction_stream.nop();
+	instruction_stream.nop();
+	instruction_stream.nop();
+	instruction_stream.attach_label(label);
+	instruction_stream.nop();
 	
 	let (encoded_bytes, _) = instruction_stream.finish();
 	println!("{}", bytes_to_string(encoded_bytes))

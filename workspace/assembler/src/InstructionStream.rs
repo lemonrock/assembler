@@ -91,27 +91,41 @@ impl<'a> InstructionStream<'a>
 	{
 		let hints = self.hints_for_next_instance();
 		
-		for (label, insert_at_instruction_pointer) in self.instruction_pointers_to_replace_labels_with_8_bit_displacements
+		for (label, insert_at_instruction_pointer) in self.instruction_pointers_to_replace_labels_with_8_bit_displacements.iter()
 		{
-			let target_instruction_pointer = self.labelled_locations.potential_target_instruction_pointer(label);
-			debug_assert!(target_instruction_pointer.is_valid(), "unresolved label '{:?}'", label);
-			let result = self.byte_emitter.insert_8_bit_effective_address_displacement(insert_at_instruction_pointer, target_instruction_pointer);
+			let target_instruction_pointer = self.valid_target_instruction_pointer(*label);
+			
+			let result = self.byte_emitter.insert_8_bit_effective_address_displacement(*insert_at_instruction_pointer, target_instruction_pointer);
+			
 			debug_assert!(result.is_err(), "8-bit JMP for label '{:?}' was too far", label)
 		}
 		
-		for (label, insert_at_instruction_pointer) in self.instruction_pointers_to_replace_labels_with_32_bit_displacements
+		for (label, insert_at_instruction_pointer) in self.instruction_pointers_to_replace_labels_with_32_bit_displacements.iter()
 		{
-			let target_instruction_pointer = self.labelled_locations.potential_target_instruction_pointer(label);
-			debug_assert!(target_instruction_pointer.is_valid(), "unresolved label '{:?}'", label);
+			let target_instruction_pointer = self.valid_target_instruction_pointer(*label);
 			
-			self.byte_emitter.insert_32_bit_effective_address_displacement(insert_at_instruction_pointer, target_instruction_pointer)
+			self.byte_emitter.insert_32_bit_effective_address_displacement(*insert_at_instruction_pointer, target_instruction_pointer)
 		}
 		
 		self.executable_anonymous_memory_map.make_executable();
 		
-		let length = self.byte_emitter.instruction_pointer - self.byte_emitter.start_instruction_pointer;
-		let slice = unsafe { from_raw_parts(self.byte_emitter.start_instruction_pointer as *const u8, length) };
+		let length = self.instruction_pointer() - self.start_instruction_pointer();
+		let slice = unsafe { from_raw_parts(self.start_instruction_pointer() as *const u8, length) };
 		(slice, hints)
+	}
+	
+	#[inline(always)]
+	fn target_instruction_pointer(&self, label: Label) -> InstructionPointer
+	{
+		self.labelled_locations.potential_target_instruction_pointer(label)
+	}
+	
+	#[inline(always)]
+	fn valid_target_instruction_pointer(&self, label: Label) -> InstructionPointer
+	{
+		let target_instruction_pointer = self.target_instruction_pointer(label);
+		debug_assert!(target_instruction_pointer.is_valid(), "unresolved label '{:?}'", label);
+		target_instruction_pointer
 	}
 	
 	/// Creates an unique label and uses it to label the current location.
@@ -875,7 +889,7 @@ impl<'a> InstructionStream<'a>
 		let insert_at_instruction_pointer = self.instruction_pointer();
 		self.skip_byte();
 		
-		let target_instruction_pointer = self.labelled_locations.potential_target_instruction_pointer(label);
+		let target_instruction_pointer = self.target_instruction_pointer(label);
 		
 		if target_instruction_pointer.is_valid()
 		{
@@ -905,11 +919,10 @@ impl<'a> InstructionStream<'a>
 		let insert_at_instruction_pointer = self.instruction_pointer();
 		self.skip_double_word();
 		
-		let target_instruction_pointer = self.labelled_locations.potential_target_instruction_pointer(label);
+		let target_instruction_pointer = self.target_instruction_pointer(label);
 		
 		if target_instruction_pointer.is_valid()
 		{
-			let insert_at_instruction_pointer = self.byte_emitter.instruction_pointer;
 			self.byte_emitter.insert_32_bit_effective_address_displacement(insert_at_instruction_pointer, target_instruction_pointer)
 		}
 		else
