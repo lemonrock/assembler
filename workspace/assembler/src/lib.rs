@@ -119,4 +119,5 @@ include!("InstructionPointerValidity.rs");
 include!("InstructionStream.rs");
 include!("InstructionStreamHints.rs");
 include!("LabelledLocations.rs");
+include!("NearJmpResult.rs");
 include!("ShortJmpResult.rs");

@@ -129,7 +129,7 @@ impl ByteEmitter
 		
 		let displacement = (target_instruction_pointer as isize) - end_of_jmp_instruction;
 		
-		if unlikely!(displacement < -128 && displacement > 127)
+		if unlikely!(displacement < -128 || displacement > 127)
 		{
 			return Err(())
 		}
@@ -140,15 +140,20 @@ impl ByteEmitter
 	}
 	
 	#[inline(always)]
-	pub(crate) fn insert_32_bit_effective_address_displacement(&mut self, insert_at_instruction_pointer: InstructionPointer, target_instruction_pointer: InstructionPointer)
+	pub(crate) fn insert_32_bit_effective_address_displacement(&mut self, insert_at_instruction_pointer: InstructionPointer, target_instruction_pointer: InstructionPointer) -> NearJmpResult
 	{
 		let end_of_jmp_instruction = (insert_at_instruction_pointer + 4) as isize;
 		
 		let displacement = (target_instruction_pointer as isize) - end_of_jmp_instruction;
 		
-		debug_assert!(displacement >= ::std::i32::MIN as isize && displacement < ::std::i32::MAX as isize, "displacement would exceed range of i32");
+		if unlikely!(displacement < ::std::i32::MAX as isize || displacement >= ::std::i32::MIN as isize)
+		{
+			return Err(())
+		}
 		
-		self.emit_u32_at((displacement) as u32, insert_at_instruction_pointer)
+		self.emit_u32_at((displacement) as u32, insert_at_instruction_pointer);
+		
+		Ok(())
 	}
 	
 	#[inline(always)]
@@ -161,6 +166,12 @@ impl ByteEmitter
 	pub(crate) fn emit_u32_at(&mut self, emit: u32, at: InstructionPointer)
 	{
 		unsafe { *(at as *mut u32) = emit };
+	}
+	
+	#[inline(always)]
+	pub(crate) fn emit_u64_at(&mut self, emit: u64, at: InstructionPointer)
+	{
+		unsafe { *(at as *mut u64) = emit };
 	}
 	
 	#[inline(always)]
@@ -232,6 +243,29 @@ impl ByteEmitter
 		
 		if cfg!(debug_assertions)
 		{
+			self.emit_nop();
+			self.emit_nop();
+			self.emit_nop();
+			self.emit_nop()
+		}
+		else
+		{
+			self.instruction_pointer += Size;
+		}
+	}
+	
+	#[inline(always)]
+	pub(crate) fn skip_u64(&mut self)
+	{
+		const Size: usize = 8;
+		debug_assert!(self.instruction_pointer + Size <= self.end_instruction_pointer, "Not enough space to skip an u32");
+		
+		if cfg!(debug_assertions)
+		{
+			self.emit_nop();
+			self.emit_nop();
+			self.emit_nop();
+			self.emit_nop();
 			self.emit_nop();
 			self.emit_nop();
 			self.emit_nop();

@@ -19,6 +19,7 @@ pub struct InstructionStream<'a>
 	labelled_locations: LabelledLocations,
 	instruction_pointers_to_replace_labels_with_8_bit_displacements: Vec<(Label, InstructionPointer)>,
 	instruction_pointers_to_replace_labels_with_32_bit_displacements: Vec<(Label, InstructionPointer)>,
+	emitted_labels: Vec<(Label, InstructionPointer)>,
 }
 
 impl<'a> InstructionStream<'a>
@@ -50,6 +51,7 @@ impl<'a> InstructionStream<'a>
 			labelled_locations: LabelledLocations::new(instruction_stream_hints.number_of_labels),
 			instruction_pointers_to_replace_labels_with_8_bit_displacements: Vec::with_capacity(instruction_stream_hints.number_of_8_bit_jumps),
 			instruction_pointers_to_replace_labels_with_32_bit_displacements: Vec::with_capacity(instruction_stream_hints.number_of_32_bit_jumps),
+			emitted_labels: Vec::with_capacity(instruction_stream_hints.number_of_emitted_labels),
 		}
 	}
 	
@@ -78,6 +80,7 @@ impl<'a> InstructionStream<'a>
 			number_of_labels: self.labelled_locations.next_label_index,
 			number_of_8_bit_jumps: self.instruction_pointers_to_replace_labels_with_8_bit_displacements.len(),
 			number_of_32_bit_jumps: self.instruction_pointers_to_replace_labels_with_32_bit_displacements.len(),
+			number_of_emitted_labels: self.emitted_labels.len(),
 		}
 	}
 	
@@ -104,7 +107,16 @@ impl<'a> InstructionStream<'a>
 		{
 			let target_instruction_pointer = self.valid_target_instruction_pointer(*label);
 			
-			self.byte_emitter.insert_32_bit_effective_address_displacement(*insert_at_instruction_pointer, target_instruction_pointer)
+			let result = self.byte_emitter.insert_32_bit_effective_address_displacement(*insert_at_instruction_pointer, target_instruction_pointer);
+			
+			debug_assert!(result.is_err(), "32-bit JMP for label '{:?}' was too far", label)
+		}
+		
+		for (label, insert_at_instruction_pointer) in self.emitted_labels.iter()
+		{
+			let target_instruction_pointer = self.valid_target_instruction_pointer(*label);
+			
+			self.byte_emitter.emit_u64_at(target_instruction_pointer as u64, *insert_at_instruction_pointer)
 		}
 		
 		self.executable_anonymous_memory_map.make_executable();
@@ -158,6 +170,31 @@ impl<'a> InstructionStream<'a>
 	{
 		let instruction_pointer = self.instruction_pointer();
 		self.labelled_locations.set(label, instruction_pointer)
+	}
+	
+	/// Emits the 64-bit value of a label at the current location.
+	///
+	/// Typically used when build jump tables.
+	///
+	/// It is an error to use the same label to label more than one location (or to label the current location with the same label twice or more).
+	///
+	/// This only checked for in debug builds where it causes a runtime panic.
+	///
+	/// Labels should be created using `self.create_label()`; no checks are made for labels created with another instance and attached to this one.
+	#[inline(always)]
+	pub fn emit_label(&mut self, label: Label)
+	{
+		let target_instruction_pointer = self.target_instruction_pointer(label);
+		if target_instruction_pointer.is_valid()
+		{
+			self.emit_quad_word(target_instruction_pointer as u64)
+		}
+		else
+		{
+			let instruction_pointer = self.instruction_pointer();
+			self.emitted_labels.push((label, instruction_pointer));
+			self.skip_quad_word();
+		}
 	}
 	
 	/// Emits a non-leaf function prologue suitable for both the System V Application Binary Interface for AMD64 and the Microsoft x64 Calling Convention.
@@ -371,7 +408,7 @@ impl<'a> InstructionStream<'a>
 		self.byte_emitter.skip_u8()
 	}
 	
-	/// Skips over a double word in the instruction stream at the current location.
+	/// Skips over a double word (4 bytes) in the instruction stream at the current location.
 	///
 	/// The byte can be data or instructions.
 	#[inline(always)]
@@ -379,6 +416,16 @@ impl<'a> InstructionStream<'a>
 	{
 		self.reserve_space(4);
 		self.byte_emitter.skip_u32()
+	}
+	
+	/// Skips over a quad word (8 bytes) in the instruction stream at the current location.
+	///
+	/// The byte can be data or instructions.
+	#[inline(always)]
+	pub(crate) fn skip_quad_word(&mut self)
+	{
+		self.reserve_space(8);
+		self.byte_emitter.skip_u64()
 	}
 	
 	/// Skips over zero or more `count` bytes in the instruction stream at the current location.
@@ -923,7 +970,7 @@ impl<'a> InstructionStream<'a>
 		
 		if target_instruction_pointer.is_valid()
 		{
-			self.byte_emitter.insert_32_bit_effective_address_displacement(insert_at_instruction_pointer, target_instruction_pointer)
+			self.byte_emitter.insert_32_bit_effective_address_displacement(insert_at_instruction_pointer, target_instruction_pointer).expect("32-bit JMP was too far")
 		}
 		else
 		{

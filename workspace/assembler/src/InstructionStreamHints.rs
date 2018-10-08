@@ -16,6 +16,9 @@ pub struct InstructionStreamHints
 	
 	/// Number of 32-bit jumps.
 	pub number_of_32_bit_jumps: usize,
+	
+	/// Number of emitted labels.
+	pub number_of_emitted_labels: usize,
 }
 
 impl Default for InstructionStreamHints
@@ -28,6 +31,7 @@ impl Default for InstructionStreamHints
 			number_of_labels: Self::MinimumValue,
 			number_of_8_bit_jumps: Self::MinimumValue,
 			number_of_32_bit_jumps: Self::MinimumValue,
+			number_of_emitted_labels: Self::MinimumValue,
 		}
 	}
 }
@@ -43,6 +47,7 @@ impl InstructionStreamHints
 		self.number_of_labels = Self::adjust_value(self.number_of_labels);
 		self.number_of_8_bit_jumps = Self::adjust_value(self.number_of_8_bit_jumps);
 		self.number_of_32_bit_jumps = Self::adjust_value(self.number_of_32_bit_jumps);
+		self.number_of_emitted_labels = Self::adjust_value(self.number_of_emitted_labels);
 	}
 	
 	/// Ensures that a maximum high-water-mark is kept.
@@ -64,6 +69,11 @@ impl InstructionStreamHints
 		if newer_unadjusted_hints.number_of_32_bit_jumps > self.number_of_32_bit_jumps
 		{
 			self.number_of_32_bit_jumps = newer_unadjusted_hints.number_of_32_bit_jumps
+		}
+		
+		if newer_unadjusted_hints.number_of_emitted_labels > self.number_of_emitted_labels
+		{
+			self.number_of_emitted_labels = newer_unadjusted_hints.number_of_emitted_labels
 		}
 	}
 	
