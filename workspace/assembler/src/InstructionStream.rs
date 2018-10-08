@@ -100,7 +100,7 @@ impl<'a> InstructionStream<'a>
 			
 			let result = self.byte_emitter.insert_8_bit_effective_address_displacement(*insert_at_instruction_pointer, target_instruction_pointer);
 			
-			debug_assert!(result.is_err(), "8-bit JMP for label '{:?}' was too far", label)
+			debug_assert!(result.is_ok(), "8-bit JMP for {:?} was too far", label)
 		}
 		
 		for (label, insert_at_instruction_pointer) in self.instruction_pointers_to_replace_labels_with_32_bit_displacements.iter()
@@ -109,7 +109,7 @@ impl<'a> InstructionStream<'a>
 			
 			let result = self.byte_emitter.insert_32_bit_effective_address_displacement(*insert_at_instruction_pointer, target_instruction_pointer);
 			
-			debug_assert!(result.is_err(), "32-bit JMP for label '{:?}' was too far", label)
+			debug_assert!(result.is_ok(), "32-bit JMP for {:?} was too far", label)
 		}
 		
 		for (label, insert_at_instruction_pointer) in self.emitted_labels.iter()
@@ -136,7 +136,7 @@ impl<'a> InstructionStream<'a>
 	fn valid_target_instruction_pointer(&self, label: Label) -> InstructionPointer
 	{
 		let target_instruction_pointer = self.target_instruction_pointer(label);
-		debug_assert!(target_instruction_pointer.is_valid(), "unresolved label '{:?}'", label);
+		debug_assert!(target_instruction_pointer.is_valid(), "unresolved {:?}'", label);
 		target_instruction_pointer
 	}
 	

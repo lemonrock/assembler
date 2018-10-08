@@ -129,12 +129,15 @@ impl ByteEmitter
 		
 		let displacement = (target_instruction_pointer as isize) - end_of_jmp_instruction;
 		
-		if unlikely!(displacement < -128 || displacement > 127)
+		const Minimum: isize = ::std::i8::MIN as isize;
+		const Maximum: isize = ::std::i8::MAX as isize;
+		
+		if unlikely!(displacement < Minimum || displacement > Maximum)
 		{
 			return Err(())
 		}
 		
-		self.emit_u8_at((displacement) as u8, insert_at_instruction_pointer);
+		self.emit_u8_at(displacement as u8, insert_at_instruction_pointer);
 		
 		Ok(())
 	}
@@ -146,12 +149,15 @@ impl ByteEmitter
 		
 		let displacement = (target_instruction_pointer as isize) - end_of_jmp_instruction;
 		
-		if unlikely!(displacement < ::std::i32::MAX as isize || displacement >= ::std::i32::MIN as isize)
+		const Minimum: isize = ::std::i32::MIN as isize;
+		const Maximum: isize = ::std::i32::MAX as isize;
+		
+		if unlikely!(displacement < Minimum || displacement > Maximum)
 		{
 			return Err(())
 		}
 		
-		self.emit_u32_at((displacement) as u32, insert_at_instruction_pointer);
+		self.emit_u32_at(displacement as u32, insert_at_instruction_pointer);
 		
 		Ok(())
 	}

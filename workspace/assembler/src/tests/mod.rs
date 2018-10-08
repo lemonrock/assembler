@@ -195,12 +195,21 @@ pub fn emit()
 	
 	instruction_stream.nop();
 	instruction_stream.nop();
-	let label = instruction_stream.create_label();
+	let forward_label = instruction_stream.create_label();
 	instruction_stream.nop();
 	
 	instruction_stream.prefetcht0_Any8BitMemory(memory);
 	
-	instruction_stream.jmp_Label_1(label);
+	instruction_stream.jmp_Label_1(forward_label);
+	
+	instruction_stream.nop();
+	instruction_stream.nop();
+	instruction_stream.nop();
+	instruction_stream.nop();
+	instruction_stream.nop();
+	
+	let backward_label = instruction_stream.create_and_attach_label();
+	instruction_stream.jmp_Label_1(backward_label);
 	
 	instruction_stream.nop();
 	instruction_stream.nop();
@@ -209,12 +218,7 @@ pub fn emit()
 	instruction_stream.nop();
 	instruction_stream.nop();
 	instruction_stream.nop();
-	instruction_stream.nop();
-	instruction_stream.nop();
-	instruction_stream.nop();
-	instruction_stream.nop();
-	instruction_stream.nop();
-	instruction_stream.attach_label(label);
+	instruction_stream.attach_label(forward_label);
 	instruction_stream.nop();
 	
 	let (encoded_bytes, _) = instruction_stream.finish();
