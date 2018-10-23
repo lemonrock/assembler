@@ -38713,9 +38713,7 @@ impl<'a> InstructionStream<'a>
 
 	/// For legacy mode, move word from address `DS:(E)SI` to `ES:(E)DI`.
 	///
-	/// For 64-bit mode move word at address (R
-	///E)SI to `(R
-	///E)DI`.
+	/// For 64-bit mode move word at address (R|E)SI to `(R|E)DI`.
 	#[inline(always)]
 	pub fn movs_Any16BitMemory_Any16BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
@@ -38746,9 +38744,7 @@ impl<'a> InstructionStream<'a>
 
 	/// For legacy mode, move dword from address `DS:(E)SI` to `ES:(E)DI`.
 	///
-	/// For 64-bit mode move dword from address (R
-	///E)SI to `(R
-	///E)DI`.
+	/// For 64-bit mode move dword from address (R|E)SI to `(R|E)DI`.
 	#[inline(always)]
 	pub fn movs_Any32BitMemory_Any32BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
@@ -38777,9 +38773,7 @@ impl<'a> InstructionStream<'a>
 		// No label displacement.
 	}
 
-	/// Move qword from address (R
-	///E)SI to `(R
-	///E)DI`.
+	/// Move qword from address (R|E)SI to `(R|E)DI`.
 	#[inline(always)]
 	pub fn movs_Any64BitMemory_Any64BitMemory(&mut self, arg0: Option<SegmentRegister>, address_override_for_32_bit: bool)
 	{
