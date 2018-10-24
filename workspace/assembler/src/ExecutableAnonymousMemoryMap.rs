@@ -123,18 +123,18 @@ impl ExecutableAnonymousMemoryMap
 		let old_length = self.length;
 		let new_length = self.length * 2;
 		let old_address = self.address;
-		let new_address = unsafe { mremap(old_address, old_length, new_length, NoFlags) };
+		let new_address = unsafe { mremap(old_address as *mut _, old_length, new_length, NoFlags) };
 		if unlikely!(new_address == MAP_FAILED)
 		{
 			Err(io::Error::last_os_error())
 		}
 		else
 		{
-			debug_assert!(new_address, old_address, "address has changed");
+			debug_assert_eq!(new_address as *mut u8, old_address, "address has changed");
 			
-			let new_memory_address = old_address + old_length;
+			let new_memory_address = unsafe { old_address.add(old_length) };
 			
-			let result = unsafe { mlock(new_memory_address, old_length) };
+			let result = unsafe { mlock(new_memory_address as *mut _, old_length) };
 			if unlikely!(result != 0)
 			{
 				if likely!(result == 1)
