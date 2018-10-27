@@ -73,13 +73,13 @@ impl ExecutableAnonymousMemoryMap
 			let result = unsafe { mlock(address, length) };
 			if unlikely!(result != 0)
 			{
-				if likely!(result == 1)
+				if likely!(result == -1)
 				{
 					Err(io::Error::last_os_error())
 				}
 				else
 				{
-					panic!("Unexpected result code from mlock '{}'", result)
+					panic!("Unexpected result code from mlock (new) '{}'", result)
 				}
 			}
 			else
@@ -137,13 +137,13 @@ impl ExecutableAnonymousMemoryMap
 			let result = unsafe { mlock(new_memory_address as *mut _, old_length) };
 			if unlikely!(result != 0)
 			{
-				if likely!(result == 1)
+				if likely!(result == -1)
 				{
 					Err(io::Error::last_os_error())
 				}
 				else
 				{
-					panic!("Unexpected result code from mlock '{}'", result)
+					panic!("Unexpected result code from mlock (attempt_to_resize_in_place_whilst_writing) '{}'", result)
 				}
 			}
 			else
