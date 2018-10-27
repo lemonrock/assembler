@@ -8,6 +8,7 @@ pub struct ExecutableAnonymousMemoryMap
 {
 	address: *mut u8,
 	length: usize,
+	ignore_mlock_failure: bool,
 }
 
 impl Drop for ExecutableAnonymousMemoryMap
@@ -25,10 +26,14 @@ impl ExecutableAnonymousMemoryMap
 	///
 	/// `length` is rounded up to the nearest power of two, and is floored at the smallest page size (4Kb).
 	///
+	/// On Linux, `allocate_in_first_2Gb` should ideally be `true`.
+	///
+	/// On Linux, there are historic bugs in `mlock` which may require `ignore_mlock_failure` to be `true`.
+	///
 	/// Memory is created using an anonymous, shared mmap with no access rights (not even read) which is then locked (`mlock`'d).
 	#[cfg_attr(not(any(target_os = "android", target_os = "linux")), allow(unused_variables))]
 	#[inline(always)]
-	pub fn new(length: usize, allocate_in_first_2Gb: bool) -> Result<Self, ExecutableAnonymousMemoryMapCreationError>
+	pub fn new(length: usize, allocate_in_first_2Gb: bool, ignore_mlock_failure: bool) -> Result<Self, ExecutableAnonymousMemoryMapCreationError>
 	{
 		use self::ExecutableAnonymousMemoryMapCreationError::*;
 
@@ -73,28 +78,27 @@ impl ExecutableAnonymousMemoryMap
 		{
 			let address = result;
 			let result = unsafe { mlock(address, length) };
-			if unlikely!(result != 0)
+			if unlikely!(!ignore_mlock_failure && result != 0)
 			{
 				if likely!(result == -1)
 				{
-					Err(MLockFailed(io::Error::last_os_error(), aligned_length))
+					return Err(MLockFailed(io::Error::last_os_error(), aligned_length))
 				}
 				else
 				{
 					panic!("Unexpected result code from mlock (new) '{}'", result)
 				}
 			}
-			else
-			{
-				Ok
-				(
-					Self
-					{
-						address: address as *mut _,
-						length,
-					}
-				)
-			}
+
+			Ok
+			(
+				Self
+				{
+					address: address as *mut _,
+					length,
+					ignore_mlock_failure,
+				}
+			)
 		}
 	}
 	
@@ -137,23 +141,21 @@ impl ExecutableAnonymousMemoryMap
 			let new_memory_address = unsafe { old_address.add(old_length) };
 			
 			let result = unsafe { mlock(new_memory_address as *mut _, old_length) };
-			if unlikely!(result != 0)
+			if unlikely!(!self.ignore_mlock_failure && result != 0)
 			{
 				if likely!(result == -1)
 				{
-					Err(io::Error::last_os_error())
+					return Err(io::Error::last_os_error())
 				}
 				else
 				{
 					panic!("Unexpected result code from mlock (attempt_to_resize_in_place_whilst_writing) '{}'", result)
 				}
 			}
-			else
-			{
-				self.mprotect(new_memory_address, old_length, PROT_WRITE);
-				self.length = new_length;
-				Ok(new_length)
-			}
+
+			self.mprotect(new_memory_address, old_length, PROT_WRITE);
+			self.length = new_length;
+			Ok(new_length)
 		}
 	}
 	

@@ -20,10 +20,10 @@ impl Display for ExecutableAnonymousMemoryMapCreationError
 		use self::ExecutableAnonymousMemoryMapCreationError::*;
 
 		match *self
-			{
-				MMapFailed(ref error, bytes) => write!(f, "mmap of {} aligned bytes failed with '{}'", bytes, error),
-				MLockFailed(ref error, bytes) => write!(f, "mlock of {} aligned bytes failed with '{}'", bytes, error),
-			}
+		{
+			MMapFailed(ref error, bytes) => write!(f, "mmap of {} aligned bytes failed with '{}'", bytes, error),
+			MLockFailed(ref error, bytes) => write!(f, "mlock of {} aligned bytes failed with '{}'", bytes, error),
+		}
 	}
 }
 
