@@ -28,8 +28,10 @@ impl ExecutableAnonymousMemoryMap
 	/// Memory is created using an anonymous, shared mmap with no access rights (not even read) which is then locked (`mlock`'d).
 	#[cfg_attr(not(any(target_os = "android", target_os = "linux")), allow(unused_variables))]
 	#[inline(always)]
-	pub fn new(length: usize, allocate_in_first_2Gb: bool) -> io::Result<Self>
+	pub fn new(length: usize, allocate_in_first_2Gb: bool) -> Result<Self, ExecutableAnonymousMemoryMapCreationError>
 	{
+		use self::ExecutableAnonymousMemoryMapCreationError::*;
+
 		const PageSize: usize = 4096;
 		const NoFileDescriptor: i32 = -1;
 		const NoOffset: i64 = 0;
@@ -65,7 +67,7 @@ impl ExecutableAnonymousMemoryMap
 		let result = unsafe { mmap(null_mut(), aligned_length, PROT_NONE, flags, NoFileDescriptor, NoOffset) };
 		if unlikely!(result == MAP_FAILED)
 		{
-			Err(io::Error::last_os_error())
+			Err(MMapFailed(io::Error::last_os_error(), aligned_length))
 		}
 		else
 		{
@@ -75,7 +77,7 @@ impl ExecutableAnonymousMemoryMap
 			{
 				if likely!(result == -1)
 				{
-					Err(io::Error::last_os_error())
+					Err(MLockFailed(io::Error::last_os_error(), aligned_length))
 				}
 				else
 				{
