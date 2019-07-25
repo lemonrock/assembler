@@ -19,7 +19,6 @@ version = "0.10.1"
 
 [dependencies]
 libc = "^0.2"
-likely = "^0.1"
 
 [dev-dependencies]
 criterion = "0.2.11"

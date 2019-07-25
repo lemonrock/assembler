@@ -132,7 +132,7 @@ impl ByteEmitter
 		const Minimum: isize = ::std::i8::MIN as isize;
 		const Maximum: isize = ::std::i8::MAX as isize;
 		
-		if unlikely!(displacement < Minimum || displacement > Maximum)
+		if displacement < Minimum || displacement > Maximum
 		{
 			return Err(())
 		}
@@ -152,7 +152,7 @@ impl ByteEmitter
 		const Minimum: isize = ::std::i32::MIN as isize;
 		const Maximum: isize = ::std::i32::MAX as isize;
 		
-		if unlikely!(displacement < Minimum || displacement > Maximum)
+		if displacement < Minimum || displacement > Maximum
 		{
 			return Err(())
 		}

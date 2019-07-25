@@ -70,7 +70,7 @@ impl ExecutableAnonymousMemoryMap
 		};
 		
 		let result = unsafe { mmap(null_mut(), aligned_length, PROT_NONE, flags, NoFileDescriptor, NoOffset) };
-		if unlikely!(result == MAP_FAILED)
+		if result == MAP_FAILED
 		{
 			Err(MMapFailed(io::Error::last_os_error(), aligned_length))
 		}
@@ -78,9 +78,9 @@ impl ExecutableAnonymousMemoryMap
 		{
 			let address = result;
 			let result = unsafe { mlock(address, length) };
-			if unlikely!(!ignore_mlock_failure && result != 0)
+			if !ignore_mlock_failure && result != 0
 			{
-				if likely!(result == -1)
+				if result == -1
 				{
 					return Err(MLockFailed(io::Error::last_os_error(), aligned_length))
 				}
