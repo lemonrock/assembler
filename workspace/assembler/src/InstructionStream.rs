@@ -770,7 +770,7 @@ impl<'a> InstructionStream<'a>
 	fn reserve_space(&mut self, length: usize)
 	{
 		let remaining_space = self.byte_emitter.remaining_space();
-		if unlikely!(remaining_space < length)
+		if remaining_space < length
 		{
 			if self.attempt_to_resize_in_place().is_err()
 			{

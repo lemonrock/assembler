@@ -7,7 +7,6 @@
 #![allow(non_camel_case_types)]
 #![deny(missing_docs)]
 #![deny(unreachable_patterns)]
-#![feature(core_intrinsics)]
 
 
 //! #assembler
@@ -57,7 +56,6 @@
 
 
 extern crate libc;
-#[macro_use] extern crate likely;
 
 
 use self::mnemonic_parameter_types::*;

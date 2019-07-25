@@ -13,7 +13,7 @@ use ::std::io::Write;
 #[test]
 pub fn lifecycle()
 {
-	let mut map = ExecutableAnonymousMemoryMap::new(4096, false).expect("Could not anonymously mmap");
+	let mut map = ExecutableAnonymousMemoryMap::new(4096, false, false).expect("Could not anonymously mmap");
 	let instruction_stream = map.instruction_stream(&InstructionStreamHints::default());
 	
 	instruction_stream.finish();
@@ -22,7 +22,7 @@ pub fn lifecycle()
 #[test]
 pub fn labelling()
 {
-	let mut map = ExecutableAnonymousMemoryMap::new(4096, false).expect("Could not anonymously mmap");
+	let mut map = ExecutableAnonymousMemoryMap::new(4096, false, false).expect("Could not anonymously mmap");
 	let mut instruction_stream = map.instruction_stream(&InstructionStreamHints::default());
 	
 	let label1 = instruction_stream.create_label();
@@ -36,7 +36,7 @@ pub fn labelling()
 #[test]
 pub fn simple_function()
 {
-	let mut map = ExecutableAnonymousMemoryMap::new(4096, false).expect("Could not anonymously mmap");
+	let mut map = ExecutableAnonymousMemoryMap::new(4096, false, false).expect("Could not anonymously mmap");
 	
 	let _function_pointer =
 	{
@@ -66,7 +66,7 @@ pub fn simple_function()
 #[test]
 pub fn validate_that_rust_follows_the_system_v_abi_for_bool()
 {
-	let mut map = ExecutableAnonymousMemoryMap::new(4096, false).expect("Could not anonymously mmap");
+	let mut map = ExecutableAnonymousMemoryMap::new(4096, false, false).expect("Could not anonymously mmap");
 	
 	let false_function_pointer =
 	{
@@ -88,7 +88,7 @@ pub fn validate_that_rust_follows_the_system_v_abi_for_bool()
 	// See AMD64 ABI 1.0 – August 13, 2018 – 8:25, page 22, third-to-last paragraph and footnote 16.
 	// In essence, a _Bool should be interpreted only from the bottom 8 bits.
 	
-	let mut map = ExecutableAnonymousMemoryMap::new(4096, false).expect("Could not anonymously mmap");
+	let mut map = ExecutableAnonymousMemoryMap::new(4096, false, false).expect("Could not anonymously mmap");
 	
 	let false_function_pointer =
 	{
@@ -111,7 +111,7 @@ pub fn validate_that_rust_follows_the_system_v_abi_for_bool()
 #[test]
 pub fn validate_that_rust_follows_the_system_v_abi_for_u128()
 {
-	let mut map = ExecutableAnonymousMemoryMap::new(4096, false).expect("Could not anonymously mmap");
+	let mut map = ExecutableAnonymousMemoryMap::new(4096, false, false).expect("Could not anonymously mmap");
 	
 	let u128_function_pointer: unsafe extern "C" fn() -> u128 =
 	{
@@ -185,7 +185,7 @@ pub fn validate_that_rust_follows_the_system_v_abi_for_u128()
 #[test]
 pub fn emit()
 {
-	let mut map = ExecutableAnonymousMemoryMap::new(4096, false).unwrap();
+	let mut map = ExecutableAnonymousMemoryMap::new(4096, false, false).unwrap();
 	let mut instruction_stream = map.instruction_stream(&InstructionStreamHints::default());
 	
 	let offset: usize = 64;

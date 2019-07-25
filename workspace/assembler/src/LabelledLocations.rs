@@ -50,7 +50,7 @@ impl LabelledLocations
 	#[inline(always)]
 	pub(crate) fn create_label(&mut self) -> Label
 	{
-		if unlikely!(self.next_label_index == self.length)
+		if self.next_label_index == self.length
 		{
 			self.resize()
 		}
